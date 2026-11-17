@@ -77,13 +77,15 @@ def caps():
     return '\n'.join(out)
 
 # grades applied via `hyperframes media-treatment` (canonical data-color-grading), kept here so rebuilds keep them
-GRADES = {'wait': {"preset": None, "intensity": 1, "adjust": {"exposure": -1.0, "contrast": 0.1, "highlights": -0.7,
-          "whites": -0.6, "temperature": -0.7, "tint": 0.1}}}
+GRADES = {}
+NAVY = {'wait'}   # shown on the navy brand background (photo dropped after review), clock overlay does the work
 
 def shot_divs():
     out = []
     for s in SHOTS:
         if s['kind'] != 'footage': continue
+        if s['id'] in NAVY:
+            out.append(f'  <div class="shot navy" id="sh-{s["id"]}"></div>'); continue
         grade = f' data-color-grading="{html.escape(json.dumps(GRADES[s["id"]]))}"' if s['id'] in GRADES else ''
         out.append(f'  <div class="shot" id="sh-{s["id"]}"><img class="m" src="{s["src"].replace("assets/footage/", "assets/")}"{grade} '
                    f'style="object-position:{s["focus"]}" alt=""/></div>')

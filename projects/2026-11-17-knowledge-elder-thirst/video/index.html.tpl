@@ -10,7 +10,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
 .shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
 .shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
-#gfx{opacity:0;background:radial-gradient(ellipse at 50% 34%,#1A4F80 0%,#0F3157 55%,#0A2240 100%)}
+.shot.navy,#gfx{background:radial-gradient(ellipse at 50% 34%,#1A4F80 0%,#0F3157 55%,#0A2240 100%)}
+#gfx{opacity:0}
 #gfx svg{position:absolute;left:0;top:0;width:1080px;height:1920px}
 #gfx text{font-family:'Kanit',sans-serif}
 #hook{position:absolute;left:0;top:250px;width:1080px;text-align:center;z-index:50;font-weight:900;font-size:150px;line-height:1.08;
@@ -57,15 +58,17 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
     <path id="shapeLine" d="" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>
    </g>
    <!-- brain details -->
-   <g id="sulci" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0">
-    <path d="M330 600 Q400 540 470 600 Q520 650 590 590"/><path d="M620 520 Q690 480 740 560"/>
-    <path d="M300 720 Q380 680 440 740 Q500 790 580 730 Q650 680 760 720"/><path d="M540 470 Q560 520 530 560"/>
-    <path d="M400 820 Q470 800 520 840"/>
+   <g id="sulci" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+    <path d="M540 425 C525 500 555 560 540 640 C525 720 555 800 540 880" stroke-width="12"/>
+    <path d="M500 470 Q430 470 420 520 Q410 570 470 580"/><path d="M580 470 Q650 470 660 520 Q670 570 610 580"/>
+    <path d="M330 560 Q380 600 360 650 Q340 700 410 710 Q480 715 490 660"/><path d="M750 560 Q700 600 720 650 Q740 700 670 710 Q600 715 590 660"/>
+    <path d="M320 760 Q390 740 420 790 Q450 840 500 820"/><path d="M760 760 Q690 740 660 790 Q630 840 580 820"/>
+    <path d="M400 880 Q440 860 480 900"/><path d="M680 880 Q640 860 600 900"/>
    </g>
    <g id="signal" opacity="0">
     <path id="wave" d="" fill="none" stroke="#FFD23F" stroke-width="12" stroke-linecap="round"/>
-    <g id="sigChip"><rect x="355" y="180" width="370" height="100" rx="50" fill="#FFD23F"/>
-     <text x="540" y="250" text-anchor="middle" font-size="60" font-weight="700" fill="#0A2240">สัญญาณหิวน้ำ</text></g>
+    <g id="sigChip"><rect x="300" y="130" width="480" height="116" rx="58" fill="#FFD23F"/>
+     <text x="540" y="210" text-anchor="middle" font-size="70" font-weight="700" fill="#0A2240">สัญญาณหิวน้ำ</text></g>
    </g>
    <!-- body label -->
    <g id="bodyChip" opacity="0"><rect x="330" y="140" width="420" height="96" rx="48" fill="#fff"/>
@@ -73,11 +76,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    <!-- 24h clock -->
    <g id="clock" opacity="0">
     <g id="ticks" stroke="#0A2240" stroke-width="8" stroke-linecap="round"></g>
-    <text x="540" y="560" text-anchor="middle" font-size="80" font-weight="900" fill="#0A2240">24</text>
-    <text x="540" y="610" text-anchor="middle" font-size="40" font-weight="700" fill="#0A2240">ชั่วโมง</text>
     <g id="sweep"><path id="sweepArc" d="" fill="#4FC3F7" opacity="0.35"/></g>
     <line id="hand" x1="540" y1="640" x2="540" y2="440" stroke="#E8452C" stroke-width="14" stroke-linecap="round"/>
     <circle cx="540" cy="640" r="18" fill="#E8452C"/>
+    <text x="540" y="985" text-anchor="middle" font-size="64" font-weight="900" fill="#fff" stroke="#0A2240" stroke-width="10" paint-order="stroke fill">24 ชั่วโมง</text>
    </g>
    <g id="noGlass" opacity="0">
     <circle cx="840" cy="400" r="105" fill="#fff" stroke="#0A2240" stroke-width="8"/>
@@ -109,23 +111,23 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    <path id="glassI" d="M-42 -60 L42 -60 L32 60 L-32 60 Z"/>
    <clipPath id="cpG0"><use href="#glassI"/></clipPath><clipPath id="cpG1"><use href="#glassI"/></clipPath>
    <clipPath id="cpG2"><use href="#glassI"/></clipPath><clipPath id="cpG3"><use href="#glassI"/></clipPath>
-   <clipPath id="cpMeter"><rect x="250" y="400" width="620" height="84" rx="42"/></clipPath></defs>
+   <clipPath id="cpMeter"><rect x="160" y="420" width="530" height="90" rx="45"/></clipPath></defs>
   <!-- glass shot: thirst meter drains on "หิวน้ำ" -->
   <g id="meter" opacity="0">
-   <rect x="140" y="320" width="800" height="200" rx="40" fill="#0A2240" fill-opacity="0.82"/>
-   <text x="250" y="385" font-size="56" font-weight="700" fill="#fff">หิวน้ำ</text>
-   <text id="meterZero" x="870" y="388" text-anchor="end" font-size="64" font-weight="900" fill="#FF6B5A" opacity="0">0</text>
-   <g transform="translate(195 445) scale(0.78)"><use href="#dropI" fill="#4FC3F7" stroke="#fff" stroke-width="8"/></g>
-   <rect x="250" y="400" width="620" height="84" rx="42" fill="#13385F" stroke="#fff" stroke-width="6"/>
-   <g clip-path="url(#cpMeter)"><rect id="meterFill" x="250" y="400" width="620" height="84" fill="#4FC3F7"/></g>
-   <rect x="250" y="400" width="620" height="84" rx="42" fill="none" stroke="#fff" stroke-width="6"/>
+   <rect x="56" y="300" width="664" height="240" rx="44" fill="#0A2240" fill-opacity="0.85"/>
+   <text x="160" y="392" font-size="64" font-weight="700" fill="#fff">หิวน้ำ</text>
+   <text id="meterZero" x="690" y="398" text-anchor="end" font-size="80" font-weight="900" fill="#FF6B5A" opacity="0">0</text>
+   <g transform="translate(108 470) scale(0.85)"><use href="#dropI" fill="#4FC3F7" stroke="#fff" stroke-width="8"/></g>
+   <rect x="160" y="420" width="530" height="90" rx="45" fill="#13385F"/>
+   <g clip-path="url(#cpMeter)"><rect id="meterFill" x="160" y="420" width="530" height="90" fill="#4FC3F7"/></g>
+   <rect x="160" y="420" width="530" height="90" rx="45" fill="none" stroke="#fff" stroke-width="7"/>
   </g>
   <!-- sip shot: four glasses pop in on the syllables, water fills with a spring -->
   <g id="glasses">
-   <g id="gl0"><g clip-path="url(#cpG0)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw0" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
-   <g id="gl1"><g clip-path="url(#cpG1)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw1" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
-   <g id="gl2"><g clip-path="url(#cpG2)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw2" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
-   <g id="gl3"><g clip-path="url(#cpG3)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw3" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
+   <g id="gl0"><use href="#glassI" fill="#0A2240" fill-opacity="0.6" transform="translate(9 11)"/><g clip-path="url(#cpG0)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.75"/><rect id="glw0" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></g>
+   <g id="gl1"><use href="#glassI" fill="#0A2240" fill-opacity="0.6" transform="translate(9 11)"/><g clip-path="url(#cpG1)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.75"/><rect id="glw1" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></g>
+   <g id="gl2"><use href="#glassI" fill="#0A2240" fill-opacity="0.6" transform="translate(9 11)"/><g clip-path="url(#cpG2)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.75"/><rect id="glw2" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></g>
+   <g id="gl3"><use href="#glassI" fill="#0A2240" fill-opacity="0.6" transform="translate(9 11)"/><g clip-path="url(#cpG3)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.75"/><rect id="glw3" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></g>
   </g>
   <!-- wait shot: big clock face, minute hand sweeps once; thirst drop struck through on "หิว" -->
   <g id="wclock" opacity="0">
@@ -218,9 +220,11 @@ const N=120;
 const samp=$('sampler');
 function sample(d){samp.setAttribute('d',d);const L=samp.getTotalLength();const p=[];
   for(let i=0;i<N;i++){const q=samp.getPointAtLength(L*i/N);p.push([q.x,q.y]);}return p;}
-const brainD=(()=>{const cx=540,cy=650,a=300,b=230,pts=[];for(let i=0;i<=180;i++){const th=-Math.PI/2+2*Math.PI*i/180;
-  let r=1+0.045*Math.sin(9*th+0.6)+0.02*Math.sin(17*th); let x=cx+a*r*Math.cos(th), y=cy+b*r*Math.sin(th);
-  if(y>cy+b*0.55)y=cy+b*0.55+(y-cy-b*0.55)*0.5; pts.push(x.toFixed(1)+' '+y.toFixed(1));}
+// top view: two hemispheres (notches at the front and back of the midline), bumpy gyri outline
+const brainD=(()=>{const cx=540,cy=655,a=265,b=275,pts=[];for(let i=0;i<=240;i++){const th=-Math.PI/2+2*Math.PI*i/240;
+  const dt=x=>{x=((x+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;return x;};
+  let r=1+0.035*Math.abs(Math.sin(7*th))-0.17*Math.exp(-Math.pow(dt(th+Math.PI/2)/0.16,2))-0.12*Math.exp(-Math.pow(dt(th-Math.PI/2)/0.16,2));
+  let x=cx+a*r*Math.cos(th), y=cy+b*r*Math.sin(th); pts.push(x.toFixed(1)+' '+y.toFixed(1));}
   return 'M'+pts.join(' L')+'Z';})();
 const SHAPES={
  drop:sample('M540 330 C600 450 780 540 780 700 A240 240 0 0 1 300 700 C300 540 480 450 540 330 Z'),
@@ -231,10 +235,10 @@ const SHAPES={
 };
 // clock follows the body silhouette's centre a little lower: shift clock up to 640 centre
 SHAPES.clock=SHAPES.clock.map(([x,y])=>[x,y-0]);
-const KEYS=[[GB.word_at,'brain'],[GBo.start,'body'],[GT.start,'clock'],[GC.start,'bar']];
+const KEYS=[[GB.start,'brain'],[GBo.start,'body'],[GT.start,'clock'],[GC.start,'bar']];
 function shapeAt(t){
   let p=SHAPES.drop.map(q=>q.slice());
-  for(const [k,name] of KEYS){const m=sp(t,k,MORPH); if(m===0)continue; const T=SHAPES[name];
+  for(const [k,name] of KEYS){const m=sp(t,k,(name==='brain'||name==='clock')?FAST:MORPH); if(m===0)continue; const T=SHAPES[name];
     for(let i=0;i<N;i++){p[i][0]=lerp(p[i][0],T[i][0],m);p[i][1]=lerp(p[i][1],T[i][1],m);}}
   return p;
 }
@@ -254,7 +258,7 @@ function morph(t){
   // appear: the drop springs in at the cut
   const a=sp(t,GB.start,POP), sc=0.6+0.4*a;
   $('shapeG').setAttribute('transform',`translate(540 640) scale(${sc.toFixed(4)}) translate(-540 -640)`);
-  const mClock=sp(t,GT.start), mBar=sp(t,GC.start);
+  const mClock=sp(t,GT.start,FAST), mBar=sp(t,GC.start);
   // water level: brain full, body drops on "น้อยลง", clock -> no water, bar -> solid orange
   let wy=lerp(300,250,sp(t,GB.word_at)); wy=lerp(wy,330,sp(t,GBo.start)); wy=lerp(wy,700,sp(t,W.less-0.25,SLOW));
   wy=lerp(wy,1000,mClock);
@@ -264,21 +268,21 @@ function morph(t){
   $('shapeBg').setAttribute('fill',mBar>0.01?mix('#F4F8FB','#FF8A3D',mBar):mix('#13385F','#F4F8FB',mClock));
   $('shapeLine').setAttribute('stroke',mBar>0.01?mix('#FFFFFF','#FF8A3D',mBar):mix('#FFFFFF','#0A2240',mClock));
   // brain: sulci and the thirst signal (slows from "ช้าลง", fades exactly at hit "เบาลง")
-  const brainV=clamp(sp(t,GB.word_at+0.15,SLOW))*(1-clamp(sp(t,GBo.start,FAST)));
+  const brainV=clamp(sp(t,GB.start+0.02,FAST))*(1-clamp(sp(t,GBo.start,FAST)));
   op($('sulci'),brainV);
-  const sigIn=eo((t-GB.word_at-0.2)/0.3), sigOut=1-eio((t-GB.hit_at+0.2)/0.4);
-  const sigV=t<GBo.start?sigIn*Math.max(0.12,sigOut):0;
+  const sigIn=eo((t-GB.word_at)/0.25);
+  const sigV=t<GBo.start?sigIn:0;
   op($('signal'),sigV);
   if(sigV>0){
-    const slow=eio((t-W.slower+0.2)/0.5), fade=eio((t-GB.hit_at+0.2)/0.4);
-    const amp=lerp(lerp(46,30,slow),5,fade);
+    const slow=eio((t-W.slower+0.25)/0.5), fade=eio((t-GB.hit_at+0.3)/0.3); // flat and faint exactly at the hit
+    const amp=lerp(lerp(46,26,slow),0,fade);
     // phase = integral of a speed that drops at "ช้าลง" and again at the hit
-    const ph=(tt)=>{const t0=GB.word_at; let v=0; const st=0.02; for(let x=t0;x<tt;x+=st){const s1=eio((x-W.slower+0.2)/0.5),f1=eio((x-GB.hit_at+0.2)/0.4);v+=st*lerp(lerp(11,5,s1),1.2,f1);} return v;};
+    const ph=(tt)=>{const t0=GB.word_at; let v=0; const st=0.02; for(let x=t0;x<tt;x+=st){const s1=eio((x-W.slower+0.25)/0.5),f1=eio((x-GB.hit_at+0.3)/0.3);v+=st*lerp(lerp(11,4.5,s1),0.6,f1);} return v;};
     const P=ph(t), pts=[];
-    for(let x=160;x<=920;x+=8){const env=Math.sin(Math.PI*(x-160)/760); pts.push(`${x} ${(330+amp*env*Math.sin(x/38-P)).toFixed(1)}`);}
+    for(let x=160;x<=920;x+=8){const env=Math.sin(Math.PI*(x-160)/760); pts.push(`${x} ${(305+amp*env*Math.sin(x/38-P)).toFixed(1)}`);}
     $('wave').setAttribute('d','M'+pts.join(' L'));
-    $('wave').setAttribute('stroke-opacity',(1-0.75*fade).toFixed(3));
-    $('sigChip').setAttribute('opacity',(1-0.6*fade).toFixed(3));
+    $('wave').setAttribute('stroke-opacity',(1-0.85*fade).toFixed(3));
+    $('sigChip').setAttribute('opacity',(1-0.55*fade).toFixed(3));
   }
   // body chip
   op($('bodyChip'),(t>=GBo.start&&t<GT.start)?clamp(sp(t,GBo.word_at,POP)):0);
@@ -290,8 +294,8 @@ function morph(t){
     const r=200,a1=ang*Math.PI/180, large=ang>180?1:0;
     $('sweepArc').setAttribute('d',ang<0.5?'':ang>=359.5?`M540 640 m-${r} 0 a${r} ${r} 0 1 0 ${2*r} 0 a${r} ${r} 0 1 0 -${2*r} 0`:
       `M540 640 L540 ${640-r} A${r} ${r} 0 ${large} 1 ${(540+r*Math.sin(a1)).toFixed(1)} ${(640-r*Math.cos(a1)).toFixed(1)} Z`);}
-  const g=(t>=GT.start&&t<GC.start)?clamp(sp(t,GT.word_at+0.1,POP)):0;
-  op($('noGlass'),g); $('noGlass').setAttribute('transform',`translate(840 400) scale(${(0.5+0.5*g).toFixed(3)}) translate(-840 -400)`);
+  const g=(t>=GT.start&&t<GC.start)?clamp(S(t-GT.start,40,1)):0;
+  op($('noGlass'),g); $('noGlass').setAttribute('transform',`translate(840 400) scale(${(0.7+0.3*g).toFixed(3)}) translate(-840 -400)`);
   op($('testChip'),(t>=GT.start&&t<GC.start)?clamp(sp(t,GT.start,POP)):0);
   // compare: young "ขาดน้ำ" bar on "คนหนุ่ม", the "หิวน้ำ" pair lands on hit "หิวน้ำน้อยกว่า"
   const chartV=t>=GC.start?clamp(sp(t,GC.start+0.05,SLOW)):0; op($('chart'),chartV);
@@ -318,21 +322,23 @@ const GG=SH.glass, GS=SH.sip, GW=SH.wait;
 (()=>{const g=$('wticks');let s='';for(let i=0;i<12;i++){const a=2*Math.PI*i/12,r1=i%3?240:215,r2=265;
   s+=`<line x1="${(540+r1*Math.sin(a)).toFixed(1)}" y1="${(720-r1*Math.cos(a)).toFixed(1)}" x2="${(540+r2*Math.sin(a)).toFixed(1)}" y2="${(720-r2*Math.cos(a)).toFixed(1)}"/>`;}
   g.innerHTML=s;})();
-const GLX=[300,460,620,780];
+const GLX=[255,445,635,825];
 function overlays(t){
   // thirst meter: full, drains to empty landing on "หิวน้ำ" (hit_at), "0" settles by the word end
   const mOn=t>=GG.start&&t<GG.end, m=$('meter');
   if(mOn){const a=sp(t,GG.start,POP); op(m,clamp(a*1.4));
-    m.setAttribute('transform',`translate(290 400) scale(${(0.58*(0.8+0.2*a)).toFixed(4)}) translate(-540 -420)`);
-    const drain=sp(t,GG.hit_at-0.2,FAST), w=Math.max(0,620*(1-drain));
+    m.setAttribute('transform',`translate(388 420) scale(${(0.85+0.15*a).toFixed(4)}) translate(-388 -420)`);
+    const drain=sp(t,GG.hit_at-0.2,FAST), w=Math.max(0,530*(1-drain));
     $('meterFill').setAttribute('width',w.toFixed(1));
     const z=sp(t,W.thirst_end-0.2,POP); op($('meterZero'),z);
   } else op(m,0);
   // four glasses on the syllables of "จิบน้ำเป็นช่วงๆ"
   const gOn=t>=GS.start&&t<GS.end; $('glasses').style.display=gOn?'':'none';
-  if(gOn) for(let i=0;i<4;i++){const t0=W.glasses[i]; const a=S(t-(t0-0.1),18,0.55), sc=Math.max(0,a);
-    $('gl'+i).setAttribute('transform',`translate(${GLX[i]} 420) scale(${sc.toFixed(4)})`);
-    const f=sp(t,t0,MORPH); $('glw'+i).setAttribute('y',(60-105*f).toFixed(1));}
+  // each glass is full ON its syllable: fill starts 0.25 s before (glass 0 starts at the cut, 0.08 s before "จิบ", so it uses a stiffer spring)
+  if(gOn) for(let i=0;i<4;i++){const t0=W.glasses[i], b=Math.max(GS.start,t0-0.25), w=i===0?60:24;
+    const a=S(t-b,w,i===0?1:0.7), sc=1.3*Math.max(0,a);
+    $('gl'+i).setAttribute('transform',`translate(${GLX[i]} 430) scale(${sc.toFixed(4)})`);
+    const f=S(t-b,w,1); $('glw'+i).setAttribute('y',(60-118*f).toFixed(1));}
   // wait: clock face + minute hand one full turn; drop struck through on "หิว"
   const wOn=t>=GW.start&&t<GW.end;
   if(wOn){const a=sp(t,GW.start,POP); op($('wclock'),clamp(a*1.4));
