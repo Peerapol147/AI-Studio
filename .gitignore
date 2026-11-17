@@ -3,3 +3,5 @@ renders/
 *.mp4
 .env
 .env.*
+projects/*/assets/footage/
+projects/*/assets/audio/*.mp3
