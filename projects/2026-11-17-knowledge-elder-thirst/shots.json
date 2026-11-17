@@ -1,0 +1,17 @@
+{"lead": 0.08,
+ "shots": [
+  {"id": "elder",   "kind": "footage", "cue": {"th": "เพื่อนๆ", "en": "About"}, "hit": {"th": "คนแก่", "en": "older"}, "want": "close-up face of an elderly person (Asian if possible)"},
+  {"id": "quarter", "kind": "graphic", "cue": {"th": "หนึ่งในสี่", "en": "one in four"}},
+  {"id": "glass",   "kind": "footage", "cue": {"th": "ไม่รู้สึก", "en": "not even"}, "hit": {"th": "หิวน้ำ", "en": "thirsty"}, "want": "glass of water next to an elderly person, untouched or pushed away"},
+  {"id": "grandma", "kind": "footage", "cue": {"th": "คุณยาย", "en": "Grandma"}, "hit": {"th": "งงๆ", "en": "foggy"}, "want": "elderly woman holding her head, confused or dizzy"},
+  {"id": "oldage",  "kind": "footage", "cue": {"th": "แค่แก่", "en": "old age"}, "want": "wrinkled elderly hands, or elderly person sitting still"},
+  {"id": "dry",     "kind": "footage", "cue": {"th": "ขาดน้ำ", "en": "dehydration"}, "want": "cracked dry earth or an empty glass"},
+  {"id": "brain",   "kind": "graphic", "cue": {"th": "สมอง", "en": "brain"}, "hit": {"th": "เบาลง", "en": "weaker"}, "long_ok": true},
+  {"id": "body",    "kind": "graphic", "cue": {"th": "ร่างกาย", "en": "body"}},
+  {"id": "test",    "kind": "graphic", "cue": {"th": "ทดลอง", "en": "study"}},
+  {"id": "compare", "kind": "graphic", "cue": {"th": "คนแก่ขาดน้ำ", "en": "older men"}, "hit": {"th": "หิวน้ำน้อยกว่า", "en": "less thirsty"}, "long_ok": true},
+  {"id": "sip",     "kind": "footage", "cue": {"th": "จิบน้ำ", "en": "sips"}, "hit": {"th": "จิบน้ำ", "en": "sips"}, "want": "elderly person lifting a glass and drinking water (video, lift visible)"},
+  {"id": "wait",    "kind": "footage", "cue": {"th": "ไม่ต้องรอ", "en": "don't wait"}, "want": "wall clock, or water bottle on a table"},
+  {"id": "doctor",  "kind": "footage", "cue": {"th": "โรคหัวใจ", "en": "Heart"}, "want": "doctor talking with an elderly patient"},
+  {"id": "family",  "kind": "footage", "cue": {"th": "ที่บ้าน", "en": "Who"}, "long_ok": true, "want": "family with grandparents smiling at home"}
+ ]}
