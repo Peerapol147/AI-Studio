@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "historyId": "78675b3b-0bf7-4c45-ad1a-c5e72e1e83c3",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/root/.cache/hyperframes/history/78675b3b-0bf7-4c45-ad1a-c5e72e1e83c3/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "8a68120be4d065f93fc1a4d2aca57496b99daf0567baca50b3f95698df7bcb2e",
+      "content": "/root/.cache/hyperframes/history/78675b3b-0bf7-4c45-ad1a-c5e72e1e83c3/blobs/8a/8a68120be4d065f93fc1a4d2aca57496b99daf0567baca50b3f95698df7bcb2e"
+    },
+    "package.json": {
+      "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
+      "content": "/root/.cache/hyperframes/history/78675b3b-0bf7-4c45-ad1a-c5e72e1e83c3/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
+    },
+    "assets/hook-graded.jpg": {
+      "hash": "9569c893c0b40f8645f12a3322a3fee6f8097adf61a3fd019a6b14f241e4b964",
+      "content": "/root/.cache/hyperframes/history/78675b3b-0bf7-4c45-ad1a-c5e72e1e83c3/blobs/95/9569c893c0b40f8645f12a3322a3fee6f8097adf61a3fd019a6b14f241e4b964"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "66916b15-a242-45ca-a4a3-609e917978c8-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "66916b15-a242-45ca-a4a3-609e917978c8-0",
+        "image": "/tmp/claude-0/-home-user-ai-studio/bf864908-9f23-53fc-91ad-b8604d03b963/scratchpad/thumb/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794950250268,
+        "contentHash": "6fb0ba918363f74d42564ddf0706b8cbf65b9e833a61e8aaf7012ed00c9d6145",
+        "revision": null,
+        "inputFingerprint": "9d5b94dddf5135a0d7d4f39b97a7c686eb42372ceb65bd6921e7860b9960e224",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

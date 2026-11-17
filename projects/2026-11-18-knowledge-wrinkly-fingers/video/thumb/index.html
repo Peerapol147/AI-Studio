@@ -1,0 +1,21 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#B08B50}
+#bgw{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(1.06);transform-origin:52% 45%}
+#bg{position:absolute;left:-1062px;top:300px;width:3264px;height:2169px}
+.blend{position:absolute;left:0;top:240px;width:1080px;height:360px;background:linear-gradient(#B08B50 0,#B08B50 70px,rgba(176,139,80,0) 100%)}
+.shade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(20,10,0,.6),rgba(20,10,0,0))}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;-webkit-text-stroke:30px #1B0E05;paint-order:stroke fill}
+#t1{top:190px;font-size:180px;color:#fff}
+#t2{top:390px;font-size:196px;color:#FFD23F}
+.tag{position:absolute;left:390px;top:40px;padding:2px 34px 10px;border-radius:36px;background:#1E9BF0;border:9px solid #1B0E05;
+  color:#fff;font-weight:900;font-size:62px;transform:rotate(-4deg)}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<div id="bgw"><img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-graded.jpg" alt=""/><div class="blend"></div></div>
+<div class="shade"></div>
+<div class="t" id="t1">ทำไม</div><div class="t" id="t2">นิ้วเหี่ยว?</div>
+<div class="tag">รู้ไหม?</div>
+</div><script>
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

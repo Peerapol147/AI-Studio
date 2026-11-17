@@ -1,0 +1,1093 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/ai-studio/projects/2026-11-18-knowledge-wrinkly-fingers/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 398 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/ai-studio/projects/2026-11-18-knowledge-wrinkly-fingers/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 27 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/ai-studio/projects/2026-11-18-knowledge-wrinkly-fingers/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 18,
+    "infoCount": 3,
+    "findings": [
+      {
+        "selector": "#tl1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 358.22,
+          "y": 106.03,
+          "width": 363.56,
+          "height": 257.07
+        },
+        "time": 1.087,
+        "rect": {
+          "left": 358.22,
+          "top": 106.03,
+          "right": 721.78,
+          "bottom": 363.1,
+          "width": 363.56,
+          "height": 257.07
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ทำไม",
+        "message": "<div> \"ทำไม\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.087,
+        "lastSeen": 1.087,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.087
+        ]
+      },
+      {
+        "selector": "#tl2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 177.4,
+          "y": 294.5,
+          "width": 724.66,
+          "height": 285.58
+        },
+        "time": 1.087,
+        "rect": {
+          "left": 177.4,
+          "top": 294.5,
+          "right": 902.06,
+          "bottom": 580.08,
+          "width": 724.66,
+          "height": 285.58
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "นิ้วเหี่ยว?",
+        "message": "<div> \"นิ้วเหี่ยว?\" is outside the safe area: YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.087,
+        "lastSeen": 1.087,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.087
+        ]
+      },
+      {
+        "selector": "#cth1 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 369.96,
+          "y": 1147.92,
+          "width": 340.08,
+          "height": 101.29
+        },
+        "time": 1.087,
+        "rect": {
+          "left": 369.96,
+          "top": 1147.92,
+          "right": 710.04,
+          "bottom": 1249.21,
+          "width": 340.08,
+          "height": 101.29
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "แล้วนิ้ว เหี่ยว",
+        "message": "<span> \"แล้วนิ้ว เหี่ยว\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.087,
+        "lastSeen": 1.087,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.087
+        ]
+      },
+      {
+        "selector": "#st0",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 137.56,
+          "y": 1334.2,
+          "width": 38.86,
+          "height": 54
+        },
+        "time": 3.26,
+        "rect": {
+          "left": 137.56,
+          "top": 1334.2,
+          "right": 176.42,
+          "bottom": 1388.2,
+          "width": 38.86,
+          "height": 54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "น้ำ",
+        "message": "<div> \"น้ำ\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 3.26,
+        "lastSeen": 16.3,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          3.26,
+          5.433,
+          7.607,
+          9.78,
+          11.953,
+          14.127,
+          16.3
+        ]
+      },
+      {
+        "selector": "#st1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 308.84,
+          "y": 1334.2,
+          "width": 114.32,
+          "height": 54
+        },
+        "time": 3.26,
+        "rect": {
+          "left": 308.84,
+          "top": 1334.2,
+          "right": 423.16,
+          "bottom": 1388.2,
+          "width": 114.32,
+          "height": 54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ประสาท",
+        "message": "<div> \"ประสาท\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 3.26,
+        "lastSeen": 16.3,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          3.26,
+          5.433,
+          7.607,
+          9.78,
+          11.953,
+          14.127,
+          16.3
+        ]
+      },
+      {
+        "selector": "#st2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 537.75,
+          "y": 1334.2,
+          "width": 214.5,
+          "height": 54
+        },
+        "time": 3.26,
+        "rect": {
+          "left": 537.75,
+          "top": 1334.2,
+          "right": 752.25,
+          "bottom": 1388.2,
+          "width": 214.5,
+          "height": 54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "หลอดเลือดหด",
+        "message": "<div> \"หลอดเลือดหด\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 3.26,
+        "lastSeen": 16.3,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          3.26,
+          5.433,
+          7.607,
+          9.78,
+          11.953,
+          14.127,
+          16.3
+        ]
+      },
+      {
+        "selector": "#st3",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 879.81,
+          "y": 1334.2,
+          "width": 88.36,
+          "height": 54
+        },
+        "time": 3.26,
+        "rect": {
+          "left": 879.81,
+          "top": 1334.2,
+          "right": 968.17,
+          "bottom": 1388.2,
+          "width": 88.36,
+          "height": 54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ผิวย่น",
+        "message": "<div> \"ผิวย่น\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 3.26,
+        "lastSeen": 16.3,
+        "occurrences": 7,
+        "heldMs": 0,
+        "times": [
+          3.26,
+          5.433,
+          7.607,
+          9.78,
+          11.953,
+          14.127,
+          16.3
+        ]
+      },
+      {
+        "selector": "#cth4 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 402.26,
+          "y": 1118.93,
+          "width": 275.47,
+          "height": 132.18
+        },
+        "time": 3.26,
+        "rect": {
+          "left": 402.26,
+          "top": 1118.93,
+          "right": 677.73,
+          "bottom": 1251.11,
+          "width": 275.47,
+          "height": 132.18
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "จน พอง",
+        "message": "<span> \"จน พอง\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 3.26,
+        "lastSeen": 3.26,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.26
+        ]
+      },
+      {
+        "selector": "#cth7 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 287.41,
+          "y": 1146.77,
+          "width": 505.18,
+          "height": 102
+        },
+        "time": 5.433,
+        "rect": {
+          "left": 287.41,
+          "top": 1146.77,
+          "right": 792.59,
+          "bottom": 1248.77,
+          "width": 505.18,
+          "height": 102
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "สั่งให้ ระบบประสาท",
+        "message": "<span> \"สั่งให้ ระบบประสาท\" is outside the safe area: TikTok (right edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 5.433,
+        "lastSeen": 5.433,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.433
+        ]
+      },
+      {
+        "selector": "#cth10 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 377.13,
+          "y": 1132.97,
+          "width": 325.73,
+          "height": 117
+        },
+        "time": 7.607,
+        "rect": {
+          "left": 377.13,
+          "top": 1132.97,
+          "right": 702.86,
+          "bottom": 1249.97,
+          "width": 325.73,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "เนื้อข้างใต้",
+        "message": "<span> \"เนื้อข้างใต้\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 7.607,
+        "lastSeen": 7.607,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.607
+        ]
+      },
+      {
+        "selector": "#cth13 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 336.47,
+          "y": 1146.77,
+          "width": 407.06,
+          "height": 102
+        },
+        "time": 9.78,
+        "rect": {
+          "left": 336.47,
+          "top": 1146.77,
+          "right": 743.53,
+          "bottom": 1248.77,
+          "width": 407.06,
+          "height": 102
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "เป็นลูกคลื่น ย่น",
+        "message": "<span> \"เป็นลูกคลื่น ย่น\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 9.78,
+        "lastSeen": 9.78,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          9.78
+        ]
+      },
+      {
+        "selector": "#chipL1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 54.85,
+          "y": 949.34,
+          "width": 235.1,
+          "height": 69
+        },
+        "time": 11.953,
+        "rect": {
+          "left": 54.85,
+          "top": 949.34,
+          "right": 289.95,
+          "bottom": 1018.34,
+          "width": 235.1,
+          "height": 69
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ประสาทปกติ",
+        "message": "<span> \"ประสาทปกติ\" is outside the safe area: TikTok (left edge), Instagram Reels (left edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 11.953,
+        "lastSeen": 11.953,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          11.953
+        ]
+      },
+      {
+        "selector": "#chipR1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 599.15,
+          "y": 955.38,
+          "width": 183.69,
+          "height": 57.82
+        },
+        "time": 11.953,
+        "rect": {
+          "left": 599.15,
+          "top": 955.38,
+          "right": 782.84,
+          "bottom": 1013.2,
+          "width": 183.69,
+          "height": 57.82
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ประสาทเสีย",
+        "message": "<span> \"ประสาทเสีย\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 11.953,
+        "lastSeen": 11.953,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          11.953
+        ]
+      },
+      {
+        "selector": "#cth16 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 365.74,
+          "y": 1132.75,
+          "width": 348.5,
+          "height": 117.15
+        },
+        "time": 11.953,
+        "rect": {
+          "left": 365.74,
+          "top": 1132.75,
+          "right": 714.24,
+          "bottom": 1249.9,
+          "width": 348.5,
+          "height": 117.15
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "นิ้ว เสียหาย",
+        "message": "<span> \"นิ้ว เสียหาย\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 11.953,
+        "lastSeen": 11.953,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          11.953
+        ]
+      },
+      {
+        "selector": "#chipR2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 721.71,
+          "y": 951.84,
+          "width": 141.45,
+          "height": 69
+        },
+        "time": 14.127,
+        "rect": {
+          "left": 721.71,
+          "top": 951.84,
+          "right": 863.16,
+          "bottom": 1020.84,
+          "width": 141.45,
+          "height": 69
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ไม่เหี่ยว",
+        "message": "<span> \"ไม่เหี่ยว\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.127,
+        "lastSeen": 14.127,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "selector": "#cth18 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 395.42,
+          "y": 1132.97,
+          "width": 289.16,
+          "height": 117
+        },
+        "time": 14.127,
+        "rect": {
+          "left": 395.42,
+          "top": 1132.97,
+          "right": 684.58,
+          "bottom": 1249.97,
+          "width": 289.16,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ก็ ไม่เหี่ยว",
+        "message": "<span> \"ก็ ไม่เหี่ยว\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 14.127,
+        "lastSeen": 14.127,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "selector": "#cth22 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 360.01,
+          "y": 1132.93,
+          "width": 359.98,
+          "height": 117.02
+        },
+        "time": 16.3,
+        "rect": {
+          "left": 360.01,
+          "top": 1132.93,
+          "right": 719.99,
+          "bottom": 1249.95,
+          "width": 359.98,
+          "height": 117.02
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ยัง ทำงานดี",
+        "message": "<span> \"ยัง ทำงานดี\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 16.3,
+        "lastSeen": 16.3,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          16.3
+        ]
+      },
+      {
+        "selector": "#cth25 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 356.14,
+          "y": 1132.97,
+          "width": 367.7,
+          "height": 117
+        },
+        "time": 18.473,
+        "rect": {
+          "left": 356.14,
+          "top": 1132.97,
+          "right": 723.84,
+          "bottom": 1249.97,
+          "width": 367.7,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ได้จริงไหม?",
+        "message": "<span> \"ได้จริงไหม?\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 18.473,
+        "lastSeen": 18.473,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          18.473
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 1.087,
+        "selector": "#v-soak",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -34.27,
+          "top": -125.11,
+          "right": 1163.42,
+          "bottom": 1990.88,
+          "width": 1197.7,
+          "height": 2115.99
+        },
+        "containerSelector": "#sh-soak",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 34.27,
+          "right": 83.42,
+          "top": 125.11,
+          "bottom": 70.88
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "v-soak",
+          "data-start": "0.6",
+          "data-duration": "1.18",
+          "data-track-index": "3",
+          "data-media-start": "1.42",
+          "data-end": "1.7799999999999998",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -34.27,
+          "y": -125.11,
+          "width": 1197.7,
+          "height": 2115.99
+        },
+        "firstSeen": 1.087,
+        "lastSeen": 1.087,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.087
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.433,
+        "selector": "#v-nerve",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -76.56,
+          "top": -135.95,
+          "right": 1194.95,
+          "bottom": 2094.6,
+          "width": 1271.51,
+          "height": 2230.56
+        },
+        "containerSelector": "#sh-nerve",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 76.56,
+          "right": 114.95,
+          "top": 135.95,
+          "bottom": 174.6
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "v-nerve",
+          "data-start": "4.68",
+          "data-duration": "1.0",
+          "data-track-index": "3",
+          "data-media-start": "0",
+          "data-end": "5.68",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -76.56,
+          "y": -135.95,
+          "width": 1271.51,
+          "height": 2230.56
+        },
+        "firstSeen": 5.433,
+        "lastSeen": 5.433,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.433
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 18.473,
+        "selector": "#v-grip",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -90.08,
+          "top": -169.62,
+          "right": 1165.65,
+          "bottom": 2044.4,
+          "width": 1255.73,
+          "height": 2214.02
+        },
+        "containerSelector": "#sh-grip",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 90.08,
+          "right": 85.65,
+          "top": 169.62,
+          "bottom": 124.4
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "v-grip",
+          "data-start": "16.98",
+          "data-duration": "1.8",
+          "data-track-index": "4",
+          "data-media-start": "3.48",
+          "data-end": "18.78",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -90.08,
+          "y": -169.62,
+          "width": 1255.73,
+          "height": 2214.02
+        },
+        "firstSeen": 18.473,
+        "lastSeen": 18.473,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          18.473
+        ]
+      }
+    ],
+    "duration": 19.56,
+    "samples": [
+      1.087,
+      3.26,
+      5.433,
+      7.607,
+      9.78,
+      11.953,
+      14.127,
+      16.3,
+      18.473
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 21,
+    "truncated": false,
+    "faceCheck": {
+      "ran": true,
+      "candidates": 0,
+      "faces": 0
+    }
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 7,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.29:1; WCAG AA requires 3:1.",
+        "text": "ย่น",
+        "fg": "rgb(255,210,63)",
+        "bg": "rgb(248,241,229)",
+        "ratio": 1.29,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(166,137,41)",
+        "large": true,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(14) > span > em",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 336.46875,
+          "y": 1146.765625,
+          "width": 86.15625,
+          "height": 102
+        },
+        "time": 9.78,
+        "times": [
+          9.78
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2:1; WCAG AA requires 3:1.",
+        "text": "ย่น",
+        "fg": "rgb(255,255,255)",
+        "bg": "rgb(131,191,226)",
+        "ratio": 2,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(99,99,99)",
+        "large": true,
+        "selector": "#chipL2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 265.2421875,
+          "y": 951.8399658203125,
+          "width": 58.296875,
+          "height": 69
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.58:1; WCAG AA requires 3:1.",
+        "text": "น้ำ",
+        "fg": "rgb(30,155,240)",
+        "bg": "rgb(242,237,230)",
+        "ratio": 2.58,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(28,142,220)",
+        "large": true,
+        "selector": "#st0",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 82,
+          "y": 1297,
+          "width": 150,
+          "height": 124
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.62:1; WCAG AA requires 3:1.",
+        "text": "ประสาท",
+        "fg": "rgb(30,155,240)",
+        "bg": "rgb(243,239,234)",
+        "ratio": 2.62,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(28,144,223)",
+        "large": true,
+        "selector": "#st1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 266,
+          "y": 1297,
+          "width": 200,
+          "height": 124
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.64:1; WCAG AA requires 3:1.",
+        "text": "หลอดเลือดหด",
+        "fg": "rgb(30,155,240)",
+        "bg": "rgb(244,240,234)",
+        "ratio": 2.64,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(28,144,223)",
+        "large": true,
+        "selector": "#st2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 500,
+          "y": 1297,
+          "width": 290,
+          "height": 124
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.11:1; WCAG AA requires 3:1.",
+        "text": "ผิวย่น",
+        "fg": "rgb(255,255,255)",
+        "bg": "rgb(126,186,222)",
+        "ratio": 2.11,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(95,95,95)",
+        "large": true,
+        "selector": "#st3",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 824,
+          "y": 1297,
+          "width": 200,
+          "height": 124
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.14:1; WCAG AA requires 3:1.",
+        "text": "ไม่เหี่ยว",
+        "fg": "rgb(255,210,63)",
+        "bg": "rgb(235,228,217)",
+        "ratio": 1.14,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(156,128,39)",
+        "large": true,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(19) > span > em",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 444.71875,
+          "y": 1132.96875,
+          "width": 239.859375,
+          "height": 117
+        },
+        "time": 14.127,
+        "times": [
+          14.127
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.087,
+      5.433,
+      9.78,
+      14.127,
+      18.473
+    ],
+    "checked": 25,
+    "passed": 18
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 157
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}
