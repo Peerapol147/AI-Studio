@@ -1,4 +1,5 @@
 # Script (English) ≈ 88 words ≈ 29-30 s — rewritten, not translated
+> ไม่ใช้: ผู้ใช้สั่งทำแค่ภาษาไทย (เก็บไว้เผื่ออนาคต)
 
 | Scene | Line |
 |---|---|
