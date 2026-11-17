@@ -1,0 +1,347 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#gfx{opacity:0;background:radial-gradient(ellipse at 50% 34%,#1A4F80 0%,#0F3157 55%,#0A2240 100%)}
+#gfx svg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#gfx text{font-family:'Kanit',sans-serif}
+#hook{position:absolute;left:0;top:250px;width:1080px;text-align:center;z-index:50;font-weight:900;font-size:150px;line-height:1.08;
+  color:#FFD23F;-webkit-text-stroke:20px #111;paint-order:stroke fill;opacity:0}
+#hook b{display:block;font-weight:900;color:#fff}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:90px;width:900px;top:1150px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:900px;bottom:-48px;display:block;color:#fff;font-weight:700;line-height:1.18;
+  -webkit-text-stroke:16px #000;paint-order:stroke fill;transform-origin:50% 80%}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="29.1" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+
+<div id="foot" class="layer">
+  <div class="shot" id="sh-elder"><img class="m" src="assets/elder.jpg" style="object-position:50% 45%" alt=""/></div>
+  <div class="shot" id="sh-glass"><img class="m" src="assets/glass.jpg" style="object-position:55% 50%" alt=""/></div>
+  <div class="shot" id="sh-grandma"><img class="m" src="assets/grandma.jpg" style="object-position:50% 40%" alt=""/></div>
+  <div class="shot" id="sh-oldage"><img class="m" src="assets/oldage.jpg" style="object-position:55% 50%" alt=""/></div>
+  <div class="shot" id="sh-dry"><img class="m" src="assets/dry.jpg" style="object-position:50% 50%" alt=""/></div>
+  <div class="shot" id="sh-sip"><img class="m" src="assets/sip.jpg" style="object-position:27% 50%" alt=""/></div>
+  <div class="shot" id="sh-wait"><img class="m" src="assets/wait.jpg" style="object-position:50% 45%" alt=""/></div>
+  <div class="shot" id="sh-doctor"><img class="m" src="assets/doctor.jpg" style="object-position:72% 50%" alt=""/></div>
+  <div class="shot" id="sh-family"><img class="m" src="assets/family.jpg" style="object-position:45% 50%" alt=""/></div>
+</div>
+
+<div id="gfx" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+ <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+   <clipPath id="cpShape"><path id="clipD" d=""/></clipPath>
+   <path id="pPerson" d="M100 18 A62 62 0 0 1 129 128 L129 150 L172 162 Q188 168 188 186 L190 330 Q190 346 174 346 Q160 346 159 330 L155 214 L152 345 L148 470 Q148 482 136 482 L114 482 Q104 482 104 470 L101 360 L99 360 L96 470 Q96 482 86 482 L64 482 Q52 482 52 470 L48 345 L45 214 L41 330 Q40 346 26 346 Q10 346 10 330 L12 186 Q12 168 28 162 L71 150 L71 128 A62 62 0 0 1 100 18 Z"/>
+   <clipPath id="cpP0"><use href="#pPerson"/></clipPath><clipPath id="cpP1"><use href="#pPerson"/></clipPath>
+   <clipPath id="cpP2"><use href="#pPerson"/></clipPath><clipPath id="cpP3"><use href="#pPerson"/></clipPath>
+   <path id="sampler" d=""/>
+  </defs>
+
+  <!-- shot "quarter": four people, water inside, one drains -->
+  <g transform="translate(0 90)"><g id="quarter">
+   <text id="qTitle" x="540" y="430" text-anchor="middle" font-size="190" font-weight="900" fill="#FFD23F" stroke="#0A1A2E" stroke-width="18" paint-order="stroke fill">1 ใน 4</text>
+   <g id="qp0"><g clip-path="url(#cpP0)"><rect width="200" height="500" fill="#13385F"/><rect id="qw0" y="120" width="200" height="500" fill="#4FC3F7"/></g><use href="#pPerson" fill="none" stroke="#fff" stroke-width="9"/></g>
+   <g id="qp1"><g clip-path="url(#cpP1)"><rect width="200" height="500" fill="#13385F"/><rect id="qw1" y="120" width="200" height="500" fill="#4FC3F7"/></g><use href="#pPerson" fill="none" stroke="#fff" stroke-width="9"/></g>
+   <g id="qp2"><g clip-path="url(#cpP2)"><rect width="200" height="500" fill="#13385F"/><rect id="qw2" y="120" width="200" height="500" fill="#4FC3F7"/></g><use href="#pPerson" fill="none" stroke="#fff" stroke-width="9"/></g>
+   <g id="qp3"><g clip-path="url(#cpP3)"><rect width="200" height="500" fill="#13385F"/><rect id="qw3" y="120" width="200" height="500" fill="#4FC3F7"/></g><use id="qs3" href="#pPerson" fill="none" stroke="#fff" stroke-width="9"/></g>
+  </g>
+
+  </g>
+  <!-- shots brain -> body -> test -> compare: ONE water-drop shape that morphs -->
+  <g transform="translate(540 690) scale(0.88) translate(-540 -610)"><g id="morph">
+   <g id="shapeG">
+    <path id="shapeBg" d="" fill="#13385F"/>
+    <g clip-path="url(#cpShape)"><rect id="water" x="0" y="300" width="1080" height="1700" fill="#4FC3F7"/>
+     <path id="waveTop" d="" fill="#4FC3F7"/></g>
+    <path id="shapeLine" d="" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>
+   </g>
+   <!-- brain details -->
+   <g id="sulci" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0">
+    <path d="M330 600 Q400 540 470 600 Q520 650 590 590"/><path d="M620 520 Q690 480 740 560"/>
+    <path d="M300 720 Q380 680 440 740 Q500 790 580 730 Q650 680 760 720"/><path d="M540 470 Q560 520 530 560"/>
+    <path d="M400 820 Q470 800 520 840"/>
+   </g>
+   <g id="signal" opacity="0">
+    <path id="wave" d="" fill="none" stroke="#FFD23F" stroke-width="12" stroke-linecap="round"/>
+    <g id="sigChip"><rect x="355" y="180" width="370" height="100" rx="50" fill="#FFD23F"/>
+     <text x="540" y="250" text-anchor="middle" font-size="60" font-weight="700" fill="#0A2240">สัญญาณหิวน้ำ</text></g>
+   </g>
+   <!-- body label -->
+   <g id="bodyChip" opacity="0"><rect x="330" y="140" width="420" height="96" rx="48" fill="#fff"/>
+    <text x="540" y="206" text-anchor="middle" font-size="56" font-weight="700" fill="#0A2240">น้ำในร่างกาย</text></g>
+   <!-- 24h clock -->
+   <g id="clock" opacity="0">
+    <g id="ticks" stroke="#0A2240" stroke-width="8" stroke-linecap="round"></g>
+    <text x="540" y="560" text-anchor="middle" font-size="80" font-weight="900" fill="#0A2240">24</text>
+    <text x="540" y="610" text-anchor="middle" font-size="40" font-weight="700" fill="#0A2240">ชั่วโมง</text>
+    <g id="sweep"><path id="sweepArc" d="" fill="#4FC3F7" opacity="0.35"/></g>
+    <line id="hand" x1="540" y1="640" x2="540" y2="440" stroke="#E8452C" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="540" cy="640" r="18" fill="#E8452C"/>
+   </g>
+   <g id="noGlass" opacity="0">
+    <circle cx="840" cy="400" r="105" fill="#fff" stroke="#0A2240" stroke-width="8"/>
+    <path d="M800 345 L880 345 L868 460 L812 460 Z" fill="#4FC3F7" stroke="#0A2240" stroke-width="8" stroke-linejoin="round"/>
+    <line x1="770" y1="330" x2="910" y2="470" stroke="#E8452C" stroke-width="16" stroke-linecap="round"/>
+   </g>
+   <g id="testChip" opacity="0"><rect x="330" y="150" width="420" height="96" rx="48" fill="#FFD23F"/>
+    <text x="540" y="216" text-anchor="middle" font-size="58" font-weight="700" fill="#0A2240">งดน้ำ 1 วัน</text></g>
+   <!-- compare bars (the morph shape becomes the first "old" bar) -->
+   <g id="chart" opacity="0">
+    <line x1="150" y1="940" x2="930" y2="940" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+    <rect id="barY1" x="360" y="440" width="140" height="500" rx="18" fill="#4FC3F7"/>
+    <rect id="barO2" x="580" y="440" width="140" height="500" rx="18" fill="#FF8A3D"/>
+    <rect id="barY2" x="740" y="440" width="140" height="500" rx="18" fill="#4FC3F7"/>
+    <text id="lab1" x="350" y="1010" text-anchor="middle" font-size="58" font-weight="700" fill="#fff">ขาดน้ำ</text>
+    <text id="lab2" x="730" y="1010" text-anchor="middle" font-size="58" font-weight="700" fill="#fff">หิวน้ำ</text>
+    <g id="legend"><rect x="200" y="170" width="54" height="54" rx="12" fill="#FF8A3D"/>
+     <text x="270" y="216" font-size="54" font-weight="700" fill="#fff">คนแก่</text>
+     <rect x="560" y="170" width="54" height="54" rx="12" fill="#4FC3F7"/>
+     <text x="630" y="216" font-size="54" font-weight="700" fill="#fff">คนหนุ่ม</text></g>
+   </g>
+  </g></g>
+ </svg>
+</div>
+
+<div id="hook">ขาดน้ำ<b>ไม่รู้ตัว</b></div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="0.0" data-duration="0.38" data-track-index="20"><span style="font-size:84px">เพื่อนๆ</span></div>
+  <div id="c1" class="clip cap" data-start="0.38" data-duration="0.66" data-track-index="20"><span style="font-size:84px">รู้ไหมว่า</span></div>
+  <div id="c2" class="clip cap" data-start="1.04" data-duration="0.4" data-track-index="20"><span style="font-size:84px">คนแก่</span></div>
+  <div id="c3" class="clip cap" data-start="1.44" data-duration="0.92" data-track-index="20"><span style="font-size:76px">ราวหนึ่งในสี่</span></div>
+  <div id="c4" class="clip cap" data-start="2.36" data-duration="0.44" data-track-index="20"><span style="font-size:84px">อาจกำลัง</span></div>
+  <div id="c5" class="clip cap" data-start="2.8" data-duration="0.7" data-track-index="20"><span style="font-size:84px">ขาดน้ำ</span></div>
+  <div id="c6" class="clip cap" data-start="3.5" data-duration="0.24" data-track-index="20"><span style="font-size:84px">ทั้งที่</span></div>
+  <div id="c7" class="clip cap" data-start="3.74" data-duration="0.42" data-track-index="20"><span style="font-size:84px">ไม่รู้สึก</span></div>
+  <div id="c8" class="clip cap" data-start="4.16" data-duration="0.78" data-track-index="20"><span style="font-size:84px">หิวน้ำเลย</span></div>
+  <div id="c9" class="clip cap" data-start="4.94" data-duration="0.44" data-track-index="20"><span style="font-size:84px">เวลาเห็น</span></div>
+  <div id="c10" class="clip cap" data-start="5.38" data-duration="0.38" data-track-index="20"><span style="font-size:84px">คุณยาย</span></div>
+  <div id="c11" class="clip cap" data-start="5.76" data-duration="0.94" data-track-index="20"><span style="font-size:84px">มึนๆ งงๆ</span></div>
+  <div id="c12" class="clip cap" data-start="6.7" data-duration="0.44" data-track-index="20"><span style="font-size:84px">เราคิดว่า</span></div>
+  <div id="c13" class="clip cap" data-start="7.14" data-duration="0.42" data-track-index="20"><span style="font-size:84px">แค่แก่</span></div>
+  <div id="c14" class="clip cap" data-start="7.56" data-duration="0.62" data-track-index="20"><span style="font-size:84px">ตามวัย</span></div>
+  <div id="c15" class="clip cap" data-start="8.18" data-duration="1.02" data-track-index="20"><span style="font-size:68px">แต่ความจริงคือ</span></div>
+  <div id="c16" class="clip cap" data-start="9.2" data-duration="0.28" data-track-index="20"><span style="font-size:84px">อาจเป็น</span></div>
+  <div id="c17" class="clip cap" data-start="9.48" data-duration="0.86" data-track-index="20"><span style="font-size:84px">แค่ขาดน้ำ</span></div>
+  <div id="c18" class="clip cap" data-start="10.34" data-duration="0.34" data-track-index="20"><span style="font-size:84px">เพราะพอ</span></div>
+  <div id="c19" class="clip cap" data-start="10.68" data-duration="0.98" data-track-index="20"><span style="font-size:76px">อายุมากขึ้น</span></div>
+  <div id="c20" class="clip cap" data-start="11.66" data-duration="0.32" data-track-index="20"><span style="font-size:84px">สมอง</span></div>
+  <div id="c21" class="clip cap" data-start="11.98" data-duration="0.48" data-track-index="20"><span style="font-size:84px">ส่งสัญญาณ</span></div>
+  <div id="c22" class="clip cap" data-start="12.46" data-duration="0.4" data-track-index="20"><span style="font-size:84px">หิวน้ำ</span></div>
+  <div id="c23" class="clip cap" data-start="12.86" data-duration="0.36" data-track-index="20"><span style="font-size:84px">ช้าลง</span></div>
+  <div id="c24" class="clip cap" data-start="13.22" data-duration="0.82" data-track-index="20"><span style="font-size:84px">และเบาลง</span></div>
+  <div id="c25" class="clip cap" data-start="14.04" data-duration="0.36" data-track-index="20"><span style="font-size:84px">ร่างกาย</span></div>
+  <div id="c26" class="clip cap" data-start="14.4" data-duration="0.5" data-track-index="20"><span style="font-size:84px">ก็เก็บน้ำ</span></div>
+  <div id="c27" class="clip cap" data-start="14.9" data-duration="0.74" data-track-index="20"><span style="font-size:84px">ได้น้อยลง</span></div>
+  <div id="c28" class="clip cap" data-start="15.64" data-duration="0.62" data-track-index="20"><span style="font-size:76px">มีการทดลอง</span></div>
+  <div id="c29" class="clip cap" data-start="16.26" data-duration="0.48" data-track-index="20"><span style="font-size:84px">ให้งดน้ำ</span></div>
+  <div id="c30" class="clip cap" data-start="16.74" data-duration="0.66" data-track-index="20"><span style="font-size:84px">หนึ่งวัน</span></div>
+  <div id="c31" class="clip cap" data-start="17.4" data-duration="0.42" data-track-index="20"><span style="font-size:84px">คนแก่</span></div>
+  <div id="c32" class="clip cap" data-start="17.82" data-duration="0.72" data-track-index="20"><span style="font-size:76px">ขาดน้ำมากกว่า</span></div>
+  <div id="c33" class="clip cap" data-start="18.54" data-duration="0.52" data-track-index="20"><span style="font-size:84px">คนหนุ่ม</span></div>
+  <div id="c34" class="clip cap" data-start="19.06" data-duration="0.36" data-track-index="20"><span style="font-size:84px">แต่กลับ</span></div>
+  <div id="c35" class="clip cap" data-start="19.42" data-duration="1.0" data-track-index="20"><span style="font-size:68px">หิวน้ำน้อยกว่า</span></div>
+  <div id="c36" class="clip cap" data-start="20.42" data-duration="0.5" data-track-index="20"><span style="font-size:76px">เลยต้องชวน</span></div>
+  <div id="c37" class="clip cap" data-start="20.92" data-duration="0.34" data-track-index="20"><span style="font-size:84px">จิบน้ำ</span></div>
+  <div id="c38" class="clip cap" data-start="21.26" data-duration="0.82" data-track-index="20"><span style="font-size:84px">เป็นช่วงๆ</span></div>
+  <div id="c39" class="clip cap" data-start="22.08" data-duration="0.94" data-track-index="20"><span style="font-size:76px">ไม่ต้องรอหิว</span></div>
+  <div id="c40" class="clip cap" data-start="23.02" data-duration="0.32" data-track-index="20"><span style="font-size:84px">ใครเป็น</span></div>
+  <div id="c41" class="clip cap" data-start="23.34" data-duration="0.54" data-track-index="20"><span style="font-size:84px">โรคหัวใจ</span></div>
+  <div id="c42" class="clip cap" data-start="23.88" data-duration="0.86" data-track-index="20"><span style="font-size:84px">หรือโรคไต</span></div>
+  <div id="c43" class="clip cap" data-start="24.74" data-duration="0.38" data-track-index="20"><span style="font-size:84px">ถามหมอ</span></div>
+  <div id="c44" class="clip cap" data-start="25.12" data-duration="0.52" data-track-index="20"><span style="font-size:84px">ก่อนนะ</span></div>
+  <div id="c45" class="clip cap" data-start="25.64" data-duration="0.26" data-track-index="20"><span style="font-size:84px">ที่บ้าน</span></div>
+  <div id="c46" class="clip cap" data-start="25.9" data-duration="0.64" data-track-index="20"><span style="font-size:84px">เพื่อนๆ</span></div>
+  <div id="c47" class="clip cap" data-start="26.54" data-duration="0.48" data-track-index="20"><span style="font-size:84px">ใครชอบ</span></div>
+  <div id="c48" class="clip cap" data-start="27.02" data-duration="0.52" data-track-index="20"><span style="font-size:84px">ลืมกินน้ำ</span></div>
+  <div id="c49" class="clip cap" data-start="27.54" data-duration="0.46" data-track-index="20"><span style="font-size:84px">บ้าง?</span></div>
+  <div id="c50" class="clip cap" data-start="28.0" data-duration="0.38" data-track-index="20"><span style="font-size:84px">คอมเมนต์</span></div>
+  <div id="c51" class="clip cap" data-start="28.38" data-duration="0.72" data-track-index="20"><span style="font-size:84px">บอกหน่อย</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="28.92" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="29.1" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-ea4ef155.mp3"></audio>
+</div>
+
+<script>
+(function(){
+const DUR=29.1;
+const SHOTS=[{"id": "elder", "kind": "footage", "src": "assets/footage/elder.jpg", "focus": "50% 45%", "start": 0.0, "end": 1.52, "word_at": 0.0, "hit_at": 1.04}, {"id": "quarter", "kind": "graphic", "src": null, "focus": "50% 50%", "start": 1.52, "end": 3.66, "word_at": 1.6, "hit_at": null}, {"id": "glass", "kind": "footage", "src": "assets/footage/glass.jpg", "focus": "55% 50%", "start": 3.66, "end": 5.3, "word_at": 3.74, "hit_at": 4.16}, {"id": "grandma", "kind": "footage", "src": "assets/footage/grandma.jpg", "focus": "50% 40%", "start": 5.3, "end": 7.06, "word_at": 5.38, "hit_at": 6.24}, {"id": "oldage", "kind": "footage", "src": "assets/footage/oldage.jpg", "focus": "55% 50%", "start": 7.06, "end": 9.6, "word_at": 7.14, "hit_at": null}, {"id": "dry", "kind": "footage", "src": "assets/footage/dry.jpg", "focus": "50% 50%", "start": 9.6, "end": 11.58, "word_at": 9.68, "hit_at": null}, {"id": "brain", "kind": "graphic", "src": null, "focus": "50% 50%", "start": 11.58, "end": 13.96, "word_at": 11.66, "hit_at": 13.36}, {"id": "body", "kind": "graphic", "src": null, "focus": "50% 50%", "start": 13.96, "end": 15.9, "word_at": 14.04, "hit_at": null}, {"id": "test", "kind": "graphic", "src": null, "focus": "50% 50%", "start": 15.9, "end": 17.32, "word_at": 15.98, "hit_at": null}, {"id": "compare", "kind": "graphic", "src": null, "focus": "50% 50%", "start": 17.32, "end": 20.84, "word_at": 17.4, "hit_at": 19.42}, {"id": "sip", "kind": "footage", "src": "assets/footage/sip.jpg", "focus": "27% 50%", "start": 20.84, "end": 22.0, "word_at": 20.92, "hit_at": 20.92}, {"id": "wait", "kind": "footage", "src": "assets/footage/wait.jpg", "focus": "50% 45%", "start": 22.0, "end": 23.26, "word_at": 22.08, "hit_at": null}, {"id": "doctor", "kind": "footage", "src": "assets/footage/doctor.jpg", "focus": "72% 50%", "start": 23.26, "end": 25.56, "word_at": 23.34, "hit_at": null}, {"id": "family", "kind": "footage", "src": "assets/footage/family.jpg", "focus": "45% 50%", "start": 25.56, "end": 29.1, "word_at": 25.64, "hit_at": null}];          // from assets/audio/shots-th.json via build_index.py
+const W={"quarter_dry": 2.8, "slower": 12.86, "less": 15.06, "young": 18.54};                  // secondary word times from words.json
+const CAPT=[0.0, 0.38, 1.04, 1.44, 2.36, 2.8, 3.5, 3.74, 4.16, 4.94, 5.38, 5.76, 6.7, 7.14, 7.56, 8.18, 9.2, 9.48, 10.34, 10.68, 11.66, 11.98, 12.46, 12.86, 13.22, 14.04, 14.4, 14.9, 15.64, 16.26, 16.74, 17.4, 17.82, 18.54, 19.06, 19.42, 20.42, 20.92, 21.26, 22.08, 23.02, 23.34, 23.88, 24.74, 25.12, 25.64, 25.9, 26.54, 27.02, 27.54, 28.0, 28.38];
+const SH={}; SHOTS.forEach(s=>SH[s.id]=s);
+
+// ---------- spring kit (motion-broll engine) ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[27,0.86],SLOW=[12.5,0.9],POP=[16,0.6];
+const sp=(t,t0,k=MORPH)=>S(t-t0,k[0],k[1]);
+const $=id=>document.getElementById(id);
+const op=(el,o)=>{el.setAttribute('opacity',clamp(o).toFixed(4));};
+
+// ---------- footage: hard cut at start, Ken Burns 3->8%, punch-in +6% spring at hit_at ----------
+const FOOT=SHOTS.filter(s=>s.kind==='footage');
+FOOT.forEach((s,i)=>{const el=$('sh-'+s.id); el.style.transformOrigin=s.focus; s.el=el; s.dir=i%2?1:-1;});
+function footage(t){
+  for(const s of FOOT){
+    const on=t>=s.start&&t<s.end;
+    s.el.style.opacity=on?'1':'0'; if(!on)continue;
+    const u=(t-s.start)/(s.end-s.start);
+    let sc=1.03+0.05*u, tx=s.dir*14*u;
+    if(s.hit_at!=null) sc*=1+0.06*sp(t,s.hit_at,FAST);
+    s.el.style.transform=`translateX(${tx.toFixed(2)}px) scale(${sc.toFixed(5)})`;
+  }
+}
+
+// ---------- hook title on the first shot ----------
+function hook(t){
+  const el=$('hook'), s=SH.elder;
+  if(t>=s.end){el.style.opacity='0';return;}
+  const a=S(t+0.12,14,0.7); // already mostly settled on frame 0 (frame 0 = cover)
+  el.style.opacity='1'; el.style.transform=`scale(${(0.9+0.1*a).toFixed(4)})`;
+}
+
+// ---------- graphics layer visibility (hard cuts at shot starts) ----------
+const GQ=SH.quarter, GB=SH.brain, GBo=SH.body, GT=SH.test, GC=SH.compare;
+function gfxOn(t){return (t>=GQ.start&&t<GQ.end)||(t>=GB.start&&t<GC.end);}
+
+// ---------- shot "quarter" ----------
+const QX=[110,340,570,800], QY=470;
+function quarter(t){
+  const on=t>=GQ.start&&t<GQ.end; $('quarter').style.display=on?'':'none'; if(!on)return;
+  const ta=sp(t,GQ.start,POP); $('qTitle').setAttribute('transform',`translate(540 380) scale(${(0.3+0.7*ta).toFixed(4)}) translate(-540 -380)`);
+  for(let i=0;i<4;i++){
+    const a=S(t-(GQ.word_at-0.06+i*0.07),16,0.62), sc=0.85*Math.max(0,a);
+    $('qp'+i).setAttribute('transform',`translate(${QX[i]+85} ${QY+410}) scale(${sc.toFixed(4)}) translate(-100 -482)`);
+    const dr=i===3?eio((t-W.quarter_dry)/0.6):0;
+    $('qw'+i).setAttribute('y',(10+470*dr).toFixed(1));
+  }
+  const dr=eio((t-W.quarter_dry)/0.6);
+  $('qs3').setAttribute('stroke',dr>0.5?'#FF8A3D':'#fff');
+}
+
+// ---------- the morphing shape ----------
+const N=120;
+const samp=$('sampler');
+function sample(d){samp.setAttribute('d',d);const L=samp.getTotalLength();const p=[];
+  for(let i=0;i<N;i++){const q=samp.getPointAtLength(L*i/N);p.push([q.x,q.y]);}return p;}
+const brainD=(()=>{const cx=540,cy=650,a=300,b=230,pts=[];for(let i=0;i<=180;i++){const th=-Math.PI/2+2*Math.PI*i/180;
+  let r=1+0.045*Math.sin(9*th+0.6)+0.02*Math.sin(17*th); let x=cx+a*r*Math.cos(th), y=cy+b*r*Math.sin(th);
+  if(y>cy+b*0.55)y=cy+b*0.55+(y-cy-b*0.55)*0.5; pts.push(x.toFixed(1)+' '+y.toFixed(1));}
+  return 'M'+pts.join(' L')+'Z';})();
+const SHAPES={
+ drop:sample('M540 330 C600 450 780 540 780 700 A240 240 0 0 1 300 700 C300 540 480 450 540 330 Z'),
+ brain:sample(brainD),
+ body:sample('M540 255 A85 85 0 0 1 580 415 L580 450 L700 480 Q732 488 734 520 L742 800 Q742 825 717 825 Q692 825 690 800 L680 570 L660 830 L642 1040 Q640 1062 620 1062 L572 1062 Q552 1062 551 1040 L545 870 L535 870 L529 1040 Q528 1062 508 1062 L460 1062 Q440 1062 438 1040 L420 830 L400 570 L390 800 Q388 825 363 825 Q338 825 338 800 L346 520 Q348 488 380 480 L500 450 L500 415 A85 85 0 0 1 540 255 Z'),
+ clock:sample('M540 380 A260 260 0 0 1 540 900 A260 260 0 0 1 540 380 Z'),
+ bar:sample('M210 380 L340 380 Q350 380 350 390 L350 940 L210 940 Q200 940 200 930 L200 390 Q200 380 210 380 Z'),
+};
+// clock follows the body silhouette's centre a little lower: shift clock up to 640 centre
+SHAPES.clock=SHAPES.clock.map(([x,y])=>[x,y-0]);
+const KEYS=[[GB.word_at,'brain'],[GBo.start,'body'],[GT.start,'clock'],[GC.start,'bar']];
+function shapeAt(t){
+  let p=SHAPES.drop.map(q=>q.slice());
+  for(const [k,name] of KEYS){const m=sp(t,k,MORPH); if(m===0)continue; const T=SHAPES[name];
+    for(let i=0;i<N;i++){p[i][0]=lerp(p[i][0],T[i][0],m);p[i][1]=lerp(p[i][1],T[i][1],m);}}
+  return p;
+}
+const toD=p=>'M'+p.map(q=>q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' L')+'Z';
+// colours: water blue fill through brain/body; clock = light face; bar = orange (old)
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const A=hex(a),B=hex(b);return `rgb(${A.map((x,i)=>Math.round(lerp(x,B[i],clamp(u)))).join(',')})`;};
+// tick marks (24)
+(()=>{const g=$('ticks');let s='';for(let i=0;i<24;i++){const a=2*Math.PI*i/24,r1=i%6?222:200,r2=240;
+  s+=`<line x1="${(540+r1*Math.sin(a)).toFixed(1)}" y1="${(640-r1*Math.cos(a)).toFixed(1)}" x2="${(540+r2*Math.sin(a)).toFixed(1)}" y2="${(640-r2*Math.cos(a)).toFixed(1)}"/>`;}
+  g.innerHTML=s;})();
+
+function morph(t){
+  const on=t>=GB.start&&t<GC.end; $('morph').style.display=on?'':'none'; if(!on)return;
+  const p=shapeAt(t), d=toD(p);
+  $('shapeLine').setAttribute('d',d); $('shapeBg').setAttribute('d',d); $('clipD').setAttribute('d',d);
+  // appear: the drop springs in at the cut
+  const a=sp(t,GB.start,POP), sc=0.6+0.4*a;
+  $('shapeG').setAttribute('transform',`translate(540 640) scale(${sc.toFixed(4)}) translate(-540 -640)`);
+  const mClock=sp(t,GT.start), mBar=sp(t,GC.start);
+  // water level: brain full, body drops on "น้อยลง", clock -> no water, bar -> solid orange
+  let wy=lerp(300,250,sp(t,GB.word_at)); wy=lerp(wy,330,sp(t,GBo.start)); wy=lerp(wy,700,sp(t,W.less,SLOW));
+  wy=lerp(wy,1000,mClock);
+  $('water').setAttribute('y',wy.toFixed(1));
+  const wt=t*3.2, wp=[];for(let x=0;x<=1080;x+=30)wp.push(`${x} ${(wy+9*Math.sin(x/70+wt)).toFixed(1)}`);
+  $('waveTop').setAttribute('d',`M0 ${wy+40} L${wp.join(' L')} L1080 ${wy+40}Z`);
+  $('shapeBg').setAttribute('fill',mBar>0.01?mix('#F4F8FB','#FF8A3D',mBar):mix('#13385F','#F4F8FB',mClock));
+  $('shapeLine').setAttribute('stroke',mBar>0.01?mix('#FFFFFF','#FF8A3D',mBar):mix('#FFFFFF','#0A2240',mClock));
+  // brain: sulci and the thirst signal (slows from "ช้าลง", fades exactly at hit "เบาลง")
+  const brainV=clamp(sp(t,GB.word_at+0.15,SLOW))*(1-clamp(sp(t,GBo.start,FAST)));
+  op($('sulci'),brainV);
+  const sigIn=eo((t-GB.word_at-0.2)/0.3), sigOut=1-eio((t-GB.hit_at)/0.45);
+  const sigV=t<GBo.start?sigIn*Math.max(0.12,sigOut):0;
+  op($('signal'),sigV);
+  if(sigV>0){
+    const slow=eio((t-W.slower)/0.5), fade=eio((t-GB.hit_at)/0.45);
+    const amp=lerp(lerp(46,30,slow),5,fade);
+    // phase = integral of a speed that drops at "ช้าลง" and again at the hit
+    const ph=(tt)=>{const t0=GB.word_at; let v=0; const st=0.02; for(let x=t0;x<tt;x+=st){const s1=eio((x-W.slower)/0.5),f1=eio((x-GB.hit_at)/0.45);v+=st*lerp(lerp(11,5,s1),1.2,f1);} return v;};
+    const P=ph(t), pts=[];
+    for(let x=160;x<=920;x+=8){const env=Math.sin(Math.PI*(x-160)/760); pts.push(`${x} ${(330+amp*env*Math.sin(x/38-P)).toFixed(1)}`);}
+    $('wave').setAttribute('d','M'+pts.join(' L'));
+    $('wave').setAttribute('stroke-opacity',(1-0.75*fade).toFixed(3));
+    $('sigChip').setAttribute('opacity',(1-0.6*fade).toFixed(3));
+  }
+  // body chip
+  op($('bodyChip'),(t>=GBo.start&&t<GT.start)?clamp(sp(t,GBo.word_at,POP)):0);
+  // clock: face appears with the morph, hand spins one full turn from the cue word to the shot end
+  const clockV=(t>=GT.start&&t<GC.start)?clamp(mClock*1.2):0;
+  op($('clock'),clockV);
+  if(clockV>0){const u=eio((t-GT.word_at)/(GT.end-GT.word_at-0.12)), ang=360*u;
+    $('hand').setAttribute('transform',`rotate(${ang.toFixed(2)} 540 640)`);
+    const r=200,a1=ang*Math.PI/180, large=ang>180?1:0;
+    $('sweepArc').setAttribute('d',ang<0.5?'':ang>=359.5?`M540 640 m-${r} 0 a${r} ${r} 0 1 0 ${2*r} 0 a${r} ${r} 0 1 0 -${2*r} 0`:
+      `M540 640 L540 ${640-r} A${r} ${r} 0 ${large} 1 ${(540+r*Math.sin(a1)).toFixed(1)} ${(640-r*Math.cos(a1)).toFixed(1)} Z`);}
+  const g=(t>=GT.start&&t<GC.start)?clamp(sp(t,GT.word_at+0.1,POP)):0;
+  op($('noGlass'),g); $('noGlass').setAttribute('transform',`translate(840 400) scale(${(0.5+0.5*g).toFixed(3)}) translate(-840 -400)`);
+  op($('testChip'),(t>=GT.start&&t<GC.start)?clamp(sp(t,GT.start,POP)):0);
+  // compare: young "ขาดน้ำ" bar on "คนหนุ่ม", the "หิวน้ำ" pair lands on hit "หิวน้ำน้อยกว่า"
+  const chartV=t>=GC.start?clamp(sp(t,GC.start+0.05,SLOW)):0; op($('chart'),chartV);
+  if(chartV>0){
+    const bar=(id,h,t0)=>{const k=sp(t,t0,MORPH),hh=Math.max(0,h*k);const el=$(id);el.setAttribute('y',(940-hh).toFixed(1));el.setAttribute('height',hh.toFixed(1));};
+    bar('barY1',300,W.young); bar('barO2',170,GC.hit_at); bar('barY2',420,GC.hit_at+0.06);
+    const l2=clamp(sp(t,GC.hit_at-0.1,POP)); op($('lab2'),l2);
+    // label 1 under the first pair
+    $('lab1').setAttribute('x','350');
+  }
+}
+
+// ---------- captions ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,32,0.72);
+  capEls[i].style.transform=`scale(${(0.86+0.14*a).toFixed(4)})`;
+  capEls[i].style.opacity=clamp(tau/0.05).toFixed(3);
+}
+
+function render(t){
+  footage(t); hook(t);
+  $('gfx').style.opacity=gfxOn(t)?'1':'0';
+  quarter(t); morph(t); captions(t);
+}
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:DUR,duration:DUR,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

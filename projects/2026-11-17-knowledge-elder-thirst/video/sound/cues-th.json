@@ -1,0 +1,5 @@
+[
+ {"t": 1.6, "type": "appear", "desc": "pop at 'หนึ่งในสี่': four people spring in", "sfx": "pop/kenney-interface-drop-002.ogg", "gain": -10},
+ {"t": 5.3, "type": "scene_cut", "desc": "whoosh into 'คุณยาย' shot", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -12},
+ {"t": 19.42, "type": "success", "desc": "ding at hit 'หิวน้ำน้อยกว่า': second bar pair lands", "sfx": "ding/fs-571513-soft-notifications-bell-ding-d.ogg", "gain": -10}
+]
