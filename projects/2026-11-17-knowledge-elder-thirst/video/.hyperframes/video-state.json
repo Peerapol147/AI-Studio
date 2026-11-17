@@ -628,5 +628,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "fdab6d70-5c3a-4366-80bc-479685acb9e2",
+      "completedAt": 1794938611353,
+      "output": "/tmp/claude-0/-home-user-ai-studio/c40fcbcc-0272-52b9-9e22-09372004ca65/scratchpad/silent.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
