@@ -1,0 +1,12 @@
+# Credits
+- pixabay-5099450.jpg: Scofield38 via Pixabay https://pixabay.com/photos/adorable-animal-australia-bear-5099450/ (Pixabay Content License)
+- pixabay-687524.jpg: sandid via Pixabay https://pixabay.com/photos/wombat-marsupial-furry-native-687524/ (Pixabay Content License)
+- pixabay-10521763.jpg: waltc via Pixabay https://pixabay.com/photos/wombat-nature-animal-australia-10521763/ (Pixabay Content License)
+- pixabay-6566987.jpg: pen_ash via Pixabay https://pixabay.com/photos/common-wombat-wombat-animal-6566987/ (Pixabay Content License)
+- pixabay-6634722.jpg: PenelopePitstop via Pixabay https://pixabay.com/photos/wombat-animal-wildlife-nature-6634722/ (Pixabay Content License)
+- pixabay-3887250.jpg: pen_ash via Pixabay https://pixabay.com/photos/wombat-marsupial-animal-3887250/ (Pixabay Content License)
+- pixabay-6573218.jpg: pen_ash via Pixabay https://pixabay.com/photos/common-wombat-coarse-haired-wombat-6573218/ (Pixabay Content License)
+- pixabay-9762240.jpg: pen_ash via Pixabay https://pixabay.com/photos/common-wombat-wombat-animal-9762240/ (Pixabay Content License)
+- pixabay-5385056.jpg: LollipopPhotographyUK via Pixabay https://pixabay.com/photos/trees-nature-outdoors-woods-path-5385056/ (Pixabay Content License)
+- (trims of) pixabay-317566: pen_ash via Pixabay https://pixabay.com/videos/id-317566/ (Pixabay Content License)
+- (trims of) pixabay-271008: pen_ash via Pixabay https://pixabay.com/videos/id-271008/ (Pixabay Content License)
