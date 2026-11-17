@@ -2,17 +2,21 @@
   "lead": 0.08,
   "end": "auto",
   "shots": [
-    {"id": "hook",   "cue": {"th": "ทำไม"}},
-    {"id": "soak",   "cue": {"th": "แช่น้ำ"}},
-    {"id": "prune",  "cue": {"th": "นิ้วเหี่ยว"}},
-    {"id": "myth",   "src": "graphic:cross-section", "cue": {"th": "หลายคนคิดว่า"}, "hit": {"th": "พอง"}},
-    {"id": "nerve",  "cue": {"th": "ระบบประสาท"}},
-    {"id": "vessel", "cue": {"th": "หลอดเลือด"}},
-    {"id": "shrink", "src": "graphic:cross-section", "cue": {"th": "ใต้ผิว"}, "hit": {"th": "หดตัว"}},
-    {"id": "fold",   "src": "graphic:cross-section", "cue": {"th": "เนื้อข้างใต้"}, "hit": {"th": "ย่น"}},
-    {"id": "proof",  "src": "graphic:two-fingers", "cue": {"th": "หลักฐาน"}, "hit": {"th": "ไม่เหี่ยว"}},
-    {"id": "sign",   "cue": {"th": "นิ้วเหี่ยวเลย"}, "hit": {"th": "ทำงานดี"}},
-    {"id": "grip",   "cue": {"th": "จับของเปียก"}},
-    {"id": "ask",    "src": "graphic:comment", "cue": {"th": "คอมเมนต์"}}
+    {"id": "hook",    "cue": {"th": "ทำไม"}},
+    {"id": "soak",    "cue": {"th": "นานๆ"}},
+    {"id": "myth",    "src": "graphic:cross-section", "cue": {"th": "หลายคนคิดว่า"}, "hit": {"th": "พอง"}},
+    {"id": "truth",   "src": "graphic:cross-section", "cue": {"th": "แต่ความจริง"}},
+    {"id": "nerve",   "cue": {"th": "ระบบประสาท"}},
+    {"id": "vessel",  "cue": {"th": "หลอดเลือด"}},
+    {"id": "shrink",  "src": "graphic:cross-section", "cue": {"th": "หดตัว"}, "hit": {"th": "หดตัว"}},
+    {"id": "sink",    "src": "graphic:cross-section", "cue": {"th": "เนื้อข้างใต้"}, "hit": {"th": "ยุบ"}},
+    {"id": "fold",    "src": "graphic:cross-section", "cue": {"th": "ผิวข้างบน"}, "hit": {"th": "ย่น"}},
+    {"id": "proof",   "src": "graphic:proof-stamp", "cue": {"th": "หลักฐาน"}},
+    {"id": "damaged", "src": "graphic:broken-nerve", "cue": {"th": "คนที่เส้นประสาท"}, "hit": {"th": "เสียหาย"}},
+    {"id": "compare", "src": "graphic:two-fingers", "cue": {"th": "แช่นาน"}, "hit": {"th": "ไม่เหี่ยว"}},
+    {"id": "sign",    "cue": {"th": "นิ้วเหี่ยวเลย"}},
+    {"id": "nerveok", "src": "graphic:nerve-glow", "cue": {"th": "เส้นประสาทนิ้วยัง"}, "hit": {"th": "ทำงานดี"}},
+    {"id": "grip",    "cue": {"th": "แล้วมัน"}},
+    {"id": "ask",     "src": "graphic:comment", "cue": {"th": "คอมเมนต์"}}
   ]
 }
