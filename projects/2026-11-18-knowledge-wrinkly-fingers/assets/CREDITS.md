@@ -1,1 +1,7 @@
 - music-jamendo-42b51123.mp3: "Gliding Through City Streets" by Kara Square (CC BY 3.0) https://www.jamendo.com/track/1658707
+- footage/soak-pixabay-51807.mp4: mrbobdobolina via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-51807/
+- footage/nerve-pixabay-362487.mp4: olenchic via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-362487/
+- footage/vessel-pixabay-26799.mp4: motionstock via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-26799/
+- footage/grip-pixabay-4906.mp4: klimkin via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-4906/
+- footage/hook-wikimedia-wrinkly-fingers-002.jpg: "Wrinkly Fingers 002" by Sebastian Wallroth, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Wrinkly_Fingers_002.JPG (3840 px thumbnail, uncropped)
+- footage/sign-wikimedia-wrinkly-fingers-001.jpg: "Wrinkly Fingers 001" by Sebastian Wallroth, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Wrinkly_Fingers_001.JPG (3840 px thumbnail, uncropped)

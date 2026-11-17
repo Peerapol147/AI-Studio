@@ -5,7 +5,7 @@
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/hook-wikimedia-wrinkly-fingers-002.jpg",
    "cue": "ทำไม",
    "word_at": 0.04,
    "start": 0.0,
@@ -14,12 +14,13 @@
   },
   {
    "id": "soak",
-   "src": null,
+   "src": "assets/footage/soak-pixabay-51807.mp4",
    "cue": "นานๆ",
    "word_at": 0.68,
    "start": 0.6,
    "end": 1.66,
-   "dur": 1.06
+   "dur": 1.06,
+   "media_start": 1.42
   },
   {
    "id": "myth",
@@ -43,7 +44,7 @@
   },
   {
    "id": "nerve",
-   "src": null,
+   "src": "assets/footage/nerve-pixabay-362487.mp4",
    "cue": "ระบบประสาท",
    "word_at": 4.76,
    "start": 4.68,
@@ -52,7 +53,7 @@
   },
   {
    "id": "vessel",
-   "src": null,
+   "src": "assets/footage/vessel-pixabay-26799.mp4",
    "cue": "หลอดเลือด",
    "word_at": 5.64,
    "start": 5.56,
@@ -125,7 +126,7 @@
   },
   {
    "id": "sign",
-   "src": null,
+   "src": "assets/footage/sign-wikimedia-wrinkly-fingers-001.jpg",
    "cue": "นิ้วเหี่ยวเลย",
    "word_at": 14.16,
    "start": 14.08,
@@ -145,12 +146,13 @@
   },
   {
    "id": "grip",
-   "src": null,
+   "src": "assets/footage/grip-pixabay-4906.mp4",
    "cue": "แล้วมัน",
    "word_at": 17.06,
    "start": 16.98,
    "end": 18.66,
-   "dur": 1.68
+   "dur": 1.68,
+   "media_start": 3.48
   },
   {
    "id": "ask",
