@@ -1,3 +1,5 @@
+> ขั้นตอนละเอียดและบทเรียนล่าสุดอยู่ใน skill `make-clip` (`.claude/skills/make-clip/SKILL.md`) ถ้าขัดกัน ให้ยึด skill
+
 # สายพานผลิตคลิป
 
 ผู้กำกับ (ตัวคุมงานหลัก) เดินตามลำดับนี้ งานที่ไม่ขึ้นต่อกันให้สั่ง agent พร้อมกัน
@@ -10,7 +12,7 @@
 | 4. footage และเสียง (พร้อมกัน) | `footage` + `voice` | `assets/footage/`, `assets/CREDITS.md`, `assets/audio/` |
 | 5. motion + ตัดต่อ + ซับ + ภาพปก | `editor` (ภาพปกตาม `thumbnail.md` ที่ผู้กำกับเขียนด้วย skill `yt-thumbnail-brief` ตอนขั้น 3) | โปรเจกต์ HyperFrames ใน `video/`, ไฟล์ `renders/*.mp4` |
 | 6. ตรวจ | `reviewer` | `review.md`: ผ่าน หรือรายการที่ต้องแก้ (วนกลับไปขั้นที่เกี่ยวข้อง สูงสุด 2 รอบ) |
-| 7. ส่งมอบ | ผู้กำกับ + skills `yt-title-optimizer`, `yt-description-writer` | `upload.md` แยกภาษาและแพลตฟอร์ม: ชื่อคลิป 3 ตัวเลือก (แนะนำ 1), คำอธิบายพร้อม chapter (long) และเครดิต, แฮชแท็ก; TikTok: แคปชันสั้น ≤150 ตัวอักษร + แฮชแท็ก 3-5 |
+| 7. ส่งมอบ | ผู้กำกับ + skills `yt-title-optimizer`, `yt-description-writer` | `upload.md` (ไทย) + `upload-en.md` (อังกฤษ) แต่ละไฟล์แยก YouTube / TikTok: ชื่อคลิป 3 ตัวเลือก (แนะนำ 1), คำอธิบายพร้อม chapter (long) และเครดิต, แฮชแท็ก; TikTok: แคปชันสั้น ≤150 ตัวอักษร + แฮชแท็ก 3-5 |
 
 คลิปทั้งไทยและอังกฤษ: ทำบทไทยก่อน แล้วเขียนบทอังกฤษใหม่ให้เป็นธรรมชาติ (ไม่แปลตรงตัว) ใช้ภาพชุดเดิม
 เรนเดอร์แยก `renders/<slug>-th.mp4` และ `renders/<slug>-en.mp4`

@@ -13,6 +13,8 @@
 - `tools/tts.sh`, `tools/voices.sh`: เสียงพากย์ ElevenLabs
 - `tools/footage.sh`: ภาพ/วิดีโอ Pixabay
 - `tools/music.sh`: เพลงประกอบ CC0/CC BY
+- `tools/sound_pass_vo.py`: มิกซ์เสียงพากย์ + เพลง + sfx ให้ได้ -16 LUFS
+- **skill `make-clip`**: ขั้นตอนทำคลิปทั้งหมดในที่เดียว (พิมพ์ `/make-clip` หรือสั่ง "ทำตอนใหม่ ...")
 - skills `yt-hook-scripter`, `yt-title-optimizer`, `yt-description-writer`, `yt-thumbnail-brief`, `yt-content-planner` (sergebulaev/youtube-skills, MIT): hook, ชื่อคลิป, คำอธิบาย, ไอเดียภาพปก, แผนรายสัปดาห์
 
 ## ทีม
