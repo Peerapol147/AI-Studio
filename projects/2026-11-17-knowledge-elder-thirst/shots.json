@@ -36,8 +36,8 @@
     "en": "thirsty"
    },
    "want": "glass of water next to an elderly person, untouched or pushed away",
-   "src": "assets/footage/glass.jpg",
-   "focus": "55% 50%"
+   "src": "assets/footage/sip.jpg",
+   "focus": "27% 50%"
   },
   {
    "id": "grandma",
@@ -130,8 +130,8 @@
     "en": "sips"
    },
    "want": "elderly person lifting a glass and drinking water (video, lift visible)",
-   "src": "assets/footage/sip.jpg",
-   "focus": "27% 50%"
+   "src": "assets/footage/glass.jpg",
+   "focus": "55% 50%"
   },
   {
    "id": "wait",
@@ -153,7 +153,7 @@
    },
    "want": "doctor talking with an elderly patient",
    "src": "assets/footage/doctor.jpg",
-   "focus": "72% 50%"
+   "focus": "58% 50%"
   },
   {
    "id": "family",

@@ -103,6 +103,46 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
  </svg>
 </div>
 
+<div id="ov" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+ <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;width:1080px;height:1920px">
+  <defs><path id="dropI" d="M0 -60 C18 -30 46 -8 46 18 A46 46 0 0 1 -46 18 C-46 -8 -18 -30 0 -60 Z"/>
+   <path id="glassI" d="M-42 -60 L42 -60 L32 60 L-32 60 Z"/>
+   <clipPath id="cpG0"><use href="#glassI"/></clipPath><clipPath id="cpG1"><use href="#glassI"/></clipPath>
+   <clipPath id="cpG2"><use href="#glassI"/></clipPath><clipPath id="cpG3"><use href="#glassI"/></clipPath>
+   <clipPath id="cpMeter"><rect x="250" y="400" width="620" height="84" rx="42"/></clipPath></defs>
+  <!-- glass shot: thirst meter drains on "หิวน้ำ" -->
+  <g id="meter" opacity="0">
+   <rect x="140" y="320" width="800" height="200" rx="40" fill="#0A2240" fill-opacity="0.82"/>
+   <text x="250" y="385" font-size="56" font-weight="700" fill="#fff">หิวน้ำ</text>
+   <text id="meterZero" x="870" y="388" text-anchor="end" font-size="64" font-weight="900" fill="#FF6B5A" opacity="0">0</text>
+   <g transform="translate(195 445) scale(0.78)"><use href="#dropI" fill="#4FC3F7" stroke="#fff" stroke-width="8"/></g>
+   <rect x="250" y="400" width="620" height="84" rx="42" fill="#13385F" stroke="#fff" stroke-width="6"/>
+   <g clip-path="url(#cpMeter)"><rect id="meterFill" x="250" y="400" width="620" height="84" fill="#4FC3F7"/></g>
+   <rect x="250" y="400" width="620" height="84" rx="42" fill="none" stroke="#fff" stroke-width="6"/>
+  </g>
+  <!-- sip shot: four glasses pop in on the syllables, water fills with a spring -->
+  <g id="glasses">
+   <g id="gl0"><g clip-path="url(#cpG0)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw0" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
+   <g id="gl1"><g clip-path="url(#cpG1)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw1" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
+   <g id="gl2"><g clip-path="url(#cpG2)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw2" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
+   <g id="gl3"><g clip-path="url(#cpG3)"><rect x="-60" y="-70" width="120" height="140" fill="#13385F" fill-opacity="0.6"/><rect id="glw3" x="-60" y="60" width="120" height="140" fill="#4FC3F7"/></g><use href="#glassI" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></g>
+  </g>
+  <!-- wait shot: big clock face, minute hand sweeps once; thirst drop struck through on "หิว" -->
+  <g id="wclock" opacity="0">
+   <circle cx="540" cy="720" r="290" fill="#fff" fill-opacity="0.94" stroke="#0A2240" stroke-width="12"/>
+   <g id="wticks" stroke="#0A2240" stroke-width="10" stroke-linecap="round"></g>
+   <line id="whourH" x1="540" y1="720" x2="540" y2="580" stroke="#0A2240" stroke-width="18" stroke-linecap="round" transform="rotate(300 540 720)"/>
+   <line id="wminH" x1="540" y1="720" x2="540" y2="490" stroke="#0A2240" stroke-width="12" stroke-linecap="round"/>
+   <circle cx="540" cy="720" r="20" fill="#0A2240"/>
+  </g>
+  <g id="wdrop" opacity="0">
+   <circle cx="0" cy="0" r="110" fill="#fff" stroke="#0A2240" stroke-width="10"/>
+   <g transform="translate(0 6) scale(1.15)"><use href="#dropI" fill="#4FC3F7" stroke="#0A2240" stroke-width="7"/></g>
+   <line id="wstrike" x1="-80" y1="-80" x2="80" y2="80" stroke="#E8452C" stroke-width="20" stroke-linecap="round" stroke-dasharray="227" stroke-dashoffset="227"/>
+  </g>
+ </svg>
+</div>
+
 <div id="hook">ขาดน้ำ<b>ไม่รู้ตัว</b></div>
 
 <div id="caps" data-track-kind="captions">
@@ -140,8 +180,8 @@ function footage(t){
     const on=t>=s.start&&t<s.end;
     s.el.style.opacity=on?'1':'0'; if(!on)continue;
     const u=(t-s.start)/(s.end-s.start);
-    let sc=1.03+0.05*u, tx=s.dir*14*u;
-    if(s.hit_at!=null) sc*=1+0.06*sp(t,s.hit_at,FAST);
+    let sc=1.03+0.05*u, tx=s.dir*14*u; if(s.id==='sip'){sc=1.03+0.07*u;tx=0;}
+    if(s.hit_at!=null) sc*=1+0.06*sp(t,s.hit_at-0.12,FAST);
     s.el.style.transform=`translateX(${tx.toFixed(2)}px) scale(${sc.toFixed(5)})`;
   }
 }
@@ -166,10 +206,10 @@ function quarter(t){
   for(let i=0;i<4;i++){
     const a=S(t-(GQ.word_at-0.06+i*0.07),16,0.62), sc=0.85*Math.max(0,a);
     $('qp'+i).setAttribute('transform',`translate(${QX[i]+85} ${QY+410}) scale(${sc.toFixed(4)}) translate(-100 -482)`);
-    const dr=i===3?eio((t-W.quarter_dry)/0.6):0;
+    const dr=i===3?eio((t-W.quarter_dry+0.2)/0.6):0;
     $('qw'+i).setAttribute('y',(10+470*dr).toFixed(1));
   }
-  const dr=eio((t-W.quarter_dry)/0.6);
+  const dr=eio((t-W.quarter_dry+0.2)/0.6);
   $('qs3').setAttribute('stroke',dr>0.5?'#FF8A3D':'#fff');
 }
 
@@ -216,7 +256,7 @@ function morph(t){
   $('shapeG').setAttribute('transform',`translate(540 640) scale(${sc.toFixed(4)}) translate(-540 -640)`);
   const mClock=sp(t,GT.start), mBar=sp(t,GC.start);
   // water level: brain full, body drops on "น้อยลง", clock -> no water, bar -> solid orange
-  let wy=lerp(300,250,sp(t,GB.word_at)); wy=lerp(wy,330,sp(t,GBo.start)); wy=lerp(wy,700,sp(t,W.less,SLOW));
+  let wy=lerp(300,250,sp(t,GB.word_at)); wy=lerp(wy,330,sp(t,GBo.start)); wy=lerp(wy,700,sp(t,W.less-0.25,SLOW));
   wy=lerp(wy,1000,mClock);
   $('water').setAttribute('y',wy.toFixed(1));
   const wt=t*3.2, wp=[];for(let x=0;x<=1080;x+=30)wp.push(`${x} ${(wy+9*Math.sin(x/70+wt)).toFixed(1)}`);
@@ -226,14 +266,14 @@ function morph(t){
   // brain: sulci and the thirst signal (slows from "ช้าลง", fades exactly at hit "เบาลง")
   const brainV=clamp(sp(t,GB.word_at+0.15,SLOW))*(1-clamp(sp(t,GBo.start,FAST)));
   op($('sulci'),brainV);
-  const sigIn=eo((t-GB.word_at-0.2)/0.3), sigOut=1-eio((t-GB.hit_at)/0.45);
+  const sigIn=eo((t-GB.word_at-0.2)/0.3), sigOut=1-eio((t-GB.hit_at+0.2)/0.4);
   const sigV=t<GBo.start?sigIn*Math.max(0.12,sigOut):0;
   op($('signal'),sigV);
   if(sigV>0){
-    const slow=eio((t-W.slower)/0.5), fade=eio((t-GB.hit_at)/0.45);
+    const slow=eio((t-W.slower+0.2)/0.5), fade=eio((t-GB.hit_at+0.2)/0.4);
     const amp=lerp(lerp(46,30,slow),5,fade);
     // phase = integral of a speed that drops at "ช้าลง" and again at the hit
-    const ph=(tt)=>{const t0=GB.word_at; let v=0; const st=0.02; for(let x=t0;x<tt;x+=st){const s1=eio((x-W.slower)/0.5),f1=eio((x-GB.hit_at)/0.45);v+=st*lerp(lerp(11,5,s1),1.2,f1);} return v;};
+    const ph=(tt)=>{const t0=GB.word_at; let v=0; const st=0.02; for(let x=t0;x<tt;x+=st){const s1=eio((x-W.slower+0.2)/0.5),f1=eio((x-GB.hit_at+0.2)/0.4);v+=st*lerp(lerp(11,5,s1),1.2,f1);} return v;};
     const P=ph(t), pts=[];
     for(let x=160;x<=920;x+=8){const env=Math.sin(Math.PI*(x-160)/760); pts.push(`${x} ${(330+amp*env*Math.sin(x/38-P)).toFixed(1)}`);}
     $('wave').setAttribute('d','M'+pts.join(' L'));
@@ -256,9 +296,9 @@ function morph(t){
   // compare: young "ขาดน้ำ" bar on "คนหนุ่ม", the "หิวน้ำ" pair lands on hit "หิวน้ำน้อยกว่า"
   const chartV=t>=GC.start?clamp(sp(t,GC.start+0.05,SLOW)):0; op($('chart'),chartV);
   if(chartV>0){
-    const bar=(id,h,t0)=>{const k=sp(t,t0,MORPH),hh=Math.max(0,h*k);const el=$(id);el.setAttribute('y',(940-hh).toFixed(1));el.setAttribute('height',hh.toFixed(1));};
-    bar('barY1',300,W.young); bar('barO2',170,GC.hit_at); bar('barY2',420,GC.hit_at+0.06);
-    const l2=clamp(sp(t,GC.hit_at-0.1,POP)); op($('lab2'),l2);
+    const bar=(id,h,t0,k0=MORPH)=>{const k=sp(t,t0,k0),hh=Math.max(0,h*k);const el=$(id);el.setAttribute('y',(940-hh).toFixed(1));el.setAttribute('height',hh.toFixed(1));};
+    bar('barY1',300,W.young-0.22,FAST); bar('barO2',170,GC.hit_at-0.25,FAST); bar('barY2',420,GC.hit_at-0.25,FAST);
+    const l2=clamp(sp(t,GC.hit_at-0.25,FAST)); op($('lab2'),l2);
     // label 1 under the first pair
     $('lab1').setAttribute('x','350');
   }
@@ -273,10 +313,41 @@ function captions(t){
   capEls[i].style.opacity=clamp(tau/0.05).toFixed(3);
 }
 
+// ---------- overlays on real photos ----------
+const GG=SH.glass, GS=SH.sip, GW=SH.wait;
+(()=>{const g=$('wticks');let s='';for(let i=0;i<12;i++){const a=2*Math.PI*i/12,r1=i%3?240:215,r2=265;
+  s+=`<line x1="${(540+r1*Math.sin(a)).toFixed(1)}" y1="${(720-r1*Math.cos(a)).toFixed(1)}" x2="${(540+r2*Math.sin(a)).toFixed(1)}" y2="${(720-r2*Math.cos(a)).toFixed(1)}"/>`;}
+  g.innerHTML=s;})();
+const GLX=[300,460,620,780];
+function overlays(t){
+  // thirst meter: full, drains to empty landing on "หิวน้ำ" (hit_at), "0" settles by the word end
+  const mOn=t>=GG.start&&t<GG.end, m=$('meter');
+  if(mOn){const a=sp(t,GG.start,POP); op(m,clamp(a*1.4));
+    m.setAttribute('transform',`translate(290 400) scale(${(0.58*(0.8+0.2*a)).toFixed(4)}) translate(-540 -420)`);
+    const drain=sp(t,GG.hit_at-0.2,FAST), w=Math.max(0,620*(1-drain));
+    $('meterFill').setAttribute('width',w.toFixed(1));
+    const z=sp(t,W.thirst_end-0.2,POP); op($('meterZero'),z);
+  } else op(m,0);
+  // four glasses on the syllables of "จิบน้ำเป็นช่วงๆ"
+  const gOn=t>=GS.start&&t<GS.end; $('glasses').style.display=gOn?'':'none';
+  if(gOn) for(let i=0;i<4;i++){const t0=W.glasses[i]; const a=S(t-(t0-0.1),18,0.55), sc=Math.max(0,a);
+    $('gl'+i).setAttribute('transform',`translate(${GLX[i]} 420) scale(${sc.toFixed(4)})`);
+    const f=sp(t,t0,MORPH); $('glw'+i).setAttribute('y',(60-105*f).toFixed(1));}
+  // wait: clock face + minute hand one full turn; drop struck through on "หิว"
+  const wOn=t>=GW.start&&t<GW.end;
+  if(wOn){const a=sp(t,GW.start,POP); op($('wclock'),clamp(a*1.4));
+    $('wclock').setAttribute('transform',`translate(540 720) scale(${(0.85+0.15*a).toFixed(4)}) translate(-540 -720)`);
+    const u=(t-GW.start)/(GW.end-GW.start); $('wminH').setAttribute('transform',`rotate(${(360*eio(u)).toFixed(2)} 540 720)`);
+    const d=sp(t,W.hiw-0.25,POP); op($('wdrop'),clamp(d*1.3));
+    $('wdrop').setAttribute('transform',`translate(820 420) scale(${(0.4+0.6*Math.max(0,d)).toFixed(4)})`);
+    const k=sp(t,W.hiw-0.2,FAST); $('wstrike').setAttribute('stroke-dashoffset',(227*(1-clamp(k))).toFixed(1));
+  } else {op($('wclock'),0);op($('wdrop'),0);}
+}
+
 function render(t){
   footage(t); hook(t);
   $('gfx').style.opacity=gfxOn(t)?'1':'0';
-  quarter(t); morph(t); captions(t);
+  quarter(t); morph(t); overlays(t); captions(t);
 }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});

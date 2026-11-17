@@ -24,7 +24,7 @@ DUR = round(VO_DUR + 0.18, 2)   # cut right after the last word (+ <=0.3 s)
 SHOTS = []
 for s in shots_lang['shots']:
     m = meta[s['id']]
-    SHOTS.append({'id': s['id'], 'kind': m['kind'], 'src': s['src'], 'focus': m.get('focus', '50% 50%'),
+    SHOTS.append({'id': s['id'], 'kind': m['kind'], 'src': m.get('src'), 'focus': m.get('focus', '50% 50%'),
                   'start': s['start'], 'end': s['end'], 'word_at': s['word_at'], 'hit_at': s.get('hit_at')})
 SHOTS[-1]['end'] = DUR   # last shot holds to the end of the composition
 
@@ -57,7 +57,13 @@ W = {
     'slower': word_time('ช้าลง'),                          # wave starts slowing
     'less': word_time('น้อยลง'),                           # body water level drops
     'young': word_time('คนหนุ่ม'),                         # young bar of the first pair
+    'thirst_end': word_time('เลย', 4.0),                  # end of "หิวน้ำ" (next word "เลย"): meter shows 0
 }
+# sip shot: 4 glasses land on the syllables of "จิบน้ำเป็นช่วงๆ"
+_j = word_time('จิบ', 20.0)
+W['glasses'] = [_j, word_time('เป็น', _j), word_time('ช่วง', _j), word_time('ๆ', word_time('ช่วง', _j))]
+W['hiw'] = word_time('หิว', word_time('ไม่ต้องรอ'))       # "หิว" in "รอหิว": strike-through on the drop
+
 
 def caps():
     out = []
@@ -70,11 +76,16 @@ def caps():
                    f'data-track-index="20"><span style="font-size:{size}px">{html.escape(txt)}</span></div>')
     return '\n'.join(out)
 
+# grades applied via `hyperframes media-treatment` (canonical data-color-grading), kept here so rebuilds keep them
+GRADES = {'wait': {"preset": None, "intensity": 1, "adjust": {"exposure": -1.0, "contrast": 0.1, "highlights": -0.7,
+          "whites": -0.6, "temperature": -0.7, "tint": 0.1}}}
+
 def shot_divs():
     out = []
     for s in SHOTS:
         if s['kind'] != 'footage': continue
-        out.append(f'  <div class="shot" id="sh-{s["id"]}"><img class="m" src="{s["src"].replace("assets/footage/", "assets/")}" '
+        grade = f' data-color-grading="{html.escape(json.dumps(GRADES[s["id"]]))}"' if s['id'] in GRADES else ''
+        out.append(f'  <div class="shot" id="sh-{s["id"]}"><img class="m" src="{s["src"].replace("assets/footage/", "assets/")}"{grade} '
                    f'style="object-position:{s["focus"]}" alt=""/></div>')
     return '\n'.join(out)
 
