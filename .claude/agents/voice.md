@@ -16,3 +16,5 @@ tools: Bash, Read, Write, Glob, Skill
 - เสียงเอฟเฟกต์ (whoosh, pop, ding, impact): ใช้ชุดที่แถมกับ HyperFrames ผ่าน skill `media-use` (`--type sfx`)
 - ห้ามใช้เพลงติดลิขสิทธิ์ ห้ามเพลงไลเซนส์ NC (ห้ามใช้เชิงพาณิชย์)
 - อ่านตัวเลข ชื่อคน ชื่อทีม ให้ถูก ถ้าเสียงอ่านผิด เขียนคำใหม่ตามเสียงอ่าน (เช่น "2-1" → "สองต่อหนึ่ง")
+- หลังได้ไฟล์พากย์เต็ม: `tools/words.sh assets/audio/vo-th.mp3 assets/audio/words.json tha` (อังกฤษ: `vo-en.mp3 words-en.json eng`)
+  แล้วรัน `python3 tools/shot_times.py <project> th` (และ en) ถ้ามี WARN แจ้งผู้กำกับ

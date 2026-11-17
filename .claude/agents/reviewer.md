@@ -16,3 +16,4 @@ tools: Bash, Read, Glob, Grep, WebSearch, WebFetch
 7. ทุกเพลงใน CREDITS.md เป็น CC0 หรือ CC BY และ `upload.md` มีเครดิตครบ
 
 แต่ละข้อที่ไม่ผ่าน: บอกฉาก เวลา ปัญหา และ agent ที่ต้องแก้
+- ภาพตรงคำพากย์: ดึงเฟรมที่ `word_at + 0.1` และ `hit_at` ของทุกช็อตใน `assets/audio/shots-<lang>.json` ภาพต้องตรงกับคำที่ได้ยิน ถ้าไม่ตรง = ต้องแก้
