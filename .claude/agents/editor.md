@@ -20,3 +20,6 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด
 - เรนเดอร์ `npx hyperframes render` แล้วย้ายไฟล์ไป `<project>/renders/<slug>-<ภาษา>.mp4`
 - เปิดดูเฟรมตัวอย่าง (ffmpeg ดึงทุก 5 วิ) ก่อนส่ง
+- **ภาพตรงคำพากย์**: เวลาช็อต footage มาจาก `assets/audio/shots-<lang>.json` เท่านั้น (start/end/media_start/hit_at)
+  ห้ามตั้งเวลาเอง ตัดแบบ hard cut หรือ crossfade ≤ 0.12 วิ ที่ `start`; punch-in/zoom accent ลงที่ `hit_at`
+  วิดีโอใช้ `data-media-start` = `media_start` เพื่อให้ action ลงตรงคำ ซับและ SFX ก็อ้างคำเดียวกันจาก words.json
