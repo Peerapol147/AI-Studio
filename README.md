@@ -13,6 +13,7 @@
 - `tools/tts.sh`, `tools/voices.sh`: เสียงพากย์ ElevenLabs
 - `tools/footage.sh`: ภาพ/วิดีโอ Pixabay
 - `tools/music.sh`: เพลงประกอบ CC0/CC BY
+- skills `yt-hook-scripter`, `yt-title-optimizer`, `yt-description-writer`, `yt-thumbnail-brief`, `yt-content-planner` (sergebulaev/youtube-skills, MIT): hook, ชื่อคลิป, คำอธิบาย, ไอเดียภาพปก, แผนรายสัปดาห์
 
 ## ทีม
 ผู้กำกับ · นักหาข้อมูล · ฝ่าย footage · ฝ่ายเสียง · ฝ่าย motion/ตัดต่อ · ผู้ตรวจ

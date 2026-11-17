@@ -63,6 +63,41 @@
       "sourceType": "github",
       "skillPath": "skills/style-sampling/SKILL.md",
       "computedHash": "86da7c4f9b678b950c43c9b1ca323ac11e761be91d8ad14feb3cb9043926d20d"
+    },
+    "yt-content-planner": {
+      "source": "sergebulaev/youtube-skills",
+      "commit": "73cd16a05b589d755bf2eef3e4ee9db9e2df5494",
+      "sourceType": "github",
+      "skillPath": "skills/yt-content-planner/SKILL.md",
+      "computedHash": "28c6c550cbdba5a1053dc8e45a6235226dbbd73834c15c71784a4d6368ca1ffc"
+    },
+    "yt-description-writer": {
+      "source": "sergebulaev/youtube-skills",
+      "commit": "73cd16a05b589d755bf2eef3e4ee9db9e2df5494",
+      "sourceType": "github",
+      "skillPath": "skills/yt-description-writer/SKILL.md",
+      "computedHash": "e381a65b6c9e854af979f5a0bbf3b3e7e49359d6cb2e205f0bd543e5bac685f1"
+    },
+    "yt-hook-scripter": {
+      "source": "sergebulaev/youtube-skills",
+      "commit": "73cd16a05b589d755bf2eef3e4ee9db9e2df5494",
+      "sourceType": "github",
+      "skillPath": "skills/yt-hook-scripter/SKILL.md",
+      "computedHash": "fee62be35d63b3affdd8d69fadc9d1f8e58d0b5f0824847a51e24b13e95f7b81"
+    },
+    "yt-thumbnail-brief": {
+      "source": "sergebulaev/youtube-skills",
+      "commit": "73cd16a05b589d755bf2eef3e4ee9db9e2df5494",
+      "sourceType": "github",
+      "skillPath": "skills/yt-thumbnail-brief/SKILL.md",
+      "computedHash": "4f8389eec3549c72e530239822804b6b5e3d9b7383ceefa92fce81e61e0329be"
+    },
+    "yt-title-optimizer": {
+      "source": "sergebulaev/youtube-skills",
+      "commit": "73cd16a05b589d755bf2eef3e4ee9db9e2df5494",
+      "sourceType": "github",
+      "skillPath": "skills/yt-title-optimizer/SKILL.md",
+      "computedHash": "e9af3ad391e546d92dbc1a0ef96aa0c3e90c6d7f43d9eeae1395073751ac7b03"
     }
   }
 }
