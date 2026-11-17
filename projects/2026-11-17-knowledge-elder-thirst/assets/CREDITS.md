@@ -1,3 +1,3 @@
+# Credits
 - music-jamendo-ea4ef155.mp3: "Lucky Acoustic" by Jesse Keller (CC BY 3.0) https://www.jamendo.com/track/1540859
-- music-jamendo-cc097556.mp3: "Warm and Tender by Steven Booth" by Steven Booth (CC BY 3.0) https://www.jamendo.com/track/1738570
-- music-jamendo-c2713bf8.mp3: "A Warm Meal at Last" by Helen Langfort (CC BY 3.0) https://www.jamendo.com/track/2327643
+- vo-th.mp3, vo-en.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
