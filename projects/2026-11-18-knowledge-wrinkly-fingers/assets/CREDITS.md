@@ -5,3 +5,17 @@
 - footage/grip-pixabay-4906.mp4: klimkin via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-4906/
 - footage/hook-wikimedia-wrinkly-fingers-002.jpg: "Wrinkly Fingers 002" by Sebastian Wallroth, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Wrinkly_Fingers_002.JPG (3840 px thumbnail, uncropped)
 - footage/sign-wikimedia-wrinkly-fingers-001.jpg: "Wrinkly Fingers 001" by Sebastian Wallroth, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Wrinkly_Fingers_001.JPG (3840 px thumbnail, uncropped)
+
+## เสียงประกอบ (จาก skill sound-effects)
+- "Plop" by Breviceps (Freesound), CC0 1.0 - https://freesound.org/people/Breviceps/sounds/447910/
+- "Whoosh" by qubodup (Freesound), CC0 1.0 - https://freesound.org/people/qubodup/sounds/60013/
+- "Pop in sfx" by Sadiquecat (Freesound), CC0 1.0 - https://freesound.org/people/Sadiquecat/sounds/824189/
+- "Quick woosh" by florianreichelt (Freesound), CC0 1.0 - https://freesound.org/people/florianreichelt/sounds/683101/
+- "Fast simple chop 5 aif" by dave.des (Freesound), CC0 1.0 - https://freesound.org/people/dave.des/sounds/127197/
+- "Interface scroll 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- "Impact impactsoft heavy 000" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/impact-sounds
+- "Interface glitch 002" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- "Interface confirmation 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- "Swoosh" by Shinplaster (Freesound), CC0 1.0 - https://freesound.org/people/Shinplaster/sounds/264777/
+- "Interface glass 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- "POP SFX Neutral" by ethernel0 (Freesound), CC0 1.0 - https://freesound.org/people/ethernel0/sounds/776016/
