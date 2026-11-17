@@ -1,0 +1,381 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#diagbg{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;
+  background:radial-gradient(ellipse at 50% 38%,#FBF6EE 0%,#EFE6DA 70%,#E6DACB 100%)}
+#world{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0}
+.w{position:absolute}
+#tube{position:absolute;left:0;top:0;width:0;height:0}
+#lumen{position:absolute;left:-200px;top:-1400px;width:400px;height:2300px;background:#FBE1E7}
+.wall{position:absolute;width:100px;border-radius:14px}
+#lump{position:absolute;left:0;top:0;z-index:2}
+#lumpBody{position:absolute;left:0;top:0;box-shadow:inset -14px -16px 0 rgba(0,0,0,.18),inset 12px 12px 0 rgba(255,255,255,.14)}
+.pip{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#3E2410;opacity:0}
+#walls{position:absolute;left:0;top:0;z-index:3}
+.drop{position:absolute;left:0;top:0;width:44px;height:58px;margin:-29px 0 0 -22px;z-index:4;opacity:0;
+  background:#3BA7F0;border:5px solid #0B5C99;border-radius:50% 50% 50% 50%/62% 62% 38% 38%}
+.chip{position:absolute;left:0;top:0;height:84px;border-radius:42px;z-index:5;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:42px;white-space:nowrap;opacity:0;overflow:hidden}
+.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%)}
+#ground{position:absolute;left:-500px;top:1300px;width:1000px;height:16px;border-radius:8px;background:#CDBBA6;z-index:1}
+#hero{position:absolute;left:0;top:0;z-index:20;opacity:0;display:flex;align-items:center;justify-content:center;border-style:solid}
+#hero .hc{position:absolute;left:50%;top:50%;white-space:nowrap;font-weight:900;line-height:1;transform:translate(-50%,-54%);paint-order:stroke fill;opacity:0}
+#h1,#h2{font-size:64px;color:#1B0E05;transform:translate(-50%,-50%)!important}
+#h4{font-size:200px;color:#3EE07A;-webkit-text-stroke:14px #000}
+#cube0{position:absolute;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;z-index:25;opacity:0;border-radius:52px;
+  background:#9A6434;box-shadow:inset -16px -20px 0 rgba(0,0,0,.2),inset 14px 14px 0 rgba(255,255,255,.15),0 0 0 10px #1B0E05}
+#strip{position:absolute;left:90px;top:1290px;width:900px;height:130px;border-radius:65px;background:#fff;z-index:30;opacity:0;
+  box-shadow:0 10px 30px rgba(60,30,10,.18)}
+#ind{position:absolute;top:12px;height:106px;border-radius:53px;background:#FF6A1F}
+.st{position:absolute;top:0;width:225px;height:130px;display:flex;align-items:center;justify-content:center;gap:14px;
+  font-weight:700;font-size:38px;color:#2A1A10}
+.st i{display:block;width:34px;height:34px;background:currentColor}
+#qm{position:absolute;left:0;top:0;z-index:40;opacity:0;font-weight:900;font-size:300px;line-height:1;color:#FFD23F;
+  -webkit-text-stroke:22px #1B0E05;paint-order:stroke fill}
+#bubble{position:absolute;left:0;top:0;width:150px;height:120px;z-index:40;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:140px;width:800px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:800px;bottom:-48px;display:block;color:#fff;font-weight:700;line-height:1.18;
+  -webkit-text-stroke:15px #000;paint-order:stroke fill;transform-origin:50% 80%}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on"
+ data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"},{"id":"vo","type":"string","label":"Voice file","default":"assets/vo-th.mp3"}]'>
+
+<div id="foot" class="layer">
+  <div class="shot" id="sh-walk"><video id="v-walk" class="clip m" data-start="0" data-duration="3.9" data-track-index="1" src="assets/pixabay-271008-walkin.mp4" style="object-position:72% 50%" muted playsinline></video></div>
+  <div class="shot" id="sh-eat"><video id="v-eat" class="clip m" data-start="2.5" data-duration="3.1" data-track-index="2" data-media-start="0.3" src="assets/pixabay-317566-eating.mp4" style="object-position:57% 50%" muted playsinline></video></div>
+  <div class="shot" id="sh-forest"><img class="m" src="assets/pixabay-5385056.jpg" alt=""/></div>
+  <div class="shot" id="sh-rear"><img class="m" src="assets/pixabay-3887250.jpg" style="object-position:96% 50%" alt=""/></div>
+  <div class="shot" id="sh-close"><img class="m" src="assets/pixabay-6566987.jpg" style="object-position:55% 50%" alt=""/></div>
+  <div id="diagbg"></div>
+  <div class="shot" id="sh-face"><video id="v-face" class="clip m" data-start="23.5" data-duration="4.44" data-track-index="3" src="assets/pixabay-271008-face.mp4" style="object-position:54% 50%" muted playsinline></video></div>
+</div>
+
+<div id="diag" class="layer" style="-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1075px,transparent 1118px);mask-image:linear-gradient(to bottom,#000 0,#000 1075px,transparent 1118px)" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="world">
+    <div id="tube">
+      <div id="lumen"></div>
+      <div id="ground"></div>
+    </div>
+    <div id="lump"><div id="lumpBody"><div class="pip" style="left:28%;top:28%"></div><div class="pip" style="left:50%;top:50%"></div><div class="pip" style="left:72%;top:72%"></div></div></div>
+    <div id="walls"></div>
+    <div class="drop" id="d0"></div><div class="drop" id="d1"></div><div class="drop" id="d2"></div><div class="drop" id="d3"></div><div class="drop" id="d4"></div>
+    <div class="drop" id="d5"></div><div class="drop" id="d6"></div><div class="drop" id="d7"></div><div class="drop" id="d8"></div><div class="drop" id="d9"></div>
+    <div class="chip" id="chipA"><span id="chipA1"></span><span id="chipA2"></span></div>
+    <div class="chip" id="chipB"><span id="chipB1"></span></div>
+  </div>
+</div>
+
+<div id="over" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="cube0"><div class="pip" style="left:28%;top:28%;opacity:1"></div><div class="pip" style="left:50%;top:50%;opacity:1"></div><div class="pip" style="left:72%;top:72%;opacity:1"></div></div>
+  <div id="hero"><div class="hc" id="h1"></div><div class="hc" id="h2"></div><div class="hc" id="h3">?</div><div class="hc" id="h4">✓</div></div>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0" style="left:0"><i style="border-radius:50%"></i><b id="st0t"></b></div>
+    <div class="st" id="st1" style="left:225px"><i style="border-radius:10px;transform:scaleX(.7)"></i><b id="st1t"></b></div>
+    <div class="st" id="st2" style="left:450px"><i style="border-radius:50% 50% 50% 50%/62% 62% 38% 38%"></i><b id="st2t"></b></div>
+    <div class="st" id="st3" style="left:675px"><i style="border-radius:6px"></i><b id="st3t"></b></div>
+  </div>
+  <div id="qm">?</div>
+  <svg id="bubble" viewBox="0 0 150 120"><path d="M20 8h110a16 16 0 0 1 16 16v52a16 16 0 0 1-16 16H62L34 114V92H20A16 16 0 0 1 4 76V24A16 16 0 0 1 20 8Z" fill="#fff" stroke="#000" stroke-width="7" stroke-linejoin="round"/><circle cx="46" cy="50" r="9" fill="#111"/><circle cx="75" cy="50" r="9" fill="#111"/><circle cx="104" cy="50" r="9" fill="#111"/></svg>
+</div>
+
+<div id="caps" data-track-kind="captions">
+ <div id="caps-th">
+%%CAPS_TH%%
+ </div>
+ <div id="caps-en">
+%%CAPS_EN%%
+ </div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" data-var-src="vo" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-588d581d.mp3"></audio>
+</div>
+
+<script>
+/* Motion: springs and content swaps follow the motion-broll engine (closed-form springs, one shape that morphs). */
+(function(){
+const VARS=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
+const LANG=(VARS.lang==='en')?'en':'th';
+const DUR=%%DUR%%;
+const CAPT=%%CAPTIMES%%[LANG];
+document.getElementById(LANG==='en'?'caps-th':'caps-en').style.display='none';
+document.documentElement.lang=LANG;
+
+// ---------- spring kit (from motion-broll engine/motion.js) ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;if(!isFinite(w))return 1;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[27,0.86],SLOW=[12.5,0.9],SOFT=[10,0.95],CAM=[7.5,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const ctrack=(h0,keys,def=[20,1])=>{const c0=hex(h0);const tr=[0,1,2].map(i=>track(c0[i],keys.map(k=>[k[0],hex(k[1])[i],k[2]]),def));
+  return t=>`rgb(${tr.map(f=>Math.round(clamp(f(t),0,255))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const din=o.din??0.04,lin=o.lin??0.24,lout=o.lout??0.14,bl=o.blur??12;
+  const a=tin==null?1:eo((t-tin-din)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl*0.8,s:(0.94+0.06*a)*(1-0.03*b),a,b};};
+const $=id=>document.getElementById(id);
+const setVis=(el,v,tf='')=>{if(v.o<0.003){el.style.opacity='0';el.style.filter='none';return false;}
+  el.style.opacity=v.o.toFixed(4);el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';if(tf!==null)el.style.transform=tf+` scale(${v.s.toFixed(4)})`;return true;};
+const setText=(el,s)=>{if(el._t!==s){el.textContent=s;el._t=s;}};
+
+// ---------- word-locked times per language (from timing.md / words json) ----------
+const K={
+ th:{hook:2.42,s2:2.92,wombat:3.62,aus:4.54,s3:5.32,square:7.00,s4:7.52,round:9.00,s5:10.24,gut:11.38,wall:12.58,stiff:13.86,soft:14.60,alt:14.96,
+     s6:15.68,squeeze:16.08,corner:18.56,s7:18.96,dry:19.74,s8:20.68,cube:21.60,hole:23.02,s9:24.08,q:26.04,comment:26.80},
+ en:{hook:2.76,s2:3.32,wombat:3.60,aus:4.74,s3:5.48,square:6.74,s4:7.54,round:8.14,s5:9.82,gut:10.90,wall:12.58,stiff:13.16,soft:13.66,alt:14.74,
+     s6:15.70,squeeze:16.56,corner:18.46,s7:19.56,dry:19.92,s8:21.14,cube:22.40,hole:23.74,s9:24.70,q:26.32,comment:26.74},
+}[LANG];
+const TXT={
+ th:{wombat:'วอมแบต',aus:'ออสเตรเลีย',wall:'ผนังลำไส้',stiff:'แข็ง',soft:'นิ่ม',steps:['กลม','บีบ','แห้ง','ลูกเต๋า']},
+ en:{wombat:'WOMBAT',aus:'AUSTRALIA',wall:'GUT WALL',stiff:'STIFF',soft:'STRETCHY',steps:['ROUND','SQUEEZE','DRY','CUBE']},
+}[LANG];
+setText($('h1'),TXT.wombat);setText($('h2'),TXT.aus);setText($('chipA1'),TXT.wall);setText($('chipA2'),TXT.stiff);setText($('chipB1'),TXT.soft);
+TXT.steps.forEach((s,i)=>{setText($('st'+i+'t'),s); if(LANG==='en')$('st'+i).style.fontSize='29px';});
+
+// ---------- footage: crossfades on the word, one slow push-in direction throughout ----------
+const SHOTS=[['sh-walk',0,K.s2,'60% 45%'],['sh-eat',K.s2,K.aus,'55% 55%'],['sh-forest',K.aus,K.s3,'50% 60%'],
+  ['sh-rear',K.s3,K.s4,'80% 55%'],['sh-close',K.s4,K.s5+0.5,'50% 40%'],['sh-face',K.s9,DUR,'50% 45%']];
+SHOTS.forEach(s=>{$(s[0]).style.transformOrigin=s[3];});
+function footage(t){
+  for(const [id,a,b] of SHOTS){
+    const el=$(id); const fin=a<=0?1:eo((t-(a-0.12))/0.3);
+    const on=t>=a-0.15&&t<=b+0.45; el.style.opacity=on?fin.toFixed(4):'0';
+    if(on){const u=(t-(a-0.15))/((b+0.45)-(a-0.15)); el.style.transform=`scale(${(1.03+0.07*u).toFixed(5)})`;}
+  }
+  $('diagbg').style.opacity=(t<K.s5-0.1||t>K.s9+0.6)?'0':(eo((t-K.s5+0.05)/0.35)*(1-eo((t-K.s9+0.1)/0.45))).toFixed(4);
+}
+
+// ---------- hook cube (scene 1) ----------
+const hookIn=t=>S(t-K.hook,13,0.72);
+function hook(t){
+  const el=$('cube0'); const v=vis(t,K.hook,K.s2,{din:0,lin:0.16,lout:0.2,blur:16});
+  if(v.o<0.003){el.style.opacity='0';return;}
+  const a=hookIn(t), rot=-14*(1-a), bob=10*Math.sin((t-K.hook)*5.5)*clamp((t-K.hook)/0.4);
+  el.style.opacity=v.o.toFixed(4); el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.transform=`translate(540px,${(640+bob+90*(1-a)).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${(0.35+0.65*a).toFixed(4)})`;
+}
+
+// ---------- the diagram camera ----------
+const C=[540,600];
+const camS=track(1.5,[[K.s5+0.3,1.0,CAM],[K.s6-0.3,1.1,CAM],[K.corner-0.4,1.2,CAM],[K.s7+0.2,1.2,CAM],[K.s8,0.95,CAM],[K.cube-0.45,0.85,CAM],[K.cube+0.35,1.12,CAM]],CAM);
+const camY=track(880,[[K.s5+0.3,420,CAM],[K.s6-0.3,230,CAM],[K.squeeze+0.8,380,CAM],[K.corner-0.4,480,CAM],[K.s7+0.2,560,CAM],[K.s8,860,CAM],[K.cube-0.45,1060,CAM],[K.cube+0.35,1090,CAM]],CAM);
+const toScreen=(wx,wy,t)=>{const s=camS(t),fy=camY(t);return [C[0]+s*wx,C[1]+s*(wy-fy),s];};
+
+// walls: 4 sections along the gut end (stiff / stretchy alternate) + neutral gut above
+const BANDS=[[-1400,-60,'n'],[-60,180,'s'],[180,420,'f'],[420,660,'s'],[660,900,'f']];
+const wallsEl=$('walls'); const WALL=[];
+BANDS.forEach(([y0,y1,k],i)=>{for(const side of [-1,1]){const d=document.createElement('div');d.className='wall';
+  d.style.left=(side<0?-300:200)+'px';d.style.top=(y0+3)+'px';d.style.height=(y1-y0-6)+'px';wallsEl.appendChild(d);WALL.push({d,k,side,i});}});
+const colS=ctrack('#E59AAE',[[K.wall,'#EE8AA5'],[K.stiff,'#A8234E']]);
+const colF=ctrack('#E59AAE',[[K.wall,'#EE8AA5'],[K.soft,'#F9C9D6']]);
+const colN=ctrack('#E59AAE',[[K.wall,'#EBB3C2']]);
+const brdS=ctrack('#B5607A',[[K.stiff,'#5E0E2A']]);
+const wallPulse=t=>Math.exp(-3*(t-K.wall))*Math.sin(Math.PI*clamp((t-K.wall)/0.5))*(t>K.wall?1:0);
+// squeeze rhythm: stiff sections contract every 0.48 s from the word "squeeze" until scene 7
+const SQ=[];for(let q=K.squeeze;q<K.s7+0.2;q+=0.48)SQ.push(q);
+const pulse=t=>{let p=0;for(const q of SQ){const u=(t-q)/0.42;if(u>0&&u<1)p=Math.max(p,Math.pow(Math.sin(Math.PI*u),2));}return p;};
+const altWiggle=t=>{const u=(t-K.alt)/0.7;return (u>0&&u<1)?Math.sin(Math.PI*u*2):0;};
+
+// lump: enters round, corners grow with each squeeze, lands on the word "cube"
+const LAND=K.cube, Y_IN=80, Y_S7=580, Y_S8=720, Y_G=1300;
+const SQc=SQ.filter(q=>q+0.12<K.corner-0.05);
+const lumpR=track(150,[...SQc.map((q,i)=>[q+0.12,150-112*(i+1)/SQc.length]),[K.corner,24,FAST],[K.cube+0.02,30]]);
+const lumpW=track(300,[[K.dry,285,SLOW],[K.cube,270]]);
+const lumpC=ctrack('#9A6434',[[K.dry,'#6F4524',[6,1]]]);
+function lumpPos(t){
+  if(t<K.s6){return Y_IN+(-800)*(1-S(t-K.alt,6.5,1));}
+  if(t<K.s7){return lerp(Y_IN+(-800)*(1-S(K.s6-K.alt,6.5,1)),Y_S7,eio((t-K.s6)/(K.s7-K.s6)));}
+  if(t<K.s8){return lerp(Y_S7,Y_S8,eio((t-K.s7)/(K.s8-K.s7)));}
+  if(t<LAND){const u=(t-K.s8)/(LAND-K.s8);return lerp(Y_S8,Y_G,u*u*(0.35+0.65*u));}
+  // after landing: one small hop, then rest
+  const tau=t-LAND; return Y_G-(tau<0.5?90*Math.sin(Math.PI*clamp((tau-0.12)/0.38)):0)*Math.exp(-1.5*tau);
+}
+const lumpVy=t=>(lumpPos(t+0.01)-lumpPos(t-0.01))/0.02;
+// scene 9: the cube floats up beside the wombat's face and bobs
+const S9X=-170, S9Y=-30; // screen offset from frame centre
+const cubeTo9=t=>S(t-K.s9,9,0.82);
+
+function diagram(t){
+  const live=t>K.s5-0.1; const W=$('world');
+  $('diag').style.display=live?'':'none'; if(!live)return;
+  const s=camS(t),fy=camY(t);
+  W.style.transform=`translate(${C[0]}px,${(C[1]-s*fy).toFixed(3)}px) scale(${s.toFixed(5)})`;
+  // the tube grows up from the round opening between s5 and "gut"
+  const grow=eio((t-K.s5-0.1)/Math.min(1.0,K.gut-K.s5+0.2));
+  const fadeOut=1-eo((t-K.s9+0.24)/0.2);
+  const clipTop=lerp(900,-1400,grow);
+  $('lumen').style.clipPath=`inset(${clipTop+1400}px 0 0 0)`;
+  wallsEl.style.clipPath=`polygon(-600px ${clipTop}px,600px ${clipTop}px,600px 1000px,-600px 1000px)`;
+  $('tube').style.opacity=fadeOut.toFixed(4); wallsEl.style.opacity=fadeOut.toFixed(4);
+  $('ground').style.opacity=(eo((t-K.s8)/0.4)).toFixed(4);
+  const p=pulse(t), wp=wallPulse(t), aw=altWiggle(t);
+  for(const w of WALL){
+    let dx=0;
+    if(w.k==='s'){dx=34*p+10*aw;} else if(w.k==='f'){dx=-8*p-10*aw;}
+    dx+=6*wp;
+    w.d.style.transform=`translateX(${(-w.side*dx).toFixed(2)}px)`;
+    w.d.style.background=w.k==='s'?colS(t):w.k==='f'?colF(t):colN(t);
+    w.d.style.boxShadow=`inset 0 0 0 5px ${w.k==='s'?brdS(t):'#B5607A'}`;
+  }
+  // lump / cube (world space)
+  const L=$('lump'), B=$('lumpBody');
+  let lx=0, ly=lumpPos(t), w=lumpW(t), r=Math.min(lumpR(t),w/2);
+  let sx=1-0.07*p, sy=1+0.05*p, rot=0, op=t<K.alt?0:1;
+  if(t<K.s8+0.3){ /* inside the gut */ }
+  // stretch while falling, squash on contact
+  const vy=lumpVy(t);
+  if(t>K.s8&&t<LAND){const k=clamp(vy/2600,0,0.18);sx*=1-k*0.6;sy*=1+k;}
+  if(t>=LAND){const tau=t-LAND;const sq=0.26*Math.exp(-7*tau)*Math.cos(17*tau);
+    const hop=tau>0.12&&tau<0.5;sy*=hop?1+0.06*Math.sin(Math.PI*(tau-0.12)/0.38):1-sq;sx*=hop?1-0.04*Math.sin(Math.PI*(tau-0.12)/0.38):1+sq*0.8;}
+  let scale=1;
+  if(t>K.s9){ // move to the scene-9 spot in screen space, keep world maths
+    const a=cubeTo9(t); const bob=16*Math.sin((t-K.s9)*4.4)*clamp((t-K.s9-0.3)/0.6);
+    const tx=(S9X)/s, ty=fy+(S9Y+bob)/s;
+    lx=lerp(lx,tx,a); ly=lerp(ly,ty,a); scale=lerp(1,1.15/s,a); rot=lerp(0,-8+4*Math.sin((t-K.s9)*2.2),a);
+  }
+  const h=w; // square bounding box
+  L.style.opacity=op;
+  L.style.transform=`translate(${lx.toFixed(2)}px,${(ly).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${(scale*sx).toFixed(4)},${(scale*sy).toFixed(4)})`;
+  L.style.transformOrigin='0 0';
+  B.style.width=w.toFixed(2)+'px';B.style.height=h.toFixed(2)+'px';B.style.left=(-w/2).toFixed(2)+'px';B.style.top=(-h).toFixed(2)+'px';
+  // body anchored at its bottom so squash reads as contact with the ground
+  B.style.borderRadius=r.toFixed(2)+'px'; B.style.background=lumpC(t);
+  const oa=t>K.s9?cubeTo9(t):0; B.style.outline=oa>0.01?`${(9*oa/(scale*s)).toFixed(2)}px solid #1B0E05`:'none';
+  const pv=vis(t,LAND+0.05,null,{din:0,lin:0.2,blur:8});
+  B.querySelectorAll('.pip').forEach(pp=>{pp.style.opacity=pv.o.toFixed(3);pp.style.filter=pv.blur>0.05?`blur(${pv.blur.toFixed(1)}px)`:'none';});
+  // corner "ping" on the word: an orange outline expands off the lump
+  const cp=(t-K.corner)/0.55;
+  if(oa<=0.01){ if(cp>0&&cp<1){B.style.outline=`11px solid rgba(255,106,31,${(1-eo(cp)).toFixed(3)})`;B.style.outlineOffset=(4+46*eo(cp)).toFixed(1)+'px';} else B.style.outline='none'; }
+  else B.style.outlineOffset='0px';
+  // drops drift off while it dries
+  for(let i=0;i<10;i++){const el=$('d'+i);const t0=K.dry+i*0.1;const u=(t-t0)/0.95;
+    if(u<=0||u>=1){el.style.opacity='0';continue;}
+    const side=i%2?1:-1, y0=ly-h*0.5+((i*37)%3-1)*60;
+    const x=side*(w/2-10+eo(u)*(230+(i%3)*40)), y=y0-70*eo(u)+20*Math.sin(u*3+i);
+    const o=clamp(u/0.12)*(1-eo((u-0.55)/0.45));
+    el.style.opacity=(o*fadeOut).toFixed(3);el.style.filter=u>0.55?`blur(${(8*eo((u-0.55)/0.45)).toFixed(1)}px)`:'none';
+    el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${(0.6+0.4*eo(u/0.3)).toFixed(3)})`;}
+  // label chips (world space, beside the walls)
+  chips(t,fadeOut);
+}
+const chipAW=track(0,[[K.wall,LANG==='en'?260:250],[K.stiff,LANG==='en'?190:150]],MORPH), chipAY=track(-20,[[K.stiff,60]],MORPH);
+const chipABG=ctrack('#FFFFFF',[[K.stiff,'#A8234E']]), chipAFG=ctrack('#2A1A10',[[K.stiff,'#FFFFFF']]);
+const chipBW=track(0,[[K.soft,LANG==='en'?260:150]],MORPH);
+function chips(t,fo){
+  const A=$('chipA'),Bc=$('chipB');
+  const va=vis(t,K.wall,K.alt+0.45,{din:0.02,lin:0.22,lout:0.25});
+  const wA=chipAW(t), yA=chipAY(t)+(t>K.alt?-14*altWiggle(t):0);
+  if(setVis(A,{...va,o:va.o*fo},`translate(${(-wA/2).toFixed(1)}px,${(yA-42).toFixed(1)}px)`)){
+    A.style.width=wA.toFixed(1)+'px';A.style.background=chipABG(t);A.style.color=chipAFG(t);
+    const s1=vis(t,K.wall,K.stiff,{lin:0.2,lout:0.1}),s2=vis(t,K.stiff,null,{din:0.06,lin:0.22});
+    $('chipA1').style.opacity=s1.o;$('chipA1').style.filter=`blur(${s1.blur.toFixed(1)}px)`;
+    $('chipA2').style.opacity=s2.o;$('chipA2').style.filter=`blur(${s2.blur.toFixed(1)}px)`;}
+  const vb=vis(t,K.soft,K.alt+0.45,{din:0.02,lin:0.22,lout:0.25}); const wB=chipBW(t);
+  if(setVis(Bc,{...vb,o:vb.o*fo},`translate(${(-wB/2).toFixed(1)}px,${(258+14*altWiggle(t)).toFixed(1)}px)`)){
+    Bc.style.width=wB.toFixed(1)+'px';Bc.style.background='#F9C9D6';Bc.style.color='#7A1335';Bc.style.boxShadow='inset 0 0 0 4px #E59AAE';}
+}
+
+// ---------- the hero shape: pill -> square -> circle -> the round opening of the gut ----------
+const HW=track(420,[[K.aus,560],[K.s3,130],[K.square,380],[K.round,380]]);
+const HH=track(120,[[K.s3,130],[K.square,380],[K.round,380]]);
+const HR=track(60,[[K.s3,65],[K.square,30],[K.round,190]]);
+const HY=track(360,[[K.s3,520],[K.square,620]]);
+const HBW=track(0,[[K.s3,8],[K.square,16]]);
+const HBC=ctrack('#FFFFFF',[[K.round,'#3EE07A']]);
+const HFA=track(1,[[K.s3,0.95],[K.square,0.10]]);
+const HROT=track(0,[[K.s4,-9,FAST],[K.s4+0.16,6,FAST],[K.s4+0.32,0,MORPH]]);
+const toRing=t=>S(t-K.s5,9,0.9);
+function hero(t){
+  const el=$('hero'); const v=vis(t,K.wombat,K.s9-0.32,{din:0,lin:0.2,lout:0.16,blur:14});
+  if(v.o<0.003){el.style.opacity='0';return;}
+  const intro=S(t-K.wombat,13,0.78);
+  let w=HW(t),h=HH(t),r=HR(t),cx=540,cy=HY(t),bw=HBW(t),bc=HBC(t),fill=`rgba(255,255,255,${HFA(t).toFixed(3)})`;
+  if(t>K.s5){ // blend into the gut opening (world ellipse 340 x 80 at y 900)
+    const a=toRing(t); const [sx,sy,s]=toScreen(0,900,t);
+    w=lerp(w,(400)*s,a);h=lerp(h,80*s,a);r=Math.min(w,h)/2;cx=lerp(cx,sx,a);cy=lerp(cy,sy,a);bw=lerp(bw,10*s,a);
+    const c=hex('#3EE07A').map((x,i)=>Math.round(lerp(x,hex('#6E1834')[i],a)));bc=`rgb(${c})`;
+    fill=`rgba(${Math.round(lerp(255,58,a))},${Math.round(lerp(255,16,a))},${Math.round(lerp(255,32,a))},${lerp(0.10,1,a).toFixed(3)})`;
+    // the opening pulses on "round hole"
+    const hp=(t-K.hole)/0.6; if(hp>0&&hp<1){bc=`rgb(${hex('#3EE07A').map((x,i)=>Math.round(lerp(x,hex('#6E1834')[i],eo(hp))))})`;bw*=1+0.8*Math.sin(Math.PI*hp);}
+  }
+  r=Math.min(r,w/2,h/2);
+  const below=t>K.s5?clamp((1095-(cy-h/2))/40):1; // never show the opening under the captions
+  if(v.o*below<0.003){el.style.opacity='0';return;}
+  el.style.opacity=(v.o*below).toFixed(4);el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.width=w.toFixed(2)+'px';el.style.height=h.toFixed(2)+'px';el.style.borderRadius=r.toFixed(2)+'px';
+  el.style.borderWidth=bw.toFixed(2)+'px';el.style.borderColor=bc;el.style.background=fill;
+  el.style.boxShadow=t<K.s5?`0 0 0 ${Math.max(0,bw>1?5:0)}px rgba(0,0,0,.85), inset 0 0 0 ${bw>1?5:0}px rgba(0,0,0,.6)`:'none';
+  el.style.transform=`translate(${(cx-w/2).toFixed(2)}px,${(cy-h/2).toFixed(2)}px) rotate(${HROT(t).toFixed(2)}deg) scale(${(v.s*(0.55+0.45*intro)).toFixed(4)})`;
+  // content swaps (short blur)
+  const lay=[['h1',K.wombat,K.aus],['h2',K.aus,K.s3],['h3',K.s3,K.round],['h4',K.round,K.s5]];
+  for(const [id,a,b] of lay){const n=$(id);const q=vis(t,a,b,{din:a===K.wombat?0:0.07,lin:0.22,lout:0.12,blur:10});
+    n.style.opacity=q.o.toFixed(3);n.style.filter=q.blur>0.05?`blur(${q.blur.toFixed(1)}px)`:'none';}
+  const qa=S(t-K.square,14,0.7), h3=$('h3').style;
+  h3.fontSize=(t<K.square?80:lerp(80,230,qa)).toFixed(1)+'px'; h3.color=t<K.square?'#1B0E05':'#fff'; h3.webkitTextStroke=t<K.square?'0px #000':'14px #000';
+  $('h4').style.transform=`translate(-50%,-54%) scale(${(0.6+0.4*S(t-K.round,14,0.7)).toFixed(3)})`;
+}
+
+// ---------- progress strip under the captions (diagram scenes) ----------
+const IL=track(0,[[K.alt,0,FAST],[K.squeeze,225,FAST],[K.dry,450,FAST],[K.cube,675,FAST]]);
+const IR=track(0,[[K.alt,225,SLOW],[K.squeeze,450,SLOW],[K.dry,675,SLOW],[K.cube,900,SLOW]]);
+const IRl=track(0,[[K.alt,225,FAST],[K.squeeze,450,FAST],[K.dry,675,FAST],[K.cube,900,FAST]]);
+const ILs=track(0,[[K.alt,0,SLOW],[K.squeeze,225,SLOW],[K.dry,450,SLOW],[K.cube,675,SLOW]]);
+const STEPT=[K.alt,K.squeeze,K.dry,K.cube];
+function strip(t){
+  const el=$('strip'); const v=vis(t,K.gut,K.s9-0.32,{din:0,lin:0.3,lout:0.16,blur:10});
+  if(!setVis(el,v,`translateY(${(30*(1-v.a)).toFixed(1)}px)`))return;
+  // leading edge on FAST, trailing on SLOW: the indicator stretches as it moves right
+  const l=Math.min(ILs(t),IL(t)), r=Math.max(IR(t),IRl(t)); const ia=clamp((t-K.alt)/0.25);
+  const ind=$('ind'); ind.style.left=(l+10).toFixed(1)+'px'; ind.style.width=Math.max(0,(r-l-20)*ia).toFixed(1)+'px'; ind.style.opacity=ia.toFixed(3);
+  let cur=-1; STEPT.forEach((s,i)=>{if(t>=s)cur=i;});
+  for(let i=0;i<4;i++){const st=$('st'+i); const on=i===cur; const done=i<cur;
+    st.style.color=(on&&ia>0.5)?'#fff':done?'#6B5546':'#8C7B6C';
+    const kick=on?1+0.08*Math.sin(Math.PI*clamp((t-STEPT[i])/0.3)):1; st.style.transform=`scale(${kick.toFixed(3)})`;}
+}
+
+// ---------- scene 9: the question ----------
+function ending(t){
+  const q=$('qm'); const a=S(t-K.q,16,0.55); const v=vis(t,K.q,null,{din:0,lin:0.12,blur:10});
+  if(t<K.q){q.style.opacity='0';} else {
+    q.style.opacity=v.o.toFixed(3);q.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(1)}px)`:'none';
+    const bob=10*Math.sin((t-K.q)*4.4+1.4);
+    q.style.transform=`translate(${(690).toFixed(1)}px,${(360+bob).toFixed(1)}px) rotate(${(14*(1-a)+8).toFixed(2)}deg) scale(${(0.2+0.8*a).toFixed(4)})`;}
+  const b=$('bubble'); const ba=S(t-K.comment,15,0.62); const bv=vis(t,K.comment,null,{din:0,lin:0.12,blur:8});
+  if(t<K.comment){b.style.opacity='0';} else {
+    b.style.opacity=(0.95*bv.o).toFixed(3);b.style.filter=bv.blur>0.05?`blur(${bv.blur.toFixed(1)}px)`:'none';
+    b.style.transform=`translate(465px,${(1325+30*(1-ba)).toFixed(1)}px) scale(${(0.3+0.7*ba).toFixed(4)})`;b.style.transformOrigin='30% 100%';}
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('c'+LANG+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,32,0.72);
+  capEls[i].style.transform=`scale(${(0.86+0.14*a).toFixed(4)})`;
+  capEls[i].style.opacity=clamp(tau/0.05).toFixed(3);
+}
+
+function render(t){ footage(t); hook(t); diagram(t); hero(t); strip(t); ending(t); captions(t); }
+
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:DUR,duration:DUR,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

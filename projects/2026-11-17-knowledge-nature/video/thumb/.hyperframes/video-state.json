@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "716d0091-2742-41e5-a2e8-940659fc998a",
-  "currentRevision": null,
+  "currentRevision": "7ee2e2e0-2a75-45cb-aab8-b6787114af59",
   "pendingChanges": false,
   "files": {
     "hyperframes.json": {
@@ -9,15 +9,31 @@
       "content": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
     },
     "index.html": {
-      "hash": "7fbdce5dc31ba05e2344aac3e9e52f7ad863f07bbd89446b0f437b9e8b24f4b5",
-      "content": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/7f/7fbdce5dc31ba05e2344aac3e9e52f7ad863f07bbd89446b0f437b9e8b24f4b5"
+      "hash": "d1942501e444aed7095783d1ffcf5c5567732a446c2e058ecf72bc70b7b17e95",
+      "content": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/d1/d1942501e444aed7095783d1ffcf5c5567732a446c2e058ecf72bc70b7b17e95"
     },
     "package.json": {
       "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
       "content": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
     }
   },
-  "revisions": {},
+  "revisions": {
+    "7ee2e2e0-2a75-45cb-aab8-b6787114af59": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794932787244,
+      "endedAt": 1794932787245,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/7f/7fbdce5dc31ba05e2344aac3e9e52f7ad863f07bbd89446b0f437b9e8b24f4b5",
+          "after": "/root/.cache/hyperframes/history/716d0091-2742-41e5-a2e8-940659fc998a/blobs/d1/d1942501e444aed7095783d1ffcf5c5567732a446c2e058ecf72bc70b7b17e95"
+        }
+      }
+    }
+  },
   "checks": {
     "latest": null,
     "revisions": {},
@@ -30,13 +46,15 @@
   },
   "renders": {
     "latest": {
-      "id": "8439a930-ea10-4231-8c6f-0822b8b20c49",
-      "completedAt": 1794928082551,
-      "output": "/tmp/claude-0/-home-user/32d3b522-8da1-58f7-8622-72a3c5724d61/scratchpad/th.mp4",
+      "id": "566e3291-7059-4218-acb3-88a767e984fe",
+      "completedAt": 1794932801251,
+      "output": "/home/user/ai-studio/projects/2026-11-17-knowledge-nature/renders/work/thumb-en.mp4",
       "status": "completed",
-      "revision": null
+      "revision": "7ee2e2e0-2a75-45cb-aab8-b6787114af59"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "7ee2e2e0-2a75-45cb-aab8-b6787114af59"
+    ]
   },
   "pendingArtifactCleanup": []
 }

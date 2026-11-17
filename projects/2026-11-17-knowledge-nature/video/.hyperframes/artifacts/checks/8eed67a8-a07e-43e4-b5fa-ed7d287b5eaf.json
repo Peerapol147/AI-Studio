@@ -1,0 +1,945 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 411 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/ai-studio/projects/2026-11-17-knowledge-nature/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 75 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/ai-studio/projects/2026-11-17-knowledge-nature/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"vo\" is 27.62s but its slot (data-duration) is 27.94s — the slot is shortened to the media length when rendered. Set data-duration to ~27.62s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-hf-var-scope": "1",
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "27.94",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-motion-blur": "on",
+          "data-motion-blur-events": "on",
+          "data-composition-variables": "[{\"id\":\"lang\",\"type\":\"string\",\"label\":\"Language (th | en)\",\"default\":\"th\"},{\"id\":\"vo\",\"type\":\"string\",\"label\":\"Voice file\",\"default\":\"assets/vo-th.mp3\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 14,
+    "infoCount": 6,
+    "findings": [
+      {
+        "selector": "#cth1 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 350.45,
+          "y": 1132.97,
+          "width": 379.1,
+          "height": 117
+        },
+        "time": 1.552,
+        "rect": {
+          "left": 350.45,
+          "top": 1132.97,
+          "right": 729.55,
+          "bottom": 1249.97,
+          "width": 379.1,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "มีสัตว์ตัวนึง",
+        "message": "<span> \"มีสัตว์ตัวนึง\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 1.552,
+        "lastSeen": 1.552,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.552
+        ]
+      },
+      {
+        "selector": "#cth6 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 246.86,
+          "y": 1154.84,
+          "width": 586.28,
+          "height": 92
+        },
+        "time": 4.657,
+        "rect": {
+          "left": 246.86,
+          "top": 1154.84,
+          "right": 833.14,
+          "bottom": 1246.84,
+          "width": 586.28,
+          "height": 92
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "สัตว์ป่าจากออสเตรเลีย",
+        "message": "<span> \"สัตว์ป่าจากออสเตรเลีย\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 4.657,
+        "lastSeen": 4.657,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          4.657
+        ]
+      },
+      {
+        "selector": "#cth10 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 289.36,
+          "y": 1132.88,
+          "width": 501.27,
+          "height": 117.12
+        },
+        "time": 7.761,
+        "rect": {
+          "left": 289.36,
+          "top": 1132.88,
+          "right": 790.63,
+          "bottom": 1250,
+          "width": 501.27,
+          "height": 117.12
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "แต่ความจริงคือ",
+        "message": "<span> \"แต่ความจริงคือ\" is outside the safe area: TikTok (right edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 7.761,
+        "lastSeen": 7.761,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.761
+        ]
+      },
+      {
+        "selector": "#cth13 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 289.5,
+          "y": 1132.97,
+          "width": 501,
+          "height": 117
+        },
+        "time": 10.866,
+        "rect": {
+          "left": 289.5,
+          "top": 1132.97,
+          "right": 790.5,
+          "bottom": 1249.97,
+          "width": 501,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "นักวิทยาศาสตร์",
+        "message": "<span> \"นักวิทยาศาสตร์\" is outside the safe area: TikTok (right edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 10.866,
+        "lastSeen": 10.866,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10.866
+        ]
+      },
+      {
+        "selector": "#chipA2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 502.3,
+          "y": 169.14,
+          "width": 75.49,
+          "height": 63
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 502.3,
+          "top": 169.14,
+          "right": 577.79,
+          "bottom": 232.14,
+          "width": 75.49,
+          "height": 63
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "แข็ง",
+        "message": "<span> \"แข็ง\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 13.97,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          13.97
+        ]
+      },
+      {
+        "selector": "#st0t",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 189.88,
+          "y": 1326.5,
+          "width": 73.23,
+          "height": 57
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 189.88,
+          "top": 1326.5,
+          "right": 263.11,
+          "bottom": 1383.5,
+          "width": 73.23,
+          "height": 57
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "กลม",
+        "message": "<b> \"กลม\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 23.283,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          13.97,
+          17.074,
+          20.179,
+          23.283
+        ]
+      },
+      {
+        "selector": "#st1t",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 426.27,
+          "y": 1326.5,
+          "width": 50.46,
+          "height": 57
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 426.27,
+          "top": 1326.5,
+          "right": 476.73,
+          "bottom": 1383.5,
+          "width": 50.46,
+          "height": 57
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "บีบ",
+        "message": "<b> \"บีบ\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 23.283,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          13.97,
+          17.074,
+          20.179,
+          23.283
+        ]
+      },
+      {
+        "selector": "#st2t",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 640.45,
+          "y": 1326.5,
+          "width": 72.1,
+          "height": 57
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 640.45,
+          "top": 1326.5,
+          "right": 712.55,
+          "bottom": 1383.5,
+          "width": 72.1,
+          "height": 57
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "แห้ง",
+        "message": "<b> \"แห้ง\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 23.283,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          13.97,
+          17.074,
+          20.179,
+          23.283
+        ]
+      },
+      {
+        "selector": "#st3t",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 848.91,
+          "y": 1326.5,
+          "width": 105.18,
+          "height": 57
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 848.91,
+          "top": 1326.5,
+          "right": 954.09,
+          "bottom": 1383.5,
+          "width": 105.18,
+          "height": 57
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ลูกเต๋า",
+        "message": "<b> \"ลูกเต๋า\" is outside the safe area: TikTok (bottom edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 23.283,
+        "occurrences": 4,
+        "heldMs": 0,
+        "times": [
+          13.97,
+          17.074,
+          20.179,
+          23.283
+        ]
+      },
+      {
+        "selector": "#cth19 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 375.42,
+          "y": 1132.98,
+          "width": 329.14,
+          "height": 116.99
+        },
+        "time": 13.97,
+        "rect": {
+          "left": 375.42,
+          "top": 1132.98,
+          "right": 704.56,
+          "bottom": 1249.97,
+          "width": 329.14,
+          "height": 116.99
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "มีส่วนแข็ง",
+        "message": "<span> \"มีส่วนแข็ง\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 13.97,
+        "lastSeen": 13.97,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          13.97
+        ]
+      },
+      {
+        "selector": "#cth28 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 324.7,
+          "y": 1146.77,
+          "width": 430.58,
+          "height": 102
+        },
+        "time": 20.179,
+        "rect": {
+          "left": 324.7,
+          "top": 1146.77,
+          "right": 755.28,
+          "bottom": 1248.77,
+          "width": 430.58,
+          "height": 102
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ที่แห้งลงเรื่อยๆ",
+        "message": "<span> \"ที่แห้งลงเรื่อยๆ\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 20.179,
+        "lastSeen": 20.179,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          20.179
+        ]
+      },
+      {
+        "selector": "#cth33 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 306.3,
+          "y": 1132.97,
+          "width": 467.39,
+          "height": 117
+        },
+        "time": 23.283,
+        "rect": {
+          "left": 306.3,
+          "top": 1132.97,
+          "right": 773.69,
+          "bottom": 1249.97,
+          "width": 467.39,
+          "height": 117
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "รูกลมๆ นั่นเอง",
+        "message": "<span> \"รูกลมๆ นั่นเอง\" is outside the safe area: Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.283,
+        "lastSeen": 23.283,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.283
+        ]
+      },
+      {
+        "selector": "#qm",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 657.87,
+          "y": 270.07,
+          "width": 217.39,
+          "height": 484.82
+        },
+        "time": 26.388,
+        "rect": {
+          "left": 657.87,
+          "top": 270.07,
+          "right": 875.26,
+          "bottom": 754.89,
+          "width": 217.39,
+          "height": 484.82
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "?",
+        "message": "<div> \"?\" is outside the safe area: YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 26.388,
+        "lastSeen": 26.388,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.388
+        ]
+      },
+      {
+        "selector": "#cth36 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 294.38,
+          "y": 1146.77,
+          "width": 491.23,
+          "height": 102
+        },
+        "time": 26.388,
+        "rect": {
+          "left": 294.38,
+          "top": 1146.77,
+          "right": 785.61,
+          "bottom": 1248.77,
+          "width": 491.23,
+          "height": 102
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ไปเพื่ออะไรกันน้า?",
+        "message": "<span> \"ไปเพื่ออะไรกันน้า?\" is outside the safe area: TikTok (right edge), Instagram Reels (bottom edge), YouTube Shorts (bottom edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 26.388,
+        "lastSeen": 26.388,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.388
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 1.552,
+        "selector": "#sh-walk",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -41.14,
+          "top": -54.85,
+          "right": 1107.42,
+          "bottom": 1987.03,
+          "width": 1148.56,
+          "height": 2041.88
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 41.14,
+          "right": 27.42,
+          "top": 54.85,
+          "bottom": 67.03
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -41.14,
+          "y": -54.85,
+          "width": 1148.56,
+          "height": 2041.88
+        },
+        "firstSeen": 1.552,
+        "lastSeen": 1.552,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.552
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 4.657,
+        "selector": "#sh-eat",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -52.72,
+          "top": -93.72,
+          "right": 1123.13,
+          "bottom": 1996.68,
+          "width": 1175.85,
+          "height": 2090.4
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 52.72,
+          "right": 43.13,
+          "top": 93.72,
+          "bottom": 76.68
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -52.72,
+          "y": -93.72,
+          "width": 1175.85,
+          "height": 2090.4
+        },
+        "firstSeen": 4.657,
+        "lastSeen": 4.657,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          4.657
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 4.657,
+        "selector": "#sh-forest",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -22.86,
+          "top": -48.78,
+          "right": 1102.86,
+          "bottom": 1952.52,
+          "width": 1125.73,
+          "height": 2001.29
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 22.86,
+          "right": 22.86,
+          "top": 48.78,
+          "bottom": 32.52
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -22.86,
+          "y": -48.78,
+          "width": 1125.73,
+          "height": 2001.29
+        },
+        "firstSeen": 4.657,
+        "lastSeen": 4.657,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          4.657
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.761,
+        "selector": "#sh-rear",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -81.29,
+          "top": -99.35,
+          "right": 1100.32,
+          "bottom": 2001.29,
+          "width": 1181.61,
+          "height": 2100.63
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 81.29,
+          "right": 20.32,
+          "top": 99.35,
+          "bottom": 81.29
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -81.29,
+          "y": -99.35,
+          "width": 1181.61,
+          "height": 2100.63
+        },
+        "firstSeen": 7.761,
+        "lastSeen": 7.761,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.761
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.761,
+        "selector": "#sh-close",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -19.8,
+          "top": -28.15,
+          "right": 1099.8,
+          "bottom": 1962.23,
+          "width": 1119.59,
+          "height": 1990.39
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 19.8,
+          "right": 19.8,
+          "top": 28.15,
+          "bottom": 42.23
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -19.8,
+          "y": -28.15,
+          "width": 1119.59,
+          "height": 1990.39
+        },
+        "firstSeen": 7.761,
+        "lastSeen": 10.866,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          7.761,
+          10.866
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 26.388,
+        "selector": "#sh-face",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -36.85,
+          "top": -58.96,
+          "right": 1116.85,
+          "bottom": 1992.06,
+          "width": 1153.7,
+          "height": 2051.02
+        },
+        "containerSelector": "#foot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 36.85,
+          "right": 36.85,
+          "top": 58.96,
+          "bottom": 72.06
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -36.85,
+          "y": -58.96,
+          "width": 1153.7,
+          "height": 2051.02
+        },
+        "firstSeen": 26.388,
+        "lastSeen": 26.388,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.388
+        ]
+      }
+    ],
+    "duration": 27.94,
+    "samples": [
+      1.552,
+      4.657,
+      7.761,
+      10.866,
+      13.97,
+      17.074,
+      20.179,
+      23.283,
+      26.388
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 20,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.43:1; WCAG AA requires 3:1.",
+        "text": "แข็ง",
+        "fg": "rgb(176,170,166)",
+        "bg": "rgb(200,117,144)",
+        "ratio": 1.43,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(69,67,65)",
+        "large": true,
+        "selector": "#chipA2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 502.30157470703125,
+          "y": 169.13999938964844,
+          "width": 75.484375,
+          "height": 63.00001525878906
+        },
+        "time": 13.97,
+        "times": [
+          13.97
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.86:1; WCAG AA requires 3:1.",
+        "text": "แห้ง",
+        "fg": "rgb(255,255,255)",
+        "bg": "rgb(255,106,31)",
+        "ratio": 2.86,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(75,75,75)",
+        "large": true,
+        "selector": "#st2t",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 640.453125,
+          "y": 1326.5,
+          "width": 72.09375,
+          "height": 57
+        },
+        "time": 20.179,
+        "times": [
+          20.179
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.552,
+      7.761,
+      13.97,
+      20.179,
+      26.388
+    ],
+    "checked": 16,
+    "passed": 14
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 224
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

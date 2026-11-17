@@ -1,0 +1,126 @@
+[
+ {
+  "t": 2.76,
+  "type": "appear",
+  "desc": "hook cube springs in",
+  "sfx": "kit/pop.ogg"
+ },
+ {
+  "t": 3.32,
+  "type": "scene_cut",
+  "desc": "crossfade to grazing wombat",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -8
+ },
+ {
+  "t": 3.6,
+  "type": "appear",
+  "desc": "label pill springs in",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -8
+ },
+ {
+  "t": 4.74,
+  "type": "scene_cut",
+  "desc": "crossfade to forest, pill morphs",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -8
+ },
+ {
+  "t": 5.48,
+  "type": "scene_cut",
+  "desc": "crossfade to rear view, pill shrinks",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -9
+ },
+ {
+  "t": 6.74,
+  "type": "appear",
+  "desc": "shape grows into the square",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -7
+ },
+ {
+  "t": 7.54,
+  "type": "hover_or_small_ui",
+  "desc": "square wobbles (nope)",
+  "sfx": "kit/tick.ogg"
+ },
+ {
+  "t": 8.14,
+  "type": "success",
+  "desc": "square morphs to circle + tick",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -8
+ },
+ {
+  "t": 9.82,
+  "type": "movement",
+  "desc": "circle becomes gut opening, camera pulls out",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -8
+ },
+ {
+  "t": 13.16,
+  "type": "click",
+  "desc": "stiff sections turn dark",
+  "sfx": "kit/click.ogg",
+  "gain": -8
+ },
+ {
+  "t": 14.74,
+  "type": "movement",
+  "desc": "lump slides in",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -10
+ },
+ {
+  "t": 16.56,
+  "type": "hover_or_small_ui",
+  "desc": "first squeeze",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -8
+ },
+ {
+  "t": 18.46,
+  "type": "appear",
+  "desc": "corners lock in (ping)",
+  "sfx": "pop/kenney-interface-maximize-001.ogg",
+  "gain": -8
+ },
+ {
+  "t": 19.92,
+  "type": "appear",
+  "desc": "water drops drift off",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -8
+ },
+ {
+  "t": 22.4,
+  "type": "reveal",
+  "desc": "cube lands, squash",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -4
+ },
+ {
+  "t": 24.7,
+  "type": "scene_cut",
+  "desc": "crossfade to wombat face",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -9
+ },
+ {
+  "t": 26.32,
+  "type": "appear",
+  "desc": "question mark springs in",
+  "sfx": "pop/fs527522.ogg",
+  "gain": -6
+ },
+ {
+  "t": 26.74,
+  "type": "click",
+  "desc": "comment bubble",
+  "sfx": "kit/click.ogg",
+  "gain": -9
+ }
+]

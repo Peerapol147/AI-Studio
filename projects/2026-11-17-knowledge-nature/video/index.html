@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
 <html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
@@ -6,171 +7,448 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
-.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
-.shot img,.shot video,.fill{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
-.cap{position:absolute;left:60px;width:960px;top:1100px;text-align:center;z-index:50}
-.cap span{display:inline-block;color:#fff;font-weight:700;font-size:76px;line-height:1.25;-webkit-text-stroke:16px #000;paint-order:stroke fill;text-shadow:0 6px 14px rgba(0,0,0,.5)}
-.cube{position:absolute;background:linear-gradient(145deg,#a8703d,#7a4a22);border-radius:22%;box-shadow:inset -14px -18px 0 rgba(0,0,0,.22),inset 10px 10px 0 rgba(255,255,255,.18),0 24px 40px rgba(0,0,0,.35)}
-.cube i{position:absolute;width:15%;height:15%;margin:-7.5% 0 0 -7.5%;border-radius:50%;background:#4a2a10;opacity:.55}
-.cube b.eye{position:absolute;width:9%;height:12%;margin:-6% 0 0 -4.5%;border-radius:50%;background:#1b0d03;box-shadow:inset 3px 3px 0 #fff}
-.yel{background:radial-gradient(circle at 50% 40%,#ffe36e,#ffb300)}
-.sqbox{position:absolute;left:390px;top:620px;width:300px;height:300px;border:16px solid #fff;border-radius:12px;box-shadow:0 0 0 6px #000}
-.qm{position:absolute;left:390px;top:640px;width:300px;text-align:center;color:#fff;font-weight:900;font-size:200px;-webkit-text-stroke:10px #000;paint-order:stroke fill}
-.xline{position:absolute;left:360px;top:760px;width:360px;height:26px;background:#ff2d2d;border-radius:13px;box-shadow:0 0 0 5px #000}
-.circ{position:absolute;left:390px;top:620px;width:300px;height:300px;border:18px solid #3dff6e;border-radius:50%;box-shadow:0 0 0 6px #000, inset 0 0 0 6px #000}
-.tick{position:absolute;left:640px;top:560px;font-size:150px;font-weight:900;color:#3dff6e;-webkit-text-stroke:8px #000;paint-order:stroke fill}
-#diag{background:#fff7e8}
-#cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 500px}
-.band{position:absolute;width:100px;border:5px solid #6d0b30}
-.lumen{position:absolute;left:350px;top:170px;width:380px;height:800px;background:#ffe4ec}
-.blab{position:absolute;left:40px;width:190px;text-align:right;font-weight:700;font-size:56px;color:#6d0b30}
-.title{position:absolute;left:0;width:1080px;top:40px;text-align:center;font-weight:900;font-size:72px;color:#6d0b30}
-.exit{position:absolute;left:350px;top:950px;width:380px;height:70px;border-radius:50%;background:#3a1020;border:8px solid #6d0b30}
-#lump{position:absolute;left:400px;top:-80px;width:280px;opacity:0;height:280px;border-radius:50%;background:linear-gradient(145deg,#a8703d,#7a4a22);box-shadow:inset -12px -14px 0 rgba(0,0,0,.2);z-index:3}
-.drop{position:absolute;width:40px;height:52px;background:#29b6f6;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:4px solid #01579b;z-index:4;opacity:0}
-.glow{position:absolute;inset:0;border-radius:0;box-shadow:0 0 0 0 #fff}
-.ozlab{position:absolute;left:0;width:1080px;top:300px;text-align:center;font-weight:900;font-size:110px;color:#fff;-webkit-text-stroke:14px #000;paint-order:stroke fill}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#diagbg{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;
+  background:radial-gradient(ellipse at 50% 38%,#FBF6EE 0%,#EFE6DA 70%,#E6DACB 100%)}
+#world{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0}
+.w{position:absolute}
+#tube{position:absolute;left:0;top:0;width:0;height:0}
+#lumen{position:absolute;left:-200px;top:-1400px;width:400px;height:2300px;background:#FBE1E7}
+.wall{position:absolute;width:100px;border-radius:14px}
+#lump{position:absolute;left:0;top:0;z-index:2}
+#lumpBody{position:absolute;left:0;top:0;box-shadow:inset -14px -16px 0 rgba(0,0,0,.18),inset 12px 12px 0 rgba(255,255,255,.14)}
+.pip{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#3E2410;opacity:0}
+#walls{position:absolute;left:0;top:0;z-index:3}
+.drop{position:absolute;left:0;top:0;width:44px;height:58px;margin:-29px 0 0 -22px;z-index:4;opacity:0;
+  background:#3BA7F0;border:5px solid #0B5C99;border-radius:50% 50% 50% 50%/62% 62% 38% 38%}
+.chip{position:absolute;left:0;top:0;height:84px;border-radius:42px;z-index:5;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:42px;white-space:nowrap;opacity:0;overflow:hidden}
+.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%)}
+#ground{position:absolute;left:-500px;top:1300px;width:1000px;height:16px;border-radius:8px;background:#CDBBA6;z-index:1}
+#hero{position:absolute;left:0;top:0;z-index:20;opacity:0;display:flex;align-items:center;justify-content:center;border-style:solid}
+#hero .hc{position:absolute;left:50%;top:50%;white-space:nowrap;font-weight:900;line-height:1;transform:translate(-50%,-54%);paint-order:stroke fill;opacity:0}
+#h1,#h2{font-size:64px;color:#1B0E05;transform:translate(-50%,-50%)!important}
+#h4{font-size:200px;color:#3EE07A;-webkit-text-stroke:14px #000}
+#cube0{position:absolute;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;z-index:25;opacity:0;border-radius:52px;
+  background:#9A6434;box-shadow:inset -16px -20px 0 rgba(0,0,0,.2),inset 14px 14px 0 rgba(255,255,255,.15),0 0 0 10px #1B0E05}
+#strip{position:absolute;left:90px;top:1290px;width:900px;height:130px;border-radius:65px;background:#fff;z-index:30;opacity:0;
+  box-shadow:0 10px 30px rgba(60,30,10,.18)}
+#ind{position:absolute;top:12px;height:106px;border-radius:53px;background:#FF6A1F}
+.st{position:absolute;top:0;width:225px;height:130px;display:flex;align-items:center;justify-content:center;gap:14px;
+  font-weight:700;font-size:38px;color:#2A1A10}
+.st i{display:block;width:34px;height:34px;background:currentColor}
+#qm{position:absolute;left:0;top:0;z-index:40;opacity:0;font-weight:900;font-size:300px;line-height:1;color:#FFD23F;
+  -webkit-text-stroke:22px #1B0E05;paint-order:stroke fill}
+#bubble{position:absolute;left:0;top:0;width:150px;height:120px;z-index:40;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:140px;width:800px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:800px;bottom:-48px;display:block;color:#fff;font-weight:700;line-height:1.18;
+  -webkit-text-stroke:15px #000;paint-order:stroke fill;transform-origin:50% 80%}
 </style></head><body>
-<div id="root" data-composition-id="main" data-start="0" data-duration="23.98" data-width="1080" data-height="1920">
-<div id="pi1" class="shot"><video id="v1" class="clip" data-start="0" data-duration="2.2" data-track-index="1" src="assets/pixabay-271008-walkin.mp4" muted playsinline></video></div>
-<div id="s1b" class="clip shot yel" data-start="2.2" data-duration="0.72" data-track-index="2"><div id="cube1" class="cube" style="width:420px;height:420px"><i style="left:22%;top:22%"></i><i style="left:50%;top:50%"></i><i style="left:78%;top:78%"></i><b class="eye" style="left:36%;top:44%"></b><b class="eye" style="left:64%;top:44%"></b></div></div>
-<div class="shot" id="w2a"><video id="v2" class="clip" data-start="2.92" data-duration="0.7" data-track-index="1" data-media-start="0.5" src="assets/pixabay-317566-eating.mp4" muted playsinline></video></div>
-<div id="s2b" class="clip shot" data-start="3.62" data-duration="0.92" data-track-index="2"><img id="i2b" src="assets/pixabay-5099450.jpg"/><div class="ozlab" id="wlab">วอมแบต</div></div>
-<div id="s2c" class="clip shot" data-start="4.54" data-duration="0.84" data-track-index="3"><img id="i2c" src="assets/pixabay-5385056.jpg"/><div class="ozlab">ออสเตรเลีย</div></div>
-<div id="s3" class="clip shot" data-start="5.38" data-duration="2.12" data-track-index="2"><img id="i3" style="object-position:72% 50%" src="assets/pixabay-3887250.jpg"/><div class="sqbox" id="sq"></div><div class="qm" id="qm">?</div></div>
-<div id="s4" class="clip shot" data-start="7.5" data-duration="2.74" data-track-index="3"><img id="i4" src="assets/pixabay-6566987.jpg"/><div class="sqbox" id="sq4"></div><div class="xline" id="xl"></div><div class="circ" id="circ"></div><div class="tick" id="tick">✔</div></div>
-<div id="diag" class="clip shot" data-start="10.24" data-duration="10.44" data-track-index="2"><div id="cam">
-<div class="title" id="dtitle">ภาพตัดขวางลำไส้</div>
-<div class="lumen"></div><div class="band bs L" id="bl0" style="left:250px;top:170px;height:200px;background:#c2185b"></div><div class="band bs R" id="br0" style="left:730px;top:170px;height:200px;background:#c2185b"></div><div class="blab labs" style="top:236px">แข็ง</div><div class="band bf L" id="bl1" style="left:250px;top:370px;height:200px;background:#f8bbd0"></div><div class="band bf R" id="br1" style="left:730px;top:370px;height:200px;background:#f8bbd0"></div><div class="blab labf" style="top:436px">นิ่ม</div><div class="band bs L" id="bl2" style="left:250px;top:570px;height:200px;background:#c2185b"></div><div class="band bs R" id="br2" style="left:730px;top:570px;height:200px;background:#c2185b"></div><div class="blab labs" style="top:636px">แข็ง</div><div class="band bf L" id="bl3" style="left:250px;top:770px;height:200px;background:#f8bbd0"></div><div class="band bf R" id="br3" style="left:730px;top:770px;height:200px;background:#f8bbd0"></div><div class="blab labf" style="top:836px">นิ่ม</div><div class="exit" id="exit"></div><div id="lump"></div><div class="drop" id="d0" style="left:550px;top:560px"></div><div class="drop" id="d1" style="left:470px;top:590px"></div><div class="drop" id="d2" style="left:550px;top:620px"></div><div class="drop" id="d3" style="left:470px;top:650px"></div><div class="drop" id="d4" style="left:550px;top:680px"></div><div class="drop" id="d5" style="left:470px;top:710px"></div><div class="drop" id="d6" style="left:550px;top:740px"></div><div class="drop" id="d7" style="left:470px;top:770px"></div>
-</div></div>
-<div id="s8a" class="clip shot yel" data-start="20.68" data-duration="1.78" data-track-index="3">
-<div class="exit" style="left:290px;top:120px;width:500px;height:110px"></div><div id="cube8" class="cube" style="width:380px;height:380px"><i style="left:22%;top:22%"></i><i style="left:50%;top:50%"></i><i style="left:78%;top:78%"></i><b class="eye" style="left:36%;top:44%"></b><b class="eye" style="left:64%;top:44%"></b></div></div>
-<div class="shot"><video id="v8" class="clip" data-start="22.46" data-duration="1.52" data-track-index="1" data-media-start="0.5" src="assets/pixabay-271008-face.mp4" muted playsinline></video></div>
-<div id="cap0" class="clip cap" data-start="0.0" data-duration="1.0" data-track-index="20"><span>เพื่อนๆ รู้ไหมว่า</span></div>
-<div id="cap1" class="clip cap" data-start="1.0" data-duration="0.68" data-track-index="20"><span>มีสัตว์ตัวนึง</span></div>
-<div id="cap2" class="clip cap" data-start="1.68" data-duration="0.52" data-track-index="20"><span>ที่ขี้ออกมา</span></div>
-<div id="cap3" class="clip cap" data-start="2.2" data-duration="0.72" data-track-index="20"><span>เป็นลูกเต๋า</span></div>
-<div id="cap4" class="clip cap" data-start="2.92" data-duration="0.7" data-track-index="20"><span>เจ้าตัวนี้คือ</span></div>
-<div id="cap5" class="clip cap" data-start="3.62" data-duration="0.54" data-track-index="20"><span>วอมแบต</span></div>
-<div id="cap6" class="clip cap" data-start="4.16" data-duration="1.22" data-track-index="20"><span>สัตว์ป่าจากออสเตรเลีย</span></div>
-<div id="cap7" class="clip cap" data-start="5.38" data-duration="0.62" data-track-index="20"><span>หลายคนคิดว่า</span></div>
-<div id="cap8" class="clip cap" data-start="6.0" data-duration="0.62" data-track-index="20"><span>รูก้นของมัน</span></div>
-<div id="cap9" class="clip cap" data-start="6.62" data-duration="0.88" data-track-index="20"><span>คงเป็นสี่เหลี่ยม</span></div>
-<div id="cap10" class="clip cap" data-start="7.5" data-duration="1.04" data-track-index="20"><span>แต่ความจริงคือ</span></div>
-<div id="cap11" class="clip cap" data-start="8.54" data-duration="0.62" data-track-index="20"><span>รูก้นมันกลม</span></div>
-<div id="cap12" class="clip cap" data-start="9.16" data-duration="1.08" data-track-index="20"><span>เหมือนสัตว์ทั่วไปเลย</span></div>
-<div id="cap13" class="clip cap" data-start="10.24" data-duration="0.64" data-track-index="20"><span>นักวิทยาศาสตร์</span></div>
-<div id="cap14" class="clip cap" data-start="10.88" data-duration="0.48" data-track-index="20"><span>เลยเข้าไปดู</span></div>
-<div id="cap15" class="clip cap" data-start="11.36" data-duration="0.72" data-track-index="20"><span>ในลำไส้</span></div>
-<div id="cap16" class="clip cap" data-start="12.08" data-duration="0.48" data-track-index="20"><span>แล้วพบว่า</span></div>
-<div id="cap17" class="clip cap" data-start="12.56" data-duration="0.64" data-track-index="20"><span>ผนังลำไส้</span></div>
-<div id="cap18" class="clip cap" data-start="13.2" data-duration="0.7" data-track-index="20"><span>ช่วงท้าย</span></div>
-<div id="cap19" class="clip cap" data-start="13.9" data-duration="0.58" data-track-index="20"><span>มีส่วนแข็ง</span></div>
-<div id="cap20" class="clip cap" data-start="14.48" data-duration="0.5" data-track-index="20"><span>กับส่วนนิ่ม</span></div>
-<div id="cap21" class="clip cap" data-start="14.98" data-duration="0.7" data-track-index="20"><span>สลับกัน</span></div>
-<div id="cap22" class="clip cap" data-start="15.68" data-duration="0.42" data-track-index="20"><span>ส่วนแข็ง</span></div>
-<div id="cap23" class="clip cap" data-start="16.1" data-duration="0.96" data-track-index="20"><span>บีบตัวเร็วกว่า</span></div>
-<div id="cap24" class="clip cap" data-start="17.06" data-duration="0.5" data-track-index="20"><span>เลยค่อยๆ</span></div>
-<div id="cap25" class="clip cap" data-start="17.56" data-duration="0.6" data-track-index="20"><span>กดก้อนขี้</span></div>
-<div id="cap26" class="clip cap" data-start="18.16" data-duration="0.8" data-track-index="20"><span>จนเกิดมุม</span></div>
-<div id="cap27" class="clip cap" data-start="18.96" data-duration="0.68" data-track-index="20"><span>บวกกับก้อนขี้</span></div>
-<div id="cap28" class="clip cap" data-start="19.64" data-duration="1.04" data-track-index="20"><span>ที่แห้งลงเรื่อยๆ</span></div>
-<div id="cap29" class="clip cap" data-start="20.68" data-duration="0.44" data-track-index="20"><span>พอออกมา</span></div>
-<div id="cap30" class="clip cap" data-start="21.12" data-duration="0.48" data-track-index="20"><span>เลยกลายเป็น</span></div>
-<div id="cap31" class="clip cap" data-start="21.6" data-duration="0.86" data-track-index="20"><span>ลูกเต๋าเหลี่ยมเป๊ะ</span></div>
-<div id="cap32" class="clip cap" data-start="22.46" data-duration="0.58" data-track-index="20"><span>ทั้งที่ออกจาก</span></div>
-<div id="cap33" class="clip cap" data-start="23.04" data-duration="0.5" data-track-index="20"><span>รูกลมๆ</span></div>
-<div id="cap34" class="clip cap" data-start="23.54" data-duration="0.44" data-track-index="20"><span>นั่นเอง</span></div>
-<audio id="vo" class="clip" data-start="0" data-duration="23.98" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
-<audio id="music" class="clip" data-start="0" data-duration="23.98" data-track-index="31" data-volume="0.11" data-fade-in="0.3" data-fade-out="1.5" src="assets/music-jamendo-588d581d.mp3"></audio>
-<audio id="sfxpop" class="clip" data-start="2.3" data-duration="1" data-track-index="32" data-volume="0.6" src="assets/sfx-pop.mp3"></audio>
-<audio id="sfxwh" class="clip" data-start="6.6" data-duration="1" data-track-index="33" data-volume="0.5" src="assets/sfx-whoosh.mp3"></audio>
-<audio id="sfxding" class="clip" data-start="8.98" data-duration="1.2" data-track-index="32" data-volume="0.5" src="assets/sfx-ding.mp3"></audio>
-<audio id="sfxsq" class="clip" data-start="18.4" data-duration="0.8" data-track-index="33" data-volume="0.6" src="assets/sfx-squish.wav"></audio>
-<audio id="sfxthud" class="clip" data-start="21.55" data-duration="1.2" data-track-index="32" data-volume="0.7" src="assets/sfx-thud.mp3"></audio>
+<div id="root" data-composition-id="main" data-start="0" data-duration="27.94" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on"
+ data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"},{"id":"vo","type":"string","label":"Voice file","default":"assets/vo-th.mp3"}]'>
+
+<div id="foot" class="layer">
+  <div class="shot" id="sh-walk"><video id="v-walk" class="clip m" data-start="0" data-duration="3.9" data-track-index="1" src="assets/pixabay-271008-walkin.mp4" style="object-position:72% 50%" muted playsinline></video></div>
+  <div class="shot" id="sh-eat"><video id="v-eat" class="clip m" data-start="2.5" data-duration="3.1" data-track-index="2" data-media-start="0.3" src="assets/pixabay-317566-eating.mp4" style="object-position:57% 50%" muted playsinline></video></div>
+  <div class="shot" id="sh-forest"><img class="m" src="assets/pixabay-5385056.jpg" alt=""/></div>
+  <div class="shot" id="sh-rear"><img class="m" src="assets/pixabay-3887250.jpg" style="object-position:96% 50%" alt=""/></div>
+  <div class="shot" id="sh-close"><img class="m" src="assets/pixabay-6566987.jpg" style="object-position:55% 50%" alt=""/></div>
+  <div id="diagbg"></div>
+  <div class="shot" id="sh-face"><video id="v-face" class="clip m" data-start="23.5" data-duration="4.44" data-track-index="3" src="assets/pixabay-271008-face.mp4" style="object-position:54% 50%" muted playsinline></video></div>
 </div>
+
+<div id="diag" class="layer" style="-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1075px,transparent 1118px);mask-image:linear-gradient(to bottom,#000 0,#000 1075px,transparent 1118px)" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="world">
+    <div id="tube">
+      <div id="lumen"></div>
+      <div id="ground"></div>
+    </div>
+    <div id="lump"><div id="lumpBody"><div class="pip" style="left:28%;top:28%"></div><div class="pip" style="left:50%;top:50%"></div><div class="pip" style="left:72%;top:72%"></div></div></div>
+    <div id="walls"></div>
+    <div class="drop" id="d0"></div><div class="drop" id="d1"></div><div class="drop" id="d2"></div><div class="drop" id="d3"></div><div class="drop" id="d4"></div>
+    <div class="drop" id="d5"></div><div class="drop" id="d6"></div><div class="drop" id="d7"></div><div class="drop" id="d8"></div><div class="drop" id="d9"></div>
+    <div class="chip" id="chipA"><span id="chipA1"></span><span id="chipA2"></span></div>
+    <div class="chip" id="chipB"><span id="chipB1"></span></div>
+  </div>
+</div>
+
+<div id="over" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="cube0"><div class="pip" style="left:28%;top:28%;opacity:1"></div><div class="pip" style="left:50%;top:50%;opacity:1"></div><div class="pip" style="left:72%;top:72%;opacity:1"></div></div>
+  <div id="hero"><div class="hc" id="h1"></div><div class="hc" id="h2"></div><div class="hc" id="h3">?</div><div class="hc" id="h4">✓</div></div>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0" style="left:0"><i style="border-radius:50%"></i><b id="st0t"></b></div>
+    <div class="st" id="st1" style="left:225px"><i style="border-radius:10px;transform:scaleX(.7)"></i><b id="st1t"></b></div>
+    <div class="st" id="st2" style="left:450px"><i style="border-radius:50% 50% 50% 50%/62% 62% 38% 38%"></i><b id="st2t"></b></div>
+    <div class="st" id="st3" style="left:675px"><i style="border-radius:6px"></i><b id="st3t"></b></div>
+  </div>
+  <div id="qm">?</div>
+  <svg id="bubble" viewBox="0 0 150 120"><path d="M20 8h110a16 16 0 0 1 16 16v52a16 16 0 0 1-16 16H62L34 114V92H20A16 16 0 0 1 4 76V24A16 16 0 0 1 20 8Z" fill="#fff" stroke="#000" stroke-width="7" stroke-linejoin="round"/><circle cx="46" cy="50" r="9" fill="#111"/><circle cx="75" cy="50" r="9" fill="#111"/><circle cx="104" cy="50" r="9" fill="#111"/></svg>
+</div>
+
+<div id="caps" data-track-kind="captions">
+ <div id="caps-th">
+  <div id="cth0" class="clip cap" data-start="0" data-duration="1.04" data-track-index="20"><span style="font-size:68px">เพื่อนๆ รู้ไหมว่า</span></div>
+  <div id="cth1" class="clip cap" data-start="1.04" data-duration="0.64" data-track-index="20"><span style="font-size:78px">มีสัตว์ตัวนึง</span></div>
+  <div id="cth2" class="clip cap" data-start="1.68" data-duration="0.58" data-track-index="20"><span style="font-size:78px">ที่ขี้ออกมา</span></div>
+  <div id="cth3" class="clip cap" data-start="2.26" data-duration="0.66" data-track-index="20"><span style="font-size:78px">เป็นลูกเต๋า</span></div>
+  <div id="cth4" class="clip cap" data-start="2.92" data-duration="0.7" data-track-index="20"><span style="font-size:78px">เจ้าตัวนี้คือ</span></div>
+  <div id="cth5" class="clip cap" data-start="3.62" data-duration="0.5" data-track-index="20"><span style="font-size:78px">วอมแบต</span></div>
+  <div id="cth6" class="clip cap" data-start="4.12" data-duration="1.2" data-track-index="20"><span style="font-size:62px">สัตว์ป่าจากออสเตรเลีย</span></div>
+  <div id="cth7" class="clip cap" data-start="5.32" data-duration="0.7" data-track-index="20"><span style="font-size:78px">หลายคนคิดว่า</span></div>
+  <div id="cth8" class="clip cap" data-start="6.02" data-duration="0.66" data-track-index="20"><span style="font-size:78px">รูก้นของมัน</span></div>
+  <div id="cth9" class="clip cap" data-start="6.68" data-duration="0.84" data-track-index="20"><span style="font-size:68px">คงเป็นสี่เหลี่ยม</span></div>
+  <div id="cth10" class="clip cap" data-start="7.52" data-duration="1.04" data-track-index="20"><span style="font-size:78px">แต่ความจริงคือ</span></div>
+  <div id="cth11" class="clip cap" data-start="8.56" data-duration="0.6" data-track-index="20"><span style="font-size:78px">รูก้นมันกลม</span></div>
+  <div id="cth12" class="clip cap" data-start="9.16" data-duration="1.08" data-track-index="20"><span style="font-size:62px">เหมือนสัตว์ทั่วไปเลย</span></div>
+  <div id="cth13" class="clip cap" data-start="10.24" data-duration="0.68" data-track-index="20"><span style="font-size:78px">นักวิทยาศาสตร์</span></div>
+  <div id="cth14" class="clip cap" data-start="10.92" data-duration="0.46" data-track-index="20"><span style="font-size:78px">เลยเข้าไปดู</span></div>
+  <div id="cth15" class="clip cap" data-start="11.38" data-duration="0.72" data-track-index="20"><span style="font-size:78px">ในลำไส้</span></div>
+  <div id="cth16" class="clip cap" data-start="12.1" data-duration="0.48" data-track-index="20"><span style="font-size:78px">แล้วพบว่า</span></div>
+  <div id="cth17" class="clip cap" data-start="12.58" data-duration="0.64" data-track-index="20"><span style="font-size:78px">ผนังลำไส้</span></div>
+  <div id="cth18" class="clip cap" data-start="13.22" data-duration="0.64" data-track-index="20"><span style="font-size:78px">ช่วงท้าย</span></div>
+  <div id="cth19" class="clip cap" data-start="13.86" data-duration="0.58" data-track-index="20"><span style="font-size:78px">มีส่วนแข็ง</span></div>
+  <div id="cth20" class="clip cap" data-start="14.44" data-duration="0.52" data-track-index="20"><span style="font-size:78px">กับส่วนนิ่ม</span></div>
+  <div id="cth21" class="clip cap" data-start="14.96" data-duration="0.72" data-track-index="20"><span style="font-size:78px">สลับกัน</span></div>
+  <div id="cth22" class="clip cap" data-start="15.68" data-duration="0.4" data-track-index="20"><span style="font-size:78px">ส่วนแข็ง</span></div>
+  <div id="cth23" class="clip cap" data-start="16.08" data-duration="0.96" data-track-index="20"><span style="font-size:78px">บีบตัวเร็วกว่า</span></div>
+  <div id="cth24" class="clip cap" data-start="17.04" data-duration="0.5" data-track-index="20"><span style="font-size:78px">เลยค่อยๆ</span></div>
+  <div id="cth25" class="clip cap" data-start="17.54" data-duration="0.64" data-track-index="20"><span style="font-size:78px">กดก้อนขี้</span></div>
+  <div id="cth26" class="clip cap" data-start="18.18" data-duration="0.78" data-track-index="20"><span style="font-size:78px">จนเกิดมุม</span></div>
+  <div id="cth27" class="clip cap" data-start="18.96" data-duration="0.68" data-track-index="20"><span style="font-size:78px">บวกกับก้อนขี้</span></div>
+  <div id="cth28" class="clip cap" data-start="19.64" data-duration="1.04" data-track-index="20"><span style="font-size:68px">ที่แห้งลงเรื่อยๆ</span></div>
+  <div id="cth29" class="clip cap" data-start="20.68" data-duration="0.46" data-track-index="20"><span style="font-size:78px">พอออกมา</span></div>
+  <div id="cth30" class="clip cap" data-start="21.14" data-duration="0.46" data-track-index="20"><span style="font-size:78px">เลยกลายเป็น</span></div>
+  <div id="cth31" class="clip cap" data-start="21.6" data-duration="0.88" data-track-index="20"><span style="font-size:68px">ลูกเต๋าเหลี่ยมเป๊ะ</span></div>
+  <div id="cth32" class="clip cap" data-start="22.48" data-duration="0.54" data-track-index="20"><span style="font-size:78px">ทั้งที่ออกจาก</span></div>
+  <div id="cth33" class="clip cap" data-start="23.02" data-duration="1.06" data-track-index="20"><span style="font-size:78px">รูกลมๆ นั่นเอง</span></div>
+  <div id="cth34" class="clip cap" data-start="24.08" data-duration="0.94" data-track-index="20"><span style="font-size:78px">แล้วเพื่อนๆ ว่า</span></div>
+  <div id="cth35" class="clip cap" data-start="25.02" data-duration="0.7" data-track-index="20"><span style="font-size:68px">มันขี้เป็นเหลี่ยม</span></div>
+  <div id="cth36" class="clip cap" data-start="25.72" data-duration="1.08" data-track-index="20"><span style="font-size:68px">ไปเพื่ออะไรกันน้า?</span></div>
+  <div id="cth37" class="clip cap" data-start="26.8" data-duration="1.14" data-track-index="20"><span style="font-size:68px">คอมเมนต์บอกหน่อย!</span></div>
+ </div>
+ <div id="caps-en">
+  <div id="cen0" class="clip cap" data-start="0" data-duration="0.82" data-track-index="21"><span style="font-size:68px">There&#x27;s an animal</span></div>
+  <div id="cen1" class="clip cap" data-start="0.82" data-duration="0.74" data-track-index="21"><span style="font-size:78px">on this planet</span></div>
+  <div id="cen2" class="clip cap" data-start="1.56" data-duration="0.56" data-track-index="21"><span style="font-size:78px">that poops</span></div>
+  <div id="cen3" class="clip cap" data-start="2.12" data-duration="1.2" data-track-index="21"><span style="font-size:62px">perfect little cubes.</span></div>
+  <div id="cen4" class="clip cap" data-start="3.32" data-duration="0.94" data-track-index="21"><span style="font-size:68px">Meet the wombat,</span></div>
+  <div id="cen5" class="clip cap" data-start="4.26" data-duration="0.48" data-track-index="21"><span style="font-size:78px">straight out of</span></div>
+  <div id="cen6" class="clip cap" data-start="4.74" data-duration="0.74" data-track-index="21"><span style="font-size:78px">Australia.</span></div>
+  <div id="cen7" class="clip cap" data-start="5.48" data-duration="0.48" data-track-index="21"><span style="font-size:78px">So you&#x27;d think</span></div>
+  <div id="cen8" class="clip cap" data-start="5.96" data-duration="0.42" data-track-index="21"><span style="font-size:78px">its butt</span></div>
+  <div id="cen9" class="clip cap" data-start="6.38" data-duration="0.76" data-track-index="21"><span style="font-size:78px">must be square,</span></div>
+  <div id="cen10" class="clip cap" data-start="7.14" data-duration="0.4" data-track-index="21"><span style="font-size:78px">right?</span></div>
+  <div id="cen11" class="clip cap" data-start="7.54" data-duration="0.42" data-track-index="21"><span style="font-size:78px">Nope.</span></div>
+  <div id="cen12" class="clip cap" data-start="7.96" data-duration="0.7" data-track-index="21"><span style="font-size:78px">It&#x27;s round,</span></div>
+  <div id="cen13" class="clip cap" data-start="8.66" data-duration="1.16" data-track-index="21"><span style="font-size:62px">just like everyone else&#x27;s.</span></div>
+  <div id="cen14" class="clip cap" data-start="9.82" data-duration="0.84" data-track-index="21"><span style="font-size:78px">When scientists</span></div>
+  <div id="cen15" class="clip cap" data-start="10.66" data-duration="0.88" data-track-index="21"><span style="font-size:78px">looked inside,</span></div>
+  <div id="cen16" class="clip cap" data-start="11.54" data-duration="0.72" data-track-index="21"><span style="font-size:68px">they found the end</span></div>
+  <div id="cen17" class="clip cap" data-start="12.26" data-duration="0.66" data-track-index="21"><span style="font-size:78px">of its gut</span></div>
+  <div id="cen18" class="clip cap" data-start="12.92" data-duration="0.52" data-track-index="21"><span style="font-size:78px">has stiff</span></div>
+  <div id="cen19" class="clip cap" data-start="13.44" data-duration="1.3" data-track-index="21"><span style="font-size:62px">and stretchy sections</span></div>
+  <div id="cen20" class="clip cap" data-start="14.74" data-duration="0.96" data-track-index="21"><span style="font-size:78px">side by side.</span></div>
+  <div id="cen21" class="clip cap" data-start="15.7" data-duration="0.86" data-track-index="21"><span style="font-size:78px">The stiff parts</span></div>
+  <div id="cen22" class="clip cap" data-start="16.56" data-duration="1.12" data-track-index="21"><span style="font-size:78px">squeeze faster,</span></div>
+  <div id="cen23" class="clip cap" data-start="17.68" data-duration="0.78" data-track-index="21"><span style="font-size:78px">slowly pressing</span></div>
+  <div id="cen24" class="clip cap" data-start="18.46" data-duration="0.58" data-track-index="21"><span style="font-size:78px">corners into</span></div>
+  <div id="cen25" class="clip cap" data-start="19.04" data-duration="0.52" data-track-index="21"><span style="font-size:78px">the poop,</span></div>
+  <div id="cen26" class="clip cap" data-start="19.56" data-duration="0.72" data-track-index="21"><span style="font-size:78px">and as it dries</span></div>
+  <div id="cen27" class="clip cap" data-start="20.28" data-duration="0.86" data-track-index="21"><span style="font-size:78px">out on the way,</span></div>
+  <div id="cen28" class="clip cap" data-start="21.14" data-duration="0.58" data-track-index="21"><span style="font-size:78px">it comes out</span></div>
+  <div id="cen29" class="clip cap" data-start="21.72" data-duration="1.2" data-track-index="21"><span style="font-size:68px">as a perfect cube</span></div>
+  <div id="cen30" class="clip cap" data-start="22.92" data-duration="0.82" data-track-index="21"><span style="font-size:68px">from a perfectly</span></div>
+  <div id="cen31" class="clip cap" data-start="23.74" data-duration="0.96" data-track-index="21"><span style="font-size:78px">round hole.</span></div>
+  <div id="cen32" class="clip cap" data-start="24.7" data-duration="0.5" data-track-index="21"><span style="font-size:78px">So why would</span></div>
+  <div id="cen33" class="clip cap" data-start="25.2" data-duration="0.78" data-track-index="21"><span style="font-size:78px">an animal need</span></div>
+  <div id="cen34" class="clip cap" data-start="25.98" data-duration="0.76" data-track-index="21"><span style="font-size:78px">square poop?</span></div>
+  <div id="cen35" class="clip cap" data-start="26.74" data-duration="0.48" data-track-index="21"><span style="font-size:78px">Tell me in the</span></div>
+  <div id="cen36" class="clip cap" data-start="27.22" data-duration="0.72" data-track-index="21"><span style="font-size:78px">comments.</span></div>
+ </div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="27.94" data-track-index="30" data-volume="1" data-var-src="vo" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="27.94" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-588d581d.mp3"></audio>
+</div>
+
 <script>
+/* Motion: springs and content swaps follow the motion-broll engine (closed-form springs, one shape that morphs). */
+(function(){
+const VARS=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
+const LANG=(VARS.lang==='en')?'en':'th';
+const DUR=27.94;
+const CAPT={"th": [0, 1.04, 1.68, 2.26, 2.92, 3.62, 4.12, 5.32, 6.02, 6.68, 7.52, 8.56, 9.16, 10.24, 10.92, 11.38, 12.1, 12.58, 13.22, 13.86, 14.44, 14.96, 15.68, 16.08, 17.04, 17.54, 18.18, 18.96, 19.64, 20.68, 21.14, 21.6, 22.48, 23.02, 24.08, 25.02, 25.72, 26.8], "en": [0, 0.82, 1.56, 2.12, 3.32, 4.26, 4.74, 5.48, 5.96, 6.38, 7.14, 7.54, 7.96, 8.66, 9.82, 10.66, 11.54, 12.26, 12.92, 13.44, 14.74, 15.7, 16.56, 17.68, 18.46, 19.04, 19.56, 20.28, 21.14, 21.72, 22.92, 23.74, 24.7, 25.2, 25.98, 26.74, 27.22]}[LANG];
+document.getElementById(LANG==='en'?'caps-th':'caps-en').style.display='none';
+document.documentElement.lang=LANG;
+
+// ---------- spring kit (from motion-broll engine/motion.js) ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;if(!isFinite(w))return 1;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[27,0.86],SLOW=[12.5,0.9],SOFT=[10,0.95],CAM=[7.5,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const ctrack=(h0,keys,def=[20,1])=>{const c0=hex(h0);const tr=[0,1,2].map(i=>track(c0[i],keys.map(k=>[k[0],hex(k[1])[i],k[2]]),def));
+  return t=>`rgb(${tr.map(f=>Math.round(clamp(f(t),0,255))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const din=o.din??0.04,lin=o.lin??0.24,lout=o.lout??0.14,bl=o.blur??12;
+  const a=tin==null?1:eo((t-tin-din)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl*0.8,s:(0.94+0.06*a)*(1-0.03*b),a,b};};
+const $=id=>document.getElementById(id);
+const setVis=(el,v,tf='')=>{if(v.o<0.003){el.style.opacity='0';el.style.filter='none';return false;}
+  el.style.opacity=v.o.toFixed(4);el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';if(tf!==null)el.style.transform=tf+` scale(${v.s.toFixed(4)})`;return true;};
+const setText=(el,s)=>{if(el._t!==s){el.textContent=s;el._t=s;}};
+
+// ---------- word-locked times per language (from timing.md / words json) ----------
+const K={
+ th:{hook:2.42,s2:2.92,wombat:3.62,aus:4.54,s3:5.32,square:7.00,s4:7.52,round:9.00,s5:10.24,gut:11.38,wall:12.58,stiff:13.86,soft:14.60,alt:14.96,
+     s6:15.68,squeeze:16.08,corner:18.56,s7:18.96,dry:19.74,s8:20.68,cube:21.60,hole:23.02,s9:24.08,q:26.04,comment:26.80},
+ en:{hook:2.76,s2:3.32,wombat:3.60,aus:4.74,s3:5.48,square:6.74,s4:7.54,round:8.14,s5:9.82,gut:10.90,wall:12.58,stiff:13.16,soft:13.66,alt:14.74,
+     s6:15.70,squeeze:16.56,corner:18.46,s7:19.56,dry:19.92,s8:21.14,cube:22.40,hole:23.74,s9:24.70,q:26.32,comment:26.74},
+}[LANG];
+const TXT={
+ th:{wombat:'วอมแบต',aus:'ออสเตรเลีย',wall:'ผนังลำไส้',stiff:'แข็ง',soft:'นิ่ม',steps:['กลม','บีบ','แห้ง','ลูกเต๋า']},
+ en:{wombat:'WOMBAT',aus:'AUSTRALIA',wall:'GUT WALL',stiff:'STIFF',soft:'STRETCHY',steps:['ROUND','SQUEEZE','DRY','CUBE']},
+}[LANG];
+setText($('h1'),TXT.wombat);setText($('h2'),TXT.aus);setText($('chipA1'),TXT.wall);setText($('chipA2'),TXT.stiff);setText($('chipB1'),TXT.soft);
+TXT.steps.forEach((s,i)=>{setText($('st'+i+'t'),s); if(LANG==='en')$('st'+i).style.fontSize='29px';});
+
+// ---------- footage: crossfades on the word, one slow push-in direction throughout ----------
+const SHOTS=[['sh-walk',0,K.s2,'60% 45%'],['sh-eat',K.s2,K.aus,'55% 55%'],['sh-forest',K.aus,K.s3,'50% 60%'],
+  ['sh-rear',K.s3,K.s4,'80% 55%'],['sh-close',K.s4,K.s5+0.5,'50% 40%'],['sh-face',K.s9,DUR,'50% 45%']];
+SHOTS.forEach(s=>{$(s[0]).style.transformOrigin=s[3];});
+function footage(t){
+  for(const [id,a,b] of SHOTS){
+    const el=$(id); const fin=a<=0?1:eo((t-(a-0.12))/0.3);
+    const on=t>=a-0.15&&t<=b+0.45; el.style.opacity=on?fin.toFixed(4):'0';
+    if(on){const u=(t-(a-0.15))/((b+0.45)-(a-0.15)); el.style.transform=`scale(${(1.03+0.07*u).toFixed(5)})`;}
+  }
+  $('diagbg').style.opacity=(t<K.s5-0.1||t>K.s9+0.6)?'0':(eo((t-K.s5+0.05)/0.35)*(1-eo((t-K.s9+0.1)/0.45))).toFixed(4);
+}
+
+// ---------- hook cube (scene 1) ----------
+const hookIn=t=>S(t-K.hook,13,0.72);
+function hook(t){
+  const el=$('cube0'); const v=vis(t,K.hook,K.s2,{din:0,lin:0.16,lout:0.2,blur:16});
+  if(v.o<0.003){el.style.opacity='0';return;}
+  const a=hookIn(t), rot=-14*(1-a), bob=10*Math.sin((t-K.hook)*5.5)*clamp((t-K.hook)/0.4);
+  el.style.opacity=v.o.toFixed(4); el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.transform=`translate(540px,${(640+bob+90*(1-a)).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${(0.35+0.65*a).toFixed(4)})`;
+}
+
+// ---------- the diagram camera ----------
+const C=[540,600];
+const camS=track(1.5,[[K.s5+0.3,1.0,CAM],[K.s6-0.3,1.1,CAM],[K.corner-0.4,1.2,CAM],[K.s7+0.2,1.2,CAM],[K.s8,0.95,CAM],[K.cube-0.45,0.85,CAM],[K.cube+0.35,1.12,CAM]],CAM);
+const camY=track(880,[[K.s5+0.3,420,CAM],[K.s6-0.3,230,CAM],[K.squeeze+0.8,380,CAM],[K.corner-0.4,480,CAM],[K.s7+0.2,560,CAM],[K.s8,860,CAM],[K.cube-0.45,1060,CAM],[K.cube+0.35,1090,CAM]],CAM);
+const toScreen=(wx,wy,t)=>{const s=camS(t),fy=camY(t);return [C[0]+s*wx,C[1]+s*(wy-fy),s];};
+
+// walls: 4 sections along the gut end (stiff / stretchy alternate) + neutral gut above
+const BANDS=[[-1400,-60,'n'],[-60,180,'s'],[180,420,'f'],[420,660,'s'],[660,900,'f']];
+const wallsEl=$('walls'); const WALL=[];
+BANDS.forEach(([y0,y1,k],i)=>{for(const side of [-1,1]){const d=document.createElement('div');d.className='wall';
+  d.style.left=(side<0?-300:200)+'px';d.style.top=(y0+3)+'px';d.style.height=(y1-y0-6)+'px';wallsEl.appendChild(d);WALL.push({d,k,side,i});}});
+const colS=ctrack('#E59AAE',[[K.wall,'#EE8AA5'],[K.stiff,'#A8234E']]);
+const colF=ctrack('#E59AAE',[[K.wall,'#EE8AA5'],[K.soft,'#F9C9D6']]);
+const colN=ctrack('#E59AAE',[[K.wall,'#EBB3C2']]);
+const brdS=ctrack('#B5607A',[[K.stiff,'#5E0E2A']]);
+const wallPulse=t=>Math.exp(-3*(t-K.wall))*Math.sin(Math.PI*clamp((t-K.wall)/0.5))*(t>K.wall?1:0);
+// squeeze rhythm: stiff sections contract every 0.48 s from the word "squeeze" until scene 7
+const SQ=[];for(let q=K.squeeze;q<K.s7+0.2;q+=0.48)SQ.push(q);
+const pulse=t=>{let p=0;for(const q of SQ){const u=(t-q)/0.42;if(u>0&&u<1)p=Math.max(p,Math.pow(Math.sin(Math.PI*u),2));}return p;};
+const altWiggle=t=>{const u=(t-K.alt)/0.7;return (u>0&&u<1)?Math.sin(Math.PI*u*2):0;};
+
+// lump: enters round, corners grow with each squeeze, lands on the word "cube"
+const LAND=K.cube, Y_IN=80, Y_S7=580, Y_S8=720, Y_G=1300;
+const SQc=SQ.filter(q=>q+0.12<K.corner-0.05);
+const lumpR=track(150,[...SQc.map((q,i)=>[q+0.12,150-112*(i+1)/SQc.length]),[K.corner,24,FAST],[K.cube+0.02,30]]);
+const lumpW=track(300,[[K.dry,285,SLOW],[K.cube,270]]);
+const lumpC=ctrack('#9A6434',[[K.dry,'#6F4524',[6,1]]]);
+function lumpPos(t){
+  if(t<K.s6){return Y_IN+(-800)*(1-S(t-K.alt,6.5,1));}
+  if(t<K.s7){return lerp(Y_IN+(-800)*(1-S(K.s6-K.alt,6.5,1)),Y_S7,eio((t-K.s6)/(K.s7-K.s6)));}
+  if(t<K.s8){return lerp(Y_S7,Y_S8,eio((t-K.s7)/(K.s8-K.s7)));}
+  if(t<LAND){const u=(t-K.s8)/(LAND-K.s8);return lerp(Y_S8,Y_G,u*u*(0.35+0.65*u));}
+  // after landing: one small hop, then rest
+  const tau=t-LAND; return Y_G-(tau<0.5?90*Math.sin(Math.PI*clamp((tau-0.12)/0.38)):0)*Math.exp(-1.5*tau);
+}
+const lumpVy=t=>(lumpPos(t+0.01)-lumpPos(t-0.01))/0.02;
+// scene 9: the cube floats up beside the wombat's face and bobs
+const S9X=-170, S9Y=-30; // screen offset from frame centre
+const cubeTo9=t=>S(t-K.s9,9,0.82);
+
+function diagram(t){
+  const live=t>K.s5-0.1; const W=$('world');
+  $('diag').style.display=live?'':'none'; if(!live)return;
+  const s=camS(t),fy=camY(t);
+  W.style.transform=`translate(${C[0]}px,${(C[1]-s*fy).toFixed(3)}px) scale(${s.toFixed(5)})`;
+  // the tube grows up from the round opening between s5 and "gut"
+  const grow=eio((t-K.s5-0.1)/Math.min(1.0,K.gut-K.s5+0.2));
+  const fadeOut=1-eo((t-K.s9+0.24)/0.2);
+  const clipTop=lerp(900,-1400,grow);
+  $('lumen').style.clipPath=`inset(${clipTop+1400}px 0 0 0)`;
+  wallsEl.style.clipPath=`polygon(-600px ${clipTop}px,600px ${clipTop}px,600px 1000px,-600px 1000px)`;
+  $('tube').style.opacity=fadeOut.toFixed(4); wallsEl.style.opacity=fadeOut.toFixed(4);
+  $('ground').style.opacity=(eo((t-K.s8)/0.4)).toFixed(4);
+  const p=pulse(t), wp=wallPulse(t), aw=altWiggle(t);
+  for(const w of WALL){
+    let dx=0;
+    if(w.k==='s'){dx=34*p+10*aw;} else if(w.k==='f'){dx=-8*p-10*aw;}
+    dx+=6*wp;
+    w.d.style.transform=`translateX(${(-w.side*dx).toFixed(2)}px)`;
+    w.d.style.background=w.k==='s'?colS(t):w.k==='f'?colF(t):colN(t);
+    w.d.style.boxShadow=`inset 0 0 0 5px ${w.k==='s'?brdS(t):'#B5607A'}`;
+  }
+  // lump / cube (world space)
+  const L=$('lump'), B=$('lumpBody');
+  let lx=0, ly=lumpPos(t), w=lumpW(t), r=Math.min(lumpR(t),w/2);
+  let sx=1-0.07*p, sy=1+0.05*p, rot=0, op=t<K.alt?0:1;
+  if(t<K.s8+0.3){ /* inside the gut */ }
+  // stretch while falling, squash on contact
+  const vy=lumpVy(t);
+  if(t>K.s8&&t<LAND){const k=clamp(vy/2600,0,0.18);sx*=1-k*0.6;sy*=1+k;}
+  if(t>=LAND){const tau=t-LAND;const sq=0.26*Math.exp(-7*tau)*Math.cos(17*tau);
+    const hop=tau>0.12&&tau<0.5;sy*=hop?1+0.06*Math.sin(Math.PI*(tau-0.12)/0.38):1-sq;sx*=hop?1-0.04*Math.sin(Math.PI*(tau-0.12)/0.38):1+sq*0.8;}
+  let scale=1;
+  if(t>K.s9){ // move to the scene-9 spot in screen space, keep world maths
+    const a=cubeTo9(t); const bob=16*Math.sin((t-K.s9)*4.4)*clamp((t-K.s9-0.3)/0.6);
+    const tx=(S9X)/s, ty=fy+(S9Y+bob)/s;
+    lx=lerp(lx,tx,a); ly=lerp(ly,ty,a); scale=lerp(1,1.15/s,a); rot=lerp(0,-8+4*Math.sin((t-K.s9)*2.2),a);
+  }
+  const h=w; // square bounding box
+  L.style.opacity=op;
+  L.style.transform=`translate(${lx.toFixed(2)}px,${(ly).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${(scale*sx).toFixed(4)},${(scale*sy).toFixed(4)})`;
+  L.style.transformOrigin='0 0';
+  B.style.width=w.toFixed(2)+'px';B.style.height=h.toFixed(2)+'px';B.style.left=(-w/2).toFixed(2)+'px';B.style.top=(-h).toFixed(2)+'px';
+  // body anchored at its bottom so squash reads as contact with the ground
+  B.style.borderRadius=r.toFixed(2)+'px'; B.style.background=lumpC(t);
+  const oa=t>K.s9?cubeTo9(t):0; B.style.outline=oa>0.01?`${(9*oa/(scale*s)).toFixed(2)}px solid #1B0E05`:'none';
+  const pv=vis(t,LAND+0.05,null,{din:0,lin:0.2,blur:8});
+  B.querySelectorAll('.pip').forEach(pp=>{pp.style.opacity=pv.o.toFixed(3);pp.style.filter=pv.blur>0.05?`blur(${pv.blur.toFixed(1)}px)`:'none';});
+  // corner "ping" on the word: an orange outline expands off the lump
+  const cp=(t-K.corner)/0.55;
+  if(oa<=0.01){ if(cp>0&&cp<1){B.style.outline=`11px solid rgba(255,106,31,${(1-eo(cp)).toFixed(3)})`;B.style.outlineOffset=(4+46*eo(cp)).toFixed(1)+'px';} else B.style.outline='none'; }
+  else B.style.outlineOffset='0px';
+  // drops drift off while it dries
+  for(let i=0;i<10;i++){const el=$('d'+i);const t0=K.dry+i*0.1;const u=(t-t0)/0.95;
+    if(u<=0||u>=1){el.style.opacity='0';continue;}
+    const side=i%2?1:-1, y0=ly-h*0.5+((i*37)%3-1)*60;
+    const x=side*(w/2-10+eo(u)*(230+(i%3)*40)), y=y0-70*eo(u)+20*Math.sin(u*3+i);
+    const o=clamp(u/0.12)*(1-eo((u-0.55)/0.45));
+    el.style.opacity=(o*fadeOut).toFixed(3);el.style.filter=u>0.55?`blur(${(8*eo((u-0.55)/0.45)).toFixed(1)}px)`:'none';
+    el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${(0.6+0.4*eo(u/0.3)).toFixed(3)})`;}
+  // label chips (world space, beside the walls)
+  chips(t,fadeOut);
+}
+const chipAW=track(0,[[K.wall,LANG==='en'?260:250],[K.stiff,LANG==='en'?190:150]],MORPH), chipAY=track(-20,[[K.stiff,60]],MORPH);
+const chipABG=ctrack('#FFFFFF',[[K.stiff,'#A8234E']]), chipAFG=ctrack('#2A1A10',[[K.stiff,'#FFFFFF']]);
+const chipBW=track(0,[[K.soft,LANG==='en'?260:150]],MORPH);
+function chips(t,fo){
+  const A=$('chipA'),Bc=$('chipB');
+  const va=vis(t,K.wall,K.alt+0.45,{din:0.02,lin:0.22,lout:0.25});
+  const wA=chipAW(t), yA=chipAY(t)+(t>K.alt?-14*altWiggle(t):0);
+  if(setVis(A,{...va,o:va.o*fo},`translate(${(-wA/2).toFixed(1)}px,${(yA-42).toFixed(1)}px)`)){
+    A.style.width=wA.toFixed(1)+'px';A.style.background=chipABG(t);A.style.color=chipAFG(t);
+    const s1=vis(t,K.wall,K.stiff,{lin:0.2,lout:0.1}),s2=vis(t,K.stiff,null,{din:0.06,lin:0.22});
+    $('chipA1').style.opacity=s1.o;$('chipA1').style.filter=`blur(${s1.blur.toFixed(1)}px)`;
+    $('chipA2').style.opacity=s2.o;$('chipA2').style.filter=`blur(${s2.blur.toFixed(1)}px)`;}
+  const vb=vis(t,K.soft,K.alt+0.45,{din:0.02,lin:0.22,lout:0.25}); const wB=chipBW(t);
+  if(setVis(Bc,{...vb,o:vb.o*fo},`translate(${(-wB/2).toFixed(1)}px,${(258+14*altWiggle(t)).toFixed(1)}px)`)){
+    Bc.style.width=wB.toFixed(1)+'px';Bc.style.background='#F9C9D6';Bc.style.color='#7A1335';Bc.style.boxShadow='inset 0 0 0 4px #E59AAE';}
+}
+
+// ---------- the hero shape: pill -> square -> circle -> the round opening of the gut ----------
+const HW=track(420,[[K.aus,560],[K.s3,130],[K.square,380],[K.round,380]]);
+const HH=track(120,[[K.s3,130],[K.square,380],[K.round,380]]);
+const HR=track(60,[[K.s3,65],[K.square,30],[K.round,190]]);
+const HY=track(360,[[K.s3,520],[K.square,620]]);
+const HBW=track(0,[[K.s3,8],[K.square,16]]);
+const HBC=ctrack('#FFFFFF',[[K.round,'#3EE07A']]);
+const HFA=track(1,[[K.s3,0.95],[K.square,0.10]]);
+const HROT=track(0,[[K.s4,-9,FAST],[K.s4+0.16,6,FAST],[K.s4+0.32,0,MORPH]]);
+const toRing=t=>S(t-K.s5,9,0.9);
+function hero(t){
+  const el=$('hero'); const v=vis(t,K.wombat,K.s9-0.32,{din:0,lin:0.2,lout:0.16,blur:14});
+  if(v.o<0.003){el.style.opacity='0';return;}
+  const intro=S(t-K.wombat,13,0.78);
+  let w=HW(t),h=HH(t),r=HR(t),cx=540,cy=HY(t),bw=HBW(t),bc=HBC(t),fill=`rgba(255,255,255,${HFA(t).toFixed(3)})`;
+  if(t>K.s5){ // blend into the gut opening (world ellipse 340 x 80 at y 900)
+    const a=toRing(t); const [sx,sy,s]=toScreen(0,900,t);
+    w=lerp(w,(400)*s,a);h=lerp(h,80*s,a);r=Math.min(w,h)/2;cx=lerp(cx,sx,a);cy=lerp(cy,sy,a);bw=lerp(bw,10*s,a);
+    const c=hex('#3EE07A').map((x,i)=>Math.round(lerp(x,hex('#6E1834')[i],a)));bc=`rgb(${c})`;
+    fill=`rgba(${Math.round(lerp(255,58,a))},${Math.round(lerp(255,16,a))},${Math.round(lerp(255,32,a))},${lerp(0.10,1,a).toFixed(3)})`;
+    // the opening pulses on "round hole"
+    const hp=(t-K.hole)/0.6; if(hp>0&&hp<1){bc=`rgb(${hex('#3EE07A').map((x,i)=>Math.round(lerp(x,hex('#6E1834')[i],eo(hp))))})`;bw*=1+0.8*Math.sin(Math.PI*hp);}
+  }
+  r=Math.min(r,w/2,h/2);
+  const below=t>K.s5?clamp((1095-(cy-h/2))/40):1; // never show the opening under the captions
+  if(v.o*below<0.003){el.style.opacity='0';return;}
+  el.style.opacity=(v.o*below).toFixed(4);el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.width=w.toFixed(2)+'px';el.style.height=h.toFixed(2)+'px';el.style.borderRadius=r.toFixed(2)+'px';
+  el.style.borderWidth=bw.toFixed(2)+'px';el.style.borderColor=bc;el.style.background=fill;
+  el.style.boxShadow=t<K.s5?`0 0 0 ${Math.max(0,bw>1?5:0)}px rgba(0,0,0,.85), inset 0 0 0 ${bw>1?5:0}px rgba(0,0,0,.6)`:'none';
+  el.style.transform=`translate(${(cx-w/2).toFixed(2)}px,${(cy-h/2).toFixed(2)}px) rotate(${HROT(t).toFixed(2)}deg) scale(${(v.s*(0.55+0.45*intro)).toFixed(4)})`;
+  // content swaps (short blur)
+  const lay=[['h1',K.wombat,K.aus],['h2',K.aus,K.s3],['h3',K.s3,K.round],['h4',K.round,K.s5]];
+  for(const [id,a,b] of lay){const n=$(id);const q=vis(t,a,b,{din:a===K.wombat?0:0.07,lin:0.22,lout:0.12,blur:10});
+    n.style.opacity=q.o.toFixed(3);n.style.filter=q.blur>0.05?`blur(${q.blur.toFixed(1)}px)`:'none';}
+  const qa=S(t-K.square,14,0.7), h3=$('h3').style;
+  h3.fontSize=(t<K.square?80:lerp(80,230,qa)).toFixed(1)+'px'; h3.color=t<K.square?'#1B0E05':'#fff'; h3.webkitTextStroke=t<K.square?'0px #000':'14px #000';
+  $('h4').style.transform=`translate(-50%,-54%) scale(${(0.6+0.4*S(t-K.round,14,0.7)).toFixed(3)})`;
+}
+
+// ---------- progress strip under the captions (diagram scenes) ----------
+const IL=track(0,[[K.alt,0,FAST],[K.squeeze,225,FAST],[K.dry,450,FAST],[K.cube,675,FAST]]);
+const IR=track(0,[[K.alt,225,SLOW],[K.squeeze,450,SLOW],[K.dry,675,SLOW],[K.cube,900,SLOW]]);
+const IRl=track(0,[[K.alt,225,FAST],[K.squeeze,450,FAST],[K.dry,675,FAST],[K.cube,900,FAST]]);
+const ILs=track(0,[[K.alt,0,SLOW],[K.squeeze,225,SLOW],[K.dry,450,SLOW],[K.cube,675,SLOW]]);
+const STEPT=[K.alt,K.squeeze,K.dry,K.cube];
+function strip(t){
+  const el=$('strip'); const v=vis(t,K.gut,K.s9-0.32,{din:0,lin:0.3,lout:0.16,blur:10});
+  if(!setVis(el,v,`translateY(${(30*(1-v.a)).toFixed(1)}px)`))return;
+  // leading edge on FAST, trailing on SLOW: the indicator stretches as it moves right
+  const l=Math.min(ILs(t),IL(t)), r=Math.max(IR(t),IRl(t)); const ia=clamp((t-K.alt)/0.25);
+  const ind=$('ind'); ind.style.left=(l+10).toFixed(1)+'px'; ind.style.width=Math.max(0,(r-l-20)*ia).toFixed(1)+'px'; ind.style.opacity=ia.toFixed(3);
+  let cur=-1; STEPT.forEach((s,i)=>{if(t>=s)cur=i;});
+  for(let i=0;i<4;i++){const st=$('st'+i); const on=i===cur; const done=i<cur;
+    st.style.color=(on&&ia>0.5)?'#fff':done?'#6B5546':'#8C7B6C';
+    const kick=on?1+0.08*Math.sin(Math.PI*clamp((t-STEPT[i])/0.3)):1; st.style.transform=`scale(${kick.toFixed(3)})`;}
+}
+
+// ---------- scene 9: the question ----------
+function ending(t){
+  const q=$('qm'); const a=S(t-K.q,16,0.55); const v=vis(t,K.q,null,{din:0,lin:0.12,blur:10});
+  if(t<K.q){q.style.opacity='0';} else {
+    q.style.opacity=v.o.toFixed(3);q.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(1)}px)`:'none';
+    const bob=10*Math.sin((t-K.q)*4.4+1.4);
+    q.style.transform=`translate(${(690).toFixed(1)}px,${(360+bob).toFixed(1)}px) rotate(${(14*(1-a)+8).toFixed(2)}deg) scale(${(0.2+0.8*a).toFixed(4)})`;}
+  const b=$('bubble'); const ba=S(t-K.comment,15,0.62); const bv=vis(t,K.comment,null,{din:0,lin:0.12,blur:8});
+  if(t<K.comment){b.style.opacity='0';} else {
+    b.style.opacity=(0.95*bv.o).toFixed(3);b.style.filter=bv.blur>0.05?`blur(${bv.blur.toFixed(1)}px)`:'none';
+    b.style.transform=`translate(465px,${(1325+30*(1-ba)).toFixed(1)}px) scale(${(0.3+0.7*ba).toFixed(4)})`;b.style.transformOrigin='30% 100%';}
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('c'+LANG+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,32,0.72);
+  capEls[i].style.transform=`scale(${(0.86+0.14*a).toFixed(4)})`;
+  capEls[i].style.opacity=clamp(tau/0.05).toFixed(3);
+}
+
+function render(t){ footage(t); hook(t); diagram(t); hero(t); strip(t); ending(t); captions(t); }
+
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
-// scene1 punch-in
-tl.fromTo("#pi1",{scale:1},{scale:1.12,duration:2.2,ease:"none"},0);
-tl.to("#pi1",{scale:1.3,duration:0.15,ease:"power3.out"},1.68);
-gsap.set("#cube1",{left:330,top:600});
-tl.fromTo("#cube1",{scale:0,rotation:-25},{scale:1,rotation:0,duration:0.35,ease:"back.out(2.5)"},2.3);
-// ken burns
-tl.fromTo("#w2a",{scale:1.05},{scale:1.12,duration:0.7,ease:"none"},2.92);
-tl.fromTo("#i2b",{scale:1.0},{scale:1.07,duration:0.92,ease:"none"},3.62);
-tl.fromTo("#wlab",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.2,ease:"back.out(2)"},3.62);
-tl.fromTo("#i2c",{scale:1.08,y:20},{scale:1.0,y:0,duration:0.84,ease:"none"},4.54);
-tl.fromTo("#i3",{scale:1.0},{scale:1.08,duration:2.12,ease:"none"},5.38);
-tl.fromTo("#sq",{scale:0,rotation:-90,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.35,ease:"back.out(1.6)"},6.62);
-tl.fromTo("#qm",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.25,ease:"back.out(2)"},6.98);
-tl.fromTo("#i4",{scale:1.08},{scale:1.0,duration:2.74,ease:"none"},7.5);
-tl.fromTo("#xl",{scaleX:0,rotation:-35},{scaleX:1,rotation:-35,duration:0.25},8.2);
-tl.to(["#sq4","#xl"],{opacity:0,duration:0.2},8.9);
-tl.fromTo("#circ",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},8.98);
-tl.fromTo("#tick",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.25,ease:"back.out(3)"},9.1);
-// diagram
-tl.fromTo("#cam",{scale:0.8,y:0,opacity:0},{scale:0.95,y:0,opacity:1,duration:0.5,ease:"power2.out"},10.24);
-tl.to("#cam",{scale:1.0,duration:5,ease:"none"},10.8);
-tl.fromTo(".band",{scaleY:0},{scaleY:1,duration:0.4,stagger:0.05,ease:"power2.out"},12.56);
-tl.fromTo(".labs",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25},13.9);
-tl.fromTo(".bs",{filter:"brightness(1)"},{filter:"brightness(1.5)",duration:0.2,yoyo:true,repeat:1},13.9);
-tl.fromTo(".labf",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25},14.48);
-tl.fromTo(".bf",{filter:"brightness(1)"},{filter:"brightness(1.15)",duration:0.2,yoyo:true,repeat:1},14.48);
-tl.fromTo("#lump",{opacity:0},{opacity:1,duration:0.2},15.2);
-tl.to("#lump",{y:420,duration:1.2,ease:"power1.inOut"},15.2);
-[16.1,16.7,17.3,17.9,18.4].forEach((t,k)=>{
- tl.to(".bs.L",{x:38,duration:0.15,ease:"power2.in"},t);tl.to(".bs.R",{x:-38,duration:0.15,ease:"power2.in"},t);
- tl.to(".bs.L,.bs.R",{x:0,duration:0.25,ease:"power2.out"},t+0.2);
- tl.to("#lump",{scaleX:0.9,scaleY:1.06,duration:0.15},t);tl.to("#lump",{scaleX:1,scaleY:1,duration:0.25},t+0.2);
- tl.to("#lump",{borderRadius:Math.max(50-k*9,12)+"%",duration:0.3},t);
-});
-tl.to("#lump",{borderRadius:"10%",duration:0.2},18.54);
-// drying
-tl.to("#lump",{y:560,duration:1.4,ease:"none"},19.2);
-for(let k=0;k<8;k++){tl.fromTo("#d"+k,{opacity:0,x:0,y:0,scale:0.5},{opacity:1,scale:1,duration:0.15},19.64+k*0.1);
- tl.to("#d"+k,{x:(k%2?-1:1)*(260+k*10),y:-60+k*12,opacity:0,duration:0.7,ease:"power1.in"},19.79+k*0.1);}
-tl.to("#lump",{filter:"brightness(0.8)",duration:1},19.6);
-tl.to("#lump",{y:760,scale:0.9,duration:0.5,ease:"power2.in"},20.18);
-// scene 8
-gsap.set("#cube8",{left:350,top:150});
-tl.fromTo("#cube8",{y:-250,rotation:-20},{y:500,rotation:0,duration:0.9,ease:"bounce.out"},20.68);
-tl.to("#cube8",{scaleX:1.12,scaleY:0.88,duration:0.08,yoyo:true,repeat:1},21.55);
-tl.fromTo("#v8",{scale:1.12},{scale:1.0,duration:1.52,ease:"none"},22.46);
-tl.fromTo("#cap0 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},0.0);
-tl.fromTo("#cap1 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},1.0);
-tl.fromTo("#cap2 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},1.68);
-tl.fromTo("#cap3 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},2.2);
-tl.fromTo("#cap4 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},2.92);
-tl.fromTo("#cap5 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},3.62);
-tl.fromTo("#cap6 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},4.16);
-tl.fromTo("#cap7 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},5.38);
-tl.fromTo("#cap8 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},6.0);
-tl.fromTo("#cap9 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},6.62);
-tl.fromTo("#cap10 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},7.5);
-tl.fromTo("#cap11 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},8.54);
-tl.fromTo("#cap12 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},9.16);
-tl.fromTo("#cap13 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},10.24);
-tl.fromTo("#cap14 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},10.88);
-tl.fromTo("#cap15 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},11.36);
-tl.fromTo("#cap16 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},12.08);
-tl.fromTo("#cap17 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},12.56);
-tl.fromTo("#cap18 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},13.2);
-tl.fromTo("#cap19 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},13.9);
-tl.fromTo("#cap20 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},14.48);
-tl.fromTo("#cap21 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},14.98);
-tl.fromTo("#cap22 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},15.68);
-tl.fromTo("#cap23 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},16.1);
-tl.fromTo("#cap24 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},17.06);
-tl.fromTo("#cap25 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},17.56);
-tl.fromTo("#cap26 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},18.16);
-tl.fromTo("#cap27 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},18.96);
-tl.fromTo("#cap28 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},19.64);
-tl.fromTo("#cap29 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},20.68);
-tl.fromTo("#cap30 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},21.12);
-tl.fromTo("#cap31 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},21.6);
-tl.fromTo("#cap32 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},22.46);
-tl.fromTo("#cap33 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},23.04);
-tl.fromTo("#cap34 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},23.54);
-window.__timelines["main"]=tl;
-</script></body></html>
+tl.to(proxy,{t:DUR,duration:DUR,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

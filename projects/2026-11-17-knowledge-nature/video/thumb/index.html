@@ -1,14 +1,23 @@
 <!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
-#root{position:relative;width:1080px;height:1920px;font-family:'Kanit'}
-img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;object-position:60% 50%}
-.t{position:absolute;left:40px;width:1000px;top:220px;text-align:center;color:#ffe14d;font-weight:900;font-size:150px;line-height:1.15;-webkit-text-stroke:26px #1a0d00;paint-order:stroke fill}
-.cube{position:absolute;left:600px;top:1150px;width:380px;height:380px;transform:rotate(12deg);background:linear-gradient(145deg,#a8703d,#7a4a22);border-radius:22%;box-shadow:inset -14px -18px 0 rgba(0,0,0,.22),inset 10px 10px 0 rgba(255,255,255,.18),0 0 0 14px #1a0d00}
-.cube i{position:absolute;width:15%;height:15%;margin:-7.5% 0 0 -7.5%;border-radius:50%;background:#4a2a10;opacity:.55}
-.cube b{position:absolute;width:9%;height:12%;margin:-6% 0 0 -4.5%;border-radius:50%;background:#1b0d03;box-shadow:inset 3px 3px 0 #fff}</style></head><body>
-<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
-<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/pixabay-6634722.jpg"/>
-<div class="t">ขี้เป็น<br>ลูกเต๋า?!</div>
-<div class="cube"><i style="left:22%;top:22%"></i><i style="left:50%;top:50%"></i><i style="left:78%;top:78%"></i><b style="left:36%;top:44%"></b><b style="left:64%;top:44%"></b></div>
-</div><script>const tl=gsap.timeline({paused:true});window.__timelines["thumb"]=tl;</script></body></html>
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;object-position:60% 50%}
+.shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(#000a,#0000)}
+.t{position:absolute;left:40px;width:1000px;top:200px;text-align:center;color:#FFD23F;font-weight:900;line-height:1.08;
+  -webkit-text-stroke:28px #1B0E05;paint-order:stroke fill}
+.cube{position:absolute;left:610px;top:1130px;width:360px;height:360px;transform:rotate(-10deg);border-radius:54px;background:#8A5A2E;
+  box-shadow:inset -16px -20px 0 rgba(0,0,0,.2),inset 14px 14px 0 rgba(255,255,255,.15),0 0 0 14px #1B0E05,0 30px 60px rgba(0,0,0,.45)}
+.cube i{position:absolute;width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:#3E2410}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920"
+ data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"}]'>
+<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/pixabay-6634722.jpg" alt=""/>
+<div class="shade"></div>
+<div class="t" id="title"></div>
+<div class="cube"><i style="left:28%;top:28%"></i><i style="left:50%;top:50%"></i><i style="left:72%;top:72%"></i></div>
+</div><script>
+const V=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
+const en=V.lang==='en'; const T=document.getElementById('title');
+T.innerHTML=en?'CUBE<br>POOP?!':'ขี้เป็น<br>ลูกเต๋า?!'; T.style.fontSize=en?'230px':'190px';
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

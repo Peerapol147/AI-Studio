@@ -11,7 +11,22 @@
 - (trims of) pixabay-317566: pen_ash via Pixabay https://pixabay.com/videos/id-317566/ (Pixabay Content License)
 - (trims of) pixabay-271008: pen_ash via Pixabay https://pixabay.com/videos/id-271008/ (Pixabay Content License)
 - music-jamendo-588d581d.mp3: "The Gallant Tailor - Funny theme 1" by Razvan Veina (CC BY 3.0) https://www.jamendo.com/track/623907
-- sfx-pop.mp3, sfx-whoosh.mp3 (whoosh-short), sfx-ding.mp3 (ping), sfx-thud.mp3 (impact-bass-1): HyperFrames media-use bundled SFX, Pixabay (Pixabay Content License)
-- sfx-squish.wav: synthesized with ffmpeg (original, no license needed)
-- vo-th.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
+- (v1 only, not used in the v2 renders) sfx-pop.mp3, sfx-whoosh.mp3, sfx-ding.mp3, sfx-thud.mp3: HyperFrames media-use bundled SFX, Pixabay (Pixabay Content License); sfx-squish.wav: synthesized with ffmpeg
+- vo-th.mp3, vo-en.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
 - Font Kanit: Cadson Demak, SIL Open Font License 1.1 (via Fontsource), ไฟล์ใน video/fonts/
+
+## Sound effects (v2 renders, sound-effects skill library, all CC0 1.0, credit optional)
+- "Whoosh" by qubodup https://freesound.org/people/qubodup/sounds/60013/
+- "POP SFX Neutral" by ethernel0 https://freesound.org/people/ethernel0/sounds/776016/
+- "Classic Click" by adh.dreaming https://freesound.org/people/adh.dreaming/sounds/671105/
+- "Click / Tick" by Squirrel_404 https://freesound.org/people/Squirrel_404/sounds/683048/
+- swoosh by Shinplaster https://freesound.org/people/Shinplaster/sounds/264777/
+- swoosh by Halgrimm https://freesound.org/people/Halgrimm/sounds/169867/
+- quick woosh by florianreichelt https://freesound.org/people/florianreichelt/sounds/683101/
+- fast simple chop by dave.des https://freesound.org/people/dave.des/sounds/127197/
+- mouth pop by jcallison https://freesound.org/people/jcallison/sounds/258269/
+- plop by Breviceps https://freesound.org/people/Breviceps/sounds/447910/
+- pop in sfx by Sadiquecat https://freesound.org/people/Sadiquecat/sounds/824189/
+- "ppop.wav" by Narjara https://freesound.org/people/Narjara/sounds/527522/
+- Kenney Interface Sounds (confirmation_001, maximize_001, pluck_001) https://kenney.nl/assets/interface-sounds
+- Kenney Impact Sounds (impactSoft_heavy_000) https://kenney.nl/assets/impact-sounds
