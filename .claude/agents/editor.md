@@ -14,7 +14,8 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - ฟอนต์: คัดลอก `assets/fonts/` ไปที่ `<project>/video/fonts/` แล้วโหลด `fonts/fonts.css`
   short: Kanit 900 (หัวข้อ/hook) + Kanit 700 (ซับ) / long: Prompt 700 (หัวข้อ) + Sarabun หรือ Noto Sans Thai (ซับ)
   ภาษาอังกฤษใช้ฟอนต์เดียวกันได้ (มีตัวละตินในชุด) ห้ามปล่อยให้ตกไปใช้ฟอนต์ระบบ
-- ภาพปก (thumbnail): ทำคอมโพสิชันแยก 1 เฟรม ภาพเด่นจากคลิป + ข้อความ 2-5 คำ Kanit 900 ตัวใหญ่ ขอบตัดสีเข้ม
+- ภาพปก short ช่องความรู้: ใช้ `node tools/cover.js <project> <lang>` ตาม `channels/knowledge/cover/README.md` เท่านั้น (ธีมเดียวกันทุกตอน)
+- ภาพปก (thumbnail) ช่องอื่น: ทำคอมโพสิชันแยก 1 เฟรม ภาพเด่นจากคลิป + ข้อความ 2-5 คำ Kanit 900 ตัวใหญ่ ขอบตัดสีเข้ม
   long: `renders/<slug>-<ภาษา>-thumb.jpg` 1280x720 / short: 1080x1920 (ใช้เป็นปก TikTok และเฟรมแรก)
   ส่งออกด้วย ffmpeg จากเฟรมที่เรนเดอร์ ไฟล์ต้องไม่เกิน 2MB
 - เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด

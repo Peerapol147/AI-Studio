@@ -8,7 +8,7 @@
 | 2. หาข้อมูล | `researcher` | `research.md`: ข้อเท็จจริงพร้อมลิงก์แหล่งที่มา |
 | 3. บท + สตอรีบอร์ด + จังหวะ | ผู้กำกับ + skill `yt-hook-scripter` (hook 3 วิ short / 30 วิ long) | `script.md` (บทพากย์แยกฉาก), `storyboard.md` (ฉาก, ภาพ, **คำที่ตัดเข้า**, motion, เสียง), `shots.json` (ช็อตละ 1 แถว: คำที่ตัดเข้า + คำที่ action ลง ทั้ง th/en) |
 | 4. footage และเสียง (พร้อมกัน) | `footage` + `voice` | `assets/footage/` (+ `action_at` ใน `shots.json`), `assets/CREDITS.md`, `assets/audio/` (vo + `words*.json` จาก `tools/words.sh`) |
-| 5. motion + ตัดต่อ + ซับ + ภาพปก | `editor` (ภาพปกตาม `thumbnail.md` ที่ผู้กำกับเขียนด้วย skill `yt-thumbnail-brief` ตอนขั้น 3) | โปรเจกต์ HyperFrames ใน `video/`, ไฟล์ `renders/*.mp4` |
+| 5. motion + ตัดต่อ + ซับ + ภาพปก | `editor` (ภาพปก: short ช่องความรู้ใช้ระบบปก `channels/knowledge/cover/README.md` + `tools/cover.js` เสมอ, อื่นๆ ตาม `thumbnail.md`) | โปรเจกต์ HyperFrames ใน `video/`, ไฟล์ `renders/*.mp4` |
 | 6. ตรวจ | `reviewer` | `review.md`: ผ่าน หรือรายการที่ต้องแก้ (วนกลับไปขั้นที่เกี่ยวข้อง สูงสุด 2 รอบ) |
 | 7. ส่งมอบ | ผู้กำกับ + skills `yt-title-optimizer`, `yt-description-writer` | `upload.md` แยกภาษาและแพลตฟอร์ม: ชื่อคลิป 3 ตัวเลือก (แนะนำ 1), คำอธิบายพร้อม chapter (long) และเครดิต, แฮชแท็ก; TikTok: แคปชันสั้น ≤150 ตัวอักษร + แฮชแท็ก 3-5 |
 

@@ -8,3 +8,4 @@
 - เสียงพากย์: ไทย = George `JBFqnCBsd6RMkjVDRZzb` (eleven_v3, storyteller ชาย; whole-script one take, silenceremove + atempo 1.12 ได้ ~15 ตัวอักษร/วิ)
 - เสียงพากย์: อังกฤษ = George `JBFqnCBsd6RMkjVDRZzb` (eleven_v3, tags [excited]/[playful]/[curious]; whole-script one take, silenceremove 0.15s -40dB + atempo 1.1 ได้ ~2.9 คำ/วิ; ทดสอบเทียบ Liam `TX3LPaxmHKxFdv7VOQHJ` และ eleven_v4 แล้ว George v3 กระชับสุด)
 - สไตล์ HyperFrames: (เลือก frame preset หรือ style-sampling แล้วจดไว้ตรงนี้)
+- ภาพปก: ระบบเดียวทุกตอน `cover/README.md`

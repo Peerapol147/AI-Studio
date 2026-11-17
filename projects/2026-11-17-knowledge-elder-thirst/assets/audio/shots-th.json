@@ -1,0 +1,145 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 28.882,
+ "shots": [
+  {
+   "id": "elder",
+   "src": null,
+   "cue": "เพื่อนๆ",
+   "word_at": 0.0,
+   "start": 0.0,
+   "hit": "คนแก่",
+   "hit_at": 1.04,
+   "end": 1.52,
+   "dur": 1.52
+  },
+  {
+   "id": "quarter",
+   "src": null,
+   "cue": "หนึ่งในสี่",
+   "word_at": 1.6,
+   "start": 1.52,
+   "end": 3.66,
+   "dur": 2.14
+  },
+  {
+   "id": "glass",
+   "src": null,
+   "cue": "ไม่รู้สึก",
+   "word_at": 3.74,
+   "start": 3.66,
+   "hit": "หิวน้ำ",
+   "hit_at": 4.16,
+   "end": 5.3,
+   "dur": 1.64
+  },
+  {
+   "id": "grandma",
+   "src": null,
+   "cue": "คุณยาย",
+   "word_at": 5.38,
+   "start": 5.3,
+   "hit": "งงๆ",
+   "hit_at": 6.24,
+   "end": 7.06,
+   "dur": 1.76
+  },
+  {
+   "id": "oldage",
+   "src": null,
+   "cue": "แค่แก่",
+   "word_at": 7.14,
+   "start": 7.06,
+   "end": 9.6,
+   "dur": 2.54
+  },
+  {
+   "id": "dry",
+   "src": null,
+   "cue": "ขาดน้ำ",
+   "word_at": 9.68,
+   "start": 9.6,
+   "end": 11.58,
+   "dur": 1.98
+  },
+  {
+   "id": "brain",
+   "src": null,
+   "cue": "สมอง",
+   "word_at": 11.66,
+   "start": 11.58,
+   "hit": "เบาลง",
+   "hit_at": 13.36,
+   "end": 13.96,
+   "dur": 2.38
+  },
+  {
+   "id": "body",
+   "src": null,
+   "cue": "ร่างกาย",
+   "word_at": 14.04,
+   "start": 13.96,
+   "end": 15.9,
+   "dur": 1.94
+  },
+  {
+   "id": "test",
+   "src": null,
+   "cue": "ทดลอง",
+   "word_at": 15.98,
+   "start": 15.9,
+   "end": 17.32,
+   "dur": 1.42
+  },
+  {
+   "id": "compare",
+   "src": null,
+   "cue": "คนแก่ขาดน้ำ",
+   "word_at": 17.4,
+   "start": 17.32,
+   "hit": "หิวน้ำน้อยกว่า",
+   "hit_at": 19.42,
+   "end": 20.84,
+   "dur": 3.52
+  },
+  {
+   "id": "sip",
+   "src": null,
+   "cue": "จิบน้ำ",
+   "word_at": 20.92,
+   "start": 20.84,
+   "hit": "จิบน้ำ",
+   "hit_at": 20.92,
+   "end": 22.0,
+   "dur": 1.16
+  },
+  {
+   "id": "wait",
+   "src": null,
+   "cue": "ไม่ต้องรอ",
+   "word_at": 22.08,
+   "start": 22.0,
+   "end": 23.26,
+   "dur": 1.26
+  },
+  {
+   "id": "doctor",
+   "src": null,
+   "cue": "โรคหัวใจ",
+   "word_at": 23.34,
+   "start": 23.26,
+   "end": 25.56,
+   "dur": 2.3
+  },
+  {
+   "id": "family",
+   "src": null,
+   "cue": "ที่บ้าน",
+   "word_at": 25.64,
+   "start": 25.56,
+   "end": 28.882,
+   "dur": 3.322
+  }
+ ]
+}

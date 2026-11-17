@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="%%FONTS%%"/>
+<style>
+/* Knowledge channel cover system v1 — same layout every episode so the Shorts grid reads as one series. */
+:root{--y:#FFD60A;--navy:#0B1630;--w:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy)}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+#bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.18) contrast(1.08) brightness(.96)}
+.top{position:absolute;left:0;top:0;width:100%;height:1050px;background:linear-gradient(rgba(8,18,40,.88) 0%,rgba(8,18,40,.62) 45%,rgba(8,18,40,0) 100%)}
+.bot{position:absolute;left:0;bottom:0;width:100%;height:520px;background:linear-gradient(rgba(8,18,40,0),rgba(8,18,40,.8))}
+.frame{position:absolute;inset:26px;border:14px solid var(--y);border-radius:52px;pointer-events:none}
+.kicker{position:absolute;top:150px;left:50%;transform:translateX(-50%);background:var(--y);color:var(--navy);
+  font-weight:900;font-size:70px;line-height:1;padding:22px 50px 26px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.25)}
+#head{position:absolute;top:300px;left:70px;width:940px;text-align:center}
+.line{display:block;color:var(--w);font-weight:900;line-height:1.28;white-space:nowrap;
+  -webkit-text-stroke:24px var(--navy);paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.28)}
+.hl{display:inline-block;background:var(--y);color:var(--navy);-webkit-text-stroke:0;text-shadow:none;
+  padding:16px 30px 6px;border-radius:26px;transform:rotate(-2.5deg);box-shadow:0 12px 0 rgba(0,0,0,.3);margin:14px 0}
+.sticker{position:absolute;right:70px;top:1150px;width:400px;height:400px;border-radius:50%;overflow:hidden;
+  border:16px solid var(--y);box-shadow:0 0 0 10px var(--navy),0 30px 60px rgba(0,0,0,.5);transform:rotate(6deg)}
+.sticker img{width:100%;height:100%;object-fit:cover}
+</style></head><body>
+<div id="root">
+ <img id="bg" src="%%PHOTO%%" style="object-position:%%FOCUS%%" alt=""/>
+ <div class="top"></div><div class="bot"></div>
+ %%STICKER%%
+ <div class="kicker">%%KICKER%%</div>
+ <div id="head">%%LINES%%</div>
+ <div class="frame"></div>
+</div>
+<script>
+// shrink each headline line to fit the safe width (940px), max size from the template
+document.fonts.ready.then(()=>{
+  for(const el of document.querySelectorAll('.line')){
+    let s=+el.dataset.max; el.style.fontSize=s+'px';
+    while(el.scrollWidth>940 && s>90){s-=4; el.style.fontSize=s+'px';}
+  }
+  document.body.dataset.ready='1';
+});
+</script></body></html>

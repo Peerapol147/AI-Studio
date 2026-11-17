@@ -1,4 +1,5 @@
 # Thumbnail brief (1080x1920, Short cover / first frame)
+> ทำจริงด้วยระบบปกช่อง `channels/knowledge/cover/README.md` + `cover.json` (ข้อความด้านล่างเป็นที่มา)
 - Focal subject: one elderly person (face, slightly puzzled) beside a full glass of water they're ignoring — from shot `glass` or `grandma`.
 - Text (Kanit 900, white, thick dark stroke, upper third), ≤4 words, not repeating the title:
   TH: "ไม่หิว แต่ขาดน้ำ!"  EN: "NOT THIRSTY. DEHYDRATED."
