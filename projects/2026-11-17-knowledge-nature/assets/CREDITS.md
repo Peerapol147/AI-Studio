@@ -10,3 +10,7 @@
 - pixabay-5385056.jpg: LollipopPhotographyUK via Pixabay https://pixabay.com/photos/trees-nature-outdoors-woods-path-5385056/ (Pixabay Content License)
 - (trims of) pixabay-317566: pen_ash via Pixabay https://pixabay.com/videos/id-317566/ (Pixabay Content License)
 - (trims of) pixabay-271008: pen_ash via Pixabay https://pixabay.com/videos/id-271008/ (Pixabay Content License)
+- music-jamendo-588d581d.mp3: "The Gallant Tailor - Funny theme 1" by Razvan Veina (CC BY 3.0) https://www.jamendo.com/track/623907
+- sfx-pop.mp3, sfx-whoosh.mp3 (whoosh-short), sfx-ding.mp3 (ping), sfx-thud.mp3 (impact-bass-1): HyperFrames media-use bundled SFX, Pixabay (Pixabay Content License)
+- sfx-squish.wav: synthesized with ffmpeg (original, no license needed)
+- vo-th.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
