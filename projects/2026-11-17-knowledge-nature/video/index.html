@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot img,.shot video,.fill{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.cap{position:absolute;left:60px;width:960px;top:1100px;text-align:center;z-index:50}
+.cap span{display:inline-block;color:#fff;font-weight:700;font-size:76px;line-height:1.25;-webkit-text-stroke:16px #000;paint-order:stroke fill;text-shadow:0 6px 14px rgba(0,0,0,.5)}
+.cube{position:absolute;background:linear-gradient(145deg,#a8703d,#7a4a22);border-radius:22%;box-shadow:inset -14px -18px 0 rgba(0,0,0,.22),inset 10px 10px 0 rgba(255,255,255,.18),0 24px 40px rgba(0,0,0,.35)}
+.cube i{position:absolute;width:15%;height:15%;margin:-7.5% 0 0 -7.5%;border-radius:50%;background:#4a2a10;opacity:.55}
+.cube b.eye{position:absolute;width:9%;height:12%;margin:-6% 0 0 -4.5%;border-radius:50%;background:#1b0d03;box-shadow:inset 3px 3px 0 #fff}
+.yel{background:radial-gradient(circle at 50% 40%,#ffe36e,#ffb300)}
+.sqbox{position:absolute;left:390px;top:620px;width:300px;height:300px;border:16px solid #fff;border-radius:12px;box-shadow:0 0 0 6px #000}
+.qm{position:absolute;left:390px;top:640px;width:300px;text-align:center;color:#fff;font-weight:900;font-size:200px;-webkit-text-stroke:10px #000;paint-order:stroke fill}
+.xline{position:absolute;left:360px;top:760px;width:360px;height:26px;background:#ff2d2d;border-radius:13px;box-shadow:0 0 0 5px #000}
+.circ{position:absolute;left:390px;top:620px;width:300px;height:300px;border:18px solid #3dff6e;border-radius:50%;box-shadow:0 0 0 6px #000, inset 0 0 0 6px #000}
+.tick{position:absolute;left:640px;top:560px;font-size:150px;font-weight:900;color:#3dff6e;-webkit-text-stroke:8px #000;paint-order:stroke fill}
+#diag{background:#fff7e8}
+#cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 500px}
+.band{position:absolute;width:100px;border:5px solid #6d0b30}
+.lumen{position:absolute;left:350px;top:170px;width:380px;height:800px;background:#ffe4ec}
+.blab{position:absolute;left:40px;width:190px;text-align:right;font-weight:700;font-size:56px;color:#6d0b30}
+.title{position:absolute;left:0;width:1080px;top:40px;text-align:center;font-weight:900;font-size:72px;color:#6d0b30}
+.exit{position:absolute;left:350px;top:950px;width:380px;height:70px;border-radius:50%;background:#3a1020;border:8px solid #6d0b30}
+#lump{position:absolute;left:400px;top:-80px;width:280px;opacity:0;height:280px;border-radius:50%;background:linear-gradient(145deg,#a8703d,#7a4a22);box-shadow:inset -12px -14px 0 rgba(0,0,0,.2);z-index:3}
+.drop{position:absolute;width:40px;height:52px;background:#29b6f6;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:4px solid #01579b;z-index:4;opacity:0}
+.glow{position:absolute;inset:0;border-radius:0;box-shadow:0 0 0 0 #fff}
+.ozlab{position:absolute;left:0;width:1080px;top:300px;text-align:center;font-weight:900;font-size:110px;color:#fff;-webkit-text-stroke:14px #000;paint-order:stroke fill}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="23.98" data-width="1080" data-height="1920">
+<div id="pi1" class="shot"><video id="v1" class="clip" data-start="0" data-duration="2.2" data-track-index="1" src="assets/pixabay-271008-walkin.mp4" muted playsinline></video></div>
+<div id="s1b" class="clip shot yel" data-start="2.2" data-duration="0.72" data-track-index="2"><div id="cube1" class="cube" style="width:420px;height:420px"><i style="left:22%;top:22%"></i><i style="left:50%;top:50%"></i><i style="left:78%;top:78%"></i><b class="eye" style="left:36%;top:44%"></b><b class="eye" style="left:64%;top:44%"></b></div></div>
+<div class="shot" id="w2a"><video id="v2" class="clip" data-start="2.92" data-duration="0.7" data-track-index="1" data-media-start="0.5" src="assets/pixabay-317566-eating.mp4" muted playsinline></video></div>
+<div id="s2b" class="clip shot" data-start="3.62" data-duration="0.92" data-track-index="2"><img id="i2b" src="assets/pixabay-5099450.jpg"/><div class="ozlab" id="wlab">วอมแบต</div></div>
+<div id="s2c" class="clip shot" data-start="4.54" data-duration="0.84" data-track-index="3"><img id="i2c" src="assets/pixabay-5385056.jpg"/><div class="ozlab">ออสเตรเลีย</div></div>
+<div id="s3" class="clip shot" data-start="5.38" data-duration="2.12" data-track-index="2"><img id="i3" style="object-position:72% 50%" src="assets/pixabay-3887250.jpg"/><div class="sqbox" id="sq"></div><div class="qm" id="qm">?</div></div>
+<div id="s4" class="clip shot" data-start="7.5" data-duration="2.74" data-track-index="3"><img id="i4" src="assets/pixabay-6566987.jpg"/><div class="sqbox" id="sq4"></div><div class="xline" id="xl"></div><div class="circ" id="circ"></div><div class="tick" id="tick">✔</div></div>
+<div id="diag" class="clip shot" data-start="10.24" data-duration="10.44" data-track-index="2"><div id="cam">
+<div class="title" id="dtitle">ภาพตัดขวางลำไส้</div>
+<div class="lumen"></div><div class="band bs L" id="bl0" style="left:250px;top:170px;height:200px;background:#c2185b"></div><div class="band bs R" id="br0" style="left:730px;top:170px;height:200px;background:#c2185b"></div><div class="blab labs" style="top:236px">แข็ง</div><div class="band bf L" id="bl1" style="left:250px;top:370px;height:200px;background:#f8bbd0"></div><div class="band bf R" id="br1" style="left:730px;top:370px;height:200px;background:#f8bbd0"></div><div class="blab labf" style="top:436px">นิ่ม</div><div class="band bs L" id="bl2" style="left:250px;top:570px;height:200px;background:#c2185b"></div><div class="band bs R" id="br2" style="left:730px;top:570px;height:200px;background:#c2185b"></div><div class="blab labs" style="top:636px">แข็ง</div><div class="band bf L" id="bl3" style="left:250px;top:770px;height:200px;background:#f8bbd0"></div><div class="band bf R" id="br3" style="left:730px;top:770px;height:200px;background:#f8bbd0"></div><div class="blab labf" style="top:836px">นิ่ม</div><div class="exit" id="exit"></div><div id="lump"></div><div class="drop" id="d0" style="left:550px;top:560px"></div><div class="drop" id="d1" style="left:470px;top:590px"></div><div class="drop" id="d2" style="left:550px;top:620px"></div><div class="drop" id="d3" style="left:470px;top:650px"></div><div class="drop" id="d4" style="left:550px;top:680px"></div><div class="drop" id="d5" style="left:470px;top:710px"></div><div class="drop" id="d6" style="left:550px;top:740px"></div><div class="drop" id="d7" style="left:470px;top:770px"></div>
+</div></div>
+<div id="s8a" class="clip shot yel" data-start="20.68" data-duration="1.78" data-track-index="3">
+<div class="exit" style="left:290px;top:120px;width:500px;height:110px"></div><div id="cube8" class="cube" style="width:380px;height:380px"><i style="left:22%;top:22%"></i><i style="left:50%;top:50%"></i><i style="left:78%;top:78%"></i><b class="eye" style="left:36%;top:44%"></b><b class="eye" style="left:64%;top:44%"></b></div></div>
+<div class="shot"><video id="v8" class="clip" data-start="22.46" data-duration="1.52" data-track-index="1" data-media-start="0.5" src="assets/pixabay-271008-face.mp4" muted playsinline></video></div>
+<div id="cap0" class="clip cap" data-start="0.0" data-duration="1.0" data-track-index="20"><span>เพื่อนๆ รู้ไหมว่า</span></div>
+<div id="cap1" class="clip cap" data-start="1.0" data-duration="0.68" data-track-index="20"><span>มีสัตว์ตัวนึง</span></div>
+<div id="cap2" class="clip cap" data-start="1.68" data-duration="0.52" data-track-index="20"><span>ที่ขี้ออกมา</span></div>
+<div id="cap3" class="clip cap" data-start="2.2" data-duration="0.72" data-track-index="20"><span>เป็นลูกเต๋า</span></div>
+<div id="cap4" class="clip cap" data-start="2.92" data-duration="0.7" data-track-index="20"><span>เจ้าตัวนี้คือ</span></div>
+<div id="cap5" class="clip cap" data-start="3.62" data-duration="0.54" data-track-index="20"><span>วอมแบต</span></div>
+<div id="cap6" class="clip cap" data-start="4.16" data-duration="1.22" data-track-index="20"><span>สัตว์ป่าจากออสเตรเลีย</span></div>
+<div id="cap7" class="clip cap" data-start="5.38" data-duration="0.62" data-track-index="20"><span>หลายคนคิดว่า</span></div>
+<div id="cap8" class="clip cap" data-start="6.0" data-duration="0.62" data-track-index="20"><span>รูก้นของมัน</span></div>
+<div id="cap9" class="clip cap" data-start="6.62" data-duration="0.88" data-track-index="20"><span>คงเป็นสี่เหลี่ยม</span></div>
+<div id="cap10" class="clip cap" data-start="7.5" data-duration="1.04" data-track-index="20"><span>แต่ความจริงคือ</span></div>
+<div id="cap11" class="clip cap" data-start="8.54" data-duration="0.62" data-track-index="20"><span>รูก้นมันกลม</span></div>
+<div id="cap12" class="clip cap" data-start="9.16" data-duration="1.08" data-track-index="20"><span>เหมือนสัตว์ทั่วไปเลย</span></div>
+<div id="cap13" class="clip cap" data-start="10.24" data-duration="0.64" data-track-index="20"><span>นักวิทยาศาสตร์</span></div>
+<div id="cap14" class="clip cap" data-start="10.88" data-duration="0.48" data-track-index="20"><span>เลยเข้าไปดู</span></div>
+<div id="cap15" class="clip cap" data-start="11.36" data-duration="0.72" data-track-index="20"><span>ในลำไส้</span></div>
+<div id="cap16" class="clip cap" data-start="12.08" data-duration="0.48" data-track-index="20"><span>แล้วพบว่า</span></div>
+<div id="cap17" class="clip cap" data-start="12.56" data-duration="0.64" data-track-index="20"><span>ผนังลำไส้</span></div>
+<div id="cap18" class="clip cap" data-start="13.2" data-duration="0.7" data-track-index="20"><span>ช่วงท้าย</span></div>
+<div id="cap19" class="clip cap" data-start="13.9" data-duration="0.58" data-track-index="20"><span>มีส่วนแข็ง</span></div>
+<div id="cap20" class="clip cap" data-start="14.48" data-duration="0.5" data-track-index="20"><span>กับส่วนนิ่ม</span></div>
+<div id="cap21" class="clip cap" data-start="14.98" data-duration="0.7" data-track-index="20"><span>สลับกัน</span></div>
+<div id="cap22" class="clip cap" data-start="15.68" data-duration="0.42" data-track-index="20"><span>ส่วนแข็ง</span></div>
+<div id="cap23" class="clip cap" data-start="16.1" data-duration="0.96" data-track-index="20"><span>บีบตัวเร็วกว่า</span></div>
+<div id="cap24" class="clip cap" data-start="17.06" data-duration="0.5" data-track-index="20"><span>เลยค่อยๆ</span></div>
+<div id="cap25" class="clip cap" data-start="17.56" data-duration="0.6" data-track-index="20"><span>กดก้อนขี้</span></div>
+<div id="cap26" class="clip cap" data-start="18.16" data-duration="0.8" data-track-index="20"><span>จนเกิดมุม</span></div>
+<div id="cap27" class="clip cap" data-start="18.96" data-duration="0.68" data-track-index="20"><span>บวกกับก้อนขี้</span></div>
+<div id="cap28" class="clip cap" data-start="19.64" data-duration="1.04" data-track-index="20"><span>ที่แห้งลงเรื่อยๆ</span></div>
+<div id="cap29" class="clip cap" data-start="20.68" data-duration="0.44" data-track-index="20"><span>พอออกมา</span></div>
+<div id="cap30" class="clip cap" data-start="21.12" data-duration="0.48" data-track-index="20"><span>เลยกลายเป็น</span></div>
+<div id="cap31" class="clip cap" data-start="21.6" data-duration="0.86" data-track-index="20"><span>ลูกเต๋าเหลี่ยมเป๊ะ</span></div>
+<div id="cap32" class="clip cap" data-start="22.46" data-duration="0.58" data-track-index="20"><span>ทั้งที่ออกจาก</span></div>
+<div id="cap33" class="clip cap" data-start="23.04" data-duration="0.5" data-track-index="20"><span>รูกลมๆ</span></div>
+<div id="cap34" class="clip cap" data-start="23.54" data-duration="0.44" data-track-index="20"><span>นั่นเอง</span></div>
+<audio id="vo" class="clip" data-start="0" data-duration="23.98" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="23.98" data-track-index="31" data-volume="0.11" data-fade-in="0.3" data-fade-out="1.5" src="assets/music-jamendo-588d581d.mp3"></audio>
+<audio id="sfxpop" class="clip" data-start="2.3" data-duration="1" data-track-index="32" data-volume="0.6" src="assets/sfx-pop.mp3"></audio>
+<audio id="sfxwh" class="clip" data-start="6.6" data-duration="1" data-track-index="33" data-volume="0.5" src="assets/sfx-whoosh.mp3"></audio>
+<audio id="sfxding" class="clip" data-start="8.98" data-duration="1.2" data-track-index="32" data-volume="0.5" src="assets/sfx-ding.mp3"></audio>
+<audio id="sfxsq" class="clip" data-start="18.4" data-duration="0.8" data-track-index="33" data-volume="0.6" src="assets/sfx-squish.wav"></audio>
+<audio id="sfxthud" class="clip" data-start="21.55" data-duration="1.2" data-track-index="32" data-volume="0.7" src="assets/sfx-thud.mp3"></audio>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+// scene1 punch-in
+tl.fromTo("#pi1",{scale:1},{scale:1.12,duration:2.2,ease:"none"},0);
+tl.to("#pi1",{scale:1.3,duration:0.15,ease:"power3.out"},1.68);
+gsap.set("#cube1",{left:330,top:600});
+tl.fromTo("#cube1",{scale:0,rotation:-25},{scale:1,rotation:0,duration:0.35,ease:"back.out(2.5)"},2.3);
+// ken burns
+tl.fromTo("#w2a",{scale:1.05},{scale:1.12,duration:0.7,ease:"none"},2.92);
+tl.fromTo("#i2b",{scale:1.0},{scale:1.07,duration:0.92,ease:"none"},3.62);
+tl.fromTo("#wlab",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.2,ease:"back.out(2)"},3.62);
+tl.fromTo("#i2c",{scale:1.08,y:20},{scale:1.0,y:0,duration:0.84,ease:"none"},4.54);
+tl.fromTo("#i3",{scale:1.0},{scale:1.08,duration:2.12,ease:"none"},5.38);
+tl.fromTo("#sq",{scale:0,rotation:-90,opacity:0},{scale:1,rotation:0,opacity:1,duration:0.35,ease:"back.out(1.6)"},6.62);
+tl.fromTo("#qm",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.25,ease:"back.out(2)"},6.98);
+tl.fromTo("#i4",{scale:1.08},{scale:1.0,duration:2.74,ease:"none"},7.5);
+tl.fromTo("#xl",{scaleX:0,rotation:-35},{scaleX:1,rotation:-35,duration:0.25},8.2);
+tl.to(["#sq4","#xl"],{opacity:0,duration:0.2},8.9);
+tl.fromTo("#circ",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(2)"},8.98);
+tl.fromTo("#tick",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.25,ease:"back.out(3)"},9.1);
+// diagram
+tl.fromTo("#cam",{scale:0.8,y:0,opacity:0},{scale:0.95,y:0,opacity:1,duration:0.5,ease:"power2.out"},10.24);
+tl.to("#cam",{scale:1.0,duration:5,ease:"none"},10.8);
+tl.fromTo(".band",{scaleY:0},{scaleY:1,duration:0.4,stagger:0.05,ease:"power2.out"},12.56);
+tl.fromTo(".labs",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25},13.9);
+tl.fromTo(".bs",{filter:"brightness(1)"},{filter:"brightness(1.5)",duration:0.2,yoyo:true,repeat:1},13.9);
+tl.fromTo(".labf",{opacity:0,x:-30},{opacity:1,x:0,duration:0.25},14.48);
+tl.fromTo(".bf",{filter:"brightness(1)"},{filter:"brightness(1.15)",duration:0.2,yoyo:true,repeat:1},14.48);
+tl.fromTo("#lump",{opacity:0},{opacity:1,duration:0.2},15.2);
+tl.to("#lump",{y:420,duration:1.2,ease:"power1.inOut"},15.2);
+[16.1,16.7,17.3,17.9,18.4].forEach((t,k)=>{
+ tl.to(".bs.L",{x:38,duration:0.15,ease:"power2.in"},t);tl.to(".bs.R",{x:-38,duration:0.15,ease:"power2.in"},t);
+ tl.to(".bs.L,.bs.R",{x:0,duration:0.25,ease:"power2.out"},t+0.2);
+ tl.to("#lump",{scaleX:0.9,scaleY:1.06,duration:0.15},t);tl.to("#lump",{scaleX:1,scaleY:1,duration:0.25},t+0.2);
+ tl.to("#lump",{borderRadius:Math.max(50-k*9,12)+"%",duration:0.3},t);
+});
+tl.to("#lump",{borderRadius:"10%",duration:0.2},18.54);
+// drying
+tl.to("#lump",{y:560,duration:1.4,ease:"none"},19.2);
+for(let k=0;k<8;k++){tl.fromTo("#d"+k,{opacity:0,x:0,y:0,scale:0.5},{opacity:1,scale:1,duration:0.15},19.64+k*0.1);
+ tl.to("#d"+k,{x:(k%2?-1:1)*(260+k*10),y:-60+k*12,opacity:0,duration:0.7,ease:"power1.in"},19.79+k*0.1);}
+tl.to("#lump",{filter:"brightness(0.8)",duration:1},19.6);
+tl.to("#lump",{y:760,scale:0.9,duration:0.5,ease:"power2.in"},20.18);
+// scene 8
+gsap.set("#cube8",{left:350,top:150});
+tl.fromTo("#cube8",{y:-250,rotation:-20},{y:500,rotation:0,duration:0.9,ease:"bounce.out"},20.68);
+tl.to("#cube8",{scaleX:1.12,scaleY:0.88,duration:0.08,yoyo:true,repeat:1},21.55);
+tl.fromTo("#v8",{scale:1.12},{scale:1.0,duration:1.52,ease:"none"},22.46);
+tl.fromTo("#cap0 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},0.0);
+tl.fromTo("#cap1 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},1.0);
+tl.fromTo("#cap2 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},1.68);
+tl.fromTo("#cap3 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},2.2);
+tl.fromTo("#cap4 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},2.92);
+tl.fromTo("#cap5 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},3.62);
+tl.fromTo("#cap6 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},4.16);
+tl.fromTo("#cap7 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},5.38);
+tl.fromTo("#cap8 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},6.0);
+tl.fromTo("#cap9 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},6.62);
+tl.fromTo("#cap10 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},7.5);
+tl.fromTo("#cap11 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},8.54);
+tl.fromTo("#cap12 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},9.16);
+tl.fromTo("#cap13 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},10.24);
+tl.fromTo("#cap14 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},10.88);
+tl.fromTo("#cap15 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},11.36);
+tl.fromTo("#cap16 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},12.08);
+tl.fromTo("#cap17 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},12.56);
+tl.fromTo("#cap18 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},13.2);
+tl.fromTo("#cap19 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},13.9);
+tl.fromTo("#cap20 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},14.48);
+tl.fromTo("#cap21 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},14.98);
+tl.fromTo("#cap22 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},15.68);
+tl.fromTo("#cap23 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},16.1);
+tl.fromTo("#cap24 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},17.06);
+tl.fromTo("#cap25 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},17.56);
+tl.fromTo("#cap26 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},18.16);
+tl.fromTo("#cap27 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},18.96);
+tl.fromTo("#cap28 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},19.64);
+tl.fromTo("#cap29 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},20.68);
+tl.fromTo("#cap30 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},21.12);
+tl.fromTo("#cap31 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},21.6);
+tl.fromTo("#cap32 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},22.46);
+tl.fromTo("#cap33 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},23.04);
+tl.fromTo("#cap34 span",{scale:0.7},{scale:1,duration:0.14,ease:"back.out(3)"},23.54);
+window.__timelines["main"]=tl;
+</script></body></html>

@@ -14,3 +14,4 @@
 - sfx-pop.mp3, sfx-whoosh.mp3 (whoosh-short), sfx-ding.mp3 (ping), sfx-thud.mp3 (impact-bass-1): HyperFrames media-use bundled SFX, Pixabay (Pixabay Content License)
 - sfx-squish.wav: synthesized with ffmpeg (original, no license needed)
 - vo-th.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
+- Font Kanit: Cadson Demak, SIL Open Font License 1.1 (via Fontsource), ไฟล์ใน video/fonts/
