@@ -1,0 +1,125 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 19.559,
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ทำไม",
+   "word_at": 0.04,
+   "start": 0.0,
+   "end": 0.2,
+   "dur": 0.2
+  },
+  {
+   "id": "soak",
+   "src": null,
+   "cue": "แช่น้ำ",
+   "word_at": 0.28,
+   "start": 0.2,
+   "end": 1.06,
+   "dur": 0.86
+  },
+  {
+   "id": "prune",
+   "src": null,
+   "cue": "นิ้วเหี่ยว",
+   "word_at": 1.14,
+   "start": 1.06,
+   "end": 1.66,
+   "dur": 0.6
+  },
+  {
+   "id": "myth",
+   "src": "graphic:cross-section",
+   "cue": "หลายคนคิดว่า",
+   "word_at": 1.74,
+   "start": 1.66,
+   "hit": "พอง",
+   "hit_at": 3.22,
+   "end": 4.68,
+   "dur": 3.02
+  },
+  {
+   "id": "nerve",
+   "src": null,
+   "cue": "ระบบประสาท",
+   "word_at": 4.76,
+   "start": 4.68,
+   "end": 5.56,
+   "dur": 0.88
+  },
+  {
+   "id": "vessel",
+   "src": null,
+   "cue": "หลอดเลือด",
+   "word_at": 5.64,
+   "start": 5.56,
+   "end": 5.96,
+   "dur": 0.4
+  },
+  {
+   "id": "shrink",
+   "src": "graphic:cross-section",
+   "cue": "ใต้ผิว",
+   "word_at": 6.04,
+   "start": 5.96,
+   "hit": "หดตัว",
+   "hit_at": 6.44,
+   "end": 7.02,
+   "dur": 1.06
+  },
+  {
+   "id": "fold",
+   "src": "graphic:cross-section",
+   "cue": "เนื้อข้างใต้",
+   "word_at": 7.1,
+   "start": 7.02,
+   "hit": "ย่น",
+   "hit_at": 9.04,
+   "end": 9.9,
+   "dur": 2.88
+  },
+  {
+   "id": "proof",
+   "src": "graphic:two-fingers",
+   "cue": "หลักฐาน",
+   "word_at": 9.98,
+   "start": 9.9,
+   "hit": "ไม่เหี่ยว",
+   "hit_at": 13.54,
+   "end": 14.08,
+   "dur": 4.18
+  },
+  {
+   "id": "sign",
+   "src": null,
+   "cue": "นิ้วเหี่ยวเลย",
+   "word_at": 14.16,
+   "start": 14.08,
+   "hit": "ทำงานดี",
+   "hit_at": 16.239,
+   "end": 17.42,
+   "dur": 3.34
+  },
+  {
+   "id": "grip",
+   "src": null,
+   "cue": "จับของเปียก",
+   "word_at": 17.5,
+   "start": 17.42,
+   "end": 18.66,
+   "dur": 1.24
+  },
+  {
+   "id": "ask",
+   "src": "graphic:comment",
+   "cue": "คอมเมนต์",
+   "word_at": 18.74,
+   "start": 18.66,
+   "end": 19.559,
+   "dur": 0.899
+  }
+ ]
+}
