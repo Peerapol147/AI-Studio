@@ -2,7 +2,7 @@
 // Render a Short cover (1080x1920 JPG) in the channel's cover system.
 // Use: node tools/cover.js <project-dir> <th|en>   (reads <project>/cover.json)
 // Writes <project>/cover-<lang>.jpg and renders/<slug>-<lang>-thumb.jpg
-// cover.json: {"channel":"knowledge","photo":"assets/footage/x.jpg","focus":"50% 40%",
+// cover.json: {"channel":"knowledge","photo":"assets/footage/x.jpg","focus":"50% 40%","bg_transform":"translateY(300px)" (optional: push the face below the headline),
 //   "sticker":{"photo":"assets/footage/y.jpg","focus":"50% 50%"},          (optional round inset)
 //   "th":{"kicker":"รู้ไหม?","lines":["ไม่หิวน้ำ","แต่[ขาดน้ำ]"]}, "en":{...}}   [word] = yellow highlight
 const fs=require('fs'), path=require('path'), {chromium}=require('playwright');
@@ -17,7 +17,7 @@ const n=L.lines.length, max=L.max||(n>=3?150:(lang==='en'?180:170));
 const lines=L.lines.map(t=>`<span class="line" data-max="${max}">${esc(t).replace(/\[(.+?)\]/g,'<span class="hl">$1</span>')}</span>`).join('');
 const st=cfg.sticker?`<div class="sticker" style="top:${cfg.sticker.top||1150}px"><img src="${url(cfg.sticker.photo)}" style="object-position:${cfg.sticker.focus||'50% 50%'}"/></div>`:'';
 const html=tpl.replace('%%FONTS%%','file://'+path.join(root,'assets/fonts/fonts.css')).replace('%%PHOTO%%',url(cfg.photo))
-  .replace('%%FOCUS%%',cfg.focus||'50% 50%').replace('%%STICKER%%',st).replace('%%KICKER%%',esc(L.kicker)).replace('%%LINES%%',lines);
+  .replace('%%FOCUS%%',cfg.focus||'50% 50%').replace('%%BGT%%',cfg.bg_transform||'none').replace('%%STICKER%%',st).replace('%%KICKER%%',esc(L.kicker)).replace('%%LINES%%',lines);
 const tmp=path.join(P,`.cover-${lang}.html`); fs.writeFileSync(tmp,html);
 (async()=>{
   const b=await chromium.launch(); const pg=await b.newPage({viewport:{width:1080,height:1920}});

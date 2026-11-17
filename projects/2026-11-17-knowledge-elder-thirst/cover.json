@@ -1,4 +1,4 @@
-{"channel":"knowledge","photo":"assets/footage/grandma.jpg","focus":"50% 40%",
- "sticker":{"photo":"assets/footage/glass.jpg","focus":"50% 50%","top":1250},
+{"channel":"knowledge","photo":"assets/footage/grandma.jpg","focus":"50% 40%","bg_transform":"translateY(470px) scale(1.18)",
+ "sticker":{"photo":"assets/footage/glass.jpg","focus":"60% 70%","top":1440},
  "th":{"kicker":"รู้ไหม?","lines":["ไม่หิวน้ำ","แต่[ขาดน้ำ]"]},
  "en":{"kicker":"DID YOU KNOW?","lines":["NOT THIRSTY","BUT [DEHYDRATED]"]}}

@@ -1,3 +1,12 @@
 # Credits
 - music-jamendo-ea4ef155.mp3: "Lucky Acoustic" by Jesse Keller (CC BY 3.0) https://www.jamendo.com/track/1540859
 - vo-th.mp3, vo-en.mp3: ElevenLabs eleven_v3, voice George (JBFqnCBsd6RMkjVDRZzb)
+- footage/elder.jpg: Leroy_Skalstad via Pixabay https://pixabay.com/photos/old-man-portrait-bearded-man-844207/ (Pixabay Content License)
+- footage/oldage.jpg: congerdesign via Pixabay https://pixabay.com/photos/hands-human-old-human-old-seniors-4052466/ (Pixabay Content License)
+- footage/dry.jpg: Mokaza via Pixabay https://pixabay.com/illustrations/dry-cracked-earth-soil-drought-8979159/ (Pixabay Content License)
+- footage/wait.jpg: Couleur via Pixabay https://pixabay.com/photos/clock-cuckoo-clock-pendulum-7703664/ (Pixabay Content License)
+- footage/grandma.jpg: Andrew_Poynton via Pixabay https://pixabay.com/photos/sad-woman-expression-stress-900363/ (Pixabay Content License)
+- footage/family.jpg: lin2867 via Pixabay https://pixabay.com/photos/grandparents-asian-grandma-grandson-1019594/ (Pixabay Content License)
+- glass.jpg: congerdesign, Pixabay Content License https://pixabay.com/photos/bottle-mineral-water-glass-pour-2032980/
+- sip.jpg: sascha_kircher, Pixabay Content License https://pixabay.com/photos/old-man-drink-bench-senior-elderly-7033205/
+- doctor.jpg: erwinbosman, Pixabay Content License https://pixabay.com/photos/doctor-patient-consultation-elderly-10350071/

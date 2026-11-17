@@ -5,7 +5,7 @@
  "shots": [
   {
    "id": "elder",
-   "src": null,
+   "src": "assets/footage/elder.jpg",
    "cue": "เพื่อนๆ",
    "word_at": 0.0,
    "start": 0.0,
@@ -25,7 +25,7 @@
   },
   {
    "id": "glass",
-   "src": null,
+   "src": "assets/footage/glass.jpg",
    "cue": "ไม่รู้สึก",
    "word_at": 3.74,
    "start": 3.66,
@@ -36,7 +36,7 @@
   },
   {
    "id": "grandma",
-   "src": null,
+   "src": "assets/footage/grandma.jpg",
    "cue": "คุณยาย",
    "word_at": 5.38,
    "start": 5.3,
@@ -47,7 +47,7 @@
   },
   {
    "id": "oldage",
-   "src": null,
+   "src": "assets/footage/oldage.jpg",
    "cue": "แค่แก่",
    "word_at": 7.14,
    "start": 7.06,
@@ -56,7 +56,7 @@
   },
   {
    "id": "dry",
-   "src": null,
+   "src": "assets/footage/dry.jpg",
    "cue": "ขาดน้ำ",
    "word_at": 9.68,
    "start": 9.6,
@@ -105,7 +105,7 @@
   },
   {
    "id": "sip",
-   "src": null,
+   "src": "assets/footage/sip.jpg",
    "cue": "จิบน้ำ",
    "word_at": 20.92,
    "start": 20.84,
@@ -116,7 +116,7 @@
   },
   {
    "id": "wait",
-   "src": null,
+   "src": "assets/footage/wait.jpg",
    "cue": "ไม่ต้องรอ",
    "word_at": 22.08,
    "start": 22.0,
@@ -125,7 +125,7 @@
   },
   {
    "id": "doctor",
-   "src": null,
+   "src": "assets/footage/doctor.jpg",
    "cue": "โรคหัวใจ",
    "word_at": 23.34,
    "start": 23.26,
@@ -134,7 +134,7 @@
   },
   {
    "id": "family",
-   "src": null,
+   "src": "assets/footage/family.jpg",
    "cue": "ที่บ้าน",
    "word_at": 25.64,
    "start": 25.56,
