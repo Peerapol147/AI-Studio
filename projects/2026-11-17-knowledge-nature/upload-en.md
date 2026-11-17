@@ -1,4 +1,5 @@
 # Upload (English): wombat cube poop
+File: `renders/wombat-en.mp4` (28s, 9:16) | Thumbnail: `renders/wombat-en-thumb.jpg`
 ## YouTube Shorts
 Titles: 1) This Animal Poops Perfect Cubes 🎲 (recommended) 2) Why Is Wombat Poop Square? 3) The Butt Is Round. The Poop Is a Cube.
 Description:
