@@ -12,7 +12,9 @@
    "hit": {
     "th": "หาว",
     "en": "yawn"
-   }
+   },
+   "src": "assets/footage/hook-pixabay-44647.mp4",
+   "action_at": 1.8
   },
   {
    "id": "myth",
@@ -27,7 +29,7 @@
    "id": "o2",
    "cue": {
     "th": "ออกซิเจน",
-    "en": "oxygen"
+    "en": "brain"
    },
    "note": "graphic:brain same, O2 gauge low",
    "src": "graphic:brain"
@@ -38,7 +40,9 @@
     "th": "แต่ความจริง",
     "en": "But"
    },
-   "note": "footage:oxygen mask / person breathing through mask"
+   "note": "footage:oxygen mask / person breathing through mask",
+   "src": "assets/footage/mask-pixabay-8687776.jpg",
+   "action_at": 0.0
   },
   {
    "id": "pure",
@@ -59,7 +63,9 @@
    "hit": {
     "th": "เท่าเดิม",
     "en": "much"
-   }
+   },
+   "src": "assets/footage/same-pixabay-44647-yawn2.mp4",
+   "action_at": 1.6
   },
   {
    "id": "idea",
@@ -98,7 +104,9 @@
     "th": "บ่อย",
     "en": "Yawning"
    },
-   "note": "footage:pixabay-video-83875 tired person at office desk"
+   "note": "footage:pixabay-video-83875 tired person at office desk",
+   "src": "assets/footage/warn-pixabay-83875.mp4",
+   "action_at": 10.0
   },
   {
    "id": "doctor",
@@ -106,7 +114,9 @@
     "th": "หาหมอ",
     "en": "doctor"
    },
-   "note": "footage:doctor photo (any gender)"
+   "note": "footage:doctor photo (any gender)",
+   "src": "assets/footage/doctor-pixabay-5321351.jpg",
+   "action_at": 0.0
   },
   {
    "id": "ask",
@@ -114,7 +124,10 @@
     "th": "แล้วดู",
     "en": "So"
    },
-   "note": "footage:pixabay-video-180693 cat yawning + comment bubble"
+   "note": "footage:pixabay-video-180693 cat yawning + comment bubble",
+   "src": "assets/footage/ask-pixabay-119515.mp4",
+   "action_at": 5.1,
+   "long_ok": true
   }
  ]
 }

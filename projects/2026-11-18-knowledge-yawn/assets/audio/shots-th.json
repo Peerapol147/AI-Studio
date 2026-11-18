@@ -5,14 +5,15 @@
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/hook-pixabay-44647.mp4",
    "cue": "ทำไม",
    "word_at": 0.04,
    "start": 0.0,
    "hit": "หาว",
    "hit_at": 0.66,
    "end": 1.02,
-   "dur": 1.02
+   "dur": 1.02,
+   "media_start": 1.14
   },
   {
    "id": "myth",
@@ -34,12 +35,13 @@
   },
   {
    "id": "mask",
-   "src": null,
+   "src": "assets/footage/mask-pixabay-8687776.jpg",
    "cue": "แต่ความจริง",
    "word_at": 3.82,
    "start": 3.74,
    "end": 5.8,
-   "dur": 2.06
+   "dur": 2.06,
+   "media_start": -0.08
   },
   {
    "id": "pure",
@@ -52,14 +54,15 @@
   },
   {
    "id": "same",
-   "src": null,
+   "src": "assets/footage/same-pixabay-44647-yawn2.mp4",
    "cue": "ผลคือ",
    "word_at": 7.16,
    "start": 7.08,
    "hit": "เท่าเดิม",
    "hit_at": 8.28,
    "end": 9.28,
-   "dur": 2.2
+   "dur": 2.2,
+   "media_start": 0.4
   },
   {
    "id": "idea",
@@ -92,30 +95,33 @@
   },
   {
    "id": "warn",
-   "src": null,
+   "src": "assets/footage/warn-pixabay-83875.mp4",
    "cue": "บ่อย",
    "word_at": 13.74,
    "start": 13.66,
    "end": 16.22,
-   "dur": 2.56
+   "dur": 2.56,
+   "media_start": 9.92
   },
   {
    "id": "doctor",
-   "src": null,
+   "src": "assets/footage/doctor-pixabay-5321351.jpg",
    "cue": "หาหมอ",
    "word_at": 16.3,
    "start": 16.22,
    "end": 16.88,
-   "dur": 0.66
+   "dur": 0.66,
+   "media_start": -0.08
   },
   {
    "id": "ask",
-   "src": null,
+   "src": "assets/footage/ask-pixabay-119515.mp4",
    "cue": "แล้วดู",
    "word_at": 16.96,
    "start": 16.88,
    "end": 19.896,
-   "dur": 3.016
+   "dur": 3.016,
+   "media_start": 5.02
   }
  ]
 }

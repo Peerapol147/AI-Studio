@@ -1,1 +1,7 @@
 - music-jamendo-4228fb9b.mp3: "Ruslan Latypov - Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127
+- footage/hook-pixabay-44647.mp4: Engin_Akyurt via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-44647/
+- footage/same-pixabay-44647-yawn2.mp4: Engin_Akyurt via Pixabay (Pixabay Content License, ตัดช่วง 3.0s-จบ + กลับซ้ายขวา) https://pixabay.com/videos/id-44647/
+- footage/mask-pixabay-8687776.jpg: Engin_Akyurt via Pixabay (Pixabay Content License) https://pixabay.com/photos/patient-male-oxygen-care-pulse-8687776/
+- footage/warn-pixabay-83875.mp4: SYG_Anime via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-83875/
+- footage/doctor-pixabay-5321351.jpg: outsideclick via Pixabay (Pixabay Content License) https://pixabay.com/photos/id-5321351/
+- footage/ask-pixabay-119515.mp4: fh_media_e-motion via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-119515/
