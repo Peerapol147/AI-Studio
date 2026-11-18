@@ -1,6 +1,6 @@
 # อัปโหลด: ทำไมเราถึงหาว? (ไทย)
 
-ไฟล์: `renders/yawn-th.mp4` (DUR วิ, 9:16) | ปก: `renders/yawn-th-thumb.jpg`
+ไฟล์: `renders/yawn-th.mp4` (19.9 วิ, 9:16) | ปก: `renders/yawn-th-thumb.jpg`
 
 ## YouTube Shorts
 **ชื่อคลิป (ภาษาไทยล้วน เลือก 1)**
@@ -21,7 +21,7 @@
 เครดิต
 เพลง: "Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127 — https://creativecommons.org/licenses/by/3.0/
 วิดีโอ/ภาพ: Engin_Akyurt, SYG_Anime, outsideclick, fh_media_e-motion via Pixabay
-SFXLINE
+เสียงประกอบ: CC0 จาก Freesound และ Kenney (รายชื่อใน assets/CREDITS.md)
 เสียงพากย์: ElevenLabs (AI)
 
 #หาว #ทำไม #ความรู้รอบตัว #ร่างกาย #shorts

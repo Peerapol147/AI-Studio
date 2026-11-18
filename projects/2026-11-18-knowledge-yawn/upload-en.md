@@ -1,6 +1,6 @@
 # Upload: Why do we yawn? (English)
 
-File: `renders/yawn-en.mp4` (DUR s, 9:16) | Cover: `renders/yawn-en-thumb.jpg`
+File: `renders/yawn-en.mp4` (16.2 s, 9:16) | Cover: `renders/yawn-en-thumb.jpg`
 
 ## YouTube Shorts
 **Title (pick 1)**
@@ -20,7 +20,7 @@ Sources:
 Credits
 Music: "Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127 — https://creativecommons.org/licenses/by/3.0/
 Video/photos: Engin_Akyurt, SYG_Anime, outsideclick, fh_media_e-motion via Pixabay
-SFXLINE
+Sound effects: CC0 from Freesound and Kenney (list in assets/CREDITS.md)
 Voiceover: ElevenLabs (AI)
 
 #yawning #science #didyouknow #humanbody #shorts
