@@ -1,0 +1,121 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 19.896,
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ทำไม",
+   "word_at": 0.04,
+   "start": 0.0,
+   "hit": "หาว",
+   "hit_at": 0.66,
+   "end": 1.02,
+   "dur": 1.02
+  },
+  {
+   "id": "myth",
+   "src": "graphic:brain",
+   "cue": "หลายคน",
+   "word_at": 1.1,
+   "start": 1.02,
+   "end": 3.06,
+   "dur": 2.04
+  },
+  {
+   "id": "o2",
+   "src": "graphic:brain",
+   "cue": "ออกซิเจน",
+   "word_at": 3.14,
+   "start": 3.06,
+   "end": 3.74,
+   "dur": 0.68
+  },
+  {
+   "id": "mask",
+   "src": null,
+   "cue": "แต่ความจริง",
+   "word_at": 3.82,
+   "start": 3.74,
+   "end": 5.8,
+   "dur": 2.06
+  },
+  {
+   "id": "pure",
+   "src": "graphic:brain",
+   "cue": "หายใจ",
+   "word_at": 5.88,
+   "start": 5.8,
+   "end": 7.08,
+   "dur": 1.28
+  },
+  {
+   "id": "same",
+   "src": null,
+   "cue": "ผลคือ",
+   "word_at": 7.16,
+   "start": 7.08,
+   "hit": "เท่าเดิม",
+   "hit_at": 8.28,
+   "end": 9.28,
+   "dur": 2.2
+  },
+  {
+   "id": "idea",
+   "src": "graphic:brain",
+   "cue": "บางคน",
+   "word_at": 9.36,
+   "start": 9.28,
+   "end": 11.54,
+   "dur": 2.26
+  },
+  {
+   "id": "cool",
+   "src": "graphic:brain",
+   "cue": "เย็นลง",
+   "word_at": 11.62,
+   "start": 11.54,
+   "hit": "เย็นลง",
+   "hit_at": 11.62,
+   "end": 12.42,
+   "dur": 0.88
+  },
+  {
+   "id": "debate",
+   "src": "graphic:brain",
+   "cue": "เถียง",
+   "word_at": 12.5,
+   "start": 12.42,
+   "end": 13.66,
+   "dur": 1.24
+  },
+  {
+   "id": "warn",
+   "src": null,
+   "cue": "บ่อย",
+   "word_at": 13.74,
+   "start": 13.66,
+   "end": 16.22,
+   "dur": 2.56
+  },
+  {
+   "id": "doctor",
+   "src": null,
+   "cue": "หาหมอ",
+   "word_at": 16.3,
+   "start": 16.22,
+   "end": 16.88,
+   "dur": 0.66
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "แล้วดู",
+   "word_at": 16.96,
+   "start": 16.88,
+   "end": 19.896,
+   "dur": 3.016
+  }
+ ]
+}

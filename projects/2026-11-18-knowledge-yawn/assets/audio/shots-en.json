@@ -1,0 +1,121 @@
+{
+ "lang": "en",
+ "lead": 0.08,
+ "duration": 16.226,
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "Why",
+   "word_at": 0.08,
+   "start": 0.0,
+   "hit": "yawn",
+   "hit_at": 0.6,
+   "end": 1.1,
+   "dur": 1.1
+  },
+  {
+   "id": "myth",
+   "src": "graphic:brain",
+   "cue": "People",
+   "word_at": 1.18,
+   "start": 1.1,
+   "end": 2.56,
+   "dur": 1.46
+  },
+  {
+   "id": "o2",
+   "src": "graphic:brain",
+   "cue": "oxygen",
+   "word_at": 2.64,
+   "start": 2.56,
+   "end": 3.12,
+   "dur": 0.56
+  },
+  {
+   "id": "mask",
+   "src": null,
+   "cue": "But",
+   "word_at": 3.2,
+   "start": 3.12,
+   "end": 4.54,
+   "dur": 1.42
+  },
+  {
+   "id": "pure",
+   "src": "graphic:brain",
+   "cue": "breathe",
+   "word_at": 4.62,
+   "start": 4.54,
+   "end": 5.98,
+   "dur": 1.44
+  },
+  {
+   "id": "same",
+   "src": null,
+   "cue": "yawned",
+   "word_at": 6.06,
+   "start": 5.98,
+   "hit": "much",
+   "hit_at": 6.88,
+   "end": 7.32,
+   "dur": 1.34
+  },
+  {
+   "id": "idea",
+   "src": "graphic:brain",
+   "cue": "One",
+   "word_at": 7.4,
+   "start": 7.32,
+   "end": 8.9,
+   "dur": 1.58
+  },
+  {
+   "id": "cool",
+   "src": "graphic:brain",
+   "cue": "cool",
+   "word_at": 8.98,
+   "start": 8.9,
+   "hit": "cool",
+   "hit_at": 8.98,
+   "end": 10.22,
+   "dur": 1.32
+  },
+  {
+   "id": "debate",
+   "src": "graphic:brain",
+   "cue": "debated",
+   "word_at": 10.3,
+   "start": 10.22,
+   "end": 10.86,
+   "dur": 0.64
+  },
+  {
+   "id": "warn",
+   "src": null,
+   "cue": "Yawning",
+   "word_at": 10.94,
+   "start": 10.86,
+   "end": 12.76,
+   "dur": 1.9
+  },
+  {
+   "id": "doctor",
+   "src": null,
+   "cue": "doctor",
+   "word_at": 12.84,
+   "start": 12.76,
+   "end": 13.36,
+   "dur": 0.6
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "So",
+   "word_at": 13.44,
+   "start": 13.36,
+   "end": 16.226,
+   "dur": 2.866
+  }
+ ]
+}
