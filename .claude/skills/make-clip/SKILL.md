@@ -14,7 +14,7 @@ description: Use when the user asks for a new clip or episode ("ทำคลิ�
 - หัวข้อที่ผู้ใช้ระบุมาแล้ว → ข้ามขั้น 1 ไปขั้น 2 เลย
 - ติดตั้งครั้งเดียวต่อเครื่อง (เครื่องคลาวด์ใหม่ไม่มี): `pip install --user librosa soundfile scipy matplotlib` (ต้องใช้กับ `tools/sound_pass_vo.py`)
 - อ่าน `channels/<channel>/results.md` (ผลวิวจริง) ก่อนเลือกหัวข้อ ทิศทางล่าสุดอยู่หัว `style.md` และชนะกฎเก่าในไฟล์เดียวกัน
-- ค่าเริ่มต้น: short 15-20 วิ (ช่องความรู้), **ภาษาไทยอย่างเดียว** (ผู้ใช้สั่งเลิกทำอังกฤษ 2026-11-18) ทำอังกฤษเฉพาะเมื่อผู้ใช้สั่งชัดๆ ในตอนนั้น
+- ค่าเริ่มต้น: short ความยาวตามเนื้อหา ≤30 วิ (ช่องความรู้ ดูทิศทาง 2026-11-19 ใน style.md), **ภาษาไทยอย่างเดียว** (ผู้ใช้สั่งเลิกทำอังกฤษ 2026-11-18) ทำอังกฤษเฉพาะเมื่อผู้ใช้สั่งชัดๆ ในตอนนั้น
   ไม่ทำ: `script-en.md`, `vo-en`, `words-en`, `render -en`, ปก -en, `upload-en.md`; ส่วนอื่นในไฟล์นี้ที่พูดถึง en/สองภาษาให้ข้าม
 - เช็ก `PIXABAY_API_KEY` (env หรือ `.env`) ถ้าไม่มี บอกผู้ใช้ให้ตั้งใน Environment variables ก่อนขั้น footage
 
@@ -23,7 +23,8 @@ description: Use when the user asks for a new clip or episode ("ทำคลิ�
 ```bash
 curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIYAQ%253D%253D" | grep -oE '"accessibilityText":"[^"]{0,160}views[^"]*"' | head -20
 ```
-(ค้นหาแบบ Shorts อ่านแค่ยอดวิว ห้ามดาวน์โหลดคลิป) เลือกหัวข้อที่มีคลิปหลายตัวหลายล้านวิว + เป็นเรื่องร่างกาย/ชีวิตประจำวัน
+ค้นไทยด้วย: `...results?search_query=<คำไทย URL-encode>&sp=EgIYAQ%253D%253D&hl=th&gl=TH` แล้ว grep `"accessibilityText":"[^"]*เล่นวิดีโอสั้น"` (รูปแบบ "การดู X ครั้ง")
+(ค้นหาแบบ Shorts อ่านแค่ยอดวิว ห้ามดาวน์โหลดคลิป) เกณฑ์ผ่านและกลุ่มหัวข้อ: style.md ทิศทาง 2026-11-19 (ไทย ≥100K หรือต่างประเทศ ≥1M, ≥2 คลิปจากคนละช่อง) จดผลค้นใน brief.md
 มุมเล่า: **"ความเชื่อ vs ความจริง"** (คนเชื่อว่า... → แต่งานวิจัยบอกว่า...) ใช้แค่หัวข้อ เขียนบท/ภาพ/ชื่อเอง
 ก่อนเลือก: เช็ก Pixabay **videos** totalHits ของ action หลัก ถ้า 0 ให้วางแผนเป็นภาพนิ่ง push-in + กราฟิกตั้งแต่บท
 แม่แบบ: `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`) ดึงมาใช้ด้วย
@@ -35,12 +36,12 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 |---|---|---|---|
 | 1 หัวข้อ | `researcher` | `research-topics.md` (5 หัวข้อ จัดอันดับ) | ห้ามหัวข้อเกร่อ/ซ้ำกับ `projects/*/brief.md`; หลังได้ผล **ผู้กำกับเช็ก footage เอง** (เรียก API เล็กๆ ไม่ใช่อ่านไฟล์ใหญ่) ด้วย Pixabay API (`totalHits` + ดู `tags` ว่าตรงจริง ไม่ใช่ fuzzy match; ข้ามคลิป tag "generated") |
 | 2 brief + research | ผู้กำกับ | `brief.md`, `research.md` | ข้อเท็จจริงทุกข้อมีแหล่ง; สิ่งที่เป็นแค่สมมติฐาน ห้ามพูดเป็นความจริง (ใช้เป็นคำถามปิดท้ายแทนได้) |
-| 3 บท + สตอรีบอร์ด | ผู้กำกับ + skill `yt-hook-scripter`, `yt-thumbnail-brief` | `script.md`, `script-en.md`, `storyboard.md`, `shots.json`, `thumbnail.md` (ภาพเด่น + ข้อความ ≤4 คำ ต่อภาษา) | ไทย: 220-300 ตัวอักษร (15-20 วิ); hook ตาม style.md (คำถามบนจอตั้งแต่ 0.0 วิ); อังกฤษ **เขียนใหม่** ไม่แปล; โครง hook → คนคิดว่า → "แต่ความจริงคือ" → กลไก → ปิดตลก → **คำถามชวนคอมเมนต์ ≤4 วิ** |
+| 3 บท + สตอรีบอร์ด | ผู้กำกับ + skill `yt-hook-scripter`, `yt-thumbnail-brief` | `script.md`, `script-en.md`, `storyboard.md`, `shots.json`, `thumbnail.md` (ภาพเด่น + ข้อความ ≤4 คำ ต่อภาษา) | ไทย: ความยาวตาม style.md (≤30 วิ ≈ ≤450 ตัวอักษร); hook 3 แบบ เลือก 1 ตาม style.md (คำถามบนจอตั้งแต่ 0.0 วิ); อังกฤษ **เขียนใหม่** ไม่แปล; โครง hook → คนคิดว่า → "แต่ความจริงคือ" → กลไก → ปิดตลก → **คำถามชวนคอมเมนต์ ≤4 วิ** |
 | 4a เสียง | `voice` (ไทย) | `assets/audio/vo-<lang>.mp3`, `words*.json`, `timing*.md`, เพลง, sfx | บอกชื่อไฟล์ที่แต่ละตัวห้ามแตะ; ไทยต้อง `eleven_v3`+; ใช้ voice_id จาก channel.md; เพลง: `tools/music.sh music "<อารมณ์>" <project> 3 30` เลือก 1 (เครดิตลง CREDITS.md อัตโนมัติ); sfx ไม่ต้องทำในขั้นนี้ (editor เลือกจาก skill `sound-effects`); อัดทั้งบทเทคเดียว แล้ว silenceremove + atempo ≤1.12; จับเวลาคำด้วย ElevenLabs `scribe_v1` |
 | 4b footage | `footage` (พร้อม 4a) | `assets/footage/` + `MAP.md`, `CREDITS.md` | ขนาด medium ไม่เอาไฟล์ใหญ่; Wikimedia โดน rate-limit ง่าย ขอทีละน้อย; หาไม่ได้ = ทำเป็นกราฟิก; หัวข้อร่างกาย/ใกล้ตัว Pixabay มักไม่มีภาพเฉพาะ เช็ก Wikimedia Commons ตั้งแต่ขั้น 1; วิดีโอใช้ 1080p ขึ้นไป (ครอป 9:16 จาก 720p เหลือ ~405px แตก) |
 | 5 motion + ตัดต่อ | `editor` (หลัง 4a เสร็จ) — เริ่มจาก**คัดลอก** `projects/2026-11-17-knowledge-nature/video/` (ยกเว้น `assets/`, `renders/`) มาแก้ ไม่สร้างจากศูนย์ | `video/index.html.tpl` + `build_index.py` (คอมโพสิชันเดียว ตัวแปร `lang`), `renders/<slug>-<lang>.mp4`, ปก `-thumb.jpg` | ให้อ่าน skill `hyperframes`, `motion-broll`, `sound-effects` + style.md "Motion v2"; มิกซ์ด้วย `tools/sound_pass_vo.py` (ดูหัวข้อ "มิกซ์เสียง") ปกทำจากคอมโพสิชัน `video/thumb/` แบบเดียวกับตอนวอมแบต |
 | 6 ตรวจ | `reviewer` | `review.md` | |
-| 7 ส่งมอบ | ผู้กำกับ + `yt-title-optimizer`, `yt-description-writer` | `upload.md`, `upload-en.md` | ความยาวคลิปจริง, ห้ามชื่อคลิปที่อ้างเกิน research ("ตัวเดียวในโลก"), เครดิตเพลง CC BY + ภาพ (ภาพ CC BY ที่ครอป/ปรับสี เขียนว่า "ครอปและปรับสี"), TikTok: แคปชันสั้น + เครดิตเพลงในคอมเมนต์แรก + ติด label AI |
+| 7 ส่งมอบ | ผู้กำกับ + `yt-title-optimizer`, `yt-description-writer` | `upload.md`, `upload-en.md` | ความยาวคลิปจริง, ห้ามชื่อคลิปที่อ้างเกิน research ("ตัวเดียวในโลก"), เครดิตเพลง CC BY + ภาพ (ภาพ CC BY ที่ครอป/ปรับสี เขียนว่า "ครอปและปรับสี"), TikTok: แคปชันสั้น + เครดิตเพลงในคอมเมนต์แรก + ติด label AI; **FB Reels: ชื่อ/แคปชัน/แฮชแท็กแยกอีกหัวข้อ** (MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม ผู้ใช้อัปเอง) |
 
 ส่งไฟล์ให้ผู้ใช้ด้วย SendUserFile (mp4 + ปก) แล้วบอก: สิ่งที่ผ่าน, สิ่งที่ยอมรับไว้, **และว่าไม่มีใครฟังเสียงจริง** ให้ผู้ใช้ฟังก่อนอัปโหลด
 commit + push หลังจบแต่ละขั้น (stop hook บังคับ commit ทุกครั้งที่จบการตอบ แม้ agent ยังทำไม่เสร็จ: commit เป็น "wip: ..." ได้) (`*.mp4` และ footage ถูก .gitignore ไว้แล้ว)
