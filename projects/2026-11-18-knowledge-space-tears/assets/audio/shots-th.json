@@ -29,21 +29,29 @@
    "cue": "หลายคน",
    "word_at": 2.9,
    "start": 2.82,
-   "end": 4.6,
-   "dur": 1.78,
+   "end": 4.44,
+   "dur": 1.62,
    "media_start": 23.92
   },
   {
    "id": "truth",
    "src": "assets/footage/nasa-moving-water.mp4",
-   "cue": "ความจริง",
-   "word_at": 4.68,
-   "start": 4.6,
-   "hit": "ไม่ไหลเลย",
-   "hit_at": 5.24,
+   "cue": "แต่",
+   "word_at": 4.52,
+   "start": 4.44,
+   "end": 5.16,
+   "dur": 0.72,
+   "media_start": 29.92
+  },
+  {
+   "id": "nolimit",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ไม่ไหลเลย",
+   "word_at": 5.24,
+   "start": 5.16,
    "end": 7.4,
-   "dur": 2.8,
-   "media_start": 29.36
+   "dur": 2.24,
+   "media_start": 17.92
   },
   {
    "id": "float",
@@ -151,9 +159,19 @@
    "cue": "แล้วเพื่อนๆ",
    "word_at": 21.92,
    "start": 21.84,
-   "end": 25.326,
-   "dur": 3.486,
+   "end": 23.72,
+   "dur": 1.88,
    "media_start": 69.92
+  },
+  {
+   "id": "outro2",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "นักบิน",
+   "word_at": 23.8,
+   "start": 23.72,
+   "end": 25.326,
+   "dur": 1.606,
+   "media_start": 65.92
   }
  ]
 }

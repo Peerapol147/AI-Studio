@@ -30,12 +30,17 @@
    "id": "truth",
    "src": "assets/footage/nasa-moving-water.mp4",
    "cue": {
-    "th": "ความจริง"
+    "th": "แต่"
    },
-   "action_at": 30,
-   "hit": {
+   "action_at": 30
+  },
+  {
+   "id": "nolimit",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
     "th": "ไม่ไหลเลย"
-   }
+   },
+   "action_at": 18
   },
   {
    "id": "float",
@@ -124,6 +129,14 @@
     "th": "แล้วเพื่อนๆ"
    },
    "action_at": 70
+  },
+  {
+   "id": "outro2",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "นักบิน"
+   },
+   "action_at": 66
   }
  ]
 }
