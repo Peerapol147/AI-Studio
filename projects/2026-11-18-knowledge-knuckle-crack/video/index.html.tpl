@@ -1,0 +1,414 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.wall{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#B08B50}
+.himg{position:absolute;left:-1062px;top:300px;width:3264px;height:2169px}
+.blend{position:absolute;left:0;top:240px;width:1080px;height:360px;background:linear-gradient(#B08B50 0,#B08B50 70px,rgba(176,139,80,0) 100%)}
+.sweep{position:absolute;left:-600px;top:-200px;width:520px;height:2400px;mix-blend-mode:screen;opacity:.55;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,250,235,.55) 50%,rgba(255,255,255,0) 100%)}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+#diag{opacity:0}
+#diagbg{position:absolute;left:0;top:0;width:1080px;height:1920px;
+  background:radial-gradient(ellipse at 50% 32%,#FFFBF3 0%,#F4EADC 62%,#E7D9C6 100%)}
+#dsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1040px,transparent 1100px);mask-image:linear-gradient(to bottom,#000 0,#000 1040px,transparent 1100px)}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:760px;background:linear-gradient(rgba(20,10,0,.55),rgba(20,10,0,0))}
+#title{position:absolute;left:0;top:0;width:1080px;height:760px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:26px #1B0E05;paint-order:stroke fill;transform-origin:50% 60%}
+#tl1{top:190px;font-size:170px;color:#fff}
+#tl2{top:385px;font-size:182px;color:#FFD23F}
+#qm{position:absolute;left:0;top:0;opacity:0;font-weight:900;font-size:260px;line-height:1;color:#FFD23F;
+  -webkit-text-stroke:20px #1B0E05;paint-order:stroke fill}
+#stamp{position:absolute;left:0;top:0;opacity:0;padding:6px 44px 14px;border:12px solid #D7263D;border-radius:28px;background:#fff;
+  font-weight:900;font-size:96px;line-height:1.2;color:#D7263D;white-space:nowrap}
+.chip{position:absolute;left:0;top:0;height:92px;border-radius:46px;opacity:0;overflow:hidden;border:6px solid #1B0E05}
+.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-weight:700;font-size:46px;white-space:nowrap}
+#strip{position:absolute;left:70px;top:1300px;width:940px;height:124px;border-radius:62px;background:#fff;opacity:0;
+  box-shadow:0 10px 30px rgba(60,30,10,.25),inset 0 0 0 5px #1B0E05}
+#ind{position:absolute;top:12px;height:100px;border-radius:50px;background:#1E9BF0}
+.st{position:absolute;top:0;height:124px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:36px;color:#5C4A3C;white-space:nowrap}
+.arw{position:absolute;top:44px;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid #C9B8A6}
+#bubble{position:absolute;left:0;top:0;width:420px;height:340px;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:90px;width:900px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:900px;bottom:-48px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:16px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFD23F}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on"
+ data-composition-variables='[{"id":"lang","type":"string","label":"Language (th only)","default":"th"}]'>
+
+<div id="foot" class="layer">
+  <div class="shot" id="sh-hook"><div class="kb" id="kb-hook"><div class="wall"></div><img class="himg" src="assets/hook-graded.jpg" alt=""/><div class="blend"></div></div>
+    <svg class="ov" id="rip-hook" viewBox="0 0 1080 1920"></svg><div class="sweep" id="sw-hook"></div></div>
+  <div class="shot" id="sh-soak">%%V_SOAK%%</div>
+  <div class="shot" id="sh-nerve">%%V_NERVE%%</div>
+  <div class="shot" id="sh-vessel">%%V_VESSEL%%</div>
+  <div class="shot" id="sh-sign"><div class="kb" id="kb-sign"><img class="m" src="assets/sign-wikimedia-wrinkly-fingers-001.jpg" style="object-position:83% 50%" alt=""/>
+    <svg class="ov" id="signov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-sign"></div></div>
+  <div class="shot" id="sh-grip">%%V_GRIP%%</div>
+  <div class="shot" id="sh-ask"><div class="kb" id="kb-ask"><div class="wall"></div><img class="himg" src="assets/hook-graded.jpg" alt=""/><div class="blend"></div></div>
+    <svg class="ov" id="rip-ask" viewBox="0 0 1080 1920"></svg><div class="sweep" id="sw-ask"></div></div>
+  <svg class="ov" id="fgdrops" viewBox="0 0 1080 1920"></svg>
+</div>
+
+<div id="diag" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="diagbg"></div>
+  <svg id="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920">
+    <defs>
+      <radialGradient id="glow"><stop offset="0" stop-color="#FFF8C4"/><stop offset=".35" stop-color="#FFE14D" stop-opacity=".9"/><stop offset="1" stop-color="#FFE14D" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dropg" cx=".35" cy=".35"><stop offset="0" stop-color="#E9F7FF"/><stop offset=".45" stop-color="#5BB8F5"/><stop offset="1" stop-color="#1A7BC8"/></radialGradient>
+    </defs>
+    <g id="cam"><g id="f0"></g><g id="f1"></g><g id="drops"></g></g>
+  </svg>
+</div>
+
+<div id="over" class="layer" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="qm">?</div>
+  <div id="stamp">หลักฐาน</div>
+  <div class="chip" id="chipL"><span id="chipL1"></span><span id="chipL2"></span></div>
+  <div class="chip" id="chipR"><span id="chipR1"></span><span id="chipR2"></span></div>
+  <svg id="okb" class="ov" viewBox="0 0 1080 1920" style="opacity:0"><g id="okg"><circle cx="0" cy="0" r="92" fill="#2DBE60" stroke="#1B0E05" stroke-width="12"/>
+    <path d="M-42 2 L-12 32 L46 -32" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0"></div><div class="arw" id="ar0"></div><div class="st" id="st1"></div><div class="arw" id="ar1"></div>
+    <div class="st" id="st2"></div><div class="arw" id="ar2"></div><div class="st" id="st3"></div>
+  </div>
+  <svg id="bubble" viewBox="0 0 420 340"><path d="M52 14h316a40 40 0 0 1 40 40v168a40 40 0 0 1-40 40H170l-78 66v-66H52a40 40 0 0 1-40-40V54a40 40 0 0 1 40-40Z" fill="#fff" stroke="#1B0E05" stroke-width="14" stroke-linejoin="round"/>
+    <text x="210" y="208" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="190" fill="#1E9BF0" stroke="#1B0E05" stroke-width="10" paint-order="stroke">?</text></svg>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1">ทำไม</div><div class="tl" id="tl2">นิ้วเหี่ยว?</div></div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+ <div id="caps-th">
+%%CAPS_TH%%
+ </div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-42b51123.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine). One fingertip cross-section morphs through every diagram shot.
+   Shot times = assets/audio/shots-th.json, word anchors = assets/audio/words.json (both injected by build_index.py). */
+(function(){
+const DUR=%%DUR%%, CAPT=%%CAPTIMES%%, K=%%K%%, SH=%%SHOTS%%;
+const T={}, H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit_at!=null)H[k]=SH[k].hit_at;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],CAM=[7.5,1],CAMF=[12,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14,bl=o.blur??10;
+  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl,a,b};};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const blur=(e,b)=>{e.style.filter=b>0.05?`blur(${b.toFixed(2)}px)`:'none';};
+
+// ---------- footage: crossfade 0.1 s at each shot start, push-in + drift on every shot ----------
+const FOOT=[
+ {id:'sh-hook',a:T.hook,b:T.soak,kb:'kb-hook',s0:1.0,s1:1.12,r0:0,r1:-1.4,org:'52% 42%'},
+ {id:'sh-soak',a:T.soak,b:T.myth,kb:'v-soak',s0:1.06,s1:1.16,r0:-1,r1:0.6,org:'32% 62%',zt:1.4},
+ {id:'sh-nerve',a:T.nerve,b:T.vessel,kb:'v-nerve',s0:1.04,s1:1.16,r0:1,r1:-1,org:'45% 45%'},
+ {id:'sh-vessel',a:T.vessel,b:T.shrink,kb:'v-vessel',s0:1.05,s1:1.18,r0:0,r1:2,org:'50% 48%',zt:1.2},
+ {id:'sh-sign',a:T.sign,b:T.nerveok,kb:'kb-sign',s0:1.0,s1:1.13,r0:-1.5,r1:1,org:'50% 22%',zt:1.6},
+ {id:'sh-grip',a:T.grip,b:T.ask,kb:'v-grip',s0:1.05,s1:1.15,r0:1.2,r1:-0.6,org:'45% 55%'},
+ {id:'sh-ask',a:T.ask,b:DUR+1,kb:'kb-ask',s0:1.06,s1:1.16,r0:1,r1:-0.8,org:'50% 40%'},
+];
+FOOT.forEach(f=>{$(f.kb).style.transformOrigin=f.org;});
+function footage(t){
+  for(const f of FOOT){
+    const e=$(f.id); const on=t>=f.a&&t<f.b+0.12;
+    if(!on){e.style.opacity='0';continue;}
+    e.style.opacity=(f.a<=0?1:eio((t-f.a)/0.1)).toFixed(4);
+    const u=clamp((t-f.a)/(f.b-f.a)); let s=lerp(f.s0,f.s1,eio(u*0.9+0.1*u)); // steady push
+    if(f.zt){const z=(t-(Math.min(f.b,DUR)-0.2))/0.2; if(z>0)s*=1+f.zt*ei(z);} // zoom-through into the next shot
+    const r=lerp(f.r0,f.r1,u), dx=10*Math.sin(t*1.7+f.a), dy=8*Math.cos(t*1.3+f.a);
+    $(f.kb).style.transform=`translate(${dx.toFixed(2)}px,${dy.toFixed(2)}px) rotate(${r.toFixed(3)}deg) scale(${s.toFixed(5)})`;
+  }
+  // light sweeps across the stills
+  [['sw-hook',T.hook,0.9],['sw-sign',T.sign,1.3],['sw-ask',T.ask,1.0]].forEach(([id,a,d])=>{
+    const u=(t-a)/d; $(id).style.transform=`translateX(${(lerp(-300,1900,clamp(u))).toFixed(1)}px) rotate(14deg)`;});
+}
+
+// ripples over the hook / ask stills (water rings drifting across the fingertips)
+function rippleSet(svg,pts){return pts.map(p=>{const g=el('g',{},$(svg));
+  return {p,rs:[0,1,2].map(()=>el('ellipse',{fill:'none',stroke:'#fff','stroke-width':5},g))};});}
+const RIP={hook:rippleSet('rip-hook',[[300,820],[640,700],[880,780]]),ask:rippleSet('rip-ask',[[640,700],[330,830]])};
+function ripples(t){
+  for(const [k,set] of Object.entries(RIP)){const t0=k==='hook'?0:T.ask; if(k==='hook'?t>T.soak+0.2:t<T.ask-0.1)continue;
+    set.forEach((r,j)=>r.rs.forEach((e,i)=>{const u=((((t-t0)*1.6+i/3+j*0.27)%1)+1)%1; const R=20+190*u;
+      e.setAttribute('cx',(r.p[0]+60*Math.sin(t*1.1+j)).toFixed(1)); e.setAttribute('cy',(r.p[1]+40*(t-t0)).toFixed(1));
+      e.setAttribute('rx',R.toFixed(1)); e.setAttribute('ry',(R*0.42).toFixed(1)); e.setAttribute('opacity',(0.6*(1-u)*clamp(u*6)).toFixed(3));}));}
+}
+// foreground water drops: a faster parallax layer over the stills
+const FG=[...Array(9)].map((_,i)=>{const g=el('g',{},$('fgdrops'));const r=14+((i*37)%5)*7;
+  el('circle',{r,fill:'rgba(200,235,255,.28)',stroke:'rgba(255,255,255,.75)','stroke-width':3},g);
+  el('circle',{r:r*0.28,cx:-r*0.35,cy:-r*0.35,fill:'#fff',opacity:.9},g);return {g,i,r};});
+function fgdrops(t){
+  const live=(t<T.myth)||(t>=T.sign&&t<T.nerveok)||(t>=T.ask);
+  $('fgdrops').style.opacity=live?'1':'0'; if(!live)return;
+  for(const d of FG){const sp=260+((d.i*53)%4)*90; const y=((d.i*233+t*sp)%2200)-140; const x=((d.i*397)%1000)+40+30*Math.sin(t*2+d.i);
+    d.g.setAttribute('transform',`translate(${x.toFixed(1)},${y.toFixed(1)}) scale(1,${(1.15).toFixed(2)})`);}
+}
+
+// ---------- hook title: readable on frame 0, breathes, leaves at the end of the soak shot ----------
+function title(t){
+  const out=eo((t-(T.myth-0.06))/0.12);
+  show($('title'),1-out); show($('tshade'),1-out);
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), kick=1+0.05*Math.exp(-6*t)*Math.sin(t*9);
+  $('tl1').style.transform=`translateY(${(4*Math.sin(t*3)).toFixed(2)}px) scale(${(br*kick*(1+0.3*out)).toFixed(4)})`;
+  $('tl2').style.transform=`translateY(${(4*Math.sin(t*3+1)).toFixed(2)}px) rotate(${(-1.5*Math.sin(t*2.4)).toFixed(2)}deg) scale(${(br*(1+0.3*out)).toFixed(4)})`;
+  const sx=10*Math.sin(t*2.2), sy=12+6*Math.cos(t*1.8);
+  $('tl2').style.textShadow=`${sx.toFixed(1)}px ${sy.toFixed(1)}px 0 rgba(0,0,0,.45)`;
+  $('tl1').style.textShadow=`${(-sx).toFixed(1)}px ${sy.toFixed(1)}px 0 rgba(0,0,0,.45)`;
+}
+
+// ---------- the fingertip cross-section (one shape, morphs through every diagram shot) ----------
+const RW=230;
+function finger(g){
+  const o={g};
+  o.tissue=el('path',{fill:'#F4A196'},g);
+  o.bone=el('path',{fill:'#FFF4E2',stroke:'#C8B497','stroke-width':6,d:'M-62 1060 V250 A62 62 0 0 1 62 250 V1060 Z'},g);
+  o.vOut=el('path',{fill:'none',stroke:'#8E1426','stroke-linecap':'round'},g);
+  o.vIn=el('path',{fill:'none',stroke:'#E23A50','stroke-linecap':'round'},g);
+  o.cells=[...Array(18)].map(()=>el('ellipse',{fill:'#7A0C1C'},g));
+  o.nGlow=el('path',{fill:'none',stroke:'#FFE14D','stroke-linecap':'round','stroke-width':34,opacity:0},g);
+  o.nerve=el('path',{fill:'none','stroke-linecap':'round','stroke-linejoin':'round','stroke-width':12},g);
+  o.pulses=[...Array(6)].map(()=>el('circle',{r:26,fill:'url(#glow)',opacity:0},g));
+  o.spark=el('path',{fill:'none',stroke:'#D7263D','stroke-width':14,'stroke-linecap':'round',d:'M-30 -30 L30 30 M30 -30 L-30 30',opacity:0},g);
+  o.skin=el('path',{fill:'#F7CDAA',stroke:'#6E3B26','stroke-width':7,'stroke-linejoin':'round'},g);
+  o.sheen=el('path',{fill:'none',stroke:'#fff','stroke-width':6,'stroke-linecap':'round',opacity:.55},g);
+  return o;
+}
+const F=[finger($('f0')),finger($('f1'))];
+// centre line of the tissue boundary: up the left side, over the dome, down the right side
+function outline(R,N=560){
+  const L=2*900+Math.PI*R, pts=[];
+  for(let i=0;i<=N;i++){const s=L*i/N; let x,y,nx,ny;
+    if(s<900){x=-R;y=900-s;nx=-1;ny=0;}
+    else if(s<900+Math.PI*R){const a=Math.PI-(s-900)/R; x=R*Math.cos(a);y=-R*Math.sin(a);nx=Math.cos(a);ny=-Math.sin(a);}
+    else{x=R;y=(s-900-Math.PI*R);nx=1;ny=0;}
+    pts.push({x,y,nx,ny,s,top:clamp(1-(y-0)/520)});}
+  return {pts,L};
+}
+const poly=a=>'M'+a.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L');
+// a U-shaped vessel loop, sampled by arc length
+function vesselPts(R){const L=2*900+Math.PI*R, f=s=>{if(s<900)return [-R,900-s]; if(s<900+Math.PI*R){const a=Math.PI-(s-900)/R;return [R*Math.cos(a),-R*Math.sin(a)];} return [R,s-900-Math.PI*R];};return {L,f};}
+const NERVE=[[100,1000],[100,60]], BR=[[[100,60],[40,-40],[0,-128]],[[100,60],[96,-92]],[[100,60],[132,4]]];
+const lenOf=a=>{let l=0;for(let i=1;i<a.length;i++)l+=Math.hypot(a[i][0]-a[i-1][0],a[i][1]-a[i-1][1]);return l;};
+const at=(a,s)=>{for(let i=1;i<a.length;i++){const d=Math.hypot(a[i][0]-a[i-1][0],a[i][1]-a[i-1][1]);if(s<=d){const u=s/d;return [lerp(a[i-1][0],a[i][0],u),lerp(a[i-1][1],a[i][1],u)];}s-=d;}return a[a.length-1];};
+
+function drawFinger(o,t,P){
+  // P: x, y, sc, swell(0..1), sink(0..1), fold(0..~1.3), vw, cellPos, glow, brk, jitter, op
+  if(!show(o.g,P.op))return;
+  o.g.setAttribute('transform',`translate(${(P.x+P.jx).toFixed(2)} ${P.y.toFixed(2)}) scale(${P.sc.toFixed(4)})`);
+  const R=RW*(1-0.09*P.sink), skinT=34+42*P.swell+6*P.sink;
+  const {pts}=outline(R);
+  const wob=3.2, lam=74;
+  const out=[],inn=[],tis=[];
+  for(const p of pts){
+    const env=p.top; const ph=2*Math.PI*p.s/lam;
+    const w=env*(P.fold*19*Math.sin(ph+0.3*Math.sin(t*2)) + wob*Math.sin(ph*0.5-t*5.5)) + 5*P.swell*Math.sin(p.s/23+t*7)*env;
+    out.push([p.x+p.nx*(skinT+w),p.y+p.ny*(skinT+w)]);
+    inn.push([p.x+p.nx*(w*0.8),p.y+p.ny*(w*0.8)]);
+    tis.push([p.x+p.nx*(w*0.8-1),p.y+p.ny*(w*0.8-1)]);
+  }
+  o.skin.setAttribute('d',poly(out)+' L'+inn.slice().reverse().map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L')+' Z');
+  o.tissue.setAttribute('d',poly(tis)+' Z');
+  o.skin.setAttribute('fill',mix('#F7CDAA','#D9DDF0',P.swell*0.8));
+  o.tissue.setAttribute('fill',mix('#F4A196','#E08479',P.sink));
+  // sheen: a highlight that slides around the dome
+  const hs=(t*0.35)%1, i0=Math.floor(lerp(150,350,hs)); o.sheen.setAttribute('d',poly(out.slice(i0,i0+50).map((q,k)=>[q[0]-pts[i0+k].nx*12,q[1]-pts[i0+k].ny*12])));
+  // vessel loop squeezes
+  const vR=150*(1-0.09*P.sink), V=vesselPts(vR); const vd=poly([...Array(61)].map((_,i)=>V.f(V.L*i/60)));
+  o.vOut.setAttribute('d',vd); o.vIn.setAttribute('d',vd);
+  o.vOut.setAttribute('stroke-width',(P.vw+10).toFixed(2)); o.vIn.setAttribute('stroke-width',P.vw.toFixed(2));
+  o.cells.forEach((c,i)=>{const s=((P.cell+i*V.L/18)%V.L+V.L)%V.L; const [x,y]=V.f(s);
+    c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('rx',(P.vw*0.32).toFixed(2));c.setAttribute('ry',(P.vw*0.22).toFixed(2));});
+  // nerve (main trunk breaks at y 520 when brk > 0)
+  const gap=34*P.brk, a=520+gap, b=520-gap;
+  let nd=`M100 1000 L100 ${a.toFixed(1)} M100 ${b.toFixed(1)} L100 60`; BR.forEach(br=>{nd+=' M'+br.map(q=>q.join(' ')).join(' L');});
+  o.nerve.setAttribute('d',nd); o.nGlow.setAttribute('d',nd);
+  const live=P.glow*(1-P.brk);
+  o.nerve.setAttribute('stroke',P.brk>0.02?mix('#E3B53B','#9A938C',P.brk):mix('#D9A93A','#FFE14D',P.glow));
+  o.nerve.setAttribute('stroke-width',(10+5*clamp(P.glow)).toFixed(2));
+  o.nGlow.setAttribute('opacity',(0.32*clamp(P.glow)*(1-P.brk)*(0.8+0.2*Math.sin(t*12))).toFixed(3));
+  // pulses run up the trunk then out along a branch to the vessel
+  o.pulses.forEach((c,k)=>{const u=((t*1.5+k/6)%1); const br=BR[k%3]; const path=[[100,1000],...br]; const Lp=lenOf(path); let [x,y]=at(path,u*Lp);
+    let op=clamp(P.glow)*clamp(u*8)*clamp((1-u)*8);
+    if(P.brk>0.02&&y<a+10){op*=clamp(1-P.brk*2);} if(P.brk>0.5&&y<a+40)op*=clamp((y-a)/40);
+    c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('r',(20+8*Math.sin(t*20+k)).toFixed(1));c.setAttribute('opacity',op.toFixed(3));});
+  o.spark.setAttribute('opacity',(P.brk>0.02?clamp(P.brk):0).toFixed(3));
+  o.spark.setAttribute('transform',`translate(100 520) rotate(${(20*Math.sin(t*6)).toFixed(1)}) scale(${(0.6+0.6*P.brk).toFixed(3)})`);
+}
+// state tracks (f0 = the main finger, f1 = the nerve-damaged finger in proof/damaged/compare)
+const swell=track(0,[[K.wet,0.35,SLOW],[H.myth,1,BOUNCE],[K.but,0,MORPH]]);
+const sink=track(0,[[H.sink,1,MORPH]]);
+const fold0=track(0,[[H.sink+0.06,0.3,SLOW],[H.fold,1,BOUNCE],[H.compare,1.35,FAST],[H.compare+0.3,1.05,MORPH]]);
+const vw0=track(34,[[H.shrink,13,FAST]]);
+const glow0=track(0,[[K.is,1,FAST],[T.nerveok,0.7,FAST],[H.nerveok,1.6,BOUNCE],[H.nerveok+0.45,1.15,MORPH]]);
+const brk1=track(0,[[H.damaged,1,BOUNCE]]);
+const x0=track(0,[[T.proof,-265,MORPH]]), x1=track(1150,[[T.proof,265,MORPH]]);
+const sc01=track(1,[[T.proof,0.92,MORPH]]);
+const cellPos=t=>{const v1=330,v2=70,ts=H.shrink; if(t<ts)return v1*t; const d=t-ts; return v1*ts+v2*d+(v1-v2)/4*(1-Math.exp(-4*d));};
+
+// water drops: fall onto the skin and soak in
+const DROPS=[]; [-120,60,-30,140,-170,10,110].forEach((x,i)=>DROPS.push({t0:K.wet-0.75+i*0.19,f:0,x}));
+[-70,60,-20,90,30,-100,0,50].forEach((x,i)=>DROPS.push({t0:K.soak-0.05+i*0.13,f:i%2,x}));
+DROPS.forEach(d=>{d.g=el('g',{},$('drops'));
+  d.body=el('path',{d:'M0 -38 C14 -14 24 -2 24 12 A24 24 0 1 1 -24 12 C-24 -2 -14 -14 0 -38 Z',fill:'url(#dropg)',stroke:'#0B5C99','stroke-width':5},d.g);
+  d.ring=el('ellipse',{fill:'none',stroke:'#3BA7F0','stroke-width':6},$('drops'));});
+function drops(t,fx,fsc){
+  for(const d of DROPS){const fall=0.36,u=(t-d.t0)/fall;
+    if(u<0||u>1.9){d.g.setAttribute('opacity','0');d.ring.setAttribute('opacity','0');continue;}
+    const cx=fx[d.f]+d.x*fsc[d.f], R=(RW+40)*fsc[d.f], top=-Math.sqrt(Math.max(0,R*R-(d.x*fsc[d.f])**2));
+    const y=lerp(-900,top-18,ei(Math.min(u,1)));
+    const ab=clamp((u-1)/0.5); // soaking in
+    d.g.setAttribute('opacity',(1-ab).toFixed(3));
+    d.g.setAttribute('transform',`translate(${cx.toFixed(1)} ${(y+14*ab).toFixed(1)}) scale(${(1+0.5*ab).toFixed(3)},${(1-0.75*ab).toFixed(3)})`);
+    const r=clamp((u-1)/0.8); d.ring.setAttribute('opacity',(u>1?0.8*(1-r):0).toFixed(3));
+    d.ring.setAttribute('cx',cx.toFixed(1));d.ring.setAttribute('cy',(top-4).toFixed(1));d.ring.setAttribute('rx',(20+70*eo(r)).toFixed(1));d.ring.setAttribute('ry',(6+18*eo(r)).toFixed(1));}
+}
+
+// diagram windows and their cameras (each window starts zoomed into the skin: zoom-through from the real finger)
+const WIN=[
+ {a:T.myth,b:T.nerve,s:track(2.8,[[T.myth,1.5,CAMF],[T.myth+0.6,1.62,SLOW],[H.myth,1.78,MORPH],[T.truth,1.0,CAMF],[K.is,1.2,CAM]]),
+   fx:track(0,[[K.is,90,CAM]]),fy:track(-250,[[T.myth,-170,CAMF],[T.truth,170,CAMF],[K.is,80,CAM]])},
+ {a:T.shrink,b:T.sign,s:track(2.6,[[T.shrink,1.45,CAMF],[T.sink,1.05,CAM],[H.sink,1.14,MORPH],[T.fold,1.5,CAMF],[H.fold,1.7,MORPH],[T.proof,0.8,CAMF],[T.damaged,0.88,CAM],[H.damaged,0.95,MORPH],[T.compare,0.8,CAM],[H.compare,0.85,MORPH]]),
+   fx:track(0,[[T.damaged,45,CAM],[T.compare,0,CAM]]),fy:track(-150,[[T.shrink,-60,CAMF],[T.sink,150,CAM],[T.fold,-190,CAMF],[T.proof,280,CAMF],[T.damaged,300,CAM],[T.compare,250,CAM]])},
+ {a:T.nerveok,b:T.grip,s:track(2.4,[[T.nerveok,1.0,CAMF],[H.nerveok,1.1,MORPH]]),fx:track(0,[[T.nerveok,40,CAM]]),fy:track(-220,[[T.nerveok,170,CAMF]])},
+];
+const curWin=t=>WIN.find(w=>t>=w.a&&t<w.b+0.1);
+function diagram(t){
+  const w=curWin(t); const D=$('diag');
+  if(!w){D.style.opacity='0';D.style.display='none';return;} D.style.display='';
+  let o=eio((t-w.a)/0.1); if(t>=w.b)o=1-eio((t-w.b)/0.1); D.style.opacity=o.toFixed(4);
+  const s=w.s(t)*(1+0.012*Math.sin(t*2.3)), fx=w.fx(t)+8*Math.sin(t*1.3), fy=w.fy(t)+7*Math.cos(t*1.7), rot=0.8*Math.sin(t*0.9);
+  $('cam').setAttribute('transform',`translate(540 600) rotate(${rot.toFixed(3)}) scale(${s.toFixed(5)}) translate(${(-fx).toFixed(2)} ${(-fy).toFixed(2)})`);
+  const inB=w===WIN[1], inC=w===WIN[2];
+  const X0=inB?x0(t):0, X1=inB?x1(t):1150, SC=inB?sc01(t):1;
+  drawFinger(F[0],t,{op:1,x:X0,jx:0,y:0,sc:SC,swell:swell(t),sink:inC||t>=T.shrink?sink(t):0,fold:fold0(t),vw:vw0(t),cell:cellPos(t),glow:glow0(t),brk:0});
+  const f1on=inB&&t>=T.proof;
+  drawFinger(F[1],t,{op:f1on?1:0,x:X1,jx:1.6*Math.sin(t*31),y:0,sc:SC,swell:0,sink:0,fold:0,vw:34,cell:330*t,glow:t<H.damaged?0.8:0.8,brk:brk1(t)});
+  drops(t,[X0,X1],[SC,SC]);
+  return {s,fx,fy};
+}
+const toScreen=(cam,wx,wy)=>[540+cam.s*(wx-cam.fx),600+cam.s*(wy-cam.fy)];
+
+// ---------- labels, stamp, check, question mark ----------
+const setChip=(id,t,x,y,w,bg,fg,v)=>{const c=$(id); if(!show(c,v.o))return; blur(c,v.blur);
+  c.style.width=w.toFixed(1)+'px'; c.style.background=bg; c.style.color=fg; c.style.transform=`translate(${(x-w/2).toFixed(1)}px,${(y-46).toFixed(1)}px) scale(${(0.7+0.3*v.a).toFixed(3)})`;};
+const wL=track(0,[[K.people,330,MORPH],[H.compare,160,MORPH]]), wR=track(0,[[H.damaged,330,MORPH],[H.compare,260,MORPH]]);
+function labels(t,cam){
+  // question mark on "พอง"
+  const q=$('qm'); const qv=vis(t,H.myth,K.but,{lin:0.12,lout:0.12});
+  if(show(q,qv.o)){blur(q,qv.blur); const a=S(t-H.myth,16,0.55); q.style.transform=`translate(780px,${(250+10*Math.sin(t*5)).toFixed(1)}px) rotate(${(16*(1-a)+10).toFixed(2)}deg) scale(${(0.2+0.8*a).toFixed(4)})`;}
+  // stamp on "หลักฐาน"
+  const sp=$('stamp'); const sv=vis(t,K.proof,T.damaged+0.25,{lin:0.1,lout:0.16});
+  if(show(sp,sv.o)){blur(sp,sv.blur); const a=S(t-K.proof,17,0.5); sp.style.transform=`translate(${(540-235).toFixed(0)}px,${(120+6*Math.sin(t*4)).toFixed(1)}px) rotate(${(-7+3*Math.sin(t*3)).toFixed(2)}deg) scale(${(2.2-1.2*a).toFixed(4)})`;}
+  // chips under the two fingers
+  const inB=t>=T.proof&&t<T.sign+0.1;
+  if(!inB||!cam){$('chipL').style.opacity='0';$('chipR').style.opacity='0';}
+  else{
+    const [lx]=toScreen(cam,x0(t),0), [rx]=toScreen(cam,x1(t),0), y=990+6*Math.sin(t*4);
+    const sw=t>=H.compare; const swa=S(t-H.compare,14,0.7);
+    setChip('chipL',t,lx,y-(sw?18*Math.sin(Math.PI*clamp((t-H.compare)/0.3)):0),wL(t),sw?mix('#2DBE60','#1E9BF0',swa):'#2DBE60','#fff',vis(t,K.people,T.sign,{lin:0.18,lout:0.1}));
+    setChip('chipR',t,rx,y,wR(t),sw?mix('#8A8178','#FFD23F',swa):'#8A8178',sw?'#1B0E05':'#fff',vis(t,H.damaged,T.sign,{lin:0.18,lout:0.1}));
+    const swap=(a,b,v1,v2)=>{$(a).textContent=v1;$(b).textContent=v2;const p=vis(t,null,H.compare,{lout:0.1}),n=vis(t,H.compare+0.04,null,{lin:0.18});
+      $(a).style.opacity=p.o.toFixed(3);blur($(a),p.blur);$(b).style.opacity=n.o.toFixed(3);blur($(b),n.blur);};
+    swap('chipL1','chipL2','ประสาทปกติ','ย่น'); swap('chipR1','chipR2','ประสาทเสีย','ไม่เหี่ยว');
+  }
+  // check badge on "ทำงานดี"
+  const ok=$('okb'); const ov=vis(t,H.nerveok,T.grip,{lin:0.1,lout:0.1});
+  if(show(ok,ov.o)){const a=S(t-H.nerveok,15,0.5); $('okg').setAttribute('transform',`translate(800 ${(300+8*Math.sin(t*4)).toFixed(1)}) rotate(${(-20*(1-a)).toFixed(2)}) scale(${(0.2+0.8*a).toFixed(4)})`);}
+}
+
+// ---------- sign shot: nerve glow traced over the real finger ----------
+const SIGN=[[505,1250],[515,900],[540,620],[560,420]], SBR=[[[560,420],[520,330]],[[560,420],[575,320]],[[560,420],[615,350]]];
+const sg={glow:el('path',{fill:'none',stroke:'#FFE14D','stroke-width':30,'stroke-linecap':'round',opacity:0},$('signov')),
+  line:el('path',{fill:'none',stroke:'#FFE97A','stroke-width':8,'stroke-linecap':'round','stroke-linejoin':'round',opacity:0},$('signov')),
+  pulses:[0,1,2,3].map(()=>el('circle',{r:24,fill:'url(#glow)',opacity:0},$('signov')))};
+(()=>{let d=poly(SIGN);SBR.forEach(b=>d+=' '+poly(b));sg.glow.setAttribute('d',d);sg.line.setAttribute('d',d);
+  // the glow gradient lives in the diagram svg; copy it here
+  const defs=el('defs',{},$('signov')); defs.innerHTML=$('dsvg').querySelector('defs').innerHTML.replace('id="glow"','id="glow2"').replace('id="dropg"','id="dropg2"');
+  sg.pulses.forEach(c=>c.setAttribute('fill','url(#glow2)'));})();
+function signov(t){
+  if(t<T.sign||t>T.nerveok+0.12)return;
+  const a=eo((t-K.sign-0.05)/0.35), dashL=lenOf(SIGN)+120;
+  sg.line.setAttribute('opacity',(0.9*a).toFixed(3)); sg.glow.setAttribute('opacity',(0.35*a*(0.75+0.25*Math.sin(t*10))).toFixed(3));
+  [sg.line,sg.glow].forEach(p=>{p.setAttribute('stroke-dasharray',dashL);p.setAttribute('stroke-dashoffset',(dashL*(1-a)).toFixed(1));});
+  sg.pulses.forEach((c,k)=>{const u=((t*1.4+k/4)%1); const [x,y]=at(SIGN,u*lenOf(SIGN)); c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));
+    c.setAttribute('opacity',(a*clamp(u*6)*clamp((1-u)*6)).toFixed(3));});
+}
+
+// ---------- step strip: water -> nerve -> vessels shrink -> skin wrinkles; the indicator follows the words ----------
+const STEPS=['น้ำ','ประสาท','หลอดเลือดหด','ผิวย่น'], SW=[150,200,290,200], GAP=34; let sx=12; const SX=[];
+STEPS.forEach((s,i)=>{const e=$('st'+i); e.textContent=s; e.style.left=sx+'px'; e.style.width=SW[i]+'px'; SX.push(sx); sx+=SW[i]; if(i<3){$('ar'+i).style.left=(sx+GAP/2-8)+'px';} sx+=GAP;});
+const ST=[K.wet,K.nerve,K.shrink,K.fold];
+const IL=track(SX[0],[[ST[1],SX[1],SLOW],[ST[2],SX[2],SLOW],[ST[3],SX[3],SLOW]]), ILf=track(SX[0],[[ST[1],SX[1],FAST],[ST[2],SX[2],FAST],[ST[3],SX[3],FAST]]);
+const IR=track(SX[0]+SW[0],[[ST[1],SX[1]+SW[1],FAST],[ST[2],SX[2]+SW[2],FAST],[ST[3],SX[3]+SW[3],FAST]]), IRs=track(SX[0]+SW[0],[[ST[1],SX[1]+SW[1],SLOW],[ST[2],SX[2]+SW[2],SLOW],[ST[3],SX[3]+SW[3],SLOW]]);
+function strip(t){
+  const e=$('strip'); const inA=t>=T.myth&&t<T.sign+0.1, inC=t>=T.nerveok&&t<T.grip+0.1;
+  if(!inA&&!inC){e.style.opacity='0';return;}
+  const v=inA?vis(t,T.myth,T.sign,{lin:0.25,lout:0.1}):vis(t,T.nerveok,T.grip,{lin:0.2,lout:0.1});
+  e.style.opacity=v.o.toFixed(3); e.style.transform=`translateY(${(60*(1-S(t-(inA?T.myth:T.nerveok),12,0.7))+3*Math.sin(t*3)).toFixed(1)}px)`;
+  let l,r,cur,ia;
+  if(inA){l=Math.min(IL(t),ILf(t)); r=Math.max(IR(t),IRs(t)); ia=eo((t-ST[0])/0.25); cur=-1; ST.forEach((s,i)=>{if(t>=s)cur=i;});}
+  else{l=SX[1];r=SX[1]+SW[1];ia=1;cur=1;}
+  const ind=$('ind'); ind.style.left=l.toFixed(1)+'px'; ind.style.width=Math.max(0,(r-l)).toFixed(1)+'px'; ind.style.opacity=ia.toFixed(3);
+  ind.style.transform=`scaleY(${(1+0.06*Math.sin(t*8)).toFixed(3)})`;
+  for(let i=0;i<4;i++){const st=$('st'+i); const on=i===cur&&ia>0.5;
+    st.style.color=on?'#fff':(i<cur?'#1E9BF0':'#7D6A5B');
+    const t0=inA?ST[i]:T.nerveok; st.style.transform=`scale(${(on?1+0.12*Math.sin(Math.PI*clamp((t-t0)/0.3)):1).toFixed(3)})`;}
+}
+
+// ---------- ending: comment bubble ----------
+function ending(t){
+  const b=$('bubble'); const v=vis(t,K.comment,null,{lin:0.12});
+  if(!show(b,t<K.comment?0:v.o))return; blur(b,v.blur);
+  const a=S(t-K.comment,13,0.5);
+  b.style.transform=`translate(330px,${(330+12*Math.sin((t-K.comment)*6)).toFixed(1)}px) rotate(${(-6+4*Math.sin(t*3)).toFixed(2)}deg) scale(${(0.25+0.75*a).toFixed(4)})`; b.style.transformOrigin='30% 100%';
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('cth'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  capEls[i].style.transform=i===0&&t<0.3?'scale(1)':`translateY(${(18*(1-a)).toFixed(2)}px) scale(${(0.8+0.2*a).toFixed(4)})`;
+}
+
+function render(t){ footage(t); ripples(t); fgdrops(t); title(t); const cam=diagram(t); labels(t,cam); signov(t); strip(t); ending(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:DUR,duration:DUR,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>
