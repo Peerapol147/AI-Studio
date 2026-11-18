@@ -1,0 +1,139 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 26.799,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "",
+   "cue": "ถ้า",
+   "word_at": 0.02,
+   "start": 0.0,
+   "end": 3.5,
+   "dur": 3.5
+  },
+  {
+   "id": "small",
+   "src": "graphic:bubble",
+   "cue": "เรื่องเล็ก",
+   "word_at": 3.58,
+   "start": 3.5,
+   "hit": "ใหญ่",
+   "hit_at": 4.34,
+   "end": 5.22,
+   "dur": 1.72
+  },
+  {
+   "id": "tired",
+   "src": "",
+   "cue": "เหนื่อย",
+   "word_at": 5.3,
+   "start": 5.22,
+   "end": 5.84,
+   "dur": 0.62
+  },
+  {
+   "id": "brain",
+   "src": "graphic:brain",
+   "cue": "สมอง",
+   "word_at": 5.92,
+   "start": 5.84,
+   "hit": "แรงขึ้น",
+   "hit_at": 7.2,
+   "end": 8.56,
+   "dur": 2.72
+  },
+  {
+   "id": "brake",
+   "src": "graphic:brain",
+   "cue": "เบรก",
+   "word_at": 8.64,
+   "start": 8.56,
+   "hit": "น้อยลง",
+   "hit_at": 9.44,
+   "end": 10.18,
+   "dur": 1.62
+  },
+  {
+   "id": "room",
+   "src": "",
+   "cue": "ห้อง",
+   "word_at": 10.26,
+   "start": 10.18,
+   "end": 12.38,
+   "dur": 2.2
+  },
+  {
+   "id": "loop",
+   "src": "graphic:loop",
+   "cue": "วน",
+   "word_at": 12.46,
+   "start": 12.38,
+   "end": 13.58,
+   "dur": 1.2
+  },
+  {
+   "id": "clock",
+   "src": "graphic:clock",
+   "cue": "แต่เรื่อง",
+   "word_at": 13.66,
+   "start": 13.58,
+   "end": 15.82,
+   "dur": 2.24
+  },
+  {
+   "id": "sleep",
+   "src": "",
+   "cue": "นอน",
+   "word_at": 15.9,
+   "start": 15.82,
+   "end": 16.56,
+   "dur": 0.74
+  },
+  {
+   "id": "morning",
+   "src": "",
+   "cue": "เบาลง",
+   "word_at": 16.64,
+   "start": 16.56,
+   "end": 17.62,
+   "dur": 1.06
+  },
+  {
+   "id": "write",
+   "src": "",
+   "cue": "จด",
+   "word_at": 17.7,
+   "start": 17.62,
+   "end": 19.76,
+   "dur": 2.14
+  },
+  {
+   "id": "phone_down",
+   "src": "",
+   "cue": "วางมือถือ",
+   "word_at": 19.84,
+   "start": 19.76,
+   "end": 20.78,
+   "dur": 1.02
+  },
+  {
+   "id": "help",
+   "src": "graphic:help",
+   "cue": "ถ้าคิด",
+   "word_at": 20.86,
+   "start": 20.78,
+   "end": 24.16,
+   "dur": 3.38
+  },
+  {
+   "id": "ask",
+   "src": "graphic:comment",
+   "cue": "ตอนนี้กี่โมง",
+   "word_at": 24.24,
+   "start": 24.16,
+   "end": 26.799,
+   "dur": 2.639
+  }
+ ]
+}
