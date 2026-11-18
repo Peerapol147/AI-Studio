@@ -70,7 +70,7 @@ def vids():
         if s['src'].startswith('graphic:'):
             continue
         name = sid
-        dur = round(s['end'] - s['start'] + 0.12, 3)
+        dur = round(s['end'] - s['start'] + (0.6 if sid == 'sleep' else 0.12), 3)  # sleep -> morning: slow 0.55 s dawn crossfade
         out.append((sid, f'<video id="v-{sid}" class="clip" data-start="{s["start"]}" data-duration="{dur}" data-media-start="{s["ms"]}" '
                     f'data-track-index="{1 + len(out) % 2}" muted playsinline src="assets/{name}.mp4" '
                     f"data-color-grading='{json.dumps(GRADE[sid])}'></video>"))

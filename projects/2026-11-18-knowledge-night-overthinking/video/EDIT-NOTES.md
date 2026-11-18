@@ -37,3 +37,8 @@ Nobody has listened to the audio yet. Check these 5 points: 3.42, 5.58, 10.44, 1
 - hook/tired/sleep are three different people (see MAP.md).
 - check: no errors. Remaining warnings: safe-zone (the caption/label box edge touches TikTok's right margin, but the text itself is inside the frame), line_unread for the help2 card (1.13 s, tied to the voice), and the file is long (one composition, as in the template).
 - The template's English parts were removed (TH only).
+
+## Revision 1 (after review.md)
+- Hotline pill "สายด่วนสุขภาพจิต 1323" (#hot): it starts inside the help2 card and slides out of it with a spring at the start of the ask shot (20.62). It stays until the end at y≈860-940, x≈160-920, in a soft warm colour (#2A2230 at 0.88, faint amber outline). The ask bubble moved up to cy 585 and the clock to y 290 so nothing overlaps.
+- sleep→morning: a 0.55 s "dawn" crossfade (the sleep video now extends to end+0.6). Luma 13.4-14.4 s goes 28→35→45→56→68→78→87, with the largest single-frame jump 13.2.
+- New render and mix: -16.3 LUFS, TP -5.2 dBFS. Lowest diff every 0.27 s: 1.27. The cover was not changed.

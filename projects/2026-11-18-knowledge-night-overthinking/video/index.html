@@ -37,7 +37,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <div class="sc" id="sc-scroll"><div class="kb" id="kb-scroll"><video id="v-scroll" class="clip" data-start="0.84" data-duration="1.6" data-media-start="3.92" data-track-index="2" muted playsinline src="assets/scroll.mp4" data-color-grading='{"adjust": {"exposure": -0.05, "temperature": -0.06, "tint": 0.04, "saturation": -0.12}, "wheels": {"shadows": {"hue": 224, "amount": 0.25, "level": -0.05}, "highlights": {"hue": 34, "amount": 0.08, "level": 0}}, "details": {"vignette": 0.3, "grain": 0.1}}'></video></div></div>
   <div class="sc" id="sc-tired"><div class="kb" id="kb-tired"><video id="v-tired" class="clip" data-start="3.8" data-duration="1.06" data-media-start="1.42" data-track-index="1" muted playsinline src="assets/tired.mp4" data-color-grading='{"adjust": {"exposure": -0.12, "temperature": -0.04, "saturation": -0.1}, "wheels": {"shadows": {"hue": 222, "amount": 0.35, "level": -0.05}, "highlights": {"hue": 32, "amount": 0.08, "level": 0}}, "details": {"vignette": 0.35, "grain": 0.1}}'></video></div></div>
   <div class="sc" id="sc-room"><div class="kb" id="kb-room"><video id="v-room" class="clip" data-start="8.5" data-duration="1.74" data-media-start="0.92" data-track-index="2" muted playsinline src="assets/room.mp4" data-color-grading='{"adjust": {"exposure": -0.08, "tint": -0.18, "saturation": -0.22}, "wheels": {"shadows": {"hue": 224, "amount": 0.25, "level": -0.05}, "highlights": {"hue": 34, "amount": 0.12, "level": 0}}, "details": {"vignette": 0.3, "grain": 0.1}}'></video></div></div>
-  <div class="sc" id="sc-sleep"><div class="kb" id="kb-sleep"><video id="v-sleep" class="clip" data-start="12.76" data-duration="0.96" data-media-start="1.92" data-track-index="1" muted playsinline src="assets/sleep.mp4" data-color-grading='{"adjust": {"exposure": -0.22, "contrast": 0.05, "temperature": -0.18, "saturation": -0.1}, "wheels": {"shadows": {"hue": 222, "amount": 0.4, "level": -0.08}, "highlights": {"hue": 34, "amount": 0.1, "level": 0}}, "details": {"vignette": 0.4, "grain": 0.1}}'></video></div></div>
+  <div class="sc" id="sc-sleep"><div class="kb" id="kb-sleep"><video id="v-sleep" class="clip" data-start="12.76" data-duration="1.44" data-media-start="1.92" data-track-index="1" muted playsinline src="assets/sleep.mp4" data-color-grading='{"adjust": {"exposure": -0.22, "contrast": 0.05, "temperature": -0.18, "saturation": -0.1}, "wheels": {"shadows": {"hue": 222, "amount": 0.4, "level": -0.08}, "highlights": {"hue": 34, "amount": 0.1, "level": 0}}, "details": {"vignette": 0.4, "grain": 0.1}}'></video></div></div>
   <div class="sc" id="sc-morning"><div class="kb" id="kb-morning"><video id="v-morning" class="clip" data-start="13.6" data-duration="1.06" data-media-start="2.92" data-track-index="2" muted playsinline src="assets/morning.mp4" data-color-grading='{"adjust": {"exposure": -0.5, "temperature": 0.38, "saturation": 0.22, "contrast": 0.08, "vibrance": 0.15}, "wheels": {"shadows": {"hue": 220, "amount": 0.12, "level": -0.05}, "highlights": {"hue": 38, "amount": 0.4, "level": 0}, "midtones": {"hue": 36, "amount": 0.18, "level": 0}}, "details": {"vignette": 0.45, "grain": 0.1}}'></video></div></div>
   <div class="sc" id="sc-write"><div class="kb" id="kb-write"><video id="v-write" class="clip" data-start="14.54" data-duration="2.4" data-media-start="3.92" data-track-index="1" muted playsinline src="assets/write.mp4" data-color-grading='{"adjust": {"exposure": -0.15, "contrast": 0.04, "saturation": -0.15}, "wheels": {"shadows": {"hue": 222, "amount": 0.32, "level": -0.06}, "highlights": {"hue": 32, "amount": 0.06, "level": 0}}, "details": {"vignette": 0.35, "grain": 0.1}}'></video></div></div>
   <div class="sc" id="sc-ask"><div class="kb" id="kb-ask"><video id="v-ask" class="clip" data-start="20.62" data-duration="2.494" data-media-start="2.0" data-track-index="1" muted playsinline src="assets/hook.mp4" data-color-grading='{"adjust": {"exposure": -0.25, "contrast": 0.06, "temperature": -0.28, "saturation": -0.15}, "wheels": {"shadows": {"hue": 222, "amount": 0.55, "level": -0.12}, "midtones": {"hue": 225, "amount": 0.12, "level": 0}, "highlights": {"hue": 34, "amount": 0.06, "level": 0}}, "details": {"vignette": 0.4, "grain": 0.1}}'></video></div><div id="asktint"></div></div>
@@ -107,8 +107,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
       <g id="knotG"><path id="knot" d="" fill="none" stroke="#FFB366" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></g>
       <g id="cardT" opacity="0">
         <text x="0" y="-38" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="78" fill="#0B1630">คุยกับผู้เชี่ยวชาญ</text>
-        <rect x="-330" y="20" width="660" height="98" rx="49" fill="#0B1630"/>
-        <text x="0" y="88" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="50" fill="#F3EBDD">สายด่วนสุขภาพจิต <tspan fill="#FFB366" font-weight="900" font-size="60">1323</tspan></text>
+      </g>
+      <g id="hot" opacity="0"><rect id="hotR" x="-330" y="-49" width="660" height="98" rx="49" fill="#0B1630" stroke="#FFB366" stroke-width="0"/>
+        <text id="hotT" x="0" y="18" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="50" fill="#F3EBDD">สายด่วนสุขภาพจิต <tspan id="hotN" fill="#FFB366" font-weight="900" font-size="60">1323</tspan></text>
       </g>
       <g id="askT" opacity="0">
         <text x="0" y="28" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="84" fill="#0B1630">ตอนนี้<tspan fill="#C4621A">กี่โมง</tspan>แล้ว?</text>
@@ -208,7 +209,7 @@ const SC=[
  {...SHOT('sc-room','kb-room',1.04,1.13,0.8,-0.5,0,'58% 50%'),a:T.room,in:'zoom'},
  {id:'sc-gfx',a:T.loop,in:'match'},
  {...SHOT('sc-sleep','kb-sleep',1.14,1.2,-0.6,0.5,-110,'40% 50%'),a:T.sleep,in:'match'},
- {...SHOT('sc-morning','kb-morning',1.05,1.12,0.5,-0.5,0,'45% 45%'),a:T.morning,in:'match'},
+ {...SHOT('sc-morning','kb-morning',1.05,1.12,0.5,-0.5,0,'45% 45%'),a:T.morning,in:'dawn'},
  {...SHOT('sc-write','kb-write',1.3,1.38,-0.6,0.6,-250,'45% 60%'),a:T.write,in:'zoom'},
  {id:'sc-gfx',a:T.phone_down,in:'match'},
  {...SHOT('sc-ask','kb-ask',1.04,1.1,0,0.8,0,'56% 44%'),a:T.ask,in:'match'},
@@ -220,7 +221,8 @@ function sceneState(s,t){
   const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,sc=1;
   if(s.in==='zoom'){ o=eio(u/XF); sc=1+0.07*(1-S(u,14,0.95)); }
   else if(s.in==='match'){ o=eio(u/0.12); sc=1+0.03*(1-S(u,12,1)); }
-  if(nx){ if(t>=end+0.12)return null;
+  else if(s.in==='dawn'){ o=eio(u/0.55); sc=1+0.03*(1-S(u,8,1)); }
+  if(nx){ if(t>=end+(nx.in==='dawn'?0.6:0.12))return null;
     if(nx.in==='zoom'){ const z=(t-(end-0.2))/0.3; if(z>0) sc*=1+0.06*ei(z); } }
   return {o,sc};
 }
@@ -271,7 +273,7 @@ function title(t){
 const NP=120, TH=[...Array(NP)].map((_,i)=>i/NP*Math.PI*2);
 const P=(v0,keys,def)=>track(v0,keys,def);
 const sX=P(540,[[T.small,540],[T.tired,820,CAMF],[T.brain,540,MORPH],[T.room,300,CAMF],[T.clock,640,MORPH],[T.sleep,800,CAMF],[T.write,600,CAMF],[K.jot,470,SLOW],[T.phone_down,760,CAMF],[T.help,540,MORPH]]);
-const sY=P(720,[[H.small,640,SOFTB],[T.tired,330,CAMF],[T.brain,640,MORPH],[T.room,400,CAMF],[T.clock,620,MORPH],[T.sleep,290,CAMF],[T.write,520,CAMF],[K.jot,975,SLOW],[T.phone_down,520,CAMF],[T.help,600,MORPH],[K.hit,690,HEAVY],[T.help2,620,MORPH],[T.ask,640,MORPH]]);
+const sY=P(720,[[H.small,640,SOFTB],[T.tired,330,CAMF],[T.brain,640,MORPH],[T.room,400,CAMF],[T.clock,620,MORPH],[T.sleep,290,CAMF],[T.write,520,CAMF],[K.jot,975,SLOW],[T.phone_down,520,CAMF],[T.help,600,MORPH],[K.hit,690,HEAVY],[T.help2,620,MORPH],[T.ask,585,MORPH]]);
 const sRX=P(0,[[T.small,150,SOFTB],[H.small,400,SOFTB],[T.tired,120,CAMF],[T.brain,400,MORPH],[T.room,125,CAMF],[T.loop,100,MORPH],[T.clock,250,MORPH],[K.big2,340,SOFTB],[T.sleep,190,CAMF],[T.morning,150,MORPH],[K.lighter,60,SLOW],[T.write,55,CAMF],[K.jot,22,SLOW],[T.phone_down,40,MORPH],[T.help,330,MORPH],[K.hit,370,HEAVY],[T.help2,445,MORPH],[T.ask,430,MORPH]]);
 const sRY=P(0,[[T.small,118,SOFTB],[H.small,320,SOFTB],[T.tired,95,CAMF],[T.brain,300,MORPH],[T.room,100,CAMF],[T.loop,82,MORPH],[T.clock,200,MORPH],[K.big2,270,SOFTB],[T.sleep,150,CAMF],[T.morning,120,MORPH],[K.lighter,50,SLOW],[T.write,45,CAMF],[K.jot,18,SLOW],[T.phone_down,32,MORPH],[T.help,260,MORPH],[K.hit,225,HEAVY],[T.help2,255,MORPH],[T.ask,165,MORPH]]);
 const sN=P(2,[[T.help2,6.5,MORPH],[T.ask,4.6,MORPH]]);
@@ -339,6 +341,13 @@ function shape(t){
   // card text (help2) and comment text (ask)
   const cv=vis(t,K.talk+0.06,T.ask,{lin:0.22,lout:0.12}), av=vis(t,K.now,null,{lin:0.2});
   op($('cardT'),cv.o); $('cardT').setAttribute('transform',`translate(${f2(cx)} ${f2(cy)}) scale(${(0.9+0.1*cv.a+0.03*Math.sin(Math.PI*clamp((t-K.expert)/0.35))*(t>K.expert?1:0)).toFixed(4)})`);
+  // hotline pill: lives in the card, then slides out of it at the morph and stays to the end (y 860-940)
+  const hv=vis(t,K.talk+0.06,null,{lin:0.22}), hm=S(t-T.ask,9,0.95), cs=0.9+0.1*hv.a;
+  const hx=lerp(cx,540,hm), hy=lerp(cy+69*cs,900,hm), hw=lerp(660,760,hm), hh=lerp(98,80,hm);
+  op($('hot'),hv.o); $('hot').setAttribute('transform',`translate(${f2(hx)} ${f2(hy+(t>T.ask?3*Math.sin((t-T.ask)*2.2)*hm:0))}) scale(${(cs*(1-hm)+hm).toFixed(4)})`);
+  const R=$('hotR'); R.setAttribute('x',f2(-hw/2)); R.setAttribute('y',f2(-hh/2)); R.setAttribute('width',f2(hw)); R.setAttribute('height',f2(hh)); R.setAttribute('rx',f2(hh/2));
+  R.setAttribute('fill',mixc('#0B1630','#2A2230',hm)); R.setAttribute('fill-opacity',lerp(1,0.88,hm).toFixed(3)); R.setAttribute('stroke-width',f2(4*hm)); R.setAttribute('stroke-opacity','0.55');
+  $('hotT').setAttribute('font-size',f2(lerp(50,44,hm))); $('hotT').setAttribute('y',f2(lerp(18,15,hm))); $('hotN').setAttribute('font-size',f2(lerp(60,52,hm)));
   op($('askT'),av.o); $('askT').setAttribute('transform',`translate(${f2(cx)} ${f2(cy-4)}) scale(${(0.88+0.12*S(t-K.now,14,0.6)+0.04*Math.sin(Math.PI*clamp((t-K.time)/0.35))*(t>K.time?1:0)).toFixed(4)})`);
 }
 
@@ -394,7 +403,7 @@ function phone(t){
 
 // ---------- clock (03:00 at the "3 a.m." line, walking at the end) ----------
 const TICKS=$('ticks'); for(let i=0;i<12;i++){const a=i*Math.PI/6; el('path',{d:`M${f2(78*Math.sin(a))} ${f2(-78*Math.cos(a))} L${f2((i%3?86:90)*Math.sin(a))} ${f2(-(i%3?86:90)*Math.cos(a))}`},TICKS);}
-const clkX=track(250,[[T.ask,540,CAMF]]), clkY=track(360,[[T.ask,330,CAMF]]);
+const clkX=track(250,[[T.ask,540,CAMF]]), clkY=track(360,[[T.ask,290,CAMF]]);
 function clock(t){
   const a=vis(t,T.clock+0.02,T.sleep,{lin:0.22,lout:0.1}).o, b=vis(t,T.ask+0.1,null,{lin:0.22}).o, o=Math.max(a,b); op($('clk'),o); if(o<=0)return;
   const s=t<T.sleep+0.2?(0.6+0.4*S(t-T.clock,13,0.6))*1.15:(0.6+0.4*S(t-T.ask-0.1,13,0.6));
