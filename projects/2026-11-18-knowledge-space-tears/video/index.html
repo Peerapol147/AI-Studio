@@ -1,0 +1,237 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#05070d}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.shot .m{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.35) 55%,rgba(0,0,0,0));z-index:30}
+#title{position:absolute;left:40px;top:250px;width:1000px;z-index:40;text-align:center;font-weight:900;line-height:1.3;
+  transform-origin:50% 50%}
+#title div{font-size:104px;color:#fff;-webkit-text-stroke:20px #0B1220;paint-order:stroke fill;white-space:nowrap}
+#title .y{color:#FFD23F}
+#title b{display:inline-block;font-weight:900}
+#hero{position:absolute;left:0;top:0;z-index:45;opacity:0;overflow:hidden;border:6px solid #0B1220}
+#hero .tx{position:absolute;left:50%;top:50%;white-space:nowrap;font-weight:700;font-size:56px;line-height:1.1;display:flex;align-items:center;gap:16px;opacity:0}
+#hero .tx svg{width:44px;height:58px;display:block;transform-origin:50% 0}
+#hero #tq{font-size:170px;font-weight:900;color:#0B1220}
+#sheen{position:absolute;top:-20px;left:0;width:90px;height:160px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.75),rgba(255,255,255,0));opacity:0}
+.dot{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;z-index:44;opacity:0;
+  background:radial-gradient(circle at 35% 30%,#fff 0,#BFEFFF 30%,#3FB6E8 100%);border:5px solid #0B1220}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:120px;width:780px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:780px;bottom:-48px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:15px #000;paint-order:stroke fill;transform-origin:50% 80%;opacity:0}
+.cap em{font-style:normal;color:#FFD23F}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="25.326" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+
+<div id="foot" class="layer" data-track-kind="graphics">
+  <div class="shot" id="sh-hook" style="z-index:1"><video id="v-hook" class="clip m" data-start="0.0" data-duration="2.04" data-media-start="53.6" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-cheek" style="z-index:2"><video id="v-cheek" class="clip m" data-start="2.04" data-duration="0.78" data-media-start="52.0" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-belief" style="z-index:3"><video id="v-belief" class="clip m" data-start="2.82" data-duration="1.62" data-media-start="23.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-truth" style="z-index:4"><video id="v-truth" class="clip m" data-start="4.44" data-duration="0.72" data-media-start="29.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-nolimit" style="z-index:5"><video id="v-nolimit" class="clip m" data-start="5.16" data-duration="2.24" data-media-start="17.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-float" style="z-index:6"><video id="v-float" class="clip m" data-start="7.4" data-duration="1.1" data-media-start="37.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-nopull" style="z-index:7"><video id="v-nopull" class="clip m" data-start="8.5" data-duration="2.02" data-media-start="45.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-merge" style="z-index:8"><video id="v-merge" class="clip m" data-start="10.52" data-duration="1.28" data-media-start="49.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-tension" style="z-index:9"><video id="v-tension" class="clip m" data-start="11.8" data-duration="1.48" data-media-start="55.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-stick" style="z-index:10"><video id="v-stick" class="clip m" data-start="13.28" data-duration="1.88" data-media-start="59.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-bigger" style="z-index:11"><video id="v-bigger" class="clip m" data-start="15.16" data-duration="1.08" data-media-start="63.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-wipe" style="z-index:12"><video id="v-wipe" class="clip m" data-start="16.24" data-duration="1.78" data-media-start="67.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-earth" style="z-index:13"><video id="v-earth" class="clip m" data-start="18.02" data-duration="1.98" data-media-start="25.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-nofall" style="z-index:14"><video id="v-nofall" class="clip m" data-start="20.0" data-duration="0.96" data-media-start="33.92" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-tissue" style="z-index:15"><video id="v-tissue" class="clip m" data-start="20.96" data-duration="0.88" data-media-start="41.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-outro" style="z-index:16"><video id="v-outro" class="clip m" data-start="21.84" data-duration="1.88" data-media-start="57.5" data-track-index="2" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+  <div class="shot" id="sh-outro2" style="z-index:17"><video id="v-outro2" class="clip m" data-start="23.72" data-duration="1.606" data-media-start="65.92" data-track-index="1" src="assets/nasa-moving-water.mp4" muted playsinline></video></div>
+</div>
+
+<div id="over" class="layer" data-track-kind="graphics" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="shade"></div>
+  <div id="title"><div>ถ้าร้องไห้ในอวกาศ</div><div class="y">น้ำตาจะไหล</div><div class="y">ลง<b id="kaem">แก้ม</b>ไหม?</div></div>
+  <div class="dot" id="d0"></div><div class="dot" id="d1"></div><div class="dot" id="d2"></div><div class="dot" id="d3"></div>
+  <div id="hero"><div id="sheen"></div>
+    <div class="tx" id="t1">หลายคนคิดว่า: ไหลลงแก้ม</div>
+    <div class="tx" id="t2">ไม่ไหลเลย</div>
+    <div class="tx" id="t3">ทุกอย่างลอยได้</div>
+    <div class="tx" id="t4"><svg id="arw4" viewBox="0 0 44 58"><path d="M22 4V44M8 32L22 50L36 32" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>ไม่มีอะไรดึง</div>
+    <div class="tx" id="t6">แรงตึงผิว</div>
+    <div class="tx" id="t7">เกาะอยู่ที่ตา</div>
+    <div class="tx" id="t9">เช็ดออกเอง</div>
+    <div class="tx" id="t10">บนโลก: ไหลลง<svg id="arw10" viewBox="0 0 44 58"><path d="M22 4V44M8 32L22 50L36 32" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="tx" id="t11">ในอวกาศ: ไม่ตก</div>
+    <div class="tx" id="t12">เตรียมผ้าเช็ดหน้า</div>
+    <div class="tx" id="tq">?</div>
+  </div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="0.0" data-duration="0.56" data-track-index="20"><span style="font-size:80px">ถ้าร้องไห้</span></div>
+  <div id="c1" class="clip cap" data-start="0.56" data-duration="0.82" data-track-index="20"><span style="font-size:80px">ในอวกาศ</span></div>
+  <div id="c2" class="clip cap" data-start="1.38" data-duration="0.62" data-track-index="20"><span style="font-size:80px">น้ำตาจะไหล</span></div>
+  <div id="c3" class="clip cap" data-start="2.0" data-duration="0.9" data-track-index="20"><span style="font-size:80px">ลง<em>แก้ม</em>ไหม?</span></div>
+  <div id="c4" class="clip cap" data-start="2.9" data-duration="0.6" data-track-index="20"><span style="font-size:80px">หลายคนคิดว่า</span></div>
+  <div id="c5" class="clip cap" data-start="3.5" data-duration="1.02" data-track-index="20"><span style="font-size:72px">ไหลเหมือนบนโลก</span></div>
+  <div id="c6" class="clip cap" data-start="4.52" data-duration="0.72" data-track-index="20"><span style="font-size:80px">แต่ความจริงคือ</span></div>
+  <div id="c7" class="clip cap" data-start="5.24" data-duration="0.9" data-track-index="20"><span style="font-size:80px"><em>ไม่ไหลเลย</em></span></div>
+  <div id="c8" class="clip cap" data-start="6.14" data-duration="0.64" data-track-index="20"><span style="font-size:80px">เพราะบนสถานี</span></div>
+  <div id="c9" class="clip cap" data-start="6.78" data-duration="0.7" data-track-index="20"><span style="font-size:80px">อวกาศ</span></div>
+  <div id="c10" class="clip cap" data-start="7.48" data-duration="1.1" data-track-index="20"><span style="font-size:80px">ทุกอย่าง<em>ลอย</em>ได้</span></div>
+  <div id="c11" class="clip cap" data-start="8.58" data-duration="0.64" data-track-index="20"><span style="font-size:80px">ไม่มีอะไรดึง</span></div>
+  <div id="c12" class="clip cap" data-start="9.22" data-duration="1.02" data-track-index="20"><span style="font-size:80px">น้ำตาลงมา</span></div>
+  <div id="c13" class="clip cap" data-start="10.24" data-duration="0.74" data-track-index="20"><span style="font-size:80px">น้ำเลย<em>รวมตัว</em></span></div>
+  <div id="c14" class="clip cap" data-start="10.98" data-duration="0.78" data-track-index="20"><span style="font-size:80px">เป็นก้อนกลมๆ</span></div>
+  <div id="c15" class="clip cap" data-start="11.76" data-duration="1.16" data-track-index="20"><span style="font-size:80px">ด้วย<em>แรงตึงผิว</em></span></div>
+  <div id="c16" class="clip cap" data-start="12.92" data-duration="0.44" data-track-index="20"><span style="font-size:80px">น้ำตาก็</span></div>
+  <div id="c17" class="clip cap" data-start="13.36" data-duration="1.12" data-track-index="20"><span style="font-size:80px"><em>เกาะ</em>อยู่ที่ตา</span></div>
+  <div id="c18" class="clip cap" data-start="14.48" data-duration="0.64" data-track-index="20"><span style="font-size:80px">ร้องต่อก้อน</span></div>
+  <div id="c19" class="clip cap" data-start="15.12" data-duration="1.06" data-track-index="20"><span style="font-size:80px">ก็<em>ยิ่งใหญ่</em>ขึ้น</span></div>
+  <div id="c20" class="clip cap" data-start="16.18" data-duration="1.06" data-track-index="20"><span style="font-size:72px">ต้องเช็ดออกเอง</span></div>
+  <div id="c21" class="clip cap" data-start="17.24" data-duration="0.56" data-track-index="20"><span style="font-size:80px">บนโลก</span></div>
+  <div id="c22" class="clip cap" data-start="17.8" data-duration="1.16" data-track-index="20"><span style="font-size:80px">น้ำตาไหลลงมา</span></div>
+  <div id="c23" class="clip cap" data-start="18.96" data-duration="0.82" data-track-index="20"><span style="font-size:80px">แต่ในอวกาศ</span></div>
+  <div id="c24" class="clip cap" data-start="19.78" data-duration="0.88" data-track-index="20"><span style="font-size:80px">น้ำตา<em>ไม่ตก</em></span></div>
+  <div id="c25" class="clip cap" data-start="20.66" data-duration="1.26" data-track-index="20"><span style="font-size:62px">ต้องเตรียมผ้าเช็ดหน้า</span></div>
+  <div id="c26" class="clip cap" data-start="21.92" data-duration="0.48" data-track-index="20"><span style="font-size:80px">แล้วเพื่อนๆ</span></div>
+  <div id="c27" class="clip cap" data-start="22.4" data-duration="0.78" data-track-index="20"><span style="font-size:80px">คิดว่า</span></div>
+  <div id="c28" class="clip cap" data-start="23.18" data-duration="0.62" data-track-index="20"><span style="font-size:80px">อะไรจะทำให้</span></div>
+  <div id="c29" class="clip cap" data-start="23.8" data-duration="0.78" data-track-index="20"><span style="font-size:80px">นักบินร้องไห้</span></div>
+  <div id="c30" class="clip cap" data-start="24.58" data-duration="0.746" data-track-index="20"><span style="font-size:80px">ได้ก่อนกัน?</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="25.326" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs from the motion-broll engine; one hero shape morphs between states on the spoken word. */
+(function(){
+const DUR=25.326;
+const SH=[["hook", 0.0, 2.04, 300, 290, 520, 530], ["cheek", 2.04, 2.82, 380, 370, 575, 500], ["belief", 2.82, 4.44, 455, 450, 690, 330], ["truth", 4.44, 5.16, 380, 380, 520, 330], ["nolimit", 5.16, 7.4, 450, 450, 800, 260], ["float", 7.4, 8.5, 150, 140, 260, 520], ["nopull", 8.5, 10.52, 380, 400, 620, 400], ["merge", 10.52, 11.8, 400, 400, 670, 430], ["tension", 11.8, 13.28, 260, 250, 455, 530], ["stick", 13.28, 15.16, 210, 200, 360, 320], ["bigger", 15.16, 16.24, 200, 200, 360, 280], ["wipe", 16.24, 18.02, 300, 300, 520, 200], ["earth", 18.02, 20.0, 420, 420, 640, 300], ["nofall", 20.0, 20.96, 250, 250, 380, 420], ["tissue", 20.96, 21.84, 200, 200, 340, 420], ["outro", 21.84, 23.72, 280, 270, 400, 600], ["outro2", 23.72, 25.326, 260, 250, 400, 400]];           // [id,start,end,x0a,x0b,blobX,blobY] (source px; shot times from shots-th.json)
+const CAPT=[0.0, 0.56, 1.38, 2.0, 2.9, 3.5, 4.52, 5.24, 6.14, 6.78, 7.48, 8.58, 9.22, 10.24, 10.98, 11.76, 12.92, 13.36, 14.48, 15.12, 16.18, 17.24, 17.8, 18.96, 19.78, 20.66, 21.92, 22.4, 23.18, 23.8, 24.58];
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.8];
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const vis=(t,tin,tout,o={})=>{const din=o.din??0.03,lin=o.lin??0.2,lout=o.lout??0.12,bl=o.blur??10;
+  const a=tin==null?1:eo((t-tin-din)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl*0.8,a,b};};
+const $=id=>document.getElementById(id);
+
+// ---------- footage: hard cut on the word, crop window follows the water blob, push-in + cut kick ----------
+function footage(t){
+  for(const [id,a,b,x0a,x0b,bx,by] of SH){
+    if(t<a-0.001||t>=b+0.001) continue;
+    const u=clamp((t-a)/(b-a)), x0=lerp(x0a,x0b,u);
+    $('v-'+id).style.objectPosition=`${(x0/1380*100).toFixed(3)}% 50%`;
+    const z=1+0.045*u+0.05*(1-S(t-a,14,0.9));
+    const w=$('sh-'+id); w.style.transformOrigin=`${((bx-x0)*2).toFixed(1)}px ${(by*2).toFixed(1)}px`;
+    w.style.transform=`scale(${z.toFixed(5)})`;
+  }
+}
+
+// ---------- hook title: on screen from frame 0, breathes, folds into the hero pill on "หลายคน" ----------
+const T_OUT=2.82, K_KAEM=2.12;
+function title(t){
+  const el=$('title'), v=vis(t,null,T_OUT,{lout:0.16,blur:14});
+  const sh=$('shade'); sh.style.opacity=(1-eo((t-T_OUT)/0.5)*0.55).toFixed(3);
+  if(v.o<0.003){el.style.opacity='0';return;}
+  const breathe=1+0.02*(1-Math.cos(t*Math.PI*2/1.6));
+  const fold=1-0.4*eo((t-T_OUT)/0.2);
+  el.style.opacity=v.o.toFixed(3); el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.transform=`translateY(${(-60*eo((t-T_OUT)/0.2)).toFixed(1)}px) scale(${(breathe*fold).toFixed(4)})`;
+  const k=(t-K_KAEM)/0.45; $('kaem').style.transform=`scale(${(1+0.16*Math.sin(Math.PI*clamp(k))).toFixed(3)}) rotate(${(-5*Math.sin(Math.PI*clamp(k))).toFixed(2)}deg)`;
+}
+
+// ---------- hero shape: states on the spoken word (times from words.json) ----------
+// kind p = pill (width from its text), c = circle (d = diameter)
+const ST=[
+ {t:2.90, k:'p',tx:'t1',bg:'#FFFFFF',fg:'#0B1220',y:350},
+ {t:5.24, k:'p',tx:'t2',bg:'#E5383B',fg:'#FFFFFF',y:350},
+ {t:7.48, k:'p',tx:'t3',bg:'#2B6CF6',fg:'#FFFFFF',y:350},
+ {t:8.58, k:'p',tx:'t4',bg:'#0B1220',fg:'#FFFFFF',y:350},
+ {t:10.60,k:'c',tx:null,bg:'#7FD8F7',fg:'#0B1220',y:420,d:170},
+ {t:11.88,k:'p',tx:'t6',bg:'#7FD8F7',fg:'#0B1220',y:350},
+ {t:13.36,k:'p',tx:'t7',bg:'#FFFFFF',fg:'#0B1220',y:350},
+ {t:15.24,k:'c',tx:null,bg:'#7FD8F7',fg:'#0B1220',y:450,d:240},
+ {t:16.32,k:'p',tx:'t9',bg:'#FFFFFF',fg:'#0B1220',y:350},
+ {t:17.24,k:'p',tx:'t10',bg:'#2FBF71',fg:'#FFFFFF',y:350},
+ {t:20.08,k:'p',tx:'t11',bg:'#FFD23F',fg:'#0B1220',y:350},
+ {t:21.04,k:'p',tx:'t12',bg:'#FFFFFF',fg:'#0B1220',y:350},
+ {t:21.92,k:'c',tx:'tq',bg:'#FFD23F',fg:'#0B1220',y:450,d:230},
+];
+const PH=106;
+const measure=s=>{if(s.k==='c')return [s.d,s.d];const n=$(s.tx);return [Math.ceil(n.scrollWidth)+96,PH];};
+const springSum=(vals,t)=>{let v=vals[0];for(let i=1;i<ST.length;i++)v+=(vals[i]-vals[i-1])*S(t-ST[i].t,MORPH[0],MORPH[1]);return v;};
+const colSum=(key,t)=>{const c=[0,1,2].map(j=>springSum(ST.map(s=>hex(s[key])[j]),t));return `rgb(${c.map(x=>Math.round(clamp(x,0,255))).join(',')})`;};
+function hero(t){
+  const el=$('hero'); const v=vis(t,T_OUT,null,{din:0,lin:0.18,blur:12});
+  if(t<T_OUT){el.style.opacity='0';return;}
+  const dims=ST.map(measure);
+  const w=springSum(dims.map(d=>d[0]),t), h=springSum(dims.map(d=>d[1]),t);
+  let y=springSum(ST.map(s=>s.y),t);
+  // gentle bobs: "ลอย" (7.84) and the final question
+  if(t>7.84&&t<8.7) y+=12*Math.sin((t-7.84)*7)*clamp((t-7.84)/0.2);
+  if(t>21.92) y+=12*Math.sin((t-21.92)*4.2)*clamp((t-21.92)/0.4);
+  const intro=S(t-T_OUT,13,0.75);
+  let rot=0; const kick=(t-5.24); if(kick>0&&kick<0.6) rot=-7*Math.exp(-6*kick)*Math.sin(kick*22);
+  if(t>21.92) rot+=lerp(-14,0,S(t-21.92,10,0.6))+3*Math.sin((t-21.92)*2.6);
+  el.style.opacity=v.o.toFixed(4); el.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+  el.style.width=w.toFixed(2)+'px'; el.style.height=h.toFixed(2)+'px'; el.style.borderRadius=(Math.min(w,h)/2).toFixed(2)+'px';
+  el.style.background=colSum('bg',t); el.style.color=colSum('fg',t);
+  // surface-tension ring pulses on "แรงตึงผิว"; size pop on "ยิ่งใหญ่"
+  const r1=(t-11.88)/0.7, r2=(t-12.34)/0.7; let ring=0;
+  for(const r of [r1,r2]) if(r>0&&r<1) ring=Math.max(ring,18*Math.sin(Math.PI*r));
+  el.style.boxShadow=`0 0 0 ${ring.toFixed(1)}px rgba(127,216,247,.55), 0 14px 34px rgba(0,0,0,.4)`;
+  el.style.transform=`translate(${(540-w/2).toFixed(2)}px,${(y-h/2).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${(0.55+0.45*intro).toFixed(4)})`;
+  // text layers: crossfade with a short blur on each state change
+  ST.forEach((s,i)=>{ if(!s.tx) return; const n=$(s.tx); const nx=ST[i+1]?ST[i+1].t:null;
+    const q=vis(t,s.t,nx,{din:0.06,lin:0.2,lout:0.1,blur:10});
+    n.style.opacity=q.o.toFixed(3); n.style.filter=q.blur>0.05?`blur(${q.blur.toFixed(1)}px)`:'none';
+    const sc=s.tx==='tq'?0.4+0.6*S(t-s.t,14,0.6):1;
+    n.style.transform=`translate(-50%,-52%) scale(${sc.toFixed(3)})`;});
+  // arrow: "ไม่มีอะไรดึง" -> the pull arrow collapses on "ดึง" (9.08)
+  const ca=S(t-9.08,12,0.85); const a4=$('arw4'); a4.style.transform=`scaleY(${(1-0.85*ca).toFixed(3)})`; a4.style.opacity=(1-0.6*ca).toFixed(3);
+  // earth arrow drops on "ไหลลงมา" (18.10)
+  const da=(t-18.10); const a10=$('arw10'); a10.style.transform=`translateY(${(da>0?16*Math.abs(Math.sin(da*5))*Math.exp(-1.6*da):0).toFixed(1)}px)`;
+  // wipe sheen on "เช็ด" (16.32)
+  const sw=(t-16.40)/0.55, sn=$('sheen');
+  if(sw>0&&sw<1){sn.style.opacity='1';sn.style.transform=`translateX(${(lerp(-120,w+40,eo(sw))).toFixed(1)}px) skewX(-20deg)`;} else sn.style.opacity='0';
+}
+
+// ---------- droplets merge into the circle on "รวมตัว" (10.60) ----------
+const DA=[[-260,-60],[240,-120],[-200,150],[260,110]];
+function drops(t){
+  DA.forEach(([dx,dy],i)=>{const el=$('d'+i); const t0=10.60+i*0.07; const u=(t-t0)/0.55;
+    if(u<=-0.3||u>=1){el.style.opacity='0';return;}
+    const p=eo(clamp(u)); const o=clamp((u+0.3)/0.3)*(1-clamp((u-0.75)/0.25));
+    el.style.opacity=o.toFixed(3);
+    el.style.transform=`translate(${(540+dx*(1-p)).toFixed(1)}px,${(420+dy*(1-p)).toFixed(1)}px) scale(${(1-0.5*p).toFixed(3)})`;});
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,32,0.72);
+  capEls[i].style.transform=`scale(${(0.86+0.14*a).toFixed(4)})`;
+  capEls[i].style.opacity=(i===0?1:clamp(tau/0.05)).toFixed(3);
+}
+
+function render(t){ footage(t); title(t); hero(t); drops(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:DUR,duration:DUR,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

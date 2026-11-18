@@ -1,0 +1,8 @@
+[
+ {"t": 2.82, "type": "appear", "desc": "hook title folds into the label pill (หลายคน)", "sfx": "pop/kenney-interface-pluck-001.ogg", "gain": -12},
+ {"t": 5.24, "type": "appear", "desc": "pill turns red on ไม่ไหลเลย", "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg", "gain": -14},
+ {"t": 10.60, "type": "appear", "desc": "droplets merge into one circle (รวมตัว)", "sfx": "pop/fs-447910-plop.ogg", "gain": -12},
+ {"t": 15.24, "type": "appear", "desc": "circle grows (ยิ่งใหญ่)", "sfx": "pop/kenney-interface-maximize-001.ogg", "gain": -14},
+ {"t": 16.40, "type": "movement", "desc": "sheen wipes across the pill (เช็ดออก)", "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg", "gain": -12},
+ {"t": 21.92, "type": "appear", "desc": "question mark springs in (แล้วเพื่อนๆ)", "sfx": "kit/pop.ogg", "gain": -12}
+]

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "historyId": "9f2dd0ac-8183-4505-991b-9101f7cd9f96",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/bg.jpg": {
+      "hash": "da5f7b4012727d5cc4033ac22a75d3f0706d35d54b0517ce7da0012b85b694aa",
+      "content": "/root/.cache/hyperframes/history/9f2dd0ac-8183-4505-991b-9101f7cd9f96/blobs/da/da5f7b4012727d5cc4033ac22a75d3f0706d35d54b0517ce7da0012b85b694aa"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/root/.cache/hyperframes/history/9f2dd0ac-8183-4505-991b-9101f7cd9f96/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "0f92dca310e4af8a8ee394c5ac1d49aa83f025388a2e4525e5e6f90643f77a16",
+      "content": "/root/.cache/hyperframes/history/9f2dd0ac-8183-4505-991b-9101f7cd9f96/blobs/0f/0f92dca310e4af8a8ee394c5ac1d49aa83f025388a2e4525e5e6f90643f77a16"
+    },
+    "package.json": {
+      "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
+      "content": "/root/.cache/hyperframes/history/9f2dd0ac-8183-4505-991b-9101f7cd9f96/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "1b64a8e3-b6f1-470e-8b5e-c61c0d02ae02-1"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "1b64a8e3-b6f1-470e-8b5e-c61c0d02ae02-0",
+        "image": "/home/user/AI-Studio/projects/2026-11-18-knowledge-space-tears/video/thumb/.hyperframes/artifacts/snapshots/273b978e-6df7-4e19-a26e-c9a308dc4e58/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795039802436,
+        "contentHash": "3b317508edc4f6fe8aa3c111fa0eac0fc6336433926d0ca768d07029bac19f97",
+        "revision": null,
+        "inputFingerprint": "0bb42dda5aacd03b1fd397cc5975e7a1d24baa9320c0f679b1e7629da08c9288",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1b64a8e3-b6f1-470e-8b5e-c61c0d02ae02-1",
+        "image": "/home/user/AI-Studio/projects/2026-11-18-knowledge-space-tears/video/thumb/.hyperframes/artifacts/snapshots/273b978e-6df7-4e19-a26e-c9a308dc4e58/frame-01-at-0.95s.png",
+        "time": 0.95,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795039802436,
+        "contentHash": "3b317508edc4f6fe8aa3c111fa0eac0fc6336433926d0ca768d07029bac19f97",
+        "revision": null,
+        "inputFingerprint": "0bb42dda5aacd03b1fd397cc5975e7a1d24baa9320c0f679b1e7629da08c9288",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}
