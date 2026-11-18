@@ -1,0 +1,604 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B0C22}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.fw,.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.fill{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.band{position:absolute;left:0;width:1080px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 140px,#000 calc(100% - 140px),transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 140px,#000 calc(100% - 140px),transparent 100%)}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#vig{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;
+  background:radial-gradient(ellipse 62% 48% at 50% 46%,rgba(4,3,14,0) 40%,rgba(4,3,14,.92) 100%)}
+#flash{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#DFF6FF;opacity:0;pointer-events:none}
+.ibg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 40%,#2C3F78 0%,#1A2550 55%,#0E1433 100%)}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:760px;background:linear-gradient(rgba(5,4,16,.78),rgba(5,4,16,0))}
+#title{position:absolute;left:0;top:0;width:1080px;height:760px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:28px #10080A;paint-order:stroke fill;transform-origin:50% 60%}
+.tag{position:absolute;left:0;top:0;padding:2px 34px 10px;border-radius:36px;background:#7B5CFF;border:9px solid #10080A;
+  color:#fff;font-weight:900;font-size:56px;white-space:nowrap}
+.pill{position:absolute;left:0;top:0;height:104px;border-radius:52px;opacity:0;overflow:hidden;border:8px solid #10080A}
+.pill span{position:absolute;left:50%;top:50%;transform:translate(-50%,-55%);font-weight:900;font-size:56px;white-space:nowrap}
+#strip{position:absolute;left:110px;top:1312px;width:860px;height:120px;border-radius:60px;background:#fff;opacity:0;
+  box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px #10080A}
+#ind{position:absolute;top:12px;height:96px;border-radius:48px;background:#3FA9F5}
+.st{position:absolute;top:0;height:120px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:44px;color:#7D6A8B;white-space:nowrap}
+.arw{position:absolute;top:43px;width:0;height:0;border-top:17px solid transparent;border-bottom:17px solid transparent;border-left:16px solid #C9B8D6}
+#bubble{position:absolute;left:0;top:0;width:760px;height:520px;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:40px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFD23F}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="19.017" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+
+  <!-- the one bedroom (graphic:bedroom + graphic:brain): night -> lights up -> cross-section -> night again -->
+  <div class="sc" id="sc-world">
+   <svg class="full" id="world" viewBox="0 0 1080 1920" width="1080" height="1920">
+    <defs>
+      <filter id="fb5" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5"/></filter>
+      <filter id="fb24" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+      <radialGradient id="gLamp"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".35" stop-color="#FFD27A" stop-opacity=".45"/><stop offset="1" stop-color="#FFC861" stop-opacity="0"/></radialGradient>
+      <radialGradient id="gMoon"><stop offset="0" stop-color="#C9D8FF" stop-opacity=".55"/><stop offset="1" stop-color="#C9D8FF" stop-opacity="0"/></radialGradient>
+      <radialGradient id="gBrain"><stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/><stop offset=".45" stop-color="#8FE6FF" stop-opacity=".75"/><stop offset="1" stop-color="#3FB8FF" stop-opacity="0"/></radialGradient>
+      <radialGradient id="gRed"><stop offset="0" stop-color="#FF6B78" stop-opacity=".8"/><stop offset="1" stop-color="#FF4D5E" stop-opacity="0"/></radialGradient>
+      <linearGradient id="gBeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CFDDFF" stop-opacity=".5"/><stop offset="1" stop-color="#CFDDFF" stop-opacity="0"/></linearGradient>
+      <pattern id="pGrid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="#4F7DC0" stroke-width="2" opacity=".32"/></pattern>
+      <clipPath id="cpBub"><circle id="cpBubC" cx="560" cy="690" r="150"/></clipPath>
+    </defs>
+    <g id="cam">
+      <rect id="wall" x="-1500" y="-1500" width="4100" height="2650"/>
+      <rect id="floor" x="-1500" y="1150" width="4100" height="2200"/>
+      <ellipse id="rug" cx="560" cy="1236" rx="380" ry="50"/>
+      <circle id="moonGlow" cx="300" cy="560" r="330" fill="url(#gMoon)"/>
+      <!-- window + curtain -->
+      <rect id="sky" x="120" y="470" width="280" height="290" rx="6"/>
+      <circle id="moon" cx="318" cy="548" r="38"/>
+      <path id="wbars" d="M260 470V760M120 615H400" stroke-width="12" fill="none"/>
+      <rect id="wframe" x="120" y="470" width="280" height="290" rx="6" fill="none" stroke-width="16"/>
+      <path id="curtain"/>
+      <!-- door, slightly ajar -->
+      <rect id="doorgap" x="828" y="505" width="164" height="645"/>
+      <path id="doorleaf"/>
+      <rect id="dframe" x="820" y="497" width="180" height="653" fill="none" stroke-width="14"/>
+      <!-- clock -->
+      <circle id="clockF" cx="612" cy="560" r="44" stroke-width="8"/>
+      <path id="clockH" d="M612 560V530M612 560H636" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- bedside lamp -->
+      <rect id="ns" x="8" y="1010" width="116" height="140" rx="10"/>
+      <path id="lampB" d="M58 1010V962M44 1010H72" stroke-width="10" fill="none"/>
+      <path id="shade" d="M22 966L104 966L88 912L38 912Z"/>
+      <circle id="lampGlow" cx="64" cy="950" r="300" fill="url(#gLamp)"/>
+      <!-- moonbeam -->
+      <path id="beam" d="M120 760L400 760L900 1040L460 1040Z" fill="url(#gBeam)"/>
+      <!-- bed -->
+      <rect id="hboard" x="138" y="845" width="42" height="305" rx="14"/>
+      <rect id="fboard" x="888" y="938" width="32" height="212" rx="10"/>
+      <rect id="bframe" x="150" y="1048" width="760" height="54" rx="12"/>
+      <rect id="matt" x="150" y="990" width="760" height="66" rx="22"/>
+      <ellipse id="pillow" cx="246" cy="976" rx="84" ry="28"/>
+      <!-- cross-section backdrop (lock / wake) -->
+      <g id="bp" opacity="0">
+        <rect x="-1500" y="-1500" width="4100" height="4850" fill="#0D1A36"/>
+        <rect id="bpgrid" x="-1500" y="-1500" width="4100" height="4850" fill="url(#pGrid)"/>
+        <path d="M150 1000H910" stroke="#4F7DC0" stroke-width="6" stroke-dasharray="20 14" fill="none"/>
+      </g>
+      <!-- the sleeper -->
+      <g id="person">
+        <ellipse id="neck" cx="330" cy="964" rx="42" ry="28"/>
+        <path id="blanket" stroke-width="6"/>
+        <circle id="head" cx="270" cy="930" r="48" stroke-width="6"/>
+        <path id="nose" d="M286 886L306 876L302 898Z"/>
+        <path id="arm" fill="none" stroke-width="26" stroke-linecap="round"/>
+        <g id="handG"><circle id="hand" cx="578" cy="958" r="17"/>
+          <path id="fingers" d="M588 950L610 942M591 958L614 954M588 966L609 967" stroke-width="9" stroke-linecap="round" fill="none"/></g>
+        <path id="rim" fill="none" stroke="#A9BEFF" stroke-width="4" stroke-linecap="round"/>
+        <g id="brainG" opacity="0">
+          <circle id="brainGlow" cx="268" cy="924" r="120" fill="url(#gBrain)"/>
+          <path id="brain" d="M236 930C226 912 244 896 262 900C270 888 292 890 298 904C312 906 314 926 302 934C298 948 276 950 266 944C254 952 236 946 236 930Z" stroke="#10304F" stroke-width="4"/>
+          <path d="M252 912C262 918 258 930 270 930M282 902C280 914 292 920 290 932M248 936C258 934 262 942 274 940" stroke="#10304F" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <g id="eyeG"><ellipse id="eyeGlow" cx="287" cy="904" rx="24" ry="17" fill="#EAF6FF" filter="url(#fb5)"/>
+          <ellipse id="eye" cx="287" cy="904" rx="13" ry="8" fill="#F4FBFF"/><circle id="pupil" cx="289" cy="902" r="4" fill="#10080A"/></g>
+      </g>
+      <!-- nerve signals brain -> body -->
+      <g id="nerves" opacity="0">
+        <path id="nv" d="M290 944C320 966 360 978 440 980S640 986 760 982S860 976 884 972" stroke="#2C5C99" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path id="nva" d="M372 972Q470 990 572 962" stroke="#2C5C99" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path id="nvp" d="M290 944C320 966 360 978 440 980S640 986 760 982S860 976 884 972" stroke="#8FE6FF" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="26 70"/>
+        <path id="nvpa" d="M372 972Q470 990 572 962" stroke="#8FE6FF" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="22 60"/>
+      </g>
+      <!-- lock: band over the body + padlock -->
+      <g id="lockG" opacity="0">
+        <rect id="lockBand" x="318" y="922" width="596" height="86" rx="43" fill="#FF4D5E" fill-opacity=".16" stroke="#FF4D5E" stroke-width="7" stroke-dasharray="26 14"/>
+        <circle id="lockRing" cx="600" cy="860" r="40" fill="none" stroke="#FFD23F" stroke-width="8"/>
+        <g id="padlock"><path id="shackle" d="M-22 -8V-30A22 22 0 0 1 22 -30V-8" stroke="#E8ECFA" stroke-width="11" fill="none" stroke-linecap="round"/>
+          <rect x="-36" y="-10" width="72" height="58" rx="12" fill="#FF4D5E" stroke="#10080A" stroke-width="6"/>
+          <circle cx="0" cy="13" r="7" fill="#10080A"/><path d="M0 16V30" stroke="#10080A" stroke-width="6" stroke-linecap="round"/></g>
+      </g>
+      <!-- strain marks by the hand (frozen / stuck) -->
+      <g id="strain" opacity="0" stroke="#FFD23F" stroke-width="5" stroke-linecap="round" fill="none">
+        <path d="M622 930Q630 922 640 924"/><path d="M628 952Q640 950 648 956"/><path d="M618 978Q628 984 638 982"/></g>
+      <!-- dream bubble (becomes the shadow) -->
+      <g id="dream" opacity="0" transform="translate(0 -34)">
+        <circle id="db1" cx="318" cy="872" r="10" fill="#2B4C8C" stroke="#9FD3FF" stroke-width="5"/>
+        <circle id="db2" cx="352" cy="826" r="17" fill="#2B4C8C" stroke="#9FD3FF" stroke-width="5"/>
+        <circle id="db3" cx="400" cy="772" r="26" fill="#2B4C8C" stroke="#9FD3FF" stroke-width="6"/>
+        <circle id="bub" cx="560" cy="690" r="150" fill="#2B4C8C" stroke="#9FD3FF" stroke-width="8"/>
+        <g clip-path="url(#cpBub)">
+          <g id="spd" stroke="#9FD3FF" stroke-width="7" stroke-linecap="round" opacity=".7"></g>
+          <path d="M400 752H720" stroke="#9FD3FF" stroke-width="6" opacity=".6"/>
+          <g id="runner" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <circle id="rh" cx="572" cy="626" r="16" fill="#fff" stroke="none"/>
+            <path id="rbody"/><path id="rlegs"/><path id="rarms"/></g>
+        </g>
+      </g>
+      <g id="shadowGl" opacity="0" filter="url(#fb24)"></g><g id="shadowG" opacity="0" filter="url(#fb24)"></g>
+    </g>
+   </svg>
+   <div id="vig"></div>
+  </div>
+
+  <!-- the belief: Fuseli, The Nightmare (1781, public domain) -->
+  <div class="sc" id="sh-belief"><div class="fw" id="fw-belief"><img class="fill" src="assets/belief-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-belief"><img data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:-0.15,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0,&quot;shadows&quot;:0,&quot;whites&quot;:0,&quot;blacks&quot;:0,&quot;temperature&quot;:-0.12,&quot;tint&quot;:0,&quot;vibrance&quot;:0,&quot;saturation&quot;:-0.1},&quot;details&quot;:{&quot;vignette&quot;:0.2,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0.35,&quot;grainSize&quot;:0.3,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" class="band" id="belief-band" src="assets/belief-crop.jpg" style="top:190px;height:978px" alt=""/></div>
+    <div class="full" style="background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 50%,rgba(3,2,10,.6) 100%)"></div></div>
+
+  <!-- risk factors + doctor: one badge that morphs -->
+  <div class="sc" id="sc-icons"><div class="ibg"></div>
+   <svg class="full" viewBox="0 0 1080 1920" width="1080" height="1920">
+    <g id="idots"></g>
+    <g id="icam">
+      <g id="iprog"><circle cx="490" cy="1050" r="15"/><circle cx="540" cy="1050" r="15"/><circle cx="590" cy="1050" r="15"/></g>
+      <path id="iarr" d="M540 432V500M512 474L540 504L568 474" stroke="#FFD23F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"/>
+      <rect id="badge" stroke="#10080A" stroke-width="12"/>
+      <g id="icClock">
+        <circle cx="540" cy="760" r="160" fill="#fff" stroke="#10080A" stroke-width="12"/>
+        <g id="cticks" stroke="#10080A" stroke-width="10" stroke-linecap="round"></g>
+        <path id="cmin" stroke="#10080A" stroke-width="14" stroke-linecap="round"/>
+        <path id="chr" stroke="#E0473C" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="540" cy="760" r="14" fill="#10080A"/>
+      </g>
+      <g id="icHead">
+        <circle cx="540" cy="790" r="128" fill="#fff" stroke="#10080A" stroke-width="12"/>
+        <path d="M478 750L520 766M602 750L560 766" stroke="#10080A" stroke-width="12" stroke-linecap="round"/>
+        <circle cx="500" cy="790" r="11" fill="#10080A"/><circle cx="580" cy="790" r="11" fill="#10080A"/>
+        <path id="hmouth" stroke="#10080A" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path id="bolt" d="M640 540L590 640L632 640L596 730L690 612L646 612L684 540Z" fill="#FFD23F" stroke="#10080A" stroke-width="10" stroke-linejoin="round"/>
+      </g>
+      <g id="icBed">
+        <rect x="372" y="672" width="26" height="200" rx="10" fill="#fff" stroke="#10080A" stroke-width="8"/>
+        <rect x="380" y="820" width="330" height="40" rx="14" fill="#fff" stroke="#10080A" stroke-width="8"/>
+        <path d="M700 820V890M390 860V890" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+        <g id="lyp"><circle cx="440" cy="770" r="38" fill="#fff" stroke="#10080A" stroke-width="8"/>
+          <path d="M452 734L466 716L472 740" fill="#fff" stroke="#10080A" stroke-width="7" stroke-linejoin="round"/>
+          <rect x="484" y="770" width="220" height="48" rx="24" fill="#fff" stroke="#10080A" stroke-width="8"/></g>
+        <path id="uparr" d="M440 690V630M418 652L440 628L462 652" stroke="#FFD23F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+      <g id="icDoc">
+        <path d="M400 960C400 860 460 830 540 830C620 830 680 860 680 960Z" fill="#fff" stroke="#10080A" stroke-width="12"/>
+        <circle cx="540" cy="700" r="88" fill="#fff" stroke="#10080A" stroke-width="12"/>
+        <path d="M488 840C476 900 500 930 540 930C580 930 604 900 592 840" stroke="#10080A" stroke-width="10" fill="none"/>
+        <circle cx="540" cy="930" r="15" fill="#3FA9F5" stroke="#10080A" stroke-width="7"/>
+        <g id="dcross"><circle cx="672" cy="602" r="58" fill="#fff" stroke="#10080A" stroke-width="10"/>
+          <path d="M672 574V630M644 602H700" stroke="#E0473C" stroke-width="20" stroke-linecap="round"/></g>
+      </g>
+    </g>
+   </svg>
+  </div>
+  <div id="flash"></div>
+</div>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
+  <div class="pill" id="chip"><span id="chip1">ความเชื่อ</span><span id="chip2">ความจริง</span></div>
+  <div class="pill" id="ihead"><span id="ih1">มักเกิดตอน</span><span id="ih2">เป็นบ่อยมาก</span></div>
+  <div class="pill" id="ilab"><span id="il0">อดนอน</span><span id="il1">เครียด</span><span id="il2">นอนหงาย</span><span id="il3">ปรึกษาแพทย์</span></div>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0">ฝัน</div><div class="arw" id="ar0"></div><div class="st" id="st1">ล็อก</div><div class="arw" id="ar1"></div><div class="st" id="st2">ตื่น</div>
+  </div>
+  <svg id="bubble" viewBox="0 0 760 520"><path d="M60 16h640a44 44 0 0 1 44 44v300a44 44 0 0 1-44 44H260l-110 96v-96H60a44 44 0 0 1-44-44V60a44 44 0 0 1 44-44Z" fill="#fff" stroke="#10080A" stroke-width="16" stroke-linejoin="round"/>
+    <text id="bq1" x="380" y="178" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="104" fill="#7B5CFF" stroke="#10080A" stroke-width="9" paint-order="stroke">เคยโดนไหม?</text>
+    <text id="bq2" x="380" y="318" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="104" fill="#FFB400" stroke="#10080A" stroke-width="9" paint-order="stroke">เห็นอะไร?</text></svg>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1">ผีอำ =</div><div class="tl" id="tl2">ผีจริงไหม?</div></div>
+  <div class="tag" id="tag">รู้ไหม?</div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="0.0" data-duration="0.78" data-track-index="20"><span style="font-size:86px">ตื่นกลางดึก</span></div>
+  <div id="c1" class="clip cap" data-start="0.78" data-duration="0.86" data-track-index="20"><span style="font-size:96px">ลืมตาได้</span></div>
+  <div id="c2" class="clip cap" data-start="1.64" data-duration="1.12" data-track-index="20"><span style="font-size:78px">แต่ขยับไม่ได้เลย</span></div>
+  <div id="c3" class="clip cap" data-start="2.76" data-duration="0.56" data-track-index="20"><span style="font-size:86px">คนไทยเรียก</span></div>
+  <div id="c4" class="clip cap" data-start="3.32" data-duration="0.56" data-track-index="20"><span style="font-size:96px"><em>ผีอำ</em></span></div>
+  <div id="c5" class="clip cap" data-start="3.88" data-duration="1.06" data-track-index="20"><span style="font-size:78px">แต่ความจริงคือ</span></div>
+  <div id="c6" class="clip cap" data-start="4.94" data-duration="1.12" data-track-index="20"><span style="font-size:78px"><em>สมองตื่นก่อน</em>ร่างกาย</span></div>
+  <div id="c7" class="clip cap" data-start="6.06" data-duration="0.72" data-track-index="20"><span style="font-size:96px">ตอนฝัน</span></div>
+  <div id="c8" class="clip cap" data-start="6.78" data-duration="0.44" data-track-index="20"><span style="font-size:96px">สมอง<em>ล็อก</em></span></div>
+  <div id="c9" class="clip cap" data-start="7.22" data-duration="0.8" data-track-index="20"><span style="font-size:86px">กล้ามเนื้อไว้</span></div>
+  <div id="c10" class="clip cap" data-start="8.02" data-duration="0.7" data-track-index="20"><span style="font-size:86px">ไม่ให้เราขยับ</span></div>
+  <div id="c11" class="clip cap" data-start="8.72" data-duration="0.7" data-track-index="20"><span style="font-size:96px">ตามฝัน</span></div>
+  <div id="c12" class="clip cap" data-start="9.42" data-duration="0.94" data-track-index="20"><span style="font-size:78px">ถ้าตื่นช่วงนี้</span></div>
+  <div id="c13" class="clip cap" data-start="10.36" data-duration="0.98" data-track-index="20"><span style="font-size:86px">เลยขยับไม่ได้</span></div>
+  <div id="c14" class="clip cap" data-start="11.34" data-duration="0.82" data-track-index="20"><span style="font-size:86px">แถมยัง<em>ฝันค้าง</em></span></div>
+  <div id="c15" class="clip cap" data-start="12.16" data-duration="0.66" data-track-index="20"><span style="font-size:96px">เห็นเงา</span></div>
+  <div id="c16" class="clip cap" data-start="12.82" data-duration="0.94" data-track-index="20"><span style="font-size:78px">รู้สึกถูกทับอก</span></div>
+  <div id="c17" class="clip cap" data-start="13.76" data-duration="0.52" data-track-index="20"><span style="font-size:86px">มักเกิดตอน</span></div>
+  <div id="c18" class="clip cap" data-start="14.28" data-duration="0.42" data-track-index="20"><span style="font-size:96px">อดนอน</span></div>
+  <div id="c19" class="clip cap" data-start="14.7" data-duration="0.44" data-track-index="20"><span style="font-size:96px">เครียด</span></div>
+  <div id="c20" class="clip cap" data-start="15.14" data-duration="0.88" data-track-index="20"><span style="font-size:86px">หรือนอนหงาย</span></div>
+  <div id="c21" class="clip cap" data-start="16.02" data-duration="0.74" data-track-index="20"><span style="font-size:78px">ถ้าเป็นบ่อยมาก</span></div>
+  <div id="c22" class="clip cap" data-start="16.76" data-duration="0.92" data-track-index="20"><span style="font-size:86px"><em>ปรึกษาแพทย์</em>นะ</span></div>
+  <div id="c23" class="clip cap" data-start="17.68" data-duration="0.74" data-track-index="20"><span style="font-size:86px">คุณเคยโดนไหม</span></div>
+  <div id="c24" class="clip cap" data-start="18.42" data-duration="0.597" data-track-index="20"><span style="font-size:96px">เห็นอะไร?</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="19.017" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="19.017" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-165c7963.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine). One bedroom drawn once; the camera, the lighting and a
+   cross-section mode morph it through the whole clip (hook -> frozen -> truth -> lock -> wake -> shadow -> ask).
+   Shot times = assets/audio/shots-th.json, word anchors = words.json (both injected by build_index.py). */
+(function(){
+const D={"dur": 19.017, "capt": [0.0, 0.78, 1.64, 2.76, 3.32, 3.88, 4.94, 6.06, 6.78, 7.22, 8.02, 8.72, 9.42, 10.36, 11.34, 12.16, 12.82, 13.76, 14.28, 14.7, 15.14, 16.02, 16.76, 17.68, 18.42], "k": {"open": 0.78, "move1": 1.8, "thai": 2.76, "ghost": 3.32, "truth": 3.88, "brain": 4.94, "body": 5.7, "dream": 6.06, "lock": 7.06, "muscle": 7.22, "nomove": 8.02, "follow": 8.72, "wake": 9.56, "stuck": 10.54, "residue": 11.74, "shadow": 12.16, "feel": 12.82, "chest": 13.3, "often": 13.76, "nosleep": 14.28, "stress": 14.7, "supine": 15.3, "ifoften": 16.02, "doctor": 16.76, "ask": 17.68, "what": 18.42}, "sh": {"hook": {"start": 0.0, "end": 1.72, "word": 0.0, "hit": null}, "frozen": {"start": 1.72, "end": 2.68, "word": 1.8, "hit": null}, "belief": {"start": 2.68, "end": 3.8, "word": 2.76, "hit": null}, "truth": {"start": 3.8, "end": 5.98, "word": 3.88, "hit": null}, "lock": {"start": 5.98, "end": 9.34, "word": 6.06, "hit": 7.06}, "wake": {"start": 9.34, "end": 12.08, "word": 9.42, "hit": null}, "shadow": {"start": 12.08, "end": 13.68, "word": 12.16, "hit": 13.3}, "risk": {"start": 13.68, "end": 15.94, "word": 13.76, "hit": null}, "doctor": {"start": 15.94, "end": 17.6, "word": 16.02, "hit": null}, "ask": {"start": 17.6, "end": 19.017, "word": 17.68, "hit": null}}, "hb": [0.05, 0.82, 1.52, 2.16, 2.74, 3.28, 12.22, 12.76, 13.3]}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh, HB=D.hb;
+const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],CAM=[7.5,1],CAMF=[13,1],DRIFT=[2.6,1],NOW=[400,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14,bl=o.blur??10;
+  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl,a,b};};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const A=(id,k,v)=>$(id).setAttribute(k,v);
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const blur=(e,b)=>{e.style.filter=b>0.05?`blur(${b.toFixed(2)}px)`:'none';};
+const f2=v=>v.toFixed(2);
+const pulse=(t,t0,d=0.3)=>(t>t0&&t<t0+d)?Math.sin(Math.PI*(t-t0)/d):0;
+
+// heartbeat envelope (lub + dub), same times as the synthesized-from-recording heartbeat stem
+const heart=t=>{let v=0;for(const b of HB){const a=t-b, c=t-b-0.24; if(a>0&&a<0.6)v+=Math.exp(-a*11); if(c>0&&c<0.6)v+=0.6*Math.exp(-c*13);}return clamp(v,0,1.3);};
+
+// ---------- scenes (whip / zoom-through / match) ----------
+const SC=[
+ {id:'sc-world',a:0,b:T.belief,in:'none'},
+ {id:'sh-belief',a:T.belief,b:T.truth,in:'whip'},
+ {id:'sc-world',a:T.truth,b:T.lock,in:'match'},
+ {id:'sc-world',a:T.lock,b:T.risk,in:'zoom'},
+ {id:'sc-icons',a:T.risk,b:T.ask,in:'whip'},
+ {id:'sc-world',a:T.ask,b:DUR+1,in:'zoom'},
+];
+SC.forEach((s,i)=>{s.next=SC[i+1];});
+const WHIP=0.16, ZIN=0.22;
+function sceneState(s,t){
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
+  if(s.in==='whip'){ tx=1080*(1-eo(u/WHIP)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.35*(1-S(u,16,0.9)); }
+  else if(s.in==='match'){ o=eio(u/0.1); sc=1+0.05*(1-eo(u/0.3)); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+WHIP)return null; if(t>=end) tx=-1080*eo((t-end)/WHIP); }
+    else if(nx.in==='zoom'){ if(t>=end+0.1)return null; const z=(t-(end-ZIN))/ZIN; if(z>0) sc*=1+1.6*ei(z); }
+    else { if(t>=end+0.12)return null; }
+  }
+  return {o,tx,sc};
+}
+const SCIDS=[...new Set(SC.map(s=>s.id))];
+function scenes(t){
+  const st={};
+  SC.forEach((s,i)=>{const r=sceneState(s,t); if(r)st[s.id]={r,s,i};});
+  for(const id of SCIDS) if(!st[id]) $(id).style.opacity='0';
+  for(const id in st){const {r,i}=st[id]; const e=$(id);
+    e.style.zIndex=String(i+1); e.style.opacity=r.o.toFixed(4);
+    e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;}
+  // belief still: band pan across the bed (never into the figure's face) + rotate drift; blurred fill on a slower parallax layer
+  if(st['sh-belief']){ const uu=clamp((t-T.belief)/(T.truth-T.belief));
+    const k=lerp(1.06,1.14,eio(0.1+0.9*uu)), rr=lerp(-1.2,0.8,uu);
+    $('kb-belief').style.transformOrigin='58% 62%';
+    $('kb-belief').style.transform=`translate(${f2(lerp(46,-46,eio(uu))+6*Math.sin(t*1.7))}px,${f2(5*Math.cos(t*1.3))}px) rotate(${f2(rr)}deg) scale(${k.toFixed(5)})`;
+    $('fw-belief').style.transform=`translate(${f2(lerp(-30,30,uu))}px,${f2(-10*Math.cos(t*0.7))}px) scale(${(1.14+0.05*uu).toFixed(4)})`; }
+  // zoom-through flash into the head (truth -> lock)
+  const fl=t>T.lock-0.08&&t<T.lock+0.25?(t<T.lock?eo((t-T.lock+0.08)/0.08):1-eo((t-T.lock)/0.25)):0;
+  show($('flash'),0.75*fl);
+}
+
+// ---------- world state: light (night -> lamp on -> night), cross-section mode, camera ----------
+const light=track(0,[[K.truth,1,[5,1]],[T.shadow,0,FAST],[T.ask,0]]);
+const xmode=t=>(t>=T.lock&&t<T.shadow)?1:(t>=T.shadow&&t<T.shadow+0.14?1-eio((t-T.shadow)/0.14):0);
+const xray=track(0,[[K.brain,1,FAST],[T.shadow,0.55,FAST],[T.risk,0,NOW]]);
+const brainLv=track(0,[[K.brain,0.65,FAST],[K.wake,1.15,BOUNCE],[T.shadow,0.75,FAST],[T.ask,0.35,NOW]]);
+// camera: focal point (world) -> screen (540,830), scale
+const cfx=track(470,[[0,420,DRIFT],[T.frozen,560,CAMF],[3.05,500,NOW],[T.truth+0.05,470,SLOW],[K.brain,272,CAM],[T.lock,540,NOW],[K.dream,540,CAM],[K.lock,548,CAMF],[K.nomove,540,CAM],[T.wake,440,CAM],[K.residue,500,CAM],[T.shadow,540,CAMF],[K.feel,450,CAM],[17.0,470,NOW],[T.ask+0.05,430,[3,1]]]);
+const cfy=track(905,[[0,915,DRIFT],[T.frozen,950,CAMF],[3.05,930,NOW],[T.truth+0.05,925,SLOW],[K.brain,922,CAM],[T.lock,860,NOW],[K.dream,835,CAM],[K.lock,865,CAMF],[K.nomove,840,CAM],[T.wake,860,CAM],[K.residue,830,CAM],[T.shadow,860,CAMF],[K.feel,915,CAM],[17.0,905,NOW],[T.ask+0.05,915,[3,1]]]);
+const cs=track(1.3,[[0,1.42,DRIFT],[T.frozen,2.3,CAMF],[3.05,1.0,NOW],[T.truth+0.05,1.1,SLOW],[K.brain,2.5,CAM],[T.lock,1.32,NOW],[K.dream,1.38,CAM],[K.lock,1.55,CAMF],[K.nomove,1.42,CAM],[T.wake,1.6,CAM],[K.residue,1.45,CAM],[T.shadow,1.22,CAMF],[K.feel,1.55,CAM],[17.0,1.3,NOW],[T.ask+0.05,1.42,[3,1]]]);
+const HOOKHIT=0.5; // first visible change < 1 s: the fingers twitch, camera kicks in
+
+function world(t){
+  const L=light(t), X=xmode(t), hb=heart(t);
+  // camera with punch-ins on the hits, heartbeat thump and a slow drift
+  let s=cs(t)*(1+0.05*S(t-HOOKHIT,22,0.45)*Math.exp(-2.5*Math.max(0,t-HOOKHIT)))
+        *(1+0.08*(t>H.lock?S(t-H.lock,20,0.5)*Math.exp(-3*(t-H.lock)):0))
+        *(1+0.07*(t>H.shadow?S(t-H.shadow,20,0.5)*Math.exp(-3*(t-H.shadow)):0))
+        *(1+0.012*hb);
+  let fx=cfx(t)+10*Math.sin(t*0.9), fy=cfy(t)+7*Math.cos(t*0.7);
+  if(t>K.lock&&t<K.lock+0.4){const sh=Math.exp(-9*(t-K.lock)); fx+=8*sh*Math.sin((t-K.lock)*70);}
+  if(t>H.shadow&&t<H.shadow+0.4){const sh=Math.exp(-9*(t-H.shadow)); fy+=7*sh*Math.sin((t-H.shadow)*60);}
+  A('cam','transform',`translate(540 830) rotate(${f2(0.8*Math.sin(t*0.6))}) scale(${s.toFixed(4)}) translate(${f2(-fx)} ${f2(-fy)})`);
+  // room colours: night (blue/purple) <-> lamp on (warm)
+  A('wall','fill',mix('#1C1D4E','#F3E4C6',L)); A('floor','fill',mix('#0C0D27','#C99868',L));
+  A('sky','fill',mix('#26337A','#9DD8FF',L)); A('moon','fill',mix('#EEF4FF','#FFFFFF',L)); A('moon','opacity',f2(1-0.8*L));
+  A('moonGlow','opacity',f2((1-L)*(0.85+0.15*Math.sin(t*2))));
+  ['wbars','wframe','dframe'].forEach(i=>A(i,'stroke',mix('#0A0B22','#8A5A3C',L)));
+  A('doorgap','fill',mix('#04050E','#FFE6A6',L));
+  A('doorleaf','d',`M1000 497L1000 1150L${f2(912+6*Math.sin(t*0.8))} 1168L${f2(912+6*Math.sin(t*0.8))} 486Z`); A('doorleaf','fill',mix('#151640','#D9B48A',L));
+  A('clockF','fill',mix('#2A2C66','#FFFFFF',L)); A('clockF','stroke',mix('#0A0B22','#10080A',L)); A('clockH','stroke',mix('#A9BEFF','#10080A',L));
+  A('ns','fill',mix('#191A44','#9C6B47',L)); A('lampB','stroke',mix('#2A2C66','#5A3A26',L));
+  A('shade','fill',mix('#2E3070','#FFE3A0',L)); A('lampGlow','opacity',f2(L*(0.92+0.08*Math.sin(t*9))));
+  A('beam','opacity',f2((1-L)*(0.42+0.08*Math.sin(t*1.4))));
+  A('hboard','fill',mix('#24265A','#9C6B47',L)); A('fboard','fill',mix('#24265A','#9C6B47',L)); A('bframe','fill',mix('#191A44','#7E5236',L));
+  A('rug','fill',mix('#231C58','#E07A5F',L));
+  A('matt','fill',mix('#383C7E','#FFFFFF',L)); A('pillow','fill',mix('#565AA6','#FFFFFF',L));
+  // curtain sways (always moving)
+  const cw=t*1.6; let cd=`M398 462`; for(let i=0;i<=8;i++){const y=462+i*40, x=430+14*Math.sin(cw+i*0.7)+i*1.5; cd+=` L${f2(x)} ${y}`;}
+  for(let i=8;i>=0;i--){const y=462+i*40, x=380+8*Math.sin(cw+i*0.7+0.6)-i*1.2; cd+=` L${f2(x)} ${y}`;} A('curtain','d',cd+'Z'); A('curtain','fill',mix('#3A2F7A','#E07A5F',L));
+  // cross-section backdrop
+  A('bp','opacity',f2(X)); A('bpgrid','transform',`translate(${f2((t*24)%60)} 0)`);
+  // the sleeper: breathing chest, blanket dips under the shadow's weight
+  const press=t>H.shadow?S(t-H.shadow,18,0.5):0, rel=t>T.risk?1:0;
+  const br=4*Math.sin(t*2.6)+(heart(t)*2), dip=18*press*(1-rel);
+  const chestY=938+br*0.5+dip;
+  A('blanket','d',`M328 998C328 958 370 ${f2(chestY-2)} 440 ${f2(chestY)}C520 ${f2(chestY+8)} 560 960 620 958C700 955 720 936 780 940C840 945 860 924 886 934C906 944 902 990 902 998Z`);
+  const skinN='#121338', skin=mix(skinN,'#F2B896',L);
+  A('blanket','fill',X>0.5?mix('#4A4FA0','#173563',X):mix('#4A4FA0','#4FA3E8',L)); A('blanket','stroke',X>0.01?`rgba(143,230,255,${f2(X)})`:'none');
+  const red=t>K.muscle&&t<T.shadow?S(t-K.muscle,10,0.9):0;
+  if(red>0) A('blanket','fill',mix('#173563','#6A1F3A',red*0.8*X));
+  A('neck','fill',X>0.5?'#173563':skin);
+  A('head','fill',X>0.5?'#173563':mix(mix(skinN,'#F2B896',L).replace(/[^\d,]/g,'').split(',').map(v=>(+v).toString(16).padStart(2,'0')).reduce((a,b)=>a+b,'#'),'#CDEFFF',0.6*xray(t))); A('head','stroke',X>0.01?`rgba(143,230,255,${f2(X)})`:'none');
+  A('nose','fill',X>0.5?'#173563':skin);
+  // arm + hand: still body, only the fingers twitch (hook, frozen, stuck)
+  const tw=(t>HOOKHIT?Math.exp(-6*(t-HOOKHIT))*Math.sin((t-HOOKHIT)*30):0)
+          +(t>T.frozen&&t<T.belief?0.6*Math.sin(t*38)*(0.6+0.4*Math.sin(t*5)):0)
+          +(t>K.stuck&&t<K.stuck+0.9?Math.exp(-3*(t-K.stuck))*Math.sin((t-K.stuck)*34):0);
+  const curl=(t>T.frozen&&t<T.belief?-14*(0.5+0.5*Math.sin((t-T.frozen)*7)):0);
+  A('arm','d',`M352 960Q452 ${f2(990+br*0.3)} 566 960`); A('arm','stroke',X>0.5?(red>0?mix('#2C5C99','#FF4D5E',red):'#2C5C99'):skin);
+  A('hand','fill',X>0.5?(red>0?mix('#2C5C99','#FF4D5E',red):'#2C5C99'):skin); A('fingers','stroke',X>0.5?(red>0?mix('#2C5C99','#FF4D5E',red):'#2C5C99'):skin);
+  const rimC=(L<0.5&&X<0.5)?`rgba(169,190,255,${f2(0.9*(1-2*L))})`:'none'; A('hand','stroke',rimC); A('hand','stroke-width','4');
+  A('fingers','transform',`rotate(${f2(curl+9*tw)} 586 958)`);
+  A('handG','transform',`translate(${f2(1.6*tw)} ${f2(-1.2*Math.abs(tw))})`);
+  A('rim','d','M234 916A48 48 0 0 1 300 890M340 950C380 932 420 930 440 934M560 958C640 950 720 932 780 936');
+  A('rim','opacity',f2((1-L)*(1-X)*0.9));
+  // strain marks (trying to move)
+  const strainV=(t>T.frozen+0.1&&t<T.belief+0.05)?0.9:(t>K.stuck&&t<K.stuck+0.9?0.9*(1-eo((t-K.stuck-0.5)/0.4)):0);
+  A('strain','opacity',f2(strainV*(0.6+0.4*Math.sin(t*24))));
+  A('strain','transform',`translate(${f2(4*Math.sin(t*19))} 0)`);
+  // eye: wide open, glowing; widens on "ลืมตา" and on waking
+  const ew=1+0.25*S(t-K.open,16,0.6)*(t>K.open?1:0)+0.2*pulse(t,K.wake,0.5);
+  const blink=1; A('eyeG','transform',`translate(287 904) scale(${f2(ew)} ${f2(ew*blink)}) translate(-287 -904)`);
+  A('eyeGlow','opacity',f2((0.55+0.25*Math.sin(t*4))*(1-0.6*L)+0.5*pulse(t,K.wake,0.6)));
+  A('pupil','cx',f2(289+1.5*Math.sin(t*3.1))); A('pupil','cy',f2(902+(t>K.shadow&&t<T.risk?-1.5:0)));
+  // brain (x-ray in the truth shot, the hero of the cross-section)
+  const xr=Math.max(xray(t),X); A('brainG','opacity',f2(clamp(xr)));
+  const bl=brainLv(t), bp=1+0.06*Math.sin(t*7);
+  A('brain','fill',bl>0.9?mix('#8FE6FF','#FFF4C2',(bl-0.9)*4):mix('#4FA9E0','#8FE6FF',bl));
+  A('brainGlow','opacity',f2(clamp(bl)*(0.55+0.2*Math.sin(t*6))));
+  A('brainGlow','r',f2(70+60*bl*bp));
+  // nerves: pulses run brain -> body
+  A('nerves','opacity',f2(X)); const np=t>K.lock?1.9:1.2;
+  A('nvp','stroke-dashoffset',f2(-((t-T.lock)*360*np)%96)); A('nvpa','stroke-dashoffset',f2(-((t-T.lock)*300*np)%82));
+  const ncol=red>0?mix('#8FE6FF','#FF8A95',red):'#8FE6FF'; A('nvp','stroke',ncol); A('nvpa','stroke',ncol);
+  // lock: padlock springs shut on "ล็อก" (hit_at), rattles on "ขยับไม่ได้"
+  const lockIn=t>=K.dream?S(t-(H.lock-0.45),14,0.7):0;
+  A('lockG','opacity',f2(clamp(lockIn)*X));
+  const shut=t>H.lock?S(t-H.lock,22,0.45):0;
+  let rat=(t>K.stuck&&t<K.stuck+0.8)?7*Math.exp(-4*(t-K.stuck))*Math.sin((t-K.stuck)*40):0;
+  A('padlock','transform',`translate(${f2(600+rat)} ${f2(860+2*Math.sin(t*3))}) rotate(${f2(rat*1.2+(1-shut)*-8)}) scale(${f2(0.4+0.6*clamp(lockIn)+0.18*pulse(t,H.lock,0.28))})`);
+  A('shackle','transform',`translate(0 ${f2(-24*(1-shut))})`);
+  A('lockBand','transform',`translate(616 965) scale(${f2(0.2+0.8*S(t-H.lock,16,0.6)*(t>H.lock?1:0))} 1) translate(-616 -965)`);
+  A('lockBand','stroke-dashoffset',f2(-t*40)); A('lockBand','opacity',f2(t>H.lock?1:0));
+  const ru=(t-H.lock)/0.5; A('lockRing','opacity',f2(ru>0&&ru<1?(1-ru):0)); A('lockRing','r',f2(40+90*eo(ru)));
+  // dream bubble: pops out of the head on "ตอนฝัน"; inside, we run; the real body stays still
+  const dIn=t>=K.dream?S(t-K.dream,12,0.6):0;
+  const residue=t>K.residue?1:0;
+  const flick=residue?(0.75+0.25*Math.sin(t*37)*Math.sin(t*13)):1;
+  const leak=t>K.residue?eio((t-K.residue)/0.9):0; // bubble melts into the shadow
+  const dv=clamp(dIn)*X*flick*(1-0.0*leak);
+  A('dream','opacity',f2(dv));
+  ['db1','db2','db3'].forEach((id,i)=>{const a=t>=K.dream?S(t-K.dream-i*0.06,16,0.55):0; A(id,'transform',`translate(${[318,352,400][i]} ${[872,826,772][i]}) scale(${f2(Math.max(0.01,a))}) translate(${-[318,352,400][i]} ${-[872,826,772][i]})`);});
+  const bR=150*clamp(S(t-K.dream-0.1,13,0.6)*(t>=K.dream?1:0),0.01,1.2)*(1+0.03*Math.sin(t*3))*(residue?(1+0.05*Math.sin(t*23)):1);
+  A('bub','r',f2(Math.max(1,bR))); A('cpBubC','r',f2(Math.max(1,bR-4)));
+  A('bub','fill',mix('#2B4C8C','#3A2350',leak)); A('bub','stroke',mix('#9FD3FF','#B48CFF',leak));
+  const spd=t>K.nomove?2.0:1.0, ph=(t-K.dream)*7.5*spd;
+  let sl=$('spd'); if(!sl.childNodes.length){for(let i=0;i<5;i++)el('path',{},sl);}
+  [...sl.childNodes].forEach((p,i)=>{const x=720-(((t-K.dream)*420*spd+i*97)%340); const y=600+i*30; p.setAttribute('d',`M${f2(x)} ${y}H${f2(x+40+i*8)}`);});
+  const hip=[560,690+3*Math.abs(Math.sin(ph))], sh=[566,650+3*Math.abs(Math.sin(ph))];
+  A('rh','cy',f2(626+3*Math.abs(Math.sin(ph)))); A('rh','cx','574');
+  A('rbody','d',`M${sh[0]} ${f2(sh[1])}L${hip[0]} ${f2(hip[1])}`);
+  const leg=(a)=>{const k=[hip[0]+26*Math.sin(a),hip[1]+28*Math.cos(a)*0.5+24], f=[k[0]+22*Math.sin(a-0.9)-6,k[1]+30];return `M${hip[0]} ${f2(hip[1])}L${f2(k[0])} ${f2(k[1])}L${f2(f[0])} ${f2(f[1])}`;};
+  A('rlegs','d',leg(Math.sin(ph)*1.1)+leg(-Math.sin(ph)*1.1));
+  const arm=(a)=>`M${sh[0]} ${f2(sh[1]+4)}L${f2(sh[0]+24*Math.sin(a))} ${f2(sh[1]+22)}L${f2(sh[0]+24*Math.sin(a)+16)} ${f2(sh[1]+6)}`;
+  A('rarms','d',arm(-Math.sin(ph)*1.2)+arm(Math.sin(ph)*1.2));
+  // shadow: the dream leaks out as soft faceless mist, drifts onto the chest and presses on "ทับอก"
+  const sgl=$('shadowGl'); if(!sgl.childNodes.length){[0,1,2].forEach(i=>el('ellipse',{fill:'#6E4BC8'},sgl));}
+  const sg=$('shadowG'); if(!sg.childNodes.length){[[0,0,95,72],[-70,22,62,50],[70,12,72,56],[-24,-56,64,52],[34,48,84,40],[4,-12,56,62]].forEach(b=>el('ellipse',{fill:'#020107','data-b':b.join(',')},sg));}
+  const shV=t<K.residue?0:(t<T.risk?clamp((t-K.residue)/0.6)*(0.55+0.4*clamp((t-T.shadow)/0.4)):0);
+  const toChest=t>K.feel?S(t-K.feel,6,0.9):0;
+  const scx=lerp(560,452,toChest)+18*Math.sin(t*1.3), scy=lerp(656,880,toChest)+12*Math.cos(t*1.1)+22*press;
+  const sqx=1+0.22*press, sqy=1-0.3*press;
+  A('shadowG','opacity',f2(shV*(t>T.shadow?1:0.6)*(0.92+0.08*Math.sin(t*5))));
+  A('shadowGl','opacity',f2(0.5*shV*(t>T.shadow?1:0.5)));
+  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(scx+[0,-40,40][i]*sqx)); e.setAttribute('cy',f2(scy+[-6,20,14][i]*sqy)); e.setAttribute('rx',f2((150-i*20)*sqx*(1+0.06*Math.sin(t*2+i)))); e.setAttribute('ry',f2((110-i*15)*sqy));});
+  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number);
+    e.setAttribute('cx',f2(scx+b[0]*sqx*(1+0.08*Math.sin(t*2+i))+6*Math.sin(t*1.7+i)));
+    e.setAttribute('cy',f2(scy+b[1]*sqy+6*Math.cos(t*1.5+i*2)));
+    e.setAttribute('rx',f2(b[2]*sqx*(1+0.1*Math.sin(t*2.3+i)))); e.setAttribute('ry',f2(b[3]*sqy*(1+0.1*Math.cos(t*2.1+i))));});
+  // vignette breathes with the heartbeat (dark shots), opens up when the lights come on
+  const vb=(1-L)*(1-X*0.6);
+  $('vig').style.opacity=clamp(vb*(0.62+0.38*hb)+(t>T.frozen&&t<T.belief?0.15:0)).toFixed(3);
+  $('vig').style.transform=`scale(${(1.06-0.06*hb-0.02*Math.sin(t*2.6)).toFixed(4)})`;
+}
+
+// ---------- hook title: on screen from frame 0, breathes 1.0 <-> 1.04 ----------
+(function(){ $('tl1').style.cssText+='top:235px;font-size:190px;color:#fff'; $('tl2').style.cssText+='top:445px;font-size:158px;color:#FFD23F'; })();
+function title(t){
+  const out=eo((t-(T.frozen-0.06))/0.14);
+  const o=1-out; show($('title'),o); show($('tshade'),o); show($('tag'),o);
+  if(o<0.003)return;
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), hb=1+0.03*heart(t);
+  const kick=1+0.05*(t>HOOKHIT?Math.exp(-7*(t-HOOKHIT))*Math.sin((t-HOOKHIT)*14):0);
+  ['tl1','tl2'].forEach((id,i)=>{
+    $(id).style.transform=`translateY(${f2(4*Math.sin(t*3+i)-40*out)}px) rotate(${f2(i?-1.5*Math.sin(t*2.4):0)}deg) scale(${(br*hb*kick*(1+0.3*out)).toFixed(4)})`;
+    $(id).style.textShadow=`${f2(8*Math.sin(t*2.2+i))}px ${f2(12+5*Math.cos(t*1.8))}px 0 rgba(0,0,0,.5)`;});
+  const tg=$('tag'); const tw=tg.offsetWidth||300;
+  tg.style.transform=`translate(${f2(540-tw/2)}px,${f2(118)}px) rotate(${f2(-4+1.2*Math.sin(t*3))}deg) scale(${(1+0.03*Math.sin(t*5)).toFixed(4)})`;
+}
+
+// ---------- pills: one shape that morphs its colour/width while the text swaps with a short blur ----------
+function pill(e,x,y,w,bg,o,rot){ if(!show(e,o))return false; e.style.width=f2(w)+'px'; e.style.background=bg;
+  e.style.transform=`translate(${f2(x-w/2)}px,${f2(y)}px) rotate(${f2(rot||0)}deg)`; return true;}
+function txt(ids,times,t){ ids.forEach((id,i)=>{const a=times[i], b=times[i+1]; const v=vis(t,i===0?null:a,b==null?null:b,{lin:0.16,lout:0.1,blur:8});
+  const e=$(id); e.style.opacity=v.o.toFixed(3); blur(e,v.blur); e.style.transform=`translate(-50%,${f2(-55+30*(1-v.a)-30*v.b)}%)`;});}
+const chipW=track(330,[[K.truth,330]]), chipC=track(0,[[K.truth,1,MORPH]]);
+function chips(t){
+  // belief -> truth chip (Fuseli shot -> lights on)
+  const v=vis(t,K.thai,K.brain,{lin:0.16,lout:0.14});
+  if(t>=T.belief-0.02&&t<T.lock){ const c=chipC(t);
+    if(pill($('chip'),540,lerp(150,250,c)+3*Math.sin(t*3),chipW(t)+20*pulse(t,K.truth,0.3),mix('#E0473C','#2DBE60',c),v.o,-3+2*Math.sin(t*2.5))){
+      $('chip').style.transform+=` scale(${(0.6+0.4*clamp(v.a)+0.1*pulse(t,K.truth,0.3)).toFixed(3)})`; blur($('chip'),v.blur);
+      txt(['chip1','chip2'],[K.thai,K.truth],t); $('chip1').style.color='#fff'; $('chip2').style.color='#fff'; }
+  } else $('chip').style.opacity='0';
+  // icon scene heading + label
+  if(t>=T.risk-0.02&&t<T.ask+0.1){
+    const hv=vis(t,K.often,T.ask,{lin:0.16,lout:0.1}), dc=t>K.ifoften?S(t-K.ifoften,15,0.84):0;
+    if(pill($('ihead'),540,330+4*Math.sin(t*2.6),lerp(400,450,dc),mix('#FFFFFF','#FFD23F',dc),hv.o,-2+1.5*Math.sin(t*2))){
+      $('ihead').style.transform+=` scale(${(0.5+0.5*clamp(S(t-K.often,14,0.6))).toFixed(3)})`;
+      txt(['ih1','ih2'],[K.often,K.ifoften],t); $('ih1').style.color='#10080A'; $('ih2').style.color='#10080A'; }
+    const lt=[K.nosleep,K.stress,K.supine,K.doctor];
+    const lv=vis(t,K.ifoften,T.ask,{lin:0.14,lout:0.1}); let cur=0; lt.forEach((x,i)=>{if(t>=x)cur=i;});
+    const LW=[300,280,340,420], LC=['#3FA9F5','#E0473C','#7B5CFF','#2DBE60'];
+    const w=LW[3];
+    if(pill($('ilab'),540,1010+4*Math.sin(t*3),w+30*pulse(t,K.doctor,0.3),LC[3],lv.o,1.5*Math.sin(t*2.2))){
+      $('ilab').style.transform+=` scale(${(0.5+0.5*clamp(S(t-K.ifoften,14,0.6))).toFixed(3)})`; blur($('ilab'),lv.blur);
+      ['il0','il1','il2'].forEach(i=>$(i).style.display='none'); $('il3').style.opacity='1'; $('il3').style.filter='none'; ['il0','il1','il2','il3'].forEach(i=>$(i).style.color='#fff'); }
+  } else { $('ihead').style.opacity='0'; $('ilab').style.opacity='0'; }
+}
+
+// ---------- icon badge: clock (3 a.m.) -> stressed head -> lying on the back -> doctor ----------
+const ICT=[K.nosleep,K.stress,K.supine,K.ifoften];
+(function(){ const g=$('cticks'); for(let i=0;i<12;i++){const a=i/12*Math.PI*2; el('path',{d:`M${f2(540+Math.sin(a)*128)} ${f2(760-Math.cos(a)*128)}L${f2(540+Math.sin(a)*(i%3?140:118))} ${f2(760-Math.cos(a)*(i%3?140:118))}`},g);}
+  const d=$('idots'); for(let i=0;i<26;i++){const x=(i*397)%1080, y=180+(i*613)%1500; el('circle',{cx:x,cy:y,r:4+(i%4)*3,fill:'#8FA8FF',opacity:.22+(i%3)*.1,'data-p':`${x},${y},${i}`},d);} })();
+const bW=track(400,[[ICT[0],460],[ICT[1],470],[ICT[2],520],[ICT[3],470]]), bH=track(400,[[ICT[0],460],[ICT[1],470],[ICT[2],400],[ICT[3],470]]);
+const bR=track(200,[[ICT[0],230],[ICT[1],235],[ICT[2],120],[ICT[3],110]]);
+const bC=[ '#2E3B7A','#E0473C','#5B6CFF','#2DBE60' ];
+function icons(t){
+  if(t<T.risk-0.05||t>T.ask+0.2)return;
+  const u=t-T.risk;
+  // camera: slow push + drift; small whip of the contents on the doctor cut
+  const wd=t>T.doctor?(1-eo((t-T.doctor)/0.18)):0;
+  $('icam').setAttribute('transform',`translate(${f2(540+wd*-260)} 760) rotate(${f2(1.2*Math.sin(t*1.4))}) scale(${(1.0+0.05*eio(u/2.2)+0.04*eio((t-T.doctor)/1.6)).toFixed(4)}) translate(-540 -760)`);
+  [...$('idots').childNodes].forEach(c=>{const p=c.getAttribute('data-p').split(',').map(Number); c.setAttribute('cy',f2(((p[1]-u*(40+p[2]*3))%1700+1700)%1700+100)); c.setAttribute('cx',f2(p[0]+10*Math.sin(t+p[2])));});
+  let cur=0; ICT.forEach((x,i)=>{if(t>=x)cur=i;});
+  const col=track(0,[[ICT[1],1],[ICT[2],2],[ICT[3],3]])(t); const ci=Math.min(2,Math.floor(col)), cf=col-ci;
+  const w=bW(t), h=bH(t), r=bR(t)*(1+0.0), pz=1+0.08*pulse(t,ICT[cur],0.3)+0.015*Math.sin(t*3);
+  const bd=$('badge'); bd.setAttribute('x',f2(540-w*pz/2)); bd.setAttribute('y',f2(760-h*pz/2)); bd.setAttribute('width',f2(w*pz)); bd.setAttribute('height',f2(h*pz));
+  bd.setAttribute('rx',f2(Math.min(r,w/2))); bd.setAttribute('fill',mix(bC[ci],bC[Math.min(3,ci+1)],cf));
+  // contents swap with a short blur
+  ['icClock','icHead','icBed','icDoc'].forEach((id,i)=>{const a=i===0?null:ICT[i], b=ICT[i+1]; const v=vis(t,a,b==null?null:b,{lin:0.16,lout:0.1,blur:12});
+    const e=$(id); e.style.opacity=v.o.toFixed(3); e.style.filter=v.blur>0.05?`blur(${v.blur.toFixed(2)}px)`:'none';
+    const sc=0.7+0.3*clamp(i===0?S(u,14,0.6):S(t-ICT[i],14,0.6));
+    e.setAttribute('transform',`translate(540 760) scale(${sc.toFixed(4)}) translate(-540 -760)`);});
+  [...$('iprog').childNodes].filter(n=>n.nodeType===1).forEach((c,i)=>{const on=t>=ICT[i]; c.setAttribute('fill',on?'#FFD23F':'rgba(255,255,255,.25)'); c.setAttribute('stroke','#10080A'); c.setAttribute('stroke-width',on?'6':'0');
+    c.setAttribute('r',f2(15*(1+0.5*pulse(t,ICT[i],0.3))));});
+  A('iprog','opacity',f2(1-clamp((t-K.ifoften)/0.15)));
+  // clock spins, then ticks to 3:00 on "อดนอน"
+  const settle=t>K.nosleep?S(t-K.nosleep,16,0.5):0;
+  const mA=lerp(u*900,720,settle), hA=lerp(u*75+40,90,settle);
+  const hand=(a,l)=>`M540 760L${f2(540+Math.sin(a*Math.PI/180)*l)} ${f2(760-Math.cos(a*Math.PI/180)*l)}`;
+  A('cmin','d',hand(mA+(settle>0.99?2*Math.sin(t*12):0),112)); A('chr','d',hand(hA,78));
+  // stress: bolt jitters, mouth zigzag
+  A('bolt','transform',`translate(${f2(4*Math.sin(t*31))} ${f2(3*Math.cos(t*27))}) rotate(${f2(4*Math.sin(t*9))} 640 640)`);
+  let md='M492 862'; for(let i=1;i<=6;i++) md+=` L${492+i*16} ${f2(862+(i%2?-12:8)+3*Math.sin(t*20+i))}`; A('hmouth','d',md);
+  // lying on the back: breathing, arrow shows "face up"
+  A('lyp','transform',`translate(0 ${f2(2*Math.sin(t*3))})`); A('uparr','transform',`translate(0 ${f2(-8*Math.abs(Math.sin(t*4)))})`);
+  // doctor: cross badge bobs; arrow from "เป็นบ่อยมาก" to the doctor
+  A('dcross','transform',`translate(672 602) rotate(${f2(6*Math.sin(t*3))}) scale(${f2(1+0.12*pulse(t,K.doctor,0.35))}) translate(-672 -602)`);
+  const av=t>K.ifoften?clamp((t-K.ifoften-0.1)/0.2):0; A('iarr','opacity',f2(av)); A('iarr','transform',`translate(0 ${f2(6*Math.sin(t*6)-30)})`);
+}
+
+// ---------- step strip: ฝัน -> ล็อก -> ตื่น (bottom of the cross-section shots) ----------
+const SWD=[230,230,230], GAP=50; let sx0=36; const SX=[];
+['st0','st1','st2'].forEach((id,i)=>{const e=$(id); e.style.left=sx0+'px'; e.style.width=SWD[i]+'px'; SX.push(sx0); sx0+=SWD[i]; if(i<2){$('ar'+i).style.left=(sx0+GAP/2-8)+'px';} sx0+=GAP;});
+const STT=[K.dream,H.lock,K.wake];
+const IL=track(SX[0],[[STT[1],SX[1],SLOW],[STT[2],SX[2],SLOW]]), ILf=track(SX[0],[[STT[1],SX[1],FAST],[STT[2],SX[2],FAST]]);
+const IR=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],FAST],[STT[2],SX[2]+SWD[2],FAST]]), IRs=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],SLOW],[STT[2],SX[2]+SWD[2],SLOW]]);
+const SCOL=['#3FA9F5','#FF4D5E','#FFB400'];
+function strip(t){
+  const e=$('strip'); if(t<T.lock||t>T.risk+0.15){e.style.opacity='0';return;}
+  const v=vis(t,T.lock,T.risk,{lin:0.2,lout:0.12}); e.style.opacity=v.o.toFixed(3);
+  e.style.transform=`translateY(${f2(60*(1-S(t-T.lock,12,0.7))+3*Math.sin(t*3))}px)`;
+  const l=Math.min(IL(t),ILf(t)), r=Math.max(IR(t),IRs(t)); let cur=0; STT.forEach((s,i)=>{if(t>=s)cur=i;});
+  const ind=$('ind'); ind.style.left=f2(l)+'px'; ind.style.width=f2(Math.max(0,r-l))+'px'; ind.style.background=SCOL[cur];
+  ind.style.transform=`scaleY(${(1+0.06*Math.sin(t*8)).toFixed(3)})`;
+  for(let i=0;i<3;i++){const st=$('st'+i), on=i===cur; st.style.color=on?'#fff':(i<cur?SCOL[i]:'#7D6A8B');
+    st.style.transform=`scale(${(on?1+0.16*Math.sin(Math.PI*clamp((t-STT[i])/0.3)):1).toFixed(3)})`;}
+}
+
+// ---------- ending: back in the hook bedroom (loop) + comment bubble ----------
+function ending(t){
+  const b=$('bubble'); if(t<K.ask){ b.style.opacity='0'; return; }
+  const v=vis(t,K.ask,null,{lin:0.12}); show(b,v.o); blur(b,v.blur);
+  const a=S(t-K.ask,13,0.5);
+  b.style.transformOrigin='22% 100%';
+  b.style.transform=`translate(160px,${f2(230+12*Math.sin((t-K.ask)*6))}px) rotate(${f2(-4+3*Math.sin(t*3))}deg) scale(${(0.25+0.75*a+0.08*pulse(t,K.what,0.3)).toFixed(4)})`;
+  const q2=t>=K.what?S(t-K.what,16,0.6):0; $('bq2').setAttribute('opacity',f2(clamp(q2*1.5)));
+  $('bq2').setAttribute('transform',`translate(380 300) scale(${f2(Math.max(0.01,q2))}) translate(-380 -300)`);
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>{const c=$('c'+i);return c?c.querySelector('span'):null;});
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0||!capEls[i]) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+const THUMB=!!window.__THUMB;
+function thumb(){ // cover (video/thumb): the hook bedroom + a soft faceless mist by the foot of the bed + "ผีอำ = ผีจริง?"
+  const t=0.95; scenes(t); world(t); title(0.2);
+  $('tl2').textContent='ผีจริง?'; $('tl1').style.fontSize='205px'; $('tl2').style.fontSize='215px'; $('tl1').style.top='290px'; $('tl2').style.top='525px';
+  A('cam','transform','translate(540 1030) scale(1.5) translate(-470 -880)');
+  $('tl1').style.transform='scale(1.02)'; $('tl2').style.transform='rotate(-2deg) scale(1.04)';
+  const sg=$('shadowG'), sgl=$('shadowGl'); A('shadowG','opacity','0.9'); A('shadowGl','opacity','0.55');
+  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number); e.setAttribute('cx',f2(660+b[0]*1.1)); e.setAttribute('cy',f2(790+b[1]*1.2)); e.setAttribute('rx',f2(b[2]*1.1)); e.setAttribute('ry',f2(b[3]*1.3));});
+  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(660+[0,-40,40][i])); e.setAttribute('cy',f2(790+[-6,20,14][i])); e.setAttribute('rx',f2(160-i*20)); e.setAttribute('ry',f2(130-i*15));});
+  $('caps').style.display='none'; }
+function render(t){ if(THUMB){thumb();return;} scenes(t); world(t); title(t); chips(t); icons(t); strip(t); ending(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:19.017,duration:19.017,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

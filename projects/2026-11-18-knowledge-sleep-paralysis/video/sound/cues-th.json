@@ -1,0 +1,150 @@
+[
+ {
+  "t": 0.5,
+  "type": "hover_or_small_ui",
+  "desc": "hook: fingers twitch, camera kick",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -10
+ },
+ {
+  "t": 1.72,
+  "type": "movement",
+  "desc": "camera dives onto the stuck hand",
+  "sfx": "whoosh/fs393811.ogg",
+  "gain": -14
+ },
+ {
+  "t": 2.68,
+  "type": "scene_cut",
+  "desc": "whip-pan to The Nightmare",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 3.0,
+  "type": "build_up",
+  "desc": "riser into the lights coming on",
+  "sfx": "riser/fs867126.ogg",
+  "gain": -10,
+  "dur": 0.8
+ },
+ {
+  "t": 3.8,
+  "type": "scene_cut",
+  "desc": "match-cut back to the bedroom, lamp on",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -12
+ },
+ {
+  "t": 5.98,
+  "type": "scene_cut",
+  "desc": "zoom-through into the head",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 6.06,
+  "type": "appear",
+  "desc": "dream bubble pops out",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -10
+ },
+ {
+  "t": 7.06,
+  "type": "click",
+  "desc": "padlock snaps shut",
+  "sfx": "click/fs788933.ogg",
+  "gain": -4
+ },
+ {
+  "t": 9.56,
+  "type": "appear",
+  "desc": "brain lights up (awake)",
+  "sfx": "riser/kenney-digital-powerup1.ogg",
+  "gain": -12
+ },
+ {
+  "t": 10.54,
+  "type": "hover_or_small_ui",
+  "desc": "padlock rattles",
+  "sfx": "click/kenney-interface-select-003.ogg",
+  "gain": -8
+ },
+ {
+  "t": 12.08,
+  "type": "scene_cut",
+  "desc": "cross-section melts back into the dark room",
+  "sfx": "transition/fs-683096-woosh.ogg",
+  "gain": -15
+ },
+ {
+  "t": 13.3,
+  "type": "appear",
+  "desc": "the shadow presses on the chest",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-001.ogg",
+  "gain": -13
+ },
+ {
+  "t": 13.68,
+  "type": "scene_cut",
+  "desc": "whip-pan to the badge",
+  "sfx": "whoosh/fs810485.ogg",
+  "gain": -13
+ },
+ {
+  "t": 14.28,
+  "type": "hover_or_small_ui",
+  "desc": "clock ticks to 3:00",
+  "sfx": "tick/fs528561.ogg",
+  "gain": -6
+ },
+ {
+  "t": 14.7,
+  "type": "appear",
+  "desc": "badge morphs: stress",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -10
+ },
+ {
+  "t": 15.3,
+  "type": "appear",
+  "desc": "badge morphs: lying on the back",
+  "sfx": "pop/kenney-interface-drop-003.ogg",
+  "gain": -10
+ },
+ {
+  "t": 15.94,
+  "type": "movement",
+  "desc": "badge morphs into the doctor",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -13
+ },
+ {
+  "t": 16.76,
+  "type": "success",
+  "desc": "see a doctor",
+  "sfx": "ding/fs-571513-soft-notifications-bell-ding-d.ogg",
+  "gain": -12
+ },
+ {
+  "t": 17.6,
+  "type": "scene_cut",
+  "desc": "zoom-through back to the hook bedroom",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -13
+ },
+ {
+  "t": 17.68,
+  "type": "appear",
+  "desc": "comment bubble pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -8
+ },
+ {
+  "t": 18.42,
+  "type": "appear",
+  "desc": "second question pops",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -10
+ }
+]

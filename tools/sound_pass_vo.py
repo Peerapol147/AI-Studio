@@ -22,6 +22,7 @@ ap.add_argument('--music-source',default=None,help='where the music came from (t
 ap.add_argument('--music-license',default=None,help='the music licence the user confirmed, e.g. "Mixkit Stock Music Free License"')
 ap.add_argument('--use-case',default=None,help='where the video will be published, e.g. "YouTube and Instagram"; checked against known licence limits')
 ap.add_argument('--seed',type=int,default=7)
+ap.add_argument('--bed',action='append',default=[],help='extra pre-timed stem(s) mixed from 0 s at 0 dB, not ducked (e.g. a heartbeat); repeatable')
 ap.add_argument('--swaps',default=None,help='swaps.json from report.html: {cue_index: file|runtime_url|"auto"}')
 A=ap.parse_args(); os.makedirs(A.out,exist_ok=True); os.makedirs(f'{A.out}/checks',exist_ok=True)
 random.seed(A.seed)
@@ -122,6 +123,9 @@ duck=10**(-A.duck_db*np.interp(np.arange(len(seg)),np.arange(n)*hop,g)/20)
 seg=seg*duck[:,None]; mix[:len(seg)]+=seg
 log.append(f"Voice {os.path.basename(A.voice)} at 0 dB; music bed {A.music_db:+.0f} dB, ducked {A.duck_db:.0f} dB under the voice; SFX offset {A.sfx_db:+.0f} dB.")
 mix[:min(len(vo),len(mix))]+=vo[:min(len(vo),len(mix))]
+for bp in A.bed:
+  bd,_=librosa.load(bp,sr=SR,mono=False); bd=np.atleast_2d(bd); bd=(np.vstack([bd,bd]) if bd.shape[0]==1 else bd).T
+  n_=min(len(bd),len(mix)); mix[:n_]+=bd[:n_]; log.append(f'Bed stem {os.path.basename(bp)} mixed at 0 dB from 0 s.')
 mix=mix[:int(dur*SR)]; sf.write(f'{A.out}/mix_raw.wav',mix,SR)
 # 4. loudness: measure the exported MP4, adjust, repeat
 def export(gain_db,limit):
