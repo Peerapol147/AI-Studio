@@ -12,7 +12,7 @@
   },
   {
    "id": "frozen",
-   "src": "footage",
+   "src": "graphic:bedroom",
    "cue": {
     "th": "ขยับ"
    },
@@ -20,7 +20,7 @@
   },
   {
    "id": "belief",
-   "src": "footage",
+   "src": "assets/footage/belief-wikimedia-nightmare.jpg",
    "cue": {
     "th": "คนไทย"
    },
@@ -74,7 +74,7 @@
   },
   {
    "id": "doctor",
-   "src": "footage",
+   "src": "graphic:icons",
    "cue": {
     "th": "ถ้าเป็น"
    },
