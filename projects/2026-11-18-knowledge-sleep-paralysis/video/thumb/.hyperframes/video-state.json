@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "b0e4ddb1-7e1e-456b-b7cd-8445bca6909a",
-  "currentRevision": "d8fb180a-464c-455d-bae6-4313a9a601b5",
+  "currentRevision": "436153a0-3223-4482-9966-6e60eff3001e",
   "pendingChanges": false,
   "files": {
     "fonts/LICENSE-kanit.txt": {
@@ -117,8 +117,8 @@
       "content": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "01d97ccbfcfa73bfa649b03e169093275eed634e5eab7903b65e6ad5823337bf",
-      "content": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/01/01d97ccbfcfa73bfa649b03e169093275eed634e5eab7903b65e6ad5823337bf"
+      "hash": "f51ce5989710ad87641a6ba00a105a318f4aad8a8f85425bd6a516c860ee358f",
+      "content": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/f5/f51ce5989710ad87641a6ba00a105a318f4aad8a8f85425bd6a516c860ee358f"
     },
     "package.json": {
       "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
@@ -185,6 +185,36 @@
           "after": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/01/01d97ccbfcfa73bfa649b03e169093275eed634e5eab7903b65e6ad5823337bf"
         }
       }
+    },
+    "35216aad-3d7e-4e22-9bb4-8724eac291c1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795025012550,
+      "endedAt": 1795025012551,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/01/01d97ccbfcfa73bfa649b03e169093275eed634e5eab7903b65e6ad5823337bf",
+          "after": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/51/51044a6c34b902d27b78307427a2f2d462e6fb844cd0ee70b8177da0e5d0c6fb"
+        }
+      }
+    },
+    "436153a0-3223-4482-9966-6e60eff3001e": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795025031463,
+      "endedAt": 1795025031464,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/51/51044a6c34b902d27b78307427a2f2d462e6fb844cd0ee70b8177da0e5d0c6fb",
+          "after": "/root/.cache/hyperframes/history/b0e4ddb1-7e1e-456b-b7cd-8445bca6909a/blobs/f5/f51ce5989710ad87641a6ba00a105a318f4aad8a8f85425bd6a516c860ee358f"
+        }
+      }
     }
   },
   "checks": {
@@ -194,8 +224,8 @@
   },
   "snapshots": {
     "latest": {
-      "revision": "d8fb180a-464c-455d-bae6-4313a9a601b5",
-      "id": "e3bfa69f-aed5-4b1f-8e7c-9258bcd80054-0"
+      "revision": "436153a0-3223-4482-9966-6e60eff3001e",
+      "id": "2697266c-37cb-4e69-9f47-1d104de423ce-0"
     },
     "revisions": {
       "3f9f3f97-6aa0-43f9-82de-b1a98eba1676": [],
@@ -243,21 +273,44 @@
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
+      ],
+      "35216aad-3d7e-4e22-9bb4-8724eac291c1": [],
+      "436153a0-3223-4482-9966-6e60eff3001e": [
+        {
+          "scope": "full",
+          "id": "2697266c-37cb-4e69-9f47-1d104de423ce-0",
+          "image": "/tmp/claude-0/-home-user-ai-studio/35e92458-614e-5a0d-9759-5e635f300fee/scratchpad/thumb3/frame-00-at-0.5s.png",
+          "time": 0.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795025034087,
+          "contentHash": "0886387c7497d54d5f7b2772e7f67ad1359e14e2443270bd96f0cb589a83fbf2",
+          "revision": "436153a0-3223-4482-9966-6e60eff3001e",
+          "inputFingerprint": "1a205a5ad939d17cb8f9b78fb03a4666dace88c1ed4b05c9f22ac6ff27feab07",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
       ]
     },
     "unversioned": []
   },
   "renders": {
     "latest": {
-      "id": "79e36d9f-4e26-446e-99f1-3d8f68a1f7c4",
-      "completedAt": 1795024885455,
+      "id": "abd449c3-2633-49a8-bad0-503343586eb6",
+      "completedAt": 1795025050438,
       "output": "/home/user/ai-studio/projects/2026-11-18-knowledge-sleep-paralysis/video/renders/thumb.mp4",
       "status": "completed",
-      "revision": "d8fb180a-464c-455d-bae6-4313a9a601b5"
+      "revision": "436153a0-3223-4482-9966-6e60eff3001e"
     },
     "retainedRevisions": [
-      "d8fb180a-464c-455d-bae6-4313a9a601b5",
-      "f026067f-3f16-4354-9e86-1af9a8a265ba"
+      "436153a0-3223-4482-9966-6e60eff3001e",
+      "d8fb180a-464c-455d-bae6-4313a9a601b5"
     ]
   },
   "pendingArtifactCleanup": []
