@@ -6,3 +6,11 @@
 - assets/footage/sleep-pixabay-42966.mp4: video by MaxMedyk via Pixabay, https://pixabay.com/videos/id-42966/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
 - assets/footage/morning-pixabay-128321.mp4: video by Leolo212 via Pixabay, https://pixabay.com/videos/id-128321/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
 - assets/footage/write-pixabay-100344.mp4: video by egemen_izmirli via Pixabay, https://pixabay.com/videos/id-100344/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+
+## เสียงประกอบ (CC0)
+- "Broomstick whoosh 3 quiet okm1" by Sadiquecat (Freesound), CC0 1.0 - https://freesound.org/people/Sadiquecat/sounds/816262/
+- "Impact impactsoft heavy 000" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/impact-sounds
+- "Swoosh" by Shinplaster (Freesound), CC0 1.0 - https://freesound.org/people/Shinplaster/sounds/264777/
+- "Triangle open 04" by cabled_mess (Freesound), CC0 1.0 - https://freesound.org/people/cabled_mess/sounds/349504/
+- "Interface drop 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- "Plop" by Breviceps (Freesound), CC0 1.0 - https://freesound.org/people/Breviceps/sounds/447910/

@@ -33,7 +33,7 @@
 เครดิต
 เพลง: "Deep Study of a Calm Mind" by KonstantinPazuzuStudio (CC BY 3.0) https://www.jamendo.com/track/2326401 — https://creativecommons.org/licenses/by/3.0/
 ภาพ: Yasir1120, magicmore, Engin_Akyurt, briroseee, MaxMedyk, Leolo212, egemen_izmirli via Pixabay (ตัดต่อและปรับสี)
-เสียงประกอบ: CC0 (รายชื่อใน assets/CREDITS.md)
+เสียงประกอบ: CC0 จาก Freesound (Sadiquecat, Shinplaster, cabled_mess, Breviceps) และ Kenney
 เสียงพากย์: ElevenLabs (AI)
 
 #นอนไม่หลับ #คิดมาก #ตีสาม #นอนดึก #ความรู้รอบตัว #shorts
