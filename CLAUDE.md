@@ -7,6 +7,7 @@
 - รูปแบบ: short (9:16, 1080x1920, ≤60 วิ สำหรับ Shorts/TikTok) และ long (16:9, 1920x1080, 6-15 นาที)
 - งานแต่ละคลิปอยู่ใน `projects/<YYYY-MM-DD>-<channel>-<slug>/`
 - ตัวคุมงานหลัก (ตัวที่ผู้ใช้คุยด้วย) เป็นผู้กำกับเอง และเรียก agent อื่นใน `.claude/agents/`
+- ขั้นตอนทำคลิปและกฎประหยัด token: skill `make-clip` (caveman ใช้กับแชตเท่านั้น ห้ามย่อ prompt สั่ง agent/บท/ซับ)
 - ห้ามใส่ API key หรือรหัสผ่านในไฟล์ใดๆ ใน repo (repo นี้เป็น public)
   ElevenLabs: proxy แนบ key ให้เอง; Pixabay: อ่าน `PIXABAY_API_KEY` จาก env หรือ `.env` (ไม่ commit)
 - skills `yt-*` (จาก sergebulaev/youtube-skills, MIT): ใช้เฉพาะส่วนเขียนเนื้อหา
