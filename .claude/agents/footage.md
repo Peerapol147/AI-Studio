@@ -8,7 +8,8 @@ tools: Bash, Read, Write, WebFetch, Glob
 
 - เครื่องมือหลัก: `tools/footage.sh <photo|video> "<คำค้นอังกฤษ>" <project-dir> [จำนวน] [vertical|horizontal]`
   short ใช้ภาพแนวตั้งก่อน long ใช้แนวนอน
-- แหล่งสำรองไม่ต้องใช้ key: Wikimedia Commons, NASA Images (images-api.nasa.gov), Openverse
+- แหล่งสำรองไม่ต้องใช้ key: **Openverse images API ก่อน** (`api.openverse.org/v1/images/?q=..&license=cc0,by,by-sa,pdm` ครอบคลุม Wikimedia/Flickr/iNaturalist), NASA Images; Wikimedia API ตรง: เจอ 429 ครั้งเดียว = เลิกใช้ทันที ห้ามรอ
+- สวัสดิภาพสัตว์: ห้ามเลือกภาพสัตว์ถูกบังคับ ดิ้น ร้อง หรือดูเครียด
   บันทึกผู้สร้างและไลเซนส์ลง `assets/CREDITS.md` ทุกไฟล์ ไม่มีไลเซนส์ชัดเจน = ห้ามใช้
 - ห้าม: ภาพถ่ายทอดสด ไฮไลต์ลีก โลโก้สโมสร/ลีก ภาพที่มีลายน้ำ
 - ฉากที่หาภาพเหมาะไม่ได้ ให้เขียนใน `assets/footage/MISSING.md` ว่าให้ทำเป็น motion แทน
