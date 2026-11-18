@@ -5,7 +5,7 @@
  "shots": [
   {
    "id": "hook",
-   "src": "",
+   "src": "assets/footage/hook-pixabay-3907504.jpg",
    "cue": "ทำไม",
    "word_at": 0.02,
    "start": 0.0,
@@ -14,7 +14,7 @@
   },
   {
    "id": "elder",
-   "src": "",
+   "src": "assets/footage/elder-pixabay-3406054.jpg",
    "cue": "ผู้ใหญ่",
    "word_at": 1.4,
    "start": 1.32,
@@ -34,7 +34,7 @@
   },
   {
    "id": "arth",
-   "src": "",
+   "src": "assets/footage/arth-pixabay-1704855.jpg",
    "cue": "เดี๋ยว",
    "word_at": 3.78,
    "start": 3.7,
@@ -89,12 +89,21 @@
    "start": 9.26,
    "hit": "ฟองแก๊ส",
    "hit_at": 9.34,
+   "end": 9.9,
+   "dur": 0.64
+  },
+  {
+   "id": "pop",
+   "src": "assets/footage/pop-wikimedia-cracking-knuckles.jpg",
+   "cue": "แล้วก็",
+   "word_at": 9.98,
+   "start": 9.9,
    "end": 10.76,
-   "dur": 1.5
+   "dur": 0.86
   },
   {
    "id": "doctor",
-   "src": "",
+   "src": "assets/footage/doctor-pixabay-2141808.jpg",
    "cue": "หมอ",
    "word_at": 10.84,
    "start": 10.76,
@@ -102,22 +111,13 @@
    "dur": 0.94
   },
   {
-   "id": "left",
+   "id": "decades",
    "src": "graphic:two-hands",
    "cue": "มือซ้าย",
    "word_at": 11.78,
    "start": 11.7,
-   "end": 12.14,
-   "dur": 0.44
-  },
-  {
-   "id": "decades",
-   "src": "graphic:two-hands",
-   "cue": "หลายสิบปี",
-   "word_at": 12.22,
-   "start": 12.14,
    "end": 13.36,
-   "dur": 1.22
+   "dur": 1.66
   },
   {
    "id": "noarth",
@@ -132,7 +132,7 @@
   },
   {
    "id": "hurt",
-   "src": "",
+   "src": "assets/footage/hurt-pixabay-5464607.jpg",
    "cue": "เจ็บ",
    "word_at": 15.38,
    "start": 15.3,
@@ -141,7 +141,7 @@
   },
   {
    "id": "clinic",
-   "src": "",
+   "src": "assets/footage/clinic-pixabay-818378.jpg",
    "cue": "ไปหาหมอ",
    "word_at": 16.26,
    "start": 16.18,

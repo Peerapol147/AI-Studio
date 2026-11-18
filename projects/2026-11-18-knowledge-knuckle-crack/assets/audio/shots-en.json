@@ -5,7 +5,7 @@
  "shots": [
   {
    "id": "hook",
-   "src": "",
+   "src": "assets/footage/hook-pixabay-3907504.jpg",
    "cue": "Why",
    "word_at": 0.04,
    "start": 0.0,
@@ -14,7 +14,7 @@
   },
   {
    "id": "elder",
-   "src": "",
+   "src": "assets/footage/elder-pixabay-3406054.jpg",
    "cue": "People",
    "word_at": 1.42,
    "start": 1.34,
@@ -34,7 +34,7 @@
   },
   {
    "id": "arth",
-   "src": "",
+   "src": "assets/footage/arth-pixabay-1704855.jpg",
    "cue": "arthritis",
    "word_at": 3.52,
    "start": 3.44,
@@ -94,7 +94,7 @@
   },
   {
    "id": "pop",
-   "src": "",
+   "src": "assets/footage/pop-wikimedia-cracking-knuckles.jpg",
    "cue": "pop",
    "word_at": 9.72,
    "start": 9.64,
@@ -103,7 +103,7 @@
   },
   {
    "id": "doctor",
-   "src": "",
+   "src": "assets/footage/doctor-pixabay-2141808.jpg",
    "cue": "doctor",
    "word_at": 10.38,
    "start": 10.3,
@@ -111,22 +111,13 @@
    "dur": 1.14
   },
   {
-   "id": "left",
+   "id": "decades",
    "src": "graphic:two-hands",
    "cue": "left",
    "word_at": 11.52,
    "start": 11.44,
-   "end": 12.12,
-   "dur": 0.68
-  },
-  {
-   "id": "decades",
-   "src": "graphic:two-hands",
-   "cue": "decades",
-   "word_at": 12.2,
-   "start": 12.12,
    "end": 12.82,
-   "dur": 0.7
+   "dur": 1.38
   },
   {
    "id": "noarth",
@@ -141,7 +132,7 @@
   },
   {
    "id": "hurt",
-   "src": "",
+   "src": "assets/footage/hurt-pixabay-5464607.jpg",
    "cue": "hurts",
    "word_at": 14.76,
    "start": 14.68,
@@ -150,7 +141,7 @@
   },
   {
    "id": "clinic",
-   "src": "",
+   "src": "assets/footage/clinic-pixabay-818378.jpg",
    "cue": "see",
    "word_at": 15.9,
    "start": 15.82,

@@ -1,23 +1,170 @@
 {
-  "lead": 0.08,
-  "end": "auto",
-  "shots": [
-    {"id": "hook",    "src": "", "cue": {"th": "ทำไม", "en": "Why"}, "note": "hands interlocked, fingers bending/cracking; big question text"},
-    {"id": "elder",   "src": "", "cue": {"th": "ผู้ใหญ่", "en": "People"}, "note": "older person scolding / wagging finger or elderly face"},
-    {"id": "grind",   "src": "graphic:joint", "cue": {"th": "กระดูก", "en": "bones"}, "hit": {"th": "เสียดสี", "en": "grinding"}, "note": "myth: two bone ends rub, red sparks"},
-    {"id": "arth",    "src": "", "cue": {"th": "เดี๋ยว", "en": "arthritis"}, "note": "hand x-ray / old hands"},
-    {"id": "truth",   "src": "graphic:joint", "cue": {"th": "แต่ความจริง", "en": "But"}, "note": "same joint diagram, red fades, capsule appears"},
-    {"id": "fluid",   "src": "graphic:joint", "cue": {"th": "น้ำหล่อลื่น", "en": "slippery"}, "note": "fluid fills gap, shimmering"},
-    {"id": "pull",    "src": "graphic:joint", "cue": {"th": "พอดึง", "en": "Pull"}, "hit": {"th": "ออก", "en": "apart"}, "note": "bones slide apart"},
-    {"id": "press",   "src": "graphic:joint", "cue": {"th": "ความดัน", "en": "pressure"}, "hit": {"th": "ลดลง", "en": "drops"}, "note": "pressure gauge needle falls"},
-    {"id": "bubble",  "src": "graphic:joint", "cue": {"th": "ฟองแก๊ส", "en": "bubble"}, "hit": {"th": "ฟองแก๊ส", "en": "bubble"}, "note": "bubble blooms"},
-    {"id": "pop",     "src": "", "cue": {"th": "ดังกร๊อบ", "en": "pop"}, "note": "real hands cracking knuckles close-up (action on cue)"},
-    {"id": "doctor",  "src": "", "cue": {"th": "หมอ", "en": "doctor"}, "note": "doctor / physician"},
-    {"id": "left",    "src": "graphic:two-hands", "cue": {"th": "มือซ้าย", "en": "left"}, "note": "two hands, left glows + crack counter spinning"},
-    {"id": "decades", "src": "graphic:two-hands", "cue": {"th": "หลายสิบปี", "en": "decades"}, "note": "years counter/calendar"},
-    {"id": "noarth",  "src": "graphic:two-hands", "cue": {"th": "ไม่มีข้อ", "en": "Neither"}, "hit": {"th": "สักข้าง", "en": "arthritis"}, "note": "both hands green check"},
-    {"id": "hurt",    "src": "", "cue": {"th": "เจ็บ", "en": "hurts"}, "note": "person holding painful hand/wrist"},
-    {"id": "clinic",  "src": "", "cue": {"th": "ไปหาหมอ", "en": "see"}, "note": "doctor examining hand"},
-    {"id": "ask",     "src": "graphic:comment", "cue": {"th": "แล้วคุณ", "en": "How"}, "note": "hands + comment bubble counter"}
-  ]
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/hook-pixabay-3907504.jpg",
+   "cue": {
+    "th": "ทำไม",
+    "en": "Why"
+   },
+   "note": "hands interlocked, fingers bending/cracking; big question text"
+  },
+  {
+   "id": "elder",
+   "src": "assets/footage/elder-pixabay-3406054.jpg",
+   "cue": {
+    "th": "ผู้ใหญ่",
+    "en": "People"
+   },
+   "note": "older person scolding / wagging finger or elderly face"
+  },
+  {
+   "id": "grind",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "กระดูก",
+    "en": "bones"
+   },
+   "hit": {
+    "th": "เสียดสี",
+    "en": "grinding"
+   },
+   "note": "myth: two bone ends rub, red sparks"
+  },
+  {
+   "id": "arth",
+   "src": "assets/footage/arth-pixabay-1704855.jpg",
+   "cue": {
+    "th": "เดี๋ยว",
+    "en": "arthritis"
+   },
+   "note": "hand x-ray / old hands"
+  },
+  {
+   "id": "truth",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "แต่ความจริง",
+    "en": "But"
+   },
+   "note": "same joint diagram, red fades, capsule appears"
+  },
+  {
+   "id": "fluid",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "น้ำหล่อลื่น",
+    "en": "slippery"
+   },
+   "note": "fluid fills gap, shimmering"
+  },
+  {
+   "id": "pull",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "พอดึง",
+    "en": "Pull"
+   },
+   "hit": {
+    "th": "ออก",
+    "en": "apart"
+   },
+   "note": "bones slide apart"
+  },
+  {
+   "id": "press",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "ความดัน",
+    "en": "pressure"
+   },
+   "hit": {
+    "th": "ลดลง",
+    "en": "drops"
+   },
+   "note": "pressure gauge needle falls"
+  },
+  {
+   "id": "bubble",
+   "src": "graphic:joint",
+   "cue": {
+    "th": "ฟองแก๊ส",
+    "en": "bubble"
+   },
+   "hit": {
+    "th": "ฟองแก๊ส",
+    "en": "bubble"
+   },
+   "note": "bubble blooms"
+  },
+  {
+   "id": "pop",
+   "src": "assets/footage/pop-wikimedia-cracking-knuckles.jpg",
+   "cue": {
+    "th": "แล้วก็",
+    "en": "pop"
+   },
+   "note": "real hands cracking knuckles close-up (action on cue)"
+  },
+  {
+   "id": "doctor",
+   "src": "assets/footage/doctor-pixabay-2141808.jpg",
+   "cue": {
+    "th": "หมอ",
+    "en": "doctor"
+   },
+   "note": "doctor / physician"
+  },
+  {
+   "id": "decades",
+   "src": "graphic:two-hands",
+   "cue": {
+    "th": "มือซ้าย",
+    "en": "left"
+   },
+   "note": "two hands: left glows + crack counter, calendar flips \"decades\""
+  },
+  {
+   "id": "noarth",
+   "src": "graphic:two-hands",
+   "cue": {
+    "th": "ไม่มีข้อ",
+    "en": "Neither"
+   },
+   "hit": {
+    "th": "สักข้าง",
+    "en": "arthritis"
+   },
+   "note": "both hands green check"
+  },
+  {
+   "id": "hurt",
+   "src": "assets/footage/hurt-pixabay-5464607.jpg",
+   "cue": {
+    "th": "เจ็บ",
+    "en": "hurts"
+   },
+   "note": "person holding painful hand/wrist"
+  },
+  {
+   "id": "clinic",
+   "src": "assets/footage/clinic-pixabay-818378.jpg",
+   "cue": {
+    "th": "ไปหาหมอ",
+    "en": "see"
+   },
+   "note": "doctor examining hand"
+  },
+  {
+   "id": "ask",
+   "src": "graphic:comment",
+   "cue": {
+    "th": "แล้วคุณ",
+    "en": "How"
+   },
+   "note": "hands + comment bubble counter"
+  }
+ ]
 }

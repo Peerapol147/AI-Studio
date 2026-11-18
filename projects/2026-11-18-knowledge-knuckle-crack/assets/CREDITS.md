@@ -1,1 +1,8 @@
 - music-jamendo-4228fb9b.mp3: "Ruslan Latypov - Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127
+- hook-pixabay-3907504.jpg: un-perfekt via Pixabay https://pixabay.com/photos/hand-hands-finger-together-3907504/ (Pixabay Content License)
+- elder-pixabay-3406054.jpg: hasse42 via Pixabay https://pixabay.com/photos/man-expression-face-male-guy-3406054/ (Pixabay Content License)
+- arth-pixabay-1704855.jpg: com329329 via Pixabay https://pixabay.com/photos/x-ray-medical-treatment-arm-doctor-1704855/ (Pixabay Content License)
+- pop-wikimedia-cracking-knuckles.jpg: "Cracking knuckles" by Jaysin Trevino from Evanston, IL, US, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Cracking_knuckles.jpg (cropped/resized)
+- doctor-pixabay-2141808.jpg: voltamax via Pixabay https://pixabay.com/photos/woman-doctor-surgeon-physician-2141808/ (Pixabay Content License)
+- hurt-pixabay-5464607.jpg: Septimiu via Pixabay https://pixabay.com/photos/symptom-inflammation-syndrome-joint-5464607/ (Pixabay Content License)
+- clinic-pixabay-818378.jpg: backy3723 via Pixabay https://pixabay.com/photos/pulse-hand-health-care-workers-818378/ (Pixabay Content License)
