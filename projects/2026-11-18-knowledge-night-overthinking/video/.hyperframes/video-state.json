@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "b1034632-b592-41e6-9afd-ed73fdc45eb4",
-  "currentRevision": "2b5e7ee3-fae1-44ec-a0c9-fcda214118a6",
+  "currentRevision": "12f9d5a5-811c-4123-a5e1-bd5af3b423e2",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -133,16 +133,16 @@
       "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/1c/1ca031c8d598e7435f653e44f592fe0ac64e9e402066719fe061fdfe833cca1e"
     },
     "grades.json": {
-      "hash": "7115460296036141ca7bdf1765b7b782b2feeae4f75cc491d86db085659224dc",
-      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/71/7115460296036141ca7bdf1765b7b782b2feeae4f75cc491d86db085659224dc"
+      "hash": "04e0638cb1dd667812e8b1914db95ad7bed7245c74c7e12a0726c360ae2e0f17",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/04/04e0638cb1dd667812e8b1914db95ad7bed7245c74c7e12a0726c360ae2e0f17"
     },
     "hyperframes.json": {
       "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
       "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "45bfe65b86e93cdf852691cee2edc67c5096551f97d0d7c780b68fd53f9cc97d",
-      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/45/45bfe65b86e93cdf852691cee2edc67c5096551f97d0d7c780b68fd53f9cc97d"
+      "hash": "cdb1aa0edf46ffae2425929971a9e80bad52d199c09ccb1af8f407cf6275b7c3",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cd/cdb1aa0edf46ffae2425929971a9e80bad52d199c09ccb1af8f407cf6275b7c3"
     },
     "index.html.tpl": {
       "hash": "0e0a66f15e4fdda8de2f9aec3b2970b036afa4d9978b8b57da6471d223c28fc4",
@@ -161,12 +161,12 @@
       "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/39/39fd1063a2dfc221a753a17923ba3dc8033adc0c71538885a77dfe14732078a8"
     },
     "sound/cues-th.json": {
-      "hash": "170f5fe69a89f162ced71bdaa87b8de057abbdf97c4405f0bf7959dc8a6b0755",
-      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/17/170f5fe69a89f162ced71bdaa87b8de057abbdf97c4405f0bf7959dc8a6b0755"
+      "hash": "ccf4b27c61707640612eddc871d789fcd554f904a3a76e5748a988465bd3122e",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cc/ccf4b27c61707640612eddc871d789fcd554f904a3a76e5748a988465bd3122e"
     },
     "sound/make_cues.py": {
-      "hash": "a7910b004d9f024a5021cc04e90f8acff0f630e11a6d2a486f72604a371e02e5",
-      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/a7/a7910b004d9f024a5021cc04e90f8acff0f630e11a6d2a486f72604a371e02e5"
+      "hash": "de5d044e813888719bff6b994255e9b469384cd622b7fe60373470d9fac4efb7",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/de/de5d044e813888719bff6b994255e9b469384cd622b7fe60373470d9fac4efb7"
     },
     "thumb/fonts/LICENSE-kanit.txt": {
       "hash": "0c796c259354fbbc1a5041e468085d219519b3fd93f4e882bcb21ed602dbcca8",
@@ -281,8 +281,8 @@
       "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "thumb/index.html": {
-      "hash": "f4ce41f0317c0a15431eed925ebeb2add5b8cd413b89ed2b30053e2e9c5a631f",
-      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/f4/f4ce41f0317c0a15431eed925ebeb2add5b8cd413b89ed2b30053e2e9c5a631f"
+      "hash": "f36ed0e1d1c883525c061d101ddf6d5a0f94c96ed3eef79b1cdf5b0cf6ceaf57",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/f3/f36ed0e1d1c883525c061d101ddf6d5a0f94c96ed3eef79b1cdf5b0cf6ceaf57"
     },
     "thumb/package.json": {
       "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
@@ -315,6 +315,18 @@
     "assets/write.mp4": {
       "hash": "0a851a4297591bc1857a813b407f72d3246e0a4d073b77e95f9d34612f776f58",
       "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/0a/0a851a4297591bc1857a813b407f72d3246e0a4d073b77e95f9d34612f776f58"
+    },
+    "__pycache__/build_index.cpython-313.pyc": {
+      "hash": "fd12c10f35bc35b094a38caa5105f6597504a60729d76097a3a405425c0f1eca",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/fd/fd12c10f35bc35b094a38caa5105f6597504a60729d76097a3a405425c0f1eca"
+    },
+    "thumb/assets/hook.mp4": {
+      "hash": "1bfc5ebe44b8b5659361cbb059e9c3e9da3996b5610a1897df62274f357328d5",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/1b/1bfc5ebe44b8b5659361cbb059e9c3e9da3996b5610a1897df62274f357328d5"
+    },
+    "EDIT-NOTES.md": {
+      "hash": "cf62e2c75f58929e17bae294c27ecbc59ba031b52d6007f2caebc8333e1cb2eb",
+      "content": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cf/cf62e2c75f58929e17bae294c27ecbc59ba031b52d6007f2caebc8333e1cb2eb"
     }
   },
   "revisions": {
@@ -382,14 +394,129 @@
           "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/0e/0e0a66f15e4fdda8de2f9aec3b2970b036afa4d9978b8b57da6471d223c28fc4"
         }
       }
+    },
+    "e560ee2f-ae5b-4875-9eb6-6c760269d236": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795028675952,
+      "endedAt": 1795028675975,
+      "files": {
+        "__pycache__/build_index.cpython-313.pyc": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/fd/fd12c10f35bc35b094a38caa5105f6597504a60729d76097a3a405425c0f1eca"
+        },
+        "grades.json": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/71/7115460296036141ca7bdf1765b7b782b2feeae4f75cc491d86db085659224dc",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/65/658d2fce4bda5b82c271f416da406881f403b171f941f3e67f4fd229ea64a272"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/45/45bfe65b86e93cdf852691cee2edc67c5096551f97d0d7c780b68fd53f9cc97d",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/29/29b7fa06aedddc36aefd97e85f9dbba160a395b3012257348d4226aa9ef654ef"
+        },
+        "sound/cues-th.json": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/17/170f5fe69a89f162ced71bdaa87b8de057abbdf97c4405f0bf7959dc8a6b0755",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cc/ccf4b27c61707640612eddc871d789fcd554f904a3a76e5748a988465bd3122e"
+        },
+        "sound/make_cues.py": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/a7/a7910b004d9f024a5021cc04e90f8acff0f630e11a6d2a486f72604a371e02e5",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/de/de5d044e813888719bff6b994255e9b469384cd622b7fe60373470d9fac4efb7"
+        },
+        "thumb/assets/hook.mp4": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/1b/1bfc5ebe44b8b5659361cbb059e9c3e9da3996b5610a1897df62274f357328d5"
+        },
+        "thumb/index.html": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/f4/f4ce41f0317c0a15431eed925ebeb2add5b8cd413b89ed2b30053e2e9c5a631f",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/bf/bfda080ab67f538ae6a5615807b1b637dde7a60ff36a012420b85023bbcae506"
+        }
+      }
+    },
+    "62937226-15b9-45d9-b199-1c74a7c68cfd": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795028705731,
+      "endedAt": 1795028705745,
+      "files": {
+        "grades.json": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/65/658d2fce4bda5b82c271f416da406881f403b171f941f3e67f4fd229ea64a272",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/04/04e0638cb1dd667812e8b1914db95ad7bed7245c74c7e12a0726c360ae2e0f17"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/29/29b7fa06aedddc36aefd97e85f9dbba160a395b3012257348d4226aa9ef654ef",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cd/cdb1aa0edf46ffae2425929971a9e80bad52d199c09ccb1af8f407cf6275b7c3"
+        }
+      }
+    },
+    "12f9d5a5-811c-4123-a5e1-bd5af3b423e2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795029427709,
+      "endedAt": 1795029427715,
+      "files": {
+        "EDIT-NOTES.md": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/cf/cf62e2c75f58929e17bae294c27ecbc59ba031b52d6007f2caebc8333e1cb2eb"
+        },
+        "thumb/index.html": {
+          "before": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/bf/bfda080ab67f538ae6a5615807b1b637dde7a60ff36a012420b85023bbcae506",
+          "after": "/root/.cache/hyperframes/history/b1034632-b592-41e6-9afd-ed73fdc45eb4/blobs/f3/f36ed0e1d1c883525c061d101ddf6d5a0f94c96ed3eef79b1cdf5b0cf6ceaf57"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": null,
-      "id": "a5c64d8f-1ee9-4abd-9403-97a9442ae305"
+      "revision": "12f9d5a5-811c-4123-a5e1-bd5af3b423e2",
+      "id": "d7113fe1-a177-4ff6-859f-4d543757abaa"
     },
-    "revisions": {},
+    "revisions": {
+      "12f9d5a5-811c-4123-a5e1-bd5af3b423e2": [
+        {
+          "id": "d7113fe1-a177-4ff6-859f-4d543757abaa",
+          "scope": "project",
+          "report": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/checks/d7113fe1-a177-4ff6-859f-4d543757abaa.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795029449551,
+          "contentHash": "94fe953edc49da2a38ccabb0f26c3c56a1eb8c2a551caef7715ea03aa938d01e",
+          "revision": "12f9d5a5-811c-4123-a5e1-bd5af3b423e2",
+          "inputFingerprint": "c5445bd57a985a757d7a4904ff7c4f64d5a4ab30350c7689a6155a2152b7372b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
     "unversioned": [
       {
         "id": "a5c64d8f-1ee9-4abd-9403-97a9442ae305",
@@ -430,15 +557,14 @@
   },
   "snapshots": {
     "latest": {
-      "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
-      "id": "ae26395b-4699-4569-9e1c-89348802fcf2-8"
+      "revision": "62937226-15b9-45d9-b199-1c74a7c68cfd",
+      "id": "a972e039-07c4-42e4-87dc-ebd9ce12a843-1"
     },
     "revisions": {
       "e26e2e11-b3b0-4918-afa3-d70cd2205b69": [
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-0",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-00-at-0s.png",
           "time": 0,
           "metadata": {
             "width": 1080,
@@ -453,12 +579,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-1",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-01-at-0.5s.png",
           "time": 0.5,
           "metadata": {
             "width": 1080,
@@ -473,12 +600,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-2",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-02-at-1.5s.png",
           "time": 1.5,
           "metadata": {
             "width": 1080,
@@ -493,12 +621,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-3",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-03-at-2.6s.png",
           "time": 2.6,
           "metadata": {
             "width": 1080,
@@ -513,12 +642,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-4",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-04-at-3.7s.png",
           "time": 3.7,
           "metadata": {
             "width": 1080,
@@ -533,12 +663,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-5",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-05-at-4.3s.png",
           "time": 4.3,
           "metadata": {
             "width": 1080,
@@ -553,12 +684,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-6",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-06-at-5.2s.png",
           "time": 5.2,
           "metadata": {
             "width": 1080,
@@ -573,12 +705,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-7",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-07-at-6s.png",
           "time": 6,
           "metadata": {
             "width": 1080,
@@ -593,12 +726,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-8",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-08-at-7.2s.png",
           "time": 7.2,
           "metadata": {
             "width": 1080,
@@ -613,12 +747,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-9",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-09-at-8.2s.png",
           "time": 8.2,
           "metadata": {
             "width": 1080,
@@ -633,12 +768,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-10",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-10-at-9.2s.png",
           "time": 9.2,
           "metadata": {
             "width": 1080,
@@ -653,12 +789,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-11",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-11-at-10.6s.png",
           "time": 10.6,
           "metadata": {
             "width": 1080,
@@ -673,12 +810,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-12",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-12-at-11s.png",
           "time": 11,
           "metadata": {
             "width": 1080,
@@ -693,12 +831,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-13",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-13-at-12.2s.png",
           "time": 12.2,
           "metadata": {
             "width": 1080,
@@ -713,12 +852,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-14",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-14-at-13.2s.png",
           "time": 13.2,
           "metadata": {
             "width": 1080,
@@ -733,12 +873,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-15",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-15-at-14.2s.png",
           "time": 14.2,
           "metadata": {
             "width": 1080,
@@ -753,12 +894,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-16",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-16-at-15.2s.png",
           "time": 15.2,
           "metadata": {
             "width": 1080,
@@ -773,12 +915,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-17",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-17-at-16.4s.png",
           "time": 16.4,
           "metadata": {
             "width": 1080,
@@ -793,12 +936,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-18",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-18-at-17.1s.png",
           "time": 17.1,
           "metadata": {
             "width": 1080,
@@ -813,12 +957,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-19",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-19-at-17.5s.png",
           "time": 17.5,
           "metadata": {
             "width": 1080,
@@ -833,12 +978,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-20",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-20-at-18.8s.png",
           "time": 18.8,
           "metadata": {
             "width": 1080,
@@ -853,12 +999,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-21",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-21-at-20s.png",
           "time": 20,
           "metadata": {
             "width": 1080,
@@ -873,12 +1020,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-22",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-22-at-21.5s.png",
           "time": 21.5,
           "metadata": {
             "width": 1080,
@@ -893,12 +1041,13 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "9c7d4278-d0be-44f0-a0b2-fb97b9011c16-23",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/b98b880d-d7b1-4b13-b15d-96cc2db9c544/frame-23-at-22.9s.png",
           "time": 22.9,
           "metadata": {
             "width": 1080,
@@ -913,14 +1062,15 @@
           "revision": "e26e2e11-b3b0-4918-afa3-d70cd2205b69",
           "inputFingerprint": "67110a39b1a6f09c62a672f90b2bd9301705f5548bfe5852167a270558b85f13",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         }
       ],
       "781b8333-b1ec-4706-acee-1365cc08d80c": [
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-0",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-00-at-0.3s.png",
           "time": 0.3,
           "metadata": {
             "width": 1080,
@@ -935,12 +1085,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-1",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-01-at-3.7s.png",
           "time": 3.7,
           "metadata": {
             "width": 1080,
@@ -955,12 +1106,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-2",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-02-at-5.6s.png",
           "time": 5.6,
           "metadata": {
             "width": 1080,
@@ -975,12 +1127,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-3",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-03-at-7.5s.png",
           "time": 7.5,
           "metadata": {
             "width": 1080,
@@ -995,12 +1148,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-4",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-04-at-13.2s.png",
           "time": 13.2,
           "metadata": {
             "width": 1080,
@@ -1015,12 +1169,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-5",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-05-at-17s.png",
           "time": 17,
           "metadata": {
             "width": 1080,
@@ -1035,12 +1190,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-6",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-06-at-17.5s.png",
           "time": 17.5,
           "metadata": {
             "width": 1080,
@@ -1055,12 +1211,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-7",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-07-at-22s.png",
           "time": 22,
           "metadata": {
             "width": 1080,
@@ -1075,12 +1232,13 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
         },
         {
           "scope": "full",
           "id": "ae26395b-4699-4569-9e1c-89348802fcf2-8",
-          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/a7a38270-2e5b-4a56-a371-189127be5dcd/frame-08-at-22.864s.png",
           "time": 22.864,
           "metadata": {
             "width": 1080,
@@ -1095,10 +1253,132 @@
           "revision": "781b8333-b1ec-4706-acee-1365cc08d80c",
           "inputFingerprint": "03fa3adefc39e6f0a12fd488488947e262754e99322200130b68062f33899e41",
           "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
+        }
+      ],
+      "e560ee2f-ae5b-4875-9eb6-6c760269d236": [
+        {
+          "scope": "full",
+          "id": "b0e54d6b-714b-4c1f-9c39-7efe4df12400-0",
+          "time": 13.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795028689988,
+          "contentHash": "8376964b4e7a9f789307b20c0f0e9b6dae94f9a2a0ecc30648f88b6bb42c7213",
+          "revision": "e560ee2f-ae5b-4875-9eb6-6c760269d236",
+          "inputFingerprint": "5c7d892011445da3d328b915a0a971603b4dfe43024537b88a52b20ba1040148",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
+        },
+        {
+          "scope": "full",
+          "id": "b0e54d6b-714b-4c1f-9c39-7efe4df12400-1",
+          "time": 13.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795028689989,
+          "contentHash": "e486394ca8eb11b8e0ae3babf9e0ce21852e22ae831dff2e3bcbdc6d625bb537",
+          "revision": "e560ee2f-ae5b-4875-9eb6-6c760269d236",
+          "inputFingerprint": "5c7d892011445da3d328b915a0a971603b4dfe43024537b88a52b20ba1040148",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
+        },
+        {
+          "scope": "full",
+          "id": "b0e54d6b-714b-4c1f-9c39-7efe4df12400-2",
+          "time": 22.864,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795028689989,
+          "contentHash": "03d9c29b17e147da30dcb1428601b9b1be35c8b07a9ae937399f20aeb09463f6",
+          "revision": "e560ee2f-ae5b-4875-9eb6-6c760269d236",
+          "inputFingerprint": "5c7d892011445da3d328b915a0a971603b4dfe43024537b88a52b20ba1040148",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "91eab5d1-c057-4beb-987f-63ea67cc8bfc"
+        }
+      ],
+      "62937226-15b9-45d9-b199-1c74a7c68cfd": [
+        {
+          "scope": "full",
+          "id": "a972e039-07c4-42e4-87dc-ebd9ce12a843-0",
+          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/fb289807-999c-422a-95af-5d0772f572de/frame-00-at-13.9s.png",
+          "time": 13.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795028717709,
+          "contentHash": "ed0ebfe562bb31327d1090e75b9654f9a95f003d62d22478411719d34fcc7a61",
+          "revision": "62937226-15b9-45d9-b199-1c74a7c68cfd",
+          "inputFingerprint": "1bb618c7a859fbe3f7c1055d54f2b200abbe7c45ba5cfff08e0f4143455c7ae4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "a972e039-07c4-42e4-87dc-ebd9ce12a843-1",
+          "image": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/video/.hyperframes/artifacts/snapshots/fb289807-999c-422a-95af-5d0772f572de/frame-01-at-22.864s.png",
+          "time": 22.864,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795028717709,
+          "contentHash": "03d9c29b17e147da30dcb1428601b9b1be35c8b07a9ae937399f20aeb09463f6",
+          "revision": "62937226-15b9-45d9-b199-1c74a7c68cfd",
+          "inputFingerprint": "1bb618c7a859fbe3f7c1055d54f2b200abbe7c45ba5cfff08e0f4143455c7ae4",
+          "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
       ]
     },
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "91eab5d1-c057-4beb-987f-63ea67cc8bfc",
+      "completedAt": 1795029220013,
+      "output": "/home/user/ai-studio/projects/2026-11-18-knowledge-night-overthinking/renders/night-overthinking-th-raw.mp4",
+      "status": "completed",
+      "revision": "62937226-15b9-45d9-b199-1c74a7c68cfd"
+    },
+    "retainedRevisions": [
+      "62937226-15b9-45d9-b199-1c74a7c68cfd"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }
