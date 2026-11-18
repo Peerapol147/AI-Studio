@@ -6,3 +6,4 @@
 - doctor-pixabay-2141808.jpg: voltamax via Pixabay https://pixabay.com/photos/woman-doctor-surgeon-physician-2141808/ (Pixabay Content License)
 - hurt-pixabay-5464607.jpg: Septimiu via Pixabay https://pixabay.com/photos/symptom-inflammation-syndrome-joint-5464607/ (Pixabay Content License)
 - clinic-pixabay-818378.jpg: backy3723 via Pixabay https://pixabay.com/photos/pulse-hand-health-care-workers-818378/ (Pixabay Content License)
+- Sound effects (CC0 1.0, credit optional; bundled sound-effects library, cue list in video/sound/cues-<lang>.json): Freesound: Mediasaur (788933), florianreichelt "Quick woosh", LilMati "Swipe", Shinplaster "Swoosh", dave.des "Fast simple chop 5", Breviceps "Plop", jcallison "Mouth pop", CVLTIV8R (810485), Halgrimm "Swoosh", 393811, MeanRaccoon (830856), ethernel0 "POP SFX Neutral"; Kenney (kenney.nl) Interface Sounds: drop 001, scroll 001, confirmation 001, glass 001

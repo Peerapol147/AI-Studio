@@ -127,6 +127,7 @@ const LANG=(VARS.lang==='en')?'en':'th', EN=LANG==='en';
 const ALL=%%DATA%%, D=ALL[LANG], DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
 document.getElementById(EN?'caps-th':'caps-en').style.display='none';
 document.documentElement.lang=LANG;
+if(EN)['chipL1','chipL2','chipR1','chipR2'].forEach(i=>document.getElementById(i).style.fontSize='42px');
 const T={},H={},W={}; for(const k in SH){T[k]=SH[k].start; W[k]=SH[k].word; if(SH[k].hit!=null)H[k]=SH[k].hit;}
 const TX=EN?{t:['WHY DO','KNUCKLES','CRACK?'],tag:'DID YOU KNOW?',myth:'MYTH',fact:'FACT',steps:['pull','pressure ↓','bubble','pop!'],
    gauge:'PRESSURE',cnt:'CRACK ×',years:'DECADES',l1:'CRACKED',r1:'NEVER',ok:'NO ARTHRITIS',bub:'HOW OFTEN?',gas:'GAS'}
@@ -391,8 +392,8 @@ function chips(t){
   // chips under the two hands
   if(t>T.decades&&t<T.hurt+0.15){ const sw=S(t-K.none,14,0.7), sw2=S(t-H.noarth,14,0.7), y=1040+5*Math.sin(t*4);
     const lx=540+(-250-hX(t))*hS(t), rx=540+(250-hX(t))*hS(t);
-    setChip('chipL',lx,y,EN?(t>K.none?380:270):(t>K.none?280:230),t>K.none?mix('#FFD23F','#2DBE60',sw):'#FFD23F',t>K.none?'#fff':'#10080A',vis(t,T.decades+0.1,T.hurt,{lin:0.18,lout:0.1}));
-    setChip('chipR',rx,y,EN?(t>H.noarth?380:220):(t>H.noarth?280:230),t>H.noarth?mix('#8A8178','#2DBE60',sw2):'#8A8178','#fff',vis(t,T.decades+0.25,T.hurt,{lin:0.18,lout:0.1}));
+    setChip('chipL',lx,y,EN?(t>K.none?360:270):(t>K.none?280:230),t>K.none?mix('#FFD23F','#2DBE60',sw):'#FFD23F',t>K.none?'#fff':'#10080A',vis(t,T.decades+0.1,T.hurt,{lin:0.18,lout:0.1}));
+    setChip('chipR',rx,y,EN?(t>H.noarth?360:220):(t>H.noarth?280:230),t>H.noarth?mix('#8A8178','#2DBE60',sw2):'#8A8178','#fff',vis(t,T.decades+0.25,T.hurt,{lin:0.18,lout:0.1}));
     swap('chipL1','chipL2',TX.l1,TX.ok,{t,at:K.none}); swap('chipR1','chipR2',TX.r1,TX.ok,{t,at:H.noarth});
     if(t>K.none) $('chipL1').style.color='#10080A';
   } else { $('chipL').style.opacity='0'; $('chipR').style.opacity='0'; }
@@ -443,7 +444,7 @@ function ending(t){
   LA.lg.setAttribute('transform',`translate(800 800) rotate(${f2(2*Math.sin(t*3))}) scale(${(1+0.03*Math.sin(t*4)).toFixed(4)}) translate(-800 -800)`);
   burst(LA.bl,t,K.howmany,LA.kx,LA.ky,40);
   const b=$('bubble'); const v=vis(t,K.ask,null,{lin:0.12});
-  if(!show(b,t<K.ask?0:v.o))return; blur(b,v.blur); $('bubT').textContent=TX.bub; $('bubT').setAttribute('font-size',EN?'84':'120');
+  if(!show(b,t<K.ask?0:v.o))return; blur(b,v.blur); $('bubT').textContent=TX.bub; $('bubT').setAttribute('font-size',EN?'68':'120');
   const a=S(t-K.ask,13,0.5), c=t>K.comment?S(t-K.comment,18,0.45):0;
   b.style.transformOrigin='30% 100%';
   b.style.transform=`translate(170px,${f2(150+12*Math.sin((t-K.ask)*6))}px) rotate(${f2(-5+4*Math.sin(t*3))}deg) scale(${(0.25+0.75*a+0.08*Math.sin(Math.PI*clamp((t-K.comment)/0.3))*(t>K.comment?1:0)).toFixed(4)})`;

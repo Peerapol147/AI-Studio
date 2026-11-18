@@ -1,0 +1,114 @@
+[
+ {
+  "t": 0.45,
+  "type": "appear",
+  "desc": "hook: x-ray lens + crack burst",
+  "sfx": "click/fs788933.ogg",
+  "gain": -6
+ },
+ {
+  "t": 1.34,
+  "type": "scene_cut",
+  "desc": "whip-pan to the stern elder",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -12
+ },
+ {
+  "t": 2.52,
+  "type": "movement",
+  "desc": "bones grind, red sparks",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -12
+ },
+ {
+  "t": 4.2,
+  "type": "scene_cut",
+  "desc": "zoom-through from the x-ray into the joint",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -12
+ },
+ {
+  "t": 5.76,
+  "type": "appear",
+  "desc": "synovial fluid shimmers",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -10
+ },
+ {
+  "t": 6.98,
+  "type": "movement",
+  "desc": "bones slide apart",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -11
+ },
+ {
+  "t": 7.92,
+  "type": "movement",
+  "desc": "gauge needle drops",
+  "sfx": "transition/kenney-interface-scroll-001.ogg",
+  "gain": -9
+ },
+ {
+  "t": 8.8,
+  "type": "appear",
+  "desc": "gas bubble blooms",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -7
+ },
+ {
+  "t": 9.72,
+  "type": "appear",
+  "desc": "knuckle crack: punch-in + shake",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -4
+ },
+ {
+  "t": 10.3,
+  "type": "scene_cut",
+  "desc": "whip-pan to the doctor",
+  "sfx": "whoosh/fs810485.ogg",
+  "gain": -13
+ },
+ {
+  "t": 11.44,
+  "type": "scene_cut",
+  "desc": "zoom-through into the two hands",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 12.9,
+  "type": "success",
+  "desc": "left hand check",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -10
+ },
+ {
+  "t": 13.7,
+  "type": "success",
+  "desc": "right hand check",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -10
+ },
+ {
+  "t": 14.68,
+  "type": "scene_cut",
+  "desc": "whip-pan to the sore wrist",
+  "sfx": "whoosh/fs393811.ogg",
+  "gain": -13
+ },
+ {
+  "t": 16.64,
+  "type": "scene_cut",
+  "desc": "zoom-through back to the hook hands",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -13
+ },
+ {
+  "t": 16.72,
+  "type": "appear",
+  "desc": "comment bubble pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -8
+ }
+]
