@@ -1,0 +1,92 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "graphic:bedroom",
+   "cue": {
+    "th": "ตื่น"
+   },
+   "note": "dark bedroom, person on back, eyes wide open, big question text"
+  },
+  {
+   "id": "frozen",
+   "src": "footage",
+   "cue": {
+    "th": "ขยับ"
+   },
+   "note": "real photo: person lying in bed in the dark, eyes open (fallback: graphic hand trying to move)"
+  },
+  {
+   "id": "belief",
+   "src": "footage",
+   "cue": {
+    "th": "คนไทย"
+   },
+   "note": "Fuseli 'The Nightmare' 1781 (public domain) cropped, dark, no zoom on creature face"
+  },
+  {
+   "id": "truth",
+   "src": "graphic:bedroom",
+   "cue": {
+    "th": "แต่ความจริง"
+   },
+   "note": "lights come up, shadows fade, camera zooms into head"
+  },
+  {
+   "id": "lock",
+   "src": "graphic:brain",
+   "cue": {
+    "th": "ตอนฝัน"
+   },
+   "note": "brain sends lock signal to body; dream bubble running, body still; lock snaps on 'ล็อก'",
+   "hit": {
+    "th": "ล็อก"
+   }
+  },
+  {
+   "id": "wake",
+   "src": "graphic:brain",
+   "cue": {
+    "th": "ถ้าตื่น"
+   },
+   "note": "brain fully lit but lock remains; dream leaks as soft shadow; weight presses chest on 'ทับอก'",
+   "hit": {
+    "th": "ทับอก"
+   }
+  },
+  {
+   "id": "world",
+   "src": "graphic:globe",
+   "cue": {
+    "th": "ญี่ปุ่น"
+   },
+   "note": "globe pins: Thailand ผีอำ, Japan คานาชิบาริ, Newfoundland Old Hag"
+  },
+  {
+   "id": "risk",
+   "src": "graphic:icons",
+   "cue": {
+    "th": "มักเกิด"
+   },
+   "note": "one icon morphs: clock 3am -> stressed head -> person lying on back"
+  },
+  {
+   "id": "doctor",
+   "src": "footage",
+   "cue": {
+    "th": "ถ้าเป็น"
+   },
+   "note": "doctor talking with patient (fallback graphic)"
+  },
+  {
+   "id": "ask",
+   "src": "graphic:bedroom",
+   "cue": {
+    "th": "คุณเคย"
+   },
+   "note": "back to bedroom (loop), comment bubble 'เคยโดนไหม? เห็นอะไร?'"
+  }
+ ]
+}
