@@ -11,3 +11,6 @@
 - fishing-inaturalist-40917494.jpg: ครอปและปรับสี; CK Kelly, CC BY 4.0, https://www.inaturalist.org/photos/40917494 (via Openverse)
 - fishing2-inaturalist-246153880.jpg: ครอปและปรับสี; Martine Lapointe, CC BY 4.0, https://www.inaturalist.org/photos/246153880 (via Openverse)
 - ancestor-inaturalist-368888333.jpg: dune_ninja, CC0 1.0, https://www.inaturalist.org/photos/368888333 (via Openverse)
+- เสียงประกอบ (SFX) ทั้งหมด CC0 1.0 จากคลัง `.claude/skills/sound-effects/sfx/` (รายการและที่มาใน video/sound/cues-th.json + manifest.json): Kenney (kenney.nl) interface/impact sounds; Freesound: jcallison, Breviceps, Sadiquecat, malle99, Jummit, BaggoNotes, dave.des, Halgrimm, Shinplaster, florianreichelt, CVLTIV8R, MeanRaccoon, deleted_user_6479820
+- ฟอนต์: Kanit (SIL Open Font License 1.1) ผ่าน @fontsource ไฟล์ไลเซนส์ video/fonts/LICENSE-kanit.txt; Noto Color Emoji (SIL OFL 1.1) สำหรับอีโมจิบนจอ
+- เสียงพากย์: ElevenLabs eleven_v3 (AI) voice George
