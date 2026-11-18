@@ -5,7 +5,7 @@
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/hook-pixabay-133585.mp4",
    "cue": "ทำไม",
    "word_at": 0.08,
    "start": 0.0,
@@ -14,7 +14,7 @@
   },
   {
    "id": "belief",
-   "src": null,
+   "src": "assets/footage/belief-pixabay-33328.mp4",
    "cue": "หลายคน",
    "word_at": 1.28,
    "start": 1.2,
@@ -23,7 +23,7 @@
   },
   {
    "id": "fishing",
-   "src": null,
+   "src": "assets/footage/fishing-inaturalist-40917494.jpg",
    "cue": "ความจริง",
    "word_at": 3.92,
    "start": 3.84,
@@ -32,7 +32,7 @@
   },
   {
    "id": "fishing2",
-   "src": null,
+   "src": "assets/footage/fishing2-inaturalist-246153880.jpg",
    "cue": "ดำน้ำ",
    "word_at": 6.36,
    "start": 6.28,
@@ -41,7 +41,7 @@
   },
   {
    "id": "van",
-   "src": null,
+   "src": "assets/footage/van-pixabay-1581688.jpg",
    "cue": "แมวบางพันธุ์",
    "word_at": 8.039,
    "start": 7.959,
@@ -50,7 +50,7 @@
   },
   {
    "id": "van2",
-   "src": null,
+   "src": "assets/footage/van2-pixabay-5966014.jpg",
    "cue": "ชอบเล่นน้ำ",
    "word_at": 10.46,
    "start": 10.38,
@@ -59,7 +59,7 @@
   },
   {
    "id": "vet",
-   "src": null,
+   "src": "assets/footage/vet-pixabay-4588434.jpg",
    "cue": "สัตวแพทย์",
    "word_at": 11.44,
    "start": 11.36,
@@ -79,7 +79,7 @@
   },
   {
    "id": "ancestor",
-   "src": null,
+   "src": "assets/footage/ancestor-inaturalist-368888333.jpg",
    "cue": "บรรพบุรุษ",
    "word_at": 16.56,
    "start": 16.48,
@@ -88,7 +88,7 @@
   },
   {
    "id": "dry",
-   "src": null,
+   "src": "graphic:map",
    "cue": "แห้งแล้ง",
    "word_at": 18.26,
    "start": 18.18,
@@ -97,7 +97,7 @@
   },
   {
    "id": "guess",
-   "src": null,
+   "src": "assets/footage/guess-pixabay-1199240.jpg",
    "cue": "เดาว่า",
    "word_at": 19.48,
    "start": 19.4,
@@ -106,7 +106,7 @@
   },
   {
    "id": "swim",
-   "src": null,
+   "src": "assets/footage/swim-pixabay-1547186.jpg",
    "cue": "ว่ายน้ำได้",
    "word_at": 22.04,
    "start": 21.96,
@@ -115,7 +115,7 @@
   },
   {
    "id": "ask",
-   "src": null,
+   "src": "assets/footage/ask-pixabay-57866.mp4",
    "cue": "แมวที่บ้าน",
    "word_at": 23.88,
    "start": 23.8,

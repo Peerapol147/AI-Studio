@@ -1,1 +1,13 @@
 - music-jamendo-b6fb4ded.mp3: "playfulness" by Pan:core (CC BY 3.0) https://www.jamendo.com/track/2040809
+- hook-pixabay-133585.mp4: RoyBuri via Pixabay https://pixabay.com/videos/id-133585/ (Pixabay License; trim)
+- belief-pixabay-33328.mp4: DesignwithRiyas via Pixabay https://pixabay.com/videos/id-33328/ (Pixabay License; trim)
+- ask-pixabay-57866.mp4: Pixabay https://pixabay.com/videos/id-57866/ (Pixabay License; trim)
+- dry-pixabay-89769.mp4: Amirirani via Pixabay https://pixabay.com/videos/id-89769/ (Pixabay License; trim)
+- van-pixabay-1581688.jpg: platinumportfolio via Pixabay https://pixabay.com/photos/cat-white-turkish-van-feline-pet-1581688/ (Pixabay License)
+- van2-pixabay-5966014.jpg: 3137490 via Pixabay https://pixabay.com/photos/cat-curious-cat-tap-water-kitten-5966014/ (Pixabay License)
+- vet-pixabay-4588434.jpg: andriish22 via Pixabay https://pixabay.com/photos/wet-cat-i-love-it-bathing-wool-4588434/ (Pixabay License)
+- guess-pixabay-1199240.jpg: rihaij via Pixabay https://pixabay.com/photos/cat-kitten-red-tabby-water-red-cat-1199240/ (Pixabay License)
+- swim-pixabay-1547186.jpg: LivingInPuglia via Pixabay https://pixabay.com/photos/cat-fishing-in-pool-pet-feline-1547186/ (Pixabay License)
+- fishing-inaturalist-40917494.jpg: ครอปและปรับสี; CK Kelly, CC BY 4.0, https://www.inaturalist.org/photos/40917494 (via Openverse)
+- fishing2-inaturalist-246153880.jpg: ครอปและปรับสี; Martine Lapointe, CC BY 4.0, https://www.inaturalist.org/photos/246153880 (via Openverse)
+- ancestor-inaturalist-368888333.jpg: dune_ninja, CC0 1.0, https://www.inaturalist.org/photos/368888333 (via Openverse)
