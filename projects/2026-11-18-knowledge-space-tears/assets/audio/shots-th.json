@@ -1,0 +1,159 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 25.326,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ร้องไห้",
+   "word_at": 0.22,
+   "start": 0.0,
+   "end": 2.04,
+   "dur": 2.04,
+   "media_start": 1.78
+  },
+  {
+   "id": "cheek",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "แก้ม",
+   "word_at": 2.12,
+   "start": 2.04,
+   "end": 2.82,
+   "dur": 0.78,
+   "media_start": 14.92
+  },
+  {
+   "id": "belief",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "หลายคน",
+   "word_at": 2.9,
+   "start": 2.82,
+   "end": 4.6,
+   "dur": 1.78,
+   "media_start": 23.92
+  },
+  {
+   "id": "truth",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ความจริง",
+   "word_at": 4.68,
+   "start": 4.6,
+   "hit": "ไม่ไหลเลย",
+   "hit_at": 5.24,
+   "end": 7.4,
+   "dur": 2.8,
+   "media_start": 29.36
+  },
+  {
+   "id": "float",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ทุกอย่างลอย",
+   "word_at": 7.48,
+   "start": 7.4,
+   "end": 8.5,
+   "dur": 1.1,
+   "media_start": 37.92
+  },
+  {
+   "id": "nopull",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ไม่มีอะไรดึง",
+   "word_at": 8.58,
+   "start": 8.5,
+   "end": 10.52,
+   "dur": 2.02,
+   "media_start": 45.92
+  },
+  {
+   "id": "merge",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "รวมตัว",
+   "word_at": 10.6,
+   "start": 10.52,
+   "end": 11.8,
+   "dur": 1.28,
+   "media_start": 49.92
+  },
+  {
+   "id": "tension",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "แรงตึงผิว",
+   "word_at": 11.88,
+   "start": 11.8,
+   "end": 13.28,
+   "dur": 1.48,
+   "media_start": 55.92
+  },
+  {
+   "id": "stick",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "เกาะอยู่",
+   "word_at": 13.36,
+   "start": 13.28,
+   "end": 15.16,
+   "dur": 1.88,
+   "media_start": 59.92
+  },
+  {
+   "id": "bigger",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ยิ่งใหญ่",
+   "word_at": 15.24,
+   "start": 15.16,
+   "end": 16.24,
+   "dur": 1.08,
+   "media_start": 63.92
+  },
+  {
+   "id": "wipe",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "เช็ดออก",
+   "word_at": 16.32,
+   "start": 16.24,
+   "end": 18.02,
+   "dur": 1.78,
+   "media_start": 67.92
+  },
+  {
+   "id": "earth",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ไหลลงมา",
+   "word_at": 18.1,
+   "start": 18.02,
+   "end": 20.0,
+   "dur": 1.98,
+   "media_start": 25.92
+  },
+  {
+   "id": "nofall",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ไม่ตก",
+   "word_at": 20.08,
+   "start": 20.0,
+   "end": 20.96,
+   "dur": 0.96,
+   "media_start": 33.92
+  },
+  {
+   "id": "tissue",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "ผ้าเช็ดหน้า",
+   "word_at": 21.04,
+   "start": 20.96,
+   "end": 21.84,
+   "dur": 0.88,
+   "media_start": 41.92
+  },
+  {
+   "id": "outro",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": "แล้วเพื่อนๆ",
+   "word_at": 21.92,
+   "start": 21.84,
+   "end": 25.326,
+   "dur": 3.486,
+   "media_start": 69.92
+  }
+ ]
+}
