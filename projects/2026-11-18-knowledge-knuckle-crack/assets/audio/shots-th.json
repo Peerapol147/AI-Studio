@@ -1,0 +1,161 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 19.479,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "",
+   "cue": "ทำไม",
+   "word_at": 0.02,
+   "start": 0.0,
+   "end": 1.32,
+   "dur": 1.32
+  },
+  {
+   "id": "elder",
+   "src": "",
+   "cue": "ผู้ใหญ่",
+   "word_at": 1.4,
+   "start": 1.32,
+   "end": 2.5,
+   "dur": 1.18
+  },
+  {
+   "id": "grind",
+   "src": "graphic:joint",
+   "cue": "กระดูก",
+   "word_at": 2.58,
+   "start": 2.5,
+   "hit": "เสียดสี",
+   "hit_at": 2.86,
+   "end": 3.7,
+   "dur": 1.2
+  },
+  {
+   "id": "arth",
+   "src": "",
+   "cue": "เดี๋ยว",
+   "word_at": 3.78,
+   "start": 3.7,
+   "end": 4.5,
+   "dur": 0.8
+  },
+  {
+   "id": "truth",
+   "src": "graphic:joint",
+   "cue": "แต่ความจริง",
+   "word_at": 4.58,
+   "start": 4.5,
+   "end": 6.24,
+   "dur": 1.74
+  },
+  {
+   "id": "fluid",
+   "src": "graphic:joint",
+   "cue": "น้ำหล่อลื่น",
+   "word_at": 6.32,
+   "start": 6.24,
+   "end": 7.26,
+   "dur": 1.02
+  },
+  {
+   "id": "pull",
+   "src": "graphic:joint",
+   "cue": "พอดึง",
+   "word_at": 7.34,
+   "start": 7.26,
+   "hit": "ออก",
+   "hit_at": 7.86,
+   "end": 8.08,
+   "dur": 0.82
+  },
+  {
+   "id": "press",
+   "src": "graphic:joint",
+   "cue": "ความดัน",
+   "word_at": 8.16,
+   "start": 8.08,
+   "hit": "ลดลง",
+   "hit_at": 8.56,
+   "end": 9.26,
+   "dur": 1.18
+  },
+  {
+   "id": "bubble",
+   "src": "graphic:joint",
+   "cue": "ฟองแก๊ส",
+   "word_at": 9.34,
+   "start": 9.26,
+   "hit": "ฟองแก๊ส",
+   "hit_at": 9.34,
+   "end": 10.76,
+   "dur": 1.5
+  },
+  {
+   "id": "doctor",
+   "src": "",
+   "cue": "หมอ",
+   "word_at": 10.84,
+   "start": 10.76,
+   "end": 11.7,
+   "dur": 0.94
+  },
+  {
+   "id": "left",
+   "src": "graphic:two-hands",
+   "cue": "มือซ้าย",
+   "word_at": 11.78,
+   "start": 11.7,
+   "end": 12.14,
+   "dur": 0.44
+  },
+  {
+   "id": "decades",
+   "src": "graphic:two-hands",
+   "cue": "หลายสิบปี",
+   "word_at": 12.22,
+   "start": 12.14,
+   "end": 13.36,
+   "dur": 1.22
+  },
+  {
+   "id": "noarth",
+   "src": "graphic:two-hands",
+   "cue": "ไม่มีข้อ",
+   "word_at": 13.44,
+   "start": 13.36,
+   "hit": "สักข้าง",
+   "hit_at": 14.18,
+   "end": 15.3,
+   "dur": 1.94
+  },
+  {
+   "id": "hurt",
+   "src": "",
+   "cue": "เจ็บ",
+   "word_at": 15.38,
+   "start": 15.3,
+   "end": 16.18,
+   "dur": 0.88
+  },
+  {
+   "id": "clinic",
+   "src": "",
+   "cue": "ไปหาหมอ",
+   "word_at": 16.26,
+   "start": 16.18,
+   "end": 17.06,
+   "dur": 0.88
+  },
+  {
+   "id": "ask",
+   "src": "graphic:comment",
+   "cue": "แล้วคุณ",
+   "word_at": 17.14,
+   "start": 17.06,
+   "end": 19.479,
+   "dur": 2.419
+  }
+ ]
+}
