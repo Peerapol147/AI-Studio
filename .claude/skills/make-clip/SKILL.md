@@ -17,6 +17,17 @@ description: Use when the user asks for a new clip or episode ("ทำคลิ�
 - ค่าเริ่มต้นถ้าผู้ใช้ไม่บอก: short 15-20 วิ (ช่องความรู้), ไทย+อังกฤษ ถ้าผู้ใช้สั่งภาษาเดียว: ข้ามเสียง/เรนเดอร์/upload ของอีกภาษา
 - เช็ก `PIXABAY_API_KEY` (env หรือ `.env`) ถ้าไม่มี บอกผู้ใช้ให้ตั้งใน Environment variables ก่อนขั้น footage
 
+## หัวข้อจากเทรนด์ต่างประเทศ (สไตล์ที่ผู้ใช้ชอบ: ตอน knuckle-crack)
+เมื่อผู้ใช้สั่ง "หัวข้อดังจากต่างประเทศ" หรือ "แบบตอนหักนิ้ว": ผู้กำกับหาเอง (researcher ไม่มี Bash)
+```bash
+curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIYAQ%253D%253D" | grep -oE '"accessibilityText":"[^"]{0,160}views[^"]*"' | head -20
+```
+(ค้นหาแบบ Shorts อ่านแค่ยอดวิว ห้ามดาวน์โหลดคลิป) เลือกหัวข้อที่มีคลิปหลายตัวหลายล้านวิว + เป็นเรื่องร่างกาย/ชีวิตประจำวัน
+มุมเล่า: **"ความเชื่อ vs ความจริง"** (คนเชื่อว่า... → แต่งานวิจัยบอกว่า...) ใช้แค่หัวข้อ เขียนบท/ภาพ/ชื่อเอง
+ก่อนเลือก: เช็ก Pixabay **videos** totalHits ของ action หลัก ถ้า 0 ให้วางแผนเป็นภาพนิ่ง push-in + กราฟิกตั้งแต่บท
+แม่แบบ: `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`) ดึงมาใช้ด้วย
+`git fetch origin <branch> && git archive FETCH_HEAD <path> | tar -x`
+
 ## 1-7. สายพาน (ใครทำ → ไฟล์ที่ได้)
 
 | ขั้น | ใคร | ผลลัพธ์ | สิ่งที่ต้องสั่งให้ชัด |
@@ -37,6 +48,7 @@ commit + push หลังจบแต่ละขั้น (stop hook บัง
 เวลาทุกช็อตมาจากคำพูด ไม่ตั้งด้วยมือ ทำตาม `docs/pipeline.md` หัวข้อ "ภาพตรงจังหวะพากย์":
 ผู้กำกับเขียน `shots.json` (ขั้น 3) → footage ใส่ `action_at`/`src` → voice ทำ words ด้วย `bash tools/words.sh` →
 `python3 tools/shot_times.py <project> th|en` → editor ใช้ `assets/audio/shots-<lang>.json` เท่านั้น
+- cue ห่างกันอย่างน้อย ~5-6 คำไทย / 3 คำอังกฤษ (ติดกันเกินจะได้ช็อต <0.6 วิ)
 - วาง `cue` ใน shots.json **หลังได้ words.json** (หรือร่างให้ช็อตละ ~1.2 วิ ตั้งแต่แรก) ไม่งั้นช็อตยาว/สั้นเกิน
 - ถ้าเขียน shots.json ใหม่ ต้องบอก footage ให้อ่านใหม่ เพราะการเขียนทับจะลบ `src`/`action_at` เดิม
 
@@ -69,6 +81,7 @@ cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", 
 | skill `sound-effects` ตัด/ทับเสียงพากย์ | ใช้ `tools/sound_pass_vo.py --voice ... --duck-db ...` |
 | node fetch ไม่ผ่าน proxy | ใช้ curl ในสคริปต์ |
 | pubmed / pmc / plos / jamendo.com (หน้าไลเซนส์) โดนบล็อก | ยืนยันจากบทคัดย่อ/แหล่งรอง และบอกผู้ใช้; ขอเพิ่ม host เฉพาะเมื่อผู้ใช้ตกลง |
+| scribe ถอดคำควบกล้ำผิด ("กร๊อบ"→"ก๊อบ") cue หาไม่เจอ | ใช้คำข้างเคียงเป็น cue หรือสะกดตามที่ถอด; ซับแก้กลับเป็นคำที่ถูก |
 | host ใหม่โดนบล็อก (`CONNECT tunnel failed 403`) | ขอเพิ่ม host ด้วย update_environment ทีละน้อยที่สุด |
 
 ## ประหยัด token
