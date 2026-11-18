@@ -1,114 +1,198 @@
 [
  {
-  "t": 0.45,
+  "t": 0.42,
   "type": "appear",
-  "desc": "hook: x-ray lens + crack burst",
-  "sfx": "click/fs788933.ogg",
-  "gain": -6
+  "desc": "hook: droplets pop at the glass rim",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -14
  },
  {
-  "t": 1.32,
+  "t": 1.2,
   "type": "scene_cut",
-  "desc": "whip-pan to the stern elder",
+  "desc": "whip-pan to the cat by the sea",
   "sfx": "whoosh/fs-683101-quick-woosh.ogg",
-  "gain": -12
+  "gain": -14
  },
  {
-  "t": 2.86,
-  "type": "movement",
-  "desc": "bones grind, red sparks",
-  "sfx": "transition/fs-702773-swipe-wav.ogg",
-  "gain": -12
+  "t": 1.28,
+  "type": "appear",
+  "desc": "pill \"ความเชื่อ\" springs in",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -13
  },
  {
-  "t": 4.5,
+  "t": 3.84,
   "type": "scene_cut",
-  "desc": "zoom-through from the x-ray into the joint",
+  "desc": "zoom-through to the fishing cat card",
   "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 3.92,
+  "type": "success",
+  "desc": "pill morphs to green \"ความจริง ✅\"",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
   "gain": -12
  },
  {
-  "t": 6.32,
+  "t": 4.9,
   "type": "appear",
-  "desc": "synovial fluid shimmers",
-  "sfx": "pop/kenney-interface-drop-001.ogg",
-  "gain": -10
+  "desc": "name tag \"เสือปลา\"",
+  "sfx": "kit/pop.ogg",
+  "gain": -12
  },
  {
-  "t": 7.86,
-  "type": "movement",
-  "desc": "bones slide apart",
-  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -11
+  "t": 5.74,
+  "type": "hover_or_small_ui",
+  "desc": "Thailand map lens pops",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -12
  },
  {
-  "t": 8.56,
-  "type": "movement",
-  "desc": "gauge needle drops",
-  "sfx": "transition/kenney-interface-scroll-001.ogg",
-  "gain": -9
- },
- {
-  "t": 9.34,
+  "t": 6.36,
   "type": "appear",
-  "desc": "gas bubble blooms",
+  "desc": "fish leaps + splash on \"ดำน้ำ\"",
   "sfx": "pop/fs-447910-plop.ogg",
   "gain": -7
  },
  {
-  "t": 10.52,
-  "type": "appear",
-  "desc": "knuckle crack: punch-in + shake",
-  "sfx": "pop/fs-258269-mouth-pop.ogg",
-  "gain": -4
- },
- {
-  "t": 10.76,
+  "t": 7.959,
   "type": "scene_cut",
-  "desc": "whip-pan to the doctor",
+  "desc": "whip-pan to the Turkish Van card",
   "sfx": "whoosh/fs810485.ogg",
-  "gain": -13
+  "gain": -14
  },
  {
-  "t": 11.7,
-  "type": "scene_cut",
-  "desc": "zoom-through into the two hands",
-  "sfx": "whoosh/fs-169867-swoosh.ogg",
-  "gain": -13
- },
- {
-  "t": 13.44,
-  "type": "success",
-  "desc": "left hand check",
-  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "t": 9.18,
+  "type": "hover_or_small_ui",
+  "desc": "name tag \"เตอร์กิชแวน\" slides in",
+  "sfx": "tick/fs528561.ogg",
   "gain": -10
  },
  {
-  "t": 14.18,
-  "type": "success",
-  "desc": "right hand check",
-  "sfx": "ding/kenney-interface-glass-001.ogg",
-  "gain": -10
- },
- {
-  "t": 15.3,
-  "type": "scene_cut",
-  "desc": "whip-pan to the sore wrist",
-  "sfx": "whoosh/fs393811.ogg",
-  "gain": -13
- },
- {
-  "t": 17.06,
-  "type": "scene_cut",
-  "desc": "zoom-through back to the hook hands",
-  "sfx": "whoosh/fs830856.ogg",
-  "gain": -13
- },
- {
-  "t": 17.14,
+  "t": 10.62,
   "type": "appear",
-  "desc": "comment bubble pops",
+  "desc": "faucet splash on \"เล่นน้ำ\"",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -11
+ },
+ {
+  "t": 11.36,
+  "type": "scene_cut",
+  "desc": "whip-pan to the damp cat",
+  "sfx": "whoosh/fs393811.ogg",
+  "gain": -14
+ },
+ {
+  "t": 11.44,
+  "type": "appear",
+  "desc": "pill \"สัตวแพทย์\"",
+  "sfx": "pop/kenney-interface-pluck-002.ogg",
+  "gain": -13
+ },
+ {
+  "t": 12.86,
+  "type": "scene_cut",
+  "desc": "zoom-through into the fur diagram",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 13.04,
+  "type": "appear",
+  "desc": "drops start filling the cat",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -14
+ },
+ {
+  "t": 13.64,
+  "type": "reveal",
+  "desc": "thud: cat sinks, gauge swings on \"หนัก\"",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -7
+ },
+ {
+  "t": 14.02,
+  "type": "hover_or_small_ui",
+  "desc": "dial becomes a clock on \"แห้งช้า\"",
+  "sfx": "tick/fs721514.ogg",
+  "gain": -10
+ },
+ {
+  "t": 16.48,
+  "type": "scene_cut",
+  "desc": "whip-pan to the wild ancestor",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -14
+ },
+ {
+  "t": 16.56,
+  "type": "appear",
+  "desc": "name tag \"บรรพบุรุษแมวบ้าน\"",
   "sfx": "kit/pop.ogg",
-  "gain": -8
+  "gain": -13
+ },
+ {
+  "t": 18.18,
+  "type": "movement",
+  "desc": "map lens grows over the dry land (soft wind)",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -9
+ },
+ {
+  "t": 19.4,
+  "type": "scene_cut",
+  "desc": "zoom-through to the kitten at the water",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -15
+ },
+ {
+  "t": 19.48,
+  "type": "appear",
+  "desc": "pill \"สมมติฐาน\"",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -13
+ },
+ {
+  "t": 21.96,
+  "type": "scene_cut",
+  "desc": "whip-pan to the cat at the pool",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 22.04,
+  "type": "appear",
+  "desc": "pool splash on \"ว่ายน้ำได้\"",
+  "sfx": "pop/kenney-interface-drop-003.ogg",
+  "gain": -10
+ },
+ {
+  "t": 22.9,
+  "type": "appear",
+  "desc": "boing: zoom into the face",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -10
+ },
+ {
+  "t": 23.8,
+  "type": "scene_cut",
+  "desc": "zoom-through to the tabby",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 24.92,
+  "type": "appear",
+  "desc": "button \"ทีมเล่นน้ำ 💦\"",
+  "sfx": "kit/pop.ogg",
+  "gain": -9
+ },
+ {
+  "t": 26.02,
+  "type": "appear",
+  "desc": "button \"ทีมข่วน 😾\"",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -9
  }
 ]
