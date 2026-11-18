@@ -2,13 +2,102 @@
  "lead": 0.08,
  "end": "auto",
  "shots": [
-  {"id": "hook", "cue": {"th": "ทำไม"}, "note": "FIRST FRAME: clear wet cat in bathtub/sink or cat staring at water, face in Y 500-1300, readable without sound; must move (video) within 1.5s"},
-  {"id": "belief", "cue": {"th": "หลายคน"}, "note": "cat recoiling/running from water, or annoyed cat being bathed"},
-  {"id": "fishing", "cue": {"th": "เสือปลา"}, "hit": {"th": "ดำน้ำ"}, "note": "fishing cat (Prionailurus viverrinus) at/in water; label 'เสือปลา'; small Thailand map dot (graphic)"},
-  {"id": "van", "cue": {"th": "เตอร์กิชแวน"}, "note": "Turkish Van cat (white body, colored head/tail); or cat playing with water if no Van video; label 'เตอร์กิชแวน'"},
-  {"id": "fur", "src": "graphic:fur", "cue": {"th": "ขนแมว"}, "hit": {"th": "หนัก"}, "note": "graphic: cat silhouette fills with water droplets, weight gauge springs up on 'หนัก', clock/slow-dry on 'แห้งช้า'; or wet cat close-up with graphic overlay"},
-  {"id": "ancestor", "cue": {"th": "บรรพบุรุษ"}, "note": "African/Near-Eastern wildcat in dry grassland/semi-desert (Felis lybica); morph to small map dry region"},
-  {"id": "swim", "cue": {"th": "ว่ายน้ำได้"}, "note": "cat swimming / paddling, or cat paw dipping into water"},
-  {"id": "ask", "cue": {"th": "แมวที่บ้าน"}, "note": "cat playing with tap water vs cat swatting; two pills 'ทีมเล่นน้ำ' / 'ทีมข่วน' (graphic, X<=900, Y<=1420)"}
+  {
+   "id": "hook",
+   "cue": {
+    "th": "ทำไม"
+   },
+   "note": "FIRST FRAME: calm wet cat (e.g. cat in rain portrait) or cat looking at water; NOT a cat being forced/struggling; face in Y 500-1300; must move within 1.5s"
+  },
+  {
+   "id": "belief",
+   "cue": {
+    "th": "หลายคน"
+   },
+   "note": "cat hesitating/looking unimpressed at water (calm, no distress); 'ความเชื่อ' pill"
+  },
+  {
+   "id": "fishing",
+   "cue": {
+    "th": "ความจริง"
+   },
+   "note": "fishing cat (Prionailurus viverrinus) by water, establishing; 'ความจริง ✅' + label เสือปลา + Thailand map dot"
+  },
+  {
+   "id": "fishing2",
+   "cue": {
+    "th": "ดำน้ำ"
+   },
+   "note": "fishing cat in/at water hunting, or 2nd fishing cat image with push-in/parallax"
+  },
+  {
+   "id": "van",
+   "cue": {
+    "th": "แมวบางพันธุ์"
+   },
+   "note": "Turkish Van cat (white body, coloured head/tail) photo; label 'เตอร์กิชแวน'"
+  },
+  {
+   "id": "van2",
+   "cue": {
+    "th": "ชอบเล่นน้ำ"
+   },
+   "note": "cat playing with tap/faucet water happily (calm, voluntary)"
+  },
+  {
+   "id": "vet",
+   "cue": {
+    "th": "สัตวแพทย์"
+   },
+   "note": "calm wet/damp cat close-up or cat being towelled gently (no distress)"
+  },
+  {
+   "id": "fur",
+   "src": "graphic:fur",
+   "cue": {
+    "th": "ขนแมว"
+   },
+   "hit": {
+    "th": "หนัก"
+   },
+   "note": "graphic: cat silhouette absorbs droplets, weight gauge springs on 'หนัก', clock slows on 'แห้งช้า'",
+   "long_ok": true
+  },
+  {
+   "id": "ancestor",
+   "cue": {
+    "th": "บรรพบุรุษ"
+   },
+   "note": "African wildcat / wildcat in dry grassland (Felis lybica if available, else similar small wild cat in arid habitat)"
+  },
+  {
+   "id": "dry",
+   "cue": {
+    "th": "แห้งแล้ง"
+   },
+   "note": "graphic map: dry region (Near East / North Africa) glow, morph from previous; label 'ถิ่นแห้งแล้ง'"
+  },
+  {
+   "id": "guess",
+   "cue": {
+    "th": "เดาว่า"
+   },
+   "note": "cat cautiously sniffing/touching water with paw (calm); small 'สมมติฐาน' tag"
+  },
+  {
+   "id": "swim",
+   "cue": {
+    "th": "ว่ายน้ำได้"
+   },
+   "note": "cat paddling/swimming calmly or cat paw in water; playful zoom"
+  },
+  {
+   "id": "ask",
+   "cue": {
+    "th": "แมวที่บ้าน"
+   },
+   "note": "cat with tap water / cute cat; two pills 'ทีมเล่นน้ำ 💦' / 'ทีมข่วน 😾' graphic (no real stressed cat)",
+   "long_ok": true
+  }
  ]
 }
