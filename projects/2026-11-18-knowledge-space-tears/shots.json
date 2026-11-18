@@ -1,0 +1,129 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ร้องไห้"
+   },
+   "action_at": 2
+  },
+  {
+   "id": "cheek",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "แก้ม"
+   },
+   "action_at": 15
+  },
+  {
+   "id": "belief",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "หลายคน"
+   },
+   "action_at": 24
+  },
+  {
+   "id": "truth",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ความจริง"
+   },
+   "action_at": 30,
+   "hit": {
+    "th": "ไม่ไหลเลย"
+   }
+  },
+  {
+   "id": "float",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ทุกอย่างลอย"
+   },
+   "action_at": 38
+  },
+  {
+   "id": "nopull",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ไม่มีอะไรดึง"
+   },
+   "action_at": 46
+  },
+  {
+   "id": "merge",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "รวมตัว"
+   },
+   "action_at": 50
+  },
+  {
+   "id": "tension",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "แรงตึงผิว"
+   },
+   "action_at": 56
+  },
+  {
+   "id": "stick",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "เกาะอยู่"
+   },
+   "action_at": 60
+  },
+  {
+   "id": "bigger",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ยิ่งใหญ่"
+   },
+   "action_at": 64
+  },
+  {
+   "id": "wipe",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "เช็ดออก"
+   },
+   "action_at": 68
+  },
+  {
+   "id": "earth",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ไหลลงมา"
+   },
+   "action_at": 26
+  },
+  {
+   "id": "nofall",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ไม่ตก"
+   },
+   "action_at": 34
+  },
+  {
+   "id": "tissue",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "ผ้าเช็ดหน้า"
+   },
+   "action_at": 42
+  },
+  {
+   "id": "outro",
+   "src": "assets/footage/nasa-moving-water.mp4",
+   "cue": {
+    "th": "แล้วเพื่อนๆ"
+   },
+   "action_at": 70
+  }
+ ]
+}
