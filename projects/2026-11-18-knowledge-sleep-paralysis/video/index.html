@@ -584,14 +584,24 @@ function captions(t){
 }
 
 const THUMB=!!window.__THUMB;
-function thumb(){ // cover (video/thumb): the hook bedroom + a soft faceless mist by the foot of the bed + "ผีอำ = ผีจริง?"
+function thumb(){ // cover (video/thumb): the hook bedroom, sleeper ~87% wide at 55-80% height, soft faceless mist over the chest, same words as frame 0
   const t=0.95; scenes(t); world(t); title(0.2);
-  $('tl2').textContent='ผีจริง?'; $('tl1').style.fontSize='205px'; $('tl2').style.fontSize='215px'; $('tl1').style.top='290px'; $('tl2').style.top='525px';
-  A('cam','transform','translate(540 1030) scale(1.5) translate(-470 -880)');
-  $('tl1').style.transform='scale(1.02)'; $('tl2').style.transform='rotate(-2deg) scale(1.04)';
-  const sg=$('shadowG'), sgl=$('shadowGl'); A('shadowG','opacity','0.9'); A('shadowGl','opacity','0.55');
-  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number); e.setAttribute('cx',f2(660+b[0]*1.1)); e.setAttribute('cy',f2(790+b[1]*1.2)); e.setAttribute('rx',f2(b[2]*1.1)); e.setAttribute('ry',f2(b[3]*1.3));});
-  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(660+[0,-40,40][i])); e.setAttribute('cy',f2(790+[-6,20,14][i])); e.setAttribute('rx',f2(160-i*20)); e.setAttribute('ry',f2(130-i*15));});
+  A('cam','transform','translate(540 1490) scale(1.5) translate(-548 -960)');
+  A('clockF','opacity','0'); A('clockH','opacity','0');
+  A('eyeG','transform','translate(287 904) scale(1.7) translate(-287 -904)'); A('eyeGlow','opacity','1');
+  // title: line 2 sized to ~90% width; "=" as big as the letters, same baseline
+  const l1=$('tl1'), l2=$('tl2'); l1.innerHTML='ผีอำ <span style="font-size:1.3em;line-height:0;vertical-align:baseline">=</span>'; l2.textContent='ผีจริงไหม?';
+  const fit=(e,size,W)=>{e.style.fontSize=size+'px'; e.style.width='auto'; e.style.display='inline-block'; const w=e.getBoundingClientRect().width||W;
+    const fs=Math.floor(size*W/w); e.style.fontSize=fs+'px'; e.style.width='1080px'; e.style.display='block'; return fs;};
+  fit(l2,180,960); fit(l1,230,640);
+  l1.style.top='255px'; l2.style.top='520px'; l1.style.transform='scale(1)'; l2.style.transform='rotate(-2deg)';
+  [l1,l2].forEach(e=>{e.style.webkitTextStroke='30px #10080A'; e.style.textShadow='0 16px 0 rgba(0,0,0,.65),0 0 40px rgba(0,0,0,.8)';});
+  $('tshade').style.height='900px'; $('tshade').style.background='linear-gradient(rgba(4,3,14,.9) 0,rgba(4,3,14,.75) 60%,rgba(4,3,14,0))';
+  // mist: hovers over the chest towards the foot of the bed, faint purple rim
+  const sg=$('shadowG'), sgl=$('shadowGl'); A('shadowG','opacity','0.82'); A('shadowGl','opacity','0.7');
+  const MX=600, MY=850;
+  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number); e.setAttribute('cx',f2(MX+b[0]*0.95)); e.setAttribute('cy',f2(MY+b[1]*0.8)); e.setAttribute('rx',f2(b[2]*0.9)); e.setAttribute('ry',f2(b[3]*0.75));});
+  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(MX+[0,-50,50][i])); e.setAttribute('cy',f2(MY+[-6,16,10][i])); e.setAttribute('rx',f2(140-i*18)); e.setAttribute('ry',f2(95-i*12)); e.setAttribute('fill','#8A5CF0');});
   $('caps').style.display='none'; }
 function render(t){ if(THUMB){thumb();return;} scenes(t); world(t); title(t); chips(t); icons(t); strip(t); ending(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
