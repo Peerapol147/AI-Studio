@@ -559,24 +559,29 @@ function captions(t){
 }
 
 const THUMB=!!window.__THUMB;
-function thumb(){ // cover (video/thumb): the hook bedroom, sleeper ~87% wide at 55-80% height, soft faceless mist over the chest, same words as frame 0
+function thumb(){ // cover (video/thumb): 3-line title on top, sleeper + faceless mist right under it, no empty wall
   const t=0.95; scenes(t); world(t); title(0.2);
-  A('cam','transform','translate(540 1490) scale(1.5) translate(-548 -960)');
+  A('cam','transform','translate(540 1530) scale(1.9) translate(-445 -930)');
   A('clockF','opacity','0'); A('clockH','opacity','0');
-  A('eyeG','transform','translate(287 904) scale(1.7) translate(-287 -904)'); A('eyeGlow','opacity','1');
-  // title: line 2 sized to ~90% width; "=" as big as the letters, same baseline
-  const l1=$('tl1'), l2=$('tl2'); l1.innerHTML='ผีอำ <span style="font-size:1.3em;line-height:0;vertical-align:baseline">=</span>'; l2.textContent='ผีจริงไหม?';
+  A('eyeG','transform','translate(287 904) scale(2.2) translate(-287 -904)'); A('eyeGlow','opacity','1');
+  const l1=$('tl1'), l2=$('tl2'); let l3=$('tl3'); if(!l3){l3=document.createElement('div'); l3.id='tl3'; l3.className='tl'; $('title').appendChild(l3);}
+  l1.innerHTML='ผีอำ <span style="font-size:1.3em;line-height:0;vertical-align:baseline">=</span>'; l2.textContent='คือเรื่องลี้ลับ'; l3.textContent='จริงหรอ?';
   const fit=(e,size,W)=>{e.style.fontSize=size+'px'; e.style.width='auto'; e.style.display='inline-block'; const w=e.getBoundingClientRect().width||W;
     const fs=Math.floor(size*W/w); e.style.fontSize=fs+'px'; e.style.width='1080px'; e.style.display='block'; return fs;};
-  fit(l2,180,960); fit(l1,230,640);
-  l1.style.top='255px'; l2.style.top='520px'; l1.style.transform='scale(1)'; l2.style.transform='rotate(-2deg)';
-  [l1,l2].forEach(e=>{e.style.webkitTextStroke='30px #10080A'; e.style.textShadow='0 16px 0 rgba(0,0,0,.65),0 0 40px rgba(0,0,0,.8)';});
-  $('tshade').style.height='900px'; $('tshade').style.background='linear-gradient(rgba(4,3,14,.9) 0,rgba(4,3,14,.75) 60%,rgba(4,3,14,0))';
-  // mist: hovers over the chest towards the foot of the bed, faint purple rim
-  const sg=$('shadowG'), sgl=$('shadowGl'); A('shadowG','opacity','0.82'); A('shadowGl','opacity','0.7');
-  const MX=600, MY=850;
-  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number); e.setAttribute('cx',f2(MX+b[0]*0.95)); e.setAttribute('cy',f2(MY+b[1]*0.8)); e.setAttribute('rx',f2(b[2]*0.9)); e.setAttribute('ry',f2(b[3]*0.75));});
-  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(MX+[0,-50,50][i])); e.setAttribute('cy',f2(MY+[-6,16,10][i])); e.setAttribute('rx',f2(140-i*18)); e.setAttribute('ry',f2(95-i*12)); e.setAttribute('fill','#8A5CF0');});
+  const f2_=fit(l2,150,990), f1=Math.min(fit(l1,220,700),Math.round(f2_*1.25)), f3=Math.min(fit(l3,200,860),Math.round(f2_*1.25));
+  l1.style.fontSize=f1+'px'; l3.style.fontSize=f3+'px';
+  let y=150; l1.style.top=y+'px'; y+=f1*0.98; l2.style.top=y+'px'; y+=f2_*1.12; l3.style.top=y+'px';
+  l1.style.color='#fff'; l2.style.color='#FFD23F'; l3.style.color='#fff';
+  l1.style.transform='none'; l2.style.transform='rotate(-1.5deg)'; l3.style.transform='rotate(-1.5deg)';
+  [l1,l2,l3].forEach(e=>{e.style.webkitTextStroke='30px #10080A'; e.style.textShadow='0 14px 0 rgba(0,0,0,.65),0 0 40px rgba(0,0,0,.8)';});
+  const tg=$('tag'); tg.style.fontSize='42px'; tg.style.padding='0 26px 6px'; tg.style.borderWidth='7px'; const tw=tg.offsetWidth||220;
+  tg.style.transform=`translate(${f2(540-tw/2)}px,38px) rotate(-3deg)`;
+  $('tshade').style.height='980px'; $('tshade').style.background='linear-gradient(rgba(4,3,14,.88) 0,rgba(4,3,14,.6) 70%,rgba(4,3,14,0))';
+  // mist: big, soft, faceless, hovering over the chest and rising toward the title
+  const sg=$('shadowG'), sgl=$('shadowGl'); A('shadowG','opacity','0.85'); A('shadowGl','opacity','0.75');
+  const MX=470, MY=740;
+  [...sg.childNodes].forEach((e,i)=>{const b=e.getAttribute('data-b').split(',').map(Number); e.setAttribute('cx',f2(MX+b[0]*1.15)); e.setAttribute('cy',f2(MY+b[1]*1.4)); e.setAttribute('rx',f2(b[2]*1.1)); e.setAttribute('ry',f2(b[3]*1.35));});
+  [...sgl.childNodes].forEach((e,i)=>{e.setAttribute('cx',f2(MX+[0,-50,50][i])); e.setAttribute('cy',f2(MY+[-10,16,10][i])); e.setAttribute('rx',f2(180-i*20)); e.setAttribute('ry',f2(160-i*15)); e.setAttribute('fill','#8A5CF0');});
   $('caps').style.display='none'; }
 function render(t){ if(THUMB){thumb();return;} scenes(t); world(t); title(t); chips(t); icons(t); strip(t); ending(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
