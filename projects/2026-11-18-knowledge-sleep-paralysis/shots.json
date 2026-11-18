@@ -42,8 +42,9 @@
    },
    "note": "brain sends lock signal to body; dream bubble running, body still; lock snaps on 'ล็อก'",
    "hit": {
-    "th": "ล็อก"
-   }
+    "th": "ล็อค"
+   },
+   "long_ok": true
   },
   {
    "id": "wake",
@@ -51,18 +52,19 @@
    "cue": {
     "th": "ถ้าตื่น"
    },
-   "note": "brain fully lit but lock remains; dream leaks as soft shadow; weight presses chest on 'ทับอก'",
-   "hit": {
-    "th": "ทับอก"
-   }
+   "note": "brain fully lit but lock remains, eyes open, body can't move",
+   "long_ok": true
   },
   {
-   "id": "world",
-   "src": "graphic:globe",
+   "id": "shadow",
+   "src": "graphic:bedroom",
    "cue": {
-    "th": "ญี่ปุ่น"
+    "th": "เห็นเงา"
    },
-   "note": "globe pins: Thailand ผีอำ, Japan คานาชิบาริ, Newfoundland Old Hag"
+   "hit": {
+    "th": "ทับอก"
+   },
+   "note": "dream leaks into room as soft faceless shadow mist; weight presses chest on 'ทับอก' (no scary face)"
   },
   {
    "id": "risk",
@@ -86,7 +88,8 @@
    "cue": {
     "th": "คุณเคย"
    },
-   "note": "back to bedroom (loop), comment bubble 'เคยโดนไหม? เห็นอะไร?'"
+   "note": "back to bedroom (loop), comment bubble 'เคยโดนไหม? เห็นอะไร?'",
+   "long_ok": true
   }
  ]
 }

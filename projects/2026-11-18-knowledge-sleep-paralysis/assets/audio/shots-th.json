@@ -1,0 +1,101 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 19.017,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "graphic:bedroom",
+   "cue": "ตื่น",
+   "word_at": 0.0,
+   "start": 0.0,
+   "end": 1.72,
+   "dur": 1.72
+  },
+  {
+   "id": "frozen",
+   "src": "graphic:bedroom",
+   "cue": "ขยับ",
+   "word_at": 1.8,
+   "start": 1.72,
+   "end": 2.68,
+   "dur": 0.96
+  },
+  {
+   "id": "belief",
+   "src": "assets/footage/belief-wikimedia-nightmare.jpg",
+   "cue": "คนไทย",
+   "word_at": 2.76,
+   "start": 2.68,
+   "end": 3.8,
+   "dur": 1.12
+  },
+  {
+   "id": "truth",
+   "src": "graphic:bedroom",
+   "cue": "แต่ความจริง",
+   "word_at": 3.88,
+   "start": 3.8,
+   "end": 5.98,
+   "dur": 2.18
+  },
+  {
+   "id": "lock",
+   "src": "graphic:brain",
+   "cue": "ตอนฝัน",
+   "word_at": 6.06,
+   "start": 5.98,
+   "hit": "ล็อค",
+   "hit_at": 7.06,
+   "end": 9.34,
+   "dur": 3.36
+  },
+  {
+   "id": "wake",
+   "src": "graphic:brain",
+   "cue": "ถ้าตื่น",
+   "word_at": 9.42,
+   "start": 9.34,
+   "end": 12.08,
+   "dur": 2.74
+  },
+  {
+   "id": "shadow",
+   "src": "graphic:bedroom",
+   "cue": "เห็นเงา",
+   "word_at": 12.16,
+   "start": 12.08,
+   "hit": "ทับอก",
+   "hit_at": 13.3,
+   "end": 13.68,
+   "dur": 1.6
+  },
+  {
+   "id": "risk",
+   "src": "graphic:icons",
+   "cue": "มักเกิด",
+   "word_at": 13.76,
+   "start": 13.68,
+   "end": 15.94,
+   "dur": 2.26
+  },
+  {
+   "id": "doctor",
+   "src": "graphic:icons",
+   "cue": "ถ้าเป็น",
+   "word_at": 16.02,
+   "start": 15.94,
+   "end": 17.6,
+   "dur": 1.66
+  },
+  {
+   "id": "ask",
+   "src": "graphic:bedroom",
+   "cue": "คุณเคย",
+   "word_at": 17.68,
+   "start": 17.6,
+   "end": 19.017,
+   "dur": 1.417
+  }
+ ]
+}
