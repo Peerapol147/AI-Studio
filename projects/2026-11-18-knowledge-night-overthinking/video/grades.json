@@ -100,7 +100,7 @@
  },
  "sleep": {
   "adjust": {
-   "exposure": -0.38,
+   "exposure": -0.22,
    "contrast": 0.05,
    "temperature": -0.18,
    "saturation": -0.1
@@ -124,9 +124,11 @@
  },
  "morning": {
   "adjust": {
-   "exposure": -0.12,
-   "temperature": 0.32,
-   "saturation": 0.05
+   "exposure": -0.5,
+   "temperature": 0.38,
+   "saturation": 0.22,
+   "contrast": 0.08,
+   "vibrance": 0.15
   },
   "wheels": {
    "shadows": {
@@ -135,13 +137,18 @@
     "level": -0.05
    },
    "highlights": {
-    "hue": 40,
-    "amount": 0.25,
+    "hue": 38,
+    "amount": 0.4,
+    "level": 0
+   },
+   "midtones": {
+    "hue": 36,
+    "amount": 0.18,
     "level": 0
    }
   },
   "details": {
-   "vignette": 0.3,
+   "vignette": 0.45,
    "grain": 0.1
   }
  },
