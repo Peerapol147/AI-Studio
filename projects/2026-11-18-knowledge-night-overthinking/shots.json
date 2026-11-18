@@ -1,0 +1,135 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "",
+   "cue": {
+    "th": "ถ้า"
+   },
+   "note": "person in dark bedroom lying in bed, face lit by phone screen (VIDEO preferred), blue-dark, warm glow"
+  },
+  {
+   "id": "scroll",
+   "src": "",
+   "cue": {
+    "th": "ไถ"
+   },
+   "note": "close-up thumb scrolling phone in dark bed (VIDEO)"
+  },
+  {
+   "id": "small",
+   "src": "graphic:bubble",
+   "cue": {
+    "th": "เรื่องเล็ก"
+   },
+   "note": "one thought bubble small -> grows big; hit on ใหญ่",
+   "hit": {
+    "th": "ใหญ่"
+   }
+  },
+  {
+   "id": "tired",
+   "src": "",
+   "cue": {
+    "th": "เหนื่อย"
+   },
+   "note": "tired person in bed at night rubbing eyes (calm, not scary)"
+  },
+  {
+   "id": "brain",
+   "src": "graphic:brain",
+   "cue": {
+    "th": "สมอง"
+   },
+   "note": "soft brain side view; emotion center glows warm amber, pulses; hit แรงขึ้น",
+   "hit": {
+    "th": "แรงขึ้น"
+   }
+  },
+  {
+   "id": "brake",
+   "src": "graphic:brain",
+   "cue": {
+    "th": "เบรก"
+   },
+   "note": "same brain, front region light dims; hit น้อยลง",
+   "hit": {
+    "th": "น้อยลง"
+   }
+  },
+  {
+   "id": "room",
+   "src": "",
+   "cue": {
+    "th": "ห้อง"
+   },
+   "note": "dark quiet bedroom at night, window, city lights / rain (VIDEO, no horror)"
+  },
+  {
+   "id": "loop",
+   "src": "graphic:loop",
+   "cue": {
+    "th": "วน"
+   },
+   "note": "thought bubble (same shape) circles in a loop around a head silhouette"
+  },
+  {
+   "id": "clock",
+   "src": "graphic:clock",
+   "cue": {
+    "th": "แต่เรื่อง"
+   },
+   "note": "bubble big next to soft clock 3:00"
+  },
+  {
+   "id": "sleep",
+   "src": "",
+   "cue": {
+    "th": "นอน"
+   },
+   "note": "person sleeping peacefully"
+  },
+  {
+   "id": "morning",
+   "src": "",
+   "cue": {
+    "th": "เบาลง"
+   },
+   "note": "morning sunlight through window/curtains (VIDEO), bubble shrinks small overlay"
+  },
+  {
+   "id": "write",
+   "src": "",
+   "cue": {
+    "th": "จด"
+   },
+   "note": "hand writing in notebook at night, warm lamp (VIDEO)"
+  },
+  {
+   "id": "phone_down",
+   "src": "",
+   "cue": {
+    "th": "วางมือถือ"
+   },
+   "note": "phone placed face down on bedside table"
+  },
+  {
+   "id": "help",
+   "src": "graphic:help",
+   "cue": {
+    "th": "ถ้าคิด"
+   },
+   "note": "warm card: คุยกับผู้เชี่ยวชาญ + สายด่วนสุขภาพจิต 1323"
+  },
+  {
+   "id": "ask",
+   "src": "graphic:comment",
+   "cue": {
+    "th": "ตอนนี้กี่โมง"
+   },
+   "note": "comment bubble + clock ticking, dark room bg"
+  }
+ ]
+}
