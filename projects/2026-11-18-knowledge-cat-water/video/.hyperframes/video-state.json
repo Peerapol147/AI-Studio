@@ -1019,15 +1019,15 @@
   },
   "renders": {
     "latest": {
-      "id": "a3c2d9e3-bc33-4497-a1a7-dc4c0209cd96",
-      "completedAt": 1795040295497,
+      "id": "5d71b28c-4dc5-40ce-9470-a4aa94ac3203",
+      "completedAt": 1795040521624,
       "output": "/home/user/ai-studio/projects/2026-11-18-knowledge-cat-water/renders/cat-water-th-silent.mp4",
       "status": "completed",
-      "revision": "93ca83e2-e13d-45eb-99ef-7df75a45277d"
+      "revision": "70a25dfb-07cc-43b3-8f7c-fd4aacab43ca"
     },
     "retainedRevisions": [
-      "93ca83e2-e13d-45eb-99ef-7df75a45277d",
-      "54d36342-28a4-468c-9cd7-e9153bfe2bed"
+      "70a25dfb-07cc-43b3-8f7c-fd4aacab43ca",
+      "93ca83e2-e13d-45eb-99ef-7df75a45277d"
     ]
   },
   "pendingArtifactCleanup": []
