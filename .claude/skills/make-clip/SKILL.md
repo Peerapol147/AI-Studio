@@ -103,4 +103,6 @@ prompt ที่สั่ง agent ย่อย (ต้องมีกฎ style.
 **ห้ามประหยัดตรงนี้:** การตรวจของ reviewer, การเช็กเฟรมของ editor, การหาแหล่งยืนยันข้อเท็จจริง
 
 ## หลังลงคลิป
+อ่านสถิติตาม `.claude/skills/reality-check/content-review.md` ข้อ 3 (ห้ามสรุปจาก <3 คลิป / <48 ชม.)
+
 เมื่อผู้ใช้ส่งภาพ Analytics: จด Stayed to watch %, ดูเฉลี่ย, ไลก์ ลง `channels/<channel>/results.md` แล้วปรับหัว `style.md` ถ้าเห็นแนวโน้มจาก ≥3 คลิป
