@@ -1,6 +1,6 @@
 # อัปโหลด: ทำไมหักนิ้วแล้วดังกร๊อบ? (ไทย)
 
-ไฟล์: `renders/knuckle-crack-th.mp4` (DUR_TH วิ, 9:16) | ปก: `renders/knuckle-crack-th-thumb.jpg`
+ไฟล์: `renders/knuckle-crack-th.mp4` (19.5 วิ, 9:16) | ปก: `renders/knuckle-crack-th-thumb.jpg`
 
 ## YouTube Shorts
 **ชื่อคลิป (ภาษาไทยล้วน เลือก 1)**
@@ -23,7 +23,7 @@
 เพลง: "Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127 — https://creativecommons.org/licenses/by/3.0/
 ภาพ: "Cracking knuckles" by Jaysin Trevino (CC BY 2.0, ครอปและปรับขนาด) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Cracking_knuckles.jpg
 ภาพอื่นๆ: un-perfekt, hasse42, com329329, voltamax, Septimiu, backy3723 via Pixabay
-SFX_CREDITS
+เสียงประกอบ: CC0 จาก Freesound และ Kenney (รายชื่อใน assets/CREDITS.md)
 เสียงพากย์: ElevenLabs (AI)
 
 #หักนิ้ว #ทำไม #ความรู้รอบตัว #สุขภาพ #shorts

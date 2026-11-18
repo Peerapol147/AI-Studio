@@ -1,6 +1,6 @@
 # Upload: Why do knuckles crack? (English)
 
-File: `renders/knuckle-crack-en.mp4` (DUR_EN s, 9:16) | Cover: `renders/knuckle-crack-en-thumb.jpg`
+File: `renders/knuckle-crack-en.mp4` (18.9 s, 9:16) | Cover: `renders/knuckle-crack-en-thumb.jpg`
 
 ## YouTube Shorts
 **Title (pick 1)**
@@ -22,7 +22,7 @@ Credits
 Music: "Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127 — https://creativecommons.org/licenses/by/3.0/
 Photo: "Cracking knuckles" by Jaysin Trevino (CC BY 2.0, cropped and resized) via Wikimedia Commons https://commons.wikimedia.org/wiki/File:Cracking_knuckles.jpg
 Other photos: un-perfekt, hasse42, com329329, voltamax, Septimiu, backy3723 via Pixabay
-SFX_CREDITS
+Sound effects: CC0 from Freesound and Kenney (list in assets/CREDITS.md)
 Voiceover: ElevenLabs (AI)
 
 #knucklecracking #science #didyouknow #health #shorts
