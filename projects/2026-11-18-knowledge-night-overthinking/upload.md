@@ -1,6 +1,6 @@
 # อัปโหลด: ทำไมยิ่งดึกยิ่งคิดมาก? (ไทย)
 
-ไฟล์: `renders/night-overthinking-th.mp4` (~23 วิ, 9:16) | ปก: `renders/night-overthinking-th-thumb.jpg`
+ไฟล์: `renders/night-overthinking-th.mp4` (23.1 วิ, 9:16) | ปก: `renders/night-overthinking-th-thumb.jpg`
 
 ## เวลาลงที่แนะนำ
 - **ลงราว 00:00-00:45 น. เวลาไทย** (คืนไหนก็ได้ วันอาทิตย์-พฤหัสฯ ดีกว่า เพราะคนต้องตื่นเช้าแต่ยังนอนไม่หลับ)
