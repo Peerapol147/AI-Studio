@@ -1,0 +1,100 @@
+[
+ {
+  "t": 0.56,
+  "type": "appear",
+  "desc": "hook: yawn burst on the mouth",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -9
+ },
+ {
+  "t": 1.1,
+  "type": "scene_cut",
+  "desc": "zoom-through into the head diagram",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 2.18,
+  "type": "movement",
+  "desc": "O2 gauge drops red",
+  "sfx": "transition/kenney-interface-minimize-001.ogg",
+  "gain": -9
+ },
+ {
+  "t": 3.12,
+  "type": "scene_cut",
+  "desc": "match cut to the oxygen mask",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 4.54,
+  "type": "scene_cut",
+  "desc": "zoom-through back to the diagram",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -14
+ },
+ {
+  "t": 5.0,
+  "type": "success",
+  "desc": "gauge full: O2 100%",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -10
+ },
+ {
+  "t": 5.98,
+  "type": "scene_cut",
+  "desc": "whip-pan to the second yawn",
+  "sfx": "whoosh/fs810485.ogg",
+  "gain": -13
+ },
+ {
+  "t": 6.88,
+  "type": "appear",
+  "desc": "before/after bars level out",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -8
+ },
+ {
+  "t": 7.32,
+  "type": "scene_cut",
+  "desc": "zoom-through: brain heats up",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -13
+ },
+ {
+  "t": 8.88,
+  "type": "movement",
+  "desc": "cool air flows in, brain turns blue",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -11
+ },
+ {
+  "t": 10.22,
+  "type": "appear",
+  "desc": "question marks pop",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -9
+ },
+ {
+  "t": 10.86,
+  "type": "scene_cut",
+  "desc": "whip-pan to the tired woman",
+  "sfx": "whoosh/fs393811.ogg",
+  "gain": -14
+ },
+ {
+  "t": 13.36,
+  "type": "scene_cut",
+  "desc": "zoom-through to the yawning cat",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -14
+ },
+ {
+  "t": 13.44,
+  "type": "appear",
+  "desc": "comment bubble pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -8
+ }
+]
