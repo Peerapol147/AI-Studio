@@ -5,21 +5,23 @@
  "shots": [
   {
    "id": "hook",
-   "src": "",
+   "src": "assets/footage/hook-pixabay-233390.mp4",
    "cue": "ตีสาม",
    "word_at": 0.0,
    "start": 0.0,
    "end": 0.84,
-   "dur": 0.84
+   "dur": 0.84,
+   "media_start": 1.0
   },
   {
    "id": "scroll",
-   "src": "",
+   "src": "assets/footage/scroll-pixabay-169445.mp4",
    "cue": "มือถือ",
    "word_at": 0.92,
    "start": 0.84,
    "end": 2.32,
-   "dur": 1.48
+   "dur": 1.48,
+   "media_start": 3.92
   },
   {
    "id": "small",
@@ -34,12 +36,13 @@
   },
   {
    "id": "tired",
-   "src": "",
+   "src": "assets/footage/tired-pixabay-44647.mp4",
    "cue": "เพราะ",
    "word_at": 3.88,
    "start": 3.8,
    "end": 4.74,
-   "dur": 0.94
+   "dur": 0.94,
+   "media_start": 1.42
   },
   {
    "id": "brain",
@@ -65,12 +68,13 @@
   },
   {
    "id": "room",
-   "src": "",
+   "src": "assets/footage/room-pixabay-172144.mp4",
    "cue": "ห้อง",
    "word_at": 8.58,
    "start": 8.5,
    "end": 10.12,
-   "dur": 1.62
+   "dur": 1.62,
+   "media_start": 0.92
   },
   {
    "id": "loop",
@@ -92,34 +96,37 @@
   },
   {
    "id": "sleep",
-   "src": "",
+   "src": "assets/footage/sleep-pixabay-42966.mp4",
    "cue": "พอได้นอน",
    "word_at": 12.84,
    "start": 12.76,
    "end": 13.6,
-   "dur": 0.84
+   "dur": 0.84,
+   "media_start": 1.92
   },
   {
    "id": "morning",
-   "src": "",
+   "src": "assets/footage/morning-pixabay-128321.mp4",
    "cue": "มักเบา",
    "word_at": 13.68,
    "start": 13.6,
    "end": 14.54,
-   "dur": 0.94
+   "dur": 0.94,
+   "media_start": 2.92
   },
   {
    "id": "write",
-   "src": "",
+   "src": "assets/footage/write-pixabay-100344.mp4",
    "cue": "ลองจด",
    "word_at": 14.62,
    "start": 14.54,
    "end": 16.82,
-   "dur": 2.28
+   "dur": 2.28,
+   "media_start": 3.92
   },
   {
    "id": "phone_down",
-   "src": "",
+   "src": "graphic:phone",
    "cue": "วางมือถือ",
    "word_at": 16.9,
    "start": 16.82,

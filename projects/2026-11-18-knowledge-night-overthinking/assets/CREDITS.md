@@ -1,1 +1,8 @@
 - music-jamendo-9e753e56.mp3: "Deep Study of a Calm Mind" by KonstantinPazuzuStudio (CC BY 3.0) https://www.jamendo.com/track/2326401
+- assets/footage/hook-pixabay-233390.mp4: video by Yasir1120 via Pixabay, https://pixabay.com/videos/id-233390/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/scroll-pixabay-169445.mp4: video by magicmore via Pixabay, https://pixabay.com/videos/id-169445/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/tired-pixabay-44647.mp4: video by Engin_Akyurt via Pixabay, https://pixabay.com/videos/id-44647/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/room-pixabay-172144.mp4: video by briroseee via Pixabay, https://pixabay.com/videos/id-172144/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/sleep-pixabay-42966.mp4: video by MaxMedyk via Pixabay, https://pixabay.com/videos/id-42966/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/morning-pixabay-128321.mp4: video by Leolo212 via Pixabay, https://pixabay.com/videos/id-128321/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)
+- assets/footage/write-pixabay-100344.mp4: video by egemen_izmirli via Pixabay, https://pixabay.com/videos/id-100344/ (Pixabay Content License, ใช้ฟรีไม่ต้องให้เครดิต; ตัดต่อ/ย่อความยาว)

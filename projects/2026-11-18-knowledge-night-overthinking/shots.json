@@ -116,11 +116,11 @@
   },
   {
    "id": "phone_down",
-   "src": "",
+   "src": "graphic:phone",
    "cue": {
     "th": "วางมือถือ"
    },
-   "note": "phone placed face down on bedside table"
+   "note": "phone silhouette (screen glow) tilts and lays face-down; glow fades to warm lamp light — motion, no footage"
   },
   {
    "id": "help",

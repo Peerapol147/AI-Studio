@@ -1,0 +1,472 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B1220}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.fw,.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.fill{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.band{position:absolute;left:0;width:1080px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%)}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
+.sweep{position:absolute;left:-600px;top:-200px;width:420px;height:2400px;mix-blend-mode:screen;opacity:.45;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,250,235,.5) 50%,rgba(255,255,255,0) 100%)}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.dbg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 34%,#22375C 0%,#132038 55%,#0A111F 100%)}
+.grid{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;opacity:.16;
+  background-image:linear-gradient(#5D7FB5 2px,transparent 2px),linear-gradient(90deg,#5D7FB5 2px,transparent 2px);background-size:80px 80px}
+.dsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px);mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px)}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(5,5,10,.7),rgba(5,5,10,0))}
+#title{position:absolute;left:0;top:0;width:1080px;height:760px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:28px #10080A;paint-order:stroke fill;transform-origin:50% 60%}
+.tag{position:absolute;left:0;top:0;padding:2px 34px 10px;border-radius:36px;background:#1E9BF0;border:9px solid #10080A;
+  color:#fff;font-weight:900;font-size:56px;white-space:nowrap}
+.chip{position:absolute;left:0;top:0;height:96px;border-radius:48px;opacity:0;overflow:hidden;border:7px solid #10080A}
+.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-weight:900;font-size:50px;white-space:nowrap}
+#strip{position:absolute;left:60px;top:1310px;width:960px;height:124px;border-radius:62px;background:#fff;opacity:0;
+  box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px #10080A}
+#ind{position:absolute;top:12px;height:100px;border-radius:50px;background:#1E9BF0}
+.st{position:absolute;top:0;height:124px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:38px;color:#5C4A3C;white-space:nowrap}
+.arw{position:absolute;top:44px;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid #C9B8A6}
+#years{position:absolute;left:0;top:0;height:120px;border-radius:60px;background:#fff;border:7px solid #10080A;opacity:0;white-space:nowrap}
+#years span{position:absolute;left:150px;top:50%;transform:translateY(-54%);font-weight:900;font-size:58px;color:#10080A}
+#bubble{position:absolute;left:0;top:0;width:560px;height:440px;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:40px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFD23F}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on"
+ data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"},{"id":"vo","type":"string","label":"Voice file","default":"assets/vo-th.mp3"}]'>
+
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+  <div class="sc" id="sh-hook"><div class="fw" id="fw-hook"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-hook"><img class="band" src="assets/hook-crop.jpg" style="top:700px;height:694px" alt=""/>
+      <svg class="ov" id="hookov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-hook"></div></div>
+  <div class="sc" id="sh-elder"><div class="fw" id="fw-elder"><img class="fill" src="assets/elder-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-elder"><img class="band" src="assets/elder-crop.jpg" style="top:125px;height:1350px" alt=""/></div><div class="vig"></div></div>
+  <div class="sc" id="sc-joint"><div class="dbg"></div><div class="grid" id="grid-j"></div>
+    <svg class="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920">
+      <defs>
+        <radialGradient id="redg"><stop offset="0" stop-color="#FF4D4D" stop-opacity=".95"/><stop offset=".45" stop-color="#E0202E" stop-opacity=".55"/><stop offset="1" stop-color="#E0202E" stop-opacity="0"/></radialGradient>
+        <radialGradient id="bubg" cx=".38" cy=".34"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#BFE7FF" stop-opacity=".9"/><stop offset="1" stop-color="#5BB8F5" stop-opacity=".55"/></radialGradient>
+        <radialGradient id="glowy"><stop offset="0" stop-color="#FFF6B0" stop-opacity=".95"/><stop offset=".4" stop-color="#FFD23F" stop-opacity=".55"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient>
+        <linearGradient id="boneg" x1="0" x2="1"><stop offset="0" stop-color="#E9DCC4"/><stop offset=".5" stop-color="#FFF8EA"/><stop offset="1" stop-color="#DCCBB0"/></linearGradient>
+      </defs>
+      <g id="jcam"></g>
+    </svg></div>
+  <div class="sc" id="sh-arth"><div class="fw" id="fw-arth" style="background:#000"></div>
+    <div class="kb" id="kb-arth"><img class="band" src="assets/arth-crop.jpg" style="left:80px;width:920px;top:190px;height:1219px" alt=""/>
+      <svg class="ov" id="arthov" viewBox="0 0 1080 1920"></svg></div></div>
+  <div class="sc" id="sh-pop"><div class="fw" id="fw-pop"><img class="fill" src="assets/pop-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-pop"><img class="band" src="assets/pop-crop.jpg" style="top:466px;height:668px" alt=""/>
+      <svg class="ov" id="popov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-pop"></div></div>
+  <div class="sc" id="sh-doctor"><div class="fw" id="fw-doctor"><img class="fill" src="assets/doctor-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-doctor"><img class="band" src="assets/doctor-crop.jpg" style="top:288px;height:1025px" alt=""/></div><div class="sweep" id="sw-doctor"></div></div>
+  <div class="sc" id="sc-hands"><div class="dbg"></div><div class="grid" id="grid-h"></div>
+    <svg class="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="hcam"></g></svg></div>
+  <div class="sc" id="sh-hurt"><div class="fw" id="fw-hurt"><img class="fill" src="assets/hurt-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-hurt"><img class="band" src="assets/hurt-crop.jpg" style="top:381px;height:838px" alt=""/>
+      <svg class="ov" id="hurtov" viewBox="0 0 1080 1920"></svg></div></div>
+  <div class="sc" id="sh-clinic"><div class="fw" id="fw-clinic"><img class="fill" src="assets/clinic-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-clinic"><img class="band" src="assets/clinic-crop.jpg" style="top:424px;height:753px" alt=""/></div><div class="sweep" id="sw-clinic"></div></div>
+  <div class="sc" id="sh-ask"><div class="fw" id="fw-ask"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-ask"><img class="band" src="assets/hook-crop.jpg" style="top:700px;height:694px" alt=""/>
+      <svg class="ov" id="askov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-ask"></div></div>
+</div>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
+  <div class="chip" id="chipM"><span id="chipM1"></span><span id="chipM2"></span></div>
+  <div class="chip" id="chipL"><span id="chipL1"></span><span id="chipL2"></span></div>
+  <div class="chip" id="chipR"><span id="chipR1"></span><span id="chipR2"></span></div>
+  <div id="years"><svg id="cal" viewBox="0 0 110 110" width="96" height="96" style="position:absolute;left:34px;top:5px;overflow:visible">
+      <rect x="8" y="16" width="94" height="86" rx="14" fill="#fff" stroke="#10080A" stroke-width="8"/><rect x="8" y="16" width="94" height="28" rx="10" fill="#E0202E" stroke="#10080A" stroke-width="8"/>
+      <g id="calpage"><rect x="20" y="50" width="70" height="44" rx="6" fill="#FFD23F"/></g>
+      <path d="M32 6v20M78 6v20" stroke="#10080A" stroke-width="9" stroke-linecap="round"/></svg><span id="yearsT"></span></div>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0"></div><div class="arw" id="ar0"></div><div class="st" id="st1"></div><div class="arw" id="ar1"></div>
+    <div class="st" id="st2"></div><div class="arw" id="ar2"></div><div class="st" id="st3"></div>
+  </div>
+  <svg id="bubble" viewBox="0 0 560 440"><path d="M60 16h440a44 44 0 0 1 44 44v228a44 44 0 0 1-44 44H230l-96 84v-84H60a44 44 0 0 1-44-44V60a44 44 0 0 1 44-44Z" fill="#fff" stroke="#10080A" stroke-width="16" stroke-linejoin="round"/>
+    <text id="bubT" x="280" y="222" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="120" fill="#1E9BF0" stroke="#10080A" stroke-width="10" paint-order="stroke"></text>
+    <g id="dots"><circle cx="220" cy="270" r="14" fill="#10080A"/><circle cx="280" cy="270" r="14" fill="#10080A"/><circle cx="340" cy="270" r="14" fill="#10080A"/></g></svg>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1"></div><div class="tl" id="tl2"></div><div class="tl" id="tl3"></div></div>
+  <div class="tag" id="tag"></div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+ <div id="caps-th">
+%%CAPS_TH%%
+ </div>
+ <div id="caps-en">
+%%CAPS_EN%%
+ </div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" data-var-src="vo" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-4228fb9b.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine). One finger-joint cross-section morphs through every joint shot;
+   one two-hands diagram morphs through decades -> no arthritis.
+   Shot times = assets/audio/shots-<lang>.json, word anchors = words*.json (both injected by build_index.py). */
+(function(){
+const VARS=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
+const LANG=(VARS.lang==='en')?'en':'th', EN=LANG==='en';
+const ALL=%%DATA%%, D=ALL[LANG], DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
+document.getElementById(EN?'caps-th':'caps-en').style.display='none';
+document.documentElement.lang=LANG;
+if(EN)['chipL1','chipL2','chipR1','chipR2'].forEach(i=>document.getElementById(i).style.fontSize='42px');
+const T={},H={},W={}; for(const k in SH){T[k]=SH[k].start; W[k]=SH[k].word; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const TX=EN?{t:['WHY DO','KNUCKLES','CRACK?'],tag:'DID YOU KNOW?',myth:'MYTH',fact:'FACT',steps:['pull','pressure ↓','bubble','pop!'],
+   gauge:'PRESSURE',cnt:'CRACK ×',years:'DECADES',l1:'CRACKED',r1:'NEVER',ok:'NO ARTHRITIS',bub:'HOW OFTEN?',gas:'GAS'}
+ :{t:['ทำไมหักนิ้ว','แล้วดังกร๊อบ?'],tag:'รู้ไหม?',myth:'ความเชื่อ',fact:'ความจริง',steps:['ดึงข้อ','ความดันลด','ฟองแก๊ส','กร๊อบ!'],
+   gauge:'ความดัน',cnt:'กร๊อบ ×',years:'หลายสิบปี',l1:'หักนิ้ว',r1:'ไม่หัก',ok:'ไม่อักเสบ',bub:'กี่ที?',gas:'แก๊ส'};
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],CAM=[7.5,1],CAMF=[13,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14,bl=o.blur??10;
+  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl,a,b};};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const blur=(e,b)=>{e.style.filter=b>0.05?`blur(${b.toFixed(2)}px)`:'none';};
+const f2=v=>v.toFixed(2);
+
+// ---------- scenes: each shot window with its entry transition (whip / zoom-through / match) ----------
+// still shots: band push-in 8-15% + rotate drift, blurred fill on a slower parallax layer
+const SC=[
+ {id:'sh-hook',a:0,b:T.elder,kb:'kb-hook',fw:'fw-hook',s0:1.0,s1:1.1,r0:0,r1:-1.5,org:'56% 58%',in:'none'},
+ {id:'sh-elder',a:T.elder,b:T.grind,kb:'kb-elder',fw:'fw-elder',s0:1.02,s1:1.14,r0:1.2,r1:-0.6,org:'48% 52%',in:'whip'},
+ {id:'sc-joint',a:T.grind,b:T.arth,in:'zoom'},
+ {id:'sh-arth',a:T.arth,b:T.truth,kb:'kb-arth',fw:'fw-arth',s0:1.0,s1:1.12,r0:-1,r1:1,org:'48% 34%',in:'match'},
+ {id:'sc-joint',a:T.truth,b:T.pop,in:'zoom'},
+ {id:'sh-pop',a:T.pop,b:T.doctor,kb:'kb-pop',fw:'fw-pop',s0:1.02,s1:1.1,r0:-1,r1:0.8,org:'63% 33%',in:'match'},
+ {id:'sh-doctor',a:T.doctor,b:T.decades,kb:'kb-doctor',fw:'fw-doctor',s0:1.0,s1:1.12,r0:1.2,r1:-0.8,org:'50% 30%',in:'whip'},
+ {id:'sc-hands',a:T.decades,b:T.hurt,in:'zoom'},
+ {id:'sh-hurt',a:T.hurt,b:T.clinic,kb:'kb-hurt',fw:'fw-hurt',s0:1.02,s1:1.14,r0:-1.2,r1:0.8,org:'40% 45%',in:'whip'},
+ {id:'sh-clinic',a:T.clinic,b:T.ask,kb:'kb-clinic',fw:'fw-clinic',s0:1.0,s1:1.12,r0:1,r1:-1,org:'55% 45%',in:'match'},
+ {id:'sh-ask',a:T.ask,b:DUR+1,kb:'kb-ask',fw:'fw-ask',s0:1.04,s1:1.13,r0:-1,r1:0.6,org:'56% 58%',in:'zoom'},
+];
+SC.forEach((s,i)=>{s.next=SC[i+1]; if(s.kb)$(s.kb).style.transformOrigin=s.org; $(s.id).style.zIndex=String(i+1);});
+const WHIP=0.16, ZIN=0.22;
+function sceneState(s,t){ // null (hidden) or {o,tx,sc}
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
+  if(s.in==='whip'){ tx=1080*(1-eo(u/WHIP)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.35*(1-S(u,16,0.9)); }
+  else if(s.in==='match'){ o=eio(u/0.1); sc=1+0.06*(1-eo(u/0.3)); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+WHIP)return null; if(t>=end) tx=-1080*eo((t-end)/WHIP); }
+    else if(nx.in==='zoom'){ if(t>=end+0.1)return null; const z=(t-(end-ZIN))/ZIN; if(z>0) sc*=1+1.6*ei(z); }
+    else { if(t>=end+0.12)return null; }
+  }
+  return {o,tx,sc};
+}
+const SCIDS=[...new Set(SC.map(s=>s.id))];
+function scenes(t){
+  const st={};
+  SC.forEach((s,i)=>{const r=sceneState(s,t); if(r)st[s.id]={r,s,i};});
+  for(const id of SCIDS) if(!st[id]) $(id).style.opacity='0';
+  for(const id in st){const {r,s,i}=st[id]; const e=$(id);
+    e.style.zIndex=String(i+1);
+    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    if(s.kb){ const uu=clamp((t-s.a)/Math.max(0.3,(Math.min(s.b,DUR)-s.a)));
+      let k=lerp(s.s0,s.s1,eio(0.12+0.88*uu)); const rr=lerp(s.r0,s.r1,uu);
+      let dx=9*Math.sin(t*1.7+s.a), dy=7*Math.cos(t*1.3+s.a);
+      if(id==='sh-pop'){ const tau=t-K.pop; if(tau>0){ k*=1+0.14*S(tau,20,0.5); const sh=Math.exp(-7*tau); dx+=16*sh*Math.sin(tau*70); dy+=11*sh*Math.cos(tau*83);} }
+      if(id==='sh-hook'){ const tau=t-HOOKHIT; if(tau>0){ k*=1+0.05*S(tau,22,0.45); const sh=Math.exp(-9*tau); dx+=10*sh*Math.sin(tau*70);} }
+      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`;
+      // parallax: the blurred fill drifts the other way, slower
+      $(s.fw).style.transform=`translate(${f2(-14*Math.sin(t*0.9+s.a)-30*uu)}px,${f2(-10*Math.cos(t*0.7+s.a))}px) rotate(${f2(-0.5*rr)}deg) scale(${(1.12+0.05*uu).toFixed(4)})`;
+    }
+  }
+  // light sweeps across stills
+  [['sw-hook',0.05,1.1],['sw-pop',T.pop,0.8],['sw-doctor',T.doctor,0.9],['sw-clinic',T.clinic,0.85],['sw-ask',T.ask+0.3,1.2]].forEach(([id,a,d])=>{
+    const u=(t-a)/d; $(id).style.transform=`translateX(${(lerp(-300,1900,clamp(u))).toFixed(1)}px) rotate(14deg)`;});
+}
+
+// ---------- hook: title from frame 0 (breathes), x-ray lens springs in < 1 s with a crack burst ----------
+const HOOKHIT=0.45;
+(function(){const t=TX.t; ['tl1','tl2','tl3'].forEach((id,i)=>{const e=$(id); e.textContent=t[i]||''; });
+  if(EN){ $('tl1').style.cssText+='top:200px;font-size:150px;color:#fff'; $('tl2').style.cssText+='top:365px;font-size:170px;color:#fff'; $('tl3').style.cssText+='top:540px;font-size:190px;color:#FFD23F'; }
+  else { $('tl1').style.cssText+='top:230px;font-size:168px;color:#fff'; $('tl2').style.cssText+='top:445px;font-size:150px;color:#FFD23F'; $('tl3').style.display='none'; }
+  $('tag').textContent=TX.tag;})();
+function title(t){
+  const out=eo((t-(T.elder-0.06))/0.12);
+  show($('title'),1-out); show($('tshade'),1-out); show($('tag'),1-out);
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), kick=1+0.06*Math.exp(-7*Math.max(0,t-HOOKHIT))*Math.sin(Math.max(0,t-HOOKHIT)*14)*(t>HOOKHIT?1:0);
+  const c2=1+0.05*Math.exp(-8*Math.max(0,t-K.crack1))*(t>K.crack1?Math.sin((t-K.crack1)*16):0);
+  ['tl1','tl2','tl3'].forEach((id,i)=>{const last=(EN?i===2:i===1);
+    $(id).style.transform=`translateY(${f2(4*Math.sin(t*3+i))}px) rotate(${f2(last?-1.5*Math.sin(t*2.4):0)}deg) scale(${(br*kick*(last?c2:1)*(1+0.3*out)).toFixed(4)})`;
+    const sx=8*Math.sin(t*2.2+i), sy=12+5*Math.cos(t*1.8);
+    $(id).style.textShadow=`${f2(sx)}px ${f2(sy)}px 0 rgba(0,0,0,.5)`;});
+  const tg=$('tag'); const tw=tg.offsetWidth||300;
+  tg.style.transform=`translate(${f2(540-tw/2)}px,${f2(EN?100:110)}px) rotate(${f2(-4+1.2*Math.sin(t*3))}deg) scale(${(1+0.03*Math.sin(t*5)).toFixed(4)})`;
+}
+// lens + burst lines (hook and ask share the builder)
+function lensSet(svg,cx,cy,r,kx,ky){
+  const g=el('g',{},$(svg)), defs=el('defs',{},g);
+  const cp=el('clipPath',{id:svg+'-cp'},defs); el('circle',{cx,cy,r},cp);
+  const line=el('path',{d:`M${kx} ${ky} L${cx-r*0.55} ${cy+r*0.8}`,stroke:'#FFD23F','stroke-width':10,'stroke-linecap':'round',fill:'none','stroke-dasharray':'4 18'},g);
+  const dot=el('circle',{cx:kx,cy:ky,r:16,fill:'#FFD23F',stroke:'#10080A','stroke-width':5},g);
+  const lg=el('g',{},g);
+  el('circle',{cx,cy,r:r+14,fill:'#10080A'},lg);
+  const img=el('image',{href:'assets/arth-lens.jpg',x:cx-r,y:cy-r,width:2*r,height:2*r,'clip-path':`url(#${svg}-cp)`,preserveAspectRatio:'xMidYMid slice'},lg);
+  const glow=el('circle',{cx,cy:cy+4,r:r*0.32,fill:'url(#glowy2)',opacity:0},lg);
+  el('circle',{cx,cy,r,fill:'none',stroke:'#FFD23F','stroke-width':12},lg);
+  const bl=[...Array(8)].map((_,i)=>el('path',{stroke:'#FFD23F','stroke-width':12,'stroke-linecap':'round',fill:'none',opacity:0},g));
+  const gd=el('radialGradient',{id:'glowy2'},defs); gd.innerHTML='<stop offset="0" stop-color="#FFF6B0"/><stop offset=".5" stop-color="#FFD23F" stop-opacity=".7"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/>';
+  return {g,line,dot,lg,img,glow,bl,cx,cy,r,kx,ky};
+}
+const LH=lensSet('hookov',800,800,150,610,1060);
+function burst(set,t,t0,x,y,R){set.forEach((p,i)=>{const tau=t-t0; if(tau<0||tau>0.5){p.setAttribute('opacity','0');return;}
+  const a=i/set.length*Math.PI*2+0.3, r1=R+120*eo(tau/0.3), r2=R+40+170*eo(tau/0.22);
+  p.setAttribute('d',`M${f2(x+Math.cos(a)*r1)} ${f2(y+Math.sin(a)*r1)} L${f2(x+Math.cos(a)*r2)} ${f2(y+Math.sin(a)*r2)}`);
+  p.setAttribute('opacity',(1-eo((tau-0.15)/0.35)).toFixed(3));});}
+function hookov(t){
+  if(t>T.elder+0.2)return;
+  const a=S(t-HOOKHIT,16,0.6);
+  LH.lg.setAttribute('transform',`translate(${LH.cx} ${LH.cy}) rotate(${f2(-12*(1-a)+2*Math.sin(t*3))}) scale(${Math.max(0.001,a).toFixed(4)}) translate(${-LH.cx} ${-LH.cy})`);
+  LH.lg.setAttribute('opacity',(t<HOOKHIT?0:1).toString());
+  const dl=eo((t-HOOKHIT-0.05)/0.25); LH.line.setAttribute('opacity',dl.toFixed(3)); LH.line.setAttribute('stroke-dashoffset',f2(-t*60));
+  LH.dot.setAttribute('opacity',dl.toFixed(3)); LH.dot.setAttribute('r',f2(14+5*Math.sin(t*10)));
+  const pk=Math.max(t>K.crack1?Math.exp(-6*(t-K.crack1)):0, 0.35+0.25*Math.sin(t*8));
+  LH.glow.setAttribute('opacity',(a>0.1?pk:0).toFixed(3)); LH.glow.setAttribute('r',f2(40+20*pk));
+  burst(LH.bl,t,HOOKHIT,LH.kx,LH.ky,40); if(t>K.crack1-0.01)burst(LH.bl,t,K.crack1,LH.kx,LH.ky,40);
+}
+
+// ---------- the finger joint (one cross-section, morphs: myth -> truth -> pull -> pressure -> bubble) ----------
+const J={}; (function(){const g=el('g',{},$('jcam')); J.g=g;
+  J.red=el('circle',{r:240,fill:'url(#redg)',opacity:0},g);
+  J.capFill=el('ellipse',{fill:'#3F9BFF','fill-opacity':.22},g);
+  J.parts=[...Array(30)].map((_,i)=>el('circle',{fill:i%3?'#9ED8FF':'#FFFFFF',opacity:0},g));
+  J.lo=el('g',{},g); J.loB=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},J.lo); J.loC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},J.lo);
+  J.up=el('g',{},g); J.upB=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},J.up); J.upC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},J.up);
+  J.marrow=[el('path',{fill:'none',stroke:'#D8C6A6','stroke-width':4,'stroke-dasharray':'8 14'},J.lo),el('path',{fill:'none',stroke:'#D8C6A6','stroke-width':4,'stroke-dasharray':'8 14'},J.up)];
+  J.cap=el('ellipse',{fill:'none',stroke:'#F28DB2','stroke-width':10},g);
+  J.sparks=[...Array(12)].map(()=>el('path',{stroke:'#FF5A4A','stroke-width':8,'stroke-linecap':'round',fill:'none',opacity:0},g));
+  J.arrows=el('g',{opacity:0},g);
+  [[-260,1],[260,1]].forEach(([x])=>{el('path',{class:'ar',d:'',stroke:'#FFD23F','stroke-width':14,'stroke-linecap':'round','stroke-linejoin':'round',fill:'none'},J.arrows);});
+  J.bub=el('g',{opacity:0},g); J.bubGlow=el('circle',{fill:'url(#glowy)'},J.bub); J.bubC=el('circle',{fill:'url(#bubg)',stroke:'#E6F6FF','stroke-width':5},J.bub);
+  J.bubH=el('ellipse',{fill:'#fff',opacity:.9},J.bub); J.bubT=el('text',{'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':40,fill:'#fff',stroke:'#10080A','stroke-width':8,'paint-order':'stroke'},J.bub);
+  J.gauge=el('g',{opacity:0},g);
+  el('circle',{r:104,fill:'#0E1A2E',stroke:'#fff','stroke-width':9},J.gauge);
+  const arc=(a0,a1,c)=>{const p=(a)=>[78*Math.sin(a*Math.PI/180),-78*Math.cos(a*Math.PI/180)];const [x0,y0]=p(a0),[x1,y1]=p(a1);
+    el('path',{d:`M${f2(x0)} ${f2(y0)} A78 78 0 0 1 ${f2(x1)} ${f2(y1)}`,stroke:c,'stroke-width':16,fill:'none'},J.gauge);};
+  arc(-110,-35,'#3FA9F5'); arc(-35,35,'#FFD23F'); arc(35,110,'#E0202E');
+  J.needle=el('path',{d:'M-9 0 L0 -74 L9 0 Z',fill:'#fff',stroke:'#10080A','stroke-width':3},J.gauge); el('circle',{r:14,fill:'#fff',stroke:'#10080A','stroke-width':4},J.gauge);
+  J.gT=el('text',{y:150,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':46,fill:'#fff',stroke:'#10080A','stroke-width':9,'paint-order':'stroke'},J.gauge); J.gT.textContent=TX.gauge;
+  J.bubT.textContent=TX.gas;
+})();
+const loPath=y0=>`M-72 760 L-72 ${y0+205} C-72 ${y0+150} -128 ${y0+132} -128 ${y0+96} A128 96 0 0 1 128 ${y0+96} C128 ${y0+132} 72 ${y0+150} 72 ${y0+205} L72 760 Z`;
+const loCart=y0=>`M-112 ${y0+52} A128 96 0 0 1 112 ${y0+52}`;
+const upPath=y1=>`M-62 -760 L-62 ${y1-175} C-62 ${y1-125} -114 ${y1-95} -114 ${y1-42} Q-114 ${y1} -72 ${y1} Q0 ${y1-34} 72 ${y1} Q114 ${y1} 114 ${y1-42} C114 ${y1-95} 62 ${y1-125} 62 ${y1-175} L62 -760 Z`;
+const upCart=y1=>`M-100 ${y1-6} Q-60 ${y1-4} 0 ${y1-22} Q60 ${y1-4} 100 ${y1-6}`;
+const gap=track(-12,[[T.truth+0.05,20,MORPH],[T.pull+0.06,55,SLOW],[H.pull,135,BOUNCE]]);
+const red=track(0,[[T.grind+0.04,0.8,FAST],[H.grind,1.35,BOUNCE],[T.arth,1,MORPH],[T.truth+0.1,0,MORPH]]);
+const cap=track(0,[[T.truth+0.2,1,MORPH]]);
+const flu=track(0.45,[[T.fluid,1,MORPH],[T.bubble,0.7,MORPH]]);
+const arrows=track(0,[[T.pull,1,FAST],[T.press+0.15,0,MORPH]]);
+const gaugeS=track(0,[[T.press,1,BOUNCE],[T.bubble,0,FAST]]);
+const needle=track(72,[[H.press,-70,BOUNCE]]);
+const bubR=track(0,[[H.bubble,1,BOUNCE]]);
+const jcamS=track(2.5,[[T.grind,1.2,CAMF],[H.grind,1.42,MORPH],[T.truth,1.0,CAMF],[T.fluid,1.6,CAM],[T.pull,0.98,CAMF],[T.press,0.86,CAM],[T.bubble,1.7,CAMF]]);
+const jcamX=track(0,[[T.press,125,CAM],[T.bubble,0,CAMF]]), jcamY=track(0,[[T.press,-70,CAM],[T.bubble,0,CAMF]]);
+function joint(t){
+  const on=(t>=T.grind-0.01&&t<T.arth+0.12)||(t>=T.truth-0.01&&t<T.pop+0.12); if(!on)return;
+  const s=jcamS(t)*(1+0.012*Math.sin(t*2.3)), fx=jcamX(t)+8*Math.sin(t*1.3), fy=jcamY(t)+7*Math.cos(t*1.7), rot=0.9*Math.sin(t*0.9);
+  $('jcam').setAttribute('transform',`translate(540 600) rotate(${rot.toFixed(3)}) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
+  $('grid-j').style.transform=`translate(${f2(-fx*0.3+20*Math.sin(t*0.5))}px,${f2(-fy*0.3-t*12)}px)`;
+  const G=gap(t), R=clamp(red(t),0,2), C=clamp(cap(t)), jit=R*9*Math.sin(t*46);
+  J.lo.setAttribute('transform',`translate(${f2(-jit*0.4)} 0)`); J.up.setAttribute('transform',`translate(${f2(jit)} 0)`);
+  J.loB.setAttribute('d',loPath(G/2)); J.loC.setAttribute('d',loCart(G/2)); J.upB.setAttribute('d',upPath(-G/2)); J.upC.setAttribute('d',upCart(-G/2));
+  J.marrow[0].setAttribute('d',`M0 ${f2(G/2+170)} L0 760`); J.marrow[1].setAttribute('d',`M0 ${f2(-G/2-170)} L0 -760`);
+  [J.loC,J.upC].forEach(c=>c.setAttribute('stroke',mix('#8FD3F7','#FF5A4A',clamp(R))));
+  J.red.setAttribute('opacity',(clamp(R)*(0.75+0.25*Math.sin(t*19))).toFixed(3)); J.red.setAttribute('r',f2(200+40*clamp(R-0.5)));
+  J.sparks.forEach((p,i)=>{const ph=((t*7+i*0.37)%1), x0=(i%2?1:-1)*(30+(i*23)%80), a=(i%2?-0.4:-2.7)+((i*0.9)%1.2)-0.6;
+    const r1=10+40*ph, r2=r1+26+20*Math.sin(i);
+    p.setAttribute('d',`M${f2(x0+Math.cos(a)*r1)} ${f2(Math.sin(a)*r1)} L${f2(x0+Math.cos(a)*r2)} ${f2(Math.sin(a)*r2)}`);
+    p.setAttribute('opacity',(clamp(R)*(1-ph)*(t<T.truth+0.2?1:0)).toFixed(3));});
+  const ry=118+G*0.5, rx=190;
+  J.cap.setAttribute('rx',f2(rx*(0.6+0.4*C))); J.cap.setAttribute('ry',f2(ry*(0.6+0.4*C))); J.cap.setAttribute('opacity',C.toFixed(3));
+  J.cap.setAttribute('stroke-dasharray',`${f2(1300*C)} 2000`);
+  J.capFill.setAttribute('rx',f2(rx*0.96)); J.capFill.setAttribute('ry',f2(ry*0.96)); J.capFill.setAttribute('opacity',(C*(0.75+0.25*Math.sin(t*4))).toFixed(3));
+  const F=flu(t);
+  J.parts.forEach((p,i)=>{const ang=i*2.399+t*(0.5+(i%5)*0.12)*(i%2?1:-1), rr=0.25+0.7*(((i*0.618)%1)), x=rx*0.9*rr*Math.cos(ang), y=ry*0.9*rr*Math.sin(ang);
+    p.setAttribute('cx',f2(x)); p.setAttribute('cy',f2(y)); p.setAttribute('r',f2(4+3*((i*7)%3)+1.5*Math.sin(t*6+i)));
+    p.setAttribute('opacity',(C*F*(0.45+0.55*Math.abs(Math.sin(t*3.1+i*1.7)))).toFixed(3));});
+  const A=clamp(arrows(t),0,1.2); J.arrows.setAttribute('opacity',clamp(A).toFixed(3));
+  [...J.arrows.children].forEach((p,i)=>{const x=i?250:-250, h=90+G*0.6+12*Math.sin(t*8);
+    p.setAttribute('d',`M${x} ${f2(-h)} L${x} ${f2(h)} M${x-30} ${f2(-h+34)} L${x} ${f2(-h)} L${x+30} ${f2(-h+34)} M${x-30} ${f2(h-34)} L${x} ${f2(h)} L${x+30} ${f2(h-34)}`);});
+  const gs=gaugeS(t); J.gauge.setAttribute('opacity',clamp(gs*3).toFixed(3));
+  J.gauge.setAttribute('transform',`translate(360 -250) scale(${Math.max(0.001,gs).toFixed(4)}) rotate(${f2(4*Math.sin(t*2))})`);
+  J.needle.setAttribute('transform',`rotate(${f2(needle(t)+3*Math.sin(t*23)*(t<H.press?1:0.3))})`);
+  const b=bubR(t); J.bub.setAttribute('opacity',(b>0.01?1:0).toString());
+  const br=Math.max(0,54*b*(1+0.05*Math.sin(t*9))), wob=1+0.06*Math.sin(t*7);
+  J.bubC.setAttribute('rx',0); J.bubC.setAttribute('r',f2(br)); J.bubC.setAttribute('transform',`scale(${f2(wob)} ${f2(2-wob)})`);
+  J.bubGlow.setAttribute('r',f2(Math.max(0,br*2.4+14*Math.sin(t*6)*b))); J.bubGlow.setAttribute('opacity',(0.7+0.3*Math.sin(t*5)).toFixed(3));
+  J.bubH.setAttribute('cx',f2(-br*0.35)); J.bubH.setAttribute('cy',f2(-br*0.38)); J.bubH.setAttribute('rx',f2(br*0.22)); J.bubH.setAttribute('ry',f2(br*0.14));
+  J.bubT.setAttribute('x',f2(br+70)); J.bubT.setAttribute('y',f2(-br-6)); J.bubT.setAttribute('opacity',clamp((t-H.bubble-0.15)/0.2).toFixed(3));
+}
+
+// ---------- two hands (decades -> neither got arthritis) ----------
+const HD={}; (function(){const g=el('g',{},$('hcam'));
+  const hand=(x,flip)=>{const h=el('g',{transform:`translate(${x} 0)`},g); const inner=el('g',{transform:`scale(${flip?-1:1} 1)`},h);
+    const glow=el('circle',{r:330,cy:-60,fill:'url(#glowy3)',opacity:0},inner);
+    const sk={fill:'#F2C9A0',stroke:'#10080A','stroke-width':9,'stroke-linejoin':'round'};
+    el('rect',{x:-160,y:-20,width:64,height:190,rx:32,transform:'rotate(-32 -128 150)',...sk},inner);
+    [[-84,-268],[-28,-300],[28,-290],[84,-246]].forEach(([fx,ft])=>el('rect',{x:fx-27,y:ft,width:54,height:-ft+40,rx:27,...sk},inner));
+    el('rect',{x:-116,y:-70,width:232,height:260,rx:56,...sk},inner);
+    el('rect',{x:-80,y:180,width:160,height:110,...sk},inner);
+    const kn=[[-84,-60],[-28,-66],[28,-64],[84,-58]].map(([kx,ky])=>el('circle',{cx:kx,cy:ky,r:16,fill:'#FFD23F',opacity:0},inner));
+    const lines=[...Array(6)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':10,'stroke-linecap':'round',fill:'none',opacity:0},inner));
+    const ok=el('g',{opacity:0},h); el('circle',{r:78,fill:'#2DBE60',stroke:'#10080A','stroke-width':10},ok);
+    el('path',{d:'M-36 2 L-10 28 L40 -28',fill:'none',stroke:'#fff','stroke-width':20,'stroke-linecap':'round','stroke-linejoin':'round'},ok);
+    return {h,glow,kn,lines,ok};};
+  const defs=el('defs',{},g); const gd=el('radialGradient',{id:'glowy3'},defs);
+  gd.innerHTML='<stop offset="0" stop-color="#FFF3A0" stop-opacity=".9"/><stop offset=".45" stop-color="#FFD23F" stop-opacity=".4"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/>';
+  HD.L=hand(-250,false); HD.R=hand(250,true);
+  HD.cnt=el('g',{opacity:0},g); el('rect',{x:-190,y:-55,width:380,height:110,rx:55,fill:'#FFD23F',stroke:'#10080A','stroke-width':9},HD.cnt);
+  HD.cntT=el('text',{x:0,y:20,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':54,fill:'#10080A'},HD.cnt);
+})();
+const hS=track(2.3,[[T.decades,1.12,CAMF],[T.noarth,0.92,CAM]]), hX=track(-170,[[T.decades,-100,CAMF],[T.noarth,0,CAM]]), hY=track(-60,[[T.decades,-70,CAMF],[T.noarth,-40,CAM]]);
+const TICK=0.3;
+function hands(t){
+  if(t<T.decades-0.01||t>T.hurt+0.2)return;
+  const s=hS(t)*(1+0.01*Math.sin(t*2.1)), fx=hX(t)+7*Math.sin(t*1.2), fy=hY(t)+6*Math.cos(t*1.5);
+  $('hcam').setAttribute('transform',`translate(540 640) rotate(${f2(0.8*Math.sin(t*0.8))}) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
+  $('grid-h').style.transform=`translate(${f2(-fx*0.3)}px,${f2(-t*14)}px)`;
+  const crackOn=t<T.noarth, ph=((t-T.decades)%TICK+TICK)%TICK, pulse=crackOn?Math.exp(-ph*12):0;
+  const fade=1-eo((t-T.noarth)/0.3);
+  HD.L.glow.setAttribute('opacity',((0.55+0.45*pulse)*clamp(fade)*eo((t-T.decades)/0.25)).toFixed(3));
+  HD.L.kn.forEach((k,i)=>{k.setAttribute('opacity',(clamp(fade)*(0.35+0.65*Math.exp(-(((t-T.decades-i*0.07)%TICK+TICK)%TICK)*10))).toFixed(3));});
+  HD.L.lines.forEach((p,i)=>{const a=-Math.PI/2+(i-2.5)*0.42, r1=330+70*eo(ph/0.2), r2=r1+40; p.setAttribute('d',`M${f2(Math.cos(a)*r1*0.55)} ${f2(-60+Math.sin(a)*r1*0.55)} L${f2(Math.cos(a)*r2*0.55)} ${f2(-60+Math.sin(a)*r2*0.55)}`);
+    p.setAttribute('opacity',(crackOn?(1-eo(ph/0.25)):0).toFixed(3));});
+  HD.L.h.setAttribute('transform',`translate(-250 ${f2(-14*pulse)}) rotate(${f2(-2*pulse)})`);
+  HD.R.h.setAttribute('transform',`translate(250 ${f2(4*Math.sin(t*2))})`);
+  // crack counter above the left hand: digits keep rolling (illustrative, never lands on a number)
+  const cv=vis(t,T.decades+0.05,T.noarth,{lin:0.2,lout:0.2}); HD.cnt.setAttribute('opacity',cv.o.toFixed(3));
+  HD.cnt.setAttribute('transform',`translate(-250 -430) scale(${(0.6+0.4*S(t-T.decades-0.05,16,0.6)).toFixed(4)}) rotate(${f2(-4+2*Math.sin(t*3))})`);
+  const n=Math.floor(Math.pow(Math.max(0,t-T.decades),2.2)*2600+((t-T.decades)/TICK|0)); HD.cntT.textContent=TX.cnt+' '+n.toLocaleString('en-US');
+  [[HD.L,K.none],[HD.R,H.noarth]].forEach(([hd,t0])=>{const a=S(t-t0,15,0.5); hd.ok.setAttribute('opacity',(t>t0?1:0).toString());
+    hd.ok.setAttribute('transform',`translate(0 ${f2(20+6*Math.sin(t*4))}) rotate(${f2(-25*(1-a))}) scale(${Math.max(0.001,a).toFixed(4)})`);});
+}
+
+// ---------- chips, years pill, step strip, comment bubble ----------
+const setChip=(id,x,y,w,bg,fg,v)=>{const c=$(id); if(!show(c,v.o))return; blur(c,v.blur);
+  c.style.width=w.toFixed(1)+'px'; c.style.background=bg; c.style.color=fg; c.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) scale(${(0.7+0.3*v.a).toFixed(3)})`;};
+const swap=(a,b,v1,v2,tt)=>{$(a).textContent=v1;$(b).textContent=v2;const p=vis(tt.t,null,tt.at,{lout:0.1}),n=vis(tt.t,tt.at+0.04,null,{lin:0.18});
+  $(a).style.opacity=p.o.toFixed(3);blur($(a),p.blur);$(b).style.opacity=n.o.toFixed(3);blur($(b),n.blur);};
+const wM=track(EN?260:330,[[T.truth,EN?240:330,MORPH]]);
+function chips(t){
+  // myth -> fact chip at the bottom of the joint scenes
+  const mv=vis(t,T.grind+0.05,T.pull,{lin:0.2,lout:0.14});
+  if(t>T.grind&&t<T.pull+0.2){ const sw=S(t-T.truth,14,0.7);
+    setChip('chipM',540,1372+(t>T.truth?-16*Math.sin(Math.PI*clamp((t-T.truth)/0.3)):0)+4*Math.sin(t*4),wM(t),mix('#E0202E','#1E9BF0',t>T.truth?sw:0),'#fff',mv);
+    swap('chipM1','chipM2',TX.myth,TX.fact,{t,at:T.truth});
+    $('chipM').style.transform+=` rotate(${f2((t<T.truth?1:0)*2.5*Math.sin(t*40)*clamp(red(t)))}deg)`;
+  } else $('chipM').style.opacity='0';
+  // chips under the two hands
+  if(t>T.decades&&t<T.hurt+0.15){ const sw=S(t-K.none,14,0.7), sw2=S(t-H.noarth,14,0.7), y=1040+5*Math.sin(t*4);
+    const lx=540+(-250-hX(t))*hS(t), rx=540+(250-hX(t))*hS(t);
+    setChip('chipL',lx,y,EN?(t>K.none?360:270):(t>K.none?280:230),t>K.none?mix('#FFD23F','#2DBE60',sw):'#FFD23F',t>K.none?'#fff':'#10080A',vis(t,T.decades+0.1,T.hurt,{lin:0.18,lout:0.1}));
+    setChip('chipR',rx,y,EN?(t>H.noarth?360:220):(t>H.noarth?280:230),t>H.noarth?mix('#8A8178','#2DBE60',sw2):'#8A8178','#fff',vis(t,T.decades+0.25,T.hurt,{lin:0.18,lout:0.1}));
+    swap('chipL1','chipL2',TX.l1,TX.ok,{t,at:K.none}); swap('chipR1','chipR2',TX.r1,TX.ok,{t,at:H.noarth});
+    if(t>K.none) $('chipL1').style.color='#10080A';
+  } else { $('chipL').style.opacity='0'; $('chipR').style.opacity='0'; }
+  // years pill at the bottom of the hands scene
+  const yp=$('years'); const yv=vis(t,T.decades+0.15,T.hurt,{lin:0.2,lout:0.1});
+  if(show(yp,yv.o)){ blur(yp,yv.blur); $('yearsT').textContent=TX.years; const w=EN?470:450; yp.style.width=w+'px';
+    const ya=S(t-K.decades,16,0.5), lab=vis(t,K.decades,null,{lin:0.15}); $('yearsT').style.opacity=lab.o.toFixed(3);
+    yp.style.transform=`translate(${540-w/2}px,${f2(1330+40*(1-S(t-T.decades-0.15,12,0.7))+3*Math.sin(t*3))}px) scale(${(1+0.08*Math.sin(Math.PI*clamp((t-K.decades)/0.3))*(t>K.decades?1:0)).toFixed(4)})`;
+    const fl=((t*5)%1); $('calpage').setAttribute('transform',`translate(0 ${f2(50+22*fl)}) scale(1 ${f2(Math.abs(Math.cos(fl*Math.PI)))}) translate(0 -72)`);
+    if(t<K.decades) yp.style.transform+=` rotate(${f2(2*Math.sin(t*6))}deg)`; void ya; }
+}
+const STEPS=TX.steps, SWD=EN?[160,270,200,160]:[180,250,220,190], GAP=34; let sx0=14; const SX=[];
+STEPS.forEach((s,i)=>{const e=$('st'+i); e.textContent=s; e.style.left=sx0+'px'; e.style.width=SWD[i]+'px'; SX.push(sx0); sx0+=SWD[i]; if(i<3){$('ar'+i).style.left=(sx0+GAP/2-8)+'px';} sx0+=GAP;});
+const STT=[W.pull,W.press,W.bubble,K.pop];
+const IL=track(SX[0],[[STT[1],SX[1],SLOW],[STT[2],SX[2],SLOW],[STT[3],SX[3],SLOW]]), ILf=track(SX[0],[[STT[1],SX[1],FAST],[STT[2],SX[2],FAST],[STT[3],SX[3],FAST]]);
+const IR=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],FAST],[STT[2],SX[2]+SWD[2],FAST],[STT[3],SX[3]+SWD[3],FAST]]), IRs=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],SLOW],[STT[2],SX[2]+SWD[2],SLOW],[STT[3],SX[3]+SWD[3],SLOW]]);
+function strip(t){
+  const e=$('strip'); if(t<T.pull||t>T.doctor+0.15){e.style.opacity='0';return;}
+  const v=vis(t,T.pull,T.doctor,{lin:0.2,lout:0.12}); e.style.opacity=v.o.toFixed(3);
+  e.style.transform=`translateY(${f2(60*(1-S(t-T.pull,12,0.7))+3*Math.sin(t*3))}px)`;
+  const l=Math.min(IL(t),ILf(t)), r=Math.max(IR(t),IRs(t)); let cur=-1; STT.forEach((s,i)=>{if(t>=s)cur=i;});
+  const ind=$('ind'); ind.style.left=f2(l)+'px'; ind.style.width=f2(Math.max(0,r-l))+'px'; ind.style.background=cur===3?'#E0202E':'#1E9BF0';
+  ind.style.transform=`scaleY(${(1+0.06*Math.sin(t*8)).toFixed(3)})`;
+  for(let i=0;i<4;i++){const st=$('st'+i), on=i===cur; st.style.color=on?'#fff':(i<cur?'#1E9BF0':'#7D6A5B');
+    st.style.transform=`scale(${(on?1+0.14*Math.sin(Math.PI*clamp((t-STT[i])/0.3)):1).toFixed(3)})`;}
+}
+// pop shot: crack burst on the knuckles on the word
+const POPB=[...Array(9)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':14,'stroke-linecap':'round',fill:'none',opacity:0},$('popov')));
+const POPR=el('circle',{cx:690,cy:640,fill:'none',stroke:'#fff','stroke-width':10,opacity:0},$('popov'));
+function popov(t){ if(t<T.pop-0.05||t>T.doctor+0.2)return; burst(POPB,t,K.pop,690,640,70);
+  const u=(t-K.pop)/0.4; POPR.setAttribute('opacity',(u>0&&u<1?(1-u)*0.9:0).toFixed(3)); POPR.setAttribute('r',f2(40+260*eo(u))); }
+// arth: the knuckle joints flash red (the feared "wear"), then the zoom-through dives into one of them
+const ARTH=[[385,520],[455,505],[555,525],[640,500]].map(([x,y])=>el('circle',{cx:x,cy:y,r:40,fill:'none',stroke:'#FF5A4A','stroke-width':9,opacity:0},$('arthov')));
+function arthov(t){ if(t<T.arth-0.05||t>T.truth+0.12)return; ARTH.forEach((c,i)=>{const a=S(t-T.arth-0.08-i*0.06,18,0.55);
+  c.setAttribute('opacity',(clamp(a)*(0.7+0.3*Math.sin(t*12+i))).toFixed(3)); c.setAttribute('r',f2(Math.max(0.1,20+26*a+4*Math.sin(t*9+i))));});}
+// hurt: the pain glow throbs
+const HG=el('circle',{cx:410*1.2,cy:381+400*1.2,fill:'none',stroke:'#FF3B3B','stroke-width':10,opacity:0},$('hurtov'));
+const HG2=el('circle',{cx:410*1.2,cy:381+400*1.2,fill:'none',stroke:'#FF3B3B','stroke-width':6,opacity:0},$('hurtov'));
+function hurtov(t){ if(t<T.hurt-0.05||t>T.clinic+0.15)return; [[HG,0],[HG2,0.35]].forEach(([c,o])=>{const u=(((t-T.hurt)*1.4+o)%1+1)%1;
+  c.setAttribute('r',f2(50+150*eo(u))); c.setAttribute('opacity',((1-u)*0.85).toFixed(3));});}
+// ending: ask shot keeps the hook frame (loop) + comment bubble
+const LA=lensSet('askov',800,800,150,610,1060);
+function ending(t){
+  if(t<K.ask){ $('bubble').style.opacity='0'; }
+  if(t<T.ask-0.05)return;
+  LA.lg.setAttribute('opacity','1'); LA.line.setAttribute('opacity','1'); LA.dot.setAttribute('opacity','1'); LA.line.setAttribute('stroke-dashoffset',f2(-t*60));
+  const tk=((t-T.ask)%0.5+0.5)%0.5; LA.glow.setAttribute('opacity',(0.4+0.6*Math.exp(-tk*8)).toFixed(3)); LA.glow.setAttribute('r',f2(44+16*Math.exp(-tk*8)));
+  LA.lg.setAttribute('transform',`translate(800 800) rotate(${f2(2*Math.sin(t*3))}) scale(${(1+0.03*Math.sin(t*4)).toFixed(4)}) translate(-800 -800)`);
+  burst(LA.bl,t,K.howmany,LA.kx,LA.ky,40);
+  const b=$('bubble'); const v=vis(t,K.ask,null,{lin:0.12});
+  if(!show(b,t<K.ask?0:v.o))return; blur(b,v.blur); $('bubT').textContent=TX.bub; $('bubT').setAttribute('font-size',EN?'68':'120');
+  const a=S(t-K.ask,13,0.5), c=t>K.comment?S(t-K.comment,18,0.45):0;
+  b.style.transformOrigin='30% 100%';
+  b.style.transform=`translate(170px,${f2(150+12*Math.sin((t-K.ask)*6))}px) rotate(${f2(-5+4*Math.sin(t*3))}deg) scale(${(0.25+0.75*a+0.08*Math.sin(Math.PI*clamp((t-K.comment)/0.3))*(t>K.comment?1:0)).toFixed(4)})`;
+  [...$('dots').children].forEach((d,i)=>d.setAttribute('cy',f2(300-12*Math.max(0,Math.sin(t*9-i*0.9)))));
+  $('bubT').setAttribute('y',f2(210));
+  void c;
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('c'+LANG+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+function render(t){ scenes(t); title(t); hookov(t); joint(t); hands(t); chips(t); strip(t); popov(t); arthov(t); hurtov(t); ending(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>
