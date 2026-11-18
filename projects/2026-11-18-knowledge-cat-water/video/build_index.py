@@ -74,7 +74,6 @@ T = {k: v['start'] for k, v in SH.items()}
 VID = {  # video plates: start at the shot cut, run past the outgoing transition
     'VHOOK': (0, round(T['belief'] + 0.3, 3)),
     'VBELIEF': (T['belief'], round(T['fishing'] + 0.3 - T['belief'], 3)),
-    'VDRY': (T['dry'], round(T['guess'] + 0.3 - T['dry'], 3)),
     'VASK': (T['ask'], round(DUR - T['ask'], 3)),
 }
 page = (HERE / 'index.html.tpl').read_text()
