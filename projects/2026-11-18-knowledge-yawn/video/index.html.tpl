@@ -327,7 +327,8 @@ function chips(t){
 
 // ---------- same: before / after bars morph to equal height on "เท่าเดิม"/"much" ----------
 $('barsH').textContent=TX.barsH; $('labA').textContent=TX.a; $('labB').textContent=TX.b;
-const bB=track(110,[[H.same,240,BOUNCE]]);
+const BEQ=H.same-0.42; // equal height settled ~0.1 s before the word (Provine 1987: yawned just as much)
+const bB=track(110,[[BEQ,240,[22,1]]]);
 function bars(t){
   const b=$('bars'); const v=vis(t,T.same+0.12,T.idea,{lin:0.22,lout:0.1});
   if(t<T.same||t>T.idea+0.15){b.style.opacity='0';return;} if(!show(b,v.o))return; blur(b,v.blur);
@@ -336,9 +337,9 @@ function bars(t){
   const hA=240*eo((t-T.same-0.2)/0.35)+4*Math.sin(t*5), hB=Math.max(0,bB(t))*eo((t-T.same-0.3)/0.35)+4*Math.sin(t*5+1);
   $('barA').setAttribute('y',f2(392-hA)); $('barA').setAttribute('height',f2(Math.max(0,hA)));
   $('barB').setAttribute('y',f2(392-hB)); $('barB').setAttribute('height',f2(Math.max(0,hB)));
-  $('barB').setAttribute('fill',mix('#9AA5B5','#1E9BF0',t>H.same?S(t-H.same,14,0.8):0));
+  $('barB').setAttribute('fill',mix('#9AA5B5','#1E9BF0',t>BEQ?S(t-BEQ,22,1):0));
   $('o2b').setAttribute('transform',`translate(425 ${f2(392-hB-42)}) scale(${eo((t-T.same-0.35)/0.25).toFixed(3)})`);
-  $('eqm').setAttribute('opacity',(t>H.same?eo((t-H.same-0.1)/0.2):0).toFixed(3));
+  $('eqm').setAttribute('opacity',(t>BEQ?eo((t-BEQ-0.12)/0.2):0).toFixed(3));
 }
 
 // ---------- ending: cat + comment bubble ----------
