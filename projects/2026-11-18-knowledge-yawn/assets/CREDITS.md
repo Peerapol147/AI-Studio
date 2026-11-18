@@ -6,3 +6,4 @@
 - footage/doctor-pixabay-5321351.jpg: outsideclick via Pixabay (Pixabay Content License) https://pixabay.com/photos/id-5321351/
 - footage/ask-pixabay-119515.mp4: fh_media_e-motion via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-119515/
 - Sound effects (CC0 1.0, bundled sound-effects library, cue list in video/sound/cues-<lang>.json): Freesound 683101 "Quick woosh", 824189 "Pop in SFX", 169867, 127197 "Fast simple chop 5", 264777 Shinplaster "Swoosh", 810485, 786514 "Swoosh v2", 830856, 393811; kit/pop.ogg; Kenney (kenney.nl) Interface Sounds: minimize 001, confirmation 001, drop 001, pluck 001
+- Font: Kanit by Cadson Demak (SIL Open Font License 1.1) from repo assets/fonts/ (shared, not copied into project; the video/ build embeds it)
