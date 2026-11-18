@@ -1,40 +1,29 @@
 <!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<!-- Thumbnail (1 frame, 1080x1920): same layout as frame 0 of the clip (hook hands + big Kanit 900 text + tag),
-     plus a lens showing the gas bubble frame from the joint diagram (assets/joint-bubble.jpg, taken from the render at 9.47 s). -->
+<!-- Thumbnail (1 frame, 1080x1920): same look as frame 0 of the clip (hook footage, same grade) + big Kanit 900 text "ตีสามแล้วยังคิด?",
+     corner tag "รู้ไหม?" and a small 03:00 clock. Exported as JPG with ffmpeg from the rendered frame. -->
 <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
-#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B0B0B}
-#fill{position:absolute;left:-60px;top:-100px;width:1200px;height:2133px}
-#band{position:absolute;left:-54px;top:640px;width:1188px;height:764px;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%)}
-.shade{position:absolute;left:0;top:0;width:1080px;height:860px;background:linear-gradient(rgba(5,5,10,.78),rgba(5,5,10,0))}
-.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;-webkit-text-stroke:30px #10080A;paint-order:stroke fill;
-  text-shadow:0 14px 0 rgba(0,0,0,.5)}
-#t1{color:#fff}#t2{color:#FFD23F}
-.tag{position:absolute;top:110px;left:50%;padding:2px 34px 10px;border-radius:36px;background:#1E9BF0;border:9px solid #10080A;
-  color:#fff;font-weight:900;font-size:58px;white-space:nowrap;transform:translateX(-50%) rotate(-4deg)}
-#lens{position:absolute;left:560px;top:1040px;width:440px;height:440px;border-radius:50%;overflow:hidden;border:16px solid #FFD23F;
-  box-shadow:0 0 0 12px #10080A,0 0 80px 20px rgba(255,210,63,.55)}
-#lens img{width:100%;height:100%}
-#lk{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B1630}
+#kb{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(1.1);transform-origin:58% 48%}
+#kb video{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.shade{position:absolute;left:0;top:0;width:1080px;height:980px;background:linear-gradient(rgba(8,14,32,.85),rgba(8,14,32,.55) 60%,rgba(8,14,32,0))}
+.glow{position:absolute;left:560px;top:860px;width:640px;height:640px;border-radius:50%;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(205,222,255,.45) 0%,rgba(150,180,255,.15) 40%,rgba(150,180,255,0) 70%)}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;-webkit-text-stroke:34px #0A1022;paint-order:stroke fill;
+  text-shadow:0 16px 30px rgba(5,8,20,.7)}
+#t1{top:330px;font-size:214px;color:#F3EBDD}#t2{top:575px;font-size:236px;color:#FFB366}
+.tag{position:absolute;top:150px;left:90px;padding:4px 36px 12px;border-radius:40px;background:#FFB366;border:9px solid #0A1022;
+  color:#0A1022;font-weight:900;font-size:62px;white-space:nowrap;transform:rotate(-4deg)}
+#pill{position:absolute;top:160px;right:90px;height:96px;padding:0 34px 0 100px;border-radius:48px;background:rgba(11,22,48,.88);border:6px solid #FFB366;
+  color:#F3EBDD;font-weight:700;font-size:58px;line-height:84px;white-space:nowrap}
+#pill svg{position:absolute;left:24px;top:14px}
 </style></head><body>
-<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920"
- data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"}]'>
-<img class="clip" id="fill" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-fill.jpg" alt=""/>
-<img class="clip" id="band" data-start="0" data-duration="1" data-track-index="1" src="assets/hook-crop.jpg" alt=""/>
-<div class="shade"></div>
-<svg id="lk" viewBox="0 0 1080 1920"><path d="M617 1036 L705 1130" stroke="#FFD23F" stroke-width="14" stroke-linecap="round" stroke-dasharray="6 22"/>
-  <circle cx="617" cy="1036" r="22" fill="#FFD23F" stroke="#10080A" stroke-width="7"/>
-  <g stroke="#FFD23F" stroke-width="14" stroke-linecap="round"><path d="M560 985 L520 955"/><path d="M600 965 L590 915"/><path d="M550 1040 L500 1045"/></g></svg>
-<div id="lens"><img src="assets/joint-bubble.jpg" alt=""/></div>
-<div class="t" id="t1"></div><div class="t" id="t2"></div>
-<div class="tag" id="tag"></div>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<div id="kb"><video id="v" class="clip" data-start="0" data-duration="1" data-media-start="1.6" data-track-index="0" muted playsinline src="assets/hook.mp4" data-color-grading='{"adjust": {"exposure": -0.25, "contrast": 0.06, "temperature": -0.28, "saturation": -0.15}, "wheels": {"shadows": {"hue": 222, "amount": 0.55, "level": -0.12}, "midtones": {"hue": 225, "amount": 0.12, "level": 0}, "highlights": {"hue": 34, "amount": 0.06, "level": 0}}, "details": {"vignette": 0.4, "grain": 0.1}}'></video></div>
+<div class="glow"></div><div class="shade"></div>
+<div class="tag">รู้ไหม?</div>
+<div id="pill"><svg width="60" height="60" viewBox="-30 -30 60 60"><circle r="25" fill="none" stroke="#FFB366" stroke-width="6"/>
+  <path d="M0 -15 L0 0 L13 0" fill="none" stroke="#F3EBDD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>03:00</div>
+<div class="t" id="t1">ตีสามแล้ว</div><div class="t" id="t2">ยังคิด?</div>
 </div><script>
-const V=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
-const en=V.lang==='en';
-const t1=document.getElementById('t1'), t2=document.getElementById('t2');
-t1.textContent=en?'CRACK =':'กร๊อบ ='; t2.textContent=en?'ARTHRITIS?':'ข้อเสื่อม?';
-t1.style.cssText=en?'top:230px;font-size:210px':'top:250px;font-size:215px';
-t2.style.cssText=en?'top:465px;font-size:168px':'top:475px;font-size:205px';
-document.getElementById('tag').textContent=en?'DID YOU KNOW?':'รู้ไหม?';
 const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

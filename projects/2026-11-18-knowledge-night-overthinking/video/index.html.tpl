@@ -6,462 +6,390 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
-#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B1220}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B1630}
 .sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
-.fw,.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
-.fill{position:absolute;left:0;top:0;width:1080px;height:1920px}
-.band{position:absolute;left:0;width:1080px;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%)}
-.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
-.sweep{position:absolute;left:-600px;top:-200px;width:420px;height:2400px;mix-blend-mode:screen;opacity:.45;
-  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,250,235,.5) 50%,rgba(255,255,255,0) 100%)}
-.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
-.dbg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 34%,#22375C 0%,#132038 55%,#0A111F 100%)}
-.grid{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;opacity:.16;
-  background-image:linear-gradient(#5D7FB5 2px,transparent 2px),linear-gradient(90deg,#5D7FB5 2px,transparent 2px);background-size:80px 80px}
-.dsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;
-  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px);mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px)}
-#tshade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(5,5,10,.7),rgba(5,5,10,0))}
+.kb{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 50%}
+.kb video{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#gbg{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;background:radial-gradient(ellipse at 50% 34%,#22336A 0%,#16244D 45%,#0B1630 100%)}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 42%,rgba(6,10,24,0) 52%,rgba(6,10,24,.55) 100%)}
+#scrglow{position:absolute;left:552px;top:822px;width:600px;height:600px;border-radius:50%;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(205,222,255,.55) 0%,rgba(150,180,255,.18) 40%,rgba(150,180,255,0) 70%)}
+#asktint{position:absolute;left:0;top:0;width:1080px;height:1920px;background:linear-gradient(rgba(11,22,48,.72),rgba(11,22,48,.5) 55%,rgba(11,22,48,.7))}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(8,14,32,.72),rgba(8,14,32,0))}
 #title{position:absolute;left:0;top:0;width:1080px;height:760px}
 #title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
-  -webkit-text-stroke:28px #10080A;paint-order:stroke fill;transform-origin:50% 60%}
-.tag{position:absolute;left:0;top:0;padding:2px 34px 10px;border-radius:36px;background:#1E9BF0;border:9px solid #10080A;
-  color:#fff;font-weight:900;font-size:56px;white-space:nowrap}
-.chip{position:absolute;left:0;top:0;height:96px;border-radius:48px;opacity:0;overflow:hidden;border:7px solid #10080A}
-.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-weight:900;font-size:50px;white-space:nowrap}
-#strip{position:absolute;left:60px;top:1310px;width:960px;height:124px;border-radius:62px;background:#fff;opacity:0;
-  box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px #10080A}
-#ind{position:absolute;top:12px;height:100px;border-radius:50px;background:#1E9BF0}
-.st{position:absolute;top:0;height:124px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:38px;color:#5C4A3C;white-space:nowrap}
-.arw{position:absolute;top:44px;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid #C9B8A6}
-#years{position:absolute;left:0;top:0;height:120px;border-radius:60px;background:#fff;border:7px solid #10080A;opacity:0;white-space:nowrap}
-#years span{position:absolute;left:150px;top:50%;transform:translateY(-54%);font-weight:900;font-size:58px;color:#10080A}
-#bubble{position:absolute;left:0;top:0;width:560px;height:440px;opacity:0}
+  -webkit-text-stroke:24px #0A1022;paint-order:stroke fill;transform-origin:50% 60%}
+#pill{position:absolute;left:0;top:0;height:92px;padding:0 34px 0 96px;border-radius:46px;background:rgba(11,22,48,.82);border:5px solid #FFB366;
+  color:#F3EBDD;font-weight:700;font-size:54px;line-height:84px;white-space:nowrap}
+#pill svg{position:absolute;left:22px;top:13px}
 #caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
-.cap{position:absolute;left:40px;width:1000px;top:1190px;height:0;text-align:center}
-.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
-  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
-.cap em{font-style:normal;color:#FFD23F}
+.cap{position:absolute;left:40px;width:1000px;top:1152px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-50px;display:block;color:#F3EBDD;font-weight:700;line-height:1.2;white-space:nowrap;
+  -webkit-text-stroke:16px #0A1022;paint-order:stroke fill;transform-origin:50% 80%;text-shadow:0 8px 22px rgba(10,16,34,.85)}
+.cap em{font-style:normal;color:#FFB366}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
- data-motion-blur="on" data-motion-blur-events="on"
- data-composition-variables='[{"id":"lang","type":"string","label":"Language (th | en)","default":"th"},{"id":"vo","type":"string","label":"Voice file","default":"assets/vo-th.mp3"}]'>
+ data-motion-blur="on" data-motion-blur-events="on">
 
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
-  <div class="sc" id="sh-hook"><div class="fw" id="fw-hook"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-hook"><img class="band" src="assets/hook-crop.jpg" style="top:700px;height:694px" alt=""/>
-      <svg class="ov" id="hookov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-hook"></div></div>
-  <div class="sc" id="sh-elder"><div class="fw" id="fw-elder"><img class="fill" src="assets/elder-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-elder"><img class="band" src="assets/elder-crop.jpg" style="top:125px;height:1350px" alt=""/></div><div class="vig"></div></div>
-  <div class="sc" id="sc-joint"><div class="dbg"></div><div class="grid" id="grid-j"></div>
-    <svg class="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920">
-      <defs>
-        <radialGradient id="redg"><stop offset="0" stop-color="#FF4D4D" stop-opacity=".95"/><stop offset=".45" stop-color="#E0202E" stop-opacity=".55"/><stop offset="1" stop-color="#E0202E" stop-opacity="0"/></radialGradient>
-        <radialGradient id="bubg" cx=".38" cy=".34"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#BFE7FF" stop-opacity=".9"/><stop offset="1" stop-color="#5BB8F5" stop-opacity=".55"/></radialGradient>
-        <radialGradient id="glowy"><stop offset="0" stop-color="#FFF6B0" stop-opacity=".95"/><stop offset=".4" stop-color="#FFD23F" stop-opacity=".55"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient>
-        <linearGradient id="boneg" x1="0" x2="1"><stop offset="0" stop-color="#E9DCC4"/><stop offset=".5" stop-color="#FFF8EA"/><stop offset="1" stop-color="#DCCBB0"/></linearGradient>
-      </defs>
-      <g id="jcam"></g>
-    </svg></div>
-  <div class="sc" id="sh-arth"><div class="fw" id="fw-arth" style="background:#000"></div>
-    <div class="kb" id="kb-arth"><img class="band" src="assets/arth-crop.jpg" style="left:80px;width:920px;top:190px;height:1219px" alt=""/>
-      <svg class="ov" id="arthov" viewBox="0 0 1080 1920"></svg></div></div>
-  <div class="sc" id="sh-pop"><div class="fw" id="fw-pop"><img class="fill" src="assets/pop-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-pop"><img class="band" src="assets/pop-crop.jpg" style="top:466px;height:668px" alt=""/>
-      <svg class="ov" id="popov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-pop"></div></div>
-  <div class="sc" id="sh-doctor"><div class="fw" id="fw-doctor"><img class="fill" src="assets/doctor-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-doctor"><img class="band" src="assets/doctor-crop.jpg" style="top:288px;height:1025px" alt=""/></div><div class="sweep" id="sw-doctor"></div></div>
-  <div class="sc" id="sc-hands"><div class="dbg"></div><div class="grid" id="grid-h"></div>
-    <svg class="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="hcam"></g></svg></div>
-  <div class="sc" id="sh-hurt"><div class="fw" id="fw-hurt"><img class="fill" src="assets/hurt-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-hurt"><img class="band" src="assets/hurt-crop.jpg" style="top:381px;height:838px" alt=""/>
-      <svg class="ov" id="hurtov" viewBox="0 0 1080 1920"></svg></div></div>
-  <div class="sc" id="sh-clinic"><div class="fw" id="fw-clinic"><img class="fill" src="assets/clinic-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-clinic"><img class="band" src="assets/clinic-crop.jpg" style="top:424px;height:753px" alt=""/></div><div class="sweep" id="sw-clinic"></div></div>
-  <div class="sc" id="sh-ask"><div class="fw" id="fw-ask"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
-    <div class="kb" id="kb-ask"><img class="band" src="assets/hook-crop.jpg" style="top:700px;height:694px" alt=""/>
-      <svg class="ov" id="askov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-ask"></div></div>
+  <div class="sc" id="sc-hook"><div class="kb" id="kb-hook">%%VID:hook%%</div><div id="scrglow"></div></div>
+  <div class="sc" id="sc-scroll"><div class="kb" id="kb-scroll">%%VID:scroll%%</div></div>
+  <div class="sc" id="sc-tired"><div class="kb" id="kb-tired">%%VID:tired%%</div></div>
+  <div class="sc" id="sc-room"><div class="kb" id="kb-room">%%VID:room%%</div></div>
+  <div class="sc" id="sc-sleep"><div class="kb" id="kb-sleep">%%VID:sleep%%</div></div>
+  <div class="sc" id="sc-morning"><div class="kb" id="kb-morning">%%VID:morning%%</div></div>
+  <div class="sc" id="sc-write"><div class="kb" id="kb-write">%%VID:write%%</div></div>
+  <div class="sc" id="sc-ask"><div class="kb" id="kb-ask">%%VID:ask%%</div><div id="asktint"></div></div>
+  <div class="sc" id="sc-gfx"><div id="gbg"></div><svg class="full" id="stars" viewBox="0 0 1080 1920"></svg><div class="vig"></div></div>
 </div>
 
-<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
-  <div class="chip" id="chipM"><span id="chipM1"></span><span id="chipM2"></span></div>
-  <div class="chip" id="chipL"><span id="chipL1"></span><span id="chipL2"></span></div>
-  <div class="chip" id="chipR"><span id="chipR1"></span><span id="chipR2"></span></div>
-  <div id="years"><svg id="cal" viewBox="0 0 110 110" width="96" height="96" style="position:absolute;left:34px;top:5px;overflow:visible">
-      <rect x="8" y="16" width="94" height="86" rx="14" fill="#fff" stroke="#10080A" stroke-width="8"/><rect x="8" y="16" width="94" height="28" rx="10" fill="#E0202E" stroke="#10080A" stroke-width="8"/>
-      <g id="calpage"><rect x="20" y="50" width="70" height="44" rx="6" fill="#FFD23F"/></g>
-      <path d="M32 6v20M78 6v20" stroke="#10080A" stroke-width="9" stroke-linecap="round"/></svg><span id="yearsT"></span></div>
-  <div id="strip"><div id="ind"></div>
-    <div class="st" id="st0"></div><div class="arw" id="ar0"></div><div class="st" id="st1"></div><div class="arw" id="ar1"></div>
-    <div class="st" id="st2"></div><div class="arw" id="ar2"></div><div class="st" id="st3"></div>
-  </div>
-  <svg id="bubble" viewBox="0 0 560 440"><path d="M60 16h440a44 44 0 0 1 44 44v228a44 44 0 0 1-44 44H230l-96 84v-84H60a44 44 0 0 1-44-44V60a44 44 0 0 1 44-44Z" fill="#fff" stroke="#10080A" stroke-width="16" stroke-linejoin="round"/>
-    <text id="bubT" x="280" y="222" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="120" fill="#1E9BF0" stroke="#10080A" stroke-width="10" paint-order="stroke"></text>
-    <g id="dots"><circle cx="220" cy="270" r="14" fill="#10080A"/><circle cx="280" cy="270" r="14" fill="#10080A"/><circle cx="340" cy="270" r="14" fill="#10080A"/></g></svg>
+<!-- one shape (the thought bubble) + every diagram, in one SVG with one camera -->
+<svg id="ov" class="full" viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;z-index:10;overflow:visible">
+  <defs>
+    <radialGradient id="ambg"><stop offset="0" stop-color="#FFE2B8"/><stop offset=".35" stop-color="#FFB366" stop-opacity=".85"/><stop offset="1" stop-color="#FFB366" stop-opacity="0"/></radialGradient>
+    <radialGradient id="coolg"><stop offset="0" stop-color="#F3EBDD" stop-opacity=".85"/><stop offset=".45" stop-color="#BCCBF2" stop-opacity=".45"/><stop offset="1" stop-color="#BCCBF2" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lampg"><stop offset="0" stop-color="#FFD9A0" stop-opacity=".9"/><stop offset=".4" stop-color="#FFB366" stop-opacity=".35"/><stop offset="1" stop-color="#FFB366" stop-opacity="0"/></radialGradient>
+    <radialGradient id="scrg"><stop offset="0" stop-color="#DCE7FF" stop-opacity=".8"/><stop offset=".5" stop-color="#9DB4F0" stop-opacity=".25"/><stop offset="1" stop-color="#9DB4F0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tableg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E2A52"/><stop offset="1" stop-color="#0B1630" stop-opacity="0"/></linearGradient>
+    <clipPath id="brainclip"><path id="clipP" d=""/></clipPath>
+  </defs>
+  <g id="cam">
+    <g id="head" opacity="0">
+      <path id="headP" d="M470 1130 L470 1046 C410 1024 356 962 348 880 C332 760 404 640 544 630 C664 622 744 702 752 792 C756 832 772 852 792 882 C802 897 792 907 772 908 C772 932 766 950 760 962 C770 977 760 992 744 994 C738 1022 718 1036 680 1036 L642 1037 L642 1130 Z"
+        fill="#1F2D5C" stroke="#4A5E9A" stroke-width="6" stroke-linejoin="round"/>
+      <circle id="headGlow" cx="560" cy="780" r="150" fill="url(#ambg)" opacity=".35"/>
+      <ellipse id="orbit" cx="550" cy="560" rx="340" ry="140" fill="none" stroke="#FFB366" stroke-width="7" stroke-linecap="round" stroke-dasharray="26 22" opacity="0"/>
+    </g>
+    <g id="phoneG" opacity="0">
+      <ellipse id="lampGlow" cx="800" cy="740" rx="480" ry="460" fill="url(#lampg)"/>
+      <path d="M90 905 L990 905 L1050 1010 L30 1010 Z" fill="#22305E"/>
+      <rect x="30" y="1010" width="1020" height="360" fill="url(#tableg)"/>
+      <rect x="786" y="770" width="28" height="135" rx="10" fill="#3A2A20"/>
+      <ellipse cx="800" cy="905" rx="80" ry="16" fill="#2A1E18"/>
+      <path id="shade" d="M712 610 L888 610 L948 780 L652 780 Z" fill="#FFB366" stroke="#FFD9A0" stroke-width="4" stroke-linejoin="round"/>
+      <ellipse id="scrGlow" cx="430" cy="760" rx="300" ry="250" fill="url(#scrg)"/>
+      <g id="phone">
+        <rect x="-175" y="-52" width="350" height="104" rx="26" fill="#0E1530" stroke="#4A5E9A" stroke-width="5"/>
+        <rect id="phScr" x="-160" y="-38" width="320" height="76" rx="16" fill="#CFE0FF"/>
+        <g id="phBack" opacity="0"><circle cx="-118" cy="0" r="11" fill="#2A3768" stroke="#4A5E9A" stroke-width="3"/></g>
+      </g>
+    </g>
+    <g id="brainIn" opacity="0">
+      <g clip-path="url(#brainclip)">
+        <circle id="front" cx="300" cy="560" r="230" fill="url(#coolg)" opacity="0"/>
+        <g id="sulci" fill="none" stroke="#F3EBDD" stroke-width="7" stroke-linecap="round" opacity=".32">
+          <path d="M300 520 C360 470 430 500 470 455"/><path d="M620 440 C680 480 740 450 810 500"/><path d="M320 700 C400 660 470 720 540 680"/>
+          <path d="M600 600 C660 560 720 620 800 600"/><path d="M420 830 C480 795 560 845 620 805"/><path d="M240 640 C285 610 300 570 282 530"/>
+          <path d="M700 770 C750 735 805 775 840 725"/><path d="M470 560 C520 520 560 580 610 540"/>
+        </g>
+      </g>
+      <g id="cereb" fill="none" stroke="#F3EBDD" stroke-linecap="round">
+        <path d="M630 880 C636 930 646 960 660 985" stroke-width="44" stroke-opacity=".16"/>
+        <ellipse cx="770" cy="872" rx="112" ry="60" fill="#F3EBDD" fill-opacity=".1" stroke-width="5" stroke-opacity=".7"/>
+        <path d="M690 862 C730 846 800 846 852 866 M694 888 C740 900 800 900 848 884" stroke-width="4" stroke-opacity=".45"/></g>
+      <g id="emo"><circle id="emoGlow" cx="610" cy="760" r="110" fill="url(#ambg)"/>
+        <circle id="ring1" cx="610" cy="760" r="60" fill="none" stroke="#FFB366" stroke-width="7" opacity="0"/>
+        <circle id="ring2" cx="610" cy="760" r="60" fill="none" stroke="#FFB366" stroke-width="5" opacity="0"/>
+        <circle id="emoCore" cx="610" cy="760" r="30" fill="#FFD9A0"/></g>
+      <text id="labEmo" x="470" y="868" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="48" fill="#FFB366" stroke="#0A1022" stroke-width="12" paint-order="stroke" opacity="0">ส่วนอารมณ์</text>
+      <g id="brakeG" opacity="0">
+        <text x="330" y="470" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="48" fill="#F3EBDD" stroke="#0A1022" stroke-width="12" paint-order="stroke">ส่วนเบรก</text>
+        <rect x="220" y="494" width="220" height="26" rx="13" fill="#0A1022" stroke="#F3EBDD" stroke-width="4" stroke-opacity=".6"/>
+        <rect id="gauge" x="226" y="500" width="208" height="14" rx="7" fill="#F3EBDD"/>
+      </g>
+    </g>
+    <g id="shapeG">
+      <circle id="tr1" r="10" fill="#F3EBDD" fill-opacity=".16" stroke="#F3EBDD" stroke-width="5" opacity="0"/>
+      <circle id="tr2" r="6" fill="#F3EBDD" fill-opacity=".16" stroke="#F3EBDD" stroke-width="4" opacity="0"/>
+      <path id="shGlow" d="" fill="none" stroke="#FFB366" stroke-width="28" stroke-linejoin="round" opacity=".16"/>
+      <path id="shP" d="" stroke-width="6" stroke-linejoin="round"/>
+      <g id="knotG"><path id="knot" d="" fill="none" stroke="#FFB366" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></g>
+      <g id="cardT" opacity="0">
+        <text x="0" y="-38" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="78" fill="#0B1630">คุยกับผู้เชี่ยวชาญ</text>
+        <rect x="-330" y="20" width="660" height="98" rx="49" fill="#0B1630"/>
+        <text x="0" y="88" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="50" fill="#F3EBDD">สายด่วนสุขภาพจิต <tspan fill="#FFB366" font-weight="900" font-size="60">1323</tspan></text>
+      </g>
+      <g id="askT" opacity="0">
+        <text x="0" y="28" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="84" fill="#0B1630">ตอนนี้<tspan fill="#C4621A">กี่โมง</tspan>แล้ว?</text>
+      </g>
+    </g>
+  </g>
+  <g id="clk" opacity="0">
+    <circle r="100" fill="#14214A" stroke="#F3EBDD" stroke-width="9"/>
+    <g id="ticks" stroke="#F3EBDD" stroke-width="7" stroke-linecap="round" opacity=".8"></g>
+    <path id="hHour" d="M0 10 L0 -48" stroke="#F3EBDD" stroke-width="13" stroke-linecap="round"/>
+    <path id="hMin" d="M0 12 L0 -74" stroke="#F3EBDD" stroke-width="9" stroke-linecap="round"/>
+    <path id="hSec" d="M0 16 L0 -80" stroke="#FFB366" stroke-width="5" stroke-linecap="round"/>
+    <circle r="11" fill="#FFB366"/>
+    <text id="clkT" y="168" text-anchor="middle" font-family="Kanit" font-weight="700" font-size="54" fill="#F3EBDD" stroke="#0A1022" stroke-width="12" paint-order="stroke">03:00</text>
+  </g>
+</svg>
+<svg id="dust" class="full" viewBox="0 0 1080 1920" style="position:absolute;left:0;top:0;z-index:12;mix-blend-mode:screen;pointer-events:none"></svg>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:14">
   <div id="tshade"></div>
-  <div id="title"><div class="tl" id="tl1"></div><div class="tl" id="tl2"></div><div class="tl" id="tl3"></div></div>
-  <div class="tag" id="tag"></div>
+  <div id="title">
+    <div id="pill"><svg width="60" height="60" viewBox="-30 -30 60 60"><circle r="25" fill="none" stroke="#FFB366" stroke-width="6"/>
+      <path d="M0 -15 L0 0 L13 0" fill="none" stroke="#F3EBDD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>03:00</div>
+    <div class="tl" id="tl1" style="top:310px;font-size:150px;color:#F3EBDD">ทำไมยิ่งดึก</div>
+    <div class="tl" id="tl2" style="top:500px;font-size:160px;color:#FFB366">ยิ่งคิดมาก?</div>
+  </div>
 </div>
 
 <div id="caps" data-track-kind="captions">
- <div id="caps-th">
-%%CAPS_TH%%
- </div>
- <div id="caps-en">
-%%CAPS_EN%%
- </div>
+%%CAPS%%
 </div>
 
-<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" data-var-src="vo" src="assets/vo-th.mp3"></audio>
-<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-4228fb9b.mp3"></audio>
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.12" src="assets/music-bed.mp3"></audio>
 </div>
 
 <script>
-/* Motion: closed-form springs (motion-broll engine). One finger-joint cross-section morphs through every joint shot;
-   one two-hands diagram morphs through decades -> no arthritis.
-   Shot times = assets/audio/shots-<lang>.json, word anchors = words*.json (both injected by build_index.py). */
+/* Motion: closed-form springs (motion-broll engine). One thought-bubble shape morphs through the whole clip
+   (small -> big -> brain -> orbit -> big -> small at dawn -> heavy -> help card -> comment bubble).
+   Shot times = assets/audio/shots-th.json, word anchors = words.json (both injected by build_index.py). */
 (function(){
-const VARS=(window.__hyperframes&&window.__hyperframes.getVariables&&window.__hyperframes.getVariables())||{};
-const LANG=(VARS.lang==='en')?'en':'th', EN=LANG==='en';
-const ALL=%%DATA%%, D=ALL[LANG], DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
-document.getElementById(EN?'caps-th':'caps-en').style.display='none';
-document.documentElement.lang=LANG;
-if(EN)['chipL1','chipL2','chipR1','chipR2'].forEach(i=>document.getElementById(i).style.fontSize='42px');
+const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
 const T={},H={},W={}; for(const k in SH){T[k]=SH[k].start; W[k]=SH[k].word; if(SH[k].hit!=null)H[k]=SH[k].hit;}
-const TX=EN?{t:['WHY DO','KNUCKLES','CRACK?'],tag:'DID YOU KNOW?',myth:'MYTH',fact:'FACT',steps:['pull','pressure ↓','bubble','pop!'],
-   gauge:'PRESSURE',cnt:'CRACK ×',years:'DECADES',l1:'CRACKED',r1:'NEVER',ok:'NO ARTHRITIS',bub:'HOW OFTEN?',gas:'GAS'}
- :{t:['ทำไมหักนิ้ว','แล้วดังกร๊อบ?'],tag:'รู้ไหม?',myth:'ความเชื่อ',fact:'ความจริง',steps:['ดึงข้อ','ความดันลด','ฟองแก๊ส','กร๊อบ!'],
-   gauge:'ความดัน',cnt:'กร๊อบ ×',years:'หลายสิบปี',l1:'หักนิ้ว',r1:'ไม่หัก',ok:'ไม่อักเสบ',bub:'กี่ที?',gas:'แก๊ส'};
 const NS='http://www.w3.org/2000/svg';
-
 // ---------- spring kit ----------
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
 const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
 const S=(tau,w,z)=>{if(tau<=0)return 0;
   if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
   return 1-Math.exp(-w*tau)*(1+w*tau);};
-const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],CAM=[7.5,1],CAMF=[13,1];
+const MORPH=[13,0.82],FAST=[22,0.85],SLOW=[7,0.95],SOFTB=[13,0.6],CAM=[6.5,1],CAMF=[12,1],HEAVY=[8,0.55];
 const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
   return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
 const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
-const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
-const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14,bl=o.blur??10;
-  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout);
-  return {o:a*(1-b),blur:(1-a)*bl+b*bl,a,b};};
+const mixc=(a,b,u)=>{const x=hex(a),y=hex(b);u=clamp(u);return '#'+x.map((v,i)=>Math.round(lerp(v,y[i],u)).toString(16).padStart(2,'0')).join('');};
+const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14;
+  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout); return {o:a*(1-b),a,b};};
 const $=id=>document.getElementById(id);
 const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
-const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
-const blur=(e,b)=>{e.style.filter=b>0.05?`blur(${b.toFixed(2)}px)`:'none';};
-const f2=v=>v.toFixed(2);
+const f2=v=>v.toFixed(2), op=(e,v)=>e.setAttribute('opacity',clamp(v).toFixed(3));
+// deterministic pseudo-random
+const rnd=(i)=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);};
 
-// ---------- scenes: each shot window with its entry transition (whip / zoom-through / match) ----------
-// still shots: band push-in 8-15% + rotate drift, blurred fill on a slower parallax layer
+// ---------- scenes ----------
+const SHOT=(id,kb,k0,k1,r0,r1,ty,org)=>({id,kb,k0,k1,r0,r1,ty:ty||0,org:org||'50% 50%'});
 const SC=[
- {id:'sh-hook',a:0,b:T.elder,kb:'kb-hook',fw:'fw-hook',s0:1.0,s1:1.1,r0:0,r1:-1.5,org:'56% 58%',in:'none'},
- {id:'sh-elder',a:T.elder,b:T.grind,kb:'kb-elder',fw:'fw-elder',s0:1.02,s1:1.14,r0:1.2,r1:-0.6,org:'48% 52%',in:'whip'},
- {id:'sc-joint',a:T.grind,b:T.arth,in:'zoom'},
- {id:'sh-arth',a:T.arth,b:T.truth,kb:'kb-arth',fw:'fw-arth',s0:1.0,s1:1.12,r0:-1,r1:1,org:'48% 34%',in:'match'},
- {id:'sc-joint',a:T.truth,b:T.pop,in:'zoom'},
- {id:'sh-pop',a:T.pop,b:T.doctor,kb:'kb-pop',fw:'fw-pop',s0:1.02,s1:1.1,r0:-1,r1:0.8,org:'63% 33%',in:'match'},
- {id:'sh-doctor',a:T.doctor,b:T.decades,kb:'kb-doctor',fw:'fw-doctor',s0:1.0,s1:1.12,r0:1.2,r1:-0.8,org:'50% 30%',in:'whip'},
- {id:'sc-hands',a:T.decades,b:T.hurt,in:'zoom'},
- {id:'sh-hurt',a:T.hurt,b:T.clinic,kb:'kb-hurt',fw:'fw-hurt',s0:1.02,s1:1.14,r0:-1.2,r1:0.8,org:'40% 45%',in:'whip'},
- {id:'sh-clinic',a:T.clinic,b:T.ask,kb:'kb-clinic',fw:'fw-clinic',s0:1.0,s1:1.12,r0:1,r1:-1,org:'55% 45%',in:'match'},
- {id:'sh-ask',a:T.ask,b:DUR+1,kb:'kb-ask',fw:'fw-ask',s0:1.04,s1:1.13,r0:-1,r1:0.6,org:'56% 58%',in:'zoom'},
+ {...SHOT('sc-hook','kb-hook',1.0,1.1,0,-0.8,0,'56% 44%'),a:0,in:'none'},
+ {...SHOT('sc-scroll','kb-scroll',1.12,1.2,0.6,-0.6,-110,'48% 40%'),a:T.scroll,in:'zoom'},
+ {id:'sc-gfx',a:T.small,in:'zoom'},
+ {...SHOT('sc-tired','kb-tired',1.05,1.13,-0.8,0.6,0,'50% 36%'),a:T.tired,in:'zoom'},
+ {id:'sc-gfx',a:T.brain,in:'match'},
+ {...SHOT('sc-room','kb-room',1.04,1.13,0.8,-0.5,0,'58% 50%'),a:T.room,in:'zoom'},
+ {id:'sc-gfx',a:T.loop,in:'match'},
+ {...SHOT('sc-sleep','kb-sleep',1.14,1.2,-0.6,0.5,-110,'40% 50%'),a:T.sleep,in:'match'},
+ {...SHOT('sc-morning','kb-morning',1.05,1.12,0.5,-0.5,0,'45% 45%'),a:T.morning,in:'match'},
+ {...SHOT('sc-write','kb-write',1.3,1.38,-0.6,0.6,-250,'45% 60%'),a:T.write,in:'zoom'},
+ {id:'sc-gfx',a:T.phone_down,in:'match'},
+ {...SHOT('sc-ask','kb-ask',1.04,1.1,0,0.8,0,'56% 44%'),a:T.ask,in:'match'},
 ];
-SC.forEach((s,i)=>{s.next=SC[i+1]; if(s.kb)$(s.kb).style.transformOrigin=s.org; $(s.id).style.zIndex=String(i+1);});
-const WHIP=0.16, ZIN=0.22;
-function sceneState(s,t){ // null (hidden) or {o,tx,sc}
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; if(s.kb)$(s.kb).style.transformOrigin=s.org;});
+const XF=0.1;
+function sceneState(s,t){
   if(t<s.a)return null;
-  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
-  if(s.in==='whip'){ tx=1080*(1-eo(u/WHIP)); }
-  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.35*(1-S(u,16,0.9)); }
-  else if(s.in==='match'){ o=eio(u/0.1); sc=1+0.06*(1-eo(u/0.3)); }
-  if(nx){
-    if(nx.in==='whip'){ if(t>=end+WHIP)return null; if(t>=end) tx=-1080*eo((t-end)/WHIP); }
-    else if(nx.in==='zoom'){ if(t>=end+0.1)return null; const z=(t-(end-ZIN))/ZIN; if(z>0) sc*=1+1.6*ei(z); }
-    else { if(t>=end+0.12)return null; }
-  }
-  return {o,tx,sc};
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,sc=1;
+  if(s.in==='zoom'){ o=eio(u/XF); sc=1+0.07*(1-S(u,14,0.95)); }
+  else if(s.in==='match'){ o=eio(u/0.12); sc=1+0.03*(1-S(u,12,1)); }
+  if(nx){ if(t>=end+0.12)return null;
+    if(nx.in==='zoom'){ const z=(t-(end-0.2))/0.3; if(z>0) sc*=1+0.06*ei(z); } }
+  return {o,sc};
 }
 const SCIDS=[...new Set(SC.map(s=>s.id))];
+let GFX=0; // 1 while the graphic background is the top scene
 function scenes(t){
   const st={};
   SC.forEach((s,i)=>{const r=sceneState(s,t); if(r)st[s.id]={r,s,i};});
   for(const id of SCIDS) if(!st[id]) $(id).style.opacity='0';
+  GFX=0;
   for(const id in st){const {r,s,i}=st[id]; const e=$(id);
-    e.style.zIndex=String(i+1);
-    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    e.style.zIndex=String(i+1); e.style.opacity=r.o.toFixed(4); e.style.transform=`scale(${r.sc.toFixed(4)})`;
+    if(id==='sc-gfx'){ const top=Object.values(st).every(x=>x.i<=i); if(top)GFX=r.o;
+      $('gbg').style.transform=`translate(${f2(20*Math.sin(t*0.4))}px,${f2(16*Math.cos(t*0.33))}px) scale(${(1.02+0.02*Math.sin(t*0.5)).toFixed(4)})`; }
     if(s.kb){ const uu=clamp((t-s.a)/Math.max(0.3,(Math.min(s.b,DUR)-s.a)));
-      let k=lerp(s.s0,s.s1,eio(0.12+0.88*uu)); const rr=lerp(s.r0,s.r1,uu);
-      let dx=9*Math.sin(t*1.7+s.a), dy=7*Math.cos(t*1.3+s.a);
-      if(id==='sh-pop'){ const tau=t-K.pop; if(tau>0){ k*=1+0.14*S(tau,20,0.5); const sh=Math.exp(-7*tau); dx+=16*sh*Math.sin(tau*70); dy+=11*sh*Math.cos(tau*83);} }
-      if(id==='sh-hook'){ const tau=t-HOOKHIT; if(tau>0){ k*=1+0.05*S(tau,22,0.45); const sh=Math.exp(-9*tau); dx+=10*sh*Math.sin(tau*70);} }
-      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`;
-      // parallax: the blurred fill drifts the other way, slower
-      $(s.fw).style.transform=`translate(${f2(-14*Math.sin(t*0.9+s.a)-30*uu)}px,${f2(-10*Math.cos(t*0.7+s.a))}px) rotate(${f2(-0.5*rr)}deg) scale(${(1.12+0.05*uu).toFixed(4)})`;
-    }
+      const k=lerp(s.k0,s.k1,eio(0.1+0.9*uu)), rr=lerp(s.r0,s.r1,uu);
+      const dx=8*Math.sin(t*1.5+s.a), dy=6*Math.cos(t*1.2+s.a);
+      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(s.ty+dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
   }
-  // light sweeps across stills
-  [['sw-hook',0.05,1.1],['sw-pop',T.pop,0.8],['sw-doctor',T.doctor,0.9],['sw-clinic',T.clinic,0.85],['sw-ask',T.ask+0.3,1.2]].forEach(([id,a,d])=>{
-    const u=(t-a)/d; $(id).style.transform=`translateX(${(lerp(-300,1900,clamp(u))).toFixed(1)}px) rotate(14deg)`;});
+  // hook: soft screen light on the face, gently flickering (no flash)
+  $('scrglow').style.opacity=(0.55+0.18*Math.sin(t*7.3)+0.1*Math.sin(t*13.1+1)).toFixed(3);
+  $('scrglow').style.transform=`scale(${(1+0.04*Math.sin(t*5)).toFixed(4)})`;
 }
 
-// ---------- hook: title from frame 0 (breathes), x-ray lens springs in < 1 s with a crack burst ----------
-const HOOKHIT=0.45;
-(function(){const t=TX.t; ['tl1','tl2','tl3'].forEach((id,i)=>{const e=$(id); e.textContent=t[i]||''; });
-  if(EN){ $('tl1').style.cssText+='top:200px;font-size:150px;color:#fff'; $('tl2').style.cssText+='top:365px;font-size:170px;color:#fff'; $('tl3').style.cssText+='top:540px;font-size:190px;color:#FFD23F'; }
-  else { $('tl1').style.cssText+='top:230px;font-size:168px;color:#fff'; $('tl2').style.cssText+='top:445px;font-size:150px;color:#FFD23F'; $('tl3').style.display='none'; }
-  $('tag').textContent=TX.tag;})();
+// ---------- stars (graphic bg) + dust (everywhere) ----------
+const STARS=[...Array(46)].map((_,i)=>({e:el('circle',{fill:i%5?'#F3EBDD':'#FFB366'},$('stars')),x:rnd(i)*1080,y:rnd(i+50)*1920,r:1.5+rnd(i+90)*3.2,ph:rnd(i+7)*6.28,sp:0.6+rnd(i+3)*1.6}));
+const BOK=[[220,420,180],[860,1300,240],[760,300,150]].map(([x,y,r],i)=>({e:el('circle',{fill:'url(#ambg)'},$('stars')),x,y,r,i}));
+const DUST=[...Array(20)].map((_,i)=>({e:el('circle',{fill:i%3?'#F3EBDD':'#FFB366'},$('dust')),x:rnd(i+200)*1080,y:rnd(i+300)*1920,r:2+rnd(i+400)*5,sp:14+rnd(i+500)*26,ph:rnd(i+600)*6.28}));
+function particles(t){
+  if(GFX>0) STARS.forEach(s=>{s.e.setAttribute('cx',f2(s.x+10*Math.sin(t*0.3+s.ph)));s.e.setAttribute('cy',f2((s.y-t*8*s.sp+1920*4)%1920));
+    s.e.setAttribute('r',f2(s.r)); s.e.setAttribute('opacity',(0.25+0.45*(0.5+0.5*Math.sin(t*s.sp*2+s.ph))).toFixed(3));});
+  BOK.forEach(b=>{b.e.setAttribute('cx',f2(b.x+40*Math.sin(t*0.35+b.i)));b.e.setAttribute('cy',f2(b.y+30*Math.cos(t*0.3+b.i*2)));b.e.setAttribute('r',f2(b.r*(1+0.08*Math.sin(t*0.8+b.i))));b.e.setAttribute('opacity','0.22');});
+  DUST.forEach(d=>{const y=((d.y-t*d.sp)%1920+1920)%1920; d.e.setAttribute('cx',f2(d.x+24*Math.sin(t*0.5+d.ph))); d.e.setAttribute('cy',f2(y)); d.e.setAttribute('r',f2(d.r));
+    d.e.setAttribute('opacity',((0.12+0.22*(0.5+0.5*Math.sin(t*1.3+d.ph)))*(0.6+0.4*GFX)).toFixed(3));});
+}
+
+// ---------- hook title (frame 0, breathes 1.0 <-> 1.04) ----------
 function title(t){
-  const out=eo((t-(T.elder-0.06))/0.12);
-  show($('title'),1-out); show($('tshade'),1-out); show($('tag'),1-out);
-  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), kick=1+0.06*Math.exp(-7*Math.max(0,t-HOOKHIT))*Math.sin(Math.max(0,t-HOOKHIT)*14)*(t>HOOKHIT?1:0);
-  const c2=1+0.05*Math.exp(-8*Math.max(0,t-K.crack1))*(t>K.crack1?Math.sin((t-K.crack1)*16):0);
-  ['tl1','tl2','tl3'].forEach((id,i)=>{const last=(EN?i===2:i===1);
-    $(id).style.transform=`translateY(${f2(4*Math.sin(t*3+i))}px) rotate(${f2(last?-1.5*Math.sin(t*2.4):0)}deg) scale(${(br*kick*(last?c2:1)*(1+0.3*out)).toFixed(4)})`;
-    const sx=8*Math.sin(t*2.2+i), sy=12+5*Math.cos(t*1.8);
-    $(id).style.textShadow=`${f2(sx)}px ${f2(sy)}px 0 rgba(0,0,0,.5)`;});
-  const tg=$('tag'); const tw=tg.offsetWidth||300;
-  tg.style.transform=`translate(${f2(540-tw/2)}px,${f2(EN?100:110)}px) rotate(${f2(-4+1.2*Math.sin(t*3))}deg) scale(${(1+0.03*Math.sin(t*5)).toFixed(4)})`;
-}
-// lens + burst lines (hook and ask share the builder)
-function lensSet(svg,cx,cy,r,kx,ky){
-  const g=el('g',{},$(svg)), defs=el('defs',{},g);
-  const cp=el('clipPath',{id:svg+'-cp'},defs); el('circle',{cx,cy,r},cp);
-  const line=el('path',{d:`M${kx} ${ky} L${cx-r*0.55} ${cy+r*0.8}`,stroke:'#FFD23F','stroke-width':10,'stroke-linecap':'round',fill:'none','stroke-dasharray':'4 18'},g);
-  const dot=el('circle',{cx:kx,cy:ky,r:16,fill:'#FFD23F',stroke:'#10080A','stroke-width':5},g);
-  const lg=el('g',{},g);
-  el('circle',{cx,cy,r:r+14,fill:'#10080A'},lg);
-  const img=el('image',{href:'assets/arth-lens.jpg',x:cx-r,y:cy-r,width:2*r,height:2*r,'clip-path':`url(#${svg}-cp)`,preserveAspectRatio:'xMidYMid slice'},lg);
-  const glow=el('circle',{cx,cy:cy+4,r:r*0.32,fill:'url(#glowy2)',opacity:0},lg);
-  el('circle',{cx,cy,r,fill:'none',stroke:'#FFD23F','stroke-width':12},lg);
-  const bl=[...Array(8)].map((_,i)=>el('path',{stroke:'#FFD23F','stroke-width':12,'stroke-linecap':'round',fill:'none',opacity:0},g));
-  const gd=el('radialGradient',{id:'glowy2'},defs); gd.innerHTML='<stop offset="0" stop-color="#FFF6B0"/><stop offset=".5" stop-color="#FFD23F" stop-opacity=".7"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/>';
-  return {g,line,dot,lg,img,glow,bl,cx,cy,r,kx,ky};
-}
-const LH=lensSet('hookov',800,800,150,610,1060);
-function burst(set,t,t0,x,y,R){set.forEach((p,i)=>{const tau=t-t0; if(tau<0||tau>0.5){p.setAttribute('opacity','0');return;}
-  const a=i/set.length*Math.PI*2+0.3, r1=R+120*eo(tau/0.3), r2=R+40+170*eo(tau/0.22);
-  p.setAttribute('d',`M${f2(x+Math.cos(a)*r1)} ${f2(y+Math.sin(a)*r1)} L${f2(x+Math.cos(a)*r2)} ${f2(y+Math.sin(a)*r2)}`);
-  p.setAttribute('opacity',(1-eo((tau-0.15)/0.35)).toFixed(3));});}
-function hookov(t){
-  if(t>T.elder+0.2)return;
-  const a=S(t-HOOKHIT,16,0.6);
-  LH.lg.setAttribute('transform',`translate(${LH.cx} ${LH.cy}) rotate(${f2(-12*(1-a)+2*Math.sin(t*3))}) scale(${Math.max(0.001,a).toFixed(4)}) translate(${-LH.cx} ${-LH.cy})`);
-  LH.lg.setAttribute('opacity',(t<HOOKHIT?0:1).toString());
-  const dl=eo((t-HOOKHIT-0.05)/0.25); LH.line.setAttribute('opacity',dl.toFixed(3)); LH.line.setAttribute('stroke-dashoffset',f2(-t*60));
-  LH.dot.setAttribute('opacity',dl.toFixed(3)); LH.dot.setAttribute('r',f2(14+5*Math.sin(t*10)));
-  const pk=Math.max(t>K.crack1?Math.exp(-6*(t-K.crack1)):0, 0.35+0.25*Math.sin(t*8));
-  LH.glow.setAttribute('opacity',(a>0.1?pk:0).toFixed(3)); LH.glow.setAttribute('r',f2(40+20*pk));
-  burst(LH.bl,t,HOOKHIT,LH.kx,LH.ky,40); if(t>K.crack1-0.01)burst(LH.bl,t,K.crack1,LH.kx,LH.ky,40);
+  const out=eo((t-(T.small-0.08))/0.14), o=(1-out).toFixed(3);
+  $('title').style.opacity=o; $('tshade').style.opacity=o;
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/1.1));
+  ['tl1','tl2'].forEach((id,i)=>{$(id).style.transform=`translateY(${f2(3*Math.sin(t*2.6+i))}px) scale(${(br*(1+0.12*out)).toFixed(4)})`;});
+  const p=$('pill'), w=p.offsetWidth||260;
+  p.style.transform=`translate(${f2(540-w/2)}px,${f2(128+4*Math.sin(t*2.2))}px) scale(${(1+0.02*Math.sin(t*3.3)).toFixed(4)})`;
 }
 
-// ---------- the finger joint (one cross-section, morphs: myth -> truth -> pull -> pressure -> bubble) ----------
-const J={}; (function(){const g=el('g',{},$('jcam')); J.g=g;
-  J.red=el('circle',{r:240,fill:'url(#redg)',opacity:0},g);
-  J.capFill=el('ellipse',{fill:'#3F9BFF','fill-opacity':.22},g);
-  J.parts=[...Array(30)].map((_,i)=>el('circle',{fill:i%3?'#9ED8FF':'#FFFFFF',opacity:0},g));
-  J.lo=el('g',{},g); J.loB=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},J.lo); J.loC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},J.lo);
-  J.up=el('g',{},g); J.upB=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},J.up); J.upC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},J.up);
-  J.marrow=[el('path',{fill:'none',stroke:'#D8C6A6','stroke-width':4,'stroke-dasharray':'8 14'},J.lo),el('path',{fill:'none',stroke:'#D8C6A6','stroke-width':4,'stroke-dasharray':'8 14'},J.up)];
-  J.cap=el('ellipse',{fill:'none',stroke:'#F28DB2','stroke-width':10},g);
-  J.sparks=[...Array(12)].map(()=>el('path',{stroke:'#FF5A4A','stroke-width':8,'stroke-linecap':'round',fill:'none',opacity:0},g));
-  J.arrows=el('g',{opacity:0},g);
-  [[-260,1],[260,1]].forEach(([x])=>{el('path',{class:'ar',d:'',stroke:'#FFD23F','stroke-width':14,'stroke-linecap':'round','stroke-linejoin':'round',fill:'none'},J.arrows);});
-  J.bub=el('g',{opacity:0},g); J.bubGlow=el('circle',{fill:'url(#glowy)'},J.bub); J.bubC=el('circle',{fill:'url(#bubg)',stroke:'#E6F6FF','stroke-width':5},J.bub);
-  J.bubH=el('ellipse',{fill:'#fff',opacity:.9},J.bub); J.bubT=el('text',{'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':40,fill:'#fff',stroke:'#10080A','stroke-width':8,'paint-order':'stroke'},J.bub);
-  J.gauge=el('g',{opacity:0},g);
-  el('circle',{r:104,fill:'#0E1A2E',stroke:'#fff','stroke-width':9},J.gauge);
-  const arc=(a0,a1,c)=>{const p=(a)=>[78*Math.sin(a*Math.PI/180),-78*Math.cos(a*Math.PI/180)];const [x0,y0]=p(a0),[x1,y1]=p(a1);
-    el('path',{d:`M${f2(x0)} ${f2(y0)} A78 78 0 0 1 ${f2(x1)} ${f2(y1)}`,stroke:c,'stroke-width':16,fill:'none'},J.gauge);};
-  arc(-110,-35,'#3FA9F5'); arc(-35,35,'#FFD23F'); arc(35,110,'#E0202E');
-  J.needle=el('path',{d:'M-9 0 L0 -74 L9 0 Z',fill:'#fff',stroke:'#10080A','stroke-width':3},J.gauge); el('circle',{r:14,fill:'#fff',stroke:'#10080A','stroke-width':4},J.gauge);
-  J.gT=el('text',{y:150,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':46,fill:'#fff',stroke:'#10080A','stroke-width':9,'paint-order':'stroke'},J.gauge); J.gT.textContent=TX.gauge;
-  J.bubT.textContent=TX.gas;
-})();
-const loPath=y0=>`M-72 760 L-72 ${y0+205} C-72 ${y0+150} -128 ${y0+132} -128 ${y0+96} A128 96 0 0 1 128 ${y0+96} C128 ${y0+132} 72 ${y0+150} 72 ${y0+205} L72 760 Z`;
-const loCart=y0=>`M-112 ${y0+52} A128 96 0 0 1 112 ${y0+52}`;
-const upPath=y1=>`M-62 -760 L-62 ${y1-175} C-62 ${y1-125} -114 ${y1-95} -114 ${y1-42} Q-114 ${y1} -72 ${y1} Q0 ${y1-34} 72 ${y1} Q114 ${y1} 114 ${y1-42} C114 ${y1-95} 62 ${y1-125} 62 ${y1-175} L62 -760 Z`;
-const upCart=y1=>`M-100 ${y1-6} Q-60 ${y1-4} 0 ${y1-22} Q60 ${y1-4} 100 ${y1-6}`;
-const gap=track(-12,[[T.truth+0.05,20,MORPH],[T.pull+0.06,55,SLOW],[H.pull,135,BOUNCE]]);
-const red=track(0,[[T.grind+0.04,0.8,FAST],[H.grind,1.35,BOUNCE],[T.arth,1,MORPH],[T.truth+0.1,0,MORPH]]);
-const cap=track(0,[[T.truth+0.2,1,MORPH]]);
-const flu=track(0.45,[[T.fluid,1,MORPH],[T.bubble,0.7,MORPH]]);
-const arrows=track(0,[[T.pull,1,FAST],[T.press+0.15,0,MORPH]]);
-const gaugeS=track(0,[[T.press,1,BOUNCE],[T.bubble,0,FAST]]);
-const needle=track(72,[[H.press,-70,BOUNCE]]);
-const bubR=track(0,[[H.bubble,1,BOUNCE]]);
-const jcamS=track(2.5,[[T.grind,1.2,CAMF],[H.grind,1.42,MORPH],[T.truth,1.0,CAMF],[T.fluid,1.6,CAM],[T.pull,0.98,CAMF],[T.press,0.86,CAM],[T.bubble,1.7,CAMF]]);
-const jcamX=track(0,[[T.press,125,CAM],[T.bubble,0,CAMF]]), jcamY=track(0,[[T.press,-70,CAM],[T.bubble,0,CAMF]]);
-function joint(t){
-  const on=(t>=T.grind-0.01&&t<T.arth+0.12)||(t>=T.truth-0.01&&t<T.pop+0.12); if(!on)return;
-  const s=jcamS(t)*(1+0.012*Math.sin(t*2.3)), fx=jcamX(t)+8*Math.sin(t*1.3), fy=jcamY(t)+7*Math.cos(t*1.7), rot=0.9*Math.sin(t*0.9);
-  $('jcam').setAttribute('transform',`translate(540 600) rotate(${rot.toFixed(3)}) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
-  $('grid-j').style.transform=`translate(${f2(-fx*0.3+20*Math.sin(t*0.5))}px,${f2(-fy*0.3-t*12)}px)`;
-  const G=gap(t), R=clamp(red(t),0,2), C=clamp(cap(t)), jit=R*9*Math.sin(t*46);
-  J.lo.setAttribute('transform',`translate(${f2(-jit*0.4)} 0)`); J.up.setAttribute('transform',`translate(${f2(jit)} 0)`);
-  J.loB.setAttribute('d',loPath(G/2)); J.loC.setAttribute('d',loCart(G/2)); J.upB.setAttribute('d',upPath(-G/2)); J.upC.setAttribute('d',upCart(-G/2));
-  J.marrow[0].setAttribute('d',`M0 ${f2(G/2+170)} L0 760`); J.marrow[1].setAttribute('d',`M0 ${f2(-G/2-170)} L0 -760`);
-  [J.loC,J.upC].forEach(c=>c.setAttribute('stroke',mix('#8FD3F7','#FF5A4A',clamp(R))));
-  J.red.setAttribute('opacity',(clamp(R)*(0.75+0.25*Math.sin(t*19))).toFixed(3)); J.red.setAttribute('r',f2(200+40*clamp(R-0.5)));
-  J.sparks.forEach((p,i)=>{const ph=((t*7+i*0.37)%1), x0=(i%2?1:-1)*(30+(i*23)%80), a=(i%2?-0.4:-2.7)+((i*0.9)%1.2)-0.6;
-    const r1=10+40*ph, r2=r1+26+20*Math.sin(i);
-    p.setAttribute('d',`M${f2(x0+Math.cos(a)*r1)} ${f2(Math.sin(a)*r1)} L${f2(x0+Math.cos(a)*r2)} ${f2(Math.sin(a)*r2)}`);
-    p.setAttribute('opacity',(clamp(R)*(1-ph)*(t<T.truth+0.2?1:0)).toFixed(3));});
-  const ry=118+G*0.5, rx=190;
-  J.cap.setAttribute('rx',f2(rx*(0.6+0.4*C))); J.cap.setAttribute('ry',f2(ry*(0.6+0.4*C))); J.cap.setAttribute('opacity',C.toFixed(3));
-  J.cap.setAttribute('stroke-dasharray',`${f2(1300*C)} 2000`);
-  J.capFill.setAttribute('rx',f2(rx*0.96)); J.capFill.setAttribute('ry',f2(ry*0.96)); J.capFill.setAttribute('opacity',(C*(0.75+0.25*Math.sin(t*4))).toFixed(3));
-  const F=flu(t);
-  J.parts.forEach((p,i)=>{const ang=i*2.399+t*(0.5+(i%5)*0.12)*(i%2?1:-1), rr=0.25+0.7*(((i*0.618)%1)), x=rx*0.9*rr*Math.cos(ang), y=ry*0.9*rr*Math.sin(ang);
-    p.setAttribute('cx',f2(x)); p.setAttribute('cy',f2(y)); p.setAttribute('r',f2(4+3*((i*7)%3)+1.5*Math.sin(t*6+i)));
-    p.setAttribute('opacity',(C*F*(0.45+0.55*Math.abs(Math.sin(t*3.1+i*1.7)))).toFixed(3));});
-  const A=clamp(arrows(t),0,1.2); J.arrows.setAttribute('opacity',clamp(A).toFixed(3));
-  [...J.arrows.children].forEach((p,i)=>{const x=i?250:-250, h=90+G*0.6+12*Math.sin(t*8);
-    p.setAttribute('d',`M${x} ${f2(-h)} L${x} ${f2(h)} M${x-30} ${f2(-h+34)} L${x} ${f2(-h)} L${x+30} ${f2(-h+34)} M${x-30} ${f2(h-34)} L${x} ${f2(h)} L${x+30} ${f2(h-34)}`);});
-  const gs=gaugeS(t); J.gauge.setAttribute('opacity',clamp(gs*3).toFixed(3));
-  J.gauge.setAttribute('transform',`translate(360 -250) scale(${Math.max(0.001,gs).toFixed(4)}) rotate(${f2(4*Math.sin(t*2))})`);
-  J.needle.setAttribute('transform',`rotate(${f2(needle(t)+3*Math.sin(t*23)*(t<H.press?1:0.3))})`);
-  const b=bubR(t); J.bub.setAttribute('opacity',(b>0.01?1:0).toString());
-  const br=Math.max(0,54*b*(1+0.05*Math.sin(t*9))), wob=1+0.06*Math.sin(t*7);
-  J.bubC.setAttribute('rx',0); J.bubC.setAttribute('r',f2(br)); J.bubC.setAttribute('transform',`scale(${f2(wob)} ${f2(2-wob)})`);
-  J.bubGlow.setAttribute('r',f2(Math.max(0,br*2.4+14*Math.sin(t*6)*b))); J.bubGlow.setAttribute('opacity',(0.7+0.3*Math.sin(t*5)).toFixed(3));
-  J.bubH.setAttribute('cx',f2(-br*0.35)); J.bubH.setAttribute('cy',f2(-br*0.38)); J.bubH.setAttribute('rx',f2(br*0.22)); J.bubH.setAttribute('ry',f2(br*0.14));
-  J.bubT.setAttribute('x',f2(br+70)); J.bubT.setAttribute('y',f2(-br-6)); J.bubT.setAttribute('opacity',clamp((t-H.bubble-0.15)/0.2).toFixed(3));
+// ---------- the one shape ----------
+const NP=120, TH=[...Array(NP)].map((_,i)=>i/NP*Math.PI*2);
+const P=(v0,keys,def)=>track(v0,keys,def);
+const sX=P(540,[[T.small,540],[T.tired,820,CAMF],[T.brain,540,MORPH],[T.room,300,CAMF],[T.clock,640,MORPH],[T.sleep,800,CAMF],[T.write,600,CAMF],[K.jot,470,SLOW],[T.phone_down,760,CAMF],[T.help,540,MORPH]]);
+const sY=P(720,[[H.small,640,SOFTB],[T.tired,330,CAMF],[T.brain,640,MORPH],[T.room,400,CAMF],[T.clock,620,MORPH],[T.sleep,290,CAMF],[T.write,520,CAMF],[K.jot,975,SLOW],[T.phone_down,520,CAMF],[T.help,600,MORPH],[K.hit,690,HEAVY],[T.help2,620,MORPH],[T.ask,640,MORPH]]);
+const sRX=P(0,[[T.small,150,SOFTB],[H.small,400,SOFTB],[T.tired,120,CAMF],[T.brain,400,MORPH],[T.room,125,CAMF],[T.loop,100,MORPH],[T.clock,250,MORPH],[K.big2,340,SOFTB],[T.sleep,190,CAMF],[T.morning,150,MORPH],[K.lighter,60,SLOW],[T.write,55,CAMF],[K.jot,22,SLOW],[T.phone_down,40,MORPH],[T.help,330,MORPH],[K.hit,370,HEAVY],[T.help2,445,MORPH],[T.ask,430,MORPH]]);
+const sRY=P(0,[[T.small,118,SOFTB],[H.small,320,SOFTB],[T.tired,95,CAMF],[T.brain,300,MORPH],[T.room,100,CAMF],[T.loop,82,MORPH],[T.clock,200,MORPH],[K.big2,270,SOFTB],[T.sleep,150,CAMF],[T.morning,120,MORPH],[K.lighter,50,SLOW],[T.write,45,CAMF],[K.jot,18,SLOW],[T.phone_down,32,MORPH],[T.help,260,MORPH],[K.hit,225,HEAVY],[T.help2,255,MORPH],[T.ask,165,MORPH]]);
+const sN=P(2,[[T.help2,6.5,MORPH],[T.ask,4.6,MORPH]]);
+const sCloud=P(0.14,[[T.brain,0,MORPH],[T.room,0.14,MORPH],[T.help2,0,FAST]]);
+const sGyri=P(0,[[T.brain,1,MORPH],[T.room,0,FAST]]);
+const sTail=P(0,[[T.ask,1,SOFTB]]);
+const sSolid=P(0,[[T.help2,1,MORPH]]);
+const sHeavy=P(0,[[T.help,0.6,SLOW],[K.hit,1,HEAVY],[T.help2,0,MORPH]]);
+const sWarm=P(0,[[T.morning,0.6,MORPH],[K.lighter,1,SLOW],[T.write,0.6,MORPH],[T.help,0,MORPH]]);
+const sTrail=P(0,[[T.small,1,MORPH],[T.brain,0,FAST],[T.room,1,MORPH],[K.lighter,0.4,SLOW],[T.write,0,MORPH],[T.help,1,MORPH],[T.help2,0,FAST]]);
+const sKnot=P(0,[[T.small,0.45,MORPH],[H.small,1,SOFTB],[T.tired,0.5,CAMF],[T.brain,0,FAST],[T.room,0.5,MORPH],[K.big2,1,SOFTB],[K.lighter,0.3,SLOW],[T.write,0,MORPH],[T.help,1,MORPH],[T.help2,0,FAST]]);
+const sOp=P(1,[[K.jot,0.55,SLOW],[T.help,1,MORPH]]);
+const sOrb=P(0,[[T.loop,1,MORPH],[T.clock,0,MORPH]]);
+const sGlowHit=t=>{let v=0;[[H.small,1],[K.big2,0.8]].forEach(([h,a])=>{const u=t-h; if(u>0)v+=a*Math.exp(-3*u);}); return v;};
+// knot: a tangled scribble, unit box
+const KN=(()=>{let d='';for(let i=0;i<=220;i++){const u=i/220*Math.PI*2; const x=0.62*Math.sin(3*u)+0.32*Math.sin(7*u+1), y=0.55*Math.cos(2*u)+0.38*Math.cos(5*u+0.4); d+=(i?'L':'M')+(x*100).toFixed(1)+' '+(y*100).toFixed(1);} return d;})();
+$('knot').setAttribute('d',KN); $('knot').setAttribute('stroke-dasharray','260 60');
+function shapePath(cx,cy,rx,ry,n,cloud,gyri,tail,live,t){
+  const pts=[];
+  for(const th of TH){const c=Math.cos(th),s=Math.sin(th);
+    let r=Math.pow(Math.pow(Math.abs(c)/rx,n)+Math.pow(Math.abs(s)/ry,n),-1/n);
+    r*=1+cloud*(Math.pow(Math.abs(Math.cos(5*th+0.3+t*0.25)),0.6)-0.62);
+    r*=1-gyri*0.12*Math.pow(Math.max(0,s),2); r*=1+gyri*(0.035*Math.sin(13*th+0.5)+0.02*Math.sin(23*th+1.3)+0.015*Math.sin(7*th)+0.05*(-c)*(c<0?1:0.3));
+    r*=1+live*(0.016*Math.sin(3*th+1.9*t)+0.011*Math.sin(5*th-2.7*t));
+    let dth=Math.atan2(Math.sin(th-2.15),Math.cos(th-2.15)); r+=tail*95*Math.exp(-Math.pow(dth/0.11,2));
+    pts.push([cx+r*c,cy+r*s]);}
+  // closed Catmull-Rom -> cubic beziers
+  let d=`M${f2(pts[0][0])} ${f2(pts[0][1])}`;
+  for(let i=0;i<NP;i++){const p0=pts[(i-1+NP)%NP],p1=pts[i],p2=pts[(i+1)%NP],p3=pts[(i+2)%NP];
+    d+=`C${f2(p1[0]+(p2[0]-p0[0])/6)} ${f2(p1[1]+(p2[1]-p0[1])/6)} ${f2(p2[0]-(p3[0]-p1[0])/6)} ${f2(p2[1]-(p3[1]-p1[1])/6)} ${f2(p2[0])} ${f2(p2[1])}`;}
+  return d+'Z';
+}
+const ORB={x:550,y:560,rx:340,ry:140};
+const orbAng=t=>-0.6+7.2*eio((t-K.loop+0.15)/1.05)+0.6*(t-T.loop);
+function shape(t){
+  let cx=sX(t), cy=sY(t); const rx=Math.max(0.5,sRX(t)), ry=Math.max(0.5,sRY(t));
+  const orb=clamp(sOrb(t)), ang=orbAng(t);
+  cx=lerp(cx,ORB.x+ORB.rx*Math.cos(ang),orb); cy=lerp(cy,ORB.y+ORB.ry*Math.sin(ang),orb);
+  const heavy=clamp(sHeavy(t)), solid=clamp(sSolid(t)), warm=clamp(sWarm(t));
+  // bob: light bubbles float; heavy one sinks slowly
+  cy+=(1-solid)*(lerp(10,4,heavy)*Math.sin(t*lerp(2.2,1.1,heavy)))+solid*5*Math.sin(t*2.4); cx+=(1-solid)*8*Math.sin(t*1.3);
+  const sq=heavy*0.04*Math.sin(t*2.2);
+  const d=shapePath(cx,cy,rx*(1+sq),ry*(1-sq),sN(t),Math.max(0,sCloud(t)),clamp(sGyri(t)),clamp(sTail(t)),1-0.6*solid,t);
+  $('shP').setAttribute('d',d); $('shGlow').setAttribute('d',d); $('clipP').setAttribute('d',d);
+  const fill=mixc(mixc(mixc('#F3EBDD','#FFD7A0',warm),'#2B3768',heavy),'#F6EEDF',solid);
+  const stroke=mixc(mixc(mixc('#F3EBDD','#FFD7A0',warm),'#9AA6D6',heavy),'#FFB366',solid);
+  const fo=lerp(lerp(0.13,0.88,heavy),0.97,solid);
+  const P_=$('shP'); P_.setAttribute('fill',fill); P_.setAttribute('fill-opacity',fo.toFixed(3)); P_.setAttribute('stroke',stroke);
+  P_.setAttribute('stroke-width',f2(lerp(6,8,solid)));
+  const vis0=rx>1.5?1:0, O=clamp(sOp(t))*vis0;
+  op($('shapeG'),O);
+  op($('shGlow'),(0.14+0.35*sGlowHit(t)+0.1*warm)*(1-heavy*0.7)); $('shGlow').setAttribute('stroke-width',f2(26+30*sGlowHit(t)));
+  // trail dots (thought trail), or followers on the orbit
+  const tr=clamp(sTrail(t)), m=Math.min(rx,ry);
+  [[$('tr1'),0.95,0.17,-0.45],[$('tr2'),1.55,0.1,-0.85]].forEach(([e,k,rr,da])=>{
+    const mm=Math.min(m,140); let x=cx-rx*(k>1?0.5:0.35), y=cy+ry+mm*(k>1?0.62:0.28);
+    x=lerp(x,ORB.x+ORB.rx*Math.cos(ang+da),orb); y=lerp(y,ORB.y+ORB.ry*Math.sin(ang+da),orb);
+    e.setAttribute('cx',f2(x+4*Math.sin(t*2+k))); e.setAttribute('cy',f2(y+4*Math.cos(t*2.3+k))); e.setAttribute('r',f2(Math.max(0.1,Math.min(m,150)*rr*(1+0.08*Math.sin(t*3+k)))));
+    e.setAttribute('stroke',stroke); e.setAttribute('fill',fill); op(e,tr*(1-solid));});
+  // the worry knot inside
+  const kn=clamp(sKnot(t),0,1.3), ks=m*0.0062*kn*(1+0.04*Math.sin(t*3));
+  $('knotG').setAttribute('transform',`translate(${f2(cx)} ${f2(cy)}) rotate(${f2(t*14)}) scale(${Math.max(0.0001,ks).toFixed(4)})`);
+  $('knot').setAttribute('stroke-dashoffset',f2(-t*140)); $('knot').setAttribute('stroke-width',f2(lerp(6,9,heavy)));
+  $('knot').setAttribute('stroke',mixc('#FFB366','#E9D2B0',heavy*0.5)); op($('knot'),clamp(kn*3)*(1-solid));
+  // card text (help2) and comment text (ask)
+  const cv=vis(t,K.talk+0.06,T.ask,{lin:0.22,lout:0.12}), av=vis(t,K.now,null,{lin:0.2});
+  op($('cardT'),cv.o); $('cardT').setAttribute('transform',`translate(${f2(cx)} ${f2(cy)}) scale(${(0.9+0.1*cv.a+0.03*Math.sin(Math.PI*clamp((t-K.expert)/0.35))*(t>K.expert?1:0)).toFixed(4)})`);
+  op($('askT'),av.o); $('askT').setAttribute('transform',`translate(${f2(cx)} ${f2(cy-4)}) scale(${(0.88+0.12*S(t-K.now,14,0.6)+0.04*Math.sin(Math.PI*clamp((t-K.time)/0.35))*(t>K.time?1:0)).toFixed(4)})`);
 }
 
-// ---------- two hands (decades -> neither got arthritis) ----------
-const HD={}; (function(){const g=el('g',{},$('hcam'));
-  const hand=(x,flip)=>{const h=el('g',{transform:`translate(${x} 0)`},g); const inner=el('g',{transform:`scale(${flip?-1:1} 1)`},h);
-    const glow=el('circle',{r:330,cy:-60,fill:'url(#glowy3)',opacity:0},inner);
-    const sk={fill:'#F2C9A0',stroke:'#10080A','stroke-width':9,'stroke-linejoin':'round'};
-    el('rect',{x:-160,y:-20,width:64,height:190,rx:32,transform:'rotate(-32 -128 150)',...sk},inner);
-    [[-84,-268],[-28,-300],[28,-290],[84,-246]].forEach(([fx,ft])=>el('rect',{x:fx-27,y:ft,width:54,height:-ft+40,rx:27,...sk},inner));
-    el('rect',{x:-116,y:-70,width:232,height:260,rx:56,...sk},inner);
-    el('rect',{x:-80,y:180,width:160,height:110,...sk},inner);
-    const kn=[[-84,-60],[-28,-66],[28,-64],[84,-58]].map(([kx,ky])=>el('circle',{cx:kx,cy:ky,r:16,fill:'#FFD23F',opacity:0},inner));
-    const lines=[...Array(6)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':10,'stroke-linecap':'round',fill:'none',opacity:0},inner));
-    const ok=el('g',{opacity:0},h); el('circle',{r:78,fill:'#2DBE60',stroke:'#10080A','stroke-width':10},ok);
-    el('path',{d:'M-36 2 L-10 28 L40 -28',fill:'none',stroke:'#fff','stroke-width':20,'stroke-linecap':'round','stroke-linejoin':'round'},ok);
-    return {h,glow,kn,lines,ok};};
-  const defs=el('defs',{},g); const gd=el('radialGradient',{id:'glowy3'},defs);
-  gd.innerHTML='<stop offset="0" stop-color="#FFF3A0" stop-opacity=".9"/><stop offset=".45" stop-color="#FFD23F" stop-opacity=".4"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/>';
-  HD.L=hand(-250,false); HD.R=hand(250,true);
-  HD.cnt=el('g',{opacity:0},g); el('rect',{x:-190,y:-55,width:380,height:110,rx:55,fill:'#FFD23F',stroke:'#10080A','stroke-width':9},HD.cnt);
-  HD.cntT=el('text',{x:0,y:20,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':54,fill:'#10080A'},HD.cnt);
-})();
-const hS=track(2.3,[[T.decades,1.12,CAMF],[T.noarth,0.92,CAM]]), hX=track(-170,[[T.decades,-100,CAMF],[T.noarth,0,CAM]]), hY=track(-60,[[T.decades,-70,CAMF],[T.noarth,-40,CAM]]);
-const TICK=0.3;
-function hands(t){
-  if(t<T.decades-0.01||t>T.hurt+0.2)return;
-  const s=hS(t)*(1+0.01*Math.sin(t*2.1)), fx=hX(t)+7*Math.sin(t*1.2), fy=hY(t)+6*Math.cos(t*1.5);
-  $('hcam').setAttribute('transform',`translate(540 640) rotate(${f2(0.8*Math.sin(t*0.8))}) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
-  $('grid-h').style.transform=`translate(${f2(-fx*0.3)}px,${f2(-t*14)}px)`;
-  const crackOn=t<T.noarth, ph=((t-T.decades)%TICK+TICK)%TICK, pulse=crackOn?Math.exp(-ph*12):0;
-  const fade=1-eo((t-T.noarth)/0.3);
-  HD.L.glow.setAttribute('opacity',((0.55+0.45*pulse)*clamp(fade)*eo((t-T.decades)/0.25)).toFixed(3));
-  HD.L.kn.forEach((k,i)=>{k.setAttribute('opacity',(clamp(fade)*(0.35+0.65*Math.exp(-(((t-T.decades-i*0.07)%TICK+TICK)%TICK)*10))).toFixed(3));});
-  HD.L.lines.forEach((p,i)=>{const a=-Math.PI/2+(i-2.5)*0.42, r1=330+70*eo(ph/0.2), r2=r1+40; p.setAttribute('d',`M${f2(Math.cos(a)*r1*0.55)} ${f2(-60+Math.sin(a)*r1*0.55)} L${f2(Math.cos(a)*r2*0.55)} ${f2(-60+Math.sin(a)*r2*0.55)}`);
-    p.setAttribute('opacity',(crackOn?(1-eo(ph/0.25)):0).toFixed(3));});
-  HD.L.h.setAttribute('transform',`translate(-250 ${f2(-14*pulse)}) rotate(${f2(-2*pulse)})`);
-  HD.R.h.setAttribute('transform',`translate(250 ${f2(4*Math.sin(t*2))})`);
-  // crack counter above the left hand: digits keep rolling (illustrative, never lands on a number)
-  const cv=vis(t,T.decades+0.05,T.noarth,{lin:0.2,lout:0.2}); HD.cnt.setAttribute('opacity',cv.o.toFixed(3));
-  HD.cnt.setAttribute('transform',`translate(-250 -430) scale(${(0.6+0.4*S(t-T.decades-0.05,16,0.6)).toFixed(4)}) rotate(${f2(-4+2*Math.sin(t*3))})`);
-  const n=Math.floor(Math.pow(Math.max(0,t-T.decades),2.2)*2600+((t-T.decades)/TICK|0)); HD.cntT.textContent=TX.cnt+' '+n.toLocaleString('en-US');
-  [[HD.L,K.none],[HD.R,H.noarth]].forEach(([hd,t0])=>{const a=S(t-t0,15,0.5); hd.ok.setAttribute('opacity',(t>t0?1:0).toString());
-    hd.ok.setAttribute('transform',`translate(0 ${f2(20+6*Math.sin(t*4))}) rotate(${f2(-25*(1-a))}) scale(${Math.max(0.001,a).toFixed(4)})`);});
+// ---------- camera (graphic shots): brain -> emotion spot -> frontal brake ----------
+const camS=track(1,[[T.brain,1.02,CAMF],[H.brain,1.12,CAM],[T.brake,1.16,CAM],[T.room,1,CAMF]]);
+const camX=track(540,[[H.brain,600,CAM],[T.brake,360,CAM],[T.room,540,CAMF]]);
+const camY=track(640,[[H.brain,730,CAM],[T.brake,560,CAM],[T.room,640,CAMF]]);
+const punch=t=>{let v=0;[[H.small,0.05],[H.brain,0.05],[H.brake,0.035]].forEach(([h,a])=>{const u=t-h;if(u>0)v+=a*Math.exp(-4*u)*Math.sin(u*9);});return v;};
+function camera(t){
+  const s=camS(t)*(1+punch(t))*(1+0.008*Math.sin(t*1.7)), fx=camX(t)+5*Math.sin(t*1.1), fy=camY(t)+4*Math.cos(t*1.3);
+  $('cam').setAttribute('transform',`translate(540 640) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
 }
 
-// ---------- chips, years pill, step strip, comment bubble ----------
-const setChip=(id,x,y,w,bg,fg,v)=>{const c=$(id); if(!show(c,v.o))return; blur(c,v.blur);
-  c.style.width=w.toFixed(1)+'px'; c.style.background=bg; c.style.color=fg; c.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) scale(${(0.7+0.3*v.a).toFixed(3)})`;};
-const swap=(a,b,v1,v2,tt)=>{$(a).textContent=v1;$(b).textContent=v2;const p=vis(tt.t,null,tt.at,{lout:0.1}),n=vis(tt.t,tt.at+0.04,null,{lin:0.18});
-  $(a).style.opacity=p.o.toFixed(3);blur($(a),p.blur);$(b).style.opacity=n.o.toFixed(3);blur($(b),n.blur);};
-const wM=track(EN?260:330,[[T.truth,EN?240:330,MORPH]]);
-function chips(t){
-  // myth -> fact chip at the bottom of the joint scenes
-  const mv=vis(t,T.grind+0.05,T.pull,{lin:0.2,lout:0.14});
-  if(t>T.grind&&t<T.pull+0.2){ const sw=S(t-T.truth,14,0.7);
-    setChip('chipM',540,1372+(t>T.truth?-16*Math.sin(Math.PI*clamp((t-T.truth)/0.3)):0)+4*Math.sin(t*4),wM(t),mix('#E0202E','#1E9BF0',t>T.truth?sw:0),'#fff',mv);
-    swap('chipM1','chipM2',TX.myth,TX.fact,{t,at:T.truth});
-    $('chipM').style.transform+=` rotate(${f2((t<T.truth?1:0)*2.5*Math.sin(t*40)*clamp(red(t)))}deg)`;
-  } else $('chipM').style.opacity='0';
-  // chips under the two hands
-  if(t>T.decades&&t<T.hurt+0.15){ const sw=S(t-K.none,14,0.7), sw2=S(t-H.noarth,14,0.7), y=1040+5*Math.sin(t*4);
-    const lx=540+(-250-hX(t))*hS(t), rx=540+(250-hX(t))*hS(t);
-    setChip('chipL',lx,y,EN?(t>K.none?360:270):(t>K.none?280:230),t>K.none?mix('#FFD23F','#2DBE60',sw):'#FFD23F',t>K.none?'#fff':'#10080A',vis(t,T.decades+0.1,T.hurt,{lin:0.18,lout:0.1}));
-    setChip('chipR',rx,y,EN?(t>H.noarth?360:220):(t>H.noarth?280:230),t>H.noarth?mix('#8A8178','#2DBE60',sw2):'#8A8178','#fff',vis(t,T.decades+0.25,T.hurt,{lin:0.18,lout:0.1}));
-    swap('chipL1','chipL2',TX.l1,TX.ok,{t,at:K.none}); swap('chipR1','chipR2',TX.r1,TX.ok,{t,at:H.noarth});
-    if(t>K.none) $('chipL1').style.color='#10080A';
-  } else { $('chipL').style.opacity='0'; $('chipR').style.opacity='0'; }
-  // years pill at the bottom of the hands scene
-  const yp=$('years'); const yv=vis(t,T.decades+0.15,T.hurt,{lin:0.2,lout:0.1});
-  if(show(yp,yv.o)){ blur(yp,yv.blur); $('yearsT').textContent=TX.years; const w=EN?470:450; yp.style.width=w+'px';
-    const ya=S(t-K.decades,16,0.5), lab=vis(t,K.decades,null,{lin:0.15}); $('yearsT').style.opacity=lab.o.toFixed(3);
-    yp.style.transform=`translate(${540-w/2}px,${f2(1330+40*(1-S(t-T.decades-0.15,12,0.7))+3*Math.sin(t*3))}px) scale(${(1+0.08*Math.sin(Math.PI*clamp((t-K.decades)/0.3))*(t>K.decades?1:0)).toFixed(4)})`;
-    const fl=((t*5)%1); $('calpage').setAttribute('transform',`translate(0 ${f2(50+22*fl)}) scale(1 ${f2(Math.abs(Math.cos(fl*Math.PI)))}) translate(0 -72)`);
-    if(t<K.decades) yp.style.transform+=` rotate(${f2(2*Math.sin(t*6))}deg)`; void ya; }
+// ---------- brain internals ----------
+const emo=track(0,[[T.brain+0.1,1,MORPH],[H.brain,1.6,SOFTB],[T.brake,1.2,SLOW]]);
+const front=track(0,[[K.brake,1,MORPH],[H.brake,0.22,SLOW]]);
+const gauge=track(1,[[H.brake,0.28,SLOW]]);
+function brain(t){
+  const v=vis(t,T.brain+0.05,T.room,{lin:0.25,lout:0.1}); op($('brainIn'),v.o); if(v.o<=0)return;
+  const E=clamp(emo(t),0,2), fast=t>H.brain, per=fast?0.42:0.85, ph=((t-T.brain)%per+per)%per/per;
+  const beat=Math.exp(-ph*5);
+  $('emoGlow').setAttribute('r',f2(70+50*E+22*beat*E)); op($('emoGlow'),0.5*E+0.25*beat);
+  $('emoCore').setAttribute('r',f2(18+10*E+6*beat)); op($('emoCore'),clamp(E));
+  [['ring1',0],['ring2',0.5]].forEach(([id,o])=>{const u=((ph+o)%1); $(id).setAttribute('r',f2(40+(fast?150:90)*eo(u))); op($(id),(1-u)*clamp(E)*(fast?0.9:0.5));});
+  const F=clamp(front(t)); op($('front'),F*(0.9+0.1*Math.sin(t*5))); $('front').setAttribute('r',f2(200+30*F));
+  op($('labEmo'),vis(t,W.brain+0.25,null,{lin:0.2}).o);
+  $('labEmo').setAttribute('transform',`translate(0 ${f2(3*Math.sin(t*3))})`);
+  const bg=vis(t,K.brake,null,{lin:0.2}); op($('brakeG'),bg.o);
+  const g=clamp(gauge(t),0.05,1); $('gauge').setAttribute('width',f2(208*g)); $('gauge').setAttribute('fill',mixc('#F3EBDD','#6B7AB0',1-g));
+  $('sulci').setAttribute('stroke-dasharray','400 400'); $('sulci').setAttribute('stroke-dashoffset',f2(400*(1-eo((t-T.brain-0.05)/0.5))));
 }
-const STEPS=TX.steps, SWD=EN?[160,270,200,160]:[180,250,220,190], GAP=34; let sx0=14; const SX=[];
-STEPS.forEach((s,i)=>{const e=$('st'+i); e.textContent=s; e.style.left=sx0+'px'; e.style.width=SWD[i]+'px'; SX.push(sx0); sx0+=SWD[i]; if(i<3){$('ar'+i).style.left=(sx0+GAP/2-8)+'px';} sx0+=GAP;});
-const STT=[W.pull,W.press,W.bubble,K.pop];
-const IL=track(SX[0],[[STT[1],SX[1],SLOW],[STT[2],SX[2],SLOW],[STT[3],SX[3],SLOW]]), ILf=track(SX[0],[[STT[1],SX[1],FAST],[STT[2],SX[2],FAST],[STT[3],SX[3],FAST]]);
-const IR=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],FAST],[STT[2],SX[2]+SWD[2],FAST],[STT[3],SX[3]+SWD[3],FAST]]), IRs=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],SLOW],[STT[2],SX[2]+SWD[2],SLOW],[STT[3],SX[3]+SWD[3],SLOW]]);
-function strip(t){
-  const e=$('strip'); if(t<T.pull||t>T.doctor+0.15){e.style.opacity='0';return;}
-  const v=vis(t,T.pull,T.doctor,{lin:0.2,lout:0.12}); e.style.opacity=v.o.toFixed(3);
-  e.style.transform=`translateY(${f2(60*(1-S(t-T.pull,12,0.7))+3*Math.sin(t*3))}px)`;
-  const l=Math.min(IL(t),ILf(t)), r=Math.max(IR(t),IRs(t)); let cur=-1; STT.forEach((s,i)=>{if(t>=s)cur=i;});
-  const ind=$('ind'); ind.style.left=f2(l)+'px'; ind.style.width=f2(Math.max(0,r-l))+'px'; ind.style.background=cur===3?'#E0202E':'#1E9BF0';
-  ind.style.transform=`scaleY(${(1+0.06*Math.sin(t*8)).toFixed(3)})`;
-  for(let i=0;i<4;i++){const st=$('st'+i), on=i===cur; st.style.color=on?'#fff':(i<cur?'#1E9BF0':'#7D6A5B');
-    st.style.transform=`scale(${(on?1+0.14*Math.sin(Math.PI*clamp((t-STT[i])/0.3)):1).toFixed(3)})`;}
+
+// ---------- head + orbit (loop) ----------
+function head(t){
+  const v=vis(t,T.loop+0.02,T.clock,{lin:0.22,lout:0.2}); op($('head'),v.o); if(v.o<=0)return;
+  $('head').setAttribute('transform',`translate(0 ${f2(30*(1-S(t-T.loop,10,0.9))+4*Math.sin(t*2))})`);
+  op($('headGlow'),0.3+0.2*Math.sin(t*6)); $('headGlow').setAttribute('r',f2(140+16*Math.sin(t*6)));
+  const ov=eo((t-K.loop+0.1)/0.3); op($('orbit'),0.7*ov); $('orbit').setAttribute('stroke-dashoffset',f2(-t*260));
 }
-// pop shot: crack burst on the knuckles on the word
-const POPB=[...Array(9)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':14,'stroke-linecap':'round',fill:'none',opacity:0},$('popov')));
-const POPR=el('circle',{cx:690,cy:640,fill:'none',stroke:'#fff','stroke-width':10,opacity:0},$('popov'));
-function popov(t){ if(t<T.pop-0.05||t>T.doctor+0.2)return; burst(POPB,t,K.pop,690,640,70);
-  const u=(t-K.pop)/0.4; POPR.setAttribute('opacity',(u>0&&u<1?(1-u)*0.9:0).toFixed(3)); POPR.setAttribute('r',f2(40+260*eo(u))); }
-// arth: the knuckle joints flash red (the feared "wear"), then the zoom-through dives into one of them
-const ARTH=[[385,520],[455,505],[555,525],[640,500]].map(([x,y])=>el('circle',{cx:x,cy:y,r:40,fill:'none',stroke:'#FF5A4A','stroke-width':9,opacity:0},$('arthov')));
-function arthov(t){ if(t<T.arth-0.05||t>T.truth+0.12)return; ARTH.forEach((c,i)=>{const a=S(t-T.arth-0.08-i*0.06,18,0.55);
-  c.setAttribute('opacity',(clamp(a)*(0.7+0.3*Math.sin(t*12+i))).toFixed(3)); c.setAttribute('r',f2(Math.max(0.1,20+26*a+4*Math.sin(t*9+i))));});}
-// hurt: the pain glow throbs
-const HG=el('circle',{cx:410*1.2,cy:381+400*1.2,fill:'none',stroke:'#FF3B3B','stroke-width':10,opacity:0},$('hurtov'));
-const HG2=el('circle',{cx:410*1.2,cy:381+400*1.2,fill:'none',stroke:'#FF3B3B','stroke-width':6,opacity:0},$('hurtov'));
-function hurtov(t){ if(t<T.hurt-0.05||t>T.clinic+0.15)return; [[HG,0],[HG2,0.35]].forEach(([c,o])=>{const u=(((t-T.hurt)*1.4+o)%1+1)%1;
-  c.setAttribute('r',f2(50+150*eo(u))); c.setAttribute('opacity',((1-u)*0.85).toFixed(3));});}
-// ending: ask shot keeps the hook frame (loop) + comment bubble
-const LA=lensSet('askov',800,800,150,610,1060);
-function ending(t){
-  if(t<K.ask){ $('bubble').style.opacity='0'; }
-  if(t<T.ask-0.05)return;
-  LA.lg.setAttribute('opacity','1'); LA.line.setAttribute('opacity','1'); LA.dot.setAttribute('opacity','1'); LA.line.setAttribute('stroke-dashoffset',f2(-t*60));
-  const tk=((t-T.ask)%0.5+0.5)%0.5; LA.glow.setAttribute('opacity',(0.4+0.6*Math.exp(-tk*8)).toFixed(3)); LA.glow.setAttribute('r',f2(44+16*Math.exp(-tk*8)));
-  LA.lg.setAttribute('transform',`translate(800 800) rotate(${f2(2*Math.sin(t*3))}) scale(${(1+0.03*Math.sin(t*4)).toFixed(4)}) translate(-800 -800)`);
-  burst(LA.bl,t,K.howmany,LA.kx,LA.ky,40);
-  const b=$('bubble'); const v=vis(t,K.ask,null,{lin:0.12});
-  if(!show(b,t<K.ask?0:v.o))return; blur(b,v.blur); $('bubT').textContent=TX.bub; $('bubT').setAttribute('font-size',EN?'68':'120');
-  const a=S(t-K.ask,13,0.5), c=t>K.comment?S(t-K.comment,18,0.45):0;
-  b.style.transformOrigin='30% 100%';
-  b.style.transform=`translate(170px,${f2(150+12*Math.sin((t-K.ask)*6))}px) rotate(${f2(-5+4*Math.sin(t*3))}deg) scale(${(0.25+0.75*a+0.08*Math.sin(Math.PI*clamp((t-K.comment)/0.3))*(t>K.comment?1:0)).toFixed(4)})`;
-  [...$('dots').children].forEach((d,i)=>d.setAttribute('cy',f2(300-12*Math.max(0,Math.sin(t*9-i*0.9)))));
-  $('bubT').setAttribute('y',f2(210));
-  void c;
+
+// ---------- phone put face down ----------
+const tLand=K.phone2+0.2;
+function phone(t){
+  const v=vis(t,T.phone_down+0.02,T.help,{lin:0.16,lout:0.2}); op($('phoneG'),v.o); if(v.o<=0)return;
+  const phi=Math.PI*eio((t-(K.put+0.04))/(tLand-K.put-0.04)), lift=-130*Math.sin(phi), c=Math.cos(phi);
+  const land=t>tLand?Math.exp(-9*(t-tLand))*Math.sin((t-tLand)*28):0;
+  $('phone').setAttribute('transform',`translate(${f2(430+20*Math.sin(phi))} ${f2(872+lift+6*land)}) rotate(${f2(-6*Math.sin(phi))}) scale(1 ${Math.abs(c)<0.02?0.02*Math.sign(c||1):c.toFixed(4)})`);
+  const scr=clamp(c)*(0.85+0.15*Math.sin(t*9));
+  op($('phScr'),c>0?1:0); op($('phBack'),c<0?1:0); $('phScr').setAttribute('fill',mixc('#2A3768','#CFE0FF',clamp(c)));
+  op($('scrGlow'),scr); $('scrGlow').setAttribute('cx',f2(430+20*Math.sin(phi))); $('scrGlow').setAttribute('cy',f2(760+lift));
+  const L=0.75+0.25*eo((t-tLand)/0.5); op($('lampGlow'),L*(0.92+0.08*Math.sin(t*2.1))); $('lampGlow').setAttribute('rx',f2(440+60*L));
+}
+
+// ---------- clock (03:00 at the "3 a.m." line, walking at the end) ----------
+const TICKS=$('ticks'); for(let i=0;i<12;i++){const a=i*Math.PI/6; el('path',{d:`M${f2(78*Math.sin(a))} ${f2(-78*Math.cos(a))} L${f2((i%3?86:90)*Math.sin(a))} ${f2(-(i%3?86:90)*Math.cos(a))}`},TICKS);}
+const clkX=track(250,[[T.ask,540,CAMF]]), clkY=track(360,[[T.ask,330,CAMF]]);
+function clock(t){
+  const a=vis(t,T.clock+0.02,T.sleep,{lin:0.22,lout:0.1}).o, b=vis(t,T.ask+0.1,null,{lin:0.22}).o, o=Math.max(a,b); op($('clk'),o); if(o<=0)return;
+  const s=t<T.sleep+0.2?(0.6+0.4*S(t-T.clock,13,0.6))*1.15:(0.6+0.4*S(t-T.ask-0.1,13,0.6));
+  $('clk').setAttribute('transform',`translate(${f2(clkX(t))} ${f2(clkY(t)+5*Math.sin(t*2.2))}) rotate(${f2(2*Math.sin(t*1.6))}) scale(${s.toFixed(4)})`);
+  const walking=t>T.ask, w=walking?(t-T.ask):0;
+  const minA=walking?w*40:0, hourA=90+minA/12;
+  const step=walking?0.5:1, n=Math.floor(t/step), fr=t/step-n, secA=(n+S(fr*step,30,0.45))*(walking?12:6);
+  $('hHour').setAttribute('transform',`rotate(${f2(hourA)})`); $('hMin').setAttribute('transform',`rotate(${f2(minA)})`); $('hSec').setAttribute('transform',`rotate(${f2(secA)})`);
+  op($('clkT'),walking?0:1);
 }
 
 // ---------- captions: spring in on the word ----------
-const capEls=CAPT.map((s,i)=>$('c'+LANG+i).querySelector('span'));
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
 function captions(t){
   let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
-  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
-  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,26,0.7);
+  capEls[i].style.transform=`translateY(${f2(18*(1-a))}px) scale(${(0.84+0.16*a).toFixed(4)})`;
 }
 
-function render(t){ scenes(t); title(t); hookov(t); joint(t); hands(t); chips(t); strip(t); popov(t); arthov(t); hurtov(t); ending(t); captions(t); }
+function render(t){ scenes(t); particles(t); title(t); camera(t); brain(t); head(t); phone(t); shape(t); clock(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
 tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
