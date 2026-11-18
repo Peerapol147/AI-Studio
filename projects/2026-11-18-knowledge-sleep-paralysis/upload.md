@@ -1,6 +1,6 @@
 # อัปโหลด: ผีอำ คือผีจริงไหม? (ไทย)
 
-ไฟล์: `renders/sleep-paralysis-th.mp4` (~19 วิ, 9:16) | ปก: `renders/sleep-paralysis-th-thumb.jpg`
+ไฟล์: `renders/sleep-paralysis-th.mp4` (19.0 วิ, 9:16) | ปก: `renders/sleep-paralysis-th-thumb.jpg`
 
 ## YouTube Shorts
 **ชื่อคลิป (ภาษาไทยล้วน เลือก 1)**
