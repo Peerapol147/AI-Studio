@@ -1,139 +1,157 @@
 {
  "lang": "th",
  "lead": 0.08,
- "duration": 26.799,
+ "duration": 23.114,
  "shots": [
   {
    "id": "hook",
    "src": "",
-   "cue": "ถ้า",
-   "word_at": 0.02,
+   "cue": "ตีสาม",
+   "word_at": 0.0,
    "start": 0.0,
-   "end": 3.5,
-   "dur": 3.5
+   "end": 0.84,
+   "dur": 0.84
+  },
+  {
+   "id": "scroll",
+   "src": "",
+   "cue": "มือถือ",
+   "word_at": 0.92,
+   "start": 0.84,
+   "end": 2.32,
+   "dur": 1.48
   },
   {
    "id": "small",
    "src": "graphic:bubble",
    "cue": "เรื่องเล็ก",
-   "word_at": 3.58,
-   "start": 3.5,
+   "word_at": 2.4,
+   "start": 2.32,
    "hit": "ใหญ่",
-   "hit_at": 4.34,
-   "end": 5.22,
-   "dur": 1.72
+   "hit_at": 3.42,
+   "end": 3.8,
+   "dur": 1.48
   },
   {
    "id": "tired",
    "src": "",
-   "cue": "เหนื่อย",
-   "word_at": 5.3,
-   "start": 5.22,
-   "end": 5.84,
-   "dur": 0.62
+   "cue": "เพราะ",
+   "word_at": 3.88,
+   "start": 3.8,
+   "end": 4.74,
+   "dur": 0.94
   },
   {
    "id": "brain",
    "src": "graphic:brain",
    "cue": "สมอง",
-   "word_at": 5.92,
-   "start": 5.84,
-   "hit": "แรงขึ้น",
-   "hit_at": 7.2,
-   "end": 8.56,
-   "dur": 2.72
+   "word_at": 4.82,
+   "start": 4.74,
+   "hit": "ไวขึ้น",
+   "hit_at": 5.58,
+   "end": 6.42,
+   "dur": 1.68
   },
   {
    "id": "brake",
    "src": "graphic:brain",
-   "cue": "เบรก",
-   "word_at": 8.64,
-   "start": 8.56,
+   "cue": "ส่วนที่",
+   "word_at": 6.5,
+   "start": 6.42,
    "hit": "น้อยลง",
-   "hit_at": 9.44,
-   "end": 10.18,
-   "dur": 1.62
+   "hit_at": 7.82,
+   "end": 8.5,
+   "dur": 2.08
   },
   {
    "id": "room",
    "src": "",
    "cue": "ห้อง",
-   "word_at": 10.26,
-   "start": 10.18,
-   "end": 12.38,
-   "dur": 2.2
+   "word_at": 8.58,
+   "start": 8.5,
+   "end": 10.12,
+   "dur": 1.62
   },
   {
    "id": "loop",
    "src": "graphic:loop",
-   "cue": "วน",
-   "word_at": 12.46,
-   "start": 12.38,
-   "end": 13.58,
+   "cue": "เลยวน",
+   "word_at": 10.2,
+   "start": 10.12,
+   "end": 11.32,
    "dur": 1.2
   },
   {
    "id": "clock",
    "src": "graphic:clock",
    "cue": "แต่เรื่อง",
-   "word_at": 13.66,
-   "start": 13.58,
-   "end": 15.82,
-   "dur": 2.24
+   "word_at": 11.4,
+   "start": 11.32,
+   "end": 12.76,
+   "dur": 1.44
   },
   {
    "id": "sleep",
    "src": "",
-   "cue": "นอน",
-   "word_at": 15.9,
-   "start": 15.82,
-   "end": 16.56,
-   "dur": 0.74
+   "cue": "พอได้นอน",
+   "word_at": 12.84,
+   "start": 12.76,
+   "end": 13.6,
+   "dur": 0.84
   },
   {
    "id": "morning",
    "src": "",
-   "cue": "เบาลง",
-   "word_at": 16.64,
-   "start": 16.56,
-   "end": 17.62,
-   "dur": 1.06
+   "cue": "มักเบา",
+   "word_at": 13.68,
+   "start": 13.6,
+   "end": 14.54,
+   "dur": 0.94
   },
   {
    "id": "write",
    "src": "",
-   "cue": "จด",
-   "word_at": 17.7,
-   "start": 17.62,
-   "end": 19.76,
-   "dur": 2.14
+   "cue": "ลองจด",
+   "word_at": 14.62,
+   "start": 14.54,
+   "end": 16.82,
+   "dur": 2.28
   },
   {
    "id": "phone_down",
    "src": "",
    "cue": "วางมือถือ",
-   "word_at": 19.84,
-   "start": 19.76,
-   "end": 20.78,
-   "dur": 1.02
+   "word_at": 16.9,
+   "start": 16.82,
+   "end": 17.8,
+   "dur": 0.98
   },
   {
    "id": "help",
-   "src": "graphic:help",
+   "src": "graphic:bubble",
    "cue": "ถ้าคิด",
-   "word_at": 20.86,
-   "start": 20.78,
-   "end": 24.16,
-   "dur": 3.38
+   "word_at": 17.88,
+   "start": 17.8,
+   "end": 19.34,
+   "dur": 1.54
+  },
+  {
+   "id": "help2",
+   "src": "graphic:help",
+   "cue": "คุยกับ",
+   "word_at": 19.42,
+   "start": 19.34,
+   "end": 20.62,
+   "dur": 1.28
   },
   {
    "id": "ask",
    "src": "graphic:comment",
-   "cue": "ตอนนี้กี่โมง",
-   "word_at": 24.24,
-   "start": 24.16,
-   "end": 26.799,
-   "dur": 2.639
+   "cue": "ตอนนี้กี่",
+   "word_at": 20.7,
+   "start": 20.62,
+   "end": 23.114,
+   "dur": 2.494
   }
  ]
 }

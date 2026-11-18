@@ -6,7 +6,7 @@
    "id": "hook",
    "src": "",
    "cue": {
-    "th": "ถ้า"
+    "th": "ตีสาม"
    },
    "note": "person in dark bedroom lying in bed, face lit by phone screen (VIDEO preferred), blue-dark, warm glow"
   },
@@ -14,7 +14,7 @@
    "id": "scroll",
    "src": "",
    "cue": {
-    "th": "ไถ"
+    "th": "มือถือ"
    },
    "note": "close-up thumb scrolling phone in dark bed (VIDEO)"
   },
@@ -33,7 +33,7 @@
    "id": "tired",
    "src": "",
    "cue": {
-    "th": "เหนื่อย"
+    "th": "เพราะ"
    },
    "note": "tired person in bed at night rubbing eyes (calm, not scary)"
   },
@@ -45,14 +45,14 @@
    },
    "note": "soft brain side view; emotion center glows warm amber, pulses; hit แรงขึ้น",
    "hit": {
-    "th": "แรงขึ้น"
+    "th": "ไวขึ้น"
    }
   },
   {
    "id": "brake",
    "src": "graphic:brain",
    "cue": {
-    "th": "เบรก"
+    "th": "ส่วนที่"
    },
    "note": "same brain, front region light dims; hit น้อยลง",
    "hit": {
@@ -71,7 +71,7 @@
    "id": "loop",
    "src": "graphic:loop",
    "cue": {
-    "th": "วน"
+    "th": "เลยวน"
    },
    "note": "thought bubble (same shape) circles in a loop around a head silhouette"
   },
@@ -87,7 +87,7 @@
    "id": "sleep",
    "src": "",
    "cue": {
-    "th": "นอน"
+    "th": "พอได้นอน"
    },
    "note": "person sleeping peacefully"
   },
@@ -95,7 +95,7 @@
    "id": "morning",
    "src": "",
    "cue": {
-    "th": "เบาลง"
+    "th": "มักเบา"
    },
    "note": "morning sunlight through window/curtains (VIDEO), bubble shrinks small overlay"
   },
@@ -103,7 +103,7 @@
    "id": "write",
    "src": "",
    "cue": {
-    "th": "จด"
+    "th": "ลองจด"
    },
    "note": "hand writing in notebook at night, warm lamp (VIDEO)"
   },
@@ -117,17 +117,25 @@
   },
   {
    "id": "help",
-   "src": "graphic:help",
+   "src": "graphic:bubble",
    "cue": {
     "th": "ถ้าคิด"
    },
-   "note": "warm card: คุยกับผู้เชี่ยวชาญ + สายด่วนสุขภาพจิต 1323"
+   "note": "same thought bubble grows heavy/dense (คิดมากจนกระทบชีวิต), calm not scary"
+  },
+  {
+   "id": "help2",
+   "src": "graphic:help",
+   "cue": {
+    "th": "คุยกับ"
+   },
+   "note": "bubble morphs into warm card: คุยกับผู้เชี่ยวชาญ + สายด่วนสุขภาพจิต 1323 (ฟรี 24 ชม.)"
   },
   {
    "id": "ask",
    "src": "graphic:comment",
    "cue": {
-    "th": "ตอนนี้กี่โมง"
+    "th": "ตอนนี้กี่"
    },
    "note": "comment bubble + clock ticking, dark room bg"
   }
