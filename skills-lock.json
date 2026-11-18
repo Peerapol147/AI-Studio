@@ -50,6 +50,13 @@
       "skillPath": "skills/motion-broll/SKILL.md",
       "computedHash": "ddb1adb127644a843943cd9e0af0f9bbe808653024d98a717a43103f74c28788"
     },
+    "openfilm": {
+      "source": "openfilm/openfilm",
+      "commit": "589953539de2c8c8c119e29f9c6033c1e90ed1fd",
+      "sourceType": "github",
+      "skillPath": "skills/openfilm/SKILL.md",
+      "computedHash": "c5a254e8aed6cbfd2098cae414081fa155b6e22fbd409a4460f8931565729fb1"
+    },
     "remotion-to-hyperframes": {
       "source": "heygen-com/hyperframes",
       "commit": "df31ce2b15fd132432de6d39007ad345d5f5389e",
