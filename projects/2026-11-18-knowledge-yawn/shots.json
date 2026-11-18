@@ -1,0 +1,120 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "cue": {
+    "th": "ทำไม",
+    "en": "Why"
+   },
+   "note": "footage:pixabay-video-44647 woman yawning",
+   "hit": {
+    "th": "หาว",
+    "en": "yawn"
+   }
+  },
+  {
+   "id": "myth",
+   "cue": {
+    "th": "หลายคน",
+    "en": "People"
+   },
+   "note": "graphic:brain O2 gauge red falls + MYTH label",
+   "src": "graphic:brain"
+  },
+  {
+   "id": "o2",
+   "cue": {
+    "th": "ออกซิเจน",
+    "en": "oxygen"
+   },
+   "note": "graphic:brain same, O2 gauge low",
+   "src": "graphic:brain"
+  },
+  {
+   "id": "mask",
+   "cue": {
+    "th": "แต่ความจริง",
+    "en": "But"
+   },
+   "note": "footage:oxygen mask / person breathing through mask"
+  },
+  {
+   "id": "pure",
+   "cue": {
+    "th": "หายใจ",
+    "en": "breathe"
+   },
+   "note": "graphic:brain O2 gauge fills to 100% (Provine 1987)",
+   "src": "graphic:brain"
+  },
+  {
+   "id": "same",
+   "cue": {
+    "th": "ผลคือ",
+    "en": "yawned"
+   },
+   "note": "footage:pixabay-video-45286 person yawning + equal before/after bars",
+   "hit": {
+    "th": "เท่าเดิม",
+    "en": "much"
+   }
+  },
+  {
+   "id": "idea",
+   "cue": {
+    "th": "บางคน",
+    "en": "One"
+   },
+   "note": "graphic:brain hot orange + THEORY label",
+   "src": "graphic:brain"
+  },
+  {
+   "id": "cool",
+   "cue": {
+    "th": "เย็นลง",
+    "en": "cool"
+   },
+   "note": "graphic:brain cools to blue, cold air arrows",
+   "src": "graphic:brain",
+   "hit": {
+    "th": "เย็นลง",
+    "en": "cool"
+   }
+  },
+  {
+   "id": "debate",
+   "cue": {
+    "th": "เถียง",
+    "en": "debated"
+   },
+   "note": "graphic:brain + question marks",
+   "src": "graphic:brain"
+  },
+  {
+   "id": "warn",
+   "cue": {
+    "th": "บ่อย",
+    "en": "Yawning"
+   },
+   "note": "footage:pixabay-video-83875 tired person at office desk"
+  },
+  {
+   "id": "doctor",
+   "cue": {
+    "th": "หาหมอ",
+    "en": "doctor"
+   },
+   "note": "footage:doctor photo (any gender)"
+  },
+  {
+   "id": "ask",
+   "cue": {
+    "th": "แล้วดู",
+    "en": "So"
+   },
+   "note": "footage:pixabay-video-180693 cat yawning + comment bubble"
+  }
+ ]
+}
