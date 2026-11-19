@@ -8,4 +8,5 @@
 | `lucide/*.svg` (lucide-static 1.75.0) | ไอคอนมินิมอลที่เลือกไว้ ~70 อัน ใช้ `currentColor` ปรับสี/ความหนาเส้นได้ | ISC |
 
 GSAP อยู่ใน HyperFrames อยู่แล้ว ไม่ต้องเพิ่ม ฟอนต์ไทยอยู่ที่ `assets/fonts/` (Geist ไม่มีตัวไทย อย่าใช้กับซับ)
+ข้อความไลเซนส์เต็ม: `LICENSES.md` (rough, flubber, d3) และ `lucide/LICENSE`
 ต้องการไอคอนอื่น: `npm i lucide-static` ในโฟลเดอร์ชั่วคราว แล้วคัดลอกมาเพิ่ม
