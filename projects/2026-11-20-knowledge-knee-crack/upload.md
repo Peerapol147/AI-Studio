@@ -1,6 +1,6 @@
 # อัปโหลด: ลุกทีไร เข่าดังกร๊อบ เข่าเสื่อมหรือเปล่า? (ไทย)
 
-ไฟล์: `renders/knee-crack-th.mp4` (LEN วิ, 9:16, ไฟล์เดียวกันทุกแพลตฟอร์ม) | ปก: `renders/knee-crack-th-thumb.jpg`
+ไฟล์: `renders/knee-crack-th.mp4` (27.2 วิ, 9:16, ไฟล์เดียวกันทุกแพลตฟอร์ม) | ปก: `renders/knee-crack-th-thumb.jpg`
 **ฟังเสียงทั้งคลิปก่อนอัปโหลด** (ยังไม่มีคนฟังเสียงจริง)
 
 ## YouTube Shorts
