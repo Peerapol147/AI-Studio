@@ -16,6 +16,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(20,12,6,0) 55%,rgba(20,12,6,.5) 100%)}
 .ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
 .ic{overflow:visible}
+/* opaque sticker over the clock maker's name on the dial (wake_bed plate, text at ~X 280-600 Y 700-820); rides the Ken Burns */
+#bedTag{position:absolute;left:200px;top:660px;width:460px;height:190px;border-radius:40px;background:#FFE14D;border:9px solid #10080A;
+  box-shadow:0 12px 0 rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;gap:16px;color:#10080A;font-weight:900;font-size:76px;
+  white-space:nowrap;transform:rotate(-5deg)}
+#bedTag svg{width:82px;height:82px;color:#10080A}
 /* film grain over the past (registry: grain-overlay, driven by timeline time instead of a CSS loop) */
 #grain-overlay{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;z-index:5;overflow:hidden;opacity:0}
 #grain-overlay .grain-texture{position:absolute;top:-50%;left:-50%;width:200%;height:200%;opacity:.15;
@@ -129,7 +134,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
   <div class="sc" id="sh-hook_year"><div class="kb" id="kb-hook_year">%%V_HOOK_YEAR%%</div><div class="vig"></div></div>
-  <div class="sc" id="sh-wake_bed"><div class="kb" id="kb-wake_bed">%%V_WAKE_BED%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-wake_bed"><div class="kb" id="kb-wake_bed">%%V_WAKE_BED%%<div id="bedTag"><svg class="ic"><use href="#ic-alarm-clock"/></svg>ตื่นแล้ว!</div></div><div class="vig"></div></div>
   <div class="sc" id="sh-future_mind"><div class="kb" id="kb-future_mind">%%V_FUTURE_MIND%%</div><div class="vig"></div></div>
   <div class="sc" id="sh-kid_hands"><div class="kb" id="kb-kid_hands">%%V_KID_HANDS%%</div><div class="vig"></div></div>
   <div class="sc" id="sh-kid_school"><div class="kb" id="kb-kid_school">%%V_KID_SCHOOL%%</div><div class="vig"></div></div>
