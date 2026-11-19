@@ -28,7 +28,7 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 มุมเล่า: **"ความเชื่อ vs ความจริง"** (คนเชื่อว่า... → แต่งานวิจัยบอกว่า...) ใช้แค่หัวข้อ เขียนบท/ภาพ/ชื่อเอง
 ก่อนเลือก: เช็ก Pixabay **videos** totalHits ของ action หลัก ถ้า 0 ให้วางแผนเป็นภาพนิ่ง push-in + กราฟิกตั้งแต่บท
 **แม่แบบตัดต่อหลัก (ผู้ใช้อนุมัติ 2026-11-19 "ตัดต่อดีมาก โคตรชอบ"): Brainrot v2** = branch `claude/ep-2026-11-19-brainrot` commit `7b088c8`
-`git fetch origin claude/ep-2026-11-19-brainrot && git archive 7b088c8 projects/2026-11-19-knowledge-brainrot/video | tar -x` แล้วคัดลอก `video/` (ยกเว้น assets/renders) มาแก้
+คัดลอก **`templates/brainrot-v2/`** (อยู่ใน branch หลักแล้ว ไม่ต้อง fetch) ไปเป็น `<project>/video/` แล้วแก้ (ต้นฉบับ: commit `7b088c8` ใน branch ตอน brainrot)
 คงไว้: จังหวะช็อต ~1.4 วิ, ทรานซิชัน, kinetic type, กราฟิก vendor, เสียงพากย์พาวนกลับ hook; เปลี่ยน: ภาพ เนื้อหา สี/ไอคอนตามหัวข้อ
 ห้ามใช้ v3 (`4044191`) เป็นแม่แบบตัดต่อ (บท v3 ดี แต่ตัดต่อ v2 ดีกว่า)
 แม่แบบเก่า (ใช้เมื่อหัวข้อเป็นแผนภาพกลไก 2D): `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`)
