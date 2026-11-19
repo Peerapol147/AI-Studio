@@ -1,0 +1,24 @@
+- pixabay-143376.mp4: Amorn_mimi via Pixabay (Pixabay License) https://pixabay.com/videos/id-143376/ | tags: medical, hospital, health, doctor, clinic, asian, advice, woman, service, patien
+- pixabay-143379.mp4: Amorn_mimi via Pixabay (Pixabay License) https://pixabay.com/videos/id-143379/ | tags: medical, hospital, health, doctor, clinic, asian, advice, woman, service, patien
+- pixabay-143378.mp4: Amorn_mimi via Pixabay (Pixabay License) https://pixabay.com/videos/id-143378/ | tags: medical, hospital, health, doctor, clinic, asian, advice, woman, service, patien
+- pixabay-6096.mp4: 3593622 via Pixabay (Pixabay License) https://pixabay.com/videos/id-6096/ | tags: park, old people, people, old, senior, elderly, happy, woman, retired, smiling, 
+- pixabay-180191.mp4: NickyPe via Pixabay (Pixabay License) https://pixabay.com/videos/id-180191/ | tags: woman, vineyard, hike, wine growing, fitness, elderly woman, sports, healthy, mo
+- pixabay-192281.mp4: SciQuestYT via Pixabay (Pixabay License) https://pixabay.com/videos/id-192281/ | tags: scientist, laboratory, research, space, science, technology, discussion
+- pixabay-5456.mp4: tommyvideo via Pixabay (Pixabay License) https://pixabay.com/videos/id-5456/ | tags: microscope, science, lab, laboratory, test, experiment, scientific, research, bi
+- pixabay-229071.mp4: Amorn_mimi via Pixabay (Pixabay License) https://pixabay.com/videos/id-229071/ | tags: nurse, elderly, wheelchair, garden, outdoor, walk, retirement, care, happy, knee
+- pixabay-9673008.jpg: North_Studio via Pixabay (Pixabay License) https://pixabay.com/illustrations/senior-man-knee-pained-9673008/ | tags: senior, man, knee, pained, knee osteoarthritis, osteoarthritis
+- pixabay-2253047.jpg: Taokinesis via Pixabay (Pixabay License) https://pixabay.com/photos/knee-x-ray-medical-anatomy-2253047/ | tags: knee, x-ray, medical, anatomy, skeleton, bone, orthopedic, joint, health, injury
+- pixabay-5314881.jpg: Taokinesis via Pixabay (Pixabay License) https://pixabay.com/photos/knee-x-rays-arthritis-skeleton-5314881/ | tags: knee, x rays, arthritis, skeleton, health, patient, cartilage, orthopedics, anat
+- pixabay-10309879.jpg: kumarsu6745_ via Pixabay (Pixabay License) https://pixabay.com/photos/knee-orthopedics-therapy-pain-10309879/ | tags: knee, orthopedics, therapy, pain, medical, health, physiotherapy, joint, arthrit
+- pixabay-1406964.jpg: Taokinesis via Pixabay (Pixabay License) https://pixabay.com/photos/knee-old-care-injury-pain-1406964/ | tags: knee, old, care, injury, pain, knee pain, inflammation, osteoarthritis, medical,
+- music-jamendo-2f1bc5f2.mp3: "Finding, curious, taking" by Wobinidan (CC BY 3.0) https://www.jamendo.com/track/209419
+- pixabay-11506.mp4: tacofleur via Pixabay (Pixabay License) https://pixabay.com/videos/id-11506/ | tags: kettlebells, kettlebell dead clean, squat, thruster, kettlebell, kettlebell trai
+- pixabay-12739.mp4: tacofleur via Pixabay (Pixabay License) https://pixabay.com/videos/id-12739/ | tags: kettlebell overhead cossack, kettlebells, cossack squat, beach, crossfit
+- pixabay-18369.mp4: tacofleur via Pixabay (Pixabay License) https://pixabay.com/videos/id-18369/ | tags: beach, kettlebells, kettlebell training, taco fleur, cavemantraining, dead swing
+- pixabay-302326.mp4: DEZYNE_3D via Pixabay (Pixabay License) https://pixabay.com/videos/id-302326/ | tags: fitness, exercise, gym, health, sport, training, workout, fit, strength, athlete
+- pixabay-302341.mp4: DEZYNE_3D via Pixabay (Pixabay License) https://pixabay.com/videos/id-302341/ | tags: fitness, exercise, gym, health, sport, training, workout, fit, strength, athlete
+- pixabay-32937.mp4: Stuck1 via Pixabay (Pixabay License) https://pixabay.com/videos/id-32937/ | tags: exercise, stretching, senior, elder, people, workout, body, training, fitness, s
+- pixabay-4364.mp4: F1Digitals via Pixabay (Pixabay License) https://pixabay.com/videos/id-4364/ | tags: knee, anatomy, pain, medical, leg, joint, bone, injury, health, ache, surgery, f
+- pixabay-4365.mp4: F1Digitals via Pixabay (Pixabay License) https://pixabay.com/videos/id-4365/ | tags: knee, anatomy, pain, medical, leg, joint, bone, injury, health, ache, surgery, f
+- pixabay-293082.mp4: RainMeditateHub via Pixabay (Pixabay License) https://pixabay.com/videos/id-293082/ | tags: asian woman, post workout, stretching, home workout, yoga mat, online fitness, c
+- pixabay-20422.mp4: freefitnessmedia via Pixabay (Pixabay License) https://pixabay.com/videos/id-20422/ | tags: gym, fitness, legs, leg press, workout, training, exercise, strength, bodybuildi

@@ -1,0 +1,143 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 27.172,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "",
+   "cue": "ลุก",
+   "word_at": 0.08,
+   "start": 0.0,
+   "hit": "ก๊อบ",
+   "hit_at": 1.18,
+   "end": 1.64,
+   "dur": 1.64
+  },
+  {
+   "id": "oa-q",
+   "src": "graphic:knee",
+   "cue": "เข่าเสื่อม",
+   "word_at": 1.72,
+   "start": 1.64,
+   "end": 2.94,
+   "dur": 1.3
+  },
+  {
+   "id": "tease",
+   "src": "",
+   "cue": "เคยโดนทัก",
+   "word_at": 3.02,
+   "start": 2.94,
+   "end": 4.8,
+   "dur": 1.86
+  },
+  {
+   "id": "dry",
+   "src": "graphic:knee",
+   "cue": "น้ำ",
+   "word_at": 4.88,
+   "start": 4.8,
+   "hit": "แห้ง",
+   "hit_at": 5.36,
+   "end": 6.04,
+   "dur": 1.24
+  },
+  {
+   "id": "truth",
+   "src": "graphic:knee",
+   "cue": "จริงๆ",
+   "word_at": 6.12,
+   "start": 6.04,
+   "end": 7.66,
+   "dur": 1.62
+  },
+  {
+   "id": "common",
+   "src": "",
+   "cue": "บ่อยมาก",
+   "word_at": 7.74,
+   "start": 7.66,
+   "end": 9.98,
+   "dur": 2.32
+  },
+  {
+   "id": "gas",
+   "src": "graphic:knee",
+   "cue": "เสียง",
+   "word_at": 10.06,
+   "start": 9.98,
+   "hit": "ฟองแก๊ส",
+   "hit_at": 10.8,
+   "end": 12.64,
+   "dur": 2.66
+  },
+  {
+   "id": "tendon",
+   "src": "graphic:knee",
+   "cue": "เอ็น",
+   "word_at": 12.72,
+   "start": 12.64,
+   "hit": "ลาก",
+   "hit_at": 13.1,
+   "end": 14.5,
+   "dur": 1.86
+  },
+  {
+   "id": "study",
+   "src": "graphic:knee",
+   "cue": "งานวิจัย",
+   "word_at": 14.58,
+   "start": 14.5,
+   "end": 17.14,
+   "dur": 2.64
+  },
+  {
+   "id": "risk",
+   "src": "",
+   "cue": "เสี่ยง",
+   "word_at": 17.22,
+   "start": 17.14,
+   "end": 18.8,
+   "dur": 1.66
+  },
+  {
+   "id": "rule-ok",
+   "src": "graphic:knee",
+   "cue": "ดังแต่ไม่เจ็บ",
+   "word_at": 18.88,
+   "start": 18.8,
+   "end": 21.04,
+   "dur": 2.24
+  },
+  {
+   "id": "rule-pain",
+   "src": "",
+   "cue": "แต่ถ้า",
+   "word_at": 21.12,
+   "start": 21.04,
+   "hit": "บวม",
+   "hit_at": 22.02,
+   "end": 24.1,
+   "dur": 3.06
+  },
+  {
+   "id": "doctor",
+   "src": "",
+   "cue": "หมอ",
+   "word_at": 24.18,
+   "start": 24.1,
+   "end": 24.98,
+   "dur": 0.88
+  },
+  {
+   "id": "cta",
+   "src": "",
+   "cue": "แล้วเข่า",
+   "word_at": 25.06,
+   "start": 24.98,
+   "end": 27.172,
+   "dur": 2.192
+  }
+ ]
+}
