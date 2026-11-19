@@ -39,3 +39,4 @@
   - "Interface confirmation 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
   - "Interface pluck 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
 - ไอคอน Lucide (ISC), flubber (MIT), ฟอนต์ Kanit (OFL); นักบิน silhouette และกลุ่มควันการ์ตูน = วาดเอง (SVG)
+- assets/audio/vo-th.mp3: เสียงพากย์ AI โดย ElevenLabs (elevenlabs.io) เสียง George, eleven_v3

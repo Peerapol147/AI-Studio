@@ -13,8 +13,9 @@
 ถ้าตดในอวกาศ ตัวจะพุ่งไปเหมือนจรวดไหม? นักบินอวกาศ Chris Hadfield เล่าว่าพวกเขาลองกันมาแล้ว 🚀 แต่ปัญหาจริงๆ คือกลิ่นต่างหาก 💨
 
 ที่มา
-- Chris Hadfield ตอบคำถามใน Reddit AMA (ธ.ค. 2013) ว่าลองใช้ตดขับดันแล้ว "too muffled, not the right type of propulsive nozzle"
-- ESA: ในวงโคจรไม่มีการลอยตัวของอากาศร้อน (convection) สถานีต้องใช้พัดลม https://blogs.esa.int/astronauts/2012/04/29/no-molecule-shall-stand-still/
+- Chris Hadfield ตอบคำถามใน Reddit AMA (ธ.ค. 2013) ว่าลองใช้ตดขับดันแล้ว "too muffled, not the right type of propulsive nozzle" https://www.dailyedge.ie/chris-hadfield-reddit-ama-1207963-Dec2013/
+- ESA: ในวงโคจรไม่มีการลอยตัวของอากาศร้อน (convection) สถานีต้องใช้พัดลม https://blogs.esa.int/astronauts/2012/04/29/no-molecule-shall-stand-still/ (ทีมเปิดลิงก์นี้ตรงไม่ได้ กรุณาคลิกเช็กก่อนโพสต์ ถ้าเสียให้ลบบรรทัดนี้)
+- NASA NTRS: ระบบควบคุมสารปนเปื้อนบนสถานี (ไส้กรองถ่านกัมมันต์) https://ntrs.nasa.gov/citations/19980201212
 - NASA ECLSS Technical Brief (ระบบอากาศบนสถานี) https://www.nasa.gov/wp-content/uploads/2023/07/eclss-technical-brief-ochmo.pdf
 
 เครดิต
