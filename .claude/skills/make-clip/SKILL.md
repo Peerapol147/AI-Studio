@@ -6,7 +6,8 @@ description: Use when the user asks for a new clip or episode ("ทำคลิ�
 # Make a clip (AI Studio)
 
 ผู้กำกับ (คุณ) คุมสายพานทั้งหมด ผู้ใช้ได้แค่ไฟล์ MP4 + ปก + ข้อความอัปโหลด แล้วอัปโหลดเอง **ห้ามอัปโหลด/ตั้งเวลาโพสต์**
-1 เซสชัน = 1 ตอน (`docs/sessions.md`) ตอนตัวอย่างที่ผ่านแล้ว: `projects/2026-11-17-knowledge-nature/` (วอมแบต) ใช้เป็นมาตรฐานคุณภาพและแม่แบบไฟล์
+1 เซสชัน = 1 ตอน (`docs/sessions.md`) **แม่แบบตัดต่อหลัก: `templates/brainrot-v2/`** (ดูหัวข้อ "หัวข้อจากเทรนด์ต่างประเทศ")
+`projects/2026-11-17-knowledge-nature/` (วอมแบต) เหลือเป็นตัวอย่างโครงไฟล์เอกสาร (brief/research/upload) เท่านั้น ห้ามคัดลอก `video/` ของวอมแบตมาตัดต่อ
 
 ## 0. เริ่มตอน
 - อ่าน `channels/<channel>/channel.md` + `style.md` (ถ้ามี) เสมอ ช่องฟุตบอลยังไม่มี style.md: ขอคลิปตัวอย่างจากผู้ใช้ก่อน (ดูข้อ "เรียนสไตล์")
@@ -52,11 +53,11 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 | 3 บท + สตอรีบอร์ด | ผู้กำกับ + skill `yt-hook-scripter`, `yt-thumbnail-brief` | `script.md`, `script-en.md`, `storyboard.md`, `shots.json`, `thumbnail.md` (ภาพเด่น + ข้อความ ≤4 คำ ต่อภาษา) | ไทย: ความยาวตาม style.md (≤40 วิ ≈ ≤500 ตัวอักษร ที่ ~12-13 ตัว/วิ); hook 3 แบบ เลือก 1 ตาม style.md (คำถามบนจอตั้งแต่ 0.0 วิ); อังกฤษ **เขียนใหม่** ไม่แปล; โครง hook → คนคิดว่า → "แต่ความจริงคือ" → กลไก → ปิดตลก → **คำถามชวนคอมเมนต์ ≤4 วิ** |
 | 4a เสียง | `voice` (ไทย) | `assets/audio/vo-<lang>.mp3`, `words*.json`, `timing*.md`, เพลง, sfx | บอกชื่อไฟล์ที่แต่ละตัวห้ามแตะ; ไทยต้อง `eleven_v3`+; ใช้ voice_id จาก channel.md; เพลง: `tools/music.sh music "<อารมณ์>" <project> 3 30` เลือก 1 (เครดิตลง CREDITS.md อัตโนมัติ); sfx ไม่ต้องทำในขั้นนี้ (editor เลือกจาก skill `sound-effects`); อัดทั้งบทเทคเดียว แล้ว silenceremove + atempo ≤1.12; จับเวลาคำด้วย ElevenLabs `scribe_v1` |
 | 4b footage | `footage` (พร้อม 4a) | `assets/footage/` + `MAP.md`, `CREDITS.md` | ขนาด medium ไม่เอาไฟล์ใหญ่; Wikimedia โดน rate-limit ง่าย ขอทีละน้อย; หาไม่ได้ = ทำเป็นกราฟิก; หัวข้อร่างกาย/ใกล้ตัว Pixabay มักไม่มีภาพเฉพาะ เช็ก Wikimedia Commons ตั้งแต่ขั้น 1; วิดีโอใช้ 1080p ขึ้นไป (ครอป 9:16 จาก 720p เหลือ ~405px แตก) |
-| 5 motion + ตัดต่อ (ก่อนเริ่ม: **ผู้กำกับเลือกช่วง hook เอง** จาก contact sheet ของคลิปเต็ม แล้วใส่ `media_start` ใน shots.json — เคยต้องเรนเดอร์ใหม่ทั้งคลิปเพราะเฟรม 0 เห็นแต่หัวลูกแมวมุดแก้ว) | `editor` (หลัง 4a เสร็จ) — เริ่มจาก**คัดลอก** `projects/2026-11-17-knowledge-nature/video/` (ยกเว้น `assets/`, `renders/`) มาแก้ ไม่สร้างจากศูนย์ | `video/index.html.tpl` + `build_index.py` (คอมโพสิชันเดียว ตัวแปร `lang`), `renders/<slug>-<lang>.mp4`, ปก `-thumb.jpg` | ให้อ่าน skill `hyperframes`, `motion-broll`, `sound-effects` + style.md "Motion v2"; มิกซ์ด้วย `tools/sound_pass_vo.py` (ดูหัวข้อ "มิกซ์เสียง") ปกทำจากคอมโพสิชัน `video/thumb/` แบบเดียวกับตอนวอมแบต |
-| 6 ตรวจ | `reviewer` | `review.md` | |
-| 7 ส่งมอบ | ผู้กำกับ + `yt-title-optimizer`, `yt-description-writer` | `upload.md`, `upload-en.md` | ความยาวคลิปจริง, ห้ามชื่อคลิปที่อ้างเกิน research ("ตัวเดียวในโลก"), เครดิตเพลง CC BY + ภาพ (ภาพ CC BY ที่ครอป/ปรับสี เขียนว่า "ครอปและปรับสี"), TikTok: แคปชันสั้น + เครดิตเพลงในคอมเมนต์แรก + ติด label AI; **FB Reels: ชื่อ/แคปชัน/แฮชแท็กแยกอีกหัวข้อ** (MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม ผู้ใช้อัปเอง) |
+| 5 motion + ตัดต่อ (ก่อนเริ่ม: **ผู้กำกับเลือกช่วง hook เอง** จาก contact sheet ของคลิปเต็ม แล้วใส่ `media_start` ใน shots.json — เคยต้องเรนเดอร์ใหม่ทั้งคลิปเพราะเฟรม 0 เห็นแต่หัวลูกแมวมุดแก้ว) | `editor` (หลัง 4a เสร็จ) — เริ่มจาก**คัดลอก** `templates/brainrot-v2/` (Brainrot v2) ไปเป็น `<project>/video/` มาแก้ ไม่สร้างจากศูนย์; หัวข้อที่เป็นแผนภาพกลไก 2D ใช้ knuckle-crack แทน (ดูหัวข้อด้านบน) | `video/index.html.tpl` + `build_index.py` (คอมโพสิชันเดียว; `python3 build_index.py` หา repo root เอง, `--audio`/`--out` ถ้าวางไว้ที่อื่น), `renders/<slug>-<lang>.mp4`, ปก `-thumb.jpg` | ให้อ่าน skill `hyperframes`, `motion-broll`, `sound-effects` + style.md "Motion v2"; มิกซ์ด้วย `tools/sound_pass_vo.py` (ดูหัวข้อ "มิกซ์เสียง") ปกทำจากคอมโพสิชัน `video/thumb/` ที่มากับแม่แบบ |
+| 6 ตรวจ | `reviewer` | `review.md` (ต้องมีหัวข้อ "ฟังก่อนอัปโหลด") | ทุกครั้ง: ให้ส่ง**รายการ timestamp เสียงที่ผู้ใช้ต้องฟังจริง** 3-7 จุด (เริ่มจาก "Check these 5 with headphones" ใน `renders/sound-<lang>/SOUND.md` + คำอ่านยาก/ชื่อเฉพาะ/ตัวเลขในพากย์ + จุดเพลงดังชนพากย์) พร้อมเหตุผลสั้นๆ ต่อจุด |
+| 7 ส่งมอบ | ผู้กำกับ + `yt-title-optimizer`, `yt-description-writer` | `upload.md`, `upload-en.md` | ความยาวคลิปจริง, ส่งรายการ "ฟังก่อนอัปโหลด" จาก review.md ให้ผู้ใช้ทุกครั้ง, ห้ามชื่อคลิปที่อ้างเกิน research ("ตัวเดียวในโลก"), เครดิตเพลง CC BY + ภาพ (ภาพ CC BY ที่ครอป/ปรับสี เขียนว่า "ครอปและปรับสี"), TikTok: แคปชันสั้น + เครดิตเพลงในคอมเมนต์แรก + ติด label AI; **FB Reels: ชื่อ/แคปชัน/แฮชแท็กแยกอีกหัวข้อ** (MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม ผู้ใช้อัปเอง) |
 
-ส่งไฟล์ให้ผู้ใช้ด้วย SendUserFile (mp4 + ปก) แล้วบอก: สิ่งที่ผ่าน, สิ่งที่ยอมรับไว้, **และว่าไม่มีใครฟังเสียงจริง** ให้ผู้ใช้ฟังก่อนอัปโหลด
+ส่งไฟล์ให้ผู้ใช้ด้วย SendUserFile (mp4 + ปก) แล้วบอก: สิ่งที่ผ่าน, สิ่งที่ยอมรับไว้, **และว่าไม่มีใครฟังเสียงจริง** พร้อมรายการ timestamp "ฟังก่อนอัปโหลด" จาก review.md (เวลา + ต้องฟังอะไร) ให้ผู้ใช้ฟังก่อนอัปโหลด
 commit + push หลังจบแต่ละขั้น (stop hook บังคับ commit ทุกครั้งที่จบการตอบ แม้ agent ยังทำไม่เสร็จ: commit เป็น "wip: ..." ได้) (`*.mp4` และ footage ถูก .gitignore ไว้แล้ว)
 
 ## ภาพตรงคำพากย์ (บังคับตั้งแต่ ep 2)
@@ -74,7 +75,7 @@ python3 tools/sound_pass_vo.py --video renders/<slug>-<lang>-silent.mp4 --voice 
   --manifest .claude/skills/sound-effects/sfx/manifest.json --out renders/sound-<lang> \
   --music-source "<เพลง> by <ศิลปิน> <ลิงก์>" --music-license "CC BY 3.0"
 ```
-cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", "desc": "...", "sfx": "kit/pop.ogg", "gain": -8}` (ไฟล์ sfx อ้างจาก `.claude/skills/sound-effects/sfx/`) ตัวอย่าง: `projects/2026-11-17-knowledge-nature/video/sound/cues-th.json`
+cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", "desc": "...", "sfx": "kit/pop.ogg", "gain": -8}` (ไฟล์ sfx อ้างจาก `.claude/skills/sound-effects/sfx/`) ตัวอย่าง: `templates/brainrot-v2/sound/cues-th.json` (สร้างด้วย `sound/make_cues.py`)
 
 ## มาตรฐาน motion (ผู้ใช้เคยบอกว่า "แปลกๆ" กับเวอร์ชันแรก)
 - กราฟิกเป็น **รูปร่างเดียวที่ morph ต่อเนื่อง** (ขนาด มุม สี) ด้วย spring ไม่โผล่/หายกระตุก ไม่ใช้ "ขีดฆ่าแล้วใส่ไอคอนใหม่"
