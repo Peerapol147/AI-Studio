@@ -1,0 +1,250 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 34.603,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "nasa",
+   "cue": "ถ้าตด",
+   "word_at": 0.1,
+   "start": 0.0,
+   "end": 1.22,
+   "dur": 1.22
+  },
+  {
+   "id": "happen",
+   "src": "graphic:puff-q",
+   "cue": "เกิดอะไร",
+   "word_at": 1.3,
+   "start": 1.22,
+   "end": 2.64,
+   "dur": 1.42
+  },
+  {
+   "id": "belief",
+   "src": "graphic:belief",
+   "cue": "หลายคนเชื่อ",
+   "word_at": 2.72,
+   "start": 2.64,
+   "end": 4.08,
+   "dur": 1.44
+  },
+  {
+   "id": "puff",
+   "src": "graphic:puff",
+   "cue": "แรงๆ",
+   "word_at": 4.16,
+   "start": 4.08,
+   "end": 5.72,
+   "dur": 1.64
+  },
+  {
+   "id": "rocket",
+   "src": "nasa",
+   "cue": "พุ่งไป",
+   "word_at": 5.8,
+   "start": 5.72,
+   "end": 7.4,
+   "dur": 1.68
+  },
+  {
+   "id": "hadfield",
+   "src": "nasa",
+   "cue": "นักบิน",
+   "word_at": 7.48,
+   "start": 7.4,
+   "end": 8.8,
+   "dur": 1.4
+  },
+  {
+   "id": "quote",
+   "src": "graphic:quote",
+   "cue": "เล่าว่า",
+   "word_at": 8.88,
+   "start": 8.8,
+   "end": 10.14,
+   "dur": 1.34
+  },
+  {
+   "id": "tried",
+   "src": "nasa",
+   "cue": "ลองกัน",
+   "word_at": 10.22,
+   "start": 10.14,
+   "end": 11.74,
+   "dur": 1.6
+  },
+  {
+   "id": "fail",
+   "src": "graphic:fail",
+   "cue": "ไม่ได้ผล",
+   "word_at": 11.82,
+   "start": 11.74,
+   "end": 13.24,
+   "dur": 1.5
+  },
+  {
+   "id": "weak",
+   "src": "graphic:weak",
+   "cue": "แผ่ว",
+   "word_at": 13.32,
+   "start": 13.24,
+   "end": 14.48,
+   "dur": 1.24
+  },
+  {
+   "id": "butt",
+   "src": "graphic:butt",
+   "cue": "แล้วก้น",
+   "word_at": 14.56,
+   "start": 14.48,
+   "end": 15.48,
+   "dur": 1.0
+  },
+  {
+   "id": "nozzle",
+   "src": "nasa",
+   "cue": "หัวฉีด",
+   "word_at": 15.56,
+   "start": 15.48,
+   "end": 17.22,
+   "dur": 1.74
+  },
+  {
+   "id": "problem",
+   "src": "graphic:problem",
+   "cue": "ปัญหา",
+   "word_at": 17.3,
+   "start": 17.22,
+   "end": 18.02,
+   "dur": 0.8
+  },
+  {
+   "id": "smell",
+   "src": "graphic:smell",
+   "cue": "กลิ่น",
+   "word_at": 18.1,
+   "start": 18.02,
+   "end": 19.24,
+   "dur": 1.22
+  },
+  {
+   "id": "space",
+   "src": "graphic:space",
+   "cue": "ในอวกาศ",
+   "word_at": 19.32,
+   "start": 19.24,
+   "end": 20.32,
+   "dur": 1.08
+  },
+  {
+   "id": "earth",
+   "src": "nasa",
+   "cue": "อากาศไม่ลอย",
+   "word_at": 20.4,
+   "start": 20.32,
+   "end": 21.46,
+   "dur": 1.14
+  },
+  {
+   "id": "compare",
+   "src": "graphic:noconv",
+   "cue": "เหมือนบนโลก",
+   "word_at": 21.54,
+   "start": 21.46,
+   "end": 22.7,
+   "dur": 1.24
+  },
+  {
+   "id": "nofan",
+   "src": "graphic:fan-off",
+   "cue": "ถ้าไม่มีพัด",
+   "word_at": 22.78,
+   "start": 22.7,
+   "end": 24.44,
+   "dur": 1.74
+  },
+  {
+   "id": "linger",
+   "src": "nasa",
+   "cue": "ค้างอยู่",
+   "word_at": 24.52,
+   "start": 24.44,
+   "end": 25.92,
+   "dur": 1.48
+  },
+  {
+   "id": "station",
+   "src": "nasa",
+   "cue": "สถานีอวกาศ",
+   "word_at": 26.0,
+   "start": 25.92,
+   "end": 27.24,
+   "dur": 1.32
+  },
+  {
+   "id": "fan",
+   "src": "graphic:fan-on",
+   "cue": "พัดลมตลอด",
+   "word_at": 27.32,
+   "start": 27.24,
+   "end": 28.66,
+   "dur": 1.42
+  },
+  {
+   "id": "filter",
+   "src": "graphic:filter",
+   "cue": "ไส้กรองถ่าน",
+   "word_at": 28.74,
+   "start": 28.66,
+   "end": 29.58,
+   "dur": 0.92
+  },
+  {
+   "id": "catch",
+   "src": "graphic:catch",
+   "cue": "จับกลิ่น",
+   "word_at": 29.66,
+   "start": 29.58,
+   "end": 31.02,
+   "dur": 1.44
+  },
+  {
+   "id": "you",
+   "src": "nasa",
+   "cue": "ถ้าเป็นคุณ",
+   "word_at": 31.1,
+   "start": 31.02,
+   "end": 32.0,
+   "dur": 0.98
+  },
+  {
+   "id": "try",
+   "src": "graphic:puff-q2",
+   "cue": "จะลอง",
+   "word_at": 32.08,
+   "start": 32.0,
+   "end": 33.06,
+   "dur": 1.06
+  },
+  {
+   "id": "comment",
+   "src": "graphic:comment",
+   "cue": "ไหม",
+   "word_at": 33.14,
+   "start": 33.06,
+   "end": 33.76,
+   "dur": 0.7
+  },
+  {
+   "id": "loop",
+   "src": "nasa:hook",
+   "cue": "เม้น",
+   "word_at": 33.84,
+   "start": 33.76,
+   "end": 34.603,
+   "dur": 0.843
+  }
+ ]
+}

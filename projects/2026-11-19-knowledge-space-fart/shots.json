@@ -46,9 +46,17 @@
    "id": "hadfield",
    "src": "nasa",
    "cue": {
-    "th": "คริส"
+    "th": "นักบิน"
    },
    "note": "NASA photo of Chris Hadfield aboard ISS (Expedition 34/35), label 'Chris Hadfield · อดีตผู้บัญชาการสถานีอวกาศ'"
+  },
+  {
+   "id": "quote",
+   "src": "graphic:quote",
+   "cue": {
+    "th": "เล่าว่า"
+   },
+   "note": "quote card over blurred Hadfield photo: 'We all tried it' (AMA 2013) + Thai 'ลองกันหมดแล้ว' — attributed, small 'Chris Hadfield, Reddit AMA 2013'"
   },
   {
    "id": "tried",
@@ -75,6 +83,14 @@
    "note": "cloud fizzles/shrinks to a tiny wisp (flubber), word 'แผ่ว' kinetic"
   },
   {
+   "id": "butt",
+   "src": "graphic:butt",
+   "cue": {
+    "th": "แล้วก้น"
+   },
+   "note": "cartoon silhouette from behind (pants, clean, no anatomy) with tiny wisp vs label 'ก้น ≠ หัวฉีดจรวด' — sets up nozzle photo"
+  },
+  {
    "id": "nozzle",
    "src": "nasa",
    "cue": {
@@ -83,12 +99,28 @@
    "note": "NASA rocket engine test photo (RS-25 nozzle firing) — comic contrast; kinetic 'หัวฉีดจรวด ≠ ก้น' small"
   },
   {
+   "id": "problem",
+   "src": "graphic:problem",
+   "cue": {
+    "th": "ปัญหา"
+   },
+   "note": "kinetic type 'ปัญหาจริงๆ' punch-in; cloud starts to swell"
+  },
+  {
    "id": "smell",
    "src": "graphic:smell",
    "cue": {
     "th": "กลิ่น"
    },
    "note": "cloud grows back big and GREEN with stink wavy lines, kinetic 'กลิ่น!' punch zoom"
+  },
+  {
+   "id": "space",
+   "src": "graphic:space",
+   "cue": {
+    "th": "ในอวกาศ"
+   },
+   "note": "astronaut silhouette floating among stars, cloud hangs around them"
   },
   {
    "id": "earth",
@@ -147,6 +179,14 @@
    "note": "charcoal filter block (dark grid) — cloud particles stick, cloud shrinks to nothing; chip '✅ ไส้กรองถ่าน'"
   },
   {
+   "id": "catch",
+   "src": "graphic:catch",
+   "cue": {
+    "th": "จับกลิ่น"
+   },
+   "note": "cloud particles stick to charcoal grid, cloud shrinks to nothing; chip '✅ ไส้กรองถ่าน'"
+  },
+  {
    "id": "you",
    "src": "nasa",
    "cue": {
@@ -166,7 +206,7 @@
    "id": "comment",
    "src": "graphic:comment",
    "cue": {
-    "th": "เมนต์"
+    "th": "ไหม"
    },
    "note": "cloud morphs into comment bubble 'เมนต์บอกหน่อย 💬'"
   },
@@ -174,7 +214,7 @@
    "id": "loop",
    "src": "nasa:hook",
    "cue": {
-    "th": "อวกาศไหม"
+    "th": "เม้น"
    },
    "note": "LOOP: same photo as frame 0 (hook), Ken Burns 1.05→1.00 so last frame ≈ frame 0; hook title springs back in last 0.3 s"
   }
