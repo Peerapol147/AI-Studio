@@ -1,2 +1,5 @@
 - music-jamendo-b6fb4ded.mp3: "playfulness" by Pan:core (CC BY 3.0) https://www.jamendo.com/track/2040809
 - footage (wake_bed 15629, future_mind 8256, kid_hands 86242, kid_school 62524, gold 69279, stock 88697, piggy 93550, teen 3180, crash 166289): Pixabay Content License (ใช้ฟรี ไม่ต้องให้เครดิต) https://pixabay.com/videos/id-<id>/ ผู้สร้างตามหน้า Pixabay ของแต่ละ id
+- SFX 20 cue (CC0: Kenney, Freesound) รายชื่อเต็ม `renders/sound-th/CREDITS.txt` (สร้างจาก `video/sound/cues-th.json`)
+- ไอคอน Lucide (ISC) รวม `bitcoin` = สัญลักษณ์ ₿ ทั่วไป ไม่ใช่โลโก้บริษัท; d3-path/d3-shape (ISC); ฟอนต์ Kanit (OFL 1.1)
+- registry HyperFrames: grain-overlay, scan-band, rgb-glitch-text, zoom-through-transition (ดัดแปลง)

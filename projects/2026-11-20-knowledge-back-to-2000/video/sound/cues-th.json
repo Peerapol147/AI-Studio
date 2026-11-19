@@ -1,93 +1,142 @@
 [
  {
-  "t": 0.3,
+  "t": 0.28,
   "type": "movement",
-  "desc": "hook: soft whoosh under the title (finger on the glowing feed)",
-  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
-  "gain": -28
+  "desc": "year rolls back 2026 -> 2000 (VHS rewind)",
+  "sfx": "glitch/fs-339521-vhs-rewind-forward-and-eject.ogg",
+  "gain": -22
  },
  {
-  "t": 2.58,
-  "type": "hover_or_small_ui",
-  "desc": "\"02:00\" chip + moon pops on \"ตีสอง\"",
-  "sfx": "tick/fs384187.ogg",
-  "gain": -20
- },
- {
-  "t": 4.19,
-  "type": "appear",
-  "desc": "brain melts on \"เน่า\" (soft drip)",
-  "sfx": "pop/kenney-interface-drop-002.ogg",
-  "gain": -18
- },
- {
-  "t": 4.74,
-  "type": "appear",
-  "desc": "zoom punch: Oxford card + green pill",
-  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
-  "gain": -17
- },
- {
-  "t": 6.04,
-  "type": "hover_or_small_ui",
-  "desc": "+230% counter runs",
-  "sfx": "click/kenney-interface-tick-001.ogg",
-  "gain": -21
- },
- {
-  "t": 9.64,
+  "t": 0.94,
   "type": "error_or_tech",
-  "desc": "glitch cut on \"คนคิดว่า\"",
+  "desc": "glitch: 2026 (cool) -> 2000 (sepia) on \"ปี\"",
   "sfx": "glitch/kenney-interface-glitch-002.ogg",
   "gain": -18
  },
  {
-  "t": 11.78,
-  "type": "movement",
-  "desc": "brain un-melts (reverse swoosh) on \"คลิปสั้น\"",
-  "sfx": "riser/fs-174363-rewind.ogg",
+  "t": 1.28,
+  "type": "reveal",
+  "desc": "year lands on 2000 (punch)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -20
+ },
+ {
+  "t": 2.3,
+  "type": "scene_cut",
+  "desc": "whip to the alarm clock, HUD flies in",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
   "gain": -22
  },
  {
-  "t": 13.66,
-  "type": "scene_cut",
-  "desc": "fast scroll footage",
-  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -21
- },
- {
-  "t": 15.82,
-  "type": "hover_or_small_ui",
-  "desc": "focus bar drops on \"แย่กว่า\"",
-  "sfx": "ui-blip/kenney-digital-twotone2.ogg",
-  "gain": -21
- },
- {
-  "t": 16.86,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"สัมพันธ์\"",
-  "sfx": "glitch/kenney-sci-computernoise-001.ogg",
-  "gain": -30
- },
- {
-  "t": 19.34,
-  "type": "success",
-  "desc": "zoom punch + lightbulb on \"ทริก\"",
-  "sfx": "ding/kenney-interface-confirmation-001.ogg",
-  "gain": -28
- },
- {
-  "t": 20.26,
-  "type": "reveal",
-  "desc": "phone lands face-down on the nightstand on \"เตียง\"",
-  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -30
- },
- {
-  "t": 24.18,
+  "t": 4.36,
   "type": "appear",
-  "desc": "comment bubble \"กี่โมง?\" pops",
-  "sfx": "kit/pop.ogg",
-  "gain": -26
+  "desc": "future-knowledge bubbles pop",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 5.68,
+  "type": "error_or_tech",
+  "desc": "\"แต่เดี๋ยวนะ\": age 33 -> 8 flips red",
+  "sfx": "ui-blip/kenney-digital-twotone2.ogg",
+  "gain": -18
+ },
+ {
+  "t": 7.78,
+  "type": "appear",
+  "desc": "\"ป.2\" pops",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -18
+ },
+ {
+  "t": 10.36,
+  "type": "error_or_tech",
+  "desc": "lock shakes red on \"ไม่ได้\"",
+  "sfx": "ui-blip/kenney-digital-pepsound2.ogg",
+  "gain": -20
+ },
+ {
+  "t": 12.64,
+  "type": "success",
+  "desc": "mission 1 ticked",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -18
+ },
+ {
+  "t": 17.46,
+  "type": "success",
+  "desc": "gold 60,000+ lands, money meter up",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -18
+ },
+ {
+  "t": 18.78,
+  "type": "success",
+  "desc": "mission 2 ticked + up arrow",
+  "sfx": "ding/kenney-interface-confirmation-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 24.1,
+  "type": "success",
+  "desc": "SET ~1,500 lands, money meter up",
+  "sfx": "ding/kenney-interface-glass-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 25.04,
+  "type": "hover_or_small_ui",
+  "desc": "mission 3 starts pulsing (never ticked)",
+  "sfx": "ui-blip/kenney-ui-rollover2.ogg",
+  "gain": -20
+ },
+ {
+  "t": 27.06,
+  "type": "appear",
+  "desc": "bitcoin coin pops",
+  "sfx": "pop/kenney-interface-maximize-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 28.08,
+  "type": "movement",
+  "desc": "year rolls forward 2000 -> 2010",
+  "sfx": "glitch/fs-402451-fast-forward.ogg",
+  "gain": -24
+ },
+ {
+  "t": 31.52,
+  "type": "appear",
+  "desc": "\"อีกรอบ!\" stamp",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg",
+  "gain": -24
+ },
+ {
+  "t": 32.219,
+  "type": "error_or_tech",
+  "desc": "glitch cut to the crash",
+  "sfx": "glitch/kenney-sci-computernoise-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 32.84,
+  "type": "reveal",
+  "desc": "money meter drops red, line falls",
+  "sfx": "transition/kenney-interface-minimize-001.ogg",
+  "gain": -18
+ },
+ {
+  "t": 35.1,
+  "type": "error_or_tech",
+  "desc": "glitch back to the alarm clock (outro)",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -20
+ },
+ {
+  "t": 35.23,
+  "type": "movement",
+  "desc": "year rolls 2010 -> 2026 (rewind, match of the hook)",
+  "sfx": "riser/fs-174363-rewind.ogg",
+  "gain": -24
  }
 ]

@@ -344,7 +344,7 @@ const yspans=[...document.querySelectorAll('#year span')];
 function year(t){
   const y=$('year'); y.style.opacity='1';
   const toH=t>=T.wake_bed?S(t-T.wake_bed,15,0.84):0, back=t>=T.outro?S(t-T.outro,15,0.84):0, u=toH*(1-back);
-  const cx=lerp(540,226,u), cy=lerp(905,345,u)+(1-u)*6*Math.sin(t*2.6), sc0=lerp(1,0.25,u);
+  const cx=lerp(510,226,u), cy=lerp(905,345,u)+(1-u)*6*Math.sin(t*2.6), sc0=lerp(0.9,0.25,u);  // big pose: X ~190-830 (clear of the right-side buttons below Y 840)
   let land=0; LANDS.forEach(a=>{const d=t-a; if(d>=0&&d<0.9)land+=0.22*Math.exp(-d*6)*Math.cos(d*15);});
   const br=(1-u)*0.03*(0.5-0.5*Math.cos(t*2*Math.PI/0.9));
   y.style.transform=`translate(${f2(cx)}px,${f2(cy)}px) rotate(${f2((1-u)*-2*Math.sin(t*1.3))}deg) scale(${(sc0*(1+land+br)).toFixed(4)})`;
@@ -498,7 +498,7 @@ function crashF(t){
 }
 // ---------- hold: "ถือไหวป่ะ?" shaking (this line is the speech; captions stop here) ----------
 function holdF(t){const h=$('holdT'), v=win(t,K.wai,T.outro,BOUNCE); if(!show(h,clamp(v*2)))return;
-  const sh=6*Math.sin(t*38); h.style.transform=`translate(${f2(sh-30)}px,${f2(700+3*Math.cos(t*31))}px) rotate(${f2(-4+2*Math.sin(t*5))}deg) scale(${f2(Math.max(0.001,0.5+0.5*v))})`;}
+  const sh=6*Math.sin(t*38); h.style.transform=`translate(${f2(sh-30)}px,${f2(640+3*Math.cos(t*31))}px) rotate(${f2(-4+2*Math.sin(t*5))}deg) scale(${f2(Math.max(0.001,0.5+0.5*v))})`;}
 // ---------- outro: comment prompt under the checklist ----------
 function outroF(t){const c=$('cmt'), v=win(t,K.tamtang,DUR+1,BOUNCE); if(!show(c,clamp(v*2)))return;
   c.style.transform=`translate(${f2(510-c.offsetWidth/2)}px,${f2(1262)}px) rotate(${f2(-2+1.5*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;}

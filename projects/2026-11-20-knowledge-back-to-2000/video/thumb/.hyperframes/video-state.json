@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "4a693697-ceb8-4340-98e6-5e76c388c6a4",
-  "currentRevision": "1a3cd288-95da-4a59-a252-afa7c3e34473",
+  "currentRevision": "6afc1cf0-8828-491d-9e4b-8797f5027023",
   "pendingChanges": false,
   "files": {
     "assets/hook-cover-w.jpg": {
@@ -125,8 +125,8 @@
       "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "25a5ee5dcbef75a0cab298f4ecea61350ede55d3d9a185a31129b3e7f99e44f5",
-      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/25/25a5ee5dcbef75a0cab298f4ecea61350ede55d3d9a185a31129b3e7f99e44f5"
+      "hash": "8fef191549150a0231572b731ca754a73e50cdb4344aa0b638d534a28c96a093",
+      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/8f/8fef191549150a0231572b731ca754a73e50cdb4344aa0b638d534a28c96a093"
     },
     "package.json": {
       "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
@@ -148,6 +148,21 @@
           "after": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/25/25a5ee5dcbef75a0cab298f4ecea61350ede55d3d9a185a31129b3e7f99e44f5"
         }
       }
+    },
+    "6afc1cf0-8828-491d-9e4b-8797f5027023": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795115322300,
+      "endedAt": 1795115322301,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/25/25a5ee5dcbef75a0cab298f4ecea61350ede55d3d9a185a31129b3e7f99e44f5",
+          "after": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/8f/8fef191549150a0231572b731ca754a73e50cdb4344aa0b638d534a28c96a093"
+        }
+      }
     }
   },
   "checks": {
@@ -157,8 +172,8 @@
   },
   "snapshots": {
     "latest": {
-      "revision": "1a3cd288-95da-4a59-a252-afa7c3e34473",
-      "id": "f50b9261-aa1e-4bdf-b758-ad73894a3274-1"
+      "revision": "6afc1cf0-8828-491d-9e4b-8797f5027023",
+      "id": "691487cf-b394-40d9-be86-e07b1ca19e55-1"
     },
     "revisions": {
       "1a3cd288-95da-4a59-a252-afa7c3e34473": [
@@ -199,6 +214,48 @@
           "contentHash": "d9adaacce65f1bb4e5b4c632b1175aca6fa90995207cf5f0c5e84111bb0543ff",
           "revision": "1a3cd288-95da-4a59-a252-afa7c3e34473",
           "inputFingerprint": "87eba6cf0f95b07c9d32d41118c33a175ad1b6fb1e8d12f6cf5e51fb14d74a72",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "6afc1cf0-8828-491d-9e4b-8797f5027023": [
+        {
+          "scope": "full",
+          "id": "691487cf-b394-40d9-be86-e07b1ca19e55-0",
+          "image": "/home/user/AI-Studio/projects/2026-11-20-knowledge-back-to-2000/video/thumb/.hyperframes/artifacts/snapshots/78a1e06d-c458-424f-8b65-22a0d74f2060/frame-00-at-0.5s.png",
+          "time": 0.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795115325278,
+          "contentHash": "d9adaacce65f1bb4e5b4c632b1175aca6fa90995207cf5f0c5e84111bb0543ff",
+          "revision": "6afc1cf0-8828-491d-9e4b-8797f5027023",
+          "inputFingerprint": "a328f70c018cbd916e99954f505dcec0962181e1d1ee256b2065b765511aaba7",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "691487cf-b394-40d9-be86-e07b1ca19e55-1",
+          "image": "/home/user/AI-Studio/projects/2026-11-20-knowledge-back-to-2000/video/thumb/.hyperframes/artifacts/snapshots/78a1e06d-c458-424f-8b65-22a0d74f2060/frame-01-at-0.95s.png",
+          "time": 0.95,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795115325279,
+          "contentHash": "d9adaacce65f1bb4e5b4c632b1175aca6fa90995207cf5f0c5e84111bb0543ff",
+          "revision": "6afc1cf0-8828-491d-9e4b-8797f5027023",
+          "inputFingerprint": "a328f70c018cbd916e99954f505dcec0962181e1d1ee256b2065b765511aaba7",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
