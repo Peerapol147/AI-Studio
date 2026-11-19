@@ -16,7 +16,8 @@ def test_mix_and_report_from_other_checkout(tmp_path):
     # a copy of just the pieces the tool needs, under a different path than the real clone
     clone = tmp_path / 'Some Other Clone'
     (clone / 'tools').mkdir(parents=True)
-    shutil.copy(ROOT / 'tools' / 'sound_pass_vo.py', clone / 'tools')
+    for f in ('sound_pass_vo.py', 'get.sh'):
+        shutil.copy(ROOT / 'tools' / f, clone / 'tools')
     skill = ROOT / '.claude' / 'skills' / 'sound-effects'
     shutil.copytree(skill / 'scripts', clone / '.claude' / 'skills' / 'sound-effects' / 'scripts')
     shutil.copytree(skill / 'sfx', clone / '.claude' / 'skills' / 'sound-effects' / 'sfx')

@@ -7,7 +7,7 @@ Approach credit: Vox (@Voxyz_ai), x.com/Voxyz_ai/status/2109358372873183564
 Usage: sound_pass.py --video silent.mp4 --cues cues.json --music track.mp3 --manifest ../sfx/manifest.json --out outdir
 Needs ffmpeg, python libs: librosa soundfile numpy scipy matplotlib.
 """
-import argparse,json,os,re,subprocess,random
+import argparse,json,os,re,subprocess,random,sys
 import numpy as np,librosa,soundfile as sf
 from scipy.signal import butter,sosfiltfilt,find_peaks
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
@@ -25,7 +25,7 @@ ap.add_argument('--seed',type=int,default=7)
 ap.add_argument('--swaps',default=None,help='swaps.json from report.html: {cue_index: file|runtime_url|"auto"}')
 A=ap.parse_args(); os.makedirs(A.out,exist_ok=True); os.makedirs(f'{A.out}/checks',exist_ok=True)
 random.seed(A.seed)
-run=lambda c:subprocess.run(c,capture_output=True,text=True)
+run=lambda c,**kw:subprocess.run(c,capture_output=True,text=True,**kw)
 dur=float(run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',A.video]).stdout)
 fps=eval(run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=r_frame_rate','-of','csv=p=0',A.video]).stdout.strip())
 cues=json.load(open(A.cues)); man=json.load(open(A.manifest)); base=os.path.dirname(os.path.abspath(A.manifest))
@@ -65,10 +65,11 @@ def fetch(e):
   if e.get('path') and os.path.exists(e['path']): return e['path']
   url=e.get('runtime_url'); f=os.path.join(cache,(e.get('category','x'))+'-'+os.path.basename(url))
   if not os.path.exists(f):
-    r=run(['curl','-fsSL','-o',f,url])
+    # tools/get.sh: 60 s cap, 403/429/5xx/timeout = exit 75, never leaves a half file
+    r=run(['bash',os.path.join(os.path.dirname(os.path.abspath(__file__)),'get.sh'),url,f],env={**os.environ,'GET_MAX_TIME':'60'})
     if r.returncode!=0:
-      if os.path.exists(f): os.remove(f)
-      raise SystemExit(f"Could not download runtime sound for '{e.get('category')}' from {url} (curl exit {r.returncode}: {r.stderr.strip()}). Check your connection, or pick a bundled sound via --swaps.")
+      print(r.stderr.strip(),f"\nCould not download runtime sound for '{e.get('category')}'. Pick a bundled sound via --swaps.",file=sys.stderr)
+      raise SystemExit(75 if r.returncode==75 else 1)
   return f
 def kit_entry(cat):
   k=kit.get(cat)

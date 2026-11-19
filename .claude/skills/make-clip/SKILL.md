@@ -36,7 +36,7 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 `git fetch origin <branch> && git archive FETCH_HEAD <path> | tar -x`
 
 ## ล้มเร็ว ห้ามรอเงียบ (กฎตายตัว ผู้ใช้สั่ง หลังตอนแมวเสีย ~44 นาที)
-- ดึงเว็บ/API ทุกครั้งผ่าน `bash tools/get.sh <url> [out]` (หมดเวลา 20 วิ, 429/403/5xx = exit 75)
+- ดึงเว็บ/API ทุกครั้งผ่าน `bash tools/get.sh <url> [out|-] [curl options]` (หมดเวลา 20 วิ, 429/403/5xx/หมดเวลา = exit 75, 4xx อื่น = exit 1; ล้มแล้วไม่ทับไฟล์เดิม) สคริปต์ tts/words/footage/music เรียกผ่านตัวนี้อยู่แล้ว
 - เจอ 429 / rate limit / retry-after / บล็อก **ครั้งเดียว = เลิกแหล่งนั้นทันที** ห้าม `sleep` ห้ามรอ retry-after ห้ามลองซ้ำ
 - ลำดับสำรอง: Pixabay → Openverse → NASA → ทำเป็น motion graphic
 - งานส่วนไหนติดเกิน 5 นาที: หยุด เขียนสถานะลงไฟล์ แล้วตอบกลับผู้กำกับทันที (ติดอะไร ลองอะไรแล้ว เหลืออะไร) อย่าเงียบ
@@ -62,11 +62,12 @@ commit + push หลังจบแต่ละขั้น (stop hook บัง
 
 ## ภาพตรงคำพากย์ (บังคับตั้งแต่ ep 2)
 เวลาทุกช็อตมาจากคำพูด ไม่ตั้งด้วยมือ ทำตาม `docs/pipeline.md` หัวข้อ "ภาพตรงจังหวะพากย์":
-ผู้กำกับเขียน `shots.json` (ขั้น 3) → footage ใส่ `action_at`/`src` → voice ทำ words ด้วย `bash tools/words.sh` →
+ผู้กำกับเขียน `shots.json` (ขั้น 3) → footage เขียน `footage.json` (`src`/`action_at` ต่อ id) → voice ทำ words ด้วย `bash tools/words.sh` →
 `python3 tools/shot_times.py <project> th|en` → editor ใช้ `assets/audio/shots-<lang>.json` เท่านั้น
 - cue ห่างกันอย่างน้อย ~5-6 คำไทย / 3 คำอังกฤษ (ติดกันเกินจะได้ช็อต <0.6 วิ)
 - วาง `cue` ใน shots.json **หลังได้ words.json** (หรือร่างให้ช็อตละ ~1.2 วิ ตั้งแต่แรก) ไม่งั้นช็อตยาว/สั้นเกิน
-- ถ้าเขียน shots.json ใหม่ ต้องบอก footage ให้อ่านใหม่ เพราะการเขียนทับจะลบ `src`/`action_at` เดิม
+- เขียน shots.json ใหม่/แก้ cue ได้เลย ข้อมูล footage อยู่ใน `footage.json` (รวมด้วย id) ห้ามเปลี่ยน id ช็อตที่ footage ทำไปแล้ว (tool เตือน id ที่ไม่ตรง)
+- shot_times ล้ม (exit 1) = ไม่มี shots-<lang>.json ห้ามตัดต่อต่อ แก้แล้วรันใหม่ (build_index ปฏิเสธ timeline เก่าที่ไม่ตรงไฟล์ปัจจุบันเอง)
 
 ## มิกซ์เสียง
 ```bash

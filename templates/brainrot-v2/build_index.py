@@ -8,7 +8,7 @@ Run: python3 build_index.py [--audio DIR] [--out FILE]
   --out    where to write the page (default index.html next to this script)
 The repo root (for assets/vendor/lucide) is found by walking up from this file, so it works from
 templates/brainrot-v2/ and from projects/<x>/video/ alike; set AI_STUDIO_ROOT to override."""
-import argparse, html, json, math, os, pathlib, re
+import argparse, hashlib, html, json, math, os, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -69,7 +69,25 @@ ANCH = [('tsong', 'ตีสอง'), ('bon', 'บ่นว่า'), ('nao', '�
 ICONS = ['moon', 'smartphone', 'brain', 'bed', 'lightbulb', 'message-circle', 'clock', 'circle-check', 'circle-x',
          'triangle-alert', 'book-open', 'target', 'trending-up', 'trending-down', 'search', 'zap']
 
-shots = json.loads((AUD / 'shots-th.json').read_text())
+def load_shots():
+    """shots-th.json from tools/shot_times.py, refused if shots.json/footage.json/words.json changed since."""
+    f = AUD / 'shots-th.json'
+    if not f.exists():
+        raise SystemExit(f'{f} missing: run python3 tools/shot_times.py <project> th (it deletes the file when it fails)')
+    s = json.loads(f.read_text())
+    proj = AUD.parents[1]                       # <project>/assets/audio -> <project>
+    for name, want in (s.get('inputs') or {}).items():
+        p = proj / name
+        have = hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
+        if have != want:
+            raise SystemExit(f'{f} is stale: {name} changed after shot_times ran. '
+                             f'Rerun python3 tools/shot_times.py {proj} th, then this script.')
+    if 'inputs' not in s:
+        print(f'WARN {f} has no "inputs" (written by an old shot_times.py): cannot tell if it is stale')
+    return s
+
+
+shots = load_shots()
 DUR = math.floor(shots['duration'] * 30) / 30  # clip ends with the voice (no silent tail), on a frame boundary
 DUR = round(DUR, 3)
 f = finder(); capt = [f(c) for c in CAPS]

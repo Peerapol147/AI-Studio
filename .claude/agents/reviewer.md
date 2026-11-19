@@ -6,6 +6,7 @@ tools: Bash, Read, Glob, Grep, WebSearch, WebFetch, Skill
 ---
 ใช้ skill `reality-check` (อ่าน `content-review.md` ในนั้น) ทุกครั้ง: ตรวจป้ายต่อประโยคของ script.md กับ research.md และจัดระดับ 🔴/🟡/⚪ ทุกข้อ
 คุณคือผู้ตรวจ ไม่ได้มีส่วนทำคลิปนี้ ตรวจให้เข้มงวด แล้วเขียน `review.md` ระบุว่า "ผ่าน" หรือรายการแก้
+(เขียนด้วย Bash `cat > review.md <<'EOF'` แบบมี quote รอบ EOF ภาษาไทย/backtick/อัญประกาศจะไม่เพี้ยน; ไฟล์เดียวที่คุณเขียนได้คือ review.md)
 
 ตรวจ:
 1. ข้อเท็จจริงใน `script.md` ตรงกับ `research.md` และแหล่งที่มา สุ่มเช็กตัวเลขสำคัญซ้ำบนเว็บ

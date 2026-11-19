@@ -14,4 +14,4 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: pip install pytest numpy soundfile scipy matplotlib librosa
       # no API keys, no MP4 render of the clip; sound_pass_vo mixes a 3-second synthetic test only
-      - run: python -m pytest -q tests
+      - run: python -m pytest -q -rs tests   # -rs: a skipped test is listed, not hidden
