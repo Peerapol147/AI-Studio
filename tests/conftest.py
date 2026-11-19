@@ -1,6 +1,7 @@
 """Local mock HTTP server: no real API is ever called by the tests.
 
 Paths: /fail<code>/...  -> that status + small body (any method)
+       /quota/...       -> 401 with ElevenLabs-style quota_exceeded body
        /slow/...        -> sleeps 3 s
        /v1/text-to-speech/<voice> (POST json)   -> fake mp3 bytes
        /v1/speech-to-text (POST multipart)      -> fake words json
@@ -31,6 +32,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         p = self.path.split('?')[0]
         self.server.log.append((self.command, self.path, self.headers.get('Content-Type') or ''))
         base = f'http://127.0.0.1:{self.server.server_port}'
+        if p.startswith('/quota'):
+            return self._send(401, json.dumps({'detail': {'status': 'quota_exceeded', 'message': 'out of credits'}}))
         if p.startswith('/fail'):
             code = int(p[5:8])
             return self._send(code, json.dumps({'error': code}))

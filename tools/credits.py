@@ -4,11 +4,13 @@
 แต่ละขั้นเขียนของตัวเองที่ assets/credits/<stage>.json = {"<path จาก assets/>": "<บรรทัดเครดิต>"}
   footage.sh -> footage, music.sh -> music  (ขั้นอื่นเพิ่มเองด้วยคำสั่ง add)
 CREDITS.md = ส่วนที่คนเขียนเอง (เก็บไว้ตามเดิม) + บล็อกอัตโนมัติระหว่าง marker ที่สร้างใหม่ทุกครั้ง
-  - ไฟล์ที่ถูกลบจาก assets/ แล้ว ไม่ขึ้นในบล็อก
+  - ไม่ดูว่าไฟล์อยู่บนดิสก์ไหม (footage/*.mp3 ถูก .gitignore: clone สดไม่มีไฟล์ แต่เครดิตต้องอยู่ครบ)
+  - ทิ้งไฟล์ไหน (เพลงที่ไม่เลือก ภาพที่ไม่ใช้) ต้องสั่ง remove ชัดๆ เครดิตถึงหาย
   - บรรทัด "- <ชื่อไฟล์>: ..." แบบเก่า (ต่อท้ายโดยสคริปต์รุ่นก่อน) นอกบล็อก ถูกย้ายเข้าบล็อกแทน ไม่ซ้ำ
 
 ใช้:
   python3 tools/credits.py add <project> <stage> <path-from-assets> "<line>"
+  python3 tools/credits.py remove <project> <path-from-assets>     # ทิ้งไฟล์นั้นแล้ว (ลบเครดิตทุกขั้น)
   python3 tools/credits.py build <project>
 """
 import json, pathlib, re, sys
@@ -31,14 +33,24 @@ def add(proj, stage, rel, line):
     f.write_text(json.dumps(d, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
 
 
+def remove(proj, rel):
+    n = 0
+    for f in (pathlib.Path(proj) / "assets" / "credits").glob("*.json"):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        if d.pop(rel, None) is not None:
+            n += 1
+            f.write_text(json.dumps(d, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
+    if not n:
+        raise SystemExit(f"no credit for {rel!r} (path from assets/, e.g. audio/music-x.mp3)")
+
+
 def build(proj):
     proj = pathlib.Path(proj)
     assets = proj / "assets"
     entries = {}                                   # rel path -> (stage, line)
     for f in sorted((assets / "credits").glob("*.json")):
         for rel, line in json.loads(f.read_text(encoding="utf-8")).items():
-            if (assets / rel).exists():
-                entries[rel] = (f.stem, line)
+            entries[rel] = (f.stem, line)          # never dropped for a missing file: media is gitignored
     md = assets / "CREDITS.md"
     old = md.read_text(encoding="utf-8") if md.exists() else "# Credits\n"
     if START in old and END in old:
@@ -64,6 +76,8 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     if a[:1] == ["add"] and len(a) == 5:
         add(*a[1:]); print(f"{build(a[1])} credits -> {a[1]}/assets/CREDITS.md")
+    elif a[:1] == ["remove"] and len(a) == 3:
+        remove(*a[1:]); print(f"{build(a[1])} credits -> {a[1]}/assets/CREDITS.md")
     elif a[:1] == ["build"] and len(a) == 2:
         print(f"{build(a[1])} credits -> {a[1]}/assets/CREDITS.md")
     else:

@@ -5,7 +5,7 @@ model: sonnet
 tools: WebSearch, WebFetch, Read, Write, Grep, Glob, Skill
 ---
 ## ล้มเร็ว ห้ามรอเงียบ (กฎตายตัว ผู้ใช้สั่ง หลังตอนแมวเสีย ~44 นาที)
-- ดึงเว็บ/API ทุกครั้งผ่าน `bash tools/get.sh <url> [out|-] [curl options]` (หมดเวลา 20 วิ, 429/403/5xx/หมดเวลา = exit 75, 4xx อื่น = exit 1; ล้มแล้วไม่ทับไฟล์เดิม) สคริปต์ tts/words/footage/music เรียกผ่านตัวนี้อยู่แล้ว
+- ดึงเว็บ/API ทุกครั้งผ่าน `bash tools/get.sh <url> [out|-] [curl options]` (หมดเวลา 20 วิ, 429/403/5xx/หมดเวลา = exit 75, 4xx อื่น = exit 1 = ห้ามลองซ้ำ URL เดิม แก้คำขอหรือข้ามไฟล์; ล้มแล้วไม่ทับไฟล์เดิม) สคริปต์ tts/words/footage/music เรียกผ่านตัวนี้อยู่แล้ว
 - เจอ 429 / rate limit / retry-after / บล็อก **ครั้งเดียว = เลิกแหล่งนั้นทันที** ห้าม `sleep` ห้ามรอ retry-after ห้ามลองซ้ำ
 - ลำดับสำรอง: Pixabay → Openverse → NASA → ทำเป็น motion graphic
 - งานส่วนไหนติดเกิน 5 นาที: หยุด เขียนสถานะลงไฟล์ แล้วตอบกลับผู้กำกับทันที (ติดอะไร ลองอะไรแล้ว เหลืออะไร) อย่าเงียบ
