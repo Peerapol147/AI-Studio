@@ -1,0 +1,161 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "cue": {
+    "th": "Brainrot"
+   },
+   "note": "FIRST FRAME (director picks media_start from contact sheet): close-up thumb scrolling a phone in a DARK room/at night, screen glow on hand/face; NO app logos/readable UI; must move (scroll) within 1.5s; focus in Y 500-1300"
+  },
+  {
+   "id": "bed",
+   "cue": {
+    "th": "เลื่อนถึง"
+   },
+   "note": "young person lying in bed at night scrolling phone (2am vibe), face lit by screen"
+  },
+  {
+   "id": "melt",
+   "cue": {
+    "th": "บ่นว่า"
+   },
+   "note": "OWN drawing: cartoon brain that droops/melts (cute, not gross) + pill 'ความเชื่อ ❌'; flubber morph brain shape",
+   "src": "graphic:brain-melt"
+  },
+  {
+   "id": "oxford",
+   "cue": {
+    "th": "Oxford"
+   },
+   "note": "kinetic type dictionary card: 'brain rot' + 'Oxford Word of the Year 2024 ✅' (text only, no OUP logo)",
+   "src": "graphic:dict-card"
+  },
+  {
+   "id": "year",
+   "cue": {
+    "th": "คำแห่งปี"
+   },
+   "note": "same card morphs: counter +230% (usage 2023→2024) ✅; card continues moving",
+   "src": "graphic:dict-230"
+  },
+  {
+   "id": "define",
+   "cue": {
+    "th": "นิยาม"
+   },
+   "note": "definition line appears: 'the supposed deterioration...' typed; Thai gloss under",
+   "src": "graphic:define"
+  },
+  {
+   "id": "supposed",
+   "cue": {
+    "th": "คนคิดว่า"
+   },
+   "note": "punch zoom on word 'supposed' highlighted = 'คนคิดว่า' (glitch transition in)",
+   "src": "graphic:supposed"
+  },
+  {
+   "id": "noproof",
+   "cue": {
+    "th": "ยังไม่มี"
+   },
+   "note": "person reading research papers/laptop with charts OR scientist looking at brain scan on screen (generic, no real patient data)"
+  },
+  {
+   "id": "brainok",
+   "cue": {
+    "th": "คลิปสั้น"
+   },
+   "note": "the SAME cartoon brain un-melts back (flubber morph) + stamp 'ยังไม่มีหลักฐานว่าเน่าถาวร'",
+   "src": "graphic:brain-ok"
+  },
+  {
+   "id": "study",
+   "cue": {
+    "th": "คนดู"
+   },
+   "note": "stack of paper cards flying in, top card 'Psychological Bulletin 2025' (no number 71)",
+   "src": "graphic:study"
+  },
+  {
+   "id": "heavy",
+   "cue": {
+    "th": "หนักๆ"
+   },
+   "note": "fast thumb scroll on phone, motion blur, feed-like (no logos)"
+  },
+  {
+   "id": "focus",
+   "cue": {
+    "th": "เทส"
+   },
+   "note": "focus meter/test sheet with bar dipping (lucide icons), ⚠️ pill 'สัมพันธ์'",
+   "src": "graphic:focus-meter"
+  },
+  {
+   "id": "corr",
+   "cue": {
+    "th": "สัมพันธ์"
+   },
+   "note": "two bubbles 'ดูหนัก' ↔ 'สมาธิแย่' linked by double arrow + 'สัมพันธ์ ≠ เป็นเหตุ'",
+   "src": "graphic:corr"
+  },
+  {
+   "id": "stress",
+   "cue": {
+    "th": "เครียด"
+   },
+   "note": "stressed student/young adult head in hands at desk"
+  },
+  {
+   "id": "scrollbed",
+   "cue": {
+    "th": "เลื่อนหนัก"
+   },
+   "note": "phone glow in dark bedroom, someone scrolling under blanket"
+  },
+  {
+   "id": "trick",
+   "cue": {
+    "th": "ทริก"
+   },
+   "note": "kinetic 'ทริก 1 ข้อ' + lucide lightbulb/bed-off icon",
+   "src": "graphic:trick"
+  },
+  {
+   "id": "putdown",
+   "cue": {
+    "th": "บนเตียง"
+   },
+   "note": "hand putting phone face down / onto nightstand away from bed; HIT: phone touches table on 'บนเตียง' end",
+   "hit": {
+    "th": "เตียง"
+   }
+  },
+  {
+   "id": "sleep",
+   "cue": {
+    "th": "นอนน้อย"
+   },
+   "note": "person sleeping peacefully OR tired yawning in morning; small text 'นอนไม่หลับบ่อย ปรึกษาแพทย์'"
+  },
+  {
+   "id": "comment",
+   "cue": {
+    "th": "คืนนี้"
+   },
+   "note": "big comment bubble 'คืนนี้เลื่อนถึงกี่โมง?' with typing dots + clock icon",
+   "src": "graphic:comment"
+  },
+  {
+   "id": "loop",
+   "cue": {
+    "th": "สงสัย"
+   },
+   "note": "SAME clip as hook, ending on the same framing as frame 0 (seamless loop); long_ok",
+   "long_ok": true
+  }
+ ]
+}
