@@ -1,0 +1,544 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="vendor/flubber.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#071027}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 40%}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.bgp{position:absolute;left:-40px;top:-70px;width:1160px;height:2060px;object-fit:cover}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(5,10,30,0) 55%,rgba(5,10,30,.55) 100%)}
+.dim{position:absolute;left:0;top:0;width:1080px;height:1920px;background:rgba(4,10,30,.35)}
+.dbg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.stars{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+/* photo card (rounded, white edge + ink outline) */
+.card{position:absolute;overflow:hidden;border-radius:44px;background:#0B1530;
+  box-shadow:0 0 0 9px #F4F8FF,0 0 0 17px #0A0E1C,0 34px 70px rgba(0,0,0,.6)}
+.card img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:760px;background:linear-gradient(rgba(4,8,26,.8) 0%,rgba(4,8,26,.55) 60%,rgba(4,8,26,0) 100%)}
+#title{position:absolute;left:0;top:0;width:1080px;height:720px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:26px #0A0E1C;paint-order:stroke fill;transform-origin:50% 60%;text-shadow:0 12px 0 rgba(0,0,0,.45)}
+.pill{position:absolute;left:0;top:0;height:96px;border-radius:48px;border:7px solid #0A0E1C;opacity:0;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.35);transform-origin:50% 50%}
+.pill .tx{position:absolute;top:50%;left:96px;transform:translateY(-54%);font-weight:900;font-size:50px;white-space:nowrap;color:#0A0E1C}
+.pill .bd{position:absolute;left:12px;top:9px;width:64px;height:64px;border-radius:32px;background:#0A0E1C}
+.pill .bd svg{width:44px;height:44px;color:#fff;position:absolute;left:10px;top:10px}
+.ic{overflow:visible}
+#meas{position:absolute;left:-3000px;top:0;font-weight:900;font-size:50px;white-space:nowrap;visibility:hidden}
+/* kinetic words */
+.kw{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;opacity:0;
+  -webkit-text-stroke:24px #0A0E1C;paint-order:stroke fill;transform-origin:50% 60%;text-shadow:0 12px 0 rgba(0,0,0,.4)}
+#qm{position:absolute;left:0;top:0;width:200px;height:220px;text-align:center;font-weight:900;font-size:200px;line-height:1;color:#FFE14D;opacity:0;
+  -webkit-text-stroke:22px #0A0E1C;paint-order:stroke fill;transform-origin:50% 80%}
+/* Hadfield name label */
+#hname{position:absolute;left:150px;top:262px;width:740px;height:170px;border-radius:30px;background:#0E1D47;opacity:0;
+  box-shadow:0 0 0 7px #0A0E1C,0 12px 0 rgba(0,0,0,.4);overflow:hidden}
+#hname .bar{position:absolute;left:0;top:0;width:22px;height:170px;background:#FFE14D}
+#hname .n1{position:absolute;left:56px;top:14px;font-weight:900;font-size:74px;line-height:1.1;color:#fff;white-space:nowrap}
+#hname .n2{position:absolute;left:58px;top:102px;font-weight:700;font-size:42px;line-height:1.1;color:#A9C6FF;white-space:nowrap}
+/* quote card */
+#qcard{position:absolute;left:130px;top:430px;width:740px;height:560px;border-radius:40px;background:#FFF8EE;opacity:0;
+  box-shadow:0 0 0 8px #0A0E1C,0 30px 70px rgba(0,0,0,.55);transform-origin:50% 50%}
+#qcard .qq{position:absolute;left:44px;top:-6px;font-weight:900;font-size:220px;line-height:1;color:#B8E04A;-webkit-text-stroke:10px #0A0E1C;paint-order:stroke fill}
+#qen{position:absolute;left:60px;top:150px;width:640px;font-weight:900;font-size:84px;line-height:1.05;color:#0A0E1C;white-space:nowrap}
+#qen span{display:inline-block;margin-right:20px;transform-origin:50% 80%}
+#qth{position:absolute;left:52px;top:290px;padding:0 24px 8px;border-radius:20px;background:#FFE14D;font-weight:900;font-size:76px;line-height:1.15;color:#0A0E1C;white-space:nowrap;transform-origin:0 50%}
+#qsrc{position:absolute;left:60px;top:470px;font-weight:700;font-size:34px;color:#5B6B8C;white-space:nowrap}
+/* compare panel */
+#cmp{position:absolute;left:120px;top:300px;width:760px;height:780px;opacity:0;transform-origin:50% 50%}
+#cmp .half{position:absolute;left:0;width:760px;height:375px;border-radius:36px;box-shadow:0 0 0 7px #0A0E1C,0 18px 40px rgba(0,0,0,.45);overflow:hidden}
+#cmp .h1{top:0;background:linear-gradient(#5A2E1A,#3A1F1A)}
+#cmp .h2{top:405px;background:linear-gradient(#10224F,#0A1638)}
+#cmp .lb{position:absolute;left:30px;top:22px;display:flex;align-items:center;gap:14px;font-weight:900;font-size:48px;color:#fff;white-space:nowrap}
+#cmp .lb svg{width:54px;height:54px}
+#cmp .lb b{color:#FFE14D;font-weight:900}
+#btext{position:absolute;left:0;top:0;width:1080px;display:flex;justify-content:center;align-items:center;gap:16px;opacity:0;
+  font-weight:900;font-size:70px;line-height:1.1;color:#0A0E1C;white-space:nowrap;transform-origin:50% 50%}
+#btext svg{width:76px;height:76px;color:#0A0E1C}
+#gbars{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:40;pointer-events:none}
+#gbars div{position:absolute;left:60px;width:840px;opacity:0;mix-blend-mode:screen}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+/* captions: centred on X 510 (safe band X 120-900), text box ~Y 1130-1245 */
+.cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFE14D}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+%%ICONS%%
+<filter id="rgbx" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+  <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+  <feOffset id="rgbR" in="r" dx="0" dy="0" result="ro"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+  <feOffset id="rgbB" in="b" dx="0" dy="0" result="bo"/>
+  <feBlend in="ro" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="bo" mode="screen"/>
+</filter></defs></svg>
+
+<div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+  <!-- frame 0: hook card (rounded, tilted) on the blurred dark plate of the same photo -->
+  <div class="sc" id="sh-hook"><div class="kb" id="kb-hook"><img class="bgp" src="assets/hook-bg.jpg" alt=""/>
+    <div class="card" style="left:150px;top:720px;width:740px;height:700px;transform:rotate(-2deg)"><img src="assets/hook-card.jpg" alt=""/></div></div><div class="vig"></div></div>
+  <div class="sc gsc" id="sh-happen"><div class="dbg" style="background:radial-gradient(ellipse at 50% 42%,#21458C 0%,#11265A 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-belief"><div class="dbg" style="background:radial-gradient(ellipse at 35% 35%,#2E3A86 0%,#18245E 45%,#060B22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-puff"><div class="dbg" style="background:radial-gradient(ellipse at 40% 55%,#28589A 0%,#132B63 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-rocket"><div class="kb" id="kb-rocket"><img class="full" src="assets/rocket-full.jpg" alt=""/></div><div class="vig"></div></div>
+  <div class="sc" id="sh-hadfield"><img class="bgp" id="bg-hadfield" src="assets/hadfield-bg.jpg" alt=""/>
+    <div class="card" id="cd-hadfield" style="left:150px;top:460px;width:740px;height:925px"><img id="ci-hadfield" style="transform-origin:51% 29%" src="assets/hadfield-card.jpg" alt=""/></div></div>
+  <div class="sc" id="sh-quote"><img class="bgp" id="bg-qbg" src="assets/hadfield-bg.jpg" alt=""/><div class="dim"></div></div>
+  <div class="sc" id="sh-tried"><img class="bgp" id="bg-tried" src="assets/tried-bg.jpg" alt=""/>
+    <div class="card" id="cd-tried" style="left:150px;top:380px;width:740px;height:740px"><img id="ci-tried" style="transform-origin:50% 42%" src="assets/tried-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-fail"><div class="dbg" style="background:radial-gradient(ellipse at 50% 38%,#4A2D6E 0%,#22205A 45%,#070A22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-weak"><div class="dbg" style="background:radial-gradient(ellipse at 45% 55%,#2C3D66 0%,#18264A 45%,#060B1E 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-butt"><div class="dbg" style="background:radial-gradient(ellipse at 55% 45%,#22478A 0%,#122A5E 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-nozzle"><img class="bgp" id="bg-nozzle" src="assets/nozzle-bg.jpg" alt=""/>
+    <div class="card" id="cd-nozzle" style="left:150px;top:440px;width:740px;height:740px"><img id="ci-nozzle" style="transform-origin:50% 50%" src="assets/nozzle-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-problem"><div class="dbg" style="background:radial-gradient(ellipse at 50% 32%,#3B3A7E 0%,#1A2258 45%,#060A20 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-smell"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#2C5A4E 0%,#143A42 45%,#04101C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-space"><div class="dbg" style="background:radial-gradient(ellipse at 60% 40%,#1B3B7E 0%,#0C1D4C 45%,#030716 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-earth"><img class="bgp" id="bg-earth" src="assets/earth-bg.jpg" alt=""/>
+    <div class="card" id="cd-earth" style="left:150px;top:400px;width:740px;height:740px"><img id="ci-earth" style="transform-origin:50% 48%" src="assets/earth-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-compare"><div class="dbg" style="background:radial-gradient(ellipse at 50% 50%,#1E3A7A 0%,#10224F 45%,#050A1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-nofan"><div class="dbg" style="background:radial-gradient(ellipse at 50% 30%,#2A3556 0%,#16203F 45%,#050916 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-linger"><div class="kb" id="kb-linger"><img class="full" src="assets/linger-full.jpg" alt=""/></div><div class="vig"></div></div>
+  <div class="sc" id="sh-station"><img class="bgp" id="bg-station" src="assets/station-bg.jpg" alt=""/>
+    <div class="card" id="cd-station" style="left:150px;top:400px;width:740px;height:740px"><img id="ci-station" style="transform-origin:50% 31%" src="assets/station-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-fan"><div class="dbg" style="background:radial-gradient(ellipse at 50% 28%,#1C5A78 0%,#0F2F55 45%,#040B1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-filter"><div class="dbg" style="background:radial-gradient(ellipse at 50% 36%,#2A3F66 0%,#14223F 45%,#050A18 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-catch"><div class="dbg" style="background:radial-gradient(ellipse at 50% 34%,#24506A 0%,#122A48 45%,#040A18 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-you"><img class="bgp" id="bg-you" src="assets/you-bg.jpg" alt=""/>
+    <div class="card" id="cd-you" style="left:150px;top:400px;width:740px;height:740px"><img id="ci-you" style="transform-origin:50% 38%" src="assets/you-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-try"><div class="dbg" style="background:radial-gradient(ellipse at 40% 50%,#24488E 0%,#12285E 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-comment"><div class="dbg" style="background:radial-gradient(ellipse at 50% 34%,#2D4C9A 0%,#162E6A 45%,#060C24 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <!-- loop: identical to frame 0 (same plate + card), Ken Burns 1.05 -> 1.00 -->
+  <div class="sc" id="sh-loop"><div class="kb" id="kb-loop"><img class="bgp" src="assets/hook-bg.jpg" alt=""/>
+    <div class="card" style="left:150px;top:720px;width:740px;height:700px;transform:rotate(-2deg)"><img src="assets/hook-card.jpg" alt=""/></div></div><div class="vig"></div></div>
+</div>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
+  <div id="hname"><div class="bar"></div><div class="n1">Chris Hadfield</div><div class="n2">อดีตผู้บัญชาการสถานีอวกาศ</div></div>
+  <div id="qcard"><div class="qq">“</div>
+    <div id="qen"><span>We</span><span>all</span><span>tried</span><span>it”</span></div>
+    <div id="qth">ลองกันหมดแล้ว</div>
+    <div id="qsrc">Chris Hadfield · Reddit AMA 2013</div></div>
+  <div id="cmp"><div class="half h1"><div class="lb"><svg class="ic" style="color:#FFA53D"><use href="#ic-globe"/></svg>บนโลก: <b>อากาศร้อนลอยขึ้น</b></div></div>
+    <div class="half h2"><div class="lb"><svg class="ic" style="color:#B8E04A"><use href="#ic-rocket"/></svg>ในอวกาศ: <b>ไม่ลอย</b></div></div></div>
+  <svg class="ov" id="gsvg" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="glayer"></g></svg>
+  <div id="btext"><svg class="ic"><use href="#ic-message-circle"/></svg>เมนต์บอกหน่อย</div>
+  <div id="qm">?</div>
+  <div class="kw" id="kwWeak" style="top:330px;font-size:190px;color:#C9D6EA">แผ่ว…</div>
+  <div class="kw" id="kwProb" style="top:360px;font-size:150px;color:#FFE14D">ปัญหาจริงๆ</div>
+  <div class="kw" id="kwSmell" style="top:300px;font-size:210px;color:#B8E04A">กลิ่น!</div>
+  <div class="pill" id="pill"><div class="bd" id="pillBd"><svg class="ic" id="pillIc"><use id="pillUse" href="#ic-circle-x"/></svg></div>
+    <span class="tx" id="pillA"></span><span class="tx" id="pillB"></span></div>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1">ถ้าตดในอวกาศ</div><div class="tl" id="tl2">จะเกิดอะไรขึ้น?</div></div>
+  <div id="meas"></div>
+</div>
+</div>
+<div id="gbars"><div id="gb0"></div><div id="gb1"></div><div id="gb2"></div></div>
+
+<div id="caps" data-track-kind="captions">
+%%CAPS%%
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-b6fb4ded.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine, from the brainrot v2 template). Shot times = assets/audio/shots-th.json,
+   word anchors = words.json (both injected by build_index.py). ONE character: the cartoon fart cloud (own SVG) morphs with
+   flubber puff -> wisp ("แผ่ว") -> puff -> big stink cloud (green on "กลิ่น") -> pulled into the fan -> stuck in the charcoal
+   filter (shrinks) -> comment bubble -> back to the frame-0 puff (loop). A flat astronaut silhouette (own drawing) is the
+   second actor. One pill morphs belief -> fail -> butt != nozzle -> charcoal filter. Everything is a function of t. */
+(function(){
+const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
+const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],POP=[22,0.5],OUT=[30,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const f2=v=>v.toFixed(2);
+const win=(t,a,b,sp=POP)=>{if(t<a||t>=b+0.1)return 0; const i=S(t-a,sp[0],sp[1]); const o=t>b?1-clamp((t-b)/0.08):1; return Math.max(0,i)*o;};
+const pinO=(t,a,b)=>(t<a||t>=b+0.1)?0:clamp((t-a)/0.06)*(t>b?1-clamp((t-b)/0.08):1);
+const meas=$('meas'); const wcache={};
+const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=meas.offsetWidth;
+  if(document.fonts&&document.fonts.status==='loaded'&&w>0)wcache[txt]=w; return w||txt.length*28;};
+const YEL='#FFE14D',GRN='#3DDC84',ORG='#FFA53D',RED='#FF4D5E',INK='#0A0E1C',SUIT='#F1F5FC',SUIT2='#B9C6DD';
+const CB='#C3D5EA',CG='#B8E04A',CW='#F7FAFF'; // cloud: light grey-blue -> green-yellow -> bubble white
+const PER=DUR/12; // ambient bob period: an exact divisor of DUR so the last frame matches frame 0
+const G=$('glayer');
+
+// ---------- scenes ----------
+// entries: cut (hard) | whip (0.12 s push) | zoom (zoom punch-in, 0.1 s fade) | match (0.1 s crossfade)
+const SC=[
+ {id:'sh-hook',a:0,kind:'still',kb:'kb-hook',s0:1.0,s1:1.06,org:'47% 52%',in:'none'},
+ {id:'sh-happen',a:T.happen,in:'zoom'},
+ {id:'sh-belief',a:T.belief,in:'whip'},
+ {id:'sh-puff',a:T.puff,in:'match'},
+ {id:'sh-rocket',a:T.rocket,kind:'full',kb:'kb-rocket',s0:1.02,s1:1.14,r0:-0.8,r1:0.8,org:'50% 30%',in:'zoom'},
+ {id:'sh-hadfield',a:T.hadfield,kind:'card',n:'hadfield',cs0:1.0,cs1:1.12,r0:1.6,r1:-0.6,in:'whip'},
+ {id:'sh-quote',a:T.quote,kind:'gbg',n:'qbg',in:'match'},
+ {id:'sh-tried',a:T.tried,kind:'card',n:'tried',cs0:1.02,cs1:1.14,r0:-1.4,r1:0.6,in:'cut'},
+ {id:'sh-fail',a:T.fail,in:'zoom'},
+ {id:'sh-weak',a:T.weak,in:'match'},
+ {id:'sh-butt',a:T.butt,in:'whip'},
+ {id:'sh-nozzle',a:T.nozzle,kind:'card',n:'nozzle',cs0:1.0,cs1:1.14,r0:1.2,r1:-1.0,in:'zoom'},
+ {id:'sh-problem',a:T.problem,in:'cut'},
+ {id:'sh-smell',a:T.smell,in:'zoom'},
+ {id:'sh-space',a:T.space,in:'whip'},
+ {id:'sh-earth',a:T.earth,kind:'card',n:'earth',cs0:1.0,cs1:1.12,r0:-1.2,r1:0.8,in:'zoom'},
+ {id:'sh-compare',a:T.compare,in:'match'},
+ {id:'sh-nofan',a:T.nofan,in:'whip'},
+ {id:'sh-linger',a:T.linger,kind:'full',kb:'kb-linger',s0:1.02,s1:1.12,r0:0.6,r1:-0.6,org:'46% 38%',in:'cut'},
+ {id:'sh-station',a:T.station,kind:'card',n:'station',cs0:1.0,cs1:1.15,r0:1.0,r1:-1.0,in:'whip'},
+ {id:'sh-fan',a:T.fan,in:'zoom'},
+ {id:'sh-filter',a:T.filter,in:'match'},
+ {id:'sh-catch',a:T.catch,in:'match'},
+ {id:'sh-you',a:T.you,kind:'card',n:'you',cs0:1.0,cs1:1.12,r0:-1.2,r1:0.8,in:'whip'},
+ {id:'sh-try',a:T.try,in:'zoom'},
+ {id:'sh-comment',a:T.comment,in:'match'},
+ {id:'sh-loop',a:T.loop,kind:'still',kb:'kb-loop',s0:1.05,s1:1.0,org:'47% 52%',in:'match'},
+];
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; $(s.id).style.zIndex=String(i+1); if(s.kb)$(s.kb).style.transformOrigin=s.org;});
+const XF=0.12;
+function sceneState(s,t){
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
+  if(s.in==='whip'){ tx=1080*(1-eo(u/XF)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.3*(1-S(u,18,0.9)); }
+  else if(s.in==='match'){ o=eio(u/0.1); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+XF)return null; if(t>=end) tx=-1080*eo((t-end)/XF); }
+    else if(nx.in==='cut'){ if(t>=end)return null; }
+    else { if(t>=end+XF)return null; if(nx.in==='zoom'&&t>end-0.1) sc*=1+0.5*ei((t-end+0.1)/0.22); }
+  }
+  return {o,tx,sc};
+}
+function scenes(t){
+  SC.forEach(s=>{const r=sceneState(s,t), e=$(s.id);
+    if(!r){e.style.opacity='0';return;}
+    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    const uu=clamp((t-s.a)/Math.max(0.3,(s.b-s.a)));
+    if(s.kind==='still'){ $(s.kb).style.transform=`scale(${lerp(s.s0,s.s1,uu).toFixed(5)})`; return; } // hook / loop: pure push (frame 0 = last frame)
+    const dx=10*Math.sin(t*1.7+s.a), dy=8*Math.cos(t*1.3+s.a);
+    if(s.kind==='full'){
+      const k=lerp(s.s0,s.s1,eio(0.1+0.9*uu)), rr=lerp(s.r0,s.r1,uu);
+      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; return; }
+    if(s.kind==='card'||s.kind==='gbg'){ // blurred plate drifts slowly (back layer), card pushes in + tilts (front layer)
+      const bg=$('bg-'+s.n); bg.style.transform=`translate(${f2(-0.6*dx)}px,${f2(-0.6*dy)}px) scale(${lerp(1.0,1.06,uu).toFixed(5)})`;
+      if(s.kind==='gbg')return;
+      const rr=lerp(s.r0,s.r1,eio(uu)), k=lerp(s.cs0,s.cs1,eio(0.1+0.9*uu));
+      $('cd-'+s.n).style.transform=`translate(${f2(0.8*dx)}px,${f2(0.8*dy)}px) rotate(${rr.toFixed(3)}deg)`;
+      $('ci-'+s.n).style.transform=`scale(${k.toFixed(5)})`;
+    }
+  });
+}
+// stars in the graphic backdrops (deterministic), drifting + twinkling
+const STARS=[]; document.querySelectorAll('.stars').forEach((sv,j)=>{for(let i=0;i<40;i++){const x=(i*233+j*97)%1080, y=(i*421+j*151)%1920, r=2+(i%4);
+  STARS.push({e:el('circle',{cx:x,cy:y,r,fill:i%9?'#D6E2FF':'#B8E04A',opacity:.5},sv),x,y,i,j});}});
+function stars(t){STARS.forEach(s=>{s.e.setAttribute('cy',f2(((s.y-t*(30+s.i%5*12))%1920+1920)%1920)); s.e.setAttribute('opacity',f2(0.25+0.45*(0.5+0.5*Math.sin(t*3+s.i))));});}
+
+// ---------- zoom punches + glitch (registry zoom-through / rgb-glitch-text, adapted) + camera kick on graphic matches ----------
+const PUNCH=[K.panha,K.klin,K.saikrong];
+const GL=[K.phon], GLD=0.134; // 4 frames
+const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
+const KICK=SC.filter(s=>s.in==='match'&&!s.kind).map(s=>s.a);
+function fx(t){
+  let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.085*Math.exp(-u*7)*Math.cos(u*13);});
+  KICK.forEach(a=>{const u=t-a; if(u>=0&&u<0.5)p+=0.035*Math.exp(-u*9);});
+  let gi=-1; GL.forEach(a=>{if(t>=a&&t<a+GLD)gi=Math.floor((t-a)*30);});
+  const st=$('stage');
+  if(gi>=0){const o=GOFF[gi%4]; $('rgbR').setAttribute('dx',o[0]); $('rgbB').setAttribute('dx',o[1]); st.style.filter='url(#rgbx)';
+    st.style.transform=`translateX(${o[2]}px) scale(${(1+p).toFixed(4)})`;}
+  else { st.style.filter='none'; st.style.transform=`scale(${(1+p).toFixed(4)})`; }
+  ['gb0','gb1','gb2'].forEach((id,i)=>{const b=$(id); if(gi<0){b.style.opacity='0';return;}
+    const y=[(300+gi*410)%1500,(820+gi*290)%1500,(560+gi*530)%1500][i]+120, h=[26,60,14][i];
+    b.style.top=y+'px'; b.style.height=h+'px'; b.style.background=['#22d3ee','#ef4444','#FFFFFF'][i]; b.style.opacity=['.55','.45','.6'][i];
+    b.style.transform=`translateX(${(i%2?-1:1)*(20+gi*9)}px)`;});
+}
+
+// ---------- hook title: complete at frame 0 (no fade-in), breathes 1.0<->1.04, back in the last ~0.3 s (loop) ----------
+const TL=[['tl1',268,142],['tl2',462,126]];
+TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
+const TBACK=DUR-0.3;
+function title(t){
+  let o,sc;
+  if(t<TBACK){ const out=eo((t-(T.belief-0.04))/0.12); o=1-out; sc=1+0.25*out; }
+  else { const a=S(t-TBACK,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
+  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-T.loop)/0.4));
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<TBACK?1:0;
+  // "จะเกิดอะไรขึ้น?" gets a small kick on "เกิดอะไร"
+  const kk=(t>=K.kerd&&t<T.belief)?0.06*Math.exp(-(t-K.kerd)*6)*Math.cos((t-K.kerd)*14):0;
+  TL.forEach(([id],i)=>{const e=$(id);
+    e.style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.2*live*Math.sin(t*2.4):0)}deg) scale(${((t<TBACK?br:1)*sc*(1+(i===1?kk:0))).toFixed(4)})`;});
+}
+
+// ---------- helpers drawn first (behind the actors): compare blobs, fan, filter, ghost arrow, streaks ----------
+// compare: warm air rising on Earth (top half), nothing rises in space (bottom half, the cloud just sits)
+const WARM=[0,1,2].map(i=>{const g=el('g',{opacity:0},G); el('circle',{r:34,fill:ORG,stroke:INK,'stroke-width':6},g);
+  el('use',{href:'#ic-arrow-up',x:-22,y:-22,width:44,height:44,color:INK},g); return g;});
+function compareF(t){
+  const v=win(t,T.compare,T.nofan,BOUNCE), c=$('cmp');
+  if(show(c,clamp(v*1.6))) c.style.transform=`translateY(${f2(50*(1-clamp(v))+5*Math.sin(t*1.9))}px) scale(${f2(Math.max(0.001,0.88+0.12*v))})`;
+  WARM.forEach((g,i)=>{const o=clamp(v*2); if(o<0.01){g.setAttribute('opacity','0');return;}
+    const ph=(((t-T.compare)*0.9+i*0.33)%1+1)%1; const y=lerp(650,420,ph), x=[300,520,740][i]+12*Math.sin(t*4+i);
+    g.setAttribute('opacity',f2(o*clamp(ph*6)*(1-clamp((ph-0.8)/0.2)))); g.setAttribute('transform',`translate(${f2(x)} ${f2(y+50*(1-clamp(v)))})`);});
+}
+// fan: off (grey, slashed) on "ถ้าไม่มีพัดลม", spins up on "พัดลมตลอด"
+const FAN=el('g',{opacity:0},G);
+el('circle',{r:160,fill:'#0E1A3C',stroke:INK,'stroke-width':12},FAN);
+const fanRing=el('circle',{r:140,fill:'none',stroke:'#7C879E','stroke-width':8},FAN);
+const fanGlow=el('circle',{r:190,fill:'#B8E04A',opacity:0},FAN); FAN.insertBefore(fanGlow,FAN.firstChild);
+const fanRot=el('g',{},FAN); const fanIc=el('use',{href:'#ic-fan',x:-115,y:-115,width:230,height:230,color:'#7C879E'},fanRot);
+const fanSlash=el('g',{opacity:0},FAN);
+el('path',{d:'M-118 -118 L118 118',stroke:INK,'stroke-width':34,'stroke-linecap':'round'},fanSlash);
+el('path',{d:'M-118 -118 L118 118',stroke:RED,'stroke-width':20,'stroke-linecap':'round'},fanSlash);
+const fanS=track(0,[[T.nofan,1,BOUNCE],[T.linger,0,OUT],[T.fan,1,BOUNCE],[T.filter,0,OUT]]);
+function fanF(t){
+  const s=fanS(t); if(s<0.01){FAN.setAttribute('opacity','0');return;} FAN.setAttribute('opacity','1');
+  const on=t>=T.fan?clamp(S(t-T.fan-0.05,10,1)):0;
+  FAN.setAttribute('transform',`translate(540 ${f2(470+6*Math.sin(t*2.2))}) scale(${f2(s)})`);
+  const u=Math.max(0,t-T.fan-0.05), ang=t<T.fan?6*Math.sin(t*3):1500*(u-(1-Math.exp(-3*u))/3);
+  fanRot.setAttribute('transform',`rotate(${f2(ang)})`);
+  fanIc.setAttribute('color',mix('#7C879E','#F4F8FF',on)); fanRing.setAttribute('stroke',mix('#7C879E','#B8E04A',on));
+  fanGlow.setAttribute('opacity',f2(0.22*on*(0.8+0.2*Math.sin(t*12))));
+  fanSlash.setAttribute('opacity',f2(t<T.fan?clamp(S(t-K.phatlom0+0.1,POP[0],POP[1])):1-clamp((t-T.fan)/0.12)));
+}
+// charcoal filter block: granules, smell particles stick to it
+const FILT=el('g',{opacity:0},G);
+el('rect',{x:-290,y:-170,width:580,height:340,rx:28,fill:'#151A26',stroke:'#E8EEF8','stroke-width':10},FILT);
+el('rect',{x:-290,y:-170,width:580,height:340,rx:28,fill:'none',stroke:INK,'stroke-width':4},FILT);
+for(let r=0;r<6;r++)for(let c=0;c<11;c++)el('circle',{cx:-250+c*50+(r%2)*25,cy:-125+r*50,r:17,fill:r%2?'#2B3244':'#323A4E'},FILT);
+const STUCK=[...Array(16)].map((_,i)=>{const x=-240+((i*137)%480), y=-120+((i*83)%240); return {x,y,e:el('circle',{cx:x,cy:y,r:16,fill:CG,stroke:INK,'stroke-width':4,opacity:0},FILT)};});
+const filS=track(0,[[T.filter,1,BOUNCE],[K.jap,1.12,MORPH],[T.you,0,OUT]]);
+function filterF(t){
+  const s=filS(t); if(s<0.01){FILT.setAttribute('opacity','0');return;} FILT.setAttribute('opacity','1');
+  FILT.setAttribute('transform',`translate(540 ${f2(650+5*Math.sin(t*2))}) rotate(${f2(-1+0.8*Math.sin(t*1.4))}) scale(${f2(s)})`);
+  STUCK.forEach((d,i)=>{const a=K.saikrong+0.1+i*0.06, u=t-a; const p=u>0?S(u,POP[0],POP[1]):0;
+    const grey=clamp((t-K.jap-0.6)/0.4); d.e.setAttribute('opacity',f2(clamp(p)*(1-0.5*grey))); d.e.setAttribute('r',f2(Math.max(0,16*p)));
+    d.e.setAttribute('fill',mix(CG,'#4A5266',grey));});
+}
+// ghost arrow: the imagined rocket flight (dashed) vs the real drift
+const GH=el('g',{opacity:0},G);
+el('path',{d:'M700 690 Q790 600 830 430',fill:'none',stroke:'#fff','stroke-width':10,'stroke-dasharray':'26 22','stroke-linecap':'round'},GH);
+el('use',{href:'#ic-rocket',x:790,y:380,width:90,height:90,color:'#fff'},GH);
+function ghostF(t){const v=win(t,T.fail+0.08,T.weak,POP); const dim=t>=K.phon?1-0.65*clamp((t-K.phon)/0.2):1; GH.setAttribute('opacity',f2(0.6*v*dim));}
+// speed lines while the cloud "launches" the astronaut (imagined), puff shot only
+const STK=[...Array(8)].map((_,i)=>el('rect',{x:[230,300,380,450,520,600,680,340][i],width:10,height:200,rx:5,fill:'#E8EEFF',opacity:0},G));
+function streaks(t){const on=t>=K.tidiao&&t<T.rocket; STK.forEach((r,i)=>{if(!on){r.setAttribute('opacity','0');return;}
+  const ph=(((t-K.tidiao)*2.4+i*0.27)%1+1)%1; r.setAttribute('y',f2(820+520*ph)); r.setAttribute('opacity',f2(0.5*Math.sin(ph*Math.PI)));});}
+// fan / filter air particles (cloud-coloured dots flowing from the cloud into the fan, then into the filter)
+const AIR=[...Array(12)].map(()=>el('circle',{r:12,fill:CG,stroke:INK,'stroke-width':3,opacity:0},G));
+
+// ---------- the fart cloud (one character) ----------
+const PUFF='M-150 90 C-215 95 -235 20 -185 -10 C-215 -75 -140 -125 -85 -95 C-65 -150 30 -160 60 -105 C105 -150 190 -120 180 -50 C235 -35 235 55 175 75 C170 125 90 135 55 105 C20 140 -60 140 -85 105 C-110 125 -160 120 -150 90 Z';
+const STINK='M-170 100 C-245 100 -260 10 -200 -20 C-240 -95 -150 -150 -95 -110 C-80 -175 20 -190 55 -125 C100 -185 205 -150 195 -70 C260 -55 265 50 200 80 C205 140 115 160 70 120 C40 165 -50 165 -85 125 C-120 155 -185 140 -170 100 Z';
+const WISP='M-110 20 C-90 -20 -40 -25 -10 -5 C15 10 50 10 75 -15 C95 -35 125 -25 115 0 C100 35 50 40 10 30 C-25 22 -60 30 -85 45 C-110 58 -125 40 -110 20 Z';
+const BUB='M-340 -160 Q-380 -160 -380 -120 L-380 120 Q-380 160 -340 160 L-150 160 L-230 250 L-60 160 L340 160 Q380 160 380 120 L380 -120 Q380 -160 340 -160 Z';
+const FL=window.flubber, OPT={maxSegmentLength:6};
+const P2W=FL.interpolate(PUFF,WISP,OPT), W2P=FL.interpolate(WISP,PUFF,OPT), P2S=FL.interpolate(PUFF,STINK,OPT),
+      S2B=FL.interpolate(STINK,BUB,OPT), B2P=FL.interpolate(BUB,PUFF,OPT);
+const BACK=DUR-0.42; // bubble morphs back into the frame-0 puff
+const CLG=el('g',{},G);
+const cShadow=el('ellipse',{cx:0,cy:190,rx:170,ry:20,fill:'#000',opacity:.25},CLG);
+const cBody=el('path',{d:PUFF,fill:CB,stroke:INK,'stroke-width':8,'stroke-linejoin':'round','vector-effect':'non-scaling-stroke'},CLG);
+const cHi=el('path',{d:'M-120 -30 q25 -45 80 -40 M70 -70 q40 -10 60 20',fill:'none',stroke:'#fff','stroke-width':14,'stroke-linecap':'round',opacity:.6},CLG);
+const STL=[-70,10,90].map((x,i)=>el('path',{d:'M0 0 q-16 -22 0 -44 t0 -44 t0 -44',fill:'none',stroke:CG,'stroke-width':12,'stroke-linecap':'round',opacity:0},G));
+const cX=track(790,[[T.happen,700],[T.belief,390],[K.tidiao,320],[T.fail,330,OUT],[T.butt,370],[T.problem,540,OUT],[T.space,470],
+  [T.compare,640,OUT],[T.nofan,400,OUT],[T.linger,500,OUT],[T.fan,540,OUT],[T.filter,540,OUT],[T.try,330,OUT],[T.comment,540],[BACK,790,FAST]]);
+const cY=track(1150,[[T.happen,960],[T.belief,990],[K.tidiao,950],[T.fail,960,OUT],[T.butt,1000],[T.problem,880,OUT],[K.klin,840],[T.space,900],
+  [T.compare,930,OUT],[T.nofan,1000,OUT],[T.linger,650,OUT],[T.fan,1000,OUT],[K.phatlom,620,SLOW],[T.filter,1010,OUT],[K.jap,700,MORPH],
+  [T.try,1000,OUT],[T.comment,640],[BACK,1150,FAST]]);
+const cS=track(0.42,[[K.kerd,0.75,BOUNCE],[T.belief,0.35],[K.tidiao,1.1,BOUNCE],[T.rocket,0,OUT],[T.fail,0.6,BOUNCE],[K.phon,0.75,BOUNCE],
+  [K.phaeo,0.5],[T.butt,0.62],[T.nozzle,0,OUT],[T.problem,0.55,BOUNCE],[K.klin,1.2,BOUNCE],[T.space,1.3],[T.earth,0,OUT],[T.compare,0.32,POP],
+  [T.nofan,0.8,BOUNCE],[T.linger,0.5,POP],[T.station,0,OUT],[T.fan,0.85,BOUNCE],[K.phatlom,0.45,SLOW],[T.filter,0.6,POP],[K.jap,0.04,SLOW],
+  [T.you,0,OUT],[T.try,0.45,BOUNCE],[T.comment,1.0,BOUNCE],[BACK,0.42,FAST]]);
+const cSt=track(1,[[K.phatlom,1.7,MORPH],[T.filter,1,OUT]]); // stretched toward the fan
+function cloudShape(t){
+  if(t<K.phaeo) return [PUFF,0,0];
+  if(t<T.problem+0.05){const p=clamp(S(t-K.phaeo,10,0.9)); return [P2W(p),p,0];}
+  if(t<K.klin){const p=clamp(S(t-T.problem-0.05,12,0.8)); return [W2P(p),1-p,0];}
+  if(t<T.comment){return [P2S(clamp(S(t-K.klin,15,0.7))),0,0];}
+  if(t<BACK){const p=clamp(S(t-T.comment,18,0.85)); return [S2B(p),0,p];}
+  const p=clamp(S(t-BACK,26,0.9)); return [B2P(p),0,1-p];
+}
+function cloudCol(t){
+  if(t<K.klin) return CB;
+  if(t<T.comment) return mix(CB,CG,S(t-K.klin,12,0.9));
+  if(t<BACK) return mix(CG,CW,S(t-T.comment,18,0.85));
+  return mix(CW,CB,S(t-BACK,26,0.9));
+}
+function cloud(t){
+  const s=cS(t); STL.forEach(p=>p.setAttribute('opacity','0'));
+  if(s<0.02){CLG.setAttribute('opacity','0');return;} CLG.setAttribute('opacity','1');
+  const [d,wisp,bub]=cloudShape(t); const st=cSt(t);
+  const amb=1-bub; // the bubble holds still so the text reads
+  const x=cX(t)+6*Math.sin(2*Math.PI*t/PER)*amb, y=cY(t)+9*Math.sin(2*Math.PI*t/PER+1)*amb, r=3*Math.sin(2*Math.PI*t/(PER*2))*amb;
+  const breathe=1+0.035*Math.sin(2*Math.PI*t/(PER/4))*amb;
+  CLG.setAttribute('transform',`translate(${f2(x)} ${f2(y)}) rotate(${f2(r)}) scale(${f2(s*breathe/Math.sqrt(st))} ${f2(s*st/breathe)})`);
+  cBody.setAttribute('d',d); cBody.setAttribute('fill',cloudCol(t));
+  cHi.setAttribute('opacity',f2(0.6*(1-wisp)*(1-bub))); cShadow.setAttribute('opacity',f2(0.25*(1-bub)*(1-wisp)));
+  // stink lines: green cloud, big, while it lingers (smell / space / nofan / linger)
+  const green=t>=K.klin&&t<T.comment?clamp(S(t-K.klin,12,0.9)):0;
+  const on=((t>=K.klin&&t<T.earth)||(t>=T.nofan&&t<T.station))?1:0;
+  if(on&&green>0.05) STL.forEach((p,i)=>{const ph=(((t-K.klin)*0.9+i*0.33)%1+1)%1;
+    p.setAttribute('opacity',f2(green*clamp(ph*5)*(1-clamp((ph-0.7)/0.3))));
+    p.setAttribute('transform',`translate(${f2(x+[-70,10,90][i]*s)} ${f2(y-140*s-60*ph)}) scale(${f2(Math.max(0.3,s*0.8))})`);});
+  // air particles: into the fan (fan shot), into the filter (filter / catch)
+  AIR.forEach((a,i)=>{let o=0,ax=0,ay=0;
+    if(t>=K.phatlom&&t<T.filter){const ph=(((t-K.phatlom)*1.6+i/12)%1+1)%1; ax=540+90*Math.sin(i*2.1+ph*6)*(1-ph); ay=lerp(y,520,ph); o=clamp(ph*6)*(1-clamp((ph-0.8)/0.2));}
+    else if(t>=T.filter&&t<K.jap+0.6){const ph=(((t-T.filter)*1.4+i/12)%1+1)%1; ax=540+(i-5.5)*40*(1-ph); ay=lerp(y,700,ph); o=clamp(ph*6)*(1-clamp((ph-0.75)/0.25));}
+    a.setAttribute('opacity',f2(o)); if(o>0){a.setAttribute('cx',f2(ax)); a.setAttribute('cy',f2(ay));}});
+}
+
+// ---------- the astronaut (flat silhouette, own drawing): front view, turns to a back view for the "ก้น" line ----------
+const AS=el('g',{opacity:0},G);
+const limb=(d,w=46)=>{el('path',{d,fill:'none',stroke:INK,'stroke-width':w+16,'stroke-linecap':'round'},AS);el('path',{d,fill:'none',stroke:SUIT,'stroke-width':w,'stroke-linecap':'round'},AS);};
+el('rect',{x:-100,y:-235,width:200,height:190,rx:34,fill:SUIT2,stroke:INK,'stroke-width':8},AS); // backpack behind
+limb('M-38 -10 Q-62 80 -36 160'); limb('M38 -10 Q92 70 128 128');
+el('ellipse',{cx:-36,cy:172,rx:42,ry:26,fill:SUIT2,stroke:INK,'stroke-width':8},AS);
+el('ellipse',{cx:136,cy:142,rx:40,ry:26,fill:SUIT2,stroke:INK,'stroke-width':8,transform:'rotate(38 136 142)'},AS);
+el('rect',{x:-82,y:-190,width:164,height:205,rx:48,fill:SUIT,stroke:INK,'stroke-width':8},AS);
+limb('M-66 -150 Q-150 -120 -168 -40',42); limb('M66 -150 Q150 -170 178 -240',42);
+el('circle',{cx:-170,cy:-32,r:27,fill:SUIT2,stroke:INK,'stroke-width':7},AS); el('circle',{cx:182,cy:-250,r:27,fill:SUIT2,stroke:INK,'stroke-width':7},AS);
+const FRONT=el('g',{},AS);
+el('rect',{x:-44,y:-132,width:88,height:52,rx:10,fill:'#2A4A8C',stroke:INK,'stroke-width':6},FRONT);
+el('circle',{cx:-20,cy:-106,r:8,fill:YEL},FRONT); el('circle',{cx:4,cy:-106,r:8,fill:RED},FRONT); el('circle',{cx:26,cy:-106,r:8,fill:GRN},FRONT);
+const BACKV=el('g',{opacity:0},AS);
+el('rect',{x:-92,y:-205,width:184,height:170,rx:30,fill:SUIT2,stroke:INK,'stroke-width':8},BACKV);
+el('path',{d:'M-50 -160 H50 M-50 -130 H50 M-50 -100 H50',stroke:'#8D9BB6','stroke-width':8,'stroke-linecap':'round'},BACKV);
+el('path',{d:'M-80 -18 H80',stroke:INK,'stroke-width':7,'stroke-linecap':'round'},AS); // belt / pants waist
+el('path',{d:'M0 -14 L0 34',stroke:INK,'stroke-width':6,'stroke-linecap':'round'},BACKV); // pants seam (clean, clothed)
+el('circle',{cx:0,cy:-262,r:88,fill:SUIT,stroke:INK,'stroke-width':9},AS);
+const VIS=el('g',{},AS);
+el('ellipse',{cx:8,cy:-258,rx:62,ry:50,fill:'#16306E',stroke:INK,'stroke-width':7},VIS);
+el('path',{d:'M-26 -286 q20 -20 50 -14',fill:'none',stroke:'#fff','stroke-width':9,'stroke-linecap':'round',opacity:.85},VIS);
+G.appendChild(CLG); G.appendChild(AS); // draw order: helpers, cloud, astronaut
+STL.forEach(p=>G.appendChild(p)); AIR.forEach(a=>G.appendChild(a));
+const aS=track(0,[[T.happen,0.85,BOUNCE],[T.belief,1.0],[T.rocket,0,OUT],[T.fail,1.0,BOUNCE],[T.nozzle,0,OUT],[T.space,0.9,BOUNCE],[T.earth,0,OUT],
+  [T.nofan,0.78,BOUNCE],[T.linger,0,OUT],[T.try,0.85,BOUNCE],[T.comment,0,OUT]]);
+const aX=track(430,[[T.belief,600],[K.tidiao,690],[T.fail,600,OUT],[K.phon,614,SLOW],[T.butt,560],[T.space,610,OUT],[T.nofan,610,OUT],[T.try,620,OUT]]);
+const aY=track(960,[[T.belief,900],[K.tidiao,770],[T.fail,880,OUT],[K.phon,872,SLOW],[T.butt,880],[T.space,840,OUT],[T.nofan,960,OUT],[T.try,930,OUT]]);
+const aR=track(0,[[K.tidiao,26],[T.fail,8,OUT],[K.phon,4,SLOW],[T.butt,0],[T.space,-12,OUT],[T.nofan,6,OUT],[T.try,0,OUT]]);
+function astro(t){
+  const s=aS(t); if(s<0.02){AS.setAttribute('opacity','0');return;} AS.setAttribute('opacity','1');
+  // turn around for the butt shot: squash through 0 and swap front/back details
+  const fp=t>=T.butt&&t<T.nozzle?clamp((t-T.butt)/0.18):0, fx=Math.abs(Math.cos(Math.PI*fp))*(fp<1?1:1), back=fp>=0.5;
+  FRONT.setAttribute('opacity',back?'0':'1'); VIS.setAttribute('opacity',back?'0':'1'); BACKV.setAttribute('opacity',back?'1':'0');
+  const shake=(t>=K.tidiao&&t<K.tidiao+0.35)?5*Math.sin(t*80):0;
+  AS.setAttribute('transform',`translate(${f2(aX(t)+7*Math.sin(t*1.9)+shake)} ${f2(aY(t)+10*Math.sin(t*1.4))}) rotate(${f2(aR(t)+3*Math.sin(t*1.1))}) scale(${f2(s*Math.max(0.04,fx))} ${f2(s)})`);
+}
+
+// ---------- the pill (one element morphing) ----------
+const PST=[ // [t, text, colour, icon, centre x, centre y, scale]
+  [K.chuea,'ความเชื่อ',ORG,'circle-help',540,360,1.4],
+  [T.hadfield,null],
+  [T.fail,'ความเชื่อ',ORG,'circle-help',540,360,1.4],
+  [K.phon,'ไม่ได้ผล',RED,'circle-x',540,360,1.45],
+  [T.weak,null],
+  [K.kon,'ก้น',YEL,'rocket',540,360,1.4],
+  [K.maichai,'ก้น ≠ หัวฉีดจรวด',YEL,'rocket',540,360,1.12],
+  [T.problem,null],
+  [K.saikrong,'ไส้กรองถ่าน',GRN,'circle-check',540,330,1.35],
+  [T.you,null],
+];
+const pill=$('pill'),pA=$('pillA'),pB=$('pillB'),pUse=$('pillUse');
+function pillF(t){
+  let i=-1; for(let k=0;k<PST.length;k++) if(t>=PST[k][0]) i=k;
+  if(i<0){pill.style.opacity='0';return;}
+  const cur=PST[i], prv=i>0?PST[i-1]:null, u=t-cur[0];
+  let txt0,txt1,col0,col1,ic0,ic1,x0,x1,y0,y1,k0,k1,s0,s1,p;
+  const sh=st=>st&&st[1]!=null;
+  if(sh(cur)&&sh(prv)){ p=clamp(S(u,15,0.8)); [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); s0=1;s1=1; }
+  else if(sh(cur)){ p=1; [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); txt0=txt1;col0=col1;ic0=ic1;x0=x1;y0=y1;k0=k1; s0=0; s1=1; }
+  else if(sh(prv)){ p=1; [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); txt1=txt0;col1=col0;ic1=ic0;x1=x0;y1=y0;k1=k0; s0=1; s1=0; }
+  else {pill.style.opacity='0';return;}
+  let sc; if(s0===0) sc=S(u,POP[0],POP[1]); else if(s1===0) sc=1-clamp(u/0.08); else sc=1+0.08*Math.sin(clamp(p)*Math.PI);
+  if(sc<0.004){pill.style.opacity='0';return;}
+  const w0=tw(txt0)+136, w1=tw(txt1)+136, w=lerp(w0,w1,p), x=lerp(x0,x1,p), y=lerp(y0,y1,p);
+  // stamp on "ไม่ได้ผล": extra punch + tilt
+  const stamp=(t>=K.phon&&t<K.phon+0.6)?0.18*Math.exp(-(t-K.phon)*8):0;
+  pill.style.opacity='1'; pill.style.width=f2(w)+'px'; pill.style.background=mix(col0,col1,p);
+  pill.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) rotate(${f2(-2+1.2*Math.sin(t*2.3)-20*stamp)}deg) scale(${(Math.max(0.001,sc)*lerp(k0,k1,p)*(1+stamp)).toFixed(4)})`;
+  pA.textContent=txt0; pB.textContent=txt1; pA.style.opacity=f2(1-clamp(p*2.5)); pB.style.opacity=f2(clamp(p*2.5-0.3)); if(txt0===txt1){pA.style.opacity='0';pB.style.opacity='1';}
+  pUse.setAttribute('href','#ic-'+(p<0.5?ic0:ic1));
+}
+
+// ---------- "?" on the cloud (happen, try) ----------
+function qmark(t){
+  const e=$('qm'); const v=Math.max(win(t,K.kerd+0.08,T.belief,BOUNCE),win(t,K.jalong+0.1,T.comment,BOUNCE)); if(!show(e,clamp(v*2)))return;
+  const s=cS(t), x=cX(t)+120*s, y=cY(t)-150*s-170;
+  e.style.transform=`translate(${f2(x-100)}px,${f2(y)}px) rotate(${f2(10*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;
+}
+// ---------- kinetic words ----------
+function kinetic(t){
+  let e=$('kwWeak'), v=win(t,K.phaeo,T.butt,BOUNCE);
+  if(show(e,clamp(v*2)*(1-0.4*clamp((t-K.phaeo-0.3)/0.7)))){const d=clamp((t-K.phaeo-0.25)/0.8);
+    e.style.transform=`translateY(${f2(30*d+6*Math.sin(t*5))}px) scale(${f2(Math.max(0.001,v)*(1-0.06*d))},${f2(Math.max(0.001,v)*(1-0.28*d))}) rotate(${f2(-2*Math.sin(t*2.5))}deg)`;}
+  e=$('kwProb'); v=win(t,K.panha,T.smell,POP);
+  if(show(e,clamp(v*2))) e.style.transform=`scale(${f2(Math.max(0.001,0.4+0.6*v))}) rotate(${f2(-3*(1-clamp(v))+Math.sin(t*3))}deg)`;
+  e=$('kwSmell'); v=win(t,K.klin,T.space,BOUNCE);
+  if(show(e,clamp(v*2))) e.style.transform=`translate(${f2(4*Math.sin(t*31))}px,${f2(3*Math.cos(t*27))}px) scale(${f2(Math.max(0.001,0.3+0.7*v))}) rotate(${f2(-4*(1-clamp(v))+1.5*Math.sin(t*4))}deg)`;
+}
+// ---------- Hadfield name label + quote card ----------
+const QW=[...$('qen').children];
+function people(t){
+  let e=$('hname'), v=win(t,T.hadfield+0.06,T.quote,BOUNCE);
+  if(show(e,clamp(v*2))) e.style.transform=`translateX(${f2(-80*(1-clamp(v)))}px) rotate(${f2(-1+0.6*Math.sin(t*2))}deg)`;
+  const q=$('qcard'); v=win(t,T.quote,T.tried,BOUNCE);
+  if(show(q,clamp(v*1.6))) q.style.transform=`translateY(${f2(60*(1-clamp(v))+7*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.7*Math.sin(t*1.2))}deg) scale(${f2(Math.max(0.001,0.85+0.15*v))})`;
+  QW.forEach((w,i)=>{const a=K.lao+i*0.09, p=t>=a?S(t-a,POP[0],POP[1]):0; w.style.opacity=f2(clamp(p*2)); w.style.transform=`translateY(${f2(20*(1-clamp(p)))}px) scale(${f2(Math.max(0.001,p))})`;});
+  const th=$('qth'), a=K.lao+0.42, p=t>=a?S(t-a,16,0.6):0; th.style.opacity=f2(clamp(p*2)); th.style.transform=`scaleX(${f2(Math.max(0.001,0.6+0.4*p))}) rotate(-1.5deg)`;
+}
+// ---------- comment bubble text (holds into the loop shot, fades before the hook title returns) ----------
+function bubbleText(t){
+  const e=$('btext'), v=win(t,T.comment+0.14,BACK-0.06,POP); if(!show(e,clamp(v*2)))return;
+  e.style.transform=`translateY(${f2(cY(t)-48)}px) scale(${f2(Math.max(0.001,0.7+0.3*v))}) rotate(${f2(-1.5*Math.sin(t*3))}deg)`;
+}
+
+// ---------- captions: spring in on the word; last chunk clears before the loop seam ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  const fade=i===CAPT.length-1?1-clamp((t-(DUR-0.17))/0.1):1;
+  capEls[i].style.opacity=f2(fade);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+function render(t){ scenes(t); stars(t); fx(t); title(t); compareF(t); fanF(t); filterF(t); ghostF(t); streaks(t); cloud(t); astro(t);
+  pillF(t); qmark(t); kinetic(t); people(t); bubbleText(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
+render(0);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render(proxy._t));
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

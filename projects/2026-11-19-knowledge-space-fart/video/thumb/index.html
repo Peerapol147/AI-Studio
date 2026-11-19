@@ -1,0 +1,38 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A: the frame-0 composition (same blurred plate + rounded tilted
+     card of the astronaut floating in the ISS lab, same night grade), title zone Y 240-700: "ตดในอวกาศ?" Kanit 900, dark
+     outline ("ตด" green-yellow, "ในอวกาศ?" white) + the green cartoon cloud of the clip (own drawing, same path) beside the
+     astronaut. Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#071027}
+#bg{position:absolute;left:-40px;top:-70px;width:1160px;height:2060px;object-fit:cover}
+.card{position:absolute;left:130px;top:726px;width:780px;height:704px;overflow:hidden;border-radius:46px;transform:rotate(-2.5deg);
+  box-shadow:0 0 0 10px #F4F8FF,0 0 0 19px #0A0E1C,0 36px 80px rgba(0,0,0,.65)}
+.card img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(4,8,26,.85) 0%,rgba(4,8,26,.6) 60%,rgba(4,8,26,0) 100%)}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:32px #0A0E1C;paint-order:stroke fill;text-shadow:0 16px 0 rgba(0,0,0,.5)}
+#t1{top:236px;font-size:300px;color:#B8E04A}
+#t2{top:520px;font-size:176px;color:#fff}
+#fx{position:absolute;left:0;top:0;width:1080px;height:1920px}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-bg.jpg" alt=""/>
+<div class="card"><img src="assets/hook-card.jpg" alt=""/></div>
+<div class="shade"></div>
+<svg id="fx" viewBox="0 0 1080 1920">
+  <g transform="translate(745 1200) rotate(-6) scale(0.62)">
+    <ellipse cx="0" cy="190" rx="170" ry="20" fill="#000" opacity=".3"/>
+    <path d="M-170 100 C-245 100 -260 10 -200 -20 C-240 -95 -150 -150 -95 -110 C-80 -175 20 -190 55 -125 C100 -185 205 -150 195 -70 C260 -55 265 50 200 80 C205 140 115 160 70 120 C40 165 -50 165 -85 125 C-120 155 -185 140 -170 100 Z"
+      fill="#B8E04A" stroke="#0A0E1C" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M-120 -30 q25 -45 80 -40 M70 -70 q40 -10 60 20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" opacity=".6"/>
+  </g>
+  <g fill="none" stroke="#B8E04A" stroke-width="13" stroke-linecap="round">
+    <path d="M690 1050 q-16 -22 0 -44 t0 -44"/><path d="M750 1030 q-16 -22 0 -44 t0 -44 t0 -44"/><path d="M810 1050 q-16 -22 0 -44 t0 -44"/>
+  </g>
+</svg>
+<div class="t" id="t1">ตด</div>
+<div class="t" id="t2">ในอวกาศ?</div>
+</div><script>
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

@@ -1,0 +1,114 @@
+[
+ {
+  "t": 0.3,
+  "type": "movement",
+  "desc": "hook: soft whoosh under the title (astronaut card, small puff)",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -28
+ },
+ {
+  "t": 1.3,
+  "type": "appear",
+  "desc": "cloud puffs up beside the astronaut + \"?\" (soft plop)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 2.72,
+  "type": "appear",
+  "desc": "pill \"ความเชื่อ\" pops",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -21
+ },
+ {
+  "t": 4.62,
+  "type": "appear",
+  "desc": "cloud bursts on \"ทีเดียว\" (soft pop, not a fart sound)",
+  "sfx": "kit/pop.ogg",
+  "gain": -19
+ },
+ {
+  "t": 5.72,
+  "type": "movement",
+  "desc": "zoom-through to the rocket launch (rocket whoosh)",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -18
+ },
+ {
+  "t": 7.4,
+  "type": "scene_cut",
+  "desc": "whip to Chris Hadfield + name label",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -25
+ },
+ {
+  "t": 12.12,
+  "type": "error_or_tech",
+  "desc": "glitch + stamp: pill morphs to \"ไม่ได้ผล\"",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 13.32,
+  "type": "movement",
+  "desc": "cloud deflates to a wisp on \"แผ่ว\"",
+  "sfx": "transition/kenney-interface-minimize-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 15.48,
+  "type": "scene_cut",
+  "desc": "zoom to the RS-25 nozzle photo",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -22
+ },
+ {
+  "t": 17.3,
+  "type": "reveal",
+  "desc": "zoom punch \"ปัญหาจริงๆ\"",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -24
+ },
+ {
+  "t": 18.1,
+  "type": "appear",
+  "desc": "cloud swells green on \"กลิ่น\" (soft plop)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -18
+ },
+ {
+  "t": 23.16,
+  "type": "hover_or_small_ui",
+  "desc": "fan off: red slash",
+  "sfx": "click/kenney-interface-toggle-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 27.32,
+  "type": "movement",
+  "desc": "fan spins up, air pulled in (short airy whoosh)",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -17
+ },
+ {
+  "t": 28.74,
+  "type": "success",
+  "desc": "charcoal filter ✅ pill",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 32.18,
+  "type": "appear",
+  "desc": "\"?\" pops over the small cloud",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 33.06,
+  "type": "appear",
+  "desc": "cloud becomes the comment bubble",
+  "sfx": "kit/pop.ogg",
+  "gain": -22
+ }
+]
