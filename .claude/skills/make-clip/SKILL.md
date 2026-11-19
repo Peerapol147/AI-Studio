@@ -27,7 +27,11 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 (ค้นหาแบบ Shorts อ่านแค่ยอดวิว ห้ามดาวน์โหลดคลิป) เกณฑ์ผ่านและกลุ่มหัวข้อ: style.md ทิศทาง 2026-11-19 (ไทย ≥100K หรือต่างประเทศ ≥1M, ≥2 คลิปจากคนละช่อง) จดผลค้นใน brief.md
 มุมเล่า: **"ความเชื่อ vs ความจริง"** (คนเชื่อว่า... → แต่งานวิจัยบอกว่า...) ใช้แค่หัวข้อ เขียนบท/ภาพ/ชื่อเอง
 ก่อนเลือก: เช็ก Pixabay **videos** totalHits ของ action หลัก ถ้า 0 ให้วางแผนเป็นภาพนิ่ง push-in + กราฟิกตั้งแต่บท
-แม่แบบ: `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`) ดึงมาใช้ด้วย
+**แม่แบบตัดต่อหลัก (ผู้ใช้อนุมัติ 2026-11-19 "ตัดต่อดีมาก โคตรชอบ"): Brainrot v2** = branch `claude/ep-2026-11-19-brainrot` commit `7b088c8`
+`git fetch origin claude/ep-2026-11-19-brainrot && git archive 7b088c8 projects/2026-11-19-knowledge-brainrot/video | tar -x` แล้วคัดลอก `video/` (ยกเว้น assets/renders) มาแก้
+คงไว้: จังหวะช็อต ~1.4 วิ, ทรานซิชัน, kinetic type, กราฟิก vendor, เสียงพากย์พาวนกลับ hook; เปลี่ยน: ภาพ เนื้อหา สี/ไอคอนตามหัวข้อ
+ห้ามใช้ v3 (`4044191`) เป็นแม่แบบตัดต่อ (บท v3 ดี แต่ตัดต่อ v2 ดีกว่า)
+แม่แบบเก่า (ใช้เมื่อหัวข้อเป็นแผนภาพกลไก 2D): `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`)
 `git fetch origin <branch> && git archive FETCH_HEAD <path> | tar -x`
 
 ## ล้มเร็ว ห้ามรอเงียบ (กฎตายตัว ผู้ใช้สั่ง หลังตอนแมวเสีย ~44 นาที)
