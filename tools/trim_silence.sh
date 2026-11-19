@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ตัดช่วงเงียบหัวท้ายและช่วงเงียบยาวผิดปกติกลางเสียงพากย์ (ffmpeg silenceremove ไม่ต้องลงอะไรเพิ่ม)
 # ทำ "ก่อน" tools/words.sh เสมอ ไม่งั้นเวลาคำจะเพี้ยน
-# Use: tools/trim_silence.sh <in.mp3> <out.mp3> [max_gap_sec=0.6] [threshold_dB=-40]
+# Use: tools/trim_silence.sh <in.mp3> <out.mp3> [max_gap_sec=0.4] [threshold_dB=-40]
 set -euo pipefail
-in="$1"; out="$2"; gap="${3:-0.6}"; th="${4:--40}"
+in="$1"; out="$2"; gap="${3:-0.4}"; th="${4:--40}"
 ffmpeg -v error -y -i "$in" -af "silenceremove=start_periods=1:start_threshold=${th}dB:start_silence=0.1:stop_periods=-1:stop_threshold=${th}dB:stop_duration=${gap}:stop_silence=0.25" "$out"
 python3 - "$in" "$out" <<'PY'
 import subprocess,sys
