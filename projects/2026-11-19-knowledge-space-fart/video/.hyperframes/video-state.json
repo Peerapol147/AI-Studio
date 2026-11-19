@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "1e4bbfb4-5faf-4b3b-8c95-fd56c650b158",
-  "currentRevision": "3ddec44a-9880-4454-993a-40f9dacc0de2",
+  "currentRevision": "15a453f2-0e4c-496a-b70d-2d81d6e284af",
   "pendingChanges": false,
   "files": {
     ".media/manifest.jsonl": {
@@ -217,12 +217,12 @@
       "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/88/881f8bceaa25e70ad1c502027b966b1565d0d58d093203824973582eeade99ff"
     },
     "index.html": {
-      "hash": "d4c763a6c2dbb50437299c989540e5f9d35dd3cff12032e98bc0ac4be919f041",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d4/d4c763a6c2dbb50437299c989540e5f9d35dd3cff12032e98bc0ac4be919f041"
+      "hash": "9d96bfbe9187989df48b2f24e0844b459c4474da9619f04997dcb909c9b3113f",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/9d/9d96bfbe9187989df48b2f24e0844b459c4474da9619f04997dcb909c9b3113f"
     },
     "index.html.tpl": {
-      "hash": "5272f384f19e37ad8f79db237ccd40d3873f89c39fa9db1c13f18627d96a75bb",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/52/5272f384f19e37ad8f79db237ccd40d3873f89c39fa9db1c13f18627d96a75bb"
+      "hash": "bae4070391a9db67413de4f67fb4178c60b5741cf9f90cd8fdb415272405c692",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/ba/bae4070391a9db67413de4f67fb4178c60b5741cf9f90cd8fdb415272405c692"
     },
     "lucide/fan.svg": {
       "hash": "09548d47df258f2f66491c39bfaf2bdd67cf5cac54f23a5ba1a2857ee40109f5",
@@ -458,6 +458,25 @@
         "thumb/index.html": {
           "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d9/d952f6086bd9bc2c7349eb7c2cd0c30a300a0924f424ac84eeb5f8931178b03a",
           "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d9/d92a46c0711a71d2e6ac2fe16a548b8c6e4f256e5a7fe59cb04b7b0b165fca66"
+        }
+      }
+    },
+    "15a453f2-0e4c-496a-b70d-2d81d6e284af": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795071522410,
+      "endedAt": 1795071522413,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d4/d4c763a6c2dbb50437299c989540e5f9d35dd3cff12032e98bc0ac4be919f041",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/9d/9d96bfbe9187989df48b2f24e0844b459c4474da9619f04997dcb909c9b3113f"
+        },
+        "index.html.tpl": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/52/5272f384f19e37ad8f79db237ccd40d3873f89c39fa9db1c13f18627d96a75bb",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/ba/bae4070391a9db67413de4f67fb4178c60b5741cf9f90cd8fdb415272405c692"
         }
       }
     }
@@ -1236,15 +1255,15 @@
   },
   "renders": {
     "latest": {
-      "id": "fc911e43-e021-4d3b-a0d1-5d801358e37d",
-      "completedAt": 1795071002144,
+      "id": "72daa6f4-acaa-4939-8236-34a092ac1ee5",
+      "completedAt": 1795071723146,
       "output": "/home/user/AI-Studio/projects/2026-11-19-knowledge-space-fart/renders/space-fart-th-silent.mp4",
       "status": "completed",
-      "revision": "3ddec44a-9880-4454-993a-40f9dacc0de2"
+      "revision": "15a453f2-0e4c-496a-b70d-2d81d6e284af"
     },
     "retainedRevisions": [
-      "3ddec44a-9880-4454-993a-40f9dacc0de2",
-      "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
+      "15a453f2-0e4c-496a-b70d-2d81d6e284af",
+      "3ddec44a-9880-4454-993a-40f9dacc0de2"
     ]
   },
   "pendingArtifactCleanup": []

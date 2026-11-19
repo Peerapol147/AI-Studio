@@ -19,3 +19,23 @@
 - assets/footage/station_alt.jpg | nasa_id s114e7235 | View of the ISS taken during flyaround by STS-114 crew | เครดิต NASA | https://images.nasa.gov/details/s114e7235 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
 - assets/footage/you.jpg | nasa_id s82e5435 | Astronaut Joe Tanner comes up close to the aft flight deck window for a photo | เครดิต NASA | https://images.nasa.gov/details/s82e5435 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1280)
 - assets/footage/you_alt.jpg | nasa_id jsc2024e052674_alt | NASA Astronaut Jonny Kim | เครดิต NASA/Josh Valcarcel – NASA – John | https://images.nasa.gov/details/jsc2024e052674_alt | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1536, 1920)
+
+## ตัดต่อ (editor ขั้น 5)
+- ภาพ NASA ทุกภาพถูกครอปและปรับสี (เกรดเดียวกันทั้งคลิป) ใช้: hook, rocket, hadfield, tried, nozzle, earth, linger, station, you; ไฟล์ _alt ไม่ได้ใช้
+- เพลง: "playfulness" by Pan:core, CC BY 3.0 — https://www.jamendo.com/track/2040809
+- SFX (CC0 ทั้งหมด จาก skill sound-effects):
+  - "Quick woosh" by florianreichelt (Freesound), CC0 1.0 - https://freesound.org/people/florianreichelt/sounds/683101/
+  - "Plop" by Breviceps (Freesound), CC0 1.0 - https://freesound.org/people/Breviceps/sounds/447910/
+  - "Pop in sfx" by Sadiquecat (Freesound), CC0 1.0 - https://freesound.org/people/Sadiquecat/sounds/824189/
+  - "POP SFX Neutral" by ethernel0 (Freesound), CC0 1.0 - https://freesound.org/people/ethernel0/sounds/776016/
+  - "Swoosh" by Shinplaster (Freesound), CC0 1.0 - https://freesound.org/people/Shinplaster/sounds/264777/
+  - "Swipe wav" by LilMati (Freesound), CC0 1.0 - https://freesound.org/people/LilMati/sounds/702773/
+  - "Interface glitch 002" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+  - "Interface minimize 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+  - "Fast simple chop 5 aif" by dave.des (Freesound), CC0 1.0 - https://freesound.org/people/dave.des/sounds/127197/
+  - "Impact impactsoft heavy 000" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/impact-sounds
+  - "Interface toggle 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+  - "Broomstick whoosh 3 quiet okm1" by Sadiquecat (Freesound), CC0 1.0 - https://freesound.org/people/Sadiquecat/sounds/816262/
+  - "Interface confirmation 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+  - "Interface pluck 001" by Kenney (kenney.nl), CC0 1.0 - https://kenney.nl/assets/interface-sounds
+- ไอคอน Lucide (ISC), flubber (MIT), ฟอนต์ Kanit (OFL); นักบิน silhouette และกลุ่มควันการ์ตูน = วาดเอง (SVG)
