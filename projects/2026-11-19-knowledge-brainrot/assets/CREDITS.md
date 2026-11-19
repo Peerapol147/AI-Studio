@@ -10,3 +10,24 @@
 - stress.mp4: Pixabay video 36702 by InsomneMedia https://pixabay.com/videos/id-36702/
 - scrollbed.mp4: Pixabay video 204527 by conte_public https://pixabay.com/videos/id-204527/
 - sleep.mp4: Pixabay video 151295 by ghasoub https://pixabay.com/videos/id-151295/
+
+## Sound effects (brainrot short, CC0 1.0, bundled library of skill `sound-effects`; file = `.claude/skills/sound-effects/sfx/<file>`)
+- whoosh/fs-683101-quick-woosh.ogg: "Quick woosh" by florianreichelt (Freesound) CC0 https://freesound.org/people/florianreichelt/sounds/683101/
+- tick/fs384187.ogg: Freesound 384187 by malle99 CC0 https://freesound.org/people/malle99/sounds/384187/
+- pop/kenney-interface-drop-002.ogg: "Interface drop 002" by Kenney CC0 https://kenney.nl/assets/interface-sounds
+- pop/fs-824189-pop-in-sfx.ogg: "Pop in sfx" by Sadiquecat (Freesound) CC0 https://freesound.org/people/Sadiquecat/sounds/824189/
+- click/kenney-interface-tick-001.ogg: "Interface tick 001" by Kenney CC0 https://kenney.nl/assets/interface-sounds
+- glitch/kenney-interface-glitch-002.ogg: "Interface glitch 002" by Kenney CC0 https://kenney.nl/assets/interface-sounds
+- riser/fs-174363-rewind.ogg: "Rewind" by kasa90 (Freesound) CC0 https://freesound.org/people/kasa90/sounds/174363/
+- whoosh/fs-127197-fast-simple-chop-5-aif.ogg: "Fast simple chop 5" by dave.des (Freesound) CC0 https://freesound.org/people/dave.des/sounds/127197/
+- ui-blip/kenney-digital-twotone2.ogg: "Digital twotone2" by Kenney CC0 https://kenney.nl/assets/digital-audio
+- glitch/kenney-sci-computernoise-001.ogg: "Sci computernoise 001" by Kenney CC0 https://kenney.nl/assets/sci-fi-sounds
+- ding/kenney-interface-confirmation-001.ogg: "Interface confirmation 001" by Kenney CC0 https://kenney.nl/assets/interface-sounds
+- impact/kenney-impact-impactsoft-heavy-000.ogg: "Impact soft heavy 000" by Kenney CC0 https://kenney.nl/assets/impact-sounds
+- kit/pop.ogg: "POP SFX Neutral" by ethernel0 (Freesound) CC0 https://freesound.org/people/ethernel0/sounds/776016/
+
+## Icons / graphics
+- Lucide icons (lucide-static 1.75.0, ISC License, https://lucide.dev): moon, smartphone, bed, lightbulb, message-circle, clock, circle-check, circle-x, triangle-alert, book-open, target, trending-up, zap, search — files in `assets/vendor/lucide/` (licence `assets/vendor/lucide/LICENSE`)
+- flubber 0.4.2 (MIT) for the brain morph; cartoon brain, bed/phone graphics drawn by us
+- Fonts: Kanit (SIL OFL 1.1) from `assets/fonts/`
+- Not used in the final render: hook-b.mp4, hook-c.mp4 (hook candidates only)

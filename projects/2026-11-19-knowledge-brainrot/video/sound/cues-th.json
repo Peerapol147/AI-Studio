@@ -4,90 +4,90 @@
   "type": "movement",
   "desc": "hook: soft whoosh under the title (finger on the glowing feed)",
   "sfx": "whoosh/fs-683101-quick-woosh.ogg",
-  "gain": -20
+  "gain": -28
  },
  {
   "t": 2.58,
   "type": "hover_or_small_ui",
   "desc": "\"02:00\" chip + moon pops on \"ตีสอง\"",
   "sfx": "tick/fs384187.ogg",
-  "gain": -12
+  "gain": -20
  },
  {
   "t": 4.19,
   "type": "appear",
   "desc": "brain melts on \"เน่า\" (soft drip)",
   "sfx": "pop/kenney-interface-drop-002.ogg",
-  "gain": -10
+  "gain": -18
  },
  {
   "t": 4.74,
   "type": "appear",
   "desc": "zoom punch: Oxford card + green pill",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
-  "gain": -9
+  "gain": -17
  },
  {
   "t": 6.04,
   "type": "hover_or_small_ui",
   "desc": "+230% counter runs",
   "sfx": "click/kenney-interface-tick-001.ogg",
-  "gain": -13
+  "gain": -21
  },
  {
   "t": 9.64,
   "type": "error_or_tech",
   "desc": "glitch cut on \"คนคิดว่า\"",
   "sfx": "glitch/kenney-interface-glitch-002.ogg",
-  "gain": -10
+  "gain": -18
  },
  {
   "t": 11.78,
   "type": "movement",
   "desc": "brain un-melts (reverse swoosh) on \"คลิปสั้น\"",
   "sfx": "riser/fs-174363-rewind.ogg",
-  "gain": -14
+  "gain": -22
  },
  {
   "t": 13.66,
   "type": "scene_cut",
   "desc": "fast scroll footage",
   "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -13
+  "gain": -21
  },
  {
   "t": 15.82,
   "type": "hover_or_small_ui",
   "desc": "focus bar drops on \"แย่กว่า\"",
   "sfx": "ui-blip/kenney-digital-twotone2.ogg",
-  "gain": -13
+  "gain": -21
  },
  {
   "t": 16.86,
   "type": "error_or_tech",
   "desc": "glitch cut on \"สัมพันธ์\"",
   "sfx": "glitch/kenney-sci-computernoise-001.ogg",
-  "gain": -12
+  "gain": -20
  },
  {
   "t": 19.34,
   "type": "success",
   "desc": "zoom punch + lightbulb on \"ทริก\"",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
-  "gain": -10
+  "gain": -18
  },
  {
   "t": 20.26,
   "type": "reveal",
   "desc": "phone lands face-down on the nightstand on \"เตียง\"",
   "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -10
+  "gain": -18
  },
  {
   "t": 24.18,
   "type": "appear",
   "desc": "comment bubble \"กี่โมง?\" pops",
   "sfx": "kit/pop.ogg",
-  "gain": -10
+  "gain": -18
  }
 ]

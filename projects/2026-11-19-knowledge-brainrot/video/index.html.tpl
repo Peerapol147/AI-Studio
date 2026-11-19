@@ -28,7 +28,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .ic{overflow:visible}
 #meas{position:absolute;left:-3000px;top:0;font-weight:900;font-size:50px;white-space:nowrap;visibility:hidden}
 /* dictionary card (Oxford / +230% / definition / "supposed") */
-#card{position:absolute;left:120px;top:400px;width:800px;height:610px;border-radius:40px;background:#FFF8EE;opacity:0;
+#card{position:absolute;left:110px;top:400px;width:770px;height:610px;border-radius:40px;background:#FFF8EE;opacity:0;
   box-shadow:0 0 0 8px #10080A,0 30px 70px rgba(0,0,0,.55);transform-origin:50% 50%;overflow:hidden}
 #card .hw{position:absolute;left:60px;top:46px;font-weight:900;font-size:124px;line-height:1.05;color:#10080A}
 #card .pos{position:absolute;left:66px;top:186px;font-weight:400;font-size:40px;color:#6B5B7B}
@@ -37,11 +37,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #cnt .num{position:absolute;left:0;top:0;font-weight:900;font-size:150px;line-height:1;color:#12894A;-webkit-text-stroke:0}
 #cnt .sub{position:absolute;left:4px;top:176px;font-weight:700;font-size:40px;color:#3B2D55;display:flex;align-items:center;gap:14px}
 #cnt .sub svg{width:48px;height:48px;color:#1FAE5B}
-#def{position:absolute;left:60px;top:286px;width:690px}
-#def .ln{position:relative;font-weight:700;font-size:54px;line-height:70px;color:#2A2140;white-space:nowrap}
+#def{position:absolute;left:56px;top:286px;width:660px}
+#def .ln{position:relative;font-weight:700;font-size:48px;line-height:66px;color:#2A2140;white-space:nowrap}
 #def .gl{position:relative;margin-top:16px;font-weight:700;font-size:42px;line-height:56px;color:#7A3E8F;white-space:nowrap}
 #sup{position:relative;display:inline-block;z-index:1}
-#supbg{position:absolute;left:-8px;top:6px;height:62px;width:0;background:#FFE14D;border-radius:10px;z-index:-1}
+#supbg{position:absolute;left:-8px;top:6px;height:58px;width:0;background:#FFE14D;border-radius:10px;z-index:-1}
 #caret{display:inline-block;width:5px;height:50px;background:#10080A;vertical-align:-8px;margin-left:4px}
 /* glitch word (registry: rgb-glitch-text, adapted) */
 .hf-catalog-rgb-glitch-text{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:900;font-size:120px;line-height:1.2;opacity:0}
@@ -54,11 +54,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .chip{position:absolute;left:0;top:0;height:110px;padding:0 34px 0 30px;border-radius:30px;border:7px solid #10080A;background:#1A1440;
   display:flex;align-items:center;gap:16px;color:#fff;font-weight:900;font-size:76px;white-space:nowrap;opacity:0;box-shadow:0 10px 0 rgba(0,0,0,.4);transform-origin:50% 50%}
 .chip svg{width:64px;height:64px;color:#FFE14D}
-#panel{position:absolute;left:120px;top:400px;width:800px;height:540px;border-radius:40px;background:#1A1440;opacity:0;
+#panel{position:absolute;left:110px;top:400px;width:770px;height:540px;border-radius:40px;background:#1A1440;opacity:0;
   box-shadow:0 0 0 7px #FFF8EE,0 0 0 14px #10080A,0 30px 70px rgba(0,0,0,.5)}
 #panel .hd{position:absolute;left:56px;top:40px;display:flex;align-items:center;gap:18px;color:#fff;font-weight:900;font-size:70px}
 #panel .hd svg{width:76px;height:76px;color:#FFE14D}
 .row{position:absolute;left:56px;width:690px;height:110px}
+#panel .illu{position:absolute;left:0;top:466px;width:770px;text-align:center;color:rgba(255,255,255,.75);font-weight:700;font-size:36px}
 .row .lb{position:absolute;left:0;top:18px;color:#fff;font-weight:700;font-size:50px}
 .row .tr{position:absolute;left:200px;top:24px;width:470px;height:64px;border-radius:32px;background:rgba(255,255,255,.12)}
 .row .bar{position:absolute;left:200px;top:24px;height:64px;width:0;border-radius:32px;border:6px solid #10080A}
@@ -79,7 +80,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #ctext .q3{margin-top:14px;font-weight:700;font-size:44px;color:#B0306F;display:flex;align-items:center;justify-content:center;gap:12px;white-space:nowrap}
 #ctext .q3 svg{width:50px;height:50px;color:#B0306F}
 #gbars{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:40;pointer-events:none}
-#gbars div{position:absolute;left:0;width:1080px;opacity:0;mix-blend-mode:screen}
+#gbars div{position:absolute;left:60px;width:840px;opacity:0;mix-blend-mode:screen}
 #caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
 /* captions: centred on X 510 (safe band X 120-900), text box ~Y 1130-1245 */
 .cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
@@ -132,6 +133,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <div id="panel"><div class="hd"><svg class="ic"><use href="#ic-target"/></svg>เทสสมาธิ</div>
     <div class="row" style="top:190px"><div class="lb">ดูน้อย</div><div class="tr"></div><div class="bar" id="bar1" style="background:#3DDC84"></div></div>
     <div class="row" style="top:340px"><div class="lb">ดูหนัก</div><div class="tr"></div><div class="bar" id="bar2" style="background:#FFA53D"></div></div>
+    <div class="illu">แนวโน้ม · ภาพประกอบ</div>
   </div>
   <!-- correlation bubbles -->
   <div class="bub" id="bubA" style="background:#FFA53D"><svg class="ic"><use href="#ic-smartphone"/></svg>ดูหนัก</div>
@@ -248,13 +250,13 @@ function stars(t){STARS.forEach(s=>{s.e.setAttribute('cy',f2(((s.y-t*(30+s.i%5*1
 // ---------- zoom punches (Oxford, ทริก) + glitch (คนคิดว่า, สัมพันธ์): registry zoom-through / rgb-glitch-text, adapted ----------
 const PUNCH=[K.oxford,K.trick];
 const GL=[T.supposed,T.corr], GLD=0.134; // 4 frames
-const GOFF=[[16,-12,-14],[-10,14,10],[20,-8,-18],[-6,6,8]];
+const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
 function fx(t){
   let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.085*Math.exp(-u*7)*Math.cos(u*13);});
   let gi=-1; GL.forEach(a=>{if(t>=a&&t<a+GLD)gi=Math.floor((t-a)*30);});
   const st=$('stage');
   if(gi>=0){const o=GOFF[gi%4]; $('rgbR').setAttribute('dx',o[0]); $('rgbB').setAttribute('dx',o[1]); st.style.filter='url(#rgbx)';
-    st.style.transform=`translateX(${o[2]}px) scale(${(1+p+0.03).toFixed(4)})`;}
+    st.style.transform=`translateX(${o[2]}px) scale(${(1+p).toFixed(4)})`;}
   else { st.style.filter='none'; st.style.transform=`scale(${(1+p).toFixed(4)})`; }
   ['gb0','gb1','gb2'].forEach((id,i)=>{const b=$(id); if(gi<0){b.style.opacity='0';return;}
     const y=[(300+gi*410)%1500,(820+gi*290)%1500,(560+gi*530)%1500][i]+120, h=[26,60,14][i];
@@ -364,8 +366,8 @@ const numT=track(0,[[K.year,230,[5,1]]]);
 function cardF(t){
   const v=win(t,T.oxford,CEND,BOUNCE); if(!show(card,Math.min(1,v*1.5)))return;
   const zoom=t>=T.supposed?S(t-T.supposed,10,0.85):0;
-  card.style.transformOrigin='22% 58%';
-  card.style.transform=`translateY(${f2(60*(1-clamp(v))+8*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.8*Math.sin(t*1.1))}deg) scale(${(Math.max(0.001,0.85+0.15*v)*(1+0.32*zoom)).toFixed(4)})`;
+  card.style.transformOrigin='100% 58%';
+  card.style.transform=`translateY(${f2(60*(1-clamp(v))+8*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.8*Math.sin(t*1.1))}deg) scale(${(Math.max(0.001,0.85+0.15*v)*(1+0.06*zoom)).toFixed(4)})`;
   $('uline').style.transform=`scaleX(${f2(clamp(S(t-K.oxford-0.1,12,0.9)))})`;
   // +230% counter (year shot) -> leaves for the definition
   const cnt=$('cnt'), cin=t>=K.year?S(t-K.year,POP[0],POP[1]):0, cout=t>=T.define?eo((t-T.define)/0.18):0;
@@ -399,7 +401,7 @@ function streaks(t){const on=t>=T.heavy&&t<T.focus; STK.forEach((r,i)=>{if(!on){
   const ph=(((t-T.heavy)*2.6+i*0.27)%1+1)%1; r.setAttribute('y',f2(1500-1300*ph)); r.setAttribute('opacity',f2(0.55*Math.sin(ph*Math.PI)));});}
 
 // ---------- focus meter + source tag ----------
-const b1=track(0,[[K.test,430,MORPH]]), b2=track(0,[[K.test+0.08,430,MORPH],[K.yae,190,BOUNCE]]);
+const b1=track(0,[[K.test,330,MORPH]]), b2=track(0,[[K.test+0.08,330,MORPH],[K.yae,260,BOUNCE]]);
 function focusF(t){const v=win(t,T.focus,T.corr,BOUNCE), p=$('panel');
   show($('src'),pinO(t,T.focus+0.1,T.corr)*0.95);
   if(!show(p,clamp(v*1.6)))return;

@@ -23,6 +23,8 @@ c = [
     (H['putdown'], 'reveal', 'phone lands face-down on the nightstand on "เตียง"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -10),
     (K['kimong'], 'appear', 'comment bubble "กี่โมง?" pops', 'kit/pop.ogg', -10),
 ]
-out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g} for t, ty, d, f, g in c]
+# review 2026-11-19: SFX masked the voice in the speech band at 16.86/19.34/20.26 -> every cue sits on speech, all -8 dB
+DUCK = -8
+out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g + DUCK} for t, ty, d, f, g in c]
 (HERE / 'cues-th.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
 print('th', len(out), 'cues')
