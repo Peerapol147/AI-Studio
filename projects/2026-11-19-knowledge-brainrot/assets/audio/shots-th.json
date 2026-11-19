@@ -1,0 +1,181 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 26.307,
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/hook-a.mp4",
+   "cue": "Brainrot",
+   "word_at": 0.08,
+   "start": 0.0,
+   "end": 2.12,
+   "dur": 2.12,
+   "media_start": 2.0
+  },
+  {
+   "id": "bed",
+   "src": "assets/footage/bed.mp4",
+   "cue": "เลื่อนถึง",
+   "word_at": 2.2,
+   "start": 2.12,
+   "end": 3.46,
+   "dur": 1.34
+  },
+  {
+   "id": "melt",
+   "src": "graphic:brain-melt",
+   "cue": "บ่นว่า",
+   "word_at": 3.54,
+   "start": 3.46,
+   "end": 4.66,
+   "dur": 1.2
+  },
+  {
+   "id": "oxford",
+   "src": "graphic:dict-card",
+   "cue": "Oxford",
+   "word_at": 4.74,
+   "start": 4.66,
+   "end": 5.86,
+   "dur": 1.2
+  },
+  {
+   "id": "year",
+   "src": "graphic:dict-230",
+   "cue": "คำแห่งปี",
+   "word_at": 5.94,
+   "start": 5.86,
+   "end": 7.56,
+   "dur": 1.7
+  },
+  {
+   "id": "define",
+   "src": "graphic:define",
+   "cue": "นิยาม",
+   "word_at": 7.64,
+   "start": 7.56,
+   "end": 9.64,
+   "dur": 2.08
+  },
+  {
+   "id": "supposed",
+   "src": "graphic:supposed",
+   "cue": "คนคิดว่า",
+   "word_at": 9.72,
+   "start": 9.64,
+   "end": 10.86,
+   "dur": 1.22
+  },
+  {
+   "id": "noproof",
+   "src": "assets/footage/noproof.mp4",
+   "cue": "ยังไม่มี",
+   "word_at": 10.94,
+   "start": 10.86,
+   "end": 11.7,
+   "dur": 0.84
+  },
+  {
+   "id": "brainok",
+   "src": "graphic:brain-ok",
+   "cue": "คลิปสั้น",
+   "word_at": 11.78,
+   "start": 11.7,
+   "end": 13.66,
+   "dur": 1.96
+  },
+  {
+   "id": "heavy",
+   "src": "assets/footage/heavy.mp4",
+   "cue": "คนดู",
+   "word_at": 13.74,
+   "start": 13.66,
+   "end": 14.92,
+   "dur": 1.26
+  },
+  {
+   "id": "focus",
+   "src": "graphic:focus-meter",
+   "cue": "test",
+   "word_at": 15.0,
+   "start": 14.92,
+   "end": 16.86,
+   "dur": 1.94
+  },
+  {
+   "id": "corr",
+   "src": "graphic:corr",
+   "cue": "สัมพันธ์",
+   "word_at": 16.94,
+   "start": 16.86,
+   "end": 17.78,
+   "dur": 0.92
+  },
+  {
+   "id": "stress",
+   "src": "assets/footage/stress.mp4",
+   "cue": "อาจเพราะ",
+   "word_at": 17.86,
+   "start": 17.78,
+   "end": 18.6,
+   "dur": 0.82
+  },
+  {
+   "id": "scrollbed",
+   "src": "assets/footage/scrollbed.mp4",
+   "cue": "เลื่อนหนัก",
+   "word_at": 18.68,
+   "start": 18.6,
+   "end": 19.26,
+   "dur": 0.66
+  },
+  {
+   "id": "trick",
+   "src": "graphic:trick",
+   "cue": "Trick",
+   "word_at": 19.34,
+   "start": 19.26,
+   "end": 20.04,
+   "dur": 0.78
+  },
+  {
+   "id": "putdown",
+   "src": "graphic:phone-away",
+   "cue": "บนเตียง",
+   "word_at": 20.12,
+   "start": 20.04,
+   "hit": "เตียง",
+   "hit_at": 20.26,
+   "end": 22.44,
+   "dur": 2.4
+  },
+  {
+   "id": "sleep",
+   "src": "assets/footage/sleep.mp4",
+   "cue": "นอนน้อย",
+   "word_at": 22.52,
+   "start": 22.44,
+   "end": 23.42,
+   "dur": 0.98
+  },
+  {
+   "id": "comment",
+   "src": "graphic:comment",
+   "cue": "คืนนี้",
+   "word_at": 23.5,
+   "start": 23.42,
+   "end": 25.02,
+   "dur": 1.6
+  },
+  {
+   "id": "loop",
+   "src": "assets/footage/hook-a.mp4",
+   "cue": "สงสัย",
+   "word_at": 25.1,
+   "start": 25.02,
+   "end": 26.307,
+   "dur": 1.287
+  }
+ ]
+}

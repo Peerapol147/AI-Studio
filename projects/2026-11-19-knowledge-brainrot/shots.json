@@ -8,7 +8,9 @@
     "th": "Brainrot"
    },
    "note": "FIRST FRAME (director picks media_start from contact sheet): close-up thumb scrolling a phone in a DARK room/at night, screen glow on hand/face; NO app logos/readable UI; must move (scroll) within 1.5s; focus in Y 500-1300",
-   "src": "assets/footage/hook-a.mp4"
+   "src": "assets/footage/hook-a.mp4",
+   "action_at": 2.08,
+   "director_pick": "hook-a (Pixabay 169445) media_start 2.0: fingertip touching glowing feed at night = frame 0 (picked from 9:16 center-crop contact sheet 2026-11-19); hook-b/c rejected (b = daylight hands, screen unreadable as feed; c = outdoor street, no night vibe)"
   },
   {
    "id": "bed",
@@ -75,17 +77,9 @@
    "src": "graphic:brain-ok"
   },
   {
-   "id": "study",
-   "cue": {
-    "th": "คนดู"
-   },
-   "note": "stack of paper cards flying in, top card 'Psychological Bulletin 2025' (no number 71)",
-   "src": "graphic:study"
-  },
-  {
    "id": "heavy",
    "cue": {
-    "th": "หนักๆ"
+    "th": "คนดู"
    },
    "note": "fast thumb scroll on phone, motion blur, feed-like (no logos)",
    "src": "assets/footage/heavy.mp4"
@@ -93,9 +87,9 @@
   {
    "id": "focus",
    "cue": {
-    "th": "เทส"
+    "th": "test"
    },
-   "note": "focus meter/test sheet with bar dipping (lucide icons), ⚠️ pill 'สัมพันธ์'",
+   "note": "GRAPHIC: small source tag \"Psychological Bulletin 2025\" (no number 71) top + focus meter/test sheet bar dipping (lucide icons), pill ⚠️ \"สัมพันธ์\"; merged former study card",
    "src": "graphic:focus-meter"
   },
   {
@@ -109,7 +103,7 @@
   {
    "id": "stress",
    "cue": {
-    "th": "เครียด"
+    "th": "อาจเพราะ"
    },
    "note": "stressed student/young adult head in hands at desk",
    "src": "assets/footage/stress.mp4"
@@ -125,7 +119,7 @@
   {
    "id": "trick",
    "cue": {
-    "th": "ทริก"
+    "th": "Trick"
    },
    "note": "kinetic 'ทริก 1 ข้อ' + lucide lightbulb/bed-off icon",
    "src": "graphic:trick"
@@ -135,10 +129,11 @@
    "cue": {
     "th": "บนเตียง"
    },
-   "note": "hand putting phone face down / onto nightstand away from bed; HIT: phone touches table on 'บนเตียง' end",
+   "note": "GRAPHIC (no footage found): cartoon phone slides away from a bed icon / flips face down, lands on hit word; lucide bed + smartphone icons",
    "hit": {
     "th": "เตียง"
-   }
+   },
+   "src": "graphic:phone-away"
   },
   {
    "id": "sleep",
@@ -161,7 +156,7 @@
    "cue": {
     "th": "สงสัย"
    },
-   "note": "SAME clip as hook, ending on the same framing as frame 0 (seamless loop); long_ok",
+   "note": "SAME clip hook-a; editor: choose media range so the LAST frame of this shot = source t=2.0s (the frame-0 image) for a seamless loop, i.e. media_start = 2.0 - shot dur (if <0, play hook-a backwards-free alternative: hold from 0)",
    "long_ok": true,
    "src": "assets/footage/hook-a.mp4"
   }
