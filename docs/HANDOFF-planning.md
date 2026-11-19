@@ -35,6 +35,31 @@
 - อนิเมะ 2D (ห้อง STUDIO ANIME 2d บนเครื่องผู้ใช้, playbook ใน strategy-notes): เสนอเป็นซีรีส์ทดลอง ≤45 วิ หัวข้อผ่านเกณฑ์ ยังไม่ตัดสิน; ส่งข้อความหาห้องนั้นไม่ได้ (ต้องให้ผู้ใช้อนุญาต)
 - ลงคลิปเดิมใน TikTok/FB (ผู้ใช้ทำเอง)
 
-## เครื่องมือ/skill
-- `python3 -I tools/yt_views.py "คำค้นไทย"` = ยอดวิว Shorts ไทย; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`
-- skill ใน repo: reality-check (ทุกการวิเคราะห์), yt-content-planner, yt-hook-scripter, yt-title-optimizer, yt-thumbnail-brief, yt-description-writer (ห้ามส่วน publish), caveman (แชตเท่านั้น), make-clip (อ่านเพื่อรู้สายพาน), hyperframes-registry (ดูของที่มีให้ creative)
+## เครื่องมือ/skill (ทั้ง 20 skill อยู่ใน `.claude/skills/` ห้องนี้เรียกได้ทุกตัว)
+ค้นยอดวิว: `python3 -I tools/yt_views.py "คำค้นไทย"`; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`
+
+**วางแผน/วิเคราะห์ (ใช้เอง)**
+| skill | ใช้ทำ |
+|---|---|
+| reality-check | ทุกการวิเคราะห์สถิติ/เลือกแนว (content-review.md: ลำดับแหล่ง, ป้าย ✅⚠️❌, กฎอ่านสถิติ, ระดับ 🔴🟡⚪) |
+| yt-content-planner | แผนลงคลิปรายสัปดาห์ ซีรีส์ |
+| yt-hook-scripter | ร่าง hook 3 วิแรก (ใส่ใน brief) |
+| yt-title-optimizer / yt-thumbnail-brief / yt-description-writer | ชื่อ ปก คำอธิบาย (ห้ามขั้น publish) |
+| caveman | ตอบแชตสั้น (ห้ามใช้กับ brief/บท) |
+
+**สายพานทำคลิป (ห้องทำคลิปใช้ ห้องนี้ต้องรู้เพื่อเขียน brief ให้ถูก ห้ามทำเอง)**
+| skill/agent | หน้าที่ในสายพาน |
+|---|---|
+| make-clip | ขั้นตอนหลัก 0-7 (หัวข้อ → brief+research → บท+สตอรีบอร์ด → เสียง+footage → ตัดต่อ → ตรวจ → ส่งมอบ) + กฎประหยัด token + ตารางปัญหาที่เจอแล้ว อ่านก่อนเขียน brief ทุกครั้ง; ลำดับละเอียด `docs/pipeline.md` |
+| agents: researcher, footage, voice, editor, reviewer | `.claude/agents/` ผู้กำกับในห้องทำคลิปเรียกใช้ |
+| hyperframes, hyperframes-cli | เรนเดอร์ HTML → MP4 |
+| hyperframes-registry | บล็อกสำเร็จรูป ~450 ตัว (ทรานซิชัน kinetic type glitch ชาร์ต) ดูว่ามีอะไรให้เสนอใน creative |
+| media-use | หาเพลง/เสียง/ภาพ/เสียงพากย์ |
+| sound-effects | ใส่ SFX + มิกซ์ -16 LUFS |
+| motion-broll | กราฟิกรูปทรงเดียว morph ต่อเนื่อง (กฎ Motion v2) |
+| explainer-engaging, style-sampling | สไตล์ explainer ต่อเนื่อง / สไตล์สำเร็จรูป (ใช้เมื่อเสนอสไตล์ใหม่) |
+| reverse-any-video, remotion-to-hyperframes, figma, slideshow | งานเฉพาะทาง แทบไม่ได้ใช้ |
+| แม่แบบ `templates/brainrot-v2/` | ตัดต่อหลักที่ผู้ใช้ชอบ |
+| tools/: tts.sh words.sh trim_silence.sh footage.sh music.sh get.sh shot_times.py sound_pass_vo.py | เครื่องมือสายพาน |
+
+**brief ที่ดี (สั้นแต่ครบ):** หัวข้อ + ผลค้นเกณฑ์ (ยอดวิว+ช่อง) + มุมความเชื่อ vs ความจริง + เฟรม 0 + ข้อห้ามลิขสิทธิ์ + โควตาเสียง (ล็อกบท อัดเทคเดียว) + ทำจบเองหรือรอผู้ใช้ — ดูตัวอย่าง brief ตอนตดในอวกาศใน strategy-notes / ห้อง `session_016zMkaTBbFRWL5XF9dqCANQ`
