@@ -29,6 +29,10 @@ short กับ long จากหัวข้อเดียวกัน: ทำ
 3. voice ทำ `words.json` / `words-en.json` ด้วย `tools/words.sh`
 4. `python3 tools/shot_times.py <project> th|en` → `assets/audio/shots-<lang>.json` (start, end, hit_at, media_start)
    ตัดก่อนคำ 0.08 วิ (2-3 เฟรม ตาเห็นว่า "ตรงคำ") และเลือกช่วงในคลิปให้ action ลงตรง `hit`
+   `media_start` เลือกตามลำดับ: (1) `media_start` ที่ผู้กำกับใส่เองใน shots.json (เช่นเฟรมแรกของ hook จาก contact sheet) ชนะเสมอ
+   (2) คำนวณจาก `action_at` ให้ action ลงตรง `hit` (3) ไม่มีทั้งคู่ = เล่นจาก 0
+   **ล้มทันที (exit 1, ไม่เขียน shots-<lang>.json):** cue หาไม่เจอ, hit หาไม่เจอหรือหลุดช็อต, media_start ติดลบ
+   ช็อตยาว/สั้นนอก 0.6-2.7 วิ เป็นแค่ WARN (ใส่ `long_ok` ได้)
 5. editor อ่าน shots-<lang>.json เท่านั้น ห้ามแก้เวลาเอง ถ้าช็อตสั้น/ยาวเกิน (tool เตือน) ให้แก้ `cue` ใน shots.json แล้วรันใหม่
 6. reviewer เปิดเฟรมที่ `word_at + 0.1` ของทุกช็อต: ภาพต้องตรงกับคำ และเฟรม `hit_at` ต้องเห็น action
 

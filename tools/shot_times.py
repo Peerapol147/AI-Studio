@@ -18,13 +18,20 @@ shots.json:
     {"id": "grandma", "src": "assets/footage/x.mp4",
      "cue": {"th": "คนแก่", "en": "older"},          # word (or short phrase) the cut lands on
      "hit": {"th": "หิวน้ำ", "en": "thirsty"},        # optional: word the action/punch-in lands on
-     "action_at": 2.4}                                # optional: seconds into the source clip where the action happens
+     "action_at": 2.4,                                # optional: seconds into the source clip where the action happens
+     "media_start": 2.0}                              # optional: director's hand pick of the source in-point
   ]
 }
+media_start priority (highest first):
+  1. "media_start" written in shots.json (the director picked the frame, e.g. the hook from a contact sheet)
+     -> copied as is; action_at is ignored for that shot.
+  2. "action_at" -> media_start = action_at - (hit_at or word_at - start), so the action lands on the word.
+  3. neither -> no media_start (the editor plays the plate from 0).
 Cue words are searched in order, each after the previous cue, so a repeated word picks the
 right occurrence. Spaces and punctuation are ignored when matching (Thai timestamps are per character).
 
-Checks: shot length 0.6-2.7 s (style.md), cue found, hit inside its shot, media_start >= 0.
+Errors (exit 1, shots-<lang>.json is NOT written): cue missing or not found, hit not found or outside its
+shot, media_start < 0. Warning only (exit 0): shot length outside 0.6-2.7 s (style.md) without "long_ok".
 """
 import json, pathlib, re, sys
 
@@ -68,7 +75,7 @@ def main(proj, lang):
     dur = words.get("audio_duration_secs") or max(w["end"] for w in words["words"])
     stream = char_stream(words["words"])
     lead = cfg.get("lead", 0.08)
-    pos, out, errs = 0, [], []
+    pos, out, errs, warns = 0, [], [], []
     for sh in cfg["shots"]:
         cue = sh["cue"].get(lang) if isinstance(sh["cue"], dict) else sh["cue"]
         if cue is None:
@@ -96,25 +103,35 @@ def main(proj, lang):
         src = next(s for s in cfg["shots"] if s["id"] == r["id"])
         if "hit_at" in r and not (r["start"] <= r["hit_at"] < r["end"]):
             errs.append(f"{r['id']}: hit '{r['hit']}' at {r['hit_at']} is outside the shot {r['start']}-{r['end']}")
-        if "action_at" in src:
+        if src.get("media_start") is not None:          # director's explicit pick wins over action_at
+            r["media_start"] = round(float(src["media_start"]), 3)
+            if r["media_start"] < 0:
+                errs.append(f"{r['id']}: media_start {r['media_start']} in shots.json is negative")
+        elif "action_at" in src:
             anchor = r.get("hit_at", r["word_at"])
             r["media_start"] = round(src["action_at"] - (anchor - r["start"]), 3)
             if r["media_start"] < 0:
                 errs.append(f"{r['id']}: action_at {src['action_at']} too early in the source (media_start {r['media_start']})")
         if not 0.6 <= r["dur"] <= 2.7 and not src.get("long_ok"):
-            errs.append(f"{r['id']}: {r['dur']}s (style.md wants 0.6-2.7 s; set long_ok for a diagram/end shot)")
-    dst = proj / "assets/audio" / f"shots-{lang}.json"
-    dst.write_text(json.dumps({"lang": lang, "lead": lead, "duration": round(dur, 3), "shots": out},
-                              ensure_ascii=False, indent=1))
+            warns.append(f"{r['id']}: {r['dur']}s (style.md wants 0.6-2.7 s; set long_ok for a diagram/end shot)")
     print(f"{'id':<14}{'cue':<22}{'word':>7}{'start':>8}{'dur':>7}{'hit@':>8}{'media':>7}")
     for r in out:
         print(f"{r['id']:<14}{r['cue'][:20]:<22}{r['word_at']:>7.2f}{r['start']:>8.2f}{r['dur']:>7.2f}"
               f"{r.get('hit_at', float('nan')):>8.2f}{r.get('media_start', float('nan')):>7.2f}")
     avg = sum(r["dur"] for r in out) / max(1, len(out))
+    for w in warns:
+        print("WARN", w)
+    dst = proj / "assets/audio" / f"shots-{lang}.json"
+    if errs:
+        for e in errs:
+            print("ERROR", e, file=sys.stderr)
+        print(f"{len(errs)} error(s): {dst} NOT written. Fix shots.json (cue/hit/media_start/action_at) and rerun.",
+              file=sys.stderr)
+        return 1
+    dst.write_text(json.dumps({"lang": lang, "lead": lead, "duration": round(dur, 3), "shots": out},
+                              ensure_ascii=False, indent=1))
     print(f"{len(out)} shots, avg {avg:.2f}s -> {dst}")
-    for e in errs:
-        print("WARN", e)
-    return 1 if any("not found" in e for e in errs) else 0
+    return 0
 
 
 if __name__ == "__main__":
