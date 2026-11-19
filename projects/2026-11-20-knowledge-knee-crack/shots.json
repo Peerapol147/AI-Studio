@@ -1,0 +1,133 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "",
+   "cue": {
+    "th": "ลุก"
+   },
+   "note": "person rising from deep squat / knee close-up; big question text; highlight ring on knee",
+   "hit": {
+    "th": "กร๊อบ"
+   }
+  },
+  {
+   "id": "oa-q",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "เข่าเสื่อม"
+   },
+   "note": "graphic:knee side diagram, red tint + ?"
+  },
+  {
+   "id": "tease",
+   "src": "",
+   "cue": {
+    "th": "เคยโดนทัก"
+   },
+   "note": "older person talking / wagging finger at someone (Thai/Asian elder if possible)"
+  },
+  {
+   "id": "dry",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "น้ำ"
+   },
+   "note": "graphic:knee myth: synovial fluid level drains, label ความเชื่อ",
+   "hit": {
+    "th": "แห้ง"
+   }
+  },
+  {
+   "id": "truth",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "จริงๆ"
+   },
+   "note": "graphic:knee morph red->blue, fluid shimmer returns"
+  },
+  {
+   "id": "common",
+   "src": "",
+   "cue": {
+    "th": "บ่อยมาก"
+   },
+   "note": "people walking up stairs / squatting / exercising normally, no pain; label ไม่เจ็บ ก็ดังได้"
+  },
+  {
+   "id": "gas",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "เสียง"
+   },
+   "note": "graphic:knee tiny gas bubbles in fluid, label อาจ",
+   "hit": {
+    "th": "ฟองแก๊ส"
+   }
+  },
+  {
+   "id": "tendon",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "เอ็น"
+   },
+   "note": "graphic:knee tendon slides over bone bump, snap",
+   "hit": {
+    "th": "ลาก"
+   }
+  },
+  {
+   "id": "study",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "งานวิจัย"
+   },
+   "note": "graphic: research card / chart (or lab/scientist footage)"
+  },
+  {
+   "id": "risk",
+   "src": "",
+   "cue": {
+    "th": "เสี่ยง"
+   },
+   "note": "knee x-ray + bars: crack frequency up -> risk up, NO numbers"
+  },
+  {
+   "id": "rule-ok",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "ดังแต่ไม่เจ็บ"
+   },
+   "note": "graphic: sound + no pain = green check"
+  },
+  {
+   "id": "rule-pain",
+   "src": "",
+   "cue": {
+    "th": "แต่ถ้า"
+   },
+   "note": "person holding painful knee",
+   "hit": {
+    "th": "บวม"
+   }
+  },
+  {
+   "id": "doctor",
+   "src": "",
+   "cue": {
+    "th": "หมอ"
+   },
+   "note": "doctor examining patient's knee"
+  },
+  {
+   "id": "cta",
+   "src": "",
+   "cue": {
+    "th": "แล้วเข่า"
+   },
+   "note": "loop back to hook image + comment bubble"
+  }
+ ]
+}
