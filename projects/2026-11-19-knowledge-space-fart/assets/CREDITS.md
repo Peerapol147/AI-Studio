@@ -1,8 +1,8 @@
 - music-jamendo-b6fb4ded.mp3: "playfulness" by Pan:core (CC BY 3.0) https://www.jamendo.com/track/2040809
 # CREDITS (NASA images, public domain; ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA)
 
-- assets/footage/hook.jpg | nasa_id iss005e21040 | Astronaut Peggy Whitson poses in the U.S. Laboratory during Expedition Five | เครดิต NASA | https://images.nasa.gov/details/iss005e21040 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
-- assets/footage/hook_alt.jpg | nasa_id iss027e013190 | Coleman in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss027e013190 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1311, 1920)
+- assets/footage/hook_alt.jpg | nasa_id iss005e21040 | Astronaut Peggy Whitson poses in the U.S. Laboratory during Expedition Five | เครดิต NASA | https://images.nasa.gov/details/iss005e21040 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
+- assets/footage/hook.jpg | nasa_id iss027e013190 | Coleman in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss027e013190 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1311, 1920)
 - assets/footage/rocket.jpg | nasa_id s45-s-055 | STS-45 Atlantis, OV-104, lifts off from KSC Launch Complex (LC) Pad | เครดิต NASA | https://images.nasa.gov/details/s45-s-055 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1214, 1920)
 - assets/footage/rocket_alt.jpg | nasa_id KSC-20261013-PH-BWW01_0003 | SpaceX CRS-35 Launch | เครดิต NASA/Bill White | https://images.nasa.gov/details/KSC-20261013-PH-BWW01_0003 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (960, 1280)
 - assets/footage/hadfield.jpg | nasa_id iss034e010866 | Hadfield floats in the Node 1 | เครดิต NASA | https://images.nasa.gov/details/iss034e010866 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1275)
@@ -13,8 +13,8 @@
 - assets/footage/nozzle_alt.jpg | nasa_id RS-25_nozzle_24AR-00040-045-RS-25_Nozzle-6002-T | NASA Marks Halfway Point for Artemis Moon Rocket Engine Certification Series | เครดิต NASA/Danny Nowlin | https://images.nasa.gov/details/RS-25_nozzle_24AR-00040-045-RS-25_Nozzle-6002-T | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1277, 1920)
 - assets/footage/earth.jpg | nasa_id iss039e005387 | Earth Observations taken by the Expedition 39 Crew | เครดิต NASA/Rick Mastracchio | https://images.nasa.gov/details/iss039e005387 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1277)
 - assets/footage/earth_alt.jpg | nasa_id iss028e028792 | Earth Observation through Cupola Windows | เครดิต NASA | https://images.nasa.gov/details/iss028e028792 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1275)
-- assets/footage/linger.jpg | nasa_id iss027e013190 | Coleman in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss027e013190 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1311, 1920)
-- assets/footage/linger_alt.jpg | nasa_id iss016e026869 | Whitson in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss016e026869 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1307, 1920)
+- assets/footage/linger_alt.jpg | nasa_id iss027e013190 | Coleman in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss027e013190 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1311, 1920)
+- assets/footage/linger.jpg | nasa_id iss016e026869 | Whitson in US Lab | เครดิต NASA | https://images.nasa.gov/details/iss016e026869 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1307, 1920)
 - assets/footage/station.jpg | nasa_id s114e7249 | View of the ISS taken during flyaround by STS-114 crew | เครดิต NASA | https://images.nasa.gov/details/s114e7249 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
 - assets/footage/station_alt.jpg | nasa_id s114e7235 | View of the ISS taken during flyaround by STS-114 crew | เครดิต NASA | https://images.nasa.gov/details/s114e7235 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
 - assets/footage/you.jpg | nasa_id s82e5435 | Astronaut Joe Tanner comes up close to the aft flight deck window for a photo | เครดิต NASA | https://images.nasa.gov/details/s82e5435 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1280)

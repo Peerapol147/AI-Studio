@@ -4,11 +4,12 @@
  "shots": [
   {
    "id": "hook",
-   "src": "nasa",
+   "src": "assets/footage/hook.jpg",
    "cue": {
     "th": "ถ้าตด"
    },
-   "note": "FRAME 0 = NASA photo: astronaut floating inside ISS, face clearly visible, Y 500-1300; on-screen hook 'ถ้าตดในอวกาศ จะเกิดอะไรขึ้น?' from frame 0; photo search: astronaut floating ISS interior"
+   "note": "FRAME 0 = NASA photo: astronaut floating inside ISS, face clearly visible, Y 500-1300; on-screen hook 'ถ้าตดในอวกาศ จะเกิดอะไรขึ้น?' from frame 0; photo search: astronaut floating ISS interior",
+   "media_note": "hook.jpg 1311x1920 portrait (cropped 40px left); face ~x39% y29% (cable clutter above, 9:16 full-height crop keeps face y~560px)"
   },
   {
    "id": "happen",
@@ -36,7 +37,7 @@
   },
   {
    "id": "rocket",
-   "src": "nasa",
+   "src": "assets/footage/rocket.jpg",
    "cue": {
     "th": "พุ่งไป"
    },
@@ -44,7 +45,7 @@
   },
   {
    "id": "hadfield",
-   "src": "nasa",
+   "src": "assets/footage/hadfield.jpg",
    "cue": {
     "th": "นักบิน"
    },
@@ -60,7 +61,7 @@
   },
   {
    "id": "tried",
-   "src": "nasa",
+   "src": "assets/footage/tried.jpg",
    "cue": {
     "th": "ลองกัน"
    },
@@ -92,7 +93,7 @@
   },
   {
    "id": "nozzle",
-   "src": "nasa",
+   "src": "assets/footage/nozzle.jpg",
    "cue": {
     "th": "หัวฉีด"
    },
@@ -124,7 +125,7 @@
   },
   {
    "id": "earth",
-   "src": "nasa",
+   "src": "assets/footage/earth.jpg",
    "cue": {
     "th": "อากาศไม่ลอย"
    },
@@ -148,7 +149,7 @@
   },
   {
    "id": "linger",
-   "src": "nasa",
+   "src": "assets/footage/linger.jpg",
    "cue": {
     "th": "ค้างอยู่"
    },
@@ -156,7 +157,7 @@
   },
   {
    "id": "station",
-   "src": "nasa",
+   "src": "assets/footage/station.jpg",
    "cue": {
     "th": "สถานีอวกาศ"
    },
@@ -188,7 +189,7 @@
   },
   {
    "id": "you",
-   "src": "nasa",
+   "src": "assets/footage/you.jpg",
    "cue": {
     "th": "ถ้าเป็นคุณ"
    },
@@ -212,7 +213,7 @@
   },
   {
    "id": "loop",
-   "src": "nasa:hook",
+   "src": "assets/footage/hook.jpg",
    "cue": {
     "th": "เม้น"
    },
