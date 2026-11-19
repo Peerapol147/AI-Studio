@@ -67,27 +67,27 @@
   "type": "error_or_tech",
   "desc": "glitch cut on \"สัมพันธ์\"",
   "sfx": "glitch/kenney-sci-computernoise-001.ogg",
-  "gain": -20
+  "gain": -30
  },
  {
   "t": 19.34,
   "type": "success",
   "desc": "zoom punch + lightbulb on \"ทริก\"",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
-  "gain": -18
+  "gain": -28
  },
  {
   "t": 20.26,
   "type": "reveal",
   "desc": "phone lands face-down on the nightstand on \"เตียง\"",
   "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -18
+  "gain": -30
  },
  {
   "t": 24.18,
   "type": "appear",
   "desc": "comment bubble \"กี่โมง?\" pops",
   "sfx": "kit/pop.ogg",
-  "gain": -18
+  "gain": -26
  }
 ]

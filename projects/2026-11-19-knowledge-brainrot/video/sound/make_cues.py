@@ -18,12 +18,13 @@ c = [
     (K['clip'], 'movement', 'brain un-melts (reverse swoosh) on "คลิปสั้น"', 'riser/fs-174363-rewind.ogg', -14),
     (T['heavy'], 'scene_cut', 'fast scroll footage', 'whoosh/fs-127197-fast-simple-chop-5-aif.ogg', -13),
     (K['yae'], 'hover_or_small_ui', 'focus bar drops on "แย่กว่า"', 'ui-blip/kenney-digital-twotone2.ogg', -13),
-    (T['corr'], 'error_or_tech', 'glitch cut on "สัมพันธ์"', 'glitch/kenney-sci-computernoise-001.ogg', -12),
-    (K['trick'], 'success', 'zoom punch + lightbulb on "ทริก"', 'ding/kenney-interface-confirmation-001.ogg', -10),
-    (H['putdown'], 'reveal', 'phone lands face-down on the nightstand on "เตียง"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -10),
-    (K['kimong'], 'appear', 'comment bubble "กี่โมง?" pops', 'kit/pop.ogg', -10),
+    (T['corr'], 'error_or_tech', 'glitch cut on "สัมพันธ์"', 'glitch/kenney-sci-computernoise-001.ogg', -22),
+    (K['trick'], 'success', 'zoom punch + lightbulb on "ทริก"', 'ding/kenney-interface-confirmation-001.ogg', -20),
+    (H['putdown'], 'reveal', 'phone lands face-down on the nightstand on "เตียง"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -22),
+    (K['kimong'], 'appear', 'comment bubble "กี่โมง?" pops', 'kit/pop.ogg', -18),
 ]
-# review 2026-11-19: SFX masked the voice in the speech band at 16.86/19.34/20.26 -> every cue sits on speech, all -8 dB
+# review 2026-11-19: SFX masked the voice in the speech band at 16.86/19.34/20.26 -> every cue sits on speech, all -8 dB;
+# remeasure: glitch 16.86 / ding 19.34 / thump 20.26 / pop 24.18 still within 0-4 dB of the voice -> those 4 a further 8-12 dB down
 DUCK = -8
 out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g + DUCK} for t, ty, d, f, g in c]
 (HERE / 'cues-th.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
