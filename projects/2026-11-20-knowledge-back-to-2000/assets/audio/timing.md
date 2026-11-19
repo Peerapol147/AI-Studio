@@ -1,0 +1,146 @@
+# timing (th)
+
+- vo-th.mp3: 37.38 วิ (raw 45.64 -> trim 41.87 -> atempo 1.12 = 37.38), 499 ตัวอักษร = 13.3 ตัวอักษร/วิ
+- เหลือเงียบ >0.4 วิ หนึ่งจุด (19.53-19.94 วิ, 0.41)
+- music: music-jamendo-b6fb4ded.mp3 (55 วิ, playful; ยาวกว่าคลิป)
+
+## shots
+```json
+[
+ {
+  "id": "hook_year",
+  "src": null,
+  "cue": "ถ้าตื่น",
+  "word_at": 0.12,
+  "start": 0.0,
+  "end": 2.3,
+  "dur": 2.3
+ },
+ {
+  "id": "wake_bed",
+  "src": null,
+  "cue": "รวยยังไง",
+  "word_at": 2.38,
+  "start": 2.3,
+  "end": 3.38,
+  "dur": 1.08
+ },
+ {
+  "id": "future_mind",
+  "src": null,
+  "cue": "ง่ายดิ",
+  "word_at": 3.46,
+  "start": 3.38,
+  "end": 5.6,
+  "dur": 2.22
+ },
+ {
+  "id": "kid_hands",
+  "src": null,
+  "cue": "แต่เดี๋ยวนะ",
+  "word_at": 5.68,
+  "start": 5.6,
+  "end": 7.7,
+  "dur": 2.1
+ },
+ {
+  "id": "kid_school",
+  "src": null,
+  "cue": "ป.สอง",
+  "word_at": 7.78,
+  "start": 7.7,
+  "end": 9.36,
+  "dur": 1.66
+ },
+ {
+  "id": "locked",
+  "src": null,
+  "cue": "เปิดบัญชี",
+  "word_at": 9.44,
+  "start": 9.36,
+  "end": 12.56,
+  "dur": 3.2
+ },
+ {
+  "id": "gold",
+  "src": null,
+  "cue": "ภารกิจแรก",
+  "word_at": 12.64,
+  "start": 12.56,
+  "end": 15.78,
+  "dur": 3.22
+ },
+ {
+  "id": "gold_price",
+  "src": null,
+  "cue": "บาทละ",
+  "word_at": 15.86,
+  "start": 15.78,
+  "end": 18.7,
+  "dur": 2.92
+ },
+ {
+  "id": "stock",
+  "src": null,
+  "cue": "ภารกิจสอง",
+  "word_at": 18.78,
+  "start": 18.7,
+  "end": 21.86,
+  "dur": 3.16
+ },
+ {
+  "id": "set_price",
+  "src": null,
+  "cue": "ดัชนี",
+  "word_at": 21.94,
+  "start": 21.86,
+  "end": 24.96,
+  "dur": 3.1
+ },
+ {
+  "id": "piggy",
+  "src": null,
+  "cue": "ภารกิจสาม",
+  "word_at": 25.04,
+  "start": 24.96,
+  "end": 28.0,
+  "dur": 3.04
+ },
+ {
+  "id": "teen",
+  "src": null,
+  "cue": "กว่าจะมี",
+  "word_at": 28.08,
+  "start": 28.0,
+  "end": 32.219,
+  "dur": 4.219
+ },
+ {
+  "id": "crash",
+  "src": null,
+  "cue": "แถม",
+  "word_at": 32.299,
+  "start": 32.219,
+  "end": 34.14,
+  "dur": 1.921
+ },
+ {
+  "id": "hold",
+  "src": null,
+  "cue": "ถือไหว",
+  "word_at": 34.22,
+  "start": 34.14,
+  "end": 35.1,
+  "dur": 0.96
+ },
+ {
+  "id": "outro",
+  "src": null,
+  "cue": "ถ้าเป็นนาย",
+  "word_at": 35.18,
+  "start": 35.1,
+  "end": 37.349,
+  "dur": 2.249
+ }
+]
+```
