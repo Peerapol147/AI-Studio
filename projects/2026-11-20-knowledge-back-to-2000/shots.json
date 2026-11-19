@@ -1,0 +1,21 @@
+{
+  "lead": 0.08,
+  "end": "auto",
+  "shots": [
+    {"id": "hook_year", "kind": "graphic", "cue": {"th": "ถ้าตื่น"}, "desc": "ตัวเลขปีหมุนย้อน 2026→2000 + glitch/CRT บนพื้นห้องนอนเบลอ คำถาม hook ตัวใหญ่"},
+    {"id": "wake_bed", "need": "POV waking up in bed / alarm clock", "cue": {"th": "รวยยังไง"}, "desc": "POV ตื่นนอน นาฬิกาปลุก โทนยุคเก่า"},
+    {"id": "future_mind", "need": "hand writing notes / calendar pages flipping", "cue": {"th": "ง่ายดิ"}, "desc": "มือเขียนโน้ต/ปฏิทิน เรารู้อนาคต"},
+    {"id": "kid_hands", "need": "child small hands / kid school desk", "cue": {"th": "แต่เดี๋ยวนะ"}, "desc": "มือเด็กเล็ก HUD อายุเด้งเป็น 8 ขวบ"},
+    {"id": "kid_school", "need": "kid backpack school pencil", "cue": {"th": "ป.สอง"}, "desc": "เด็กประถม กระเป๋า ดินสอ (ไม่เห็นหน้า)"},
+    {"id": "locked", "kind": "graphic", "cue": {"th": "เปิดบัญชี"}, "desc": "ไอคอนกุญแจล็อก + 'อายุ 20+' บนภาพเบลอ"},
+    {"id": "gold", "need": "gold bars close-up", "cue": {"th": "ภารกิจแรก"}, "desc": "ทองคำแท่ง HUD ภารกิจ 1"},
+    {"id": "gold_price", "kind": "graphic", "cue": {"th": "บาทละ"}, "desc": "ป้าย 2000 ~5,xxx → ตอนนี้ 6x,xxx count-up"},
+    {"id": "stock", "need": "stock chart rising screen", "cue": {"th": "ภารกิจสอง"}, "desc": "กราฟหุ้นขึ้น HUD ภารกิจ 2"},
+    {"id": "set_price", "kind": "graphic", "cue": {"th": "ดัชนี"}, "desc": "ป้าย 200+ → ~1,500 จุด count-up"},
+    {"id": "piggy", "need": "piggy bank coins dropping", "cue": {"th": "ภารกิจสาม"}, "desc": "หยอดเหรียญกระปุก HUD ภารกิจ 3"},
+    {"id": "teen", "need": "teenager hands phone / desk", "cue": {"th": "กว่าจะมี"}, "desc": "ปีใน HUD วิ่งเป็น 2010 อายุ 17"},
+    {"id": "crash", "need": "red chart falling", "cue": {"th": "แถม"}, "desc": "กราฟแดงร่วง เงินเรา HUD ร่วง glitch"},
+    {"id": "hold", "kind": "graphic", "cue": {"th": "ถือไหว"}, "desc": "มือกำแน่น/กราฟลง + คำถาม"},
+    {"id": "outro", "kind": "graphic", "cue": {"th": "ถ้าเป็นนาย"}, "desc": "กลับฉากปีหมุน 2000 วนเข้า hook + คำถามคอมเมนต์"}
+  ]
+}
