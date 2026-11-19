@@ -14,7 +14,7 @@ description: Use when the user asks for a new clip or episode ("ทำคลิ�
 - หัวข้อที่ผู้ใช้ระบุมาแล้ว → ข้ามขั้น 1 ไปขั้น 2 เลย
 - ติดตั้งครั้งเดียวต่อเครื่อง (เครื่องคลาวด์ใหม่ไม่มี): `pip install --user librosa soundfile scipy matplotlib` (ต้องใช้กับ `tools/sound_pass_vo.py`)
 - อ่าน `channels/<channel>/results.md` (ผลวิวจริง) ก่อนเลือกหัวข้อ ทิศทางล่าสุดอยู่หัว `style.md` และชนะกฎเก่าในไฟล์เดียวกัน
-- ค่าเริ่มต้น: short ความยาวตามเนื้อหา ≤30 วิ (ช่องความรู้ ดูทิศทาง 2026-11-19 ใน style.md), **ภาษาไทยอย่างเดียว** (ผู้ใช้สั่งเลิกทำอังกฤษ 2026-11-18) ทำอังกฤษเฉพาะเมื่อผู้ใช้สั่งชัดๆ ในตอนนั้น
+- ค่าเริ่มต้น: short ความยาวตามเนื้อหา ≤40 วิ เน้นคุณภาพ (ช่องความรู้ ดูทิศทาง 2026-11-19 ใน style.md), **ภาษาไทยอย่างเดียว** (ผู้ใช้สั่งเลิกทำอังกฤษ 2026-11-18) ทำอังกฤษเฉพาะเมื่อผู้ใช้สั่งชัดๆ ในตอนนั้น
   ไม่ทำ: `script-en.md`, `vo-en`, `words-en`, `render -en`, ปก -en, `upload-en.md`; ส่วนอื่นในไฟล์นี้ที่พูดถึง en/สองภาษาให้ข้าม
 - เช็ก `PIXABAY_API_KEY` (env หรือ `.env`) ถ้าไม่มี บอกผู้ใช้ให้ตั้งใน Environment variables ก่อนขั้น footage
 
@@ -39,12 +39,13 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 - สั่ง agent ทุกครั้งต้องมีบรรทัด: "เจอ rate limit/บล็อก = เปลี่ยนแหล่งทันที ติดเกิน 5 นาที = ตอบกลับ"
 
 ## 1-7. สายพาน (ใครทำ → ไฟล์ที่ได้)
+**บทพูด: อ่าน style.md หัวข้อ "บทพูดแบบที่ผู้ใช้ต้องการ" ก่อนเขียนทุกครั้ง** (ภาษาพูดเต็มประโยค อธิบายศัพท์ทันที ความเข้าใจมาก่อนความยาว ห้ามตัดคำเชื่อมเพื่อให้สั้น)
 
 | ขั้น | ใคร | ผลลัพธ์ | สิ่งที่ต้องสั่งให้ชัด |
 |---|---|---|---|
 | 1 หัวข้อ | `researcher` | `research-topics.md` (5 หัวข้อ จัดอันดับ) | ห้ามหัวข้อเกร่อ/ซ้ำกับ `projects/*/brief.md`; หลังได้ผล **ผู้กำกับเช็ก footage เอง** (เรียก API เล็กๆ ไม่ใช่อ่านไฟล์ใหญ่) ด้วย Pixabay API (`totalHits` + ดู `tags` ว่าตรงจริง ไม่ใช่ fuzzy match; ข้ามคลิป tag "generated") |
 | 2 brief + research | ผู้กำกับ | `brief.md`, `research.md` | ข้อเท็จจริงทุกข้อมีแหล่ง; สิ่งที่เป็นแค่สมมติฐาน ห้ามพูดเป็นความจริง (ใช้เป็นคำถามปิดท้ายแทนได้) |
-| 3 บท + สตอรีบอร์ด | ผู้กำกับ + skill `yt-hook-scripter`, `yt-thumbnail-brief` | `script.md`, `script-en.md`, `storyboard.md`, `shots.json`, `thumbnail.md` (ภาพเด่น + ข้อความ ≤4 คำ ต่อภาษา) | ไทย: ความยาวตาม style.md (≤30 วิ ≈ ≤450 ตัวอักษร); hook 3 แบบ เลือก 1 ตาม style.md (คำถามบนจอตั้งแต่ 0.0 วิ); อังกฤษ **เขียนใหม่** ไม่แปล; โครง hook → คนคิดว่า → "แต่ความจริงคือ" → กลไก → ปิดตลก → **คำถามชวนคอมเมนต์ ≤4 วิ** |
+| 3 บท + สตอรีบอร์ด | ผู้กำกับ + skill `yt-hook-scripter`, `yt-thumbnail-brief` | `script.md`, `script-en.md`, `storyboard.md`, `shots.json`, `thumbnail.md` (ภาพเด่น + ข้อความ ≤4 คำ ต่อภาษา) | ไทย: ความยาวตาม style.md (≤40 วิ ≈ ≤500 ตัวอักษร ที่ ~12-13 ตัว/วิ); hook 3 แบบ เลือก 1 ตาม style.md (คำถามบนจอตั้งแต่ 0.0 วิ); อังกฤษ **เขียนใหม่** ไม่แปล; โครง hook → คนคิดว่า → "แต่ความจริงคือ" → กลไก → ปิดตลก → **คำถามชวนคอมเมนต์ ≤4 วิ** |
 | 4a เสียง | `voice` (ไทย) | `assets/audio/vo-<lang>.mp3`, `words*.json`, `timing*.md`, เพลง, sfx | บอกชื่อไฟล์ที่แต่ละตัวห้ามแตะ; ไทยต้อง `eleven_v3`+; ใช้ voice_id จาก channel.md; เพลง: `tools/music.sh music "<อารมณ์>" <project> 3 30` เลือก 1 (เครดิตลง CREDITS.md อัตโนมัติ); sfx ไม่ต้องทำในขั้นนี้ (editor เลือกจาก skill `sound-effects`); อัดทั้งบทเทคเดียว แล้ว silenceremove + atempo ≤1.12; จับเวลาคำด้วย ElevenLabs `scribe_v1` |
 | 4b footage | `footage` (พร้อม 4a) | `assets/footage/` + `MAP.md`, `CREDITS.md` | ขนาด medium ไม่เอาไฟล์ใหญ่; Wikimedia โดน rate-limit ง่าย ขอทีละน้อย; หาไม่ได้ = ทำเป็นกราฟิก; หัวข้อร่างกาย/ใกล้ตัว Pixabay มักไม่มีภาพเฉพาะ เช็ก Wikimedia Commons ตั้งแต่ขั้น 1; วิดีโอใช้ 1080p ขึ้นไป (ครอป 9:16 จาก 720p เหลือ ~405px แตก) |
 | 5 motion + ตัดต่อ (ก่อนเริ่ม: **ผู้กำกับเลือกช่วง hook เอง** จาก contact sheet ของคลิปเต็ม แล้วใส่ `media_start` ใน shots.json — เคยต้องเรนเดอร์ใหม่ทั้งคลิปเพราะเฟรม 0 เห็นแต่หัวลูกแมวมุดแก้ว) | `editor` (หลัง 4a เสร็จ) — เริ่มจาก**คัดลอก** `projects/2026-11-17-knowledge-nature/video/` (ยกเว้น `assets/`, `renders/`) มาแก้ ไม่สร้างจากศูนย์ | `video/index.html.tpl` + `build_index.py` (คอมโพสิชันเดียว ตัวแปร `lang`), `renders/<slug>-<lang>.mp4`, ปก `-thumb.jpg` | ให้อ่าน skill `hyperframes`, `motion-broll`, `sound-effects` + style.md "Motion v2"; มิกซ์ด้วย `tools/sound_pass_vo.py` (ดูหัวข้อ "มิกซ์เสียง") ปกทำจากคอมโพสิชัน `video/thumb/` แบบเดียวกับตอนวอมแบต |
