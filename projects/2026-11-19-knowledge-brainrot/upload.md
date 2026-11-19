@@ -1,6 +1,6 @@
 # อัปโหลด: Brainrot ทำสมองพังจริงไหม? (ไทย)
 
-ไฟล์: `renders/brainrot-th.mp4` (~26.4 วิ, 9:16, 1080x1920) | ปก: `renders/brainrot-th-thumb.jpg`
+ไฟล์: `renders/brainrot-th.mp4` (26.3 วิ, 9:16, 1080x1920) | ปก: `renders/brainrot-th-thumb.jpg`
 MP4 ไฟล์เดียวใช้ได้ทั้ง YouTube Shorts / TikTok / Facebook Reels (layout อยู่ใน safe zone 4 แพลตฟอร์ม) ผู้ใช้อัปเอง ทีมไม่อัปโหลด/ไม่ตั้งเวลา
 
 ## YouTube Shorts
