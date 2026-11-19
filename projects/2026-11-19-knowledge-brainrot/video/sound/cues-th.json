@@ -7,87 +7,87 @@
   "gain": -28
  },
  {
-  "t": 2.58,
-  "type": "hover_or_small_ui",
-  "desc": "\"02:00\" chip + moon pops on \"ตีสอง\"",
-  "sfx": "tick/fs384187.ogg",
-  "gain": -20
+  "t": 2.12,
+  "type": "appear",
+  "desc": "\"?\" pops on the brain on \"จริงหรอ\"",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -22
  },
  {
-  "t": 4.19,
+  "t": 4.25,
   "type": "appear",
   "desc": "brain melts on \"เน่า\" (soft drip)",
   "sfx": "pop/kenney-interface-drop-002.ogg",
   "gain": -18
  },
  {
-  "t": 4.74,
+  "t": 8.16,
+  "type": "hover_or_small_ui",
+  "desc": "\"02:00\" chip + moon on \"ทั้งคืน\"",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -20
+ },
+ {
+  "t": 9.74,
   "type": "appear",
   "desc": "zoom punch: Oxford card + green pill",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -17
  },
  {
-  "t": 6.04,
+  "t": 10.56,
   "type": "hover_or_small_ui",
   "desc": "+230% counter runs",
   "sfx": "click/kenney-interface-tick-001.ogg",
   "gain": -21
  },
  {
-  "t": 9.64,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"คนคิดว่า\"",
-  "sfx": "glitch/kenney-interface-glitch-002.ogg",
-  "gain": -18
- },
- {
-  "t": 11.78,
+  "t": 14.52,
   "type": "movement",
-  "desc": "brain un-melts (reverse swoosh) on \"คลิปสั้น\"",
+  "desc": "brain un-melts (reverse swoosh) on \"เน่าจริง\"",
   "sfx": "riser/fs-174363-rewind.ogg",
   "gain": -22
  },
  {
-  "t": 13.66,
-  "type": "scene_cut",
-  "desc": "fast scroll footage",
-  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -21
- },
- {
-  "t": 15.82,
+  "t": 20.1,
   "type": "hover_or_small_ui",
   "desc": "focus bar drops on \"แย่กว่า\"",
   "sfx": "ui-blip/kenney-digital-twotone2.ogg",
   "gain": -21
  },
  {
-  "t": 16.86,
+  "t": 22.14,
   "type": "error_or_tech",
-  "desc": "glitch cut on \"สัมพันธ์\"",
+  "desc": "glitch cut: \"สัมพันธ์ ≠ เป็นเหตุ\"",
   "sfx": "glitch/kenney-sci-computernoise-001.ogg",
   "gain": -30
  },
  {
-  "t": 19.34,
+  "t": 26.06,
   "type": "success",
   "desc": "zoom punch + lightbulb on \"ทริก\"",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
   "gain": -28
  },
  {
-  "t": 20.26,
+  "t": 27.52,
   "type": "reveal",
   "desc": "phone lands face-down on the nightstand on \"เตียง\"",
   "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
   "gain": -30
  },
  {
-  "t": 24.18,
+  "t": 32.68,
   "type": "appear",
   "desc": "comment bubble \"กี่โมง?\" pops",
   "sfx": "kit/pop.ogg",
   "gain": -26
+ },
+ {
+  "t": 34.5,
+  "type": "success",
+  "desc": "soft moon on \"อย่าลืมพักผ่อน\"",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -30
  }
 ]

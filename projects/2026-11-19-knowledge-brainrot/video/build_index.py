@@ -8,8 +8,9 @@ import html, json, math, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent
 AUD = HERE.parent / 'assets' / 'audio'
 LUC = HERE.parents[2] / 'assets' / 'vendor' / 'lucide'
-# scribe wrote "และ" / "Trick" / "test"; the screen spells the script: แล้ว / ทริก / เทส
-ALIAS = {'แล้ว': 'และ', 'ทริก': 'trick', 'เทส': 'test'}
+# v3: scribe wrote "ถ่ายคลิป" for "ไถคลิป" (2x) and "เม้น" for "เมนต์"; the screen spells the script
+ALIAS = {'ไถคลิป': 'ถ่ายคลิป', 'เมนต์': 'เม้น'}
+HOOK = 'Brainrot ทำให้สมองพัง จริงหรอ'  # = the big title at frame 0 (not a caption)
 
 def norm(s):
     s = s.lower()
@@ -35,27 +36,29 @@ def finder():
     return find
 
 # caption chunks (1-3 words); *x* = key word (yellow). The hook line is the big title (frame 0), not a caption.
-CAPS = ["เลื่อนถึงตีสอง", "แล้วบ่นว่า", "สมอง*เน่า*", "*Oxford*", "ยกให้เป็น", "*คำแห่งปี*", "2024",
-        "แต่นิยาม", "ยังเขียนว่า", "ความเสื่อม", "ที่*คนคิดว่า*", "เกิด", "*ยังไม่มีหลักฐาน*", "ว่าคลิปสั้น",
-        "ทำสมองเน่า", "*ถาวร*", "คนดู*หนักๆ*", "มักทำ*เทส*", "สมาธิ", "ได้*แย่กว่า*", "แต่แค่*สัมพันธ์*กัน",
-        "อาจเพราะ*เครียด*", "เลยเลื่อนหนัก", "*ทริก*", "อย่าเลื่อนบน*เตียง*", "คนเล่นมือถือ", "ก่อนนอน",
-        "มัก*นอนน้อยลง*", "คืนนี้เลื่อนถึง", "*กี่โมง?*", "ก่อนสงสัย", "อีกรอบว่า"]
+CAPS = ["Brainrot", "แปลว่า*สมองเน่า*", "ผู้คนมักจะใช้", "*แซวตัวเอง*", "เวลาไถคลิป", "แนว *Short*", "หรือ *TikTok*",
+        "*ทั้งคืน*", "มันฮิตซะจน", "*Oxford* เลือกเป็น", "*คำแห่งปี*", "2024", "แต่*ยังไม่มีหลักฐาน*",
+        "ว่าคลิปสั้น", "ทำให้สมอง", "*เน่าจริง*นะ", "งานวิจัย", "แค่เจอว่า", "คนที่ไถคลิป", "*หนักๆ*",
+        "มักทำการ*ทดสอบ*", "เกี่ยวกับ*สมาธิ*", "ได้*แย่กว่า*", "คนที่*ไม่ค่อยมี*", "พฤติกรรมนี้", "หรืออาจเป็นเพราะ",
+        "*เครียด*อยู่แล้ว", "เลยทำให้ไถหน้าจอ", "*หนักกว่าเดิม*", "ก็ได้", "*ทริก*ง่ายๆ นะ", "อย่าไถ*บนเตียง*",
+        "ก่อนนอน", "คนที่เล่นมือถือ", "ก่อนนอน", "มัก*นอนน้อยลง*", "และ*หลับยาก*", "คืนนี้จะไถ", "ถึง*กี่โมง?*",
+        "เมนต์บอกหน่อย", "อย่าลืม*พักผ่อน*"]
 # word anchors for the motion, searched in speech order
-ANCH = [('tsong', 'ตีสอง'), ('bon', 'บ่นว่า'), ('nao', 'เน่า'), ('oxford', 'Oxford'), ('year', 'คำแห่งปี'),
-        ('y2024', '2024'), ('niyam', 'นิยาม'), ('sueam', 'ความเสื่อม'), ('khit', 'คนคิดว่า'), ('kerd', 'เกิด'),
-        ('noproof', 'ยังไม่มีหลักฐาน'), ('clip', 'คลิปสั้น'), ('nao2', 'เน่า'), ('thavorn', 'ถาวร'),
-        ('khondu', 'คนดู'), ('nak', 'หนักๆ'), ('test', 'เทส'), ('samathi', 'สมาธิ'), ('yae', 'แย่กว่า'),
-        ('samphan', 'สัมพันธ์'), ('arj', 'อาจเพราะ'), ('kriat', 'เครียด'), ('lnak', 'เลื่อนหนัก'), ('trick', 'ทริก'),
-        ('ya', 'อย่าเลื่อน'), ('tiang', 'เตียง'), ('mue', 'มือถือ'), ('konnon', 'ก่อนนอน'), ('nonnoi', 'นอนน้อย'),
-        ('khuenni', 'คืนนี้'), ('kimong', 'กี่โมง'), ('songsai', 'สงสัย'), ('rob', 'อีกรอบ')]
-ICONS = ['moon', 'smartphone', 'brain', 'bed', 'lightbulb', 'message-circle', 'clock', 'circle-check', 'circle-x',
+ANCH = [('jing', 'จริงหรอ'), ('b2', 'Brainrot'), ('smnao', 'สมอง'), ('nao', 'เน่า'), ('saew', 'แซวตัวเอง'),
+        ('short', 'Short'), ('tiktok', 'TikTok'), ('thangkuen', 'ทั้งคืน'), ('oxford', 'Oxford'), ('year', 'คำแห่งปี'),
+        ('laksan', 'หลักฐาน'), ('naojing', 'เน่าจริง'), ('wijai', 'งานวิจัย'), ('jer', 'เจอว่า'), ('nak', 'หนักๆ'),
+        ('test', 'ทดสอบ'), ('samathi', 'สมาธิ'), ('yae', 'แย่กว่า'), ('maikoi', 'ไม่ค่อยมี'), ('phrut', 'พฤติกรรม'),
+        ('arj', 'หรืออาจ'), ('kriat', 'เครียด'), ('naja', 'หน้าจอ'), ('nakkwa', 'หนักกว่าเดิม'), ('trick', 'ทริก'),
+        ('ngai', 'ง่ายๆ'), ('tiang', 'เตียง'), ('mue', 'มือถือ'), ('nonnoi', 'นอนน้อย'), ('lubyak', 'หลับยาก'),
+        ('khuenni', 'คืนนี้'), ('kimong', 'กี่โมง'), ('ment', 'เมนต์'), ('luem', 'อย่าลืม'), ('phak', 'พักผ่อน')]
+ICONS = ['moon', 'check', 'arrow-right', 'smartphone', 'brain', 'bed', 'lightbulb', 'message-circle', 'clock', 'circle-check', 'circle-x',
          'triangle-alert', 'book-open', 'target', 'trending-up', 'trending-down', 'search', 'zap']
 
 shots = json.loads((AUD / 'shots-th.json').read_text())
 DUR = math.floor(shots['duration'] * 30) / 30  # clip ends with the voice (no silent tail), on a frame boundary
 DUR = round(DUR, 3)
-f = finder(); capt = [f(c) for c in CAPS]
-f = finder(); K = {key: f(ph) for key, ph in ANCH}
+f = finder(); f(HOOK); capt = [f(c) for c in CAPS]
+f = finder(); f('Brainrot ทำให้สมองพัง'); K = {key: f(ph) for key, ph in ANCH}
 SH = {s['id']: {'start': s['start'], 'end': s['end'], 'word': s['word_at'], 'hit': s.get('hit_at'),
                 'ms': s.get('media_start')} for s in shots['shots']}
 SH['loop']['end'] = DUR
@@ -88,9 +91,9 @@ def icons():
 # footage scenes: (scene id, shot id, plate, data-media-start). Plates are cut at the chosen source point by
 # prep_assets.sh, except hook-v.mp4 which keeps the source clock: hook = shots-th media_start 2.0,
 # loop = 2.0 - loop duration so the LAST frame of the clip is source 2.0 s = the frame-0 image (seamless loop).
-FOOT = [('hook', 'hook-v', SH['hook']['ms']), ('bed', 'bed-v', 0), ('noproof', 'noproof-v', 0), ('heavy', 'heavy-v', 0),
-        ('stress', 'stress-v', 0), ('scrollbed', 'scrollbed-v', 0), ('sleep', 'sleep-v', 0),
-        ('loop', 'hook-v', round(SH['hook']['ms'] - (DUR - SH['loop']['start']), 3))]
+FOOT = [('hook', 'hook-v', SH['hook']['ms']), ('tease', 'tease-v', 0), ('night', 'night-v', 0), ('noproof', 'noproof-v', 0),
+        ('heavy', 'heavy-v', 0), ('stress', 'stress-v', 0), ('screen', 'screen-v', 0), ('beforebed', 'beforebed-v', 0),
+        ('sleep', 'sleep-v', 0), ('loop', 'hook-v', round(SH['hook']['ms'] - (DUR - SH['loop']['start']), 3))]
 XF = 0.12  # outgoing plate stays 0.12 s under the incoming transition (crossfade <= 0.12 s)
 def videos():
     out = {}

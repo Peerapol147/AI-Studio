@@ -30,4 +30,9 @@
 - Lucide icons (lucide-static 1.75.0, ISC License, https://lucide.dev): moon, smartphone, bed, lightbulb, message-circle, clock, circle-check, circle-x, triangle-alert, book-open, target, trending-up, zap, search — files in `assets/vendor/lucide/` (licence `assets/vendor/lucide/LICENSE`)
 - flubber 0.4.2 (MIT) for the brain morph; cartoon brain, bed/phone graphics drawn by us
 - Fonts: Kanit (SIL OFL 1.1) from `assets/fonts/`
-- Not used in the final render: hook-b.mp4, hook-c.mp4 (hook candidates only)
+- v3 (35.3 s) uses hook-b.mp4 (ช็อต heavy) and hook-c.mp4 (ช็อต screen) too; heavy.mp4 no longer used
+
+## Sound effects added in v3 (CC0 1.0)
+- pop/fs-258269-mouth-pop.ogg: "Mouth pop" by jcallison (Freesound) CC0 https://freesound.org/people/jcallison/sounds/258269/
+- ding/kenney-interface-glass-001.ogg: "Interface glass 001" by Kenney CC0 https://kenney.nl/assets/interface-sounds
+- (v3 no longer uses: kenney-interface-glitch-002, fs-127197 chop)

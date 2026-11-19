@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<!-- v3 script (35.3 s, 23 shots). GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
 <html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
@@ -37,19 +37,17 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #cnt .num{position:absolute;left:0;top:0;font-weight:900;font-size:150px;line-height:1;color:#12894A;-webkit-text-stroke:0}
 #cnt .sub{position:absolute;left:4px;top:176px;font-weight:700;font-size:40px;color:#3B2D55;display:flex;align-items:center;gap:14px}
 #cnt .sub svg{width:48px;height:48px;color:#1FAE5B}
-#def{position:absolute;left:56px;top:286px;width:660px}
-#def .ln{position:relative;font-weight:700;font-size:48px;line-height:66px;color:#2A2140;white-space:nowrap}
-#def .gl{position:relative;margin-top:16px;font-weight:700;font-size:42px;line-height:56px;color:#7A3E8F;white-space:nowrap}
-#sup{position:relative;display:inline-block;z-index:1}
-#supbg{position:absolute;left:-8px;top:6px;height:58px;width:0;background:#FFE14D;border-radius:10px;z-index:-1}
-#caret{display:inline-block;width:5px;height:50px;background:#10080A;vertical-align:-8px;margin-left:4px}
-/* glitch word (registry: rgb-glitch-text, adapted) */
-.hf-catalog-rgb-glitch-text{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:900;font-size:120px;line-height:1.2;opacity:0}
-.hf-catalog-rgb-glitch-text span,.hf-catalog-rgb-glitch-text strong{position:absolute;left:0;top:0;width:1080px;text-align:center}
-.hf-catalog-rgb-glitch-text span:first-child{color:#ef4444;transform:translateX(var(--hf-glitch-red,0px))}
-.hf-catalog-rgb-glitch-text span:nth-child(2){color:#22d3ee;transform:translateX(var(--hf-glitch-blue,0px))}
-.hf-catalog-rgb-glitch-text strong{color:#FFE14D;-webkit-text-stroke:22px #10080A;paint-order:stroke fill}
-.hf-catalog-rgb-glitch-text span{-webkit-text-stroke:22px currentColor;paint-order:stroke fill;opacity:.85}
+#bdef{position:absolute;left:0;top:0;width:1080px;height:700px}
+#bdef div{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;opacity:0;
+  -webkit-text-stroke:26px #10080A;paint-order:stroke fill;text-shadow:0 12px 0 rgba(0,0,0,.45);transform-origin:50% 60%}
+#bdef .l1{top:280px;font-size:150px;color:#FFE14D}
+#bdef .l2{top:450px;font-size:140px;color:#fff}
+#kword{position:absolute;left:0;top:300px;width:1080px;text-align:center;font-weight:900;font-size:140px;line-height:1;white-space:nowrap;opacity:0;
+  color:#FFE14D;-webkit-text-stroke:24px #10080A;paint-order:stroke fill;transform-origin:50% 60%}
+#panel .hlr{position:absolute;left:30px;top:178px;width:710px;height:134px;border-radius:30px;border:7px solid #FFE14D;background:rgba(255,225,77,.14);opacity:0}
+.row .ok{position:absolute;left:684px;top:16px;width:80px;height:80px;border-radius:40px;background:#3DDC84;border:6px solid #10080A;opacity:0;
+  display:flex;align-items:center;justify-content:center}
+.row .ok svg{width:52px;height:52px;color:#10080A}
 /* chips, panels */
 .chip{position:absolute;left:0;top:0;height:110px;padding:0 34px 0 30px;border-radius:30px;border:7px solid #10080A;background:#1A1440;
   display:flex;align-items:center;gap:16px;color:#fff;font-weight:900;font-size:76px;white-space:nowrap;opacity:0;box-shadow:0 10px 0 rgba(0,0,0,.4);transform-origin:50% 50%}
@@ -104,53 +102,57 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
   <div class="sc" id="sh-hook"><div class="kb" id="kb-hook">%%V_HOOK%%</div><div class="vig"></div></div>
-  <div class="sc" id="sh-bed"><div class="kb" id="kb-bed">%%V_BED%%</div><div class="vig"></div></div>
+  <div class="sc gsc" id="sh-g0"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-tease"><div class="kb" id="kb-tease">%%V_TEASE%%</div><div class="vig"></div></div>
   <div class="sc gsc" id="sh-g1"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
-  <div class="sc" id="sh-noproof"><div class="kb" id="kb-noproof">%%V_NOPROOF%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-night"><div class="kb" id="kb-night">%%V_NIGHT%%</div><div class="vig"></div></div>
   <div class="sc gsc" id="sh-g2"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
-  <div class="sc" id="sh-heavy"><div class="kb" id="kb-heavy">%%V_HEAVY%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-noproof"><div class="kb" id="kb-noproof">%%V_NOPROOF%%</div><div class="vig"></div></div>
   <div class="sc gsc" id="sh-g3"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
-  <div class="sc" id="sh-stress"><div class="kb" id="kb-stress">%%V_STRESS%%</div><div class="vig"></div></div>
-  <div class="sc" id="sh-scrollbed"><div class="kb" id="kb-scrollbed">%%V_SCROLLBED%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-heavy"><div class="kb" id="kb-heavy">%%V_HEAVY%%</div><div class="vig"></div></div>
   <div class="sc gsc" id="sh-g4"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
-  <div class="sc" id="sh-sleep"><div class="kb" id="kb-sleep">%%V_SLEEP%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-stress"><div class="kb" id="kb-stress">%%V_STRESS%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-screen"><div class="kb" id="kb-screen">%%V_SCREEN%%</div><div class="vig"></div></div>
   <div class="sc gsc" id="sh-g5"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-beforebed"><div class="kb" id="kb-beforebed">%%V_BEFOREBED%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-sleep"><div class="kb" id="kb-sleep">%%V_SLEEP%%</div><div class="vig"></div></div>
+  <div class="sc gsc" id="sh-g6"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc" id="sh-loop"><div class="kb" id="kb-loop">%%V_LOOP%%</div><div class="vig"></div></div>
 </div>
 
 <div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
-  <!-- dictionary card: Oxford -> +230% -> definition -> zoom on "supposed" -->
+  <!-- define: "Brainrot = สมองเน่า" kinetic card -->
+  <div id="bdef"><div class="l1" id="bd1">Brainrot</div><div class="l2" id="bd2">= สมองเน่า</div></div>
+  <!-- feed: plain-text label (no logos) -->
+  <div class="chip" id="feedT" style="background:#2A1B5C"><svg class="ic"><use href="#ic-smartphone"/></svg>Short / TikTok</div>
+  <!-- dictionary card: Oxford -> +230% -->
   <div id="card"><div class="hw">brain rot</div><div class="pos">(n.)</div><div class="uline" id="uline"></div>
     <div id="cnt"><div class="num" id="num">+0%</div>
       <div class="sub"><svg class="ic"><use href="#ic-trending-up"/></svg>การใช้คำนี้ 2023 → 2024</div></div>
-    <div id="def"><div class="ln" id="dl1">the <span id="sup"><span id="supbg"></span>supposed</span> deterioration</div>
-      <div class="ln" id="dl2">of a person's mental or</div><div class="ln" id="dl3">intellectual state…</div>
-      <div class="gl" id="dgl">= ความเสื่อมที่ “คนคิดว่า” เกิด</div></div>
   </div>
-  <div class="hf-catalog-rgb-glitch-text" id="gw1"><span>= คนคิดว่า</span><span>= คนคิดว่า</span><strong>= คนคิดว่า</strong></div>
-  <!-- focus meter -->
+  <!-- study -> focus meter -> compare -->
   <div id="src"><svg class="ic"><use href="#ic-book-open"/></svg>Psychological Bulletin 2025</div>
   <div id="panel"><div class="hd"><svg class="ic"><use href="#ic-target"/></svg>เทสสมาธิ</div>
-    <div class="row" style="top:190px"><div class="lb">ดูน้อย</div><div class="tr"></div><div class="bar" id="bar1" style="background:#3DDC84"></div></div>
+    <div class="hlr" id="hlr"></div>
+    <div class="row" style="top:190px"><div class="lb">ดูน้อย</div><div class="tr"></div><div class="bar" id="bar1" style="background:#3DDC84"></div>
+      <div class="ok" id="ok1"><svg class="ic"><use href="#ic-check"/></svg></div></div>
     <div class="row" style="top:340px"><div class="lb">ดูหนัก</div><div class="tr"></div><div class="bar" id="bar2" style="background:#FFA53D"></div></div>
     <div class="illu">แนวโน้ม · ภาพประกอบ</div>
   </div>
-  <!-- correlation bubbles -->
-  <div class="bub" id="bubA" style="background:#FFA53D"><svg class="ic"><use href="#ic-smartphone"/></svg>ดูหนัก</div>
-  <div class="bub" id="bubB" style="background:#7FD3FF"><svg class="ic"><use href="#ic-target"/></svg>สมาธิแย่</div>
-  <!-- chips -->
+  <!-- correlation bubbles: stress -> heavy scrolling (reverse direction) -->
+  <div class="bub" id="bubA" style="background:#B58BFF"><svg class="ic"><use href="#ic-zap"/></svg>เครียด</div>
+  <div class="bub" id="bubB" style="background:#FFA53D"><svg class="ic"><use href="#ic-smartphone"/></svg>ไถหนัก</div>
   <div class="chip" id="clock2"><svg class="ic"><use href="#ic-moon"/></svg>02:00</div>
-  <div class="chip" id="chipS" style="background:#5B2A86"><svg class="ic"><use href="#ic-zap"/></svg>เครียด</div>
-  <div class="chip" id="chipL" style="background:#1E3A8A"><svg class="ic"><use href="#ic-smartphone"/></svg>เลื่อน</div>
-  <div id="trickT">ทริก <b>1 ข้อ</b></div>
+  <div id="trickT">ทริก<b>ง่ายๆ</b></div>
+  <div id="kword">หลับยาก</div>
   <svg class="ov" id="gsvg" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="glayer"></g></svg>
-  <div id="ctext"><div class="q1">คืนนี้เลื่อนถึง</div><div class="q2" id="q2">กี่โมง?</div>
-    <div class="q3" id="q3"><svg class="ic"><use href="#ic-message-circle"/></svg>ตอบในคอมเมนต์</div></div>
+  <div id="ctext"><div class="q1">คืนนี้จะไถถึง</div><div class="q2" id="q2">กี่โมง?</div>
+    <div class="q3" id="q3"><svg class="ic"><use href="#ic-message-circle"/></svg>เมนต์บอกหน่อย</div></div>
   <div class="pill" id="pill"><div class="bd" id="pillBd"><svg class="ic" id="pillIc"><use id="pillUse" href="#ic-circle-x"/></svg></div>
     <span class="tx" id="pillA"></span><span class="tx" id="pillB"></span></div>
   <div id="note">นอนไม่หลับบ่อย ปรึกษาแพทย์</div>
   <div id="tshade"></div>
-  <div id="title"><div class="tl" id="tl1">Brainrot</div><div class="tl" id="tl2">ทำสมองพัง</div><div class="tl" id="tl3">จริงไหม?</div></div>
+  <div id="title"><div class="tl" id="tl1">Brainrot</div><div class="tl" id="tl2">ทำให้สมองพัง?</div><div class="tl" id="tl3">จริงหรอ?</div></div>
   <div id="meas"></div>
 </div>
 </div>
@@ -171,7 +173,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    One pill morphs belief -> Oxford -> truth -> no-evidence -> correlation. Everything is a function of t. */
 (function(){
 const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
-const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const T={},H={},W={}; for(const k in SH){T[k]=SH[k].start; W[k]=SH[k].word; if(SH[k].hit!=null)H[k]=SH[k].hit;}
 const NS='http://www.w3.org/2000/svg';
 
 // ---------- spring kit ----------
@@ -198,21 +200,25 @@ const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=
 const PINK='#FF6FAE',YEL='#FFE14D',GRN='#3DDC84',ORG='#FFA53D',RED='#FF4D5E',INK='#10080A';
 const G=$('glayer');
 
-// ---------- scenes ----------
+// ---------- scenes (v3: 23 word-locked shots; graphic shots in a row share one backdrop) ----------
 // entries: cut (hard) | whip (0.12 s push) | zoom (zoom punch-in, 0.1 s fade) | match (0.1 s crossfade)
 const SC=[
  {id:'sh-hook',a:0,kb:'kb-hook',s0:1.0,s1:1.06,org:'50% 62%',in:'none',still:1},
- {id:'sh-bed',a:T.bed,kb:'kb-bed',s0:1.03,s1:1.09,r0:0.6,r1:-0.6,org:'40% 30%',in:'whip'},
- {id:'sh-g1',a:T.melt,in:'zoom'},
+ {id:'sh-g0',a:T.really,in:'zoom'},                                   // really + define
+ {id:'sh-tease',a:T.tease,kb:'kb-tease',s0:1.03,s1:1.09,r0:0.6,r1:-0.6,org:'40% 30%',in:'whip'},
+ {id:'sh-g1',a:T.feed,in:'zoom'},                                     // feed
+ {id:'sh-night',a:T.night,kb:'kb-night',s0:1.03,s1:1.08,r0:0.5,r1:-0.5,org:'40% 30%',in:'whip'},
+ {id:'sh-g2',a:T.oxford,in:'zoom'},                                   // oxford + year
  {id:'sh-noproof',a:T.noproof,kb:'kb-noproof',s0:1.02,s1:1.08,r0:-0.6,r1:0.5,org:'45% 30%',in:'cut'},
- {id:'sh-g2',a:T.brainok,in:'zoom'},
- {id:'sh-heavy',a:T.heavy,kb:'kb-heavy',s0:1.04,s1:1.1,r0:0.8,r1:-0.8,org:'60% 40%',in:'whip'},
- {id:'sh-g3',a:T.focus,in:'zoom'},
+ {id:'sh-g3',a:T.brainok,in:'zoom'},                                  // brainok + study
+ {id:'sh-heavy',a:T.heavy,kb:'kb-heavy',s0:1.04,s1:1.1,r0:0.8,r1:-0.8,org:'55% 50%',in:'whip'},
+ {id:'sh-g4',a:T.focus,in:'zoom'},                                    // focus + compare + corr
  {id:'sh-stress',a:T.stress,kb:'kb-stress',s0:1.02,s1:1.08,r0:-0.5,r1:0.5,org:'40% 30%',in:'cut'},
- {id:'sh-scrollbed',a:T.scrollbed,kb:'kb-scrollbed',s0:1.03,s1:1.08,r0:0.5,r1:-0.5,org:'40% 30%',in:'match'},
- {id:'sh-g4',a:T.trick,in:'zoom'},
- {id:'sh-sleep',a:T.sleep,kb:'kb-sleep',s0:1.02,s1:1.07,r0:-0.5,r1:0.5,org:'60% 40%',in:'whip'},
- {id:'sh-g5',a:T.comment,in:'zoom'},
+ {id:'sh-screen',a:T.screen,kb:'kb-screen',s0:1.03,s1:1.09,r0:0.5,r1:-0.5,org:'45% 40%',in:'match'},
+ {id:'sh-g5',a:T.trick,in:'zoom'},                                    // trick + putdown
+ {id:'sh-beforebed',a:T.beforebed,kb:'kb-beforebed',s0:1.02,s1:1.07,r0:-0.4,r1:0.4,org:'50% 35%',in:'whip'},
+ {id:'sh-sleep',a:T.sleep,kb:'kb-sleep',s0:1.02,s1:1.07,r0:-0.5,r1:0.5,org:'60% 40%',in:'match'},
+ {id:'sh-g6',a:T.comment,in:'zoom'},                                  // comment
  {id:'sh-loop',a:T.loop,kb:'kb-loop',s0:1.05,s1:1.0,org:'50% 62%',in:'match',still:1},
 ];
 SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; $(s.id).style.zIndex=String(i+1); if(s.kb)$(s.kb).style.transformOrigin=s.org;});
@@ -247,9 +253,9 @@ const STARS=[]; document.querySelectorAll('.stars').forEach((sv,j)=>{for(let i=0
   STARS.push({e:el('circle',{cx:x,cy:y,r,fill:i%7?'#C9C3FF':'#FF6FAE',opacity:.5},sv),x,y,i,j});}});
 function stars(t){STARS.forEach(s=>{s.e.setAttribute('cy',f2(((s.y-t*(30+s.i%5*12))%1920+1920)%1920)); s.e.setAttribute('opacity',f2(0.25+0.45*(0.5+0.5*Math.sin(t*3+s.i))));});}
 
-// ---------- zoom punches (Oxford, ทริก) + glitch (คนคิดว่า, สัมพันธ์): registry zoom-through / rgb-glitch-text, adapted ----------
+// ---------- zoom punches (Oxford, ทริก) + glitch (สัมพันธ์ ≠ เป็นเหตุ): registry zoom-through / rgb-glitch-text, adapted ----------
 const PUNCH=[K.oxford,K.trick];
-const GL=[T.supposed,T.corr], GLD=0.134; // 4 frames
+const GL=[T.corr], GLD=0.134; // 4 frames
 const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
 function fx(t){
   let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.085*Math.exp(-u*7)*Math.cos(u*13);});
@@ -264,18 +270,20 @@ function fx(t){
     b.style.transform=`translateX(${(i%2?-1:1)*(20+gi*9)}px)`;});
 }
 
-// ---------- hook title: complete at frame 0 (no fade-in), breathes 1.0<->1.04, back in the last ~0.3 s (loop) ----------
-const TL=[['tl1',248,170],['tl2',414,138],['tl3',560,150]];
+// ---------- hook title: complete at frame 0 (no fade-in), breathes 1.0<->1.04, stays over "จริงหรอ" (really), back in the last ~0.3 s ----------
+const TL=[['tl1',250,170],['tl2',420,122],['tl3',556,150]];
 TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
 const TBACK=DUR-0.3;
 function title(t){
   let o,sc;
-  if(t<TBACK){ const out=eo((t-(T.bed-0.04))/0.12); o=1-out; sc=1+0.25*out; }
+  if(t<TBACK){ const out=eo((t-(T.define-0.04))/0.12); o=1-out; sc=1+0.25*out; }
   else { const a=S(t-TBACK,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
-  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-T.loop)/0.4));
+  show($('title'),o); show($('tshade'),t<TBACK?(t<T.really?o:0.6*o):clamp((t-T.loop)/0.4));
   const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<TBACK?1:0;
+  // "จริงหรอ?" pops a little on the word
+  const pj=t>=K.jing&&t<T.define?0.12*Math.exp(-(t-K.jing)*6)*Math.cos((t-K.jing)*16):0;
   TL.forEach(([id],i)=>{const e=$(id);
-    e.style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.2*live*Math.sin(t*2.4):0)}deg) scale(${((t<TBACK?br:1)*sc).toFixed(4)})`;});
+    e.style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.2*live*Math.sin(t*2.4):0)}deg) scale(${((t<TBACK?br:1)*sc*(i===2?1+pj:1)).toFixed(4)})`;});
 }
 
 // ---------- the brain (one character) ----------
@@ -283,7 +291,7 @@ const BN='M-190 40 C-215 -30 -170 -110 -100 -120 C-80 -170 0 -175 30 -140 C70 -1
 const BM='M-200 70 C-215 10 -175 -50 -110 -55 C-85 -95 -5 -100 25 -75 C70 -100 150 -85 165 -35 C215 -15 225 50 195 85 C200 120 175 140 150 135 L150 210 C150 235 120 235 120 210 L120 150 C80 160 40 158 20 150 L20 250 C20 278 -12 278 -12 250 L-12 150 C-50 158 -90 150 -110 145 L-110 190 C-110 214 -140 214 -140 190 L-140 135 C-185 125 -205 100 -200 70 Z';
 const BC='M-360 -150 Q-360 -190 -320 -190 L320 -190 Q360 -190 360 -150 L360 140 Q360 180 320 180 L-110 180 L-210 260 L-190 180 L-320 180 Q-360 180 -360 140 Z';
 const FL=window.flubber, OPT={maxSegmentLength:6};
-const N2M=FL.interpolate(BN,BM,OPT), M2N=FL.interpolate(BM,BN,OPT), N2C=FL.interpolate(BN,BC,OPT);
+const N2M=FL.interpolate(BN,BM,OPT), N2C=FL.interpolate(BN,BC,OPT);
 const BR=el('g',{},G);
 const bShadow=el('ellipse',{cx:0,cy:200,rx:170,ry:22,fill:'#000',opacity:.3},BR);
 const bBody=el('path',{d:BN,fill:PINK,stroke:INK,'stroke-width':9,'stroke-linejoin':'round'},BR);
@@ -297,47 +305,52 @@ const blush=[-92,92].map(x=>el('ellipse',{cx:x,cy:56,rx:22,ry:12,fill:'#FF3D8B',
 const DROP='M0 -26 C10 -10 18 0 18 10 A18 18 0 0 1 -18 10 C-18 0 -10 -10 0 -26 Z';
 const DRIPS=[-125,4,135].map(x=>({x,e:el('path',{d:DROP,fill:PINK,stroke:INK,'stroke-width':5,opacity:0},BR)}));
 const SPARK=[...Array(4)].map(()=>el('path',{d:'M0 -30 L8 -8 L30 0 L8 8 L0 30 L-8 8 L-30 0 L-8 -8 Z',fill:YEL,stroke:INK,'stroke-width':4,opacity:0},BR));
+const QM=el('text',{x:170,y:-120,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':190,fill:YEL,stroke:INK,'stroke-width':16,'paint-order':'stroke',opacity:0},BR); QM.textContent='?';
 const ZZ=[...Array(3)].map((_,i)=>{const e=el('text',{'font-family':'Kanit','font-weight':900,'font-size':[70,56,44][i],fill:'#fff',stroke:INK,'stroke-width':9,'paint-order':'stroke',opacity:0},G); e.textContent='z'; return e;});
 // pose tracks (positions move while hidden so the brain never flies across a cut)
-const bX=track(540,[[T.oxford,190],[T.noproof+0.2,540,OUT],[T.heavy+0.2,880,OUT],[T.corr+0.2,540,OUT],[T.putdown,400],[T.sleep+0.2,540,OUT]]);
-const bY=track(760,[[T.oxford,1020],[T.noproof+0.2,740,OUT],[T.heavy+0.2,440,OUT],[T.corr+0.2,840,OUT],[T.putdown,690],[T.sleep+0.2,720,OUT]]);
-const bS=track(0,[[T.melt,1,BOUNCE],[T.oxford,0.36],[T.noproof,0,OUT],[T.brainok,1.1,BOUNCE],[T.heavy,0,OUT],[T.focus,0.34,BOUNCE],[T.corr,0,OUT],
-  [T.trick,0.72,BOUNCE],[T.putdown,0.5],[T.sleep,0,OUT],[T.comment,1,BOUNCE],[T.loop,0,OUT]]);
-const bR=track(0,[[T.putdown,-14],[T.sleep+0.2,0,OUT]]);
-const meltP=t=>t<K.nao?0:(t<K.clip?clamp(S(t-K.nao,12,0.8)):1-clamp(S(t-K.clip,12,0.8)));
+const bX=track(540,[[T.tease+0.2,175,OUT],[T.noproof+0.2,540,OUT],[T.study,540],[T.heavy+0.2,860,OUT],[T.corr+0.2,540,OUT],[T.putdown,400],[T.beforebed+0.2,540,OUT]]);
+const bY=track(950,[[T.define,905],[T.tease+0.2,1020,OUT],[T.noproof+0.2,760,OUT],[T.study,1000],[T.heavy+0.2,440,OUT],[T.corr+0.2,840,OUT],[T.putdown,690],[T.beforebed+0.2,720,OUT]]);
+const bS=track(0,[[T.really,0.9,BOUNCE],[T.define,0.68],[T.tease,0,OUT],[T.oxford,0.36,BOUNCE],[T.noproof,0,OUT],[T.brainok,1.1,BOUNCE],[T.study,0.42],[T.heavy,0,OUT],
+  [T.focus,0.34,BOUNCE],[T.corr,0,OUT],[T.trick,0.72,BOUNCE],[T.putdown,0.5],[T.beforebed,0,OUT],[T.comment,1,BOUNCE],[T.loop,0,OUT]]);
+const bR=track(0,[[T.putdown,-14],[T.beforebed+0.2,0,OUT]]);
+// melt: starts to droop on "จริงหรอ" (25 %), melts on "เน่า", un-melts on "เน่าจริง" (brainok)
+const meltP=t=>{const m1=0.25*clamp(S(t-(K.jing+0.2),10,0.8)), m2=t<K.nao?0:clamp(S(t-K.nao,12,0.8)), un=t<W.brainok?0:clamp(S(t-W.brainok,12,0.8));
+  return (m1*(1-m2)+m2)*(1-un);};
 const comP=t=>t<K.khuenni?0:clamp(S(t-K.khuenni,12,0.85));
 function brain(t){
-  const s=bS(t); if(s<0.05){BR.setAttribute('opacity','0');ZZ.forEach(z=>z.setAttribute('opacity','0'));return;} BR.setAttribute('opacity','1');
-  const c=comP(t), m=meltP(t), shake=(t>=T.supposed&&t<T.supposed+0.4)?6*Math.sin(t*90):0;
+  const s=bS(t); if(s<0.12){BR.setAttribute('opacity','0');ZZ.forEach(z=>z.setAttribute('opacity','0'));return;} BR.setAttribute('opacity','1');
+  const c=comP(t), m=meltP(t), shake=(t>=T.corr&&t<T.corr+0.3)?6*Math.sin(t*90):0;
   const breathe=1+0.03*Math.sin(t*4.2)*(1-c);
   BR.setAttribute('transform',`translate(${f2(bX(t)+shake)} ${f2(bY(t)+8*Math.sin(t*2.2)*(1-c))}) rotate(${f2(bR(t)+2*Math.sin(t*1.6)*(1-c))}) scale(${f2(s*breathe)} ${f2(s/breathe)})`);
-  let d; if(c>0) d=N2C(c); else if(t<K.clip) d=N2M(m); else d=M2N(1-m);
-  bBody.setAttribute('d',d); bBody.setAttribute('fill',mix(PINK,'#FFF7FB',c));
+  bBody.setAttribute('d',c>0?N2C(c):N2M(m)); bBody.setAttribute('fill',mix(PINK,'#FFF7FB',c));
   GY.setAttribute('opacity',f2((1-0.7*m)*(1-clamp(c*2.5))));
   GY.setAttribute('transform',`translate(0 ${f2(38*m)}) scale(1 ${f2(1-0.25*m)})`);
-  const sleepy=(t>H.putdown+0.25&&t<T.sleep)?clamp((t-H.putdown-0.25)/0.15):0;
+  const sleepy=(t>H.putdown+0.25&&t<T.beforebed)?clamp((t-H.putdown-0.25)/0.15):0;
   FACE.setAttribute('opacity',f2(1-clamp(c*3))); FACE.setAttribute('transform',`translate(0 ${f2(42*m)})`);
   eyes.forEach(o=>{o.e.setAttribute('ry',f2(Math.max(2.5,20*(1-0.45*m)*(1-0.88*sleepy)))); o.h.setAttribute('opacity',f2(1-sleepy));});
   mSmile.setAttribute('opacity',f2(1-m)); mWavy.setAttribute('opacity',f2(m));
   bShadow.setAttribute('opacity',f2(0.3*(1-c))); bShadow.setAttribute('cy',f2(200+60*m));
   DRIPS.forEach((o,i)=>{const ph=((t*1.3+i*0.37)%1+1)%1, on=m>0.6; o.e.setAttribute('opacity',on?f2(clamp(ph*5)*(1-clamp((ph-0.75)/0.25))*m):'0');
     o.e.setAttribute('transform',`translate(${o.x} ${f2([225,280,225][i]+40*ph*ph)}) scale(0.8)`);});
-  SPARK.forEach((p,i)=>{const a=K.clip+0.15+i*0.12, u=t-a, on=u>0&&t<T.heavy; const sc=on?S(u,16,0.5)*(1-clamp((u-0.7)/0.3)):0;
+  // "?" on "จริงหรอ"
+  const q=t>=K.jing&&t<T.define+0.1?S(t-K.jing,18,0.5)*(t>T.define?1-clamp((t-T.define)/0.1):1):0;
+  QM.setAttribute('opacity',q>0.01?'1':'0'); QM.setAttribute('transform',`translate(170 -110) rotate(${f2(12+8*Math.sin(t*5))}) scale(${f2(Math.max(0.001,q))}) translate(-170 110)`);
+  SPARK.forEach((p,i)=>{const a=W.brainok+0.15+i*0.12, u=t-a, on=u>0&&t<T.study; const sc=on?S(u,16,0.5)*(1-clamp((u-0.7)/0.3)):0;
     const ang=-150+i*100; p.setAttribute('transform',`translate(${f2(250*Math.cos(ang*Math.PI/180))} ${f2(-40+220*Math.sin(ang*Math.PI/180))}) rotate(${f2(t*120)}) scale(${f2(Math.max(0,sc))})`); p.setAttribute('opacity',on?'1':'0');});
-  ZZ.forEach((z,i)=>{const a=H.putdown+0.45+i*0.28, u=t-a, on=u>0&&t<T.sleep; if(!on){z.setAttribute('opacity','0');return;}
+  ZZ.forEach((z,i)=>{const a=H.putdown+0.45+i*0.28, u=t-a, on=u>0&&t<T.beforebed; if(!on){z.setAttribute('opacity','0');return;}
     const ph=(u%1.2)/1.2; z.setAttribute('x',f2(bX(t)+70+40*i+30*ph)); z.setAttribute('y',f2(bY(t)-90-60*i-90*ph)); z.setAttribute('opacity',f2(clamp(ph*5)*(1-clamp((ph-0.7)/0.3))*s/0.5));});
 }
 
 // ---------- the pill (one element morphing) ----------
-const PST=[ // [t, text, colour, icon, centre x, centre y]
-  [K.bon,'ความเชื่อ',RED,'circle-x',540,400,1.45],
+const PST=[ // [t, text, colour, icon, centre x, centre y, scale]
+  [K.nao+0.3,'ความเชื่อ',RED,'circle-x',540,690,1.2],
+  [T.tease,null],
   [K.oxford,'Oxford Word of the Year 2024',GRN,'circle-check',540,300,1.0],
-  [K.niyam,null],
-  [K.noproof,'ความจริง',YEL,'search',540,330,1.45],
-  [K.clip,'ยังไม่มีหลักฐานว่าเน่าถาวร',ORG,'triangle-alert',540,330,1.12],
-  [T.heavy,null],
-  [K.yae+0.25,'สัมพันธ์',ORG,'triangle-alert',540,1012,1.3],
-  [K.samphan,'สัมพันธ์ ≠ เป็นเหตุ',YEL,'triangle-alert',540,330,1.3],
+  [T.noproof,'ความจริง',YEL,'search',540,330,1.45],
+  [W.brainok,'ยังไม่มีหลักฐาน',ORG,'triangle-alert',540,330,1.35],
+  [T.study,null],
+  [K.phrut,'สัมพันธ์',ORG,'triangle-alert',540,1012,1.3],
+  [T.corr,'สัมพันธ์ ≠ เป็นเหตุ',YEL,'triangle-alert',540,330,1.3],
   [T.stress,null],
 ];
 const pill=$('pill'),pA=$('pillA'),pB=$('pillB'),pUse=$('pillUse');
@@ -360,88 +373,93 @@ function pillF(t){
   pUse.setAttribute('href','#ic-'+(p<0.5?ic0:ic1));
 }
 
-// ---------- dictionary card ----------
+// ---------- define: "Brainrot = สมองเน่า" kinetic lines ----------
+function bdefF(t){
+  [['bd1',T.define],['bd2',K.smnao]].forEach(([id,a],i)=>{const e=$(id), v=win(t,a,T.tease,BOUNCE);
+    if(show(e,clamp(v*2))) e.style.transform=`scale(${f2(Math.max(0.001,0.55+0.45*v))}) rotate(${f2((i?2:-2)*Math.sin(t*2.2+i))}deg)`;});
+}
+
+// ---------- feed: phone with an endless vertical feed + plain "Short / TikTok" label ----------
+const FEED=el('g',{opacity:0},G);
+const fd=el('defs',{},FEED); const fcp=el('clipPath',{id:'feedclip'},fd); el('rect',{x:-170,y:-330,width:340,height:660,rx:30},fcp);
+el('rect',{x:-200,y:-370,width:400,height:740,rx:56,fill:'#1B1B2F',stroke:INK,'stroke-width':10},FEED);
+const FSCR=el('g',{'clip-path':'url(#feedclip)'},FEED); el('rect',{x:-170,y:-330,width:340,height:660,fill:'#0E1230'},FSCR);
+const FCOL=['#FF6FAE','#7FD3FF','#FFE14D','#B58BFF','#3DDC84','#FFA53D'];
+const FCARDS=FCOL.map((c,i)=>{const g=el('g',{},FSCR); el('rect',{x:-150,y:0,width:300,height:200,rx:22,fill:c,opacity:.9},g);
+  el('rect',{x:-130,y:150,width:180,height:16,rx:8,fill:'#fff',opacity:.8},g); el('circle',{cx:0,cy:80,r:34,fill:'#fff',opacity:.55},g);
+  el('path',{d:'M-10 64 L18 80 L-10 96 Z',fill:c},g); return g;});
+el('rect',{x:-50,y:-352,width:100,height:14,rx:7,fill:'#333'},FEED);
+const FINGER=el('g',{},FEED); el('ellipse',{cx:0,cy:0,rx:46,ry:60,fill:'#F2C6A8',stroke:INK,'stroke-width':8},FINGER);
+function feedF(t){
+  const v=win(t,T.feed,T.night,BOUNCE); FEED.setAttribute('opacity',f2(clamp(v*2)));
+  const ft=$('feedT'), vt=win(t,K.short,T.night,BOUNCE);
+  if(show(ft,clamp(vt*2))) ft.style.transform=`translate(${f2(540-ft.offsetWidth/2)}px,${f2(258)}px) rotate(${f2(-2+1.5*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,vt))})`;
+  if(v<0.003)return;
+  FEED.setAttribute('transform',`translate(540 ${f2(745+30*(1-clamp(v)))}) rotate(${f2(-3+1.5*Math.sin(t*2))}) scale(${f2(Math.max(0.001,0.85+0.15*v))})`);
+  const sp=t-T.feed; FCARDS.forEach((g,i)=>{const y=((i*230-sp*1100)%1380+1380)%1380-330-230; g.setAttribute('transform',`translate(0 ${f2(y)})`);});
+  const fp=((sp*1100/230)%1+1)%1; FINGER.setAttribute('transform',`translate(${f2(120)} ${f2(200-160*eo(fp))})`); FINGER.setAttribute('opacity',f2(1-clamp((fp-0.8)/0.2)));
+}
+
+// ---------- night: "02:00" chip + moon ----------
+function clock2(t){const e=$('clock2'), v=win(t,K.thangkuen,T.oxford,BOUNCE); if(!show(e,clamp(v*2)))return;
+  e.style.transform=`translate(${f2(600+6*Math.sin(t*2))}px,${f2(290)}px) rotate(${f2(4*(1-clamp(v))+2*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;}
+
+// ---------- dictionary card: Oxford -> +230% ----------
 const card=$('card'), CEND=T.noproof;
 const numT=track(0,[[K.year,230,[5,1]]]);
 function cardF(t){
   const v=win(t,T.oxford,CEND,BOUNCE); if(!show(card,Math.min(1,v*1.5)))return;
-  const zoom=t>=T.supposed?S(t-T.supposed,10,0.85):0;
   card.style.transformOrigin='100% 58%';
-  card.style.transform=`translateY(${f2(60*(1-clamp(v))+8*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.8*Math.sin(t*1.1))}deg) scale(${(Math.max(0.001,0.85+0.15*v)*(1+0.06*zoom)).toFixed(4)})`;
+  card.style.transform=`translateY(${f2(60*(1-clamp(v))+8*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.8*Math.sin(t*1.1))}deg) scale(${Math.max(0.001,0.85+0.15*v).toFixed(4)})`;
   $('uline').style.transform=`scaleX(${f2(clamp(S(t-K.oxford-0.1,12,0.9)))})`;
-  // +230% counter (year shot) -> leaves for the definition
-  const cnt=$('cnt'), cin=t>=K.year?S(t-K.year,POP[0],POP[1]):0, cout=t>=T.define?eo((t-T.define)/0.18):0;
-  cnt.style.opacity=f2(clamp(cin)*(1-cout)); cnt.style.transform=`translateX(${f2(-260*cout)}px) scale(${f2(Math.max(0.001,0.7+0.3*cin))})`; cnt.style.transformOrigin='0 30%';
+  const cnt=$('cnt'), cin=t>=K.year?S(t-K.year,POP[0],POP[1]):0;
+  cnt.style.opacity=f2(clamp(cin)); cnt.style.transform=`scale(${f2(Math.max(0.001,0.7+0.3*cin))})`; cnt.style.transformOrigin='0 30%';
   const n=Math.min(230,Math.round(numT(t))); $('num').textContent='+'+(t>=K.year+1.15?230:n)+'%';
-  // definition typed line by line (from "นิยาม"), Thai gloss after
-  const def=$('def'), din=t>=T.define?eo((t-T.define-0.05)/0.15):0; def.style.opacity=f2(din);
-  const span=[[K.niyam,K.niyam+0.55],[K.niyam+0.55,K.niyam+1.05],[K.niyam+1.05,K.sueam+0.1]];
-  ['dl1','dl2','dl3'].forEach((id,i)=>{const r=clamp((t-span[i][0])/(span[i][1]-span[i][0])); $(id).style.clipPath=`inset(-10px ${f2(100-100*r)}% -10px -10px)`;});
-  const g=t>=K.sueam?S(t-K.sueam,POP[0],POP[1]):0; const dim=t>=T.supposed?eo((t-T.supposed-0.05)/0.25):0; $('dgl').style.opacity=f2(clamp(g)*(1-0.8*dim)); $('dgl').style.transform=`translateY(${f2(20*(1-clamp(g)))}px)`;
-  // "supposed": yellow marker sweeps on the glitch cut, other words dim
-  const hl=t>=T.supposed?eo((t-T.supposed-0.05)/0.25):0; $('supbg').style.width=f2(($('sup').offsetWidth+16)*hl)+'px';
-  ['dl2','dl3'].forEach(id=>{$(id).style.opacity=f2(1-0.8*hl);});
-}
-// glitch word "= คนคิดว่า" (registry rgb-glitch-text): steps of red/cyan offsets for 4 frames after the cut
-const gw=$('gw1');
-function glitchWord(t){
-  const v=win(t,K.khit,CEND,POP); if(!show(gw,clamp(v*1.5)))return;
-  gw.style.top='790px'; gw.style.transform=`scale(${f2(Math.max(0.001,0.6+0.4*v))}) rotate(${f2(-2+Math.sin(t*3))}deg)`;
-  const fi=Math.floor((t-K.khit)*30), on=fi>=0&&fi<5, o=[[-10,10],[8,-12],[-14,6],[6,-8],[-4,4]][Math.max(0,fi)%5];
-  gw.style.setProperty('--hf-glitch-red',(on?o[0]:0)+'px'); gw.style.setProperty('--hf-glitch-blue',(on?o[1]:0)+'px');
 }
 
-// ---------- bed: "02:00" chip + moon ----------
-function clock2(t){const e=$('clock2'), v=win(t,K.tsong,T.melt,BOUNCE); if(!show(e,clamp(v*2)))return;
-  e.style.transform=`translate(${f2(600+6*Math.sin(t*2))}px,${f2(290)}px) rotate(${f2(4*(1-clamp(v))+2*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;}
+// ---------- study: paper cards fly in + magnifier; source tag (kept through the focus card) ----------
+const PAP=[0,1,2].map(i=>{const g=el('g',{opacity:0},G); el('rect',{x:-150,y:-200,width:300,height:400,rx:18,fill:'#FFF8EE',stroke:INK,'stroke-width':8},g);
+  el('rect',{x:-110,y:-160,width:220,height:22,rx:8,fill:'#7A3E8F'},g);
+  for(let k=0;k<6;k++)el('rect',{x:-110,y:-110+k*42,width:k%3===2?150:220,height:14,rx:7,fill:'#B9AFC9'},g);
+  if(i===2){el('path',{d:'M-100 150 L-40 110 L10 130 L90 70',fill:'none',stroke:'#FF6FAE','stroke-width':10,'stroke-linecap':'round','stroke-linejoin':'round'},g);} return g;});
+const MAG=el('g',{opacity:0},G); el('circle',{r:74,fill:YEL,stroke:INK,'stroke-width':8},MAG);
+el('use',{href:'#ic-search',x:-52,y:-52,width:104,height:104,color:INK},MAG);
+function studyF(t){
+  const a=T.study, b=T.heavy;
+  PAP.forEach((g,i)=>{const v=win(t,a+0.08*i,b,MORPH); g.setAttribute('opacity',f2(clamp(v*2)));
+    const x=lerp(1300,[400,540,680][i],clamp(v)), r=[-10,-2,8][i]+2*Math.sin(t*2+i);
+    g.setAttribute('transform',`translate(${f2(x)} ${f2(700+[20,-10,10][i]+6*Math.sin(t*1.7+i))}) rotate(${f2(r)}) scale(${f2(Math.max(0.001,0.9))})`);});
+  const vm=win(t,K.jer,b,BOUNCE); MAG.setAttribute('opacity',f2(clamp(vm*2)));
+  MAG.setAttribute('transform',`translate(${f2(760+30*Math.sin(t*3))} ${f2(820+20*Math.cos(t*3))}) rotate(${f2(-12+8*Math.sin(t*4))}) scale(${f2(Math.max(0.001,vm))})`);
+  const e=$('src'), vs=Math.max(pinO(t,K.wijai,T.heavy),pinO(t,T.focus,T.corr)); show(e,vs); e.style.transform=`translateY(${f2(12*(1-vs))}px) scale(1.15)`;
+}
 
-// ---------- heavy: speed streaks (fast scroll) ----------
-const STK=[...Array(8)].map((_,i)=>el('rect',{x:[90,170,880,960,250,820,130,930][i],width:10,height:220,rx:5,fill:'#E8E4FF',opacity:0},G));
-function streaks(t){const on=t>=T.heavy&&t<T.focus; STK.forEach((r,i)=>{if(!on){r.setAttribute('opacity','0');return;}
-  const ph=(((t-T.heavy)*2.6+i*0.27)%1+1)%1; r.setAttribute('y',f2(1500-1300*ph)); r.setAttribute('opacity',f2(0.55*Math.sin(ph*Math.PI)));});}
-
-// ---------- focus meter + source tag ----------
+// ---------- focus meter (bars ~70 / ~55 %, illustration only) -> compare: highlight the "ดูน้อย" group ----------
 const b1=track(0,[[K.test,330,MORPH]]), b2=track(0,[[K.test+0.08,330,MORPH],[K.yae,260,BOUNCE]]);
 function focusF(t){const v=win(t,T.focus,T.corr,BOUNCE), p=$('panel');
-  show($('src'),pinO(t,T.focus+0.1,T.corr)*0.95);
   if(!show(p,clamp(v*1.6)))return;
   p.style.transform=`translateY(${f2(70*(1-clamp(v))+6*Math.sin(t*1.9))}px) rotate(${f2(0.7*Math.sin(t*1.2))}deg) scale(${f2(Math.max(0.001,0.85+0.15*v))})`;
   $('bar1').style.width=f2(Math.max(0,b1(t)))+'px'; $('bar2').style.width=f2(Math.max(0,b2(t)))+'px';
-  $('bar2').style.background=mix(ORG,RED,clamp((t-K.yae)/0.3));}
+  $('bar2').style.background=mix(ORG,RED,clamp((t-K.yae)/0.3));
+  const h=t>=K.maikoi?S(t-K.maikoi,POP[0],POP[1]):0; $('hlr').style.opacity=f2(clamp(h)*(0.75+0.25*Math.sin(t*8)));
+  const ok=$('ok1'); ok.style.opacity=f2(clamp(h*2)); ok.style.transform=`scale(${f2(Math.max(0.001,h))}) rotate(${f2(-8*(1-clamp(h)))}deg)`;}
 
-// ---------- correlation bubbles + double arrow ----------
+// ---------- corr: "เครียด" -> "ไถหนัก" (stress may drive the scrolling) ----------
 const ARW=el('g',{opacity:0},G);
-el('path',{d:'M-150 0 H150',stroke:'#fff','stroke-width':16,'stroke-linecap':'round'},ARW);
-el('path',{d:'M110 -36 L156 0 L110 36',fill:'none',stroke:'#fff','stroke-width':16,'stroke-linecap':'round','stroke-linejoin':'round'},ARW);
-el('path',{d:'M-110 -36 L-156 0 L-110 36',fill:'none',stroke:'#fff','stroke-width':16,'stroke-linecap':'round','stroke-linejoin':'round'},ARW);
+el('path',{d:'M-150 0 H130',stroke:'#fff','stroke-width':18,'stroke-linecap':'round'},ARW);
+el('path',{d:'M96 -40 L150 0 L96 40',fill:'none',stroke:'#fff','stroke-width':18,'stroke-linecap':'round','stroke-linejoin':'round'},ARW);
 function corrF(t){
-  [['bubA',T.corr,250],['bubB',T.corr+0.1,830]].forEach(([id,a,cx],i)=>{const e=$(id), v=win(t,a,T.stress,BOUNCE);
-    if(!show(e,clamp(v*2)))return; e.style.transform=`translate(${f2(cx-150+(i?1:-1)*14*Math.sin(t*5))}px,${f2(510+10*Math.sin(t*3+i))}px) scale(${f2(Math.max(0.001,v))})`;});
-  const v=win(t,T.corr+0.2,T.stress,POP); ARW.setAttribute('opacity',f2(clamp(v*2)));
-  ARW.setAttribute('transform',`translate(540 660) scale(${f2(Math.max(0.001,0.4*v+0.12*Math.sin(t*9)*clamp(v)))} 1)`);
-}
-
-// ---------- stress -> scroll loop chips ----------
-const LOOPA=el('g',{opacity:0},G);
-el('path',{d:'M-70 -40 A80 80 0 0 1 70 -40',fill:'none',stroke:YEL,'stroke-width':12,'stroke-linecap':'round'},LOOPA);
-el('path',{d:'M48 -64 L74 -36 L40 -22',fill:'none',stroke:YEL,'stroke-width':12,'stroke-linecap':'round','stroke-linejoin':'round'},LOOPA);
-el('path',{d:'M70 40 A80 80 0 0 1 -70 40',fill:'none',stroke:YEL,'stroke-width':12,'stroke-linecap':'round'},LOOPA);
-el('path',{d:'M-48 64 L-74 36 L-40 22',fill:'none',stroke:YEL,'stroke-width':12,'stroke-linecap':'round','stroke-linejoin':'round'},LOOPA);
-function loopChips(t){
-  const end=T.trick;
-  const vs=win(t,K.kriat,end,BOUNCE), slide=t>=T.scrollbed?S(t-T.scrollbed,14,0.8):0, e=$('chipS');
-  if(show(e,clamp(vs*2))) e.style.transform=`translate(${f2(lerp(370,90,slide))}px,${f2(300+5*Math.sin(t*4))}px) rotate(${f2(-3+2*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,vs))})`;
-  const vl=win(t,K.lnak,end,BOUNCE), l=$('chipL');
-  if(show(l,clamp(vl*2))) l.style.transform=`translate(${f2(650)}px,${f2(300+5*Math.cos(t*4))}px) rotate(${f2(3-2*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,vl))})`;
-  const va=win(t,K.lnak+0.05,end,POP); LOOPA.setAttribute('opacity',f2(clamp(va*2)));
-  LOOPA.setAttribute('transform',`translate(540 355) rotate(${f2(t*260)}) scale(${f2(Math.max(0.001,0.75*va))})`);
+  [['bubA',T.corr,250],['bubB',T.corr+0.12,830]].forEach(([id,a,cx],i)=>{const e=$(id), v=win(t,a,T.stress,BOUNCE);
+    if(!show(e,clamp(v*2)))return; e.style.transform=`translate(${f2(cx-150+(i?1:-1)*10*Math.sin(t*5))}px,${f2(510+10*Math.sin(t*3+i))}px) scale(${f2(Math.max(0.001,v))})`;});
+  const v=win(t,T.corr+0.06,T.stress,POP); ARW.setAttribute('opacity',f2(clamp(v*2)));
+  ARW.setAttribute('transform',`translate(${f2(540+10*Math.sin(t*9))} 660) scale(${f2(Math.max(0.001,0.45*v))} 1)`);
 }
 
 // ---------- trick: title + glowing bulb above the brain ----------
 const BULB=el('g',{opacity:0},G);
 const bulbGlow=el('circle',{r:170,fill:YEL,opacity:.25},BULB);
 el('circle',{r:96,fill:YEL,stroke:INK,'stroke-width':8},BULB);
-const bulbIc=el('use',{href:'#ic-lightbulb',x:-80,y:-80,width:160,height:160,color:INK},BULB);
+el('use',{href:'#ic-lightbulb',x:-80,y:-80,width:160,height:160,color:INK},BULB);
 function trickF(t){
   const tt=$('trickT'), v=win(t,K.trick,T.putdown,BOUNCE);
   if(show(tt,clamp(v*2))) tt.style.transform=`scale(${f2(Math.max(0.001,0.5+0.5*v))}) rotate(${f2(-3*(1-clamp(v))+Math.sin(t*3))}deg)`;
@@ -452,19 +470,18 @@ function trickF(t){
 
 // ---------- putdown: bed + phone flung onto the nightstand, face-down, landing on "เตียง" (hit) ----------
 const BED=el('g',{opacity:0},G);
-el('rect',{x:0,y:0,width:150,height:130,rx:14,fill:'#2B2160',stroke:INK,'stroke-width':8,transform:'translate(715 905)'},BED); // nightstand
-const bedIc=el('use',{href:'#ic-bed',x:0,y:0,width:24,height:24,color:'#FFF8EE'},el('g',{transform:'translate(140 560) scale(24)'},BED));
+el('rect',{x:0,y:0,width:150,height:130,rx:14,fill:'#2B2160',stroke:INK,'stroke-width':8,transform:'translate(715 905)'},BED);
+el('use',{href:'#ic-bed',x:0,y:0,width:24,height:24,color:'#FFF8EE'},el('g',{transform:'translate(140 560) scale(24)'},BED));
 const PH=el('g',{opacity:0},G);
 el('rect',{x:-56,y:-104,width:112,height:208,rx:20,fill:'#1B1B2F',stroke:INK,'stroke-width':8},PH);
 const phScr=el('rect',{x:-44,y:-88,width:88,height:170,rx:10,fill:'#7FD3FF'},PH);
 const phGlow=el('circle',{r:150,fill:'#7FD3FF',opacity:.18},PH);
 const MOON=el('use',{href:'#ic-moon',x:-60,y:-60,width:120,height:120,color:YEL,opacity:0},G);
 function putdownF(t){
-  const a=T.putdown, b=T.sleep, v=win(t,a,b,BOUNCE);
+  const a=T.putdown, b=T.beforebed, v=win(t,a,b,BOUNCE);
   BED.setAttribute('opacity',f2(clamp(v*2))); BED.setAttribute('transform',`translate(0 ${f2(40*(1-clamp(v)))})`);
   MOON.setAttribute('opacity',f2(clamp(win(t,a+0.1,b,POP)*2))); MOON.setAttribute('transform',`translate(${f2(840)} ${f2(330+8*Math.sin(t*2))}) rotate(${f2(-10+5*Math.sin(t*1.5))})`);
   const vp=win(t,a,b,POP); if(vp<0.003){PH.setAttribute('opacity','0');return;} PH.setAttribute('opacity','1');
-  // held by the brain (glowing) until the throw, lands at hit, settles
   const t0=a+0.04, t1=H.putdown, u=clamp((t-t0)/(t1-t0)), land=t>=t1?S(t-t1,20,0.45):0;
   const x=lerp(560,790,eio(u)), y=lerp(640,880,u)-120*Math.sin(Math.PI*u)+10*(1-land)*(t>=t1?1:0);
   const rot=lerp(-18,90,eio(u)), sy=t>=t1?lerp(1,0.9,clamp(land)):1;
@@ -472,8 +489,9 @@ function putdownF(t){
   const off=t>=t1?clamp((t-t1)/0.12):0; phScr.setAttribute('fill',mix('#7FD3FF','#1B1B2F',off)); phGlow.setAttribute('opacity',f2(0.18*(1-off)));
 }
 
-// ---------- sleep: small advice note ----------
-function noteF(t){const e=$('note'), v=pinO(t,T.sleep+0.05,T.comment); show(e,v); e.style.transform=`translateY(${f2(10*(1-v))}px)`;}
+// ---------- sleep: small advice note + kinetic "หลับยาก" ----------
+function noteF(t){const e=$('note'), v=pinO(t,T.sleep+0.05,T.comment); show(e,v); e.style.transform=`translateY(${f2(10*(1-v))}px)`;
+  const k=$('kword'), vk=win(t,K.lubyak,T.comment,BOUNCE); if(show(k,clamp(vk*2))) k.style.transform=`scale(${f2(Math.max(0.001,0.5+0.5*vk))}) rotate(${f2(-3+2*Math.sin(t*6))}deg) translateX(${f2(5*Math.sin(t*23)*clamp(vk))}px)`;}
 
 // ---------- comment: text inside the bubble the brain became ----------
 const CLK=el('g',{opacity:0},G); el('circle',{r:56,fill:YEL,stroke:INK,'stroke-width':8},CLK);
@@ -484,14 +502,20 @@ function commentF(t){
   const ct=$('ctext'), a=K.khuenni+0.18, v=win(t,a,T.loop,POP);
   if(show(ct,clamp(v*2))) ct.style.transform=`translateY(${f2(560+16*(1-clamp(v)))}px) scale(${f2(Math.max(0.001,0.8+0.2*v))})`;
   const q2=t>=K.kimong?S(t-K.kimong,POP[0],POP[1]):0; $('q2').style.transform=`scale(${f2(Math.max(0.001,q2))}) rotate(${f2(-3*Math.sin(t*4))}deg)`;
-  const q3=t>=K.kimong+0.35?S(t-K.kimong-0.35,POP[0],POP[1]):0; $('q3').style.opacity=f2(clamp(q3)); $('q3').style.transform=`translateY(${f2(16*(1-clamp(q3)))}px)`;
+  const q3=t>=K.ment?S(t-K.ment,POP[0],POP[1]):0; $('q3').style.opacity=f2(clamp(q3)); $('q3').style.transform=`translateY(${f2(16*(1-clamp(q3)))}px)`;
   const vc=win(t,a+0.1,T.loop,BOUNCE); CLK.setAttribute('opacity',f2(clamp(vc*2)));
   CLK.setAttribute('transform',`translate(206 548) rotate(${f2(-10+8*Math.sin(t*5))}) scale(${f2(Math.max(0.001,vc))})`);
   clkIc.setAttribute('transform',`rotate(${f2(t*90)} 0 0)`);
-  const vd=win(t,K.kimong+0.5,T.loop,POP); DOTS.setAttribute('opacity',f2(clamp(vd*2)));
+  const vd=win(t,K.ment+0.3,T.loop,POP); DOTS.setAttribute('opacity',f2(clamp(vd*2)));
   DOTS.setAttribute('transform',`translate(300 1010) scale(${f2(Math.max(0.001,vd))})`);
   dts.forEach((d,i)=>d.setAttribute('cy',f2(-10*Math.max(0,Math.sin(t*9-i*0.9)))));
 }
+
+// ---------- loop: soft moon over "อย่าลืมพักผ่อน", gone before the seam ----------
+const LMOON=el('g',{opacity:0},G); el('circle',{r:66,fill:'#2A1B5C',stroke:YEL,'stroke-width':6,opacity:.85},LMOON);
+el('use',{href:'#ic-moon',x:-44,y:-44,width:88,height:88,color:YEL},LMOON);
+function loopMoon(t){const v=win(t,K.luem,DUR-0.17,POP); LMOON.setAttribute('opacity',f2(clamp(v*2)*(1-clamp((t-(DUR-0.17))/0.1))));
+  LMOON.setAttribute('transform',`translate(540 ${f2(1010+6*Math.sin(t*3))}) rotate(${f2(-8+6*Math.sin(t*2))}) scale(${f2(Math.max(0.001,v))})`);}
 
 // ---------- captions: spring in on the word; last chunk clears before the loop seam ----------
 const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
@@ -503,8 +527,8 @@ function captions(t){
   capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
 }
 
-function render(t){ scenes(t); stars(t); fx(t); title(t); clock2(t); cardF(t); glitchWord(t); brain(t); pillF(t); streaks(t); focusF(t);
-  corrF(t); loopChips(t); trickF(t); putdownF(t); noteF(t); commentF(t); captions(t); }
+function render(t){ scenes(t); stars(t); fx(t); title(t); bdefF(t); feedF(t); clock2(t); cardF(t); studyF(t); focusF(t); corrF(t); brain(t); pillF(t);
+  trickF(t); putdownF(t); noteF(t); commentF(t); loopMoon(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
 tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
