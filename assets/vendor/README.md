@@ -9,4 +9,5 @@
 
 GSAP อยู่ใน HyperFrames อยู่แล้ว ไม่ต้องเพิ่ม ฟอนต์ไทยอยู่ที่ `assets/fonts/` (Geist ไม่มีตัวไทย อย่าใช้กับซับ)
 ข้อความไลเซนส์เต็ม: `LICENSES.md` (rough, flubber, d3) และ `lucide/LICENSE`
-ต้องการไอคอนอื่น: `npm i lucide-static` ในโฟลเดอร์ชั่วคราว แล้วคัดลอกมาเพิ่ม
+ต้องการไอคอนอื่น: `npm pack lucide-static@1.75.0` ในโฟลเดอร์ชั่วคราว แตกไฟล์ แล้วคัดลอก `package/icons/<ชื่อ>.svg` มาเพิ่ม (raw.githubusercontent มัก 403 ในเครื่องคลาวด์)
+`smartphone`, `bed`, `message-circle` เพิ่มทีหลังสำหรับแม่แบบ `templates/brainrot-v2/` (lucide-static 1.75.0 เวอร์ชันเดียวกัน ไลเซนส์ ISC ตาม `lucide/LICENSE`)

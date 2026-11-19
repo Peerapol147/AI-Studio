@@ -2,12 +2,30 @@
 """Generates index.html from index.html.tpl (one composition, Thai only).
 Shot times come from ../assets/audio/shots-th.json (never set by hand); footage plates are timed from them.
 Caption chunks and word anchors are located in ../assets/audio/words.json (the real voice): each time is the
-start of the first character of the phrase. Lucide icons are inlined as <symbol>s. Run: python3 build_index.py"""
-import html, json, math, pathlib, re
+start of the first character of the phrase. Lucide icons are inlined as <symbol>s.
+Run: python3 build_index.py [--audio DIR] [--out FILE]
+  --audio  folder with words.json + shots-th.json (default ../assets/audio, i.e. projects/<x>/assets/audio)
+  --out    where to write the page (default index.html next to this script)
+The repo root (for assets/vendor/lucide) is found by walking up from this file, so it works from
+templates/brainrot-v2/ and from projects/<x>/video/ alike; set AI_STUDIO_ROOT to override."""
+import argparse, html, json, math, os, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent
-AUD = HERE.parent / 'assets' / 'audio'
-LUC = HERE.parents[2] / 'assets' / 'vendor' / 'lucide'
+
+def repo_root():
+    if os.environ.get('AI_STUDIO_ROOT'):
+        return pathlib.Path(os.environ['AI_STUDIO_ROOT']).resolve()
+    for d in [HERE, *HERE.parents]:
+        if (d / 'assets' / 'vendor' / 'lucide').is_dir() or (d / '.git').exists():
+            return d
+    raise SystemExit(f'repo root not found above {HERE} (no assets/vendor/lucide or .git); set AI_STUDIO_ROOT')
+
+_ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
+_ap.add_argument('--audio', type=pathlib.Path, default=HERE.parent / 'assets' / 'audio')
+_ap.add_argument('--out', type=pathlib.Path, default=HERE / 'index.html')
+ARGS = _ap.parse_args()
+AUD = ARGS.audio.resolve()
+LUC = repo_root() / 'assets' / 'vendor' / 'lucide'
 # scribe wrote "และ" / "Trick" / "test"; the screen spells the script: แล้ว / ทริก / เทส
 ALIAS = {'แล้ว': 'และ', 'ทริก': 'trick', 'เทส': 'test'}
 
@@ -78,7 +96,10 @@ def caps():
 def icons():
     out = []
     for n in ICONS:
-        src = (LUC / f'{n}.svg').read_text()
+        f = LUC / f'{n}.svg'
+        if not f.exists():
+            raise SystemExit(f'missing icon {f} (add it from lucide-static, see assets/vendor/README.md)')
+        src = f.read_text()
         inner = re.search(r'>\s*(.*)</svg>', src, re.S).group(1).strip()
         inner = re.sub(r'\s+', ' ', inner)
         out.append(f'<symbol id="ic-{n}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
@@ -107,7 +128,7 @@ for sid, tag in videos().items():
 for key, v in rep.items():
     page = page.replace(key, v)
 assert '%%' not in page, re.findall(r'%%\w+%%', page)
-(HERE / 'index.html').write_text(page)
+ARGS.out.write_text(page)
 if __name__ == '__main__':
     print('dur', DUR, 'captions', len(CAPS), 'loop media_start', FOOT[-1][2])
     print('K', K)
