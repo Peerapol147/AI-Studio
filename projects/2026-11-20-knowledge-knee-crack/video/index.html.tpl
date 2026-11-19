@@ -1,0 +1,535 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="assets/flubber.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B1220}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.fw,.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.fill{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.band{position:absolute;left:0;width:1080px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 150px,#000 calc(100% - 150px),transparent 100%)}
+.vb{object-fit:cover}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
+.sweep{position:absolute;left:-600px;top:-200px;width:420px;height:2400px;mix-blend-mode:screen;opacity:.45;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,250,235,.5) 50%,rgba(255,255,255,0) 100%)}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.dbg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 34%,#22375C 0%,#132038 55%,#0A111F 100%)}
+.grid{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;opacity:.16;
+  background-image:linear-gradient(#5D7FB5 2px,transparent 2px),linear-gradient(90deg,#5D7FB5 2px,transparent 2px);background-size:80px 80px}
+.dsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px);mask-image:linear-gradient(to bottom,#000 0,#000 1080px,transparent 1180px)}
+#xdim{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#050A14}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:860px;background:linear-gradient(rgba(5,5,10,.72),rgba(5,5,10,0))}
+#title{position:absolute;left:0;top:0;width:1080px;height:760px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:26px #10080A;paint-order:stroke fill;transform-origin:50% 60%}
+.tag{position:absolute;left:0;top:0;padding:0 30px 8px;border-radius:34px;background:#1E9BF0;border:8px solid #10080A;
+  color:#fff;font-weight:900;font-size:50px;white-space:nowrap}
+.chip{position:absolute;left:0;top:0;height:96px;border-radius:48px;opacity:0;overflow:hidden;border:7px solid #10080A}
+.chip span{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font-weight:900;font-size:50px;white-space:nowrap}
+#strip{position:absolute;left:60px;top:1294px;width:840px;height:120px;border-radius:60px;background:#fff;opacity:0;
+  box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 0 0 6px #10080A}
+#ind{position:absolute;top:11px;height:98px;border-radius:49px;background:#1E9BF0}
+.st{position:absolute;top:0;height:120px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:35px;color:#5C4A3C;white-space:nowrap}
+.arw{position:absolute;top:42px;width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid #C9B8A6}
+#bubble{position:absolute;left:0;top:0;width:560px;height:440px;opacity:0}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:10px;width:1000px;top:1200px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFD23F}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+  <div class="sc" id="sh-hook"><div class="fw" id="fw-hook"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-hook"><img class="band" src="assets/hook-crop.jpg" style="top:570px;height:1187px" alt=""/>
+      <svg class="ov" id="hookov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-hook"></div></div>
+  <div class="sc" id="sc-knee"><div class="dbg"></div><div class="grid" id="grid-k"></div>
+    <svg class="dsvg" viewBox="0 0 1080 1920" width="1080" height="1920">
+      <defs>
+        <radialGradient id="redg"><stop offset="0" stop-color="#FF4D4D" stop-opacity=".95"/><stop offset=".45" stop-color="#E0202E" stop-opacity=".55"/><stop offset="1" stop-color="#E0202E" stop-opacity="0"/></radialGradient>
+        <radialGradient id="bubg" cx=".38" cy=".34"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#E6F6FF" stop-opacity=".95"/><stop offset="1" stop-color="#9ED8FF" stop-opacity=".7"/></radialGradient>
+        <radialGradient id="glowy"><stop offset="0" stop-color="#FFF6B0" stop-opacity=".95"/><stop offset=".4" stop-color="#FFD23F" stop-opacity=".55"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient>
+        <linearGradient id="boneg" x1="0" x2="1"><stop offset="0" stop-color="#E9DCC4"/><stop offset=".5" stop-color="#FFF8EA"/><stop offset="1" stop-color="#DCCBB0"/></linearGradient>
+        <linearGradient id="fluidg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7CC8FF"/><stop offset="1" stop-color="#2F86E8"/></linearGradient>
+      </defs>
+      <g id="kcam"></g>
+    </svg>
+    <svg class="ov" id="kov" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sc-tease"><div class="dbg"></div><div class="grid" id="grid-t"></div>
+    <svg class="ov" id="teaseov" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-common"><div class="fw" id="fw-common"><img class="fill" src="assets/common-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-common">%%V_COMMON%%</div><div class="vig"></div></div>
+  <div class="sc" id="sh-nopain"><div class="fw" id="fw-nopain"><img class="fill" src="assets/nopain-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-nopain">%%V_NOPAIN%%<div style="position:absolute;left:0;top:150px;width:1080px;height:560px;background:linear-gradient(rgba(6,10,20,.62),rgba(6,10,20,0))"></div>
+      <svg class="ov" id="nopainov" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
+  <div class="sc" id="sh-study"><div class="fw" id="fw-study"><img class="fill" src="assets/study-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-study">%%V_STUDY%%</div><div class="vig"></div></div>
+  <div class="sc" id="sc-xray"><div class="fw" id="fw-xray"><img class="fill" src="assets/xray-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-xray"><img class="band" src="assets/xray-crop.jpg" style="top:240px;height:1440px" alt=""/>
+      <svg class="ov" id="xrayov" viewBox="0 0 1080 1920"></svg></div>
+    <div id="xdim"></div><svg class="ov" id="barsov" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-pain"><div class="fw" id="fw-pain"><img class="fill" src="assets/pain-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-pain"><img class="band" src="assets/pain-crop.jpg" style="top:380px;height:1080px" alt=""/>
+      <svg class="ov" id="painov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-pain"></div></div>
+  <div class="sc" id="sh-doctor"><div class="fw" id="fw-doctor"><img class="fill" src="assets/doctor-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-doctor">%%V_DOCTOR%%</div><div class="sweep" id="sw-doctor"></div></div>
+  <div class="sc" id="sh-cta"><div class="fw" id="fw-cta"><img class="fill" src="assets/hook-fill.jpg" alt=""/></div>
+    <div class="kb" id="kb-cta"><img class="band" src="assets/hook-crop.jpg" style="top:300px;height:1187px" alt=""/>
+      <svg class="ov" id="ctaov" viewBox="0 0 1080 1920"></svg></div><div class="sweep" id="sw-cta"></div></div>
+</div>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
+  <div class="chip" id="chipT"><span id="chipT1"></span><span id="chipT2"></span></div>
+  <div class="chip" id="chipM"><span id="chipM1"></span><span id="chipM2"></span></div>
+  <div class="chip" id="chipL"><span id="chipL1"></span></div>
+  <div class="chip" id="chipR"><span id="chipR1"></span></div>
+  <div id="strip"><div id="ind"></div>
+    <div class="st" id="st0"></div><div class="arw" id="ar0"></div><div class="st" id="st1"></div><div class="arw" id="ar1"></div><div class="st" id="st2"></div>
+  </div>
+  <svg id="bubble" viewBox="0 0 560 440"><path d="M60 16h440a44 44 0 0 1 44 44v228a44 44 0 0 1-44 44H230l-96 84v-84H60a44 44 0 0 1-44-44V60a44 44 0 0 1 44-44Z" fill="#fff" stroke="#10080A" stroke-width="16" stroke-linejoin="round"/>
+    <text id="bubT" x="280" y="200" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="104" fill="#1E9BF0" stroke="#10080A" stroke-width="10" paint-order="stroke"></text>
+    <g id="dots"><circle cx="220" cy="270" r="14" fill="#10080A"/><circle cx="280" cy="270" r="14" fill="#10080A"/><circle cx="340" cy="270" r="14" fill="#10080A"/></g></svg>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1"></div><div class="tl" id="tl2"></div><div class="tl" id="tl3"></div></div>
+  <div class="tag" id="tag"></div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+%%CAPS%%
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-2f1bc5f2.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine), same kit as the knuckle-crack episode.
+   One side-view knee diagram morphs through every graphic:knee shot (oa-q -> dry -> truth -> gas -> bubble -> tendon -> rule-ok -> stiff).
+   Shot times = assets/audio/shots-th.json, word anchors = words.json (both injected by build_index.py). */
+(function(){
+const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
+const T={},H={},W={}; for(const k in SH){T[k]=SH[k].start; W[k]=SH[k].word; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],CAM=[7.5,1],CAMF=[13,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const vis=(t,tin,tout,o={})=>{const lin=o.lin??0.2,lout=o.lout??0.14,bl=o.blur??10;
+  const a=tin==null?1:eo((t-tin)/lin), b=tout==null?0:eo((t-tout)/lout);
+  return {o:a*(1-b),blur:(1-a)*bl+b*bl,a,b};};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const blur=(e,b)=>{e.style.filter=b>0.05?`blur(${b.toFixed(2)}px)`:'none';};
+const f2=v=>v.toFixed(2);
+const TXT=(p,x,y,s,fill,txt,extra={})=>{const e=el('text',{x,y,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':s,fill,stroke:'#10080A','stroke-width':Math.round(s/6),'paint-order':'stroke',...extra},p);e.textContent=txt;return e;};
+
+// ---------- scenes: each shot window with its entry transition (whip / zoom-through / match) ----------
+const SC=[
+ {id:'sh-hook',a:0,kb:'kb-hook',fw:'fw-hook',s0:1.0,s1:1.1,r0:0,r1:-1.5,org:'52% 62%',in:'none'},
+ {id:'sc-knee',a:T['oa-q'],in:'zoom'},
+ {id:'sc-tease',a:T.tease,in:'whip'},
+ {id:'sc-knee',a:T.dry,in:'whip'},
+ {id:'sh-common',a:T.common,kb:'kb-common',fw:'fw-common',s0:1.0,s1:1.1,r0:-1,r1:0.6,org:'50% 42%',in:'whip'},
+ {id:'sh-nopain',a:T.nopain,kb:'kb-nopain',fw:'fw-nopain',s0:1.02,s1:1.12,r0:0.8,r1:-0.8,org:'50% 58%',in:'match'},
+ {id:'sc-knee',a:T.gas,in:'zoom'},
+ {id:'sh-study',a:T.study,kb:'kb-study',fw:'fw-study',s0:1.0,s1:1.12,r0:1,r1:-0.8,org:'60% 45%',in:'whip'},
+ {id:'sc-xray',a:T.bars,kb:'kb-xray',fw:'fw-xray',s0:1.0,s1:1.1,r0:-0.8,r1:0.8,org:'50% 50%',in:'zoom'},
+ {id:'sc-knee',a:T['rule-ok'],in:'zoom'},
+ {id:'sh-pain',a:T['rule-pain'],kb:'kb-pain',fw:'fw-pain',s0:1.02,s1:1.14,r0:-1.2,r1:0.8,org:'41% 51%',in:'whip'},
+ {id:'sc-knee',a:T.stiff,in:'zoom'},
+ {id:'sh-doctor',a:T.doctor,kb:'kb-doctor',fw:'fw-doctor',s0:1.0,s1:1.12,r0:1,r1:-1,org:'40% 45%',in:'whip'},
+ {id:'sh-cta',a:T.cta,kb:'kb-cta',fw:'fw-cta',s0:1.04,s1:1.13,r0:-1,r1:0.6,org:'52% 52%',in:'zoom'},
+];
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; if(s.kb)$(s.kb).style.transformOrigin=s.org; $(s.id).style.zIndex=String(i+1);});
+const WHIP=0.16, ZIN=0.22;
+function sceneState(s,t){ // null (hidden) or {o,tx,sc}
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
+  if(s.in==='whip'){ tx=1080*(1-eo(u/WHIP)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.35*(1-S(u,16,0.9)); }
+  else if(s.in==='match'){ o=eio(u/0.1); sc=1+0.06*(1-eo(u/0.3)); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+WHIP)return null; if(t>=end) tx=-1080*eo((t-end)/WHIP); }
+    else if(nx.in==='zoom'){ if(t>=end+0.1)return null; const z=(t-(end-ZIN))/ZIN; if(z>0) sc*=1+1.6*ei(z); }
+    else { if(t>=end+0.12)return null; }
+  }
+  return {o,tx,sc};
+}
+const SCIDS=[...new Set(SC.map(s=>s.id))];
+function punch(id,t){ // word-locked punch-ins / shakes on stills
+  let k=1,dx=0,dy=0; const P={'sh-hook':[H.hook,0.06,22,0.45,10],'sc-xray':[T.risk,0.16,20,0.6,0],'sh-pain':[H['rule-pain'],0.12,20,0.5,14]}[id];
+  if(P){const tau=t-P[0]; if(tau>0){k=1+P[1]*S(tau,P[2],P[3]); const sh=Math.exp(-8*tau); dx=P[4]*sh*Math.sin(tau*70); dy=P[4]*0.7*sh*Math.cos(tau*83);}}
+  return {k,dx,dy};
+}
+function scenes(t){
+  const st={};
+  SC.forEach((s,i)=>{const r=sceneState(s,t); if(r)st[s.id]={r,s,i};});
+  for(const id of SCIDS) if(!st[id]) $(id).style.opacity='0';
+  for(const id in st){const {r,s,i}=st[id]; const e=$(id);
+    e.style.zIndex=String(i+1);
+    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    if(s.kb){ const uu=clamp((t-s.a)/Math.max(0.3,(Math.min(s.b,DUR)-s.a)));
+      let k=lerp(s.s0,s.s1,eio(0.12+0.88*uu)); const rr=lerp(s.r0,s.r1,uu);
+      let dx=9*Math.sin(t*1.7+s.a), dy=7*Math.cos(t*1.3+s.a);
+      const p=punch(id,t); k*=p.k; dx+=p.dx; dy+=p.dy;
+      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`;
+      // parallax: the blurred fill drifts the other way, slower
+      $(s.fw).style.transform=`translate(${f2(-14*Math.sin(t*0.9+s.a)-30*uu)}px,${f2(-10*Math.cos(t*0.7+s.a))}px) rotate(${f2(-0.5*rr)}deg) scale(${(1.12+0.05*uu).toFixed(4)})`;
+    }
+  }
+  [['sw-hook',0.05,1.1],['sw-pain',T['rule-pain']+0.1,0.9],['sw-doctor',T.doctor,0.8],['sw-cta',T.cta+0.3,1.2]].forEach(([id,a,d])=>{
+    const u=(t-a)/d; $(id).style.transform=`translateX(${(lerp(-300,1900,clamp(u))).toFixed(1)}px) rotate(14deg)`;});
+}
+
+// ---------- hook: title from frame 0 (breathes 1.0<->1.04), knee ring flashes on "กร๊อบ" ----------
+const TL=[['ลุกทีไร',330,118,'#fff'],['เข่าดังกร๊อบ',446,150,'#FFD23F'],['เข่าเสื่อมหรือเปล่า?',598,112,'#fff']];
+TL.forEach(([txt,top,size,c],i)=>{const e=$('tl'+(i+1)); e.textContent=txt; e.style.cssText+=`top:${top}px;font-size:${size}px;color:${c}`;});
+$('tag').textContent='รู้ไหม?';
+let fitted=false;
+function fitTitle(){ if(fitted)return; let ok=true; // shrink any line wider than 960 px (fonts may still be loading at frame 0)
+  TL.forEach(([txt,top,size],i)=>{const e=$('tl'+(i+1)); e.style.fontSize=size+'px'; const r=document.createRange(); r.selectNodeContents(e);
+    const w=r.getBoundingClientRect().width/((e.getBoundingClientRect().width/1080)||1); if(!w){ok=false;return;}
+    if(w>960) e.style.fontSize=Math.floor(size*960/w)+'px';});
+  fitted=ok&&document.fonts&&document.fonts.status==='loaded'; }
+function title(t){
+  fitTitle();
+  const out=eo((t-(T['oa-q']-0.06))/0.12);
+  show($('title'),1-out); show($('tshade'),1-out); show($('tag'),1-out);
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9));
+  const c2=1+0.07*Math.exp(-8*Math.max(0,t-K.crack))*(t>K.crack?Math.sin((t-K.crack)*16):0);
+  ['tl1','tl2','tl3'].forEach((id,i)=>{const key=i===1;
+    $(id).style.transform=`translateY(${f2(4*Math.sin(t*3+i))}px) rotate(${f2(key?-1.5*Math.sin(t*2.4):0)}deg) scale(${(br*(key?c2:1)*(1+0.3*out)).toFixed(4)})`;
+    const sx=8*Math.sin(t*2.2+i), sy=12+5*Math.cos(t*1.8);
+    $(id).style.textShadow=`${f2(sx)}px ${f2(sy)}px 0 rgba(0,0,0,.5)`;});
+  const tg=$('tag'); const tw=tg.offsetWidth||220;
+  tg.style.transform=`translate(${f2(540-tw/2)}px,246px) rotate(${f2(-4+1.2*Math.sin(t*3))}deg) scale(${(1+0.03*Math.sin(t*5)).toFixed(4)})`;
+}
+// knee ring (hook and cta share the builder)
+function ringSet(svg,cx,cy,r){
+  const g=el('g',{},$(svg));
+  const glow=el('circle',{cx,cy,r:r*0.9,fill:'url(#glowk)',opacity:0},g);
+  const ring=el('circle',{cx,cy,r,fill:'none',stroke:'#FFD23F','stroke-width':12,'stroke-dasharray':'34 16'},g);
+  const ring2=el('circle',{cx,cy,r,fill:'none',stroke:'#fff','stroke-width':8,opacity:0},g);
+  const bl=[...Array(9)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':13,'stroke-linecap':'round',fill:'none',opacity:0},g));
+  const defs=el('defs',{},$(svg)); const gd=el('radialGradient',{id:'glowk'},defs);
+  gd.innerHTML='<stop offset="0" stop-color="#FFF6B0" stop-opacity=".75"/><stop offset=".5" stop-color="#FFD23F" stop-opacity=".35"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/>';
+  return {g,glow,ring,ring2,bl,cx,cy,r};
+}
+function burst(set,t,t0,x,y,R){set.forEach((p,i)=>{const tau=t-t0; if(tau<0||tau>0.5){p.setAttribute('opacity','0');return;}
+  const a=i/set.length*Math.PI*2+0.3, r1=R+90*eo(tau/0.3), r2=R+40+150*eo(tau/0.22);
+  p.setAttribute('d',`M${f2(x+Math.cos(a)*r1)} ${f2(y+Math.sin(a)*r1)} L${f2(x+Math.cos(a)*r2)} ${f2(y+Math.sin(a)*r2)}`);
+  p.setAttribute('opacity',(1-eo((tau-0.15)/0.35)).toFixed(3));});}
+function ringAt(R,t,t0,flash){
+  const a=S(t-t0,16,0.6), fl=flash>0?Math.exp(-6*flash):0;
+  R.g.setAttribute('transform',`translate(${R.cx} ${R.cy}) scale(${Math.max(0.001,a*(1+0.04*Math.sin(t*6))+0.18*fl).toFixed(4)}) translate(${-R.cx} ${-R.cy})`);
+  R.g.setAttribute('opacity',(t<t0?0:1).toString());
+  R.ring.setAttribute('stroke-dashoffset',f2(-t*80)); R.ring.setAttribute('stroke',fl>0.05?mix('#FFD23F','#FFFFFF',fl):'#FFD23F');
+  R.ring.setAttribute('stroke-width',f2(12+10*fl));
+  R.glow.setAttribute('opacity',(0.35+0.25*Math.sin(t*8)+0.6*fl).toFixed(3));
+  R.ring2.setAttribute('opacity',(flash>0&&flash<0.5?(1-flash/0.5)*0.9:0).toFixed(3)); R.ring2.setAttribute('r',f2(R.r+150*eo(flash/0.5)));
+}
+const RH=ringSet('hookov',562,1256,118);
+function hookov(t){ if(t>T['oa-q']+0.2)return; const fl=t>H.hook?t-H.hook:-1; ringAt(RH,t,0.12,fl); burst(RH.bl,t,H.hook,RH.cx,RH.cy,RH.r*0.6); }
+
+// ---------- the knee (one side-view diagram, morphs through every graphic:knee shot) ----------
+// joint centre = (0,0); femur from the top, tibia from the bottom, patella in front (right), capsule + synovial fluid around.
+const J={}; (function(){const g=el('g',{},$('kcam')); J.g=g;
+  const defs=el('defs',{},g); const cp=el('clipPath',{id:'flclip'},defs); J.level=el('rect',{x:-400,width:800,height:900},cp);
+  J.red=el('circle',{r:300,fill:'url(#redg)',opacity:0},g);
+  J.capFill=el('ellipse',{cx:10,fill:'url(#fluidg)','fill-opacity':.55,'clip-path':'url(#flclip)'},g);
+  J.surf=el('path',{fill:'none',stroke:'#BFE7FF','stroke-width':5,opacity:.8},g);
+  J.parts=[...Array(26)].map((_,i)=>el('circle',{fill:i%3?'#9ED8FF':'#FFFFFF',opacity:0},g));
+  J.quad=el('path',{fill:'none',stroke:'#E98C9E','stroke-width':40,'stroke-linecap':'round'},g);
+  J.patT=el('path',{fill:'none',stroke:'#E98C9E','stroke-width':34,'stroke-linecap':'round'},g);
+  J.tib=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},g); J.tibC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},g);
+  J.fem=el('path',{fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},g); J.femC=el('path',{fill:'none',stroke:'#8FD3F7','stroke-width':16,'stroke-linecap':'round'},g);
+  J.bump=el('circle',{r:30,fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':6},g);
+  J.pat=el('ellipse',{cx:212,cy:-120,rx:46,ry:80,fill:'url(#boneg)',stroke:'#B9A68A','stroke-width':7},g);
+  J.patC=el('path',{d:'M172 -180 Q160 -120 172 -60',fill:'none',stroke:'#8FD3F7','stroke-width':12,'stroke-linecap':'round'},g);
+  J.cap=el('ellipse',{cx:10,fill:'none',stroke:'#F28DB2','stroke-width':9,'stroke-dasharray':'22 12'},g);
+  J.bubs=[...Array(8)].map((_,i)=>{const b=el('g',{opacity:0},g); el('circle',{r:1,fill:'url(#bubg)',stroke:'#E6F6FF','stroke-width':3},b); el('ellipse',{fill:'#fff',opacity:.9},b); return b;});
+  J.tglow=el('path',{fill:'none',stroke:'#FFD23F','stroke-width':46,'stroke-linecap':'round',opacity:0},g);
+  J.ten=el('path',{fill:'none',stroke:'#FF8A3D','stroke-width':24,'stroke-linecap':'round',opacity:0},g);
+  J.tbl=[...Array(7)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':11,'stroke-linecap':'round',fill:'none',opacity:0},g));
+  J.rip=[...Array(3)].map(()=>el('circle',{fill:'none',stroke:'#FFD23F','stroke-width':10,opacity:0},g));
+  J.sparks=[...Array(10)].map(()=>el('path',{stroke:'#FF5A4A','stroke-width':8,'stroke-linecap':'round',fill:'none',opacity:0},g));
+})();
+const femPath=y1=>`M-72 -900 L-72 ${y1-270} C-72 ${y1-205} -168 ${y1-180} -168 ${y1-100} C-168 ${y1-25} -95 ${y1} 0 ${y1} C92 ${y1} 152 ${y1-32} 152 ${y1-102} C152 ${y1-165} 72 ${y1-205} 72 ${y1-270} L72 -900 Z`;
+const femCart=y1=>`M-152 ${y1-62} C-132 ${y1-12} -72 ${y1-4} 0 ${y1-4} C70 ${y1-4} 124 ${y1-22} 140 ${y1-72}`;
+const tibPath=y0=>`M-82 900 L-82 ${y0+235} C-82 ${y0+172} -172 ${y0+152} -172 ${y0+82} L-172 ${y0+22} Q0 ${y0-14} 172 ${y0+22} L172 ${y0+82} C172 ${y0+128} 124 ${y0+150} 110 ${y0+190} Q104 ${y0+220} 82 ${y0+245} L82 900 Z`;
+const tibCart=y0=>`M-162 ${y0+16} Q0 ${y0-16} 162 ${y0+16}`;
+const kgap=track(26,[[T.bubble,46,MORPH],[T.tendon,26,MORPH],[T.stiff,12,FAST]]);
+const kred=track(0,[[T['oa-q']+0.03,1,FAST],[T.dry,0.55,MORPH],[T.truth+0.08,0,MORPH],[T.stiff,1,FAST]]);
+const kflu=track(1,[[K.water,0.62,SLOW],[K.dry,0.1,MORPH],[T.truth+0.12,1,BOUNCE]]);
+const kswell=track(0,[[T.stiff,1,BOUNCE]]);
+const krip=track(0,[[T.gas,1,FAST],[T.bubble+0.3,0.35,MORPH],[T.tendon,0,FAST],[T['rule-ok'],1,FAST],[T.stiff,0,FAST]]);
+const kbub=track(0,[[K.gas,1,BOUNCE],[T.tendon+0.1,0,FAST]]);
+const kten=track(0,[[T.tendon,1,FAST],[T.study,0,FAST]]);
+const kS=track(2.4,[[T['oa-q'],0.78,CAMF],[T['oa-q']+0.45,1.02,CAM],[T.dry,1.25,CAMF],[K.dry,1.42,CAM],[T.truth,0.95,CAMF],[T.gas,1.22,CAMF],
+  [T.bubble,1.8,CAMF],[T.tendon,1.25,CAMF],[H.tendon,1.4,FAST],[T['rule-ok'],0.88,CAMF],[K.ok,1.0,CAM],[T.stiff,1.12,CAMF],[K.stiff,1.26,FAST]]);
+const kX=track(0,[[T.tendon,-120,CAMF],[T['rule-ok'],0,CAMF]]), kY=track(0,[[T.dry,30,CAMF],[T.truth,0,CAMF],[T.bubble,10,CAMF],[T.tendon,-90,CAMF],[T['rule-ok'],0,CAMF]]);
+const kWin=[[T['oa-q'],T.tease],[T.dry,T.common],[T.gas,T.study],[T['rule-ok'],T['rule-pain']],[T.stiff,T.doctor]];
+const kOn=t=>kWin.some(([a,b])=>t>=a-0.01&&t<b+0.2);
+const BUBP=[[-30,-6,13],[40,8,10],[-95,14,9],[95,-4,12],[0,12,8],[-150,40,11],[150,30,9],[-60,-2,7]];
+function knee(t){
+  if(!kOn(t))return;
+  const s=kS(t)*(1+0.012*Math.sin(t*2.3)), fx=kX(t)+8*Math.sin(t*1.3), fy=kY(t)+7*Math.cos(t*1.7), rot=0.9*Math.sin(t*0.9);
+  $('kcam').setAttribute('transform',`translate(540 610) rotate(${rot.toFixed(3)}) scale(${s.toFixed(5)}) translate(${f2(-fx)} ${f2(-fy)})`);
+  $('grid-k').style.transform=`translate(${f2(-fx*0.3+20*Math.sin(t*0.5))}px,${f2(-fy*0.3-t*12)}px)`;
+  const G=kgap(t), R=clamp(kred(t),0,1.3), F=clamp(kflu(t),0,1.1), SW=kswell(t), jit=(t>T.stiff?R:0)*5*Math.sin(t*40);
+  J.fem.setAttribute('d',femPath(-G/2)); J.femC.setAttribute('d',femCart(-G/2));
+  J.tib.setAttribute('d',tibPath(G/2)); J.tibC.setAttribute('d',tibCart(G/2));
+  J.fem.setAttribute('transform',`translate(${f2(jit)} 0)`); J.femC.setAttribute('transform',`translate(${f2(jit)} 0)`);
+  J.bump.setAttribute('cx',-170); J.bump.setAttribute('cy',f2(-G/2-150)); J.bump.setAttribute('transform',`translate(${f2(jit)} 0)`);
+  J.quad.setAttribute('d',`M200 -200 Q185 -500 120 -900`); J.patT.setAttribute('d',`M214 -42 Q190 ${f2(G/2+80)} 112 ${f2(G/2+200)}`);
+  const dryU=clamp(1-F); const cartC=mix(mix('#8FD3F7','#FF5A4A',clamp(R)),'#B08A6A',dryU*0.8);
+  [J.femC,J.tibC,J.patC].forEach(c=>c.setAttribute('stroke',cartC));
+  J.red.setAttribute('opacity',(clamp(R)*(0.7+0.3*Math.sin(t*19))).toFixed(3)); J.red.setAttribute('r',f2(240+60*SW+20*Math.sin(t*9)*SW));
+  // capsule + fluid (level drains for the myth, refills for the truth); swells for the warning
+  const rx=230*(1+0.18*SW+0.03*SW*Math.sin(t*10)), ry=(165+G*0.5)*(1+0.22*SW+0.03*SW*Math.sin(t*10));
+  [J.cap,J.capFill].forEach(e=>{e.setAttribute('rx',f2(rx)); e.setAttribute('ry',f2(ry));});
+  J.cap.setAttribute('stroke',mix('#F28DB2','#FF3B3B',clamp(SW))); J.cap.setAttribute('stroke-dashoffset',f2(-t*30));
+  const lv=ry-2*ry*clamp(F)+6*Math.sin(t*4); J.level.setAttribute('y',f2(lv));
+  const sw=Math.sqrt(Math.max(0,1-Math.pow(lv/ry,2)))*rx;
+  J.surf.setAttribute('d',F>0.98?'':`M${f2(10-sw)} ${f2(lv)} Q${f2(10-sw/2)} ${f2(lv-8*Math.sin(t*6))} 10 ${f2(lv)} T${f2(10+sw)} ${f2(lv)}`);
+  J.capFill.setAttribute('fill',dryU>0.4?mix('#7CC8FF','#C79A6A',(dryU-0.4)*1.4):'url(#fluidg)');
+  J.parts.forEach((p,i)=>{const ang=i*2.399+t*(0.5+(i%5)*0.12)*(i%2?1:-1), rr=0.3+0.65*(((i*0.618)%1)), x=10+rx*0.92*rr*Math.cos(ang), y=ry*0.92*rr*Math.sin(ang);
+    p.setAttribute('cx',f2(x)); p.setAttribute('cy',f2(y)); p.setAttribute('r',f2(4+3*((i*7)%3)+1.5*Math.sin(t*6+i)));
+    p.setAttribute('opacity',(y>lv?(0.4+0.6*Math.abs(Math.sin(t*3.1+i*1.7)))*(1-0.6*clamp(R)):0).toFixed(3));});
+  // red sparks while the "worn-out" fear is on screen
+  J.sparks.forEach((p,i)=>{const ph=((t*6+i*0.37)%1), x0=(i%2?1:-1)*(30+(i*23)%110), a=(i%2?-0.5:-2.6)+((i*0.9)%1.2)-0.6, r1=10+40*ph, r2=r1+26;
+    p.setAttribute('d',`M${f2(x0+Math.cos(a)*r1)} ${f2(Math.sin(a)*r1)} L${f2(x0+Math.cos(a)*r2)} ${f2(Math.sin(a)*r2)}`);
+    p.setAttribute('opacity',(clamp(R-0.3)*(1-ph)).toFixed(3));});
+  // sound ripples from the joint
+  const RP=clamp(krip(t),0,1.2);
+  J.rip.forEach((c,i)=>{const u=((t*1.8+i/3)%1); c.setAttribute('r',f2(150+260*eo(u))); c.setAttribute('opacity',(RP*(1-u)*0.9).toFixed(3));
+    c.setAttribute('stroke',t>T['rule-ok']-0.1?'#7CF0A8':'#FFD23F');});
+  // small gas bubbles in the fluid (the "maybe" mechanism)
+  const B=kbub(t);
+  J.bubs.forEach((b,i)=>{const [bx,by,br]=BUBP[i]; const a=S(t-K.gas-i*0.06,18,0.55);
+    const sc=Math.max(0,t<T.tendon?a:B); const r=br*sc*(1+0.08*Math.sin(t*9+i));
+    b.setAttribute('opacity',sc>0.02?'1':'0');
+    b.setAttribute('transform',`translate(${f2(bx+4*Math.sin(t*3+i))} ${f2(by-((t*14+i*7)%18))})`);
+    b.children[0].setAttribute('r',f2(Math.max(0,r))); const h=b.children[1]; h.setAttribute('cx',f2(-r*0.35)); h.setAttribute('cy',f2(-r*0.35)); h.setAttribute('rx',f2(r*0.25)); h.setAttribute('ry',f2(r*0.16));});
+  // tendon dragged over the bony bump, snaps on "ลาก"
+  const TV=clamp(kten(t)); const bumpY=-G/2-150;
+  let px,py; if(t<H.tendon){const u=eio((t-T.tendon)/(H.tendon-T.tendon)); py=lerp(-460,bumpY-8,u); px=-206-34*u;}
+  else {const a=S(t-H.tendon,22,0.42); py=lerp(bumpY-8,bumpY+190,a)+10*Math.sin((t-H.tendon)*3); px=lerp(-240,-204,a);}
+  const td=`M-118 -900 Q-120 ${f2(py-280)} ${f2(px)} ${f2(py)} Q-128 ${f2(py+300)} -130 900`;
+  J.ten.setAttribute('d',td); J.tglow.setAttribute('d',td);
+  J.ten.setAttribute('opacity',TV.toFixed(3)); J.ten.setAttribute('stroke-dasharray',`${f2(2200*TV)} 3000`);
+  const sn=t>H.tendon?Math.exp(-5*(t-H.tendon)):0; J.tglow.setAttribute('opacity',(TV*(0.25+0.6*sn)).toFixed(3));
+  if(t>H.tendon-0.01&&t<H.tendon+0.6) burst(J.tbl,t,H.tendon,-200,bumpY,40); else J.tbl.forEach(p=>p.setAttribute('opacity','0'));
+}
+
+// ---------- knee overlay (screen space): badge ? -> ✓ -> ⚠ (one shape, flubber morph), "อาจ" tag ----------
+const KB={}; (function(){const g=el('g',{},$('kov'));
+  const circ='M0 -92 C51 -92 92 -51 92 0 C92 51 51 92 0 92 C-51 92 -92 51 -92 0 C-92 -51 -51 -92 0 -92 Z';
+  const tri='M0 -108 C10 -108 16 -102 22 -92 L104 58 C110 70 104 84 88 84 L-88 84 C-104 84 -110 70 -104 58 L-22 -92 C-16 -102 -10 -108 0 -108 Z';
+  KB.interp=(window.flubber&&flubber.interpolate)?flubber.interpolate(circ,tri,{maxSegmentLength:8}):(u=>u<0.5?circ:tri);
+  KB.g=el('g',{opacity:0},g); KB.sh=el('path',{d:circ,stroke:'#10080A','stroke-width':12,'stroke-linejoin':'round'},KB.g);
+  KB.q=TXT(KB.g,0,46,130,'#fff','?'); KB.ex=TXT(KB.g,0,58,120,'#fff','!');
+  KB.ck=el('path',{d:'M-44 2 L-12 34 L48 -34',fill:'none',stroke:'#fff','stroke-width':24,'stroke-linecap':'round','stroke-linejoin':'round'},KB.g);
+  KB.may=el('g',{opacity:0},g); KB.mayL=el('path',{stroke:'#FFD23F','stroke-width':8,'stroke-dasharray':'4 16','stroke-linecap':'round',fill:'none'},KB.may);
+  el('rect',{x:-90,y:-54,width:180,height:100,rx:50,fill:'#FFD23F',stroke:'#10080A','stroke-width':8},KB.may); TXT(KB.may,0,22,62,'#10080A','อาจ',{stroke:'none'});
+})();
+const kbS=track(0,[[T['oa-q']+0.05,1,BOUNCE],[T.dry,0,FAST],[K.ok,1,BOUNCE]]), kbM=track(0,[[T.stiff,1,MORPH]]);
+function kov(t){
+  if(!kOn(t))return;
+  const s=Math.max(0,kbS(t)), u=clamp(kbM(t)), stiff=t>=T.stiff-0.01, ok=t>=T['rule-ok']-0.01;
+  KB.g.setAttribute('opacity',s>0.01?'1':'0');
+  KB.g.setAttribute('transform',`translate(840 ${f2(470+8*Math.sin(t*4))}) rotate(${f2(-8*(1-Math.min(1,s))+4*Math.sin(t*3))}) scale(${(s*(1+0.04*Math.sin(t*7))).toFixed(4)})`);
+  KB.sh.setAttribute('d',KB.interp(u)); KB.sh.setAttribute('fill',!ok?'#E0202E':mix('#1F8F4A','#E0202E',u));
+  const sv=vis(t,T.stiff+0.05,null,{lin:0.15});
+  KB.q.setAttribute('opacity',ok?'0':'1'); KB.ck.setAttribute('opacity',ok?(1-sv.o).toFixed(3):'0'); KB.ex.setAttribute('opacity',stiff?sv.o.toFixed(3):'0');
+  KB.ck.setAttribute('stroke-dasharray',`${f2(170*clamp((t-K.ok)/0.25))} 300`);
+  const mv=vis(t,T.bubble+0.12,T.study-0.05,{lin:0.18}); KB.may.setAttribute('opacity',(t>T.bubble&&t<T.study+0.2?mv.o:0).toFixed(3));
+  const ma=S(t-T.bubble-0.12,16,0.5);
+  KB.may.setAttribute('transform',`translate(230 ${f2(430+6*Math.sin(t*4))}) rotate(${f2(-6+3*Math.sin(t*3))}) scale(${(0.5+0.5*ma).toFixed(4)})`);
+  KB.mayL.setAttribute('d','M60 46 L220 170'); KB.mayL.setAttribute('stroke-dashoffset',f2(-t*50));
+}
+
+// ---------- tease: the elder's remark (a myth, labelled as one) ----------
+const TZ={}; (function(){const g=el('g',{},$('teaseov'));
+  TZ.pill=el('g',{},g); el('rect',{x:-250,y:-52,width:500,height:104,rx:52,fill:'#E0202E',stroke:'#10080A','stroke-width':8},TZ.pill);
+  TXT(TZ.pill,0,20,56,'#fff','คำทัก · ความเชื่อ',{stroke:'none'});
+  TZ.bub=el('g',{},g);
+  el('path',{d:'M-380 -230 H380 A60 60 0 0 1 440 -170 V150 A60 60 0 0 1 380 210 H-170 L-300 330 L-260 210 H-380 A60 60 0 0 1 -440 150 V-170 A60 60 0 0 1 -380 -230 Z',fill:'#fff',stroke:'#10080A','stroke-width':16,'stroke-linejoin':'round'},TZ.bub);
+  TZ.q1=TXT(TZ.bub,-330,-120,110,'#E0202E','“',{'text-anchor':'start',stroke:'none'});
+  TZ.l1=TXT(TZ.bub,0,-30,132,'#10080A','น้ำในข้อ',{stroke:'none'}); TZ.l2=TXT(TZ.bub,0,130,140,'#E0202E','แห้งแล้ว!',{stroke:'none'});
+  // elder avatar with a wagging finger
+  TZ.av=el('g',{},g);
+  el('path',{d:'M-120 120 C-120 30 -70 0 0 0 C70 0 120 30 120 120 Z',fill:'#5B6B8C',stroke:'#10080A','stroke-width':9},TZ.av);
+  el('circle',{cx:0,cy:-70,r:66,fill:'#F2C9A0',stroke:'#10080A','stroke-width':9},TZ.av);
+  el('path',{d:'M-66 -78 C-70 -140 70 -140 66 -78 C50 -112 -50 -112 -66 -78 Z',fill:'#E8E8EE',stroke:'#10080A','stroke-width':7},TZ.av);
+  el('circle',{cx:-24,cy:-66,r:17,fill:'none',stroke:'#10080A','stroke-width':6},TZ.av); el('circle',{cx:24,cy:-66,r:17,fill:'none',stroke:'#10080A','stroke-width':6},TZ.av);
+  el('path',{d:'M-7 -66 H7',stroke:'#10080A','stroke-width':6},TZ.av);
+  TZ.mouth=el('path',{fill:'#10080A'},TZ.av);
+  TZ.fin=el('g',{},TZ.av); el('rect',{x:-16,y:-110,width:32,height:110,rx:16,fill:'#F2C9A0',stroke:'#10080A','stroke-width':8},TZ.fin);
+  el('rect',{x:-30,y:-20,width:60,height:62,rx:22,fill:'#F2C9A0',stroke:'#10080A','stroke-width':8},TZ.fin);
+  TZ.lines=[...Array(3)].map(()=>el('path',{stroke:'#FFD23F','stroke-width':10,'stroke-linecap':'round',fill:'none'},TZ.av));
+})();
+function tease(t){
+  if(t<T.tease-0.02||t>T.dry+0.2)return;
+  const u=t-T.tease;
+  $('grid-t').style.transform=`translate(${f2(20*Math.sin(t*0.5))}px,${f2(-t*14)}px)`;
+  const pa=S(u-0.05,16,0.6); TZ.pill.setAttribute('transform',`translate(540 ${f2(300+4*Math.sin(t*4))}) rotate(${f2(-3+1.5*Math.sin(t*3))}) scale(${pa.toFixed(4)})`);
+  const ba=S(u-0.02,16,0.55), tk=t>K.tak?Math.exp(-7*(t-K.tak)):0;
+  TZ.bub.setAttribute('transform',`translate(${f2(560+10*tk*Math.sin((t-K.tak)*60))} ${f2(640+8*Math.sin(t*3))}) rotate(${f2(-2+1.5*Math.sin(t*2.5))}) scale(${(Math.max(0.001,ba)*(1+0.06*tk)).toFixed(4)})`);
+  const l1=vis(t,T.tease+0.06,null,{lin:0.12}), l2=vis(t,T.tease+0.2,null,{lin:0.12});
+  TZ.l1.setAttribute('opacity',l1.o.toFixed(3)); TZ.l2.setAttribute('opacity',l2.o.toFixed(3));
+  TZ.l2.setAttribute('transform',`translate(0 ${f2(130)}) scale(${(1+0.05*Math.sin(t*6)).toFixed(4)}) translate(0 -130)`);
+  const aa=S(u-0.04,16,0.6);
+  TZ.av.setAttribute('transform',`translate(240 ${f2(980+60*(1-aa)+6*Math.sin(t*5))}) scale(${(0.9*aa).toFixed(4)})`);
+  const open=Math.abs(Math.sin(t*14))*(t<T.dry-0.3?1:0);
+  TZ.mouth.setAttribute('d',`M-16 -28 Q0 ${f2(-28+18*open)} 16 -28 Z`);
+  TZ.fin.setAttribute('transform',`translate(118 -70) rotate(${f2(18*Math.sin(t*12))})`);
+  TZ.lines.forEach((p,i)=>{const a=-1.9+i*0.45, r1=170+10*Math.sin(t*12), r2=r1+34; p.setAttribute('d',`M${f2(118+Math.cos(a)*r1*0.6)} ${f2(-180+Math.sin(a)*r1*0.4)} L${f2(118+Math.cos(a)*r2*0.6)} ${f2(-180+Math.sin(a)*r2*0.4)}`);
+    p.setAttribute('opacity',(0.5+0.5*Math.sin(t*12+i)).toFixed(3));});
+}
+
+// ---------- nopain: ring on the knees ----------
+const NR=el('circle',{cx:860,cy:1060,r:150,fill:'none',stroke:'#7CF0A8','stroke-width':10,'stroke-dasharray':'30 16',opacity:0},$('nopainov'));
+function nopainov(t){ if(t<T.nopain-0.05||t>T.gas+0.2)return; const a=S(t-K.nopain,16,0.6);
+  NR.setAttribute('opacity',(t>K.nopain?1:0).toString()); NR.setAttribute('r',f2(Math.max(1,150*a+6*Math.sin(t*6)))); NR.setAttribute('stroke-dashoffset',f2(-t*70)); }
+
+// ---------- x-ray: two bars (no numbers, no axis), the joint space glows on "เสี่ยง" ----------
+const XB={}; (function(){const g=el('g',{},$('barsov'));
+  XB.card=el('g',{},g); el('rect',{x:-400,y:-300,width:800,height:600,rx:44,fill:'rgba(8,14,28,.86)',stroke:'#fff','stroke-width':6},XB.card);
+  el('path',{d:'M-330 170 H330',stroke:'#C9D6EA','stroke-width':6,'stroke-linecap':'round'},XB.card);
+  XB.b1=el('rect',{x:-280,width:200,rx:22,fill:'#1E9BF0',stroke:'#10080A','stroke-width':7},XB.card);
+  XB.b2=el('rect',{x:80,width:200,rx:22,fill:'#E0202E',stroke:'#10080A','stroke-width':7},XB.card);
+  XB.l1=TXT(XB.card,-180,245,50,'#9ED8FF','ดังบ่อย'); XB.l2=TXT(XB.card,180,245,50,'#FF8A8A','เสี่ยงเข่าเสื่อม');
+  XB.ar=el('path',{d:'M-150 -60 Q0 -190 140 -110',fill:'none',stroke:'#FFD23F','stroke-width':12,'stroke-linecap':'round','stroke-dasharray':'4 20'},XB.card);
+  XB.ah=el('path',{d:'M108 -138 L148 -106 L102 -88',fill:'none',stroke:'#FFD23F','stroke-width':12,'stroke-linecap':'round','stroke-linejoin':'round'},XB.card);
+  const jg=el('g',{},$('xrayov'));
+  XB.joint=el('path',{d:'M112 971 C230 966 300 958 337 958 C390 952 420 930 450 932 C480 934 495 940 506 945 C530 958 545 968 562 971 C610 985 640 1002 675 1005 C740 1012 800 1015 860 1018',
+    fill:'none',stroke:'#FF3B3B','stroke-width':16,'stroke-linecap':'round',opacity:0},jg);
+  XB.jg=el('ellipse',{cx:490,cy:975,rx:420,ry:90,fill:'url(#xredg)',opacity:0},jg);
+  const d=el('defs',{},$('xrayov')); const rg=el('radialGradient',{id:'xredg'},d); rg.innerHTML='<stop offset="0" stop-color="#FF3B3B" stop-opacity=".6"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/>';
+})();
+const xb1=track(0.16,[[K.often2,0.86,BOUNCE]]), xb2=track(0.16,[[K.risk,0.8,BOUNCE]]), xdim=track(0.55,[[T.risk,0.3,MORPH]]);
+function bars(t){
+  if(t<T.bars-0.02||t>T['rule-ok']+0.2)return;
+  $('xdim').style.opacity=clamp(xdim(t)).toFixed(3);
+  const ca=S(t-T.bars-0.04,14,0.62);
+  XB.card.setAttribute('transform',`translate(540 ${f2(560+6*Math.sin(t*3))}) scale(${(0.6+0.4*ca).toFixed(4)}) rotate(${f2(0.8*Math.sin(t*2))})`);
+  XB.card.setAttribute('opacity',clamp(ca*1.4).toFixed(3));
+  const h1=360*Math.max(0.05,xb1(t))*(1+0.015*Math.sin(t*7)), h2=360*Math.max(0.05,xb2(t))*(1+0.015*Math.sin(t*7+1));
+  XB.b1.setAttribute('y',f2(170-h1)); XB.b1.setAttribute('height',f2(h1)); XB.b2.setAttribute('y',f2(170-h2)); XB.b2.setAttribute('height',f2(h2));
+  const av=vis(t,K.risk+0.08,null,{lin:0.2}); XB.ar.setAttribute('opacity',av.o.toFixed(3)); XB.ah.setAttribute('opacity',av.o.toFixed(3)); XB.ar.setAttribute('stroke-dashoffset',f2(-t*60));
+  [XB.l1,XB.l2].forEach((l,i)=>{const tt=i?K.risk:K.often2; l.setAttribute('transform',`translate(${i?180:-180} 245) scale(${(1+0.12*Math.sin(Math.PI*clamp((t-tt)/0.3))*(t>tt?1:0)).toFixed(4)}) translate(${i?-180:180} -245)`);});
+  const jv=t>K.risk?(0.55+0.45*Math.sin((t-K.risk)*9))*eo((t-K.risk)/0.2):0;
+  XB.joint.setAttribute('opacity',jv.toFixed(3)); XB.jg.setAttribute('opacity',jv.toFixed(3));
+  XB.joint.setAttribute('stroke-dasharray',`${f2(900*eo((t-K.risk)/0.35))} 2000`);
+}
+
+// ---------- pain: the knee throbs, punch-in on "บวม" ----------
+const PR=[0,0.35].map(o=>[el('circle',{cx:445,cy:980,fill:'none',stroke:'#FF3B3B','stroke-width':10,opacity:0},$('painov')),o]);
+const PG=el('circle',{cx:445,cy:980,r:180,fill:'url(#painr)',opacity:0},$('painov'));
+(function(){const d=el('defs',{},$('painov')); const rg=el('radialGradient',{id:'painr'},d); rg.innerHTML='<stop offset="0" stop-color="#FF3B3B" stop-opacity=".55"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/>';})();
+function painov(t){ if(t<T['rule-pain']-0.05||t>T.stiff+0.2)return;
+  PR.forEach(([c,o])=>{const u=(((t-T['rule-pain'])*1.5+o)%1+1)%1; c.setAttribute('r',f2(60+170*eo(u))); c.setAttribute('opacity',((1-u)*0.85).toFixed(3));});
+  const sw=t>K.swell?Math.exp(-3*(t-K.swell)):0; PG.setAttribute('opacity',(0.35+0.25*Math.sin(t*8)+0.5*sw).toFixed(3)); PG.setAttribute('r',f2(170+60*sw)); }
+
+// ---------- chips, step strip, comment bubble ----------
+const setChip=(id,x,y,w,bg,fg,v)=>{const c=$(id); if(!show(c,v.o))return false; blur(c,v.blur);
+  c.style.width=w.toFixed(1)+'px'; c.style.background=bg; c.style.color=fg; c.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) scale(${(0.7+0.3*v.a).toFixed(3)})`; return true;};
+const swap=(a,b,v1,v2,tt)=>{$(a).textContent=v1;$(b).textContent=v2;const p=vis(tt.t,null,tt.at,{lout:0.1}),n=vis(tt.t,tt.at+0.04,null,{lin:0.18});
+  $(a).style.opacity=p.o.toFixed(3);blur($(a),p.blur);$(b).style.opacity=n.o.toFixed(3);blur($(b),n.blur);};
+const one=(a,b,v)=>{$(a).textContent=v;$(a).style.opacity='1';blur($(a),0);$(b).textContent='';};
+const pop=(t,tt)=>t>tt?0.1*Math.sin(Math.PI*clamp((t-tt)/0.3)):0;
+const wM=track(330,[[T.truth,330,MORPH],[T.common,360,FAST],[K.nopain,480,MORPH]]);
+function chips(t){
+  const y=1360+4*Math.sin(t*4);
+  // top chip: "เข่าเสื่อม?" (oa-q) -> "เสียงมาจากไหน?" (gas..tendon) -> "งานวิจัย" (study)
+  let cT=false;
+  if(t>T['oa-q']&&t<T.tease+0.15){ cT=setChip('chipT',540,300,420,'#E0202E','#fff',vis(t,T['oa-q']+0.08,T.tease,{lout:0.1})); one('chipT1','chipT2','เข่าเสื่อม?'); }
+  else if(t>T.gas&&t<T.study+0.15){ cT=setChip('chipT',540,300,500,'#FFD23F','#10080A',vis(t,T.gas+0.04,T.study,{lout:0.1})); one('chipT1','chipT2','เสียงมาจากไหน?'); }
+  else if(t>T.study&&t<T.bars+0.15){ cT=setChip('chipT',540,300,330,'#fff','#10080A',vis(t,T.study+0.1,T.bars,{lout:0.1})); one('chipT1','chipT2','งานวิจัย'); }
+  if(!cT) $('chipT').style.opacity='0';
+  if(cT) $('chipT').style.transform+=` rotate(${f2(-2+1.5*Math.sin(t*3))}deg)`;
+  // bottom chip
+  let cM=false;
+  if(t>T.dry&&t<T.common){ const sw=S(t-T.truth,14,0.7);
+    cM=setChip('chipM',540,y+(t>T.truth?-16*Math.sin(Math.PI*clamp((t-T.truth)/0.3)):0),wM(t),mix('#E0202E','#1E9BF0',t>T.truth?sw:0),'#fff',vis(t,T.dry+0.06,T.common,{lout:0.1}));
+    swap('chipM1','chipM2','ความเชื่อ','ความจริง',{t,at:T.truth}); }
+  else if(t>=T.common&&t<T.gas+0.1){ const sw=S(t-K.nopain,14,0.7);
+    cM=setChip('chipM',540,y,wM(t),t>K.nopain?mix('#FFD23F','#1F8F4A',sw):'#FFD23F',t>K.nopain?'#fff':'#10080A',vis(t,T.common+0.1,T.gas,{lout:0.1}));
+    swap('chipM1','chipM2','เจอบ่อยมาก','ไม่เจ็บ ก็ดังได้',{t,at:K.nopain}); }
+  else if(t>T['rule-ok']&&t<T['rule-pain']+0.15){ cM=setChip('chipM',540,y-60*pop(t,K.ok),440,'#1F8F4A','#fff',vis(t,T['rule-ok']+0.08,T['rule-pain'],{lout:0.1})); one('chipM1','chipM2','ดังแต่ไม่เจ็บ'); }
+  else if(t>T.stiff&&t<T.doctor+0.15){ cM=setChip('chipM',500,y,210,'#E0202E','#fff',vis(t,T.stiff+0.12,T.doctor,{lout:0.1})); one('chipM1','chipM2','บวม'); }
+  if(!cM) $('chipM').style.opacity='0';
+  // warning row: เจ็บ | บวม | ติดขัด
+  if(t>T.stiff&&t<T.doctor+0.15){
+    setChip('chipL',230,y,200,'#E0202E','#fff',vis(t,T.stiff+0.04,T.doctor,{lout:0.1})); $('chipL1').textContent='เจ็บ';
+    setChip('chipR',770,y-60*pop(t,K.stiff),240,'#E0202E','#fff',vis(t,K.stiff,T.doctor,{lout:0.1})); $('chipR1').textContent='ติดขัด';
+    ['chipL','chipM','chipR'].forEach((id,i)=>{$(id).style.transform+=` rotate(${f2(2.5*Math.sin(t*30+i*2)*Math.exp(-3*Math.max(0,t-T.stiff)))}deg)`;});
+  } else { $('chipL').style.opacity='0'; $('chipR').style.opacity='0'; }
+}
+const STEPS=['ที่มาเสียง?','อาจ: ฟองแก๊ส','อาจ: เอ็นลาก'], SWD=[210,270,270], GAP=34; let sx0=14; const SX=[];
+STEPS.forEach((s,i)=>{const e=$('st'+i); e.textContent=s; e.style.left=sx0+'px'; e.style.width=SWD[i]+'px'; SX.push(sx0); sx0+=SWD[i]; if(i<2){$('ar'+i).style.left=(sx0+GAP/2-8)+'px';} sx0+=GAP;});
+const STT=[T.gas,K.gas,K.tendon];
+const IL=track(SX[0],[[STT[1],SX[1],SLOW],[STT[2],SX[2],SLOW]]), ILf=track(SX[0],[[STT[1],SX[1],FAST],[STT[2],SX[2],FAST]]);
+const IR=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],FAST],[STT[2],SX[2]+SWD[2],FAST]]), IRs=track(SX[0]+SWD[0],[[STT[1],SX[1]+SWD[1],SLOW],[STT[2],SX[2]+SWD[2],SLOW]]);
+function strip(t){
+  const e=$('strip'); if(t<T.gas||t>T.study+0.15){e.style.opacity='0';return;}
+  const v=vis(t,T.gas,T.study,{lin:0.2,lout:0.12}); e.style.opacity=v.o.toFixed(3);
+  e.style.transform=`translateY(${f2(60*(1-S(t-T.gas,12,0.7))+3*Math.sin(t*3))}px)`;
+  const l=Math.min(IL(t),ILf(t)), r=Math.max(IR(t),IRs(t)); let cur=-1; STT.forEach((s,i)=>{if(t>=s)cur=i;});
+  const ind=$('ind'); ind.style.left=f2(l)+'px'; ind.style.width=f2(Math.max(0,r-l))+'px'; ind.style.background=cur===2?'#D9601A':(cur===1?'#1E9BF0':'#8A8178');
+  ind.style.transform=`scaleY(${(1+0.06*Math.sin(t*8)).toFixed(3)})`;
+  for(let i=0;i<3;i++){const st=$('st'+i), on=i===cur; st.style.color=on?'#fff':(i<cur?'#1E9BF0':'#7D6A5B');
+    st.style.transform=`scale(${(on?1+0.14*Math.sin(Math.PI*clamp((t-STT[i])/0.3)):1).toFixed(3)})`;}
+}
+// ending: back to the hook frame (loop) + knee ring + comment bubble
+const RC=ringSet('ctaov',562,986,118);
+function ending(t){
+  if(t<K.ask){ $('bubble').style.opacity='0'; }
+  if(t<T.cta-0.05)return;
+  const tk=((t-K.dang)%0.6+0.6)%0.6; ringAt(RC,t,T.cta+0.05,t>K.dang?tk:-1); burst(RC.bl,t,K.dang,RC.cx,RC.cy,RC.r*0.6);
+  const b=$('bubble'); const v=vis(t,K.ask,null,{lin:0.12});
+  if(!show(b,t<K.ask?0:v.o))return; blur(b,v.blur);
+  const bt=$('bubT'); bt.textContent='ดังบ้าง?';
+  try{ const w=bt.getComputedTextLength(); if(w>450) bt.setAttribute('font-size',f2(104*450/w)); }catch(e){}
+  const a=S(t-K.ask,13,0.5), c=t>K.comment?Math.sin(Math.PI*clamp((t-K.comment)/0.3)):0;
+  b.style.transformOrigin='30% 100%';
+  b.style.transform=`translate(500px,${f2(250+12*Math.sin((t-K.ask)*6))}px) rotate(${f2(-5+4*Math.sin(t*3))}deg) scale(${(0.82*(0.25+0.75*a)+0.07*c).toFixed(4)})`;
+  [...$('dots').children].forEach((d,i)=>d.setAttribute('cy',f2(300-12*Math.max(0,Math.sin(t*9-i*0.9)))));
+}
+
+// ---------- captions: spring in on the word ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+function render(t){ scenes(t); title(t); hookov(t); knee(t); kov(t); tease(t); nopainov(t); bars(t); painov(t); chips(t); strip(t); ending(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
+render(0);
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

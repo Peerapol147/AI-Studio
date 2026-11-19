@@ -1,0 +1,163 @@
+[
+ {
+  "t": 1.18,
+  "type": "appear",
+  "desc": "hook: knee ring flashes on \"กร๊อบ\" (crack)",
+  "sfx": "click/fs788933.ogg",
+  "gain": -6
+ },
+ {
+  "t": 1.64,
+  "type": "scene_cut",
+  "desc": "zoom-through into the knee diagram, red + ?",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -12
+ },
+ {
+  "t": 2.94,
+  "type": "scene_cut",
+  "desc": "whip to the elder remark bubble",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -12
+ },
+ {
+  "t": 3.42,
+  "type": "appear",
+  "desc": "remark bubble shakes on \"ทัก\"",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -10
+ },
+ {
+  "t": 4.8,
+  "type": "scene_cut",
+  "desc": "whip back to the knee",
+  "sfx": "whoosh/fs810485.ogg",
+  "gain": -13
+ },
+ {
+  "t": 5.36,
+  "type": "movement",
+  "desc": "synovial fluid drains on \"แห้ง\"",
+  "sfx": "transition/kenney-interface-minimize-001.ogg",
+  "gain": -9
+ },
+ {
+  "t": 6.04,
+  "type": "success",
+  "desc": "red -> blue, fluid refills (ความจริง)",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -10
+ },
+ {
+  "t": 7.66,
+  "type": "scene_cut",
+  "desc": "whip to seniors exercising",
+  "sfx": "whoosh/fs393811.ogg",
+  "gain": -13
+ },
+ {
+  "t": 9.1,
+  "type": "success",
+  "desc": "chip turns green: ไม่เจ็บ ก็ดังได้",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -11
+ },
+ {
+  "t": 9.98,
+  "type": "scene_cut",
+  "desc": "zoom-through into the joint, sound ripples",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 10.8,
+  "type": "appear",
+  "desc": "small gas bubbles bloom",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -8
+ },
+ {
+  "t": 13.1,
+  "type": "appear",
+  "desc": "tendon snaps over the bony bump on \"ลาก\"",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -5
+ },
+ {
+  "t": 14.5,
+  "type": "scene_cut",
+  "desc": "whip to the lab",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -13
+ },
+ {
+  "t": 15.92,
+  "type": "scene_cut",
+  "desc": "zoom-through to the x-ray + bars card",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -13
+ },
+ {
+  "t": 16.62,
+  "type": "movement",
+  "desc": "bar \"ดังบ่อย\" grows",
+  "sfx": "transition/kenney-interface-maximize-005.ogg",
+  "gain": -10
+ },
+ {
+  "t": 17.22,
+  "type": "reveal",
+  "desc": "bar \"เสี่ยงเข่าเสื่อม\" grows, joint space glows red",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -9
+ },
+ {
+  "t": 19.18,
+  "type": "success",
+  "desc": "green check on \"ไม่เจ็บ\"",
+  "sfx": "ding/kenney-interface-confirmation-002.ogg",
+  "gain": -10
+ },
+ {
+  "t": 21.04,
+  "type": "scene_cut",
+  "desc": "whip to hands on the sore knee",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -13
+ },
+ {
+  "t": 22.02,
+  "type": "reveal",
+  "desc": "punch-in on \"บวม\"",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg",
+  "gain": -10
+ },
+ {
+  "t": 22.74,
+  "type": "error_or_tech",
+  "desc": "badge morphs to the red warning",
+  "sfx": "ui-blip/kenney-digital-twotone1.ogg",
+  "gain": -10
+ },
+ {
+  "t": 24.1,
+  "type": "scene_cut",
+  "desc": "whip to the nurse checking the knee",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 24.98,
+  "type": "scene_cut",
+  "desc": "zoom-through back to the hook frame",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -13
+ },
+ {
+  "t": 25.06,
+  "type": "appear",
+  "desc": "comment bubble pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -8
+ }
+]
