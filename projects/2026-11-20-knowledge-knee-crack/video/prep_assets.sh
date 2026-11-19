@@ -20,5 +20,5 @@ vid(){ # name src crop scale until
 vid common pixabay-32937.mp4 864:1080:900:0 1080:1350 1.6     # seniors stretching, the man in yellow centred
 vid nopain pixabay-11506.mp4 640:640:820:440 1080:1080 4.4     # deep squat 2.3-3.8 s, crop on the legs/knees so the kettlebells stay out
 vid study pixabay-143379.mp4 864:1080:900:0 1080:1350 2.2     # lab sample tubes
-vid doctor pixabay-229071.mp4 864:1080:250:0 1080:1350 1.6    # nurse holding the knee and shin
+vid doctor pixabay-49814.mp4 1260:1080:500:0 1080:926 3.2    # doctor in a white coat (face left) holding an x-ray film (top right), from 2.0 s
 ls -la

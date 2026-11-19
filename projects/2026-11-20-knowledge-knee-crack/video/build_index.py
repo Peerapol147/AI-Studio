@@ -71,8 +71,8 @@ def caps():
                    f'data-track-index="20"><span style="font-size:{size}px">{body}</span></div>')
     return '\n'.join(out)
 
-TOP = {'common': 285, 'nopain': 150, 'study': 285, 'doctor': 285}
-HGT = {'common': 1350, 'nopain': 1080, 'study': 1350, 'doctor': 1350}
+TOP = {'common': 285, 'nopain': 150, 'study': 285, 'doctor': 330}
+HGT = {'common': 1350, 'nopain': 1080, 'study': 1350, 'doctor': 926}
 
 def vid(id_, shot, src):
     s = SH[shot]
