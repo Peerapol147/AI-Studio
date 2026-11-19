@@ -647,8 +647,8 @@
   },
   "checks": {
     "latest": {
-      "revision": null,
-      "id": "338b71f3-2aa1-43f1-bc70-599500dede67"
+      "revision": "9cc49e69-bfc5-4363-a29d-68e0023fbc9d",
+      "id": "8ad01533-37bd-423e-9593-c31cb91ea59f"
     },
     "revisions": {
       "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0": [
@@ -721,6 +721,43 @@
           "contentHash": "d97be47b86972de812dc977de396e398b767bc947076bdcd7411a7be13670c9e",
           "revision": "a2cb2104-06b9-48fc-a7d9-3cd6602bb87d",
           "inputFingerprint": "88be1231bbfad5bde3c0268eb8a693edf22aab39f97ae728b953bfdb845619bd",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "9cc49e69-bfc5-4363-a29d-68e0023fbc9d": [
+        {
+          "id": "8ad01533-37bd-423e-9593-c31cb91ea59f",
+          "scope": "project",
+          "report": "/home/user/AI-Studio/projects/2026-11-19-knowledge-brainrot/video/.hyperframes/artifacts/checks/8ad01533-37bd-423e-9593-c31cb91ea59f.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795068368553,
+          "contentHash": "e47a10e4a4708956b90d97e10c89c82939ede65b8b56dc1c1c1d9ee8a2f74bbb",
+          "revision": "9cc49e69-bfc5-4363-a29d-68e0023fbc9d",
+          "inputFingerprint": "ea84a5b4fe941624461a639146d74e6878c31a5a44dde238aac47eb58ad1e069",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
