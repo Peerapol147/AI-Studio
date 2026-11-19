@@ -1,0 +1,182 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "nasa",
+   "cue": {
+    "th": "ถ้าตด"
+   },
+   "note": "FRAME 0 = NASA photo: astronaut floating inside ISS, face clearly visible, Y 500-1300; on-screen hook 'ถ้าตดในอวกาศ จะเกิดอะไรขึ้น?' from frame 0; photo search: astronaut floating ISS interior"
+  },
+  {
+   "id": "happen",
+   "src": "graphic:puff-q",
+   "cue": {
+    "th": "เกิดอะไร"
+   },
+   "note": "green cartoon fart cloud (the ONE morphing shape of this ep, flubber) puffs in beside the astronaut cut-out with a big '?'"
+  },
+  {
+   "id": "belief",
+   "src": "graphic:belief",
+   "cue": {
+    "th": "หลายคนเชื่อ"
+   },
+   "note": "pill 'ความเชื่อ' + astronaut silhouette; cloud squeezes small behind it"
+  },
+  {
+   "id": "puff",
+   "src": "graphic:puff",
+   "cue": {
+    "th": "แรงๆ"
+   },
+   "note": "cloud bursts out behind silhouette (spring), hit on 'ทีเดียว'"
+  },
+  {
+   "id": "rocket",
+   "src": "nasa",
+   "cue": {
+    "th": "พุ่งไป"
+   },
+   "note": "NASA rocket launch photo (exhaust plume, no big logo) — whoosh zoom-through; 'เหมือนจรวด'"
+  },
+  {
+   "id": "hadfield",
+   "src": "nasa",
+   "cue": {
+    "th": "คริส"
+   },
+   "note": "NASA photo of Chris Hadfield aboard ISS (Expedition 34/35), label 'Chris Hadfield · อดีตผู้บัญชาการสถานีอวกาศ'"
+  },
+  {
+   "id": "tried",
+   "src": "nasa",
+   "cue": {
+    "th": "ลองกัน"
+   },
+   "note": "NASA photo: group of ISS crew floating together inside station; small chip 'เล่าไว้ปี 2013'"
+  },
+  {
+   "id": "fail",
+   "src": "graphic:fail",
+   "cue": {
+    "th": "ไม่ได้ผล"
+   },
+   "note": "silhouette with cloud: cloud puffs, body barely drifts, stamp '❌ ไม่ได้ผล' (pill morph from 'ความเชื่อ')"
+  },
+  {
+   "id": "weak",
+   "src": "graphic:weak",
+   "cue": {
+    "th": "แผ่ว"
+   },
+   "note": "cloud fizzles/shrinks to a tiny wisp (flubber), word 'แผ่ว' kinetic"
+  },
+  {
+   "id": "nozzle",
+   "src": "nasa",
+   "cue": {
+    "th": "หัวฉีด"
+   },
+   "note": "NASA rocket engine test photo (RS-25 nozzle firing) — comic contrast; kinetic 'หัวฉีดจรวด ≠ ก้น' small"
+  },
+  {
+   "id": "smell",
+   "src": "graphic:smell",
+   "cue": {
+    "th": "กลิ่น"
+   },
+   "note": "cloud grows back big and GREEN with stink wavy lines, kinetic 'กลิ่น!' punch zoom"
+  },
+  {
+   "id": "earth",
+   "src": "nasa",
+   "cue": {
+    "th": "อากาศไม่ลอย"
+   },
+   "note": "NASA photo Earth from ISS window/cupola; overlay diagram left: on Earth warm air rises (arrows up)"
+  },
+  {
+   "id": "compare",
+   "src": "graphic:noconv",
+   "cue": {
+    "th": "เหมือนบนโลก"
+   },
+   "note": "split diagram: บนโลก arrows rise ✅ vs ในอวกาศ cloud sits still (no arrows); label 'ไม่มีอากาศร้อนลอยขึ้น'"
+  },
+  {
+   "id": "nofan",
+   "src": "graphic:fan-off",
+   "cue": {
+    "th": "ถ้าไม่มีพัด"
+   },
+   "note": "lucide fan icon greyed/stopped, cloud stays"
+  },
+  {
+   "id": "linger",
+   "src": "nasa",
+   "cue": {
+    "th": "ค้างอยู่"
+   },
+   "note": "NASA photo ISS interior module with astronaut; green cloud overlay hovering around head"
+  },
+  {
+   "id": "station",
+   "src": "nasa",
+   "cue": {
+    "th": "สถานีอวกาศ"
+   },
+   "note": "NASA photo ISS exterior over Earth (wide), push-in"
+  },
+  {
+   "id": "fan",
+   "src": "graphic:fan-on",
+   "cue": {
+    "th": "พัดลมตลอด"
+   },
+   "note": "fan icon spins up, cloud gets pulled in streaks toward it"
+  },
+  {
+   "id": "filter",
+   "src": "graphic:filter",
+   "cue": {
+    "th": "ไส้กรองถ่าน"
+   },
+   "note": "charcoal filter block (dark grid) — cloud particles stick, cloud shrinks to nothing; chip '✅ ไส้กรองถ่าน'"
+  },
+  {
+   "id": "you",
+   "src": "nasa",
+   "cue": {
+    "th": "ถ้าเป็นคุณ"
+   },
+   "note": "NASA photo astronaut helmet close-up / EMU portrait (face visible)"
+  },
+  {
+   "id": "try",
+   "src": "graphic:puff-q2",
+   "cue": {
+    "th": "จะลอง"
+   },
+   "note": "cloud returns small + big '?' (same shape)"
+  },
+  {
+   "id": "comment",
+   "src": "graphic:comment",
+   "cue": {
+    "th": "เมนต์"
+   },
+   "note": "cloud morphs into comment bubble 'เมนต์บอกหน่อย 💬'"
+  },
+  {
+   "id": "loop",
+   "src": "nasa:hook",
+   "cue": {
+    "th": "อวกาศไหม"
+   },
+   "note": "LOOP: same photo as frame 0 (hook), Ken Burns 1.05→1.00 so last frame ≈ frame 0; hook title springs back in last 0.3 s"
+  }
+ ]
+}
