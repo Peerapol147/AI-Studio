@@ -1,40 +1,43 @@
 <!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A: the frame-0 image (hook-a at source 2.0 s, same crop and
-     night grade = video/assets/hook0.jpg), same title zone (Y 240-700) and stroke as frame 0; text "สมองเน่าจริงไหม"
-     (Kanit 900, white, dark outline) + small yellow tag "Brainrot"; the pink cartoon brain (own drawing, slightly melting)
-     floats up out of the glowing phone screen. Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md: the frame-0 image (alarm clock, cool "2026" look = video/assets/hook0.jpg),
+     same title zone (Y 240-700) and stroke as frame 0; text "ย้อนไปรวยปี 2000" (4 words, Kanit 900, white, dark outline)
+     with "2000" huge in CRT RGB-split yellow; the game HUD under it: age 8 + empty mission boxes (gold, stocks, bitcoin).
+     Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
 <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
-#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B1026}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#140E08}
 #bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
-.shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(rgba(6,8,24,.82) 0%,rgba(6,8,24,.6) 55%,rgba(6,8,24,0) 100%)}
+.crt{position:absolute;left:0;top:0;width:1080px;height:1920px;background:repeating-linear-gradient(rgba(0,0,0,.22) 0 3px,rgba(0,0,0,0) 3px 7px)}
+.shade{position:absolute;left:0;top:0;width:1080px;height:1150px;background:linear-gradient(rgba(8,6,18,.85) 0%,rgba(8,6,18,.6) 65%,rgba(8,6,18,0) 100%)}
 .t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
   -webkit-text-stroke:30px #10080A;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
-#t1{top:364px;font-size:196px}
-#t2{top:548px;font-size:150px}
-.tag{position:absolute;left:50%;top:256px;transform:translateX(-50%) rotate(-4deg);padding:2px 40px 12px;border-radius:44px;background:#FFE14D;
-  border:9px solid #10080A;box-shadow:0 12px 0 rgba(0,0,0,.45);color:#10080A;font-weight:900;font-size:76px;white-space:nowrap}
-#brain{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#t1{top:250px;font-size:200px}
+.y{position:absolute;left:0;top:480px;width:1080px;text-align:center;font-weight:900;font-size:290px;line-height:1;white-space:nowrap}
+.y span{font-size:150px;margin-right:24px}
+#yr{color:#ff3158;transform:translateX(-16px)}#yc{color:#36efff;transform:translateX(18px)}
+#yk{color:#FFE14D;-webkit-text-stroke:30px #10080A;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
+.band{position:absolute;left:0;top:630px;width:1080px;height:34px;background:rgba(54,239,255,.35);mix-blend-mode:screen}
+#hud{position:absolute;left:120px;top:790px;width:780px;height:190px;border-radius:30px;background:rgba(18,12,38,.9);
+  box-shadow:0 0 0 7px #10080A,inset 0 0 0 5px #FFE14D,0 16px 0 rgba(0,0,0,.35)}
+.age{position:absolute;left:30px;top:30px;width:230px;height:130px;border-radius:22px;background:#B0306F;display:flex;align-items:center;justify-content:center;gap:10px;
+  color:#fff;font-weight:900;font-size:70px;white-space:nowrap}
+.age svg{width:64px;height:64px;color:#FFE14D}
+.bx{position:absolute;top:40px;width:110px;height:110px;border-radius:22px;border:8px solid #fff;background:rgba(255,255,255,.08);box-shadow:0 0 0 5px #10080A}
+.bx svg{position:absolute;left:14px;top:14px;width:66px;height:66px}
 </style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="ic-baby" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5" /> <path d="M15 12h.01" /> <path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1" /> <path d="M9 12h.01" /></symbol>
+<symbol id="ic-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" /> <path d="M15 6h1v4" /> <path d="m6.134 14.768.866-.5 2 3.464" /> <circle cx="16" cy="8" r="6" /></symbol>
+<symbol id="ic-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /></symbol>
+<symbol id="ic-bitcoin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727" /></symbol>
+<symbol id="ic-circle-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="M9 9.5a3 2.5 0 016 0c0 2-2 2-3 3.5" /> <path d="M12 17h.01" /></symbol></defs></svg>
 <div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
 <img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-cover.jpg" alt=""/>
-<div class="shade"></div>
-<svg id="brain" viewBox="0 0 1080 1920">
-  <defs><radialGradient id="gl"><stop offset="0" stop-color="#7FD3FF" stop-opacity=".55"/><stop offset="1" stop-color="#7FD3FF" stop-opacity="0"/></radialGradient></defs>
-  <ellipse cx="640" cy="1140" rx="300" ry="190" fill="url(#gl)"/>
-  <g transform="translate(660 960) rotate(-8) scale(0.92)">
-    <path d="M-200 70 C-215 10 -175 -50 -110 -55 C-85 -95 -5 -100 25 -75 C70 -100 150 -85 165 -35 C215 -15 225 50 195 85 C200 120 175 140 150 135 L150 210 C150 235 120 235 120 210 L120 150 C80 160 40 158 20 150 L20 250 C20 278 -12 278 -12 250 L-12 150 C-50 158 -90 150 -110 145 L-110 190 C-110 214 -140 214 -140 190 L-140 135 C-185 125 -205 100 -200 70 Z"
-      fill="#FF6FAE" stroke="#10080A" stroke-width="10" stroke-linejoin="round" transform="scale(1 0.92)"/>
-    <g fill="none" stroke="#C2407F" stroke-width="8" stroke-linecap="round" transform="translate(0 24) scale(1 0.8)">
-      <path d="M0 -100 C-14 -60 14 -20 0 30"/><path d="M-130 -10 q30 -30 60 0 q30 30 60 0"/><path d="M40 -30 q40 -30 90 0"/></g>
-    <g transform="translate(0 30)"><ellipse cx="-52" cy="20" rx="16" ry="12" fill="#10080A"/><ellipse cx="52" cy="20" rx="16" ry="12" fill="#10080A"/>
-      <path d="M-36 66 q9 -12 18 0 t18 0 t18 0 t18 0" fill="none" stroke="#10080A" stroke-width="7" stroke-linecap="round"/>
-      <ellipse cx="-92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/><ellipse cx="92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/></g>
-    <path d="M0 -26 C10 -10 18 0 18 10 A18 18 0 0 1 -18 10 C-18 0 -10 -10 0 -26 Z" fill="#FF6FAE" stroke="#10080A" stroke-width="5" transform="translate(4 310) scale(.9)"/>
-  </g>
-</svg>
-<div class="tag">Brainrot</div>
-<div class="t" id="t1">สมองเน่า</div>
-<div class="t" id="t2">จริงไหม</div>
+<div class="crt"></div><div class="shade"></div>
+<div class="t" id="t1">ย้อนไปรวย</div>
+<div class="y" id="yr"><span>ปี</span>2000</div><div class="y" id="yc"><span>ปี</span>2000</div><div class="band"></div><div class="y" id="yk"><span>ปี</span>2000</div>
+<div id="hud"><div class="age"><svg viewBox="0 0 24 24"><use href="#ic-baby"/></svg>8 ขวบ</div>
+  <div class="bx" style="left:300px"><svg viewBox="0 0 24 24" style="color:#FFC83D"><use href="#ic-coins"/></svg></div>
+  <div class="bx" style="left:450px"><svg viewBox="0 0 24 24" style="color:#3DDC84"><use href="#ic-trending-up"/></svg></div>
+  <div class="bx" style="left:600px;border-color:#FFE14D"><svg viewBox="0 0 24 24" style="color:#F7931A"><use href="#ic-bitcoin"/></svg></div></div>
 </div><script>
 const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>
