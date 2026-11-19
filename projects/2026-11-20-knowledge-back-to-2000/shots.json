@@ -1,21 +1,203 @@
 {
-  "lead": 0.08,
-  "end": "auto",
-  "shots": [
-    {"id": "hook_year", "kind": "graphic", "cue": {"th": "ถ้าตื่น"}, "desc": "ตัวเลขปีหมุนย้อน 2026→2000 + glitch/CRT บนพื้นห้องนอนเบลอ คำถาม hook ตัวใหญ่"},
-    {"id": "wake_bed", "need": "POV waking up in bed / alarm clock", "cue": {"th": "รวยยังไง"}, "desc": "POV ตื่นนอน นาฬิกาปลุก โทนยุคเก่า"},
-    {"id": "future_mind", "need": "hand writing notes / calendar pages flipping", "cue": {"th": "ง่ายดิ"}, "desc": "มือเขียนโน้ต/ปฏิทิน เรารู้อนาคต"},
-    {"id": "kid_hands", "need": "child small hands / kid school desk", "cue": {"th": "แต่เดี๋ยวนะ"}, "desc": "มือเด็กเล็ก HUD อายุเด้งเป็น 8 ขวบ"},
-    {"id": "kid_school", "need": "kid backpack school pencil", "cue": {"th": "ป.สอง"}, "desc": "เด็กประถม กระเป๋า ดินสอ (ไม่เห็นหน้า)"},
-    {"id": "locked", "kind": "graphic", "cue": {"th": "เปิดบัญชี"}, "desc": "ไอคอนกุญแจล็อก + 'อายุ 20+' บนภาพเบลอ"},
-    {"id": "gold", "need": "gold bars close-up", "cue": {"th": "ภารกิจแรก"}, "desc": "ทองคำแท่ง HUD ภารกิจ 1"},
-    {"id": "gold_price", "kind": "graphic", "cue": {"th": "บาทละ"}, "desc": "ป้าย 2000 ~5,xxx → ตอนนี้ 6x,xxx count-up"},
-    {"id": "stock", "need": "stock chart rising screen", "cue": {"th": "ภารกิจสอง"}, "desc": "กราฟหุ้นขึ้น HUD ภารกิจ 2"},
-    {"id": "set_price", "kind": "graphic", "cue": {"th": "ดัชนี"}, "desc": "ป้าย 200+ → ~1,500 จุด count-up"},
-    {"id": "piggy", "need": "piggy bank coins dropping", "cue": {"th": "ภารกิจสาม"}, "desc": "หยอดเหรียญกระปุก HUD ภารกิจ 3"},
-    {"id": "teen", "need": "teenager hands phone / desk", "cue": {"th": "กว่าจะมี"}, "desc": "ปีใน HUD วิ่งเป็น 2010 อายุ 17"},
-    {"id": "crash", "need": "red chart falling", "cue": {"th": "แถม"}, "desc": "กราฟแดงร่วง เงินเรา HUD ร่วง glitch"},
-    {"id": "hold", "kind": "graphic", "cue": {"th": "ถือไหว"}, "desc": "มือกำแน่น/กราฟลง + คำถาม"},
-    {"id": "outro", "kind": "graphic", "cue": {"th": "ถ้าเป็นนาย"}, "desc": "กลับฉากปีหมุน 2000 วนเข้า hook + คำถามคอมเมนต์"}
-  ]
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook_year",
+   "kind": "graphic",
+   "cue": {
+    "th": "ถ้าตื่น"
+   },
+   "desc": "ตัวเลขปีหมุนย้อน 2026→2000 + glitch/CRT บนพื้นห้องนอนเบลอ คำถาม hook ตัวใหญ่"
+  },
+  {
+   "id": "wake_bed",
+   "need": "POV waking up in bed / alarm clock",
+   "cue": {
+    "th": "รวยยังไง"
+   },
+   "desc": "POV ตื่นนอน นาฬิกาปลุก โทนยุคเก่า",
+   "src": "assets/footage/wake_bed.mp4",
+   "action_at": 1.0
+  },
+  {
+   "id": "future_mind",
+   "need": "hand writing notes / calendar pages flipping",
+   "cue": {
+    "th": "ง่ายดิ"
+   },
+   "desc": "มือเขียนโน้ต/ปฏิทิน เรารู้อนาคต",
+   "src": "assets/footage/future_mind.mp4",
+   "action_at": 0.5
+  },
+  {
+   "id": "kid_hands",
+   "need": "child small hands / kid school desk",
+   "cue": {
+    "th": "แต่เดี๋ยวนะ"
+   },
+   "desc": "มือเด็กเล็ก HUD อายุเด้งเป็น 8 ขวบ",
+   "src": "assets/footage/kid_hands.mp4",
+   "action_at": 1.0
+  },
+  {
+   "id": "kid_school",
+   "need": "kid backpack school pencil",
+   "cue": {
+    "th": "ป.สอง"
+   },
+   "desc": "เด็กประถม กระเป๋า ดินสอ (ไม่เห็นหน้า)",
+   "src": "assets/footage/kid_school.mp4",
+   "action_at": 1.0
+  },
+  {
+   "id": "locked",
+   "kind": "graphic",
+   "cue": {
+    "th": "เปิดบัญชี"
+   },
+   "desc": "ไอคอนกุญแจล็อก + 'อายุ 20+' บนภาพเบลอ"
+  },
+  {
+   "id": "age20",
+   "kind": "graphic",
+   "cue": {
+    "th": "ต้องรอ"
+   },
+   "desc": "ป้าย 'บรรลุนิติภาวะ 20 ปี' + HUD อายุ 8 กะพริบ"
+  },
+  {
+   "id": "gold",
+   "need": "gold bars close-up",
+   "cue": {
+    "th": "ภารกิจแรก"
+   },
+   "desc": "ทองคำแท่ง HUD ภารกิจ 1",
+   "src": "assets/footage/gold.mp4",
+   "action_at": 0.3
+  },
+  {
+   "id": "gold_mom",
+   "src": "assets/footage/gold.mp4",
+   "action_at": 5.0,
+   "cue": {
+    "th": "ซื้อทอง"
+   },
+   "desc": "ทองแท่ง มุมอื่น (ช่วงหลังของคลิป)"
+  },
+  {
+   "id": "gold_price",
+   "kind": "graphic",
+   "cue": {
+    "th": "บาทละ"
+   },
+   "desc": "ป้าย 2000 ~5,xxx → ตอนนี้ 6x,xxx count-up"
+  },
+  {
+   "id": "gold_now",
+   "kind": "graphic",
+   "cue": {
+    "th": "ตอนนี้หก"
+   },
+   "desc": "ป้ายราคาฝั่ง 'พ.ย. 69' count-up"
+  },
+  {
+   "id": "stock",
+   "need": "stock chart rising screen",
+   "cue": {
+    "th": "ภารกิจสอง"
+   },
+   "desc": "กราฟหุ้นขึ้น HUD ภารกิจ 2",
+   "src": "assets/footage/stock.mp4",
+   "action_at": 0.3
+  },
+  {
+   "id": "stock_dad",
+   "src": "assets/footage/stock.mp4",
+   "action_at": 5.0,
+   "cue": {
+    "th": "อ้อนพ่อ"
+   },
+   "desc": "กราฟหุ้น ช่วงหลัง + ลูกศรขึ้น motion"
+  },
+  {
+   "id": "set_price",
+   "kind": "graphic",
+   "cue": {
+    "th": "ดัชนี"
+   },
+   "desc": "ป้าย 200+ → ~1,500 จุด count-up"
+  },
+  {
+   "id": "set_now",
+   "kind": "graphic",
+   "cue": {
+    "th": "ตอนนี้ราว"
+   },
+   "desc": "ป้ายดัชนีฝั่ง 'พ.ย. 69' count-up"
+  },
+  {
+   "id": "piggy",
+   "need": "piggy bank coins dropping",
+   "cue": {
+    "th": "ภารกิจสาม"
+   },
+   "desc": "หยอดเหรียญกระปุก HUD ภารกิจ 3",
+   "src": "assets/footage/piggy.mp4",
+   "action_at": 2.5
+  },
+  {
+   "id": "coins",
+   "src": "assets/footage/piggy.mp4",
+   "action_at": 6.0,
+   "cue": {
+    "th": "เก็บค่าขนม"
+   },
+   "desc": "เหรียญลงกระปุก + ไอคอนบิตคอยน์กราฟิก (ไม่ใช่โลโก้บริษัท)"
+  },
+  {
+   "id": "teen",
+   "need": "teenager hands phone / desk",
+   "cue": {
+    "th": "กว่าจะมี"
+   },
+   "desc": "ปีใน HUD วิ่งเป็น 2010 อายุ 17",
+   "src": "assets/footage/teen.mp4",
+   "action_at": 1.0
+  },
+  {
+   "id": "parents_again",
+   "kind": "graphic",
+   "cue": {
+    "th": "ตื้อพ่อ"
+   },
+   "desc": "HUD อายุ 17 < 20 ล็อกอีกรอบ + 'ตื๊อพ่อแม่ รอบ 2'"
+  },
+  {
+   "id": "crash",
+   "need": "red chart falling",
+   "cue": {
+    "th": "แถม"
+   },
+   "desc": "กราฟแดงร่วง เงินเรา HUD ร่วง glitch",
+   "src": "assets/footage/crash.mp4",
+   "action_at": 0.3
+  },
+  {
+   "id": "hold",
+   "kind": "graphic",
+   "cue": {
+    "th": "ถือไหว"
+   },
+   "desc": "มือกำแน่น/กราฟลง + คำถาม"
+  },
+  {
+   "id": "outro",
+   "kind": "graphic",
+   "cue": {
+    "th": "ถ้าเป็นนาย"
+   },
+   "desc": "กลับฉากปีหมุน 2000 วนเข้า hook + คำถามคอมเมนต์"
+  }
+ ]
 }

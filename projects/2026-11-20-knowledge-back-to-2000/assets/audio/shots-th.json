@@ -14,39 +14,43 @@
   },
   {
    "id": "wake_bed",
-   "src": null,
+   "src": "assets/footage/wake_bed.mp4",
    "cue": "รวยยังไง",
    "word_at": 2.38,
    "start": 2.3,
    "end": 3.38,
-   "dur": 1.08
+   "dur": 1.08,
+   "media_start": 0.92
   },
   {
    "id": "future_mind",
-   "src": null,
+   "src": "assets/footage/future_mind.mp4",
    "cue": "ง่ายดิ",
    "word_at": 3.46,
    "start": 3.38,
    "end": 5.6,
-   "dur": 2.22
+   "dur": 2.22,
+   "media_start": 0.42
   },
   {
    "id": "kid_hands",
-   "src": null,
+   "src": "assets/footage/kid_hands.mp4",
    "cue": "แต่เดี๋ยวนะ",
    "word_at": 5.68,
    "start": 5.6,
    "end": 7.7,
-   "dur": 2.1
+   "dur": 2.1,
+   "media_start": 0.92
   },
   {
    "id": "kid_school",
-   "src": null,
+   "src": "assets/footage/kid_school.mp4",
    "cue": "ป.สอง",
    "word_at": 7.78,
    "start": 7.7,
    "end": 9.36,
-   "dur": 1.66
+   "dur": 1.66,
+   "media_start": 0.92
   },
   {
    "id": "locked",
@@ -54,17 +58,37 @@
    "cue": "เปิดบัญชี",
    "word_at": 9.44,
    "start": 9.36,
+   "end": 11.06,
+   "dur": 1.7
+  },
+  {
+   "id": "age20",
+   "src": null,
+   "cue": "ต้องรอ",
+   "word_at": 11.14,
+   "start": 11.06,
    "end": 12.56,
-   "dur": 3.2
+   "dur": 1.5
   },
   {
    "id": "gold",
-   "src": null,
+   "src": "assets/footage/gold.mp4",
    "cue": "ภารกิจแรก",
    "word_at": 12.64,
    "start": 12.56,
+   "end": 14.16,
+   "dur": 1.6,
+   "media_start": 0.22
+  },
+  {
+   "id": "gold_mom",
+   "src": "assets/footage/gold.mp4",
+   "cue": "ซื้อทอง",
+   "word_at": 14.24,
+   "start": 14.16,
    "end": 15.78,
-   "dur": 3.22
+   "dur": 1.62,
+   "media_start": 4.92
   },
   {
    "id": "gold_price",
@@ -72,17 +96,37 @@
    "cue": "บาทละ",
    "word_at": 15.86,
    "start": 15.78,
+   "end": 17.06,
+   "dur": 1.28
+  },
+  {
+   "id": "gold_now",
+   "src": null,
+   "cue": "ตอนนี้หก",
+   "word_at": 17.14,
+   "start": 17.06,
    "end": 18.7,
-   "dur": 2.92
+   "dur": 1.64
   },
   {
    "id": "stock",
-   "src": null,
+   "src": "assets/footage/stock.mp4",
    "cue": "ภารกิจสอง",
    "word_at": 18.78,
    "start": 18.7,
+   "end": 19.88,
+   "dur": 1.18,
+   "media_start": 0.22
+  },
+  {
+   "id": "stock_dad",
+   "src": "assets/footage/stock.mp4",
+   "cue": "อ้อนพ่อ",
+   "word_at": 19.96,
+   "start": 19.88,
    "end": 21.86,
-   "dur": 3.16
+   "dur": 1.98,
+   "media_start": 4.92
   },
   {
    "id": "set_price",
@@ -90,35 +134,66 @@
    "cue": "ดัชนี",
    "word_at": 21.94,
    "start": 21.86,
+   "end": 23.42,
+   "dur": 1.56
+  },
+  {
+   "id": "set_now",
+   "src": null,
+   "cue": "ตอนนี้ราว",
+   "word_at": 23.5,
+   "start": 23.42,
    "end": 24.96,
-   "dur": 3.1
+   "dur": 1.54
   },
   {
    "id": "piggy",
-   "src": null,
+   "src": "assets/footage/piggy.mp4",
    "cue": "ภารกิจสาม",
    "word_at": 25.04,
    "start": 24.96,
+   "end": 26.04,
+   "dur": 1.08,
+   "media_start": 2.42
+  },
+  {
+   "id": "coins",
+   "src": "assets/footage/piggy.mp4",
+   "cue": "เก็บค่าขนม",
+   "word_at": 26.12,
+   "start": 26.04,
    "end": 28.0,
-   "dur": 3.04
+   "dur": 1.96,
+   "media_start": 5.92
   },
   {
    "id": "teen",
-   "src": null,
+   "src": "assets/footage/teen.mp4",
    "cue": "กว่าจะมี",
    "word_at": 28.08,
    "start": 28.0,
+   "end": 30.86,
+   "dur": 2.86,
+   "media_start": 0.92
+  },
+  {
+   "id": "parents_again",
+   "src": null,
+   "cue": "ตื้อพ่อ",
+   "word_at": 30.94,
+   "start": 30.86,
    "end": 32.219,
-   "dur": 4.219
+   "dur": 1.359
   },
   {
    "id": "crash",
-   "src": null,
+   "src": "assets/footage/crash.mp4",
    "cue": "แถม",
    "word_at": 32.299,
    "start": 32.219,
    "end": 34.14,
-   "dur": 1.921
+   "dur": 1.921,
+   "media_start": 0.22
   },
   {
    "id": "hold",
