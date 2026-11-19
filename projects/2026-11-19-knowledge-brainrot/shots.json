@@ -4,161 +4,192 @@
  "shots": [
   {
    "id": "hook",
+   "src": "assets/footage/hook-a.mp4",
    "cue": {
     "th": "Brainrot"
    },
-   "note": "FIRST FRAME (director picks media_start from contact sheet): close-up thumb scrolling a phone in a DARK room/at night, screen glow on hand/face; NO app logos/readable UI; must move (scroll) within 1.5s; focus in Y 500-1300",
-   "src": "assets/footage/hook-a.mp4",
-   "action_at": 2.08,
-   "director_pick": "hook-a (Pixabay 169445) media_start 2.0: fingertip touching glowing feed at night = frame 0 (picked from 9:16 center-crop contact sheet 2026-11-19); hook-b/c rejected (b = daylight hands, screen unreadable as feed; c = outdoor street, no night vibe)"
+   "note": "FRAME 0 = hook-a t=2.0 (fingertip on glowing feed at night); on-screen hook text v3: 'Brainrot ทำให้สมองพัง? จริงหรอ?' present from frame 0",
+   "action_at": 2.08
   },
   {
-   "id": "bed",
+   "id": "really",
+   "src": "graphic:brain-q",
    "cue": {
-    "th": "เลื่อนถึง"
+    "th": "จริงหรอ"
    },
-   "note": "young person lying in bed at night scrolling phone (2am vibe), face lit by screen",
-   "src": "assets/footage/bed.mp4"
-  },
-  {
-   "id": "melt",
-   "cue": {
-    "th": "บ่นว่า"
-   },
-   "note": "OWN drawing: cartoon brain that droops/melts (cute, not gross) + pill 'ความเชื่อ ❌'; flubber morph brain shape",
-   "src": "graphic:brain-melt"
-  },
-  {
-   "id": "oxford",
-   "cue": {
-    "th": "Oxford"
-   },
-   "note": "kinetic type dictionary card: 'brain rot' + 'Oxford Word of the Year 2024 ✅' (text only, no OUP logo)",
-   "src": "graphic:dict-card"
-  },
-  {
-   "id": "year",
-   "cue": {
-    "th": "คำแห่งปี"
-   },
-   "note": "same card morphs: counter +230% (usage 2023→2024) ✅; card continues moving",
-   "src": "graphic:dict-230"
+   "note": "cartoon brain appears with a big '?' and starts to droop (beginning of melt), hook text stays"
   },
   {
    "id": "define",
+   "src": "graphic:brain-melt",
    "cue": {
-    "th": "นิยาม"
+    "th": "แปลว่า"
    },
-   "note": "definition line appears: 'the supposed deterioration...' typed; Thai gloss under",
-   "src": "graphic:define"
+   "note": "kinetic card 'Brainrot = สมองเน่า' while the cartoon brain melts; pill 'ความเชื่อ'"
   },
   {
-   "id": "supposed",
+   "id": "tease",
+   "src": "assets/footage/bed.mp4",
    "cue": {
-    "th": "คนคิดว่า"
+    "th": "แซวตัวเอง"
    },
-   "note": "punch zoom on word 'supposed' highlighted = 'คนคิดว่า' (glitch transition in)",
-   "src": "graphic:supposed"
+   "note": "person in bed at night scrolling phone (self-teasing vibe), covers \"ไถคลิป\""
+  },
+  {
+   "id": "feed",
+   "src": "graphic:feed",
+   "cue": {
+    "th": "Short"
+   },
+   "note": "phone outline with vertical feed cards scrolling endlessly; text 'Short / TikTok' (plain text, NO logos)"
+  },
+  {
+   "id": "night",
+   "src": "assets/footage/scrollbed.mp4",
+   "cue": {
+    "th": "ทั้งคืน"
+   },
+   "note": "phone glow in dark bedroom; small clock '02:00' + moon icon"
+  },
+  {
+   "id": "oxford",
+   "src": "graphic:dict-card",
+   "cue": {
+    "th": "Oxford"
+   },
+   "note": "dictionary card 'brain rot' + 'Oxford Word of the Year 2024 ✅' (no OUP logo), zoom punch"
+  },
+  {
+   "id": "year",
+   "src": "graphic:dict-230",
+   "cue": {
+    "th": "คำแห่งปี"
+   },
+   "note": "same card: counter +230% (usage 2023→2024)"
   },
   {
    "id": "noproof",
+   "src": "assets/footage/noproof.mp4",
    "cue": {
-    "th": "ยังไม่มี"
+    "th": "หลักฐาน"
    },
-   "note": "person reading research papers/laptop with charts OR scientist looking at brain scan on screen (generic, no real patient data)",
-   "src": "assets/footage/noproof.mp4"
+   "note": "research laptop; pill 'ความจริง'"
   },
   {
    "id": "brainok",
+   "src": "graphic:brain-ok",
    "cue": {
-    "th": "คลิปสั้น"
+    "th": "เน่าจริง"
    },
-   "note": "the SAME cartoon brain un-melts back (flubber morph) + stamp 'ยังไม่มีหลักฐานว่าเน่าถาวร'",
-   "src": "graphic:brain-ok"
+   "note": "cartoon brain un-melts back (flubber) + stamp 'ยังไม่มีหลักฐาน'"
+  },
+  {
+   "id": "study",
+   "src": "graphic:study",
+   "cue": {
+    "th": "งานวิจัย"
+   },
+   "note": "paper cards fly in, top 'Psychological Bulletin 2025' (no numbers)"
   },
   {
    "id": "heavy",
+   "src": "assets/footage/hook-b.mp4",
    "cue": {
-    "th": "คนดู"
+    "th": "หนักๆ"
    },
-   "note": "fast thumb scroll on phone, motion blur, feed-like (no logos)",
-   "src": "assets/footage/heavy.mp4"
+   "note": "hands scrolling phone"
   },
   {
    "id": "focus",
+   "src": "graphic:focus-meter",
    "cue": {
-    "th": "test"
+    "th": "ทดสอบ"
    },
-   "note": "GRAPHIC: small source tag \"Psychological Bulletin 2025\" (no number 71) top + focus meter/test sheet bar dipping (lucide icons), pill ⚠️ \"สัมพันธ์\"; merged former study card",
-   "src": "graphic:focus-meter"
+   "note": "test sheet 'เทสสมาธิ' + 2 bars (~70% ดูน้อย vs ~55% ดูหนัก) + label 'แนวโน้ม · ภาพประกอบ'"
+  },
+  {
+   "id": "compare",
+   "src": "graphic:focus-compare",
+   "cue": {
+    "th": "ไม่ค่อยมี"
+   },
+   "note": "same card: highlight the 'ดูน้อย' group (people who rarely scroll) with a check; ⚠️ 'สัมพันธ์'"
   },
   {
    "id": "corr",
+   "src": "graphic:corr",
    "cue": {
-    "th": "สัมพันธ์"
+    "th": "หรืออาจ"
    },
-   "note": "two bubbles 'ดูหนัก' ↔ 'สมาธิแย่' linked by double arrow + 'สัมพันธ์ ≠ เป็นเหตุ'",
-   "src": "graphic:corr"
+   "note": "two bubbles 'เครียด' → 'ไถหนัก' arrow (reverse direction) + 'สัมพันธ์ ≠ เป็นเหตุ' (glitch in)"
   },
   {
    "id": "stress",
+   "src": "assets/footage/stress.mp4",
    "cue": {
-    "th": "อาจเพราะ"
+    "th": "อยู่แล้ว"
    },
-   "note": "stressed student/young adult head in hands at desk",
-   "src": "assets/footage/stress.mp4"
+   "note": "stressed young person"
   },
   {
-   "id": "scrollbed",
+   "id": "screen",
+   "src": "assets/footage/hook-c.mp4",
    "cue": {
-    "th": "เลื่อนหนัก"
+    "th": "หน้าจอ"
    },
-   "note": "phone glow in dark bedroom, someone scrolling under blanket",
-   "src": "assets/footage/scrollbed.mp4"
+   "note": "hands scrolling phone (different angle)"
   },
   {
    "id": "trick",
+   "src": "graphic:trick",
    "cue": {
-    "th": "Trick"
+    "th": "ทริก"
    },
-   "note": "kinetic 'ทริก 1 ข้อ' + lucide lightbulb/bed-off icon",
-   "src": "graphic:trick"
+   "note": "'ทริกง่ายๆ' + lightbulb, zoom punch"
   },
   {
    "id": "putdown",
+   "src": "graphic:phone-away",
    "cue": {
     "th": "บนเตียง"
    },
-   "note": "GRAPHIC (no footage found): cartoon phone slides away from a bed icon / flips face down, lands on hit word; lucide bed + smartphone icons",
+   "note": "cartoon phone slides away from bed icon / flips face down; hit on 'เตียง'",
    "hit": {
     "th": "เตียง"
+   }
+  },
+  {
+   "id": "beforebed",
+   "src": "assets/footage/bed.mp4",
+   "cue": {
+    "th": "มือถือก่อนนอน"
    },
-   "src": "graphic:phone-away"
+   "note": "person on phone in bed (use a different segment than 'tease')"
   },
   {
    "id": "sleep",
+   "src": "assets/footage/sleep.mp4",
    "cue": {
     "th": "นอนน้อย"
    },
-   "note": "person sleeping peacefully OR tired yawning in morning; small text 'นอนไม่หลับบ่อย ปรึกษาแพทย์'",
-   "src": "assets/footage/sleep.mp4"
+   "note": "sleeping/tired person; small text 'นอนไม่หลับบ่อย ปรึกษาแพทย์' (≤ Y 1420, X ≤900); 'หลับยาก' kinetic word"
   },
   {
    "id": "comment",
+   "src": "graphic:comment",
    "cue": {
     "th": "คืนนี้"
    },
-   "note": "big comment bubble 'คืนนี้เลื่อนถึงกี่โมง?' with typing dots + clock icon",
-   "src": "graphic:comment"
+   "note": "cartoon brain morphs into comment bubble 'คืนนี้จะไถถึงกี่โมง? เมนต์บอกหน่อย' + clock icon"
   },
   {
    "id": "loop",
+   "src": "assets/footage/hook-a.mp4",
    "cue": {
-    "th": "สงสัย"
+    "th": "อย่าลืม"
    },
-   "note": "SAME clip hook-a; editor: choose media range so the LAST frame of this shot = source t=2.0s (the frame-0 image) for a seamless loop, i.e. media_start = 2.0 - shot dur (if <0, play hook-a backwards-free alternative: hold from 0)",
-   "long_ok": true,
-   "src": "assets/footage/hook-a.mp4"
+   "note": "hook-a ending exactly on source t=2.0 (= frame 0) for visual loop; soft moon icon + 'อย่าลืมพักผ่อน'",
+   "long_ok": true
   }
  ]
 }
