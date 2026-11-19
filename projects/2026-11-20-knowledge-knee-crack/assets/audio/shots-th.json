@@ -58,8 +58,17 @@
    "cue": "บ่อยมาก",
    "word_at": 7.74,
    "start": 7.66,
+   "end": 8.48,
+   "dur": 0.82
+  },
+  {
+   "id": "nopain",
+   "src": "assets/footage/pixabay-11506.mp4",
+   "cue": "แม้แต่",
+   "word_at": 8.56,
+   "start": 8.48,
    "end": 9.98,
-   "dur": 2.32
+   "dur": 1.5
   },
   {
    "id": "gas",
@@ -67,10 +76,17 @@
    "cue": "เสียง",
    "word_at": 10.06,
    "start": 9.98,
-   "hit": "ฟองแก๊ส",
-   "hit_at": 10.8,
+   "end": 10.72,
+   "dur": 0.74
+  },
+  {
+   "id": "bubble",
+   "src": "graphic:knee",
+   "cue": "ฟองแก๊ส",
+   "word_at": 10.8,
+   "start": 10.72,
    "end": 12.64,
-   "dur": 2.66
+   "dur": 1.92
   },
   {
    "id": "tendon",
@@ -89,8 +105,17 @@
    "cue": "งานวิจัย",
    "word_at": 14.58,
    "start": 14.5,
+   "end": 15.92,
+   "dur": 1.42
+  },
+  {
+   "id": "bars",
+   "src": "graphic:bars",
+   "cue": "คนที่เข่า",
+   "word_at": 16.0,
+   "start": 15.92,
    "end": 17.14,
-   "dur": 2.64
+   "dur": 1.22
   },
   {
    "id": "risk",
@@ -118,8 +143,17 @@
    "start": 21.04,
    "hit": "บวม",
    "hit_at": 22.02,
+   "end": 22.74,
+   "dur": 1.7
+  },
+  {
+   "id": "stiff",
+   "src": "graphic:knee",
+   "cue": "ติดขัด",
+   "word_at": 22.82,
+   "start": 22.74,
    "end": 24.1,
-   "dur": 3.06
+   "dur": 1.36
   },
   {
    "id": "doctor",

@@ -57,15 +57,29 @@
    "note": "people walking up stairs / squatting / exercising normally, no pain; label ไม่เจ็บ ก็ดังได้"
   },
   {
+   "id": "nopain",
+   "src": "assets/footage/pixabay-11506.mp4",
+   "cue": {
+    "th": "แม้แต่"
+   },
+   "note": "person squatting deep without pain (11506 ~2.5-3.5s squat) + label ไม่เจ็บ ก็ดังได้",
+   "media_start": 2.3
+  },
+  {
    "id": "gas",
    "src": "graphic:knee",
    "cue": {
     "th": "เสียง"
    },
-   "note": "graphic:knee tiny gas bubbles in fluid, label อาจ",
-   "hit": {
+   "note": "graphic:knee sound-wave ripple at knee joint, label เสียงมาจากไหน?"
+  },
+  {
+   "id": "bubble",
+   "src": "graphic:knee",
+   "cue": {
     "th": "ฟองแก๊ส"
-   }
+   },
+   "note": "graphic:knee tiny gas bubbles in synovial fluid, label อาจ"
   },
   {
    "id": "tendon",
@@ -85,6 +99,14 @@
     "th": "งานวิจัย"
    },
    "note": "graphic: research card / chart (or lab/scientist footage)"
+  },
+  {
+   "id": "bars",
+   "src": "graphic:bars",
+   "cue": {
+    "th": "คนที่เข่า"
+   },
+   "note": "graphic: bar 'ดังบ่อย' grows (no numbers)"
   },
   {
    "id": "risk",
@@ -112,6 +134,14 @@
    "hit": {
     "th": "บวม"
    }
+  },
+  {
+   "id": "stiff",
+   "src": "graphic:knee",
+   "cue": {
+    "th": "ติดขัด"
+   },
+   "note": "graphic:knee red warning pulses: เจ็บ / บวม / ติดขัด checklist"
   },
   {
    "id": "doctor",
