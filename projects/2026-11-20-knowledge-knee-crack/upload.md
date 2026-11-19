@@ -22,8 +22,8 @@
 
 เครดิต
 เพลง: "Finding, curious, taking" by Wobinidan (CC BY 3.0) https://www.jamendo.com/track/209419 — https://creativecommons.org/licenses/by/3.0/
-ภาพ/วิดีโอ via Pixabay: alex73qr95, tacofleur, Stuck1, Amorn_mimi, Taokinesis, kumarsu6745_
-เสียงประกอบ: CC0 (รายชื่อใน assets/CREDITS.md)
+ภาพ/วิดีโอ via Pixabay: alex73qr95, tacofleur, Stuck1, Amorn_mimi, Taokinesis, Hassas_Arts, kumarsu6745_
+เสียงประกอบ: CC0 (รายชื่อใน renders/sound-th/CREDITS.txt)
 เสียงพากย์: ElevenLabs (AI)
 
 #เข่าดัง #ข้อเข่าเสื่อม #ความรู้รอบตัว #สุขภาพ #shorts

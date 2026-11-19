@@ -145,11 +145,12 @@
   },
   {
    "id": "doctor",
-   "src": "assets/footage/pixabay-229071.mp4",
+   "src": "assets/footage/pixabay-49814.mp4",
    "cue": {
     "th": "หมอ"
    },
-   "note": "doctor examining patient's knee"
+   "note": "doctor in white coat with stethoscope examining x-ray film",
+   "media_start": 2.0
   },
   {
    "id": "cta",

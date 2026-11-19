@@ -7,3 +7,4 @@
 - pixabay-12739.mp4: tacofleur via Pixabay (Pixabay License) https://pixabay.com/videos/id-12739/ | tags: kettlebell overhead cossack, kettlebells, cossack squat, beach, crossfit
 - pixabay-32937.mp4: Stuck1 via Pixabay (Pixabay License) https://pixabay.com/videos/id-32937/ | tags: exercise, stretching, senior, elder, people, workout, body, training, fitness, s
 - pixabay-4245628.jpg: alex73qr95 via Pixabay (Pixabay License) https://pixabay.com/photos/outdoors-exercise-workout-fitness-4245628/ | tags: outdoors, exercise, workout, fitness
+- pixabay-49814.mp4: Hassas_Arts via Pixabay (Pixabay License) https://pixabay.com/videos/id-49814/ | tags: female doctor, x-ray, hospital, doctor, patient
