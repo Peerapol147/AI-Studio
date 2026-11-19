@@ -31,3 +31,8 @@ short กับ long จากหัวข้อเดียวกัน: ทำ
    ตัดก่อนคำ 0.08 วิ (2-3 เฟรม ตาเห็นว่า "ตรงคำ") และเลือกช่วงในคลิปให้ action ลงตรง `hit`
 5. editor อ่าน shots-<lang>.json เท่านั้น ห้ามแก้เวลาเอง ถ้าช็อตสั้น/ยาวเกิน (tool เตือน) ให้แก้ `cue` ใน shots.json แล้วรันใหม่
 6. reviewer เปิดเฟรมที่ `word_at + 0.1` ของทุกช็อต: ภาพต้องตรงกับคำ และเฟรม `hit_at` ต้องเห็น action
+
+## ชุดเครื่องมือเสริม (ใช้เมื่อช่วยงานได้ ไม่บังคับ)
+- `tools/trim_silence.sh in.mp3 out.mp3`: ตัดช่วงเงียบในเสียงพากย์ให้กระชับ **ทำก่อน `tools/words.sh` เสมอ**
+- `assets/vendor/`: rough.js (ลายเส้นวาดมือ), flubber (morph รูปทรง), d3-shape (กราฟ/โดนัท), ไอคอน lucide ~70 อัน ดู `assets/vendor/README.md`
+- ถอดเสียงมีอยู่แล้ว (ElevenLabs scribe ใน `words.sh`) และจังหวะเพลงอยู่ใน skill `sound-effects` จึงไม่เพิ่ม faster-whisper/librosa
