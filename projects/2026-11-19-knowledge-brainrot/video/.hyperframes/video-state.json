@@ -692,7 +692,6 @@
         {
           "id": "b8962811-16d4-451c-9142-f97d15929944",
           "scope": "project",
-          "report": "/home/user/AI-Studio/projects/2026-11-19-knowledge-brainrot/video/.hyperframes/artifacts/checks/b8962811-16d4-451c-9142-f97d15929944.json",
           "metadata": {
             "ok": false,
             "browserSkipped": false,
@@ -722,7 +721,9 @@
           "revision": "a2cb2104-06b9-48fc-a7d9-3cd6602bb87d",
           "inputFingerprint": "88be1231bbfad5bde3c0268eb8a693edf22aab39f97ae728b953bfdb845619bd",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bc06f6cc-4336-433f-bbe6-f86ab1ff8df7"
         }
       ],
       "9cc49e69-bfc5-4363-a29d-68e0023fbc9d": [
@@ -2778,13 +2779,14 @@
   },
   "renders": {
     "latest": {
-      "id": "98b39d79-c1f3-4d01-986a-fbc9a8463aa7",
-      "completedAt": 1795066538622,
+      "id": "bc06f6cc-4336-433f-bbe6-f86ab1ff8df7",
+      "completedAt": 1795068593130,
       "output": "/home/user/AI-Studio/projects/2026-11-19-knowledge-brainrot/renders/brainrot-th-silent.mp4",
       "status": "completed",
-      "revision": "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
+      "revision": "9cc49e69-bfc5-4363-a29d-68e0023fbc9d"
     },
     "retainedRevisions": [
+      "9cc49e69-bfc5-4363-a29d-68e0023fbc9d",
       "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
     ]
   },
