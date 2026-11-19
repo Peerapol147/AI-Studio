@@ -99,6 +99,11 @@ cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", 
 | scribe ถอดชื่อต่างประเทศเป็นอังกฤษ ("เตอร์กิชแวน"→"Turkish Van") | cue ใช้คำตามที่ถอดได้; ซับเขียนไทยตามบท |
 | host ใหม่โดนบล็อก (`CONNECT tunnel failed 403`) | ขอเพิ่ม host ด้วย update_environment ทีละน้อยที่สุด |
 
+## เครื่องมือเสริม (เพิ่ม 2026-11-19)
+- ตัดความเงียบเสียงพากย์: `bash tools/trim_silence.sh in.mp3 out.mp3` ทำ **ก่อน** `tools/words.sh` เสมอ (ไม่งั้นเวลาคำเพี้ยน)
+- ฉากอธิบาย (editor): ไลบรารีฝังไฟล์ใน `assets/vendor/` ดู README ในโฟลเดอร์: `rough.js` เส้นวาดมือ, `flubber` morph รูปทรง, `d3-path`+`d3-shape` กราฟ/โดนัท, `lucide/*.svg` ไอคอน (ใช้ `currentColor`) ใช้เมื่อช่วยให้เข้าใจเนื้อหา ไม่ใส่เพื่อโชว์
+- ฟอนต์ไทยใช้ `assets/fonts/` เท่านั้น (Geist ไม่มีตัวไทย)
+
 ## ประหยัด token โดยไม่กระทบคุณภาพ (ตั้งค่า 2026-11-18)
 **โมเดลต่อตำแหน่ง** (frontmatter ใน `.claude/agents/`): researcher, footage, voice = `sonnet` | editor, reviewer = `opus` | ผู้กำกับ = โมเดลของเซสชัน
 ถ้าผู้ใช้บอกว่าข้อมูล/ภาพแย่ลง ให้เปลี่ยนตำแหน่งนั้นกลับเป็น `opus` แล้วบันทึกเหตุผลที่นี่
