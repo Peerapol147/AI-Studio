@@ -1,4 +1,3 @@
-- music-jamendo-b6fb4ded.mp3: "playfulness" by Pan:core (CC BY 3.0) https://www.jamendo.com/track/2040809
 # CREDITS (NASA images, public domain; ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA)
 
 - assets/footage/hook_alt.jpg | nasa_id iss005e21040 | Astronaut Peggy Whitson poses in the U.S. Laboratory during Expedition Five | เครดิต NASA | https://images.nasa.gov/details/iss005e21040 | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1920, 1307)
@@ -21,8 +20,8 @@
 - assets/footage/you_alt.jpg | nasa_id jsc2024e052674_alt | NASA Astronaut Jonny Kim | เครดิต NASA/Josh Valcarcel – NASA – John | https://images.nasa.gov/details/jsc2024e052674_alt | ใช้ตามแนวทางสื่อ NASA ไม่ได้รับรองโดย NASA | (1536, 1920)
 
 ## ตัดต่อ (editor ขั้น 5)
-- ภาพ NASA ทุกภาพถูกครอปและปรับสี (เกรดเดียวกันทั้งคลิป) ใช้: hook, rocket, hadfield, tried, nozzle, earth, linger, station, you; ไฟล์ _alt ไม่ได้ใช้
-- เพลง: "playfulness" by Pan:core, CC BY 3.0 — https://www.jamendo.com/track/2040809
+- ภาพ NASA ทุกภาพถูกครอปและปรับสี (เกรดเดียวกันทั้งคลิป) ใช้: hook, rocket, hadfield, hadfield_alt (ช็อต tried), nozzle_alt (ช็อต nozzle), earth, linger (เฉพาะส่วนล่างที่ไม่มีคน เบลอเป็นพื้นหลัง), station (+ปก), you; ไม่ได้ใช้: tried, nozzle, hook_alt, rocket_alt, earth_alt, linger_alt, station_alt, you_alt
+- เพลง (music-jamendo-b6fb4ded.mp3): "playfulness" by Pan:core (CC BY 3.0) — https://www.jamendo.com/track/2040809
 - SFX (CC0 ทั้งหมด จาก skill sound-effects):
   - "Quick woosh" by florianreichelt (Freesound), CC0 1.0 - https://freesound.org/people/florianreichelt/sounds/683101/
   - "Plop" by Breviceps (Freesound), CC0 1.0 - https://freesound.org/people/Breviceps/sounds/447910/

@@ -79,3 +79,11 @@
 เปิดตรงไม่ได้ (โดเมนไม่อยู่ใน allowlist): ntrs.nasa.gov, amatranscripts.com, blogs.esa.int, www.nasa.gov, jamendo — ใช้ผลค้น WebSearch แทน; images-api.nasa.gov ใช้ได้
 
 แหล่งที่ใช้ค้นซ้ำ: https://www.sciencefocus.com/space/farting-in-space · https://jalopnik.com/can-you-use-your-farts-to-propel-yourself-in-zero-gravi-1735435493 · https://www.pbs.org/video/pbs-space-time-moon-farts · https://www.dailyedge.ie/chris-hadfield-reddit-ama-1207963-Dec2013/ · https://ntrs.nasa.gov/api/citations/19980201212/downloads/19980201212.pdf · https://ntrs.nasa.gov/api/citations/20050207549/downloads/20050207549.pdf · https://ntrs.nasa.gov/citations/20080046985 · https://blogs.esa.int/astronauts/?p=301 · https://images-api.nasa.gov/search?nasa_id=iss034e010866
+
+## ตรวจซ้ำรอบแก้ 1 (ผู้กำกับ, 2026-11-19) — ผ่าน ส่งมอบได้
+ดูเฟรมจาก MP4 ใหม่: 0, 9.5, 10.32, 15.66, 24.62, 34.3 + ปก
+- R1 ✅ nozzle = nozzle_alt.jpg เห็นระฆังหัวฉีด RS-25 ชัด + ป้าย "ก้น ≠ หัวฉีดจรวด"
+- R2 ✅ ปก = silhouette การ์ตูน + ควันเขียว + "ตด ในอวกาศ?" บนภาพ ISS ไม่มีคน; เฟรม 0/loop ไม่มีควันข้าง Coleman; linger เป็น silhouette บนโมดูลไม่มีคน
+- Y1 ✅ การ์ด quote ใช้ท่อน "…too muffled, not the right type of propulsive nozzle." (ยืนยันหลายสื่อ) | Y3 ✅ earth มีกราฟิก | Y4 ✅ upload.md เพิ่มลิงก์ dailyedge + NTRS 19980201212, ลิงก์ ESA ให้ผู้ใช้คลิกเช็ก | Y5 ✅ tried = Hadfield ใน cupola | Y6 ✅ CREDITS มี ElevenLabs
+- เสียง (editor วัดจาก MP4): -16.2 LUFS, TP -5.1 dBFS, 34.60 วิ ไม่เปลี่ยน
+- ยอมรับไว้: เสียงพูด "พวกเขาลองกันมาหมดแล้วจริงๆ" ⚠️ (แหล่งรองเดียว, ใช้ "เล่าว่า") ไม่อัดใหม่ตามกฎโควตา; ยังไม่มีใครฟังเสียงจริง

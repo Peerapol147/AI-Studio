@@ -45,13 +45,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #hname .n1{position:absolute;left:56px;top:14px;font-weight:900;font-size:74px;line-height:1.1;color:#fff;white-space:nowrap}
 #hname .n2{position:absolute;left:58px;top:102px;font-weight:700;font-size:42px;line-height:1.1;color:#A9C6FF;white-space:nowrap}
 /* quote card */
-#qcard{position:absolute;left:130px;top:430px;width:740px;height:560px;border-radius:40px;background:#FFF8EE;opacity:0;
+#qcard{position:absolute;left:130px;top:400px;width:740px;height:640px;border-radius:40px;background:#FFF8EE;opacity:0;
   box-shadow:0 0 0 8px #0A0E1C,0 30px 70px rgba(0,0,0,.55);transform-origin:50% 50%}
-#qcard .qq{position:absolute;left:44px;top:-6px;font-weight:900;font-size:220px;line-height:1;color:#B8E04A;-webkit-text-stroke:10px #0A0E1C;paint-order:stroke fill}
-#qen{position:absolute;left:60px;top:150px;width:640px;font-weight:900;font-size:84px;line-height:1.05;color:#0A0E1C;white-space:nowrap}
-#qen span{display:inline-block;margin-right:20px;transform-origin:50% 80%}
-#qth{position:absolute;left:52px;top:290px;padding:0 24px 8px;border-radius:20px;background:#FFE14D;font-weight:900;font-size:76px;line-height:1.15;color:#0A0E1C;white-space:nowrap;transform-origin:0 50%}
-#qsrc{position:absolute;left:60px;top:470px;font-weight:700;font-size:34px;color:#5B6B8C;white-space:nowrap}
+#qen{position:absolute;left:56px;top:44px;width:640px;font-weight:900;font-size:66px;line-height:1.16;color:#0A0E1C;white-space:normal}
+#qen span{display:inline-block;margin-right:18px;transform-origin:50% 80%}
+#qth{position:absolute;left:44px;top:350px;width:652px;padding:4px 22px 10px;border-radius:20px;background:#FFE14D;font-weight:900;font-size:58px;line-height:1.2;color:#0A0E1C;white-space:normal;transform-origin:0 50%}
+#qsrc{position:absolute;left:60px;top:560px;font-weight:700;font-size:34px;color:#5B6B8C;white-space:nowrap}
 /* compare panel */
 #cmp{position:absolute;left:120px;top:300px;width:760px;height:780px;opacity:0;transform-origin:50% 50%}
 #cmp .half{position:absolute;left:0;width:760px;height:375px;border-radius:36px;box-shadow:0 0 0 7px #0A0E1C,0 18px 40px rgba(0,0,0,.45);overflow:hidden}
@@ -98,12 +97,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
     <div class="card" id="cd-hadfield" style="left:150px;top:460px;width:740px;height:925px"><img id="ci-hadfield" style="transform-origin:51% 29%" src="assets/hadfield-card.jpg" alt=""/></div></div>
   <div class="sc" id="sh-quote"><img class="bgp" id="bg-qbg" src="assets/hadfield-bg.jpg" alt=""/><div class="dim"></div></div>
   <div class="sc" id="sh-tried"><img class="bgp" id="bg-tried" src="assets/tried-bg.jpg" alt=""/>
-    <div class="card" id="cd-tried" style="left:150px;top:380px;width:740px;height:740px"><img id="ci-tried" style="transform-origin:50% 42%" src="assets/tried-card.jpg" alt=""/></div></div>
+    <div class="card" id="cd-tried" style="left:150px;top:380px;width:740px;height:740px"><img id="ci-tried" style="transform-origin:45% 47%" src="assets/tried-card.jpg" alt=""/></div></div>
   <div class="sc gsc" id="sh-fail"><div class="dbg" style="background:radial-gradient(ellipse at 50% 38%,#4A2D6E 0%,#22205A 45%,#070A22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc gsc" id="sh-weak"><div class="dbg" style="background:radial-gradient(ellipse at 45% 55%,#2C3D66 0%,#18264A 45%,#060B1E 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc gsc" id="sh-butt"><div class="dbg" style="background:radial-gradient(ellipse at 55% 45%,#22478A 0%,#122A5E 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc" id="sh-nozzle"><img class="bgp" id="bg-nozzle" src="assets/nozzle-bg.jpg" alt=""/>
-    <div class="card" id="cd-nozzle" style="left:150px;top:440px;width:740px;height:740px"><img id="ci-nozzle" style="transform-origin:50% 50%" src="assets/nozzle-card.jpg" alt=""/></div></div>
+    <div class="card" id="cd-nozzle" style="left:160px;top:430px;width:720px;height:978px"><img id="ci-nozzle" style="transform-origin:50% 86%" src="assets/nozzle-card.jpg" alt=""/></div></div>
   <div class="sc gsc" id="sh-problem"><div class="dbg" style="background:radial-gradient(ellipse at 50% 32%,#3B3A7E 0%,#1A2258 45%,#060A20 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc gsc" id="sh-smell"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#2C5A4E 0%,#143A42 45%,#04101C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc gsc" id="sh-space"><div class="dbg" style="background:radial-gradient(ellipse at 60% 40%,#1B3B7E 0%,#0C1D4C 45%,#030716 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
@@ -111,7 +110,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
     <div class="card" id="cd-earth" style="left:150px;top:400px;width:740px;height:740px"><img id="ci-earth" style="transform-origin:50% 48%" src="assets/earth-card.jpg" alt=""/></div></div>
   <div class="sc gsc" id="sh-compare"><div class="dbg" style="background:radial-gradient(ellipse at 50% 50%,#1E3A7A 0%,#10224F 45%,#050A1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc gsc" id="sh-nofan"><div class="dbg" style="background:radial-gradient(ellipse at 50% 30%,#2A3556 0%,#16203F 45%,#050916 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
-  <div class="sc" id="sh-linger"><div class="kb" id="kb-linger"><img class="full" src="assets/linger-full.jpg" alt=""/></div><div class="vig"></div></div>
+  <div class="sc" id="sh-linger"><img class="bgp" id="bg-linger" src="assets/linger-bg.jpg" alt=""/><div class="dim"></div></div>
   <div class="sc" id="sh-station"><img class="bgp" id="bg-station" src="assets/station-bg.jpg" alt=""/>
     <div class="card" id="cd-station" style="left:150px;top:400px;width:740px;height:740px"><img id="ci-station" style="transform-origin:50% 31%" src="assets/station-card.jpg" alt=""/></div></div>
   <div class="sc gsc" id="sh-fan"><div class="dbg" style="background:radial-gradient(ellipse at 50% 28%,#1C5A78 0%,#0F2F55 45%,#040B1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
@@ -128,9 +127,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 
 <div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
   <div id="hname"><div class="bar"></div><div class="n1">Chris Hadfield</div><div class="n2">อดีตผู้บัญชาการสถานีอวกาศ</div></div>
-  <div id="qcard"><div class="qq">“</div>
-    <div id="qen"><span>We</span><span>all</span><span>tried</span><span>it”</span></div>
-    <div id="qth">ลองกันหมดแล้ว</div>
+  <div id="qcard">
+    <div id="qen"><span>“…too</span><span>muffled,</span><span>not</span><span>the</span><span>right</span><span>type</span><span>of</span><span>propulsive</span><span>nozzle.”</span></div>
+    <div id="qth">แผ่วเกินไป<br>แถมไม่ใช่หัวฉีดจรวด</div>
     <div id="qsrc">Chris Hadfield · Reddit AMA 2013</div></div>
   <div id="cmp"><div class="half h1"><div class="lb"><svg class="ic" style="color:#FFA53D"><use href="#ic-globe"/></svg>บนโลก: <b>อากาศร้อนลอยขึ้น</b></div></div>
     <div class="half h2"><div class="lb"><svg class="ic" style="color:#B8E04A"><use href="#ic-rocket"/></svg>ในอวกาศ: <b>ไม่ลอย</b></div></div></div>
@@ -207,14 +206,14 @@ const SC=[
  {id:'sh-fail',a:T.fail,in:'zoom'},
  {id:'sh-weak',a:T.weak,in:'match'},
  {id:'sh-butt',a:T.butt,in:'whip'},
- {id:'sh-nozzle',a:T.nozzle,kind:'card',n:'nozzle',cs0:1.0,cs1:1.14,r0:1.2,r1:-1.0,in:'zoom'},
+ {id:'sh-nozzle',a:T.nozzle,kind:'card',n:'nozzle',cs0:1.0,cs1:1.2,r0:1.2,r1:-1.0,in:'zoom'},
  {id:'sh-problem',a:T.problem,in:'cut'},
  {id:'sh-smell',a:T.smell,in:'zoom'},
  {id:'sh-space',a:T.space,in:'whip'},
  {id:'sh-earth',a:T.earth,kind:'card',n:'earth',cs0:1.0,cs1:1.12,r0:-1.2,r1:0.8,in:'zoom'},
  {id:'sh-compare',a:T.compare,in:'match'},
  {id:'sh-nofan',a:T.nofan,in:'whip'},
- {id:'sh-linger',a:T.linger,kind:'full',kb:'kb-linger',s0:1.02,s1:1.12,r0:0.6,r1:-0.6,org:'46% 38%',in:'cut'},
+ {id:'sh-linger',a:T.linger,kind:'gbg',n:'linger',in:'cut'},
  {id:'sh-station',a:T.station,kind:'card',n:'station',cs0:1.0,cs1:1.15,r0:1.0,r1:-1.0,in:'whip'},
  {id:'sh-fan',a:T.fan,in:'zoom'},
  {id:'sh-filter',a:T.filter,in:'match'},
@@ -264,12 +263,13 @@ const STARS=[]; document.querySelectorAll('.stars').forEach((sv,j)=>{for(let i=0
 function stars(t){STARS.forEach(s=>{s.e.setAttribute('cy',f2(((s.y-t*(30+s.i%5*12))%1920+1920)%1920)); s.e.setAttribute('opacity',f2(0.25+0.45*(0.5+0.5*Math.sin(t*3+s.i))));});}
 
 // ---------- zoom punches + glitch (registry zoom-through / rgb-glitch-text, adapted) + camera kick on graphic matches ----------
-const PUNCH=[K.panha,K.klin,K.saikrong];
+const PUNCH=[K.panha,K.klin,K.saikrong], HOOKP=K.tod0+0.2;
 const GL=[K.phon], GLD=0.134; // 4 frames
 const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
 const KICK=SC.filter(s=>s.in==='match'&&!s.kind).map(s=>s.a);
 function fx(t){
   let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.085*Math.exp(-u*7)*Math.cos(u*13);});
+  {const u=t-HOOKP; if(u>=0&&u<0.8)p+=0.04*Math.exp(-u*6)*Math.sin(u*9);}
   KICK.forEach(a=>{const u=t-a; if(u>=0&&u<0.5)p+=0.035*Math.exp(-u*9);});
   let gi=-1; GL.forEach(a=>{if(t>=a&&t<a+GLD)gi=Math.floor((t-a)*30);});
   const st=$('stage');
@@ -290,7 +290,7 @@ function title(t){
   let o,sc;
   if(t<TBACK){ const out=eo((t-(T.belief-0.04))/0.12); o=1-out; sc=1+0.25*out; }
   else { const a=S(t-TBACK,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
-  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-T.loop)/0.4));
+  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-TBACK)/0.2));
   const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<TBACK?1:0;
   // "จะเกิดอะไรขึ้น?" gets a small kick on "เกิดอะไร"
   const kk=(t>=K.kerd&&t<T.belief)?0.06*Math.exp(-(t-K.kerd)*6)*Math.cos((t-K.kerd)*14):0;
@@ -309,6 +309,13 @@ function compareF(t){
     const ph=(((t-T.compare)*0.9+i*0.33)%1+1)%1; const y=lerp(650,420,ph), x=[300,520,740][i]+12*Math.sin(t*4+i);
     g.setAttribute('opacity',f2(o*clamp(ph*6)*(1-clamp((ph-0.8)/0.2)))); g.setAttribute('transform',`translate(${f2(x)} ${f2(y+50*(1-clamp(v)))})`);});
 }
+// earth: three air pockets over the cupola that try to rise, wobble and stay put ("อากาศไม่ลอย")
+const POCK=[[330,690],[560,610],[740,770]].map(([x,y],i)=>{const g=el('g',{opacity:0},G);
+  el('circle',{r:58,fill:'rgba(195,213,234,.28)',stroke:'#E8EEF8','stroke-width':6,'stroke-dasharray':'14 10'},g);
+  el('use',{href:'#ic-arrow-up',x:-30,y:-30,width:60,height:60,color:'#E8EEF8'},g); return {g,x,y,i};});
+function pocketsF(t){POCK.forEach(p=>{const v=win(t,T.earth+0.12+p.i*0.08,T.compare,BOUNCE); if(v<0.003){p.g.setAttribute('opacity','0');return;}
+  const tryUp=t>=K.mailoi?-14*Math.exp(-(t-K.mailoi-p.i*0.05)*4)*Math.abs(Math.sin((t-K.mailoi)*10)):0;
+  p.g.setAttribute('opacity',f2(clamp(v*2))); p.g.setAttribute('transform',`translate(${f2(p.x+6*Math.sin(t*3+p.i))} ${f2(p.y+tryUp+5*Math.cos(t*2.6+p.i))}) scale(${f2(Math.max(0.001,v))})`);});}
 // fan: off (grey, slashed) on "ถ้าไม่มีพัดลม", spins up on "พัดลมตลอด"
 const FAN=el('g',{opacity:0},G);
 el('circle',{r:160,fill:'#0E1A3C',stroke:INK,'stroke-width':12},FAN);
@@ -362,36 +369,34 @@ const WISP='M-100 30 C-132 30 -132 -12 -96 -16 C-90 -46 -46 -52 -30 -26 C-14 -56
 const BUB='M-340 -160 Q-380 -160 -380 -120 L-380 120 Q-380 160 -340 160 L-150 160 L-230 250 L-60 160 L340 160 Q380 160 380 120 L380 -120 Q380 -160 340 -160 Z';
 const FL=window.flubber, OPT={maxSegmentLength:6};
 const P2W=FL.interpolate(PUFF,WISP,OPT), W2P=FL.interpolate(WISP,PUFF,OPT), P2S=FL.interpolate(PUFF,STINK,OPT),
-      S2B=FL.interpolate(STINK,BUB,OPT), B2P=FL.interpolate(BUB,PUFF,OPT);
-const BACK=DUR-0.42; // bubble morphs back into the frame-0 puff
+      S2B=FL.interpolate(STINK,BUB,OPT);
+const BACK=DUR-0.5; // bubble text fades, bubble shrinks away before the hook title returns
 const CLG=el('g',{},G);
 const cShadow=el('ellipse',{cx:0,cy:190,rx:170,ry:20,fill:'#000',opacity:.25},CLG);
 const cBody=el('path',{d:PUFF,fill:CB,stroke:INK,'stroke-width':8,'stroke-linejoin':'round','vector-effect':'non-scaling-stroke'},CLG);
 const cHi=el('path',{d:'M-120 -30 q25 -45 80 -40 M70 -70 q40 -10 60 20',fill:'none',stroke:'#fff','stroke-width':14,'stroke-linecap':'round',opacity:.6},CLG);
 const STL=[-70,10,90].map((x,i)=>el('path',{d:'M0 0 q-16 -22 0 -44 t0 -44 t0 -44',fill:'none',stroke:CG,'stroke-width':12,'stroke-linecap':'round',opacity:0},G));
-const cX=track(790,[[T.happen,700],[T.belief,390],[K.tidiao,320],[T.fail,330,OUT],[T.butt,370],[T.problem,540,OUT],[T.space,470],
-  [T.compare,640,OUT],[T.nofan,400,OUT],[T.linger,500,OUT],[T.fan,540,OUT],[T.filter,540,OUT],[T.try,330,OUT],[T.comment,540],[BACK,790,FAST]]);
-const cY=track(1150,[[T.happen,960],[T.belief,990],[K.tidiao,950],[T.fail,960,OUT],[T.butt,1000],[T.problem,880,OUT],[K.klin,840],[T.space,900],
-  [T.compare,930,OUT],[T.nofan,1000,OUT],[T.linger,650,OUT],[T.fan,1000,OUT],[K.phatlom,620,SLOW],[T.filter,1010,OUT],[K.jap,700,MORPH],
-  [T.try,1000,OUT],[T.comment,640],[BACK,1150,FAST]]);
-const cS=track(0.42,[[K.kerd,0.75,BOUNCE],[T.belief,0.35],[K.tidiao,1.1,BOUNCE],[T.rocket,0,OUT],[T.fail,0.6,BOUNCE],[K.phon,0.75,BOUNCE],
+const cX=track(700,[[T.belief,390],[K.tidiao,320],[T.fail,330,OUT],[T.butt,370],[T.problem,540,OUT],[T.space,470],
+  [T.compare,640,OUT],[T.nofan,400,OUT],[T.linger,440,OUT],[T.fan,540,OUT],[T.filter,540,OUT],[T.try,330,OUT],[T.comment,540]]);
+const cY=track(960,[[T.belief,990],[K.tidiao,950],[T.fail,960,OUT],[T.butt,1000],[T.problem,880,OUT],[K.klin,840],[T.space,900],
+  [T.compare,930,OUT],[T.nofan,1000,OUT],[T.linger,900,OUT],[T.fan,1000,OUT],[K.phatlom,620,SLOW],[T.filter,1010,OUT],[K.jap,700,MORPH],
+  [T.try,1000,OUT],[T.comment,640],[T.loop,410]]);
+const cS=track(0,[[T.happen+0.1,0.75,BOUNCE],[T.belief,0.35],[K.tidiao,1.1,BOUNCE],[T.rocket,0,OUT],[T.fail+0.1,0.6,BOUNCE],[K.phon,0.75,BOUNCE],
   [K.phaeo,0.5],[T.butt,0.62],[T.nozzle,0,OUT],[T.problem,0.55,BOUNCE],[K.klin,1.2,BOUNCE],[T.space,1.3],[T.earth,0,OUT],[T.compare,0.32,POP],
-  [T.nofan,0.8,BOUNCE],[T.linger,0.5,POP],[T.station,0,OUT],[T.fan,0.85,BOUNCE],[K.phatlom,0.45,SLOW],[T.filter,0.6,POP],[K.jap,0.04,SLOW],
-  [T.you,0,OUT],[T.try,0.45,BOUNCE],[T.comment,1.0,BOUNCE],[BACK,0.42,FAST]]);
+  [T.nofan,0.8,BOUNCE],[T.linger,1.0,POP],[T.station,0,OUT],[T.fan,0.85,BOUNCE],[K.phatlom,0.45,SLOW],[T.filter,0.6,POP],[K.jap,0.04,SLOW],
+  [T.you,0,OUT],[T.try+0.1,0.45,BOUNCE],[T.comment,1.0,BOUNCE],[T.loop,0.88],[BACK,0,FAST]]);
 const cSt=track(1,[[K.phatlom,1.7,MORPH],[T.filter,1,OUT]]); // stretched toward the fan
 function cloudShape(t){
   if(t<K.phaeo) return [PUFF,0,0];
   if(t<T.problem+0.05){const p=clamp(S(t-K.phaeo,10,0.9)); return [P2W(p),p,0];}
   if(t<K.klin){const p=clamp(S(t-T.problem-0.05,12,0.8)); return [W2P(p),1-p,0];}
   if(t<T.comment){return [P2S(clamp(S(t-K.klin,15,0.7))),0,0];}
-  if(t<BACK){const p=clamp(S(t-T.comment,18,0.85)); return [S2B(p),0,p];}
-  const p=clamp(S(t-BACK,26,0.9)); return [B2P(p),0,1-p];
+  const p=clamp(S(t-T.comment,18,0.85)); return [S2B(p),0,p];
 }
 function cloudCol(t){
   if(t<K.klin) return CB;
   if(t<T.comment) return mix(CB,CG,S(t-K.klin,12,0.9));
-  if(t<BACK) return mix(CG,CW,S(t-T.comment,18,0.85));
-  return mix(CW,CB,S(t-BACK,26,0.9));
+  return mix(CG,CW,S(t-T.comment,18,0.85));
 }
 function cloud(t){
   const s=cS(t); STL.forEach(p=>p.setAttribute('opacity','0'));
@@ -440,11 +445,11 @@ el('ellipse',{cx:8,cy:-258,rx:62,ry:50,fill:'#16306E',stroke:INK,'stroke-width':
 el('path',{d:'M-26 -286 q20 -20 50 -14',fill:'none',stroke:'#fff','stroke-width':9,'stroke-linecap':'round',opacity:.85},VIS);
 G.appendChild(CLG); G.appendChild(AS); // draw order: helpers, cloud, astronaut
 STL.forEach(p=>G.appendChild(p)); AIR.forEach(a=>G.appendChild(a));
-const aS=track(0,[[T.happen,0.85,BOUNCE],[T.belief,1.0],[T.rocket,0,OUT],[T.fail,1.0,BOUNCE],[T.nozzle,0,OUT],[T.space,0.9,BOUNCE],[T.earth,0,OUT],
-  [T.nofan,0.78,BOUNCE],[T.linger,0,OUT],[T.try,0.85,BOUNCE],[T.comment,0,OUT]]);
-const aX=track(430,[[T.belief,600],[K.tidiao,690],[T.fail,600,OUT],[K.phon,614,SLOW],[T.butt,560],[T.space,610,OUT],[T.nofan,610,OUT],[T.try,620,OUT]]);
-const aY=track(960,[[T.belief,900],[K.tidiao,770],[T.fail,880,OUT],[K.phon,872,SLOW],[T.butt,880],[T.space,840,OUT],[T.nofan,960,OUT],[T.try,930,OUT]]);
-const aR=track(0,[[K.tidiao,26],[T.fail,8,OUT],[K.phon,4,SLOW],[T.butt,0],[T.space,-12,OUT],[T.nofan,6,OUT],[T.try,0,OUT]]);
+const aS=track(0,[[T.happen+0.1,0.85,BOUNCE],[T.belief,1.0],[T.rocket,0,OUT],[T.fail+0.1,1.0,BOUNCE],[T.nozzle,0,OUT],[T.space,0.9,BOUNCE],[T.earth,0,OUT],
+  [T.nofan,0.78,BOUNCE],[T.linger,0.92,BOUNCE],[T.station,0,OUT],[T.try+0.1,0.85,BOUNCE],[T.comment,0,OUT]]);
+const aX=track(430,[[T.belief,600],[K.tidiao,690],[T.fail,600,OUT],[K.phon,614,SLOW],[T.butt,560],[T.space,610,OUT],[T.nofan,610,OUT],[T.linger,610,OUT],[T.try,620,OUT]]);
+const aY=track(960,[[T.belief,900],[K.tidiao,770],[T.fail,880,OUT],[K.phon,872,SLOW],[T.butt,880],[T.space,840,OUT],[T.nofan,960,OUT],[T.linger,830,OUT],[T.try,930,OUT]]);
+const aR=track(0,[[K.tidiao,26],[T.fail,8,OUT],[K.phon,4,SLOW],[T.butt,0],[T.space,-12,OUT],[T.nofan,6,OUT],[T.linger,-10,OUT],[T.try,0,OUT]]);
 function astro(t){
   const s=aS(t); if(s<0.02){AS.setAttribute('opacity','0');return;} AS.setAttribute('opacity','1');
   // turn around for the butt shot: squash through 0 and swap front/back details
@@ -512,8 +517,8 @@ function people(t){
   if(show(e,clamp(v*2))) e.style.transform=`translateX(${f2(-80*(1-clamp(v)))}px) rotate(${f2(-1+0.6*Math.sin(t*2))}deg)`;
   const q=$('qcard'); v=win(t,T.quote,T.tried,BOUNCE);
   if(show(q,clamp(v*1.6))) q.style.transform=`translateY(${f2(60*(1-clamp(v))+7*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.7*Math.sin(t*1.2))}deg) scale(${f2(Math.max(0.001,0.85+0.15*v))})`;
-  QW.forEach((w,i)=>{const a=K.lao+i*0.09, p=t>=a?S(t-a,POP[0],POP[1]):0; w.style.opacity=f2(clamp(p*2)); w.style.transform=`translateY(${f2(20*(1-clamp(p)))}px) scale(${f2(Math.max(0.001,p))})`;});
-  const th=$('qth'), a=K.lao+0.42, p=t>=a?S(t-a,16,0.6):0; th.style.opacity=f2(clamp(p*2)); th.style.transform=`scaleX(${f2(Math.max(0.001,0.6+0.4*p))}) rotate(-1.5deg)`;
+  QW.forEach((w,i)=>{const a=K.lao+i*0.05, p=t>=a?S(t-a,POP[0],POP[1]):0; w.style.opacity=f2(clamp(p*2)); w.style.transform=`translateY(${f2(20*(1-clamp(p)))}px) scale(${f2(Math.max(0.001,p))})`;});
+  const th=$('qth'), a=K.lao+0.5, p=t>=a?S(t-a,16,0.6):0; th.style.opacity=f2(clamp(p*2)); th.style.transform=`scaleX(${f2(Math.max(0.001,0.6+0.4*p))}) rotate(-1.5deg)`;
 }
 // ---------- comment bubble text (holds into the loop shot, fades before the hook title returns) ----------
 function bubbleText(t){
@@ -531,7 +536,7 @@ function captions(t){
   capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
 }
 
-function render(t){ scenes(t); stars(t); fx(t); title(t); compareF(t); fanF(t); filterF(t); ghostF(t); streaks(t); cloud(t); astro(t);
+function render(t){ scenes(t); stars(t); fx(t); title(t); compareF(t); pocketsF(t); fanF(t); filterF(t); ghostF(t); streaks(t); cloud(t); astro(t);
   pillF(t); qmark(t); kinetic(t); people(t); bubbleText(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});

@@ -11,24 +11,26 @@ cd "$(dirname "$0")"; mkdir -p assets
 cp ../assets/audio/{vo-th.mp3,music-jamendo-b6fb4ded.mp3} assets/
 F=../assets/footage; LUT=.media/luts/grade_002.cube
 grade(){ echo "lut3d=file=$LUT,eq=brightness=$1:contrast=1.07:saturation=0.86,colorbalance=rs=-0.05:gs=-0.02:bs=0.10:rm=-0.02:gm=-0.01:bm=0.07:rh=-0.02:bh=0.05"; }
-card(){ # name crop exposure
-  ffmpeg -v error -y -i "$F/$1.jpg" -vf "crop=$2,$(grade $3)" -q:v 2 "assets/$1-card.jpg"; }
-bg(){ # name exposure  (cover 1080x1920, blur, darker)
-  ffmpeg -v error -y -i "$F/$1.jpg" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,$(grade $2),gblur=sigma=38,eq=brightness=-0.16:saturation=0.8,vignette=PI/4" -q:v 3 "assets/$1-bg.jpg"; }
+card(){ # name crop exposure [source still, default = name]
+  ffmpeg -v error -y -i "$F/${4:-$1}.jpg" -vf "crop=$2,$(grade $3)" -q:v 2 "assets/$1-card.jpg"; }
+bg(){ # name exposure [source still] [pre-crop]  (cover 1080x1920, blur, darker)
+  ffmpeg -v error -y -i "$F/${3:-$1}.jpg" -vf "${4:+crop=$4,}scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,$(grade $2),gblur=sigma=38,eq=brightness=-0.16:saturation=0.8,vignette=PI/4" -q:v 3 "assets/$1-bg.jpg"; }
 full(){ # name crop exposure
   ffmpeg -v error -y -i "$F/$1.jpg" -vf "crop=$2,scale=1080:1920:flags=lanczos,$(grade $3),vignette=PI/5" -q:v 2 "assets/$1-full.jpg"; }
 # hook / loop (frame 0): crop around the floating astronaut, face lands at card y ~180 of 700 (= Y ~900 on screen)
 card hook     1073:1015:0:300    -0.03 ; bg hook -0.03
 full rocket   1080:1920:67:0     -0.02
 card hadfield 1020:1275:220:0    -0.03 ; bg hadfield -0.03
-card tried    1150:1150:330:60   -0.03 ; bg tried -0.03
-# nozzle: crop clear of the test-stand timecode (top-left) and camera tag (bottom-right)
-card nozzle   1080:1080:420:0    -0.06 ; bg nozzle -0.06
+# tried (review 1): Hadfield himself in the cupola (hadfield_alt) -- "พวกเขาลองกัน" stays on the person who said it
+card tried    1150:1150:0:60     -0.03 hadfield_alt ; bg tried -0.03 hadfield_alt
+# nozzle (review 1): the RS-25 nozzle on display (nozzle_alt), whole bell, exit at the card bottom
+card nozzle   1170:1590:54:250   -0.02 nozzle_alt ; bg nozzle -0.02 nozzle_alt
 card earth    1240:1240:340:18   -0.02 ; bg earth -0.02
-# linger: drop the white scan border on the right; astronaut at x ~497 y ~730
-full linger   1080:1920:0:0      -0.03
+# linger (review 1): no real person near the smoke -> only the empty lower module (no one in it), blurred, as the
+# backdrop for the cartoon astronaut + cloud
+bg linger -0.03 linger 1280:900:0:1000
 # station: drop the white caption strip at the bottom
 card station  1200:1200:264:20    0.02 ; bg station 0.02
 card you      1200:1200:360:40   -0.03 ; bg you -0.03
-# thumbnail composition (video/thumb/) uses the same frame-0 plates
-mkdir -p thumb/assets; cp assets/hook-card.jpg assets/hook-bg.jpg thumb/assets/
+# thumbnail composition (video/thumb/): ISS exterior plates only (review 1: no real person next to the smoke on the cover)
+mkdir -p thumb/assets; cp assets/station-card.jpg assets/station-bg.jpg thumb/assets/
