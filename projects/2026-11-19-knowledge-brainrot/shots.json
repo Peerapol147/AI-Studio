@@ -7,14 +7,16 @@
    "cue": {
     "th": "Brainrot"
    },
-   "note": "FIRST FRAME (director picks media_start from contact sheet): close-up thumb scrolling a phone in a DARK room/at night, screen glow on hand/face; NO app logos/readable UI; must move (scroll) within 1.5s; focus in Y 500-1300"
+   "note": "FIRST FRAME (director picks media_start from contact sheet): close-up thumb scrolling a phone in a DARK room/at night, screen glow on hand/face; NO app logos/readable UI; must move (scroll) within 1.5s; focus in Y 500-1300",
+   "src": "assets/footage/hook-a.mp4"
   },
   {
    "id": "bed",
    "cue": {
     "th": "เลื่อนถึง"
    },
-   "note": "young person lying in bed at night scrolling phone (2am vibe), face lit by screen"
+   "note": "young person lying in bed at night scrolling phone (2am vibe), face lit by screen",
+   "src": "assets/footage/bed.mp4"
   },
   {
    "id": "melt",
@@ -61,7 +63,8 @@
    "cue": {
     "th": "ยังไม่มี"
    },
-   "note": "person reading research papers/laptop with charts OR scientist looking at brain scan on screen (generic, no real patient data)"
+   "note": "person reading research papers/laptop with charts OR scientist looking at brain scan on screen (generic, no real patient data)",
+   "src": "assets/footage/noproof.mp4"
   },
   {
    "id": "brainok",
@@ -84,7 +87,8 @@
    "cue": {
     "th": "หนักๆ"
    },
-   "note": "fast thumb scroll on phone, motion blur, feed-like (no logos)"
+   "note": "fast thumb scroll on phone, motion blur, feed-like (no logos)",
+   "src": "assets/footage/heavy.mp4"
   },
   {
    "id": "focus",
@@ -107,14 +111,16 @@
    "cue": {
     "th": "เครียด"
    },
-   "note": "stressed student/young adult head in hands at desk"
+   "note": "stressed student/young adult head in hands at desk",
+   "src": "assets/footage/stress.mp4"
   },
   {
    "id": "scrollbed",
    "cue": {
     "th": "เลื่อนหนัก"
    },
-   "note": "phone glow in dark bedroom, someone scrolling under blanket"
+   "note": "phone glow in dark bedroom, someone scrolling under blanket",
+   "src": "assets/footage/scrollbed.mp4"
   },
   {
    "id": "trick",
@@ -139,7 +145,8 @@
    "cue": {
     "th": "นอนน้อย"
    },
-   "note": "person sleeping peacefully OR tired yawning in morning; small text 'นอนไม่หลับบ่อย ปรึกษาแพทย์'"
+   "note": "person sleeping peacefully OR tired yawning in morning; small text 'นอนไม่หลับบ่อย ปรึกษาแพทย์'",
+   "src": "assets/footage/sleep.mp4"
   },
   {
    "id": "comment",
@@ -155,7 +162,8 @@
     "th": "สงสัย"
    },
    "note": "SAME clip as hook, ending on the same framing as frame 0 (seamless loop); long_ok",
-   "long_ok": true
+   "long_ok": true,
+   "src": "assets/footage/hook-a.mp4"
   }
  ]
 }
