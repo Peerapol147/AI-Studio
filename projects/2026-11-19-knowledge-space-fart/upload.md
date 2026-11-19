@@ -1,6 +1,6 @@
 # อัปโหลด: ถ้าตดในอวกาศ จะเกิดอะไรขึ้น? (ไทย)
 
-ไฟล์: `renders/space-fart-th.mp4` (__DUR__ วิ, 9:16, 1080x1920) | ปก: `renders/space-fart-th-thumb.jpg`
+ไฟล์: `renders/space-fart-th.mp4` (34.6 วิ, 9:16, 1080x1920) | ปก: `renders/space-fart-th-thumb.jpg`
 ไฟล์เดียวกันใช้ได้ทุกแพลตฟอร์ม (ผู้ใช้อัปโหลดเอง ทีมไม่อัปโหลด/ไม่ตั้งเวลา)
 
 ## YouTube Shorts
