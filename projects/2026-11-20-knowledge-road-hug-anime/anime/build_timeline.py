@@ -39,6 +39,7 @@ for i in ORDER:
 for a, b in zip(caps, caps[1:]):
     if a["line"] == b["line"]: a["t1"] = b["t0"]
 for c in caps: c["t1"] = round(max(c["t1"] + 0.12, c["t0"] + 0.4), 3)
+for a, b in zip(caps, caps[1:]): a["t1"] = min(a["t1"], b["t0"])  # never overlap the next speaker
 json.dump({"fps": FPS, "duration": total, "lines": lines, "captions": caps, "bleeps": bleeps, "mouth": envs}, open(f"{proj}/anime/episode-data.json","w"), ensure_ascii=False)
 for i in ORDER: print(i, lines[i]["start"], lines[i]["end"])
 print("total", total, "captions", len(caps))

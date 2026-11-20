@@ -27,6 +27,6 @@ fc = [f"[2:a]atrim=0:{dur},asetpts=PTS-STARTPTS,volume=-21dB,volume='if(between(
 mixin = "[vo][mduck][amb][love]"
 for k, (t, f, g) in enumerate(cues):
     fc.append(f"[{OFF+k}:a]volume={g}dB,adelay={int(t*1000)}|{int(t*1000)}[s{k}]"); mixin += f"[s{k}]"
-fc.append(f"{mixin}amix=inputs={4+len(cues)}:normalize=0:duration=first,atrim=0:{dur},loudnorm=I=-16:TP=-4:LRA=11[a]")
+fc.append(f"{mixin}amix=inputs={4+len(cues)}:normalize=0:duration=first,atrim=0:{dur},loudnorm=I=-16:TP=-5:LRA=11[a]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", str(dur), out], check=True)
 print("mixed", out)
