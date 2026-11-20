@@ -1,0 +1,400 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 57.0,
+ "inputs": {
+  "shots.json": "6792d447ecf7c7dfcfc75ff16fe76a26f299dc0d9d3f01b6be88b65eb8dba2a4",
+  "footage.json": null,
+  "assets/audio/words.json": "fc777bc68d50a0969ebf5711a9ff4d157ce87572bcff9f8ac8027e503acee351"
+ },
+ "shots": [
+  {
+   "id": "hook_vs",
+   "src": null,
+   "cue": "เมสซี่หรือ",
+   "word_at": 0.06,
+   "start": 0.0,
+   "end": 1.78,
+   "dur": 1.78
+  },
+  {
+   "id": "hook_q",
+   "src": null,
+   "cue": "ใครเก่ง",
+   "word_at": 1.86,
+   "start": 1.78,
+   "end": 2.94,
+   "dur": 1.16
+  },
+  {
+   "id": "chat",
+   "src": null,
+   "cue": "ถามทีไร",
+   "word_at": 3.02,
+   "start": 2.94,
+   "end": 3.62,
+   "dur": 0.68
+  },
+  {
+   "id": "chat_break",
+   "src": null,
+   "cue": "วงแตก",
+   "word_at": 3.7,
+   "start": 3.62,
+   "end": 4.84,
+   "dur": 1.22
+  },
+  {
+   "id": "argue",
+   "src": null,
+   "cue": "เถียงกัน",
+   "word_at": 4.92,
+   "start": 4.84,
+   "end": 5.7,
+   "dur": 0.86
+  },
+  {
+   "id": "argue_pile",
+   "src": null,
+   "cue": "สักวง",
+   "word_at": 5.78,
+   "start": 5.7,
+   "end": 6.88,
+   "dur": 1.18
+  },
+  {
+   "id": "decade",
+   "src": null,
+   "cue": "สิบปี",
+   "word_at": 6.96,
+   "start": 6.88,
+   "end": 7.84,
+   "dur": 0.96
+  },
+  {
+   "id": "timeline",
+   "src": null,
+   "cue": "2008",
+   "word_at": 7.92,
+   "start": 7.84,
+   "end": 9.4,
+   "dur": 1.56
+  },
+  {
+   "id": "bdo_drop",
+   "src": null,
+   "cue": "บัลลงดอร์มี",
+   "word_at": 9.48,
+   "start": 9.4,
+   "end": 10.56,
+   "dur": 1.16
+  },
+  {
+   "id": "two_owners",
+   "src": null,
+   "cue": "สองคน",
+   "word_at": 10.64,
+   "start": 10.56,
+   "end": 11.5,
+   "dur": 0.94
+  },
+  {
+   "id": "split55",
+   "src": null,
+   "cue": "แบ่งกัน",
+   "word_at": 11.58,
+   "start": 11.5,
+   "hit": "ห้าใบ",
+   "hit_at": 12.18,
+   "end": 13.1,
+   "dur": 1.6
+  },
+  {
+   "id": "bell",
+   "src": null,
+   "cue": "งั้น",
+   "word_at": 13.18,
+   "start": 13.1,
+   "hit": "หมัดกัน",
+   "hit_at": 13.68,
+   "end": 14.6,
+   "dur": 1.5
+  },
+  {
+   "id": "round1",
+   "src": null,
+   "cue": "หมัดแรก",
+   "word_at": 14.68,
+   "start": 14.6,
+   "end": 15.44,
+   "dur": 0.84
+  },
+  {
+   "id": "messi_card",
+   "src": null,
+   "cue": "เมสซี่ปี",
+   "word_at": 15.52,
+   "start": 15.44,
+   "end": 16.62,
+   "dur": 1.18
+  },
+  {
+   "id": "year2012",
+   "src": null,
+   "cue": "2012",
+   "word_at": 16.7,
+   "start": 16.62,
+   "end": 17.7,
+   "dur": 1.08
+  },
+  {
+   "id": "count91",
+   "src": null,
+   "cue": "ปีเดียว",
+   "word_at": 17.78,
+   "start": 17.7,
+   "hit": "เก้าสิบเอ็ด",
+   "hit_at": 18.52,
+   "end": 19.62,
+   "dur": 1.92
+  },
+  {
+   "id": "guinness",
+   "src": null,
+   "cue": "กินเนส",
+   "word_at": 19.7,
+   "start": 19.62,
+   "end": 21.64,
+   "dur": 2.02
+  },
+  {
+   "id": "cr7_card",
+   "src": null,
+   "cue": "CR7",
+   "word_at": 21.72,
+   "start": 21.64,
+   "end": 22.48,
+   "dur": 0.84
+  },
+  {
+   "id": "counter",
+   "src": null,
+   "cue": "สวนทันที",
+   "word_at": 22.56,
+   "start": 22.48,
+   "end": 23.58,
+   "dur": 1.1
+  },
+  {
+   "id": "ucl_label",
+   "src": null,
+   "cue": "ยิงในแชม",
+   "word_at": 23.66,
+   "start": 23.58,
+   "end": 24.56,
+   "dur": 0.98
+  },
+  {
+   "id": "count140",
+   "src": null,
+   "cue": "ร้อยสี่สิบลูก",
+   "word_at": 24.64,
+   "start": 24.56,
+   "end": 25.76,
+   "dur": 1.2
+  },
+  {
+   "id": "alltime",
+   "src": null,
+   "cue": "มากสุด",
+   "word_at": 25.84,
+   "start": 25.76,
+   "end": 27.18,
+   "dur": 1.42
+  },
+  {
+   "id": "round2_cups",
+   "src": null,
+   "cue": "โรนัลโด้ยก",
+   "word_at": 27.26,
+   "start": 27.18,
+   "end": 28.68,
+   "dur": 1.5
+  },
+  {
+   "id": "five_cups",
+   "src": null,
+   "cue": "ห้าสมัย",
+   "word_at": 28.76,
+   "start": 28.68,
+   "end": 29.62,
+   "dur": 0.94
+  },
+  {
+   "id": "messi_answer",
+   "src": null,
+   "cue": "เมสซี่ตอบ",
+   "word_at": 29.7,
+   "start": 29.62,
+   "end": 30.78,
+   "dur": 1.16
+  },
+  {
+   "id": "eight_bdo",
+   "src": null,
+   "cue": "แปดใบ",
+   "word_at": 30.86,
+   "start": 30.78,
+   "end": 31.74,
+   "dur": 0.96
+  },
+  {
+   "id": "round3_wc",
+   "src": null,
+   "cue": "เมสซี่ได้",
+   "word_at": 31.82,
+   "start": 31.74,
+   "end": 32.82,
+   "dur": 1.08
+  },
+  {
+   "id": "wc2022",
+   "src": null,
+   "cue": "2022",
+   "word_at": 32.9,
+   "start": 32.82,
+   "end": 34.1,
+   "dur": 1.28
+  },
+  {
+   "id": "dream",
+   "src": null,
+   "cue": "ฝันที่",
+   "word_at": 34.18,
+   "start": 34.1,
+   "end": 35.56,
+   "dur": 1.46
+  },
+  {
+   "id": "ronaldo_pt",
+   "src": null,
+   "cue": "โรนัลโด้พา",
+   "word_at": 35.64,
+   "start": 35.56,
+   "end": 37.02,
+   "dur": 1.46
+  },
+  {
+   "id": "euro2016",
+   "src": null,
+   "cue": "ยูโร",
+   "word_at": 37.1,
+   "start": 37.02,
+   "end": 38.32,
+   "dur": 1.3
+  },
+  {
+   "id": "count146",
+   "src": null,
+   "cue": "แถมยิง",
+   "word_at": 38.4,
+   "start": 38.32,
+   "hit": "ร้อยสี่สิบหก",
+   "hit_at": 39.28,
+   "end": 40.54,
+   "dur": 2.22
+  },
+  {
+   "id": "record_men",
+   "src": null,
+   "cue": "สถิติโลกฝั่ง",
+   "word_at": 40.62,
+   "start": 40.54,
+   "end": 42.46,
+   "dur": 1.92
+  },
+  {
+   "id": "score33",
+   "src": null,
+   "cue": "ฝั่งละสาม",
+   "word_at": 42.54,
+   "start": 42.46,
+   "end": 43.24,
+   "dur": 0.78
+  },
+  {
+   "id": "nobody_falls",
+   "src": null,
+   "cue": "ไม่มีใคร",
+   "word_at": 43.32,
+   "start": 43.24,
+   "end": 44.42,
+   "dur": 1.18
+  },
+  {
+   "id": "argue_back",
+   "src": null,
+   "cue": "แบบนี้",
+   "word_at": 44.5,
+   "start": 44.42,
+   "end": 46.32,
+   "dur": 1.9
+  },
+  {
+   "id": "retire",
+   "src": null,
+   "cue": "ปีนี้ทั้งคู่",
+   "word_at": 46.4,
+   "start": 46.32,
+   "end": 49.02,
+   "dur": 2.7
+  },
+  {
+   "id": "lucky",
+   "src": null,
+   "cue": "แต่ยังไง",
+   "word_at": 49.1,
+   "start": 49.02,
+   "hit": "โชคดี",
+   "hit_at": 49.98,
+   "end": 50.98,
+   "dur": 1.96
+  },
+  {
+   "id": "era",
+   "src": null,
+   "cue": "ที่เกิดทัน",
+   "word_at": 51.06,
+   "start": 50.98,
+   "end": 52.62,
+   "dur": 1.64
+  },
+  {
+   "id": "phenomenon",
+   "src": null,
+   "cue": "ปรากฏการณ์",
+   "word_at": 52.7,
+   "start": 52.62,
+   "end": 53.3,
+   "dur": 0.68
+  },
+  {
+   "id": "both",
+   "src": null,
+   "cue": "เมสซี่กับ",
+   "word_at": 53.38,
+   "start": 53.3,
+   "end": 54.84,
+   "dur": 1.54
+  },
+  {
+   "id": "cta",
+   "src": null,
+   "cue": "แล้วเพื่อน",
+   "word_at": 54.92,
+   "start": 54.84,
+   "end": 57.0,
+   "dur": 2.16
+  }
+ ]
+}

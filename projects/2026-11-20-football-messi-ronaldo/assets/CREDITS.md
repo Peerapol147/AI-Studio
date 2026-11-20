@@ -9,4 +9,7 @@
 - ronaldo_portugal_euro2016.jpg: Chensiyuan (CC BY-SA 4.0) https://creativecommons.org/licenses/by-sa/4.0/ | ต้นฉบับ https://commons.wikimedia.org/w/index.php?curid=56431576 | ครอปและปรับสี
 - ronaldo_portugal_wc2022_fist.jpg: Hossein Zohrevand (CC BY 4.0) https://creativecommons.org/licenses/by/4.0/ | ต้นฉบับ https://commons.wikimedia.org/w/index.php?curid=126238456 | ครอปและปรับสี
 
+## music
+- music-jamendo-a9fd2e6b.mp3: "Fusion - Dark Epic Trailer" by E. Erkut (CC BY 3.0) https://www.jamendo.com/track/1308697
+
 <!-- auto-credits:end -->
