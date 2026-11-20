@@ -1,0 +1,30 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A: split screen like the clip. Left "ยุคนี้" elderly hand with a
+     phone (warm grade), right "Gen Z" grandma in headphones (neon grade, same person as frame 0). Text "ยาย Gen Z / ปี 2070"
+     Kanit 900, yellow + white, dark outline, in Y 240-700. Nothing important in Y 0-240 / 1440-1920 or right of X 900 below Y 840.
+     No app logos, no celebrities. Images: prep_assets.sh -> thumb/assets/left.jpg, right.jpg -->
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#140B2E}
+.hl{position:absolute;left:0;top:0;width:540px;height:1920px;background:linear-gradient(160deg,#8A5426 0%,#3E2414 60%,#1E120A 100%)}
+.hr{position:absolute;left:540px;top:0;width:540px;height:1920px;background:linear-gradient(200deg,#6A22C4 0%,#26105A 55%,#0E0826 100%)}
+.seam{position:absolute;left:532px;top:0;width:16px;height:1920px;background:linear-gradient(#FFE14D,#FF6FAE,#3DDC84)}
+.pan{position:absolute;top:800px;width:400px;height:600px;border-radius:36px;overflow:hidden;box-shadow:0 0 0 8px #FFF8EE,0 0 0 16px #10080A,0 30px 60px rgba(0,0,0,.55)}
+.pan img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+#pl{left:86px;transform:rotate(-3deg)}#pr{left:500px;transform:rotate(3deg)}
+.hdr{position:absolute;top:730px;height:96px;padding:0 34px;border-radius:48px;border:8px solid #10080A;font-weight:900;font-size:62px;line-height:80px;color:#10080A;white-space:nowrap;box-shadow:0 10px 0 rgba(0,0,0,.4)}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:32px #10080A;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
+#t1{top:290px;font-size:178px;color:#fff}
+#t2{top:490px;font-size:200px;color:#FFE14D}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<div class="hl"></div><div class="hr"></div><div class="seam"></div>
+<div class="pan" id="pl"><img class="clip" id="iml" data-start="0" data-duration="1" data-track-index="0" src="assets/left.jpg" alt=""/></div>
+<div class="pan" id="pr"><img class="clip" id="imr" data-start="0" data-duration="1" data-track-index="1" src="assets/right.jpg" alt=""/></div>
+<div class="hdr" style="left:150px;background:#F4B860;transform:rotate(-4deg)">ยุคนี้</div>
+<div class="hdr" style="left:570px;background:#3DDC84;transform:rotate(4deg)">Gen Z</div>
+<div class="t" id="t1">ยาย Gen Z</div>
+<div class="t" id="t2">ปี 2070</div>
+</div><script>
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>
