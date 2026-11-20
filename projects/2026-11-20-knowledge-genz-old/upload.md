@@ -1,6 +1,6 @@
 # อัปโหลด: ถ้า Gen Z แก่ตัวไป จะเป็นยังไง (ไทย)
 
-ไฟล์: `renders/genz-old-th.mp4` (~56 วิ, 9:16) | ปก: `renders/genz-old-th-thumb.jpg`
+ไฟล์: `renders/genz-old-th.mp4` (55.9 วิ, 9:16) | ปก: `renders/genz-old-th-thumb.jpg`
 MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม — อัปโหลดเอง
 
 ## YouTube Shorts
@@ -20,7 +20,7 @@ MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม —
 
 เครดิต
 เพลง: "Funny light" by Benjamin Grassineau (CC BY 3.0) https://www.jamendo.com/track/130671 — https://creativecommons.org/licenses/by/3.0/
-ภาพ/วิดีโอ (Pixabay License): YKMan, MFranciscr, u_ayuc6ef9vb, adonyig, Eaktas06, Amorn_mimi, NickyPe, Coverr-Free-Footage, iddea_photo, Beesmurf, MudanTV, sabinevanerp, giselaatje, qgadrian, ravinems, Engin_Akyurt via Pixabay
+ภาพ/วิดีโอ (Pixabay License): YKMan, MFranciscr, u_ayuc6ef9vb, adonyig, Eaktas06, Amorn_mimi, NickyPe, Coverr-Free-Footage, iddea_photo, Beesmurf, MudanTV, sabinevanerp, giselaatje, qgadrian, ravinems, Engin_Akyurt, Surprising_Media via Pixabay
 เสียงพากย์: ElevenLabs (AI)
 
 #GenZ #สังคมสูงวัย #ความรู้รอบตัว #รู้ไหมว่า #shorts

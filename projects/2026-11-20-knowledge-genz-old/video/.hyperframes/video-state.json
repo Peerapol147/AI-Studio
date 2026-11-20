@@ -1163,11 +1163,11 @@
   },
   "renders": {
     "latest": {
-      "id": "d8508316-3706-446b-85a6-2cf8c5adc49d",
-      "completedAt": 1795161530643,
+      "id": "dcbd069e-1b0f-43a1-b69f-c6b40fdb0e03",
+      "completedAt": 1795162796614,
       "output": "/home/user/AI-Studio/projects/2026-11-20-knowledge-genz-old/renders/genz-old-th-silent.mp4",
       "status": "completed",
-      "revision": "b824a35f-e61a-4863-b709-7bc0518777c5"
+      "revision": null
     },
     "retainedRevisions": [
       "b824a35f-e61a-4863-b709-7bc0518777c5",

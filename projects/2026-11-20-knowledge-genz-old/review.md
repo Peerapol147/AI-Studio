@@ -97,3 +97,6 @@
 - https://researchprofiles.canberra.edu.au/en/publications/global-prevalence-of-myopia-and-high-myopia-and-temporal-trends-f/
 - https://www.sciencedaily.com/releases/2016/02/160217113308.htm
 - เปิดไม่ได้ (ไม่อยู่ใน allowlist): pewresearch.org, jamendo.com
+
+## รอบ 2 (ผู้กำกับเช็ก 2026-11-20)
+s03, s17, s21, s22 เปลี่ยนเป็นภาพผู้หญิงแล้ว ดูเฟรมจาก MP4 ที่ 3.5 / 28.8 / 39.2 / 40.6 วิ ตรงบท "ยาย Gen Z" ผ่าน เสียง -16.3 LUFS, TP -5.1 dBFS
