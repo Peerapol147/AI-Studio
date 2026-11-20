@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">
+<script src="../node_modules/p5/lib/p5.min.js"></script>
+<script src="../node_modules/p5.brush/dist/p5.brush.js"></script>
+<script src="../engine/lib.js"></script><script src="../engine/characters.js"></script>
+<script>
+function setup(){ createCanvas(1080,1080,WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(1.6); randomSeed(3);}
+function draw(){ background('#f6e6cc'); translate(-540,-540); A.reset();
+ const names=['rotring','pen','marker','2B','HB','charcoal','cpencil','crayon'];
+ names.forEach((n,i)=>{ const x=20+(i%4)*265, y=20+Math.floor(i/4)*520;
+   brush.set(n,'#2a1e22',4); brush.wash('#f3c7a1',255); brush.beginShape(0.4); brush.vertex(x+40,y+60);brush.vertex(x+220,y+80);brush.vertex(x+200,y+300);brush.vertex(x+60,y+280); brush.endShape(true);
+   brush.noWash(); brush.set(n,'#2a1e22',2); brush.line(x+20,y+380,x+240,y+420); brush.set(n,'#2a1e22',8); brush.line(x+20,y+460,x+240,y+480);
+ }); window.done=true;}
+</script></body></html>

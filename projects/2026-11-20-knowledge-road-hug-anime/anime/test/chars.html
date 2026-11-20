@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">
+<script src="../node_modules/p5/lib/p5.min.js"></script>
+<script src="../node_modules/p5.brush/dist/p5.brush.js"></script>
+<script src="../engine/lib.js"></script><script src="../engine/characters.js"></script>
+<script>
+function setup(){ createCanvas(1080,1920,WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(1.6); randomSeed(3);}
+function draw(){ background('#f6e6cc'); translate(-540,-960); A.reset();
+ CH.carSide(560,1180,520,1,'#b9364a',0,true); CH.motoSide(-20,1180,330,1,0);
+ CH.person({who:'R',x:330,y:1260,s:620,f:1,lean:0.12,armFront:[1.45,0.1],hand:'point',armBack:[0.3,0.6],mouth:0.8,anger:1});
+ CH.person({who:'D',x:740,y:1260,s:600,f:-1,lean:0.05,armFront:[0.9,1.7],hand:'open',armBack:[0.8,1.6],handBack:'open',mouth:0.3,anger:0.6,sweat:true});
+ CH.angerMark(250,640,40,0);
+ CH.face({who:'R',x:270,y:1600,s:240,mouth:0.7,anger:1});
+ CH.face({who:'D',x:800,y:1600,s:240,mouth:0,mood:'sad',blush:0.6});
+ CH.carRear(540,400,300,'#b9364a',0,true);
+ window.done=true;}
+</script></body></html>
