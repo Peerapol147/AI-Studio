@@ -500,9 +500,9 @@ function t1h(t){ const v=win(t,K.chabab,TD,FAST); if(!show($('t1h'),clamp(v*1.5)
 
 // desk camera: each twist shot is a new framing (a "cut" on the same paper) -> fast spring
 const TS=['t2_doc','t2b_year','t3_khunsri','t4_chum','t4b_rumor','t5_stage','t5b_some','t6_boy','t7_dad','t8_lime','t8b_unknown'];
-const CAM={t2_doc:[1.07,0,40],t2b_year:[1.0,0,-10],t3_khunsri:[1.06,0,40],t4_chum:[1.1,0,50],t4b_rumor:[1.0,0,-20],t5_stage:[1.04,-20,0],
+const CAM={t2_doc:[1.04,0,30],t2b_year:[1.0,0,-10],t3_khunsri:[1.03,0,30],t4_chum:[1.05,0,40],t4b_rumor:[1.0,0,-20],t5_stage:[1.04,-20,0],
   t5b_some:[1.05,0,30],t6_boy:[1.0,0,0],t7_dad:[1.04,0,10],t8_lime:[1.06,0,20],t8b_unknown:[1.0,0,0]};
-const camS=track(1.07,TS.map(id=>[T[id],CAM[id][0],FAST])), camX=track(0,TS.map(id=>[T[id],CAM[id][1],FAST])), camY=track(40,TS.map(id=>[T[id],CAM[id][2],FAST]));
+const camS=track(1.04,TS.map(id=>[T[id],CAM[id][0],FAST])), camX=track(0,TS.map(id=>[T[id],CAM[id][1],FAST])), camY=track(30,TS.map(id=>[T[id],CAM[id][2],FAST]));
 function desk(t){
   if(t<TD-0.1||t>=TC+XF)return;
   $('desk').style.transform=`translate(${f2(camX(t)+6*Math.sin(t*0.8))}px,${f2(camY(t)+5*Math.cos(t*0.7))}px) rotate(${f2(0.4*Math.sin(t*0.5))}deg) scale(${camS(t).toFixed(4)})`;
@@ -602,7 +602,7 @@ function inkF(t){
 }
 
 // ---------- punches / shakes ----------
-const PUNCH=[[H.s7_out,0.05],[H.s15_arm,0.07],[K.chum,0.05],[H.t4_chum,0.04]];
+const PUNCH=[[H.s7_out,0.05],[H.s15_arm,0.07],[K.chum,0.03],[H.t4_chum,0.025]];
 function fx(t){
   let p=0; PUNCH.forEach(([a,amp])=>{const u=t-a; if(u>=0&&u<0.8)p+=amp*Math.exp(-u*7)*Math.cos(u*13);});
   const sh=(t>=H.s15_arm&&t<H.s15_arm+0.35)?8*Math.sin(t*80)*(1-(t-H.s15_arm)/0.35):0;
