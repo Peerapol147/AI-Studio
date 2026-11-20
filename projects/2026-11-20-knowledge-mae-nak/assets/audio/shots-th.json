@@ -4,13 +4,13 @@
  "duration": 58.328,
  "inputs": {
   "shots.json": "c0048dca8da3852c33131628f949150380dd69f2dbea7a489e3ed9c138c1fe69",
-  "footage.json": null,
+  "footage.json": "e32e8ce61a07c22c61c1cb60d2766fb681b89e0b18569c9465803d76db1adb0d",
   "assets/audio/words.json": "3636cd0e78add5115e94df5a3c2473c5c41ddfe3055b14d721d9fcc26bb99cff"
  },
  "shots": [
   {
    "id": "h1_canal",
-   "src": null,
+   "src": "assets/footage/pixabay-159306.mp4",
    "cue": "ผัว",
    "word_at": 0.1,
    "start": 0.0,
@@ -29,7 +29,7 @@
   },
   {
    "id": "s1_moon",
-   "src": null,
+   "src": "assets/footage/pixabay-249590.mp4",
    "cue": "เล่ากันว่า",
    "word_at": 3.58,
    "start": 3.5,
@@ -38,7 +38,7 @@
   },
   {
    "id": "s2_khlong",
-   "src": null,
+   "src": "assets/footage/pixabay-159306.mp4",
    "cue": "ริมคลอง",
    "word_at": 4.8,
    "start": 4.72,
@@ -47,7 +47,7 @@
   },
   {
    "id": "s3_couple",
-   "src": null,
+   "src": "assets/footage/pixabay-82680.mp4",
    "cue": "ผัวเมีย",
    "word_at": 6.28,
    "start": 6.2,
@@ -56,7 +56,7 @@
   },
   {
    "id": "s4_soldier",
-   "src": null,
+   "src": "assets/footage/pixabay-217981.mp4",
    "cue": "เกณฑ์",
    "word_at": 8.54,
    "start": 8.46,
@@ -65,7 +65,7 @@
   },
   {
    "id": "s5_pregnant",
-   "src": null,
+   "src": "assets/footage/pixabay-228519.mp4",
    "cue": "ท้องแก่",
    "word_at": 10.36,
    "start": 10.28,
@@ -74,7 +74,7 @@
   },
   {
    "id": "s6_candle",
-   "src": null,
+   "src": "assets/footage/pixabay-4926.mp4",
    "cue": "คลอดลูก",
    "word_at": 11.76,
    "start": 11.68,
@@ -83,18 +83,19 @@
   },
   {
    "id": "s7_out",
-   "src": null,
+   "src": "assets/footage/pixabay-175213.mp4",
    "cue": "ตายทั้งกลม",
    "word_at": 12.94,
    "start": 12.86,
    "hit": "ตายทั้งกลม",
    "hit_at": 12.94,
    "end": 14.44,
-   "dur": 1.58
+   "dur": 1.58,
+   "media_start": 1.92
   },
   {
    "id": "s8_boat",
-   "src": null,
+   "src": "assets/footage/pixabay-316320.mp4",
    "cue": "กลับมา",
    "word_at": 14.52,
    "start": 14.44,
@@ -103,7 +104,7 @@
   },
   {
    "id": "s9_wait",
-   "src": null,
+   "src": "assets/footage/pixabay-134358.mp4",
    "cue": "รออยู่",
    "word_at": 16.239,
    "start": 16.159,
@@ -112,7 +113,7 @@
   },
   {
    "id": "s10_neigh",
-   "src": null,
+   "src": "assets/footage/pixabay-228519.mp4",
    "cue": "เพื่อนบ้าน",
    "word_at": 17.5,
    "start": 17.42,
@@ -121,7 +122,7 @@
   },
   {
    "id": "s11_nope",
-   "src": null,
+   "src": "assets/footage/pixabay-6714.mp4",
    "cue": "ไม่เชื่อ",
    "word_at": 19.6,
    "start": 19.52,
@@ -130,7 +131,7 @@
   },
   {
    "id": "s12_mortar",
-   "src": null,
+   "src": "assets/footage/pixabay-11690.mp4",
    "cue": "ตำน้ำพริก",
    "word_at": 21.6,
    "start": 21.52,
@@ -148,7 +149,7 @@
   },
   {
    "id": "s14_under",
-   "src": null,
+   "src": "assets/footage/stilthouse-flickr.jpg",
    "cue": "ใต้ถุน",
    "word_at": 23.42,
    "start": 23.34,
@@ -177,7 +178,7 @@
   },
   {
    "id": "s17_temple",
-   "src": null,
+   "src": "assets/footage/pixabay-135760.mp4",
    "cue": "หนีไปวัด",
    "word_at": 28.92,
    "start": 28.84,
@@ -186,7 +187,7 @@
   },
   {
    "id": "s18_rampage",
-   "src": null,
+   "src": "assets/footage/pixabay-16160.mp4",
    "cue": "อาละวาด",
    "word_at": 30.48,
    "start": 30.4,
@@ -195,7 +196,7 @@
   },
   {
    "id": "t1_paper",
-   "src": null,
+   "src": "assets/footage/pixabay-170043.mp4",
    "cue": "ฉบับเขียน",
    "word_at": 32.119,
    "start": 32.039,
@@ -251,7 +252,7 @@
   },
   {
    "id": "t5_stage",
-   "src": null,
+   "src": "assets/footage/pixabay-145631.mp4",
    "cue": "ละครร้อง",
    "word_at": 43.54,
    "start": 43.46,
@@ -305,7 +306,7 @@
   },
   {
    "id": "c1_loop",
-   "src": null,
+   "src": "assets/footage/pixabay-159306.mp4",
    "cue": "เคยได้ยิน",
    "word_at": 54.84,
    "start": 54.76,

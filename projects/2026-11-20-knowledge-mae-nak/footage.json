@@ -1,0 +1,64 @@
+{
+"h1_canal": {
+"src": "assets/footage/pixabay-159306.mp4",
+"note": "ครอปขวา: ซ้ายของคลิปมีกรอบหน้าต่างจีน+ตัวอักษรจีน ต้องไม่เห็นในเฟรม"
+},
+"c1_loop": {
+"src": "assets/footage/pixabay-159306.mp4",
+"note": "ครอปขวา: ซ้ายของคลิปมีกรอบหน้าต่างจีน+ตัวอักษรจีน ต้องไม่เห็นในเฟรม"
+},
+"s1_moon": {
+"src": "assets/footage/pixabay-249590.mp4"
+},
+"s2_khlong": {
+"src": "assets/footage/pixabay-159306.mp4",
+"note": "ใช้ช่วงหลังของคลิป (ไม่ซ้ำเฟรม hook) ครอปขวาพ้นกรอบหน้าต่างจีน"
+},
+"s3_couple": {
+"src": "assets/footage/pixabay-82680.mp4",
+"note": "พื้นหลังริมน้ำยามค่ำ วางเงาคู่รักกราฟิกบนแนวฝั่ง"
+},
+"s4_soldier": {
+"src": "assets/footage/pixabay-217981.mp4"
+},
+"s5_pregnant": {
+"src": "assets/footage/pixabay-228519.mp4"
+},
+"s6_candle": {
+"src": "assets/footage/pixabay-4926.mp4"
+},
+"s7_out": {
+"src": "assets/footage/pixabay-175213.mp4",
+"action_at": 2.0
+},
+"s8_boat": {
+"src": "assets/footage/pixabay-316320.mp4"
+},
+"s9_wait": {
+"src": "assets/footage/pixabay-134358.mp4"
+},
+"s10_neigh": {
+"src": "assets/footage/pixabay-228519.mp4"
+},
+"s11_nope": {
+"src": "assets/footage/pixabay-6714.mp4"
+},
+"s12_mortar": {
+"src": "assets/footage/pixabay-11690.mp4"
+},
+"s14_under": {
+"src": "assets/footage/stilthouse-flickr.jpg"
+},
+"s17_temple": {
+"src": "assets/footage/pixabay-135760.mp4"
+},
+"s18_rampage": {
+"src": "assets/footage/pixabay-16160.mp4"
+},
+"t1_paper": {
+"src": "assets/footage/pixabay-170043.mp4"
+},
+"t5_stage": {
+"src": "assets/footage/pixabay-145631.mp4"
+}
+}
