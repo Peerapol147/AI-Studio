@@ -3,7 +3,7 @@
  "lead": 0.08,
  "duration": 58.328,
  "inputs": {
-  "shots.json": "c0048dca8da3852c33131628f949150380dd69f2dbea7a489e3ed9c138c1fe69",
+  "shots.json": "a1c6559e69428ab1056d8c151b76872e95ece90211583249f75b6a6106cef3b0",
   "footage.json": "e32e8ce61a07c22c61c1cb60d2766fb681b89e0b18569c9465803d76db1adb0d",
   "assets/audio/words.json": "3636cd0e78add5115e94df5a3c2473c5c41ddfe3055b14d721d9fcc26bb99cff"
  },
@@ -43,7 +43,8 @@
    "word_at": 4.8,
    "start": 4.72,
    "end": 6.2,
-   "dur": 1.48
+   "dur": 1.48,
+   "media_start": 4.0
   },
   {
    "id": "s3_couple",
