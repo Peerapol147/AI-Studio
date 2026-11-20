@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000">
+<script src="../node_modules/p5/lib/p5.min.js"></script>
+<script src="../node_modules/p5.brush/dist/p5.brush.js"></script>
+<script>
+let bgfb, ready=false;
+function setup(){ createCanvas(1080,1920,WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(4); randomSeed(1);
+  window.T={};
+  let t0=performance.now();
+  bgfb=createFramebuffer({width:1080,height:1920});
+  bgfb.draw(()=>{ background('#f3e3c8'); brush.load(bgfb);
+    brush.noStroke(); brush.fill('#f0a060',90); brush.fillBleed(0.3); brush.rect(-540,-960,1080,900);
+    brush.fill('#7a8aa8',110); brush.rect(-540,0,1080,960);
+    brush.set('2B','#3a2a20',1.5); for(let i=0;i<20;i++) brush.line(-540+i*55,200,-520+i*55,600);
+    brush.noFill(); brush.set('marker','#40303a',1); brush.rect(-300,-200,600,300);
+  });
+  brush.load(); T.bg=performance.now()-t0; ready=true;
+}
+window.frameTest=()=>{ let t0=performance.now(); clear(); image(bgfb,-540,-960);
+  brush.set('marker','#201820',1.2); brush.noFill();
+  for(let i=0;i<25;i++){ brush.line(-200+i*10,-100,-150+i*10,300);} 
+  brush.fill('#e8c020',100); brush.fillBleed(0.05); brush.noStroke(); brush.circle(0,0,120);
+  redraw(); return performance.now()-t0; };
+</script></body></html>

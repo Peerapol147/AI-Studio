@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">
+<script src="../node_modules/p5/lib/p5.min.js"></script>
+<script src="../node_modules/p5.brush/dist/p5.brush.js"></script>
+<script>
+function setup(){ createCanvas(600,600,WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(2); }
+function draw(){ background('#fff8ee'); translate(-300,-300);
+ brush.set('marker','#c02020',2); brush.wash('#f08080',255); brush.rect(100,100,250,250);
+ brush.set('2B','#202080',1.5); brush.wash('#8080f0',255); brush.beginShape(0.5); for(let a=0;a<6.28;a+=0.6) brush.vertex(330+110*Math.cos(a),330+110*Math.sin(a)); brush.endShape(true);
+ brush.noStroke(); brush.noWash(); brush.fill('#f0c040',140); brush.fillBleed(0.1); brush.circle(200,420,90);
+ brush.noFill(); brush.set('pen','#000',1); brush.line(50,50,550,550);
+ window.done=true; }
+</script></body></html>
