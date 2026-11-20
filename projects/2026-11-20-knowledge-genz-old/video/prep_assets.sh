@@ -26,7 +26,7 @@ vplate baby   pixabay-73613.mp4  0 4.0  542:720:369:0 700:930 "$NEU"      # baby
 # 2284: only 0-1.25 s (abstract waves on the TV behind; later a person is on screen) -> slowed 1.7x to cover 2.04 s
 vplate phones pixabay-2284.mp4   0 1.25 542:720:80:0  700:930 "$NEU" "setpts=PTS*1.7"
 still  grin   pixabay-2739143.jpg 853:1134:0:60     700:930 "$NEU"         # s02 grandma laughing (b/w)
-still  dance  pixabay-4478084.jpg 600:797:120:28    600:797 "$NEU"         # s03 inside the phone frame
+vplate tikgr  pixabay-172681.mp4 0 4.0  420:560:560:0 540:720 "$NEU"     # s03 grandma (tighter crop than s01) in the phone frame, ms 1.0
 still  couple pixabay-1546130.jpg 1280:960:0:0     860:645 "$NEU"         # s28
 # --- full frame 1080x1920 (1440p sources, ≤1.33x) ---
 vplate selfie pixabay-241224.mp4 0 3.0  810:1440:1095:0 1080:1920 "$NEU"  # s04 friends selfie
@@ -41,13 +41,14 @@ vplate radio  pixabay-143126.mp4 0 7.5  900:1440:1350:0 400:640 "$WARM"     # s1
 still  specs  pixabay-4117523.jpg 533:853:420:0     400:640 "$WARM"        # s20 grandma with glasses
 vplate phoneg pixabay-174009.mp4 1.0 4.0 900:1440:1086:0 400:640 "$NEON"   # s09 young woman + phone
 vplate hpgirl pixabay-161062.mp4 0 4.0  1440:2304:0:128 400:640 "$NEON"    # s16 young woman, headphones
-vplate hpman  pixabay-172681.mp4 0 6.0  450:720:150:0 400:640 "$NEON"      # s17 man with headphones, ms 2.92
-vplate coder  pixabay-28043.mp4  0 7.0  450:720:330:0 400:640 "$NEON"      # s21 ms 0 / s22 ms 3.0
+vplate hpgma  pixabay-172681.mp4 0 6.0  450:720:610:0 400:640 "$NEON"      # s17 grandma holding her headphones, ms 2.92
+still  gzw1   pixabay-7289453.jpg 520:832:160:60  400:640 "$NEON"        # s21 young woman, glasses + phone
+still  gzw2   pixabay-7289453.jpg 330:528:230:150 400:640 "$NEON"        # s22 same, close on the glasses
 vplate cat    pixabay-179212.mp4 3.0 3.0 612:720:250:0 340:400 "$NEON"     # s10 cat in the chat bubble
 ffmpeg -v error -y -ss 4 -i $F/pixabay-16453.mp4 -frames:v 1 -vf "crop=720:540:300:90,scale=340:255,$WARM" -q:v 2 assets/flowers.jpg
 # --- blurred backdrops behind the cards ---
 blurbg hook pixabay-172681.mp4 5; blurbg baby pixabay-73613.mp4 1; blurbg phones pixabay-2284.mp4 0.3
-blurbg grin pixabay-2739143.jpg; blurbg dance pixabay-4478084.jpg; blurbg couple pixabay-1546130.jpg
+blurbg grin pixabay-2739143.jpg; blurbg dance pixabay-172681.mp4 1.5; blurbg couple pixabay-1546130.jpg
 # thumbnail images
 mkdir -p thumb/assets
 ffmpeg -v error -y -i assets/src-3188291.jpg -vf "crop=600:853:150:0,scale=540:768:flags=lanczos,$WARM" -q:v 2 thumb/assets/left.jpg

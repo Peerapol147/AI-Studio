@@ -133,7 +133,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <div class="sc" id="sh-s03"><img class="bgb" id="bg-s03" src="assets/dance-bg.jpg" alt=""/>
     <div class="kb" id="kb-s03"><svg class="ov" viewBox="0 0 1080 1920"><rect x="236" y="640" width="608" height="820" rx="70" fill="#15121F" stroke="#10080A" stroke-width="10"/>
       <rect x="470" y="656" width="140" height="22" rx="11" fill="#2C2838"/></svg>
-      <div class="card" id="cd-s03" style="left:270px;top:690px;width:540px;height:717px;box-shadow:none;border-radius:40px"><img src="assets/dance.jpg" alt=""/></div></div></div>
+      <div class="card" id="cd-s03" style="left:270px;top:690px;width:540px;height:717px;box-shadow:none;border-radius:40px">%%V_TIKGR%%</div></div></div>
   <div class="sc" id="sh-s04"><div class="kb" id="kb-s04">%%V_SELFIE%%</div><div class="vig"></div></div>
   <div class="sc" id="sh-g1"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc" id="sh-sp1"><div class="halfL"></div><div class="halfR"></div><div class="seam"></div>
@@ -150,17 +150,17 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
     <div class="hw" id="hL2" style="left:84px"><span class="hdr hwarm"><svg class="ic"><use href="#ic-sun"/></svg>ยุคนี้</span></div>
     <div class="hw" id="hR2" style="left:504px"><span class="hdr hneon"><svg class="ic"><use href="#ic-zap"/></svg>Gen Z</span></div>
     <div class="pan pl" id="pL2"><div class="pin" id="iL2">%%V_RADIO%%</div></div>
-    <div class="pan pr" id="pR2"><div class="ph">?</div><div class="pin" id="iR2">%%V_HPGIRL%%%%V_HPMAN%%</div><div class="fl" id="fR2"></div></div>
+    <div class="pan pr" id="pR2"><div class="ph">?</div><div class="pin" id="iR2">%%V_HPGIRL%%%%V_HPGMA%%</div><div class="fl" id="fR2"></div></div>
     <svg class="ov" id="notes" viewBox="0 0 1080 1920"></svg>
-    <div class="stx" id="haT" style="top:500px;left:0px;font-size:250px;color:#FFE14D;-webkit-text-stroke:26px #10080A">หา?</div>
-    <div class="stx" id="araiT" style="top:800px;left:0px;font-size:84px;color:#fff;-webkit-text-stroke:16px #10080A">อะไรนะ</div></div>
+    <div class="stx" id="haT" style="top:730px;left:0px;font-size:200px;color:#FFE14D;-webkit-text-stroke:26px #10080A">หา?</div>
+    <div class="stx" id="araiT" style="top:950px;left:0px;font-size:72px;color:#fff;-webkit-text-stroke:16px #10080A">อะไรนะ</div></div>
   <div class="sc" id="sh-g3"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
   <div class="sc" id="sh-s19"><img class="bgb" id="bg-s19" src="assets/phones-bg.jpg" alt=""/><div class="card" id="cd-s19" style="left:190px;top:680px;width:700px;height:930px">%%V_PHONES%%</div></div>
   <div class="sc" id="sh-sp3"><div class="halfL"></div><div class="halfR"></div><div class="seam"></div>
     <div class="hw" id="hL3" style="left:84px"><span class="hdr hwarm"><svg class="ic"><use href="#ic-sun"/></svg>ยุคนี้</span></div>
     <div class="hw" id="hR3" style="left:504px"><span class="hdr hneon"><svg class="ic"><use href="#ic-zap"/></svg>Gen Z</span></div>
     <div class="pan pl" id="pL3"><div class="pin" id="iL3"><img src="assets/specs.jpg" alt=""/></div></div>
-    <div class="pan pr" id="pR3"><div class="ph">?</div><div class="pin" id="iR3">%%V_CODER%%%%V_CODER2%%</div><div class="fl" id="fR3"></div></div>
+    <div class="pan pr" id="pR3"><div class="ph">?</div><div class="pin" id="iR3"><img src="assets/gzw1.jpg" alt=""/><img id="gzw2" src="assets/gzw2.jpg" alt="" style="opacity:0"/></div><div class="fl" id="fR3"></div></div>
     <div class="tag" id="tagB" style="background:#F4B860"><svg class="ic"><use href="#ic-book-open"/></svg>แค่ตอนอ่าน</div>
     <div class="tag" id="tagD" style="background:#3DDC84"><svg class="ic" id="tagDic"><use href="#ic-clock"/></svg>ทั้งวัน</div></div>
   <div class="sc" id="sh-g4"><div class="dbg"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
@@ -542,6 +542,7 @@ const zL3=track(1,[[T.s20b,1.5,SLOW]]);
 function split3(t){
   splitF(t,3,T.s20,T.s21,T.s23);
   if(t>=T.s20b&&t<T.s23+0.15){ const i=$('iL3'); i.style.transformOrigin='52% 34%'; i.style.transform=`scale(${f2(zL3(t))})`; }
+  $('gzw2').style.opacity=t>=T.s22?'1':'0';
   tagAt('tagB',t,K.aan,T.s23,277,990,-3);
   const v=tagAt('tagD',t,T.s22,T.s23,697,990,3);
   if(v) $('tagDic').style.transform=`rotate(${f2((t-T.s22)*240)}deg)`;

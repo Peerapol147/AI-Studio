@@ -4,7 +4,7 @@
  "duration": 55.948,
  "inputs": {
   "shots.json": "3c9e54393d2c8dafc1f429c52ce3a67c85af8f49943ae78d1cae71d0bce81da0",
-  "footage.json": "e1a20120d6241d2411ef9dae18ed3b9153519918352d228cb880137fbbd4d2b6",
+  "footage.json": "b87449dfec971758a1aa7d25b2cd57b99e230d51ff7e87a579d5ee6ac4be4ad2",
   "assets/audio/words.json": "add23835432870890708556d9f2b0ed010651b72459a011c4cd016bc8bd822b8"
  },
  "shots": [
@@ -29,12 +29,13 @@
   },
   {
    "id": "s03",
-   "src": "assets/footage/pixabay-4478084.jpg",
+   "src": "assets/footage/pixabay-172681.mp4",
    "cue": "TikTok",
    "word_at": 3.18,
    "start": 3.1,
    "end": 4.6,
-   "dur": 1.5
+   "dur": 1.5,
+   "media_start": 1.0
   },
   {
    "id": "s04",
@@ -246,7 +247,7 @@
   },
   {
    "id": "s21",
-   "src": "assets/footage/pixabay-28043.mp4",
+   "src": "assets/footage/pixabay-7289453.jpg",
    "cue": "ส่วนยาย Gen Z",
    "word_at": 38.84,
    "start": 38.76,
@@ -255,7 +256,7 @@
   },
   {
    "id": "s22",
-   "src": "assets/footage/pixabay-28043.mp4",
+   "src": "assets/footage/pixabay-7289453.jpg",
    "cue": "ใส่ทั้งวัน",
    "word_at": 40.2,
    "start": 40.12,

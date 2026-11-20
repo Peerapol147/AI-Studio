@@ -136,11 +136,10 @@ def icons():
 # footage <video>s: (id, plate, first shot, last shot, data-media-start). Plates keep the source clock (prep_assets.sh).
 # loop = hook plate ending on source 5.0 s (= the frame-0 image) so the last frame meets frame 0.
 LOOPMS = round(SH['s01']['ms'] - (DUR - SH['s29']['start']), 3)
-VIDS = [('hook', 'hook', 's01', 's01', SH['s01']['ms']), ('selfie', 'selfie', 's04', 's04', 0.3),
+VIDS = [('hook', 'hook', 's01', 's01', SH['s01']['ms']), ('tikgr', 'tikgr', 's03', 's03', SH['s03']['ms']), ('selfie', 'selfie', 's04', 's04', 0.3),
         ('poppy', 'poppy', 's08', 's10', 0.5), ('phoneg', 'phoneg', 's09', 's10', 0.2), ('cat', 'cat', 's10', 's10', 1.0),
         ('baby', 'baby', 's12', 's12', 2.3), ('radio', 'radio', 's14', 's17', 0.2), ('hpgirl', 'hpgirl', 's16', 's16', 0.5),
-        ('hpman', 'hpman', 's17', 's17', SH['s17']['ms']), ('phones', 'phones', 's19', 's19', 0),
-        ('coder', 'coder', 's21', 's21', 0), ('coder2', 'coder', 's22', 's22', 3.0),
+        ('hpgma', 'hpgma', 's17', 's17', SH['s17']['ms']), ('phones', 'phones', 's19', 's19', 0),
         ('buds', 'buds', 's26', 's26', 1.0), ('buds2', 'buds2', 's26b', 's26b', 4.0), ('loop', 'hook', 's29', 's29', LOOPMS)]
 XF = 0.12  # outgoing plate stays 0.12 s under the incoming transition (crossfade <= 0.12 s)
 def videos():

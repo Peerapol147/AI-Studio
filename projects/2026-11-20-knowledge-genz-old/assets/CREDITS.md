@@ -18,6 +18,7 @@
 - pixabay-39009.mp4: yeracastelan (Pixabay License) https://pixabay.com/videos/id-39009/
 - pixabay-4117523.jpg: giselaatje (Pixabay License) https://pixabay.com/photos/woman-luck-laugh-old-happy-people-4117523/
 - pixabay-4478084.jpg: qgadrian (Pixabay License) https://pixabay.com/photos/china-old-man-dance-couple-men-4478084/
+- pixabay-7289453.jpg: Surprising_Media (Pixabay License) https://pixabay.com/photos/girlie-eyeglasses-looking-7289453/
 - pixabay-73613.mp4: ravinems (Pixabay License) https://pixabay.com/videos/id-73613/
 - pixabay-84583.mp4: Engin_Akyurt (Pixabay License) https://pixabay.com/videos/id-84583/
 
@@ -29,5 +30,4 @@
 ## ใช้ในขั้นตัดต่อ (editor 2026-11-20)
 - SFX 22 ไฟล์ CC0 (Freesound/Kenney ผ่าน skill sound-effects) รายชื่อเต็ม: renders/sound-th/CREDITS.txt (สร้างใหม่ทุกครั้งที่มิกซ์)
 - ไอคอน Lucide (lucide-static 1.75.0, ISC) / flubber ไม่ได้ใช้ในตอนนี้ / ฟอนต์ Kanit (SIL OFL 1.1)
-- pixabay-3188291.jpg: ลบชื่อยี่ห้อบนโทรศัพท์ (ffmpeg delogo) ก่อนใช้
 - pixabay-2284.mp4 ใช้แค่ 0-1.25 วิ (ทีวีด้านหลังเป็นคลื่นนามธรรม ช่วงหลังมีคนบนจอ) / pixabay-39009.mp4 ไม่ได้ใช้ (ตัด s11)
