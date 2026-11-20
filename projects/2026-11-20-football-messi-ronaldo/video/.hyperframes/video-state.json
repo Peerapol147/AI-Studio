@@ -1848,11 +1848,11 @@
   },
   "renders": {
     "latest": {
-      "id": "5262f645-e48c-4f67-bc5c-b3d36319e872",
-      "completedAt": 1795152367510,
+      "id": "fb0a375b-bee5-48ce-b491-7a4d8a1f2b0b",
+      "completedAt": 1795153034977,
       "output": "/home/user/AI-Studio/projects/2026-11-20-football-messi-ronaldo/renders/messi-ronaldo-th-silent.mp4",
       "status": "completed",
-      "revision": "024e0b79-cb41-408d-b295-99b508fcc3e0"
+      "revision": null
     },
     "retainedRevisions": [
       "024e0b79-cb41-408d-b295-99b508fcc3e0",
