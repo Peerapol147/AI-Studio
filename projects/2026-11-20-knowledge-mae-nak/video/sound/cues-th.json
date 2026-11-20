@@ -4,7 +4,7 @@
   "type": "movement",
   "desc": "hook: night wind over the canal (fog)",
   "sfx": "whoosh/fs-264777-swoosh.ogg",
-  "gain": -22
+  "gain": -16
  },
  {
   "t": 2.18,
@@ -18,7 +18,7 @@
   "type": "movement",
   "desc": "candle blown out on \"ตายทั้งกลม\"",
   "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
-  "gain": -14
+  "gain": -6
  },
  {
   "t": 23.04,
@@ -28,26 +28,25 @@
   "gain": -18
  },
  {
-  "t": 24.66,
-  "type": "build_up",
-  "desc": "the arm reaches down, stretch builds to \"ยาว\" (creak stand-in)",
+  "t": 23.14,
+  "type": "appear",
+  "desc": "the arm: low swell from \"ใต้ถุน\", hit on \"ยาว\" (creak stand-in, not a jump scare)",
   "sfx": "riser/fs-396161-scary-hits-risers-001.ogg",
-  "gain": -20,
-  "dur": 0.98
+  "gain": -12
  },
  {
-  "t": 25.64,
+  "t": 25.66,
   "type": "appear",
-  "desc": "arm stretches long on \"ยาว\": soft low thump (not a jump scare)",
+  "desc": "arm stretches long on \"ยาว\": soft low thump",
   "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -20
+  "gain": -10
  },
  {
   "t": 30.4,
   "type": "movement",
   "desc": "gale over the water, lantern swings",
   "sfx": "whoosh/fs-169867-swoosh.ogg",
-  "gain": -18
+  "gain": -12
  },
  {
   "t": 32.039,
@@ -75,7 +74,7 @@
   "type": "movement",
   "desc": "card content turns (paper)",
   "sfx": "transition/fs-786514-swoosh-v2.ogg",
-  "gain": -22
+  "gain": -26
  },
  {
   "t": 39.22,
@@ -89,7 +88,7 @@
   "type": "hover_or_small_ui",
   "desc": "tag \"ว่ากันว่า\"",
   "sfx": "pop/kenney-interface-pluck-001.ogg",
-  "gain": -22
+  "gain": -14
  },
  {
   "t": 44.64,
@@ -110,6 +109,6 @@
   "type": "movement",
   "desc": "back to the dark canal: wind",
   "sfx": "whoosh/fs-264777-swoosh.ogg",
-  "gain": -22
+  "gain": -14
  }
 ]

@@ -1,12 +1,12 @@
 {
   "version": 1,
   "historyId": "4a693697-ceb8-4340-98e6-5e76c388c6a4",
-  "currentRevision": "9ea0ef68-3c05-44a8-a5aa-373c707cf3fb",
+  "currentRevision": null,
   "pendingChanges": false,
   "files": {
-    "assets/hook-cover.jpg": {
-      "hash": "15071574019b158b05913a049c3854c70bd394a359e5a47d2e8f0f34d53551e5",
-      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/15/15071574019b158b05913a049c3854c70bd394a359e5a47d2e8f0f34d53551e5"
+    "assets/canal-cover.jpg": {
+      "hash": "e76a598d48e244d1a0f1c5971e024449596cdf2eeae7565f745a6f17e4e87fb0",
+      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/e7/e76a598d48e244d1a0f1c5971e024449596cdf2eeae7565f745a6f17e4e87fb0"
     },
     "fonts/LICENSE-kanit.txt": {
       "hash": "0c796c259354fbbc1a5041e468085d219519b3fd93f4e882bcb21ed602dbcca8",
@@ -121,69 +121,34 @@
       "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "d952f6086bd9bc2c7349eb7c2cd0c30a300a0924f424ac84eeb5f8931178b03a",
-      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/d9/d952f6086bd9bc2c7349eb7c2cd0c30a300a0924f424ac84eeb5f8931178b03a"
+      "hash": "9df156ae4a5fecda3cb6d003bab4b3954993ffb5c4051e2d76f1b27c305430d7",
+      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/9d/9df156ae4a5fecda3cb6d003bab4b3954993ffb5c4051e2d76f1b27c305430d7"
     },
     "package.json": {
       "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
       "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
-    },
-    "fonts/NotoColorEmoji.ttf": {
-      "hash": "93cdc4ee9aa40e2afceecc63da0ca05ec7aab4bec991ece51a6b52389f48a477",
-      "content": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/93/93cdc4ee9aa40e2afceecc63da0ca05ec7aab4bec991ece51a6b52389f48a477"
     }
   },
-  "revisions": {
-    "9ea0ef68-3c05-44a8-a5aa-373c707cf3fb": {
-      "actor": {
-        "kind": "outside",
-        "name": "Outside"
-      },
-      "label": "Changed outside the app",
-      "startedAt": 1795065594070,
-      "endedAt": 1795065594071,
-      "files": {
-        "index.html": {
-          "before": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/7a/7a156b50c77e8f21dd7a0c3930385a5c4147b278fb4fe362a5f90633ddd9bf92",
-          "after": "/root/.cache/hyperframes/history/4a693697-ceb8-4340-98e6-5e76c388c6a4/blobs/d9/d952f6086bd9bc2c7349eb7c2cd0c30a300a0924f424ac84eeb5f8931178b03a"
-        }
-      }
-    }
-  },
+  "revisions": {},
   "checks": {
     "latest": null,
     "revisions": {},
     "unversioned": []
   },
   "snapshots": {
-    "latest": {
-      "revision": "9ea0ef68-3c05-44a8-a5aa-373c707cf3fb",
-      "id": "352d82c2-cca8-4748-bdf3-c47e1742a44a-0"
-    },
-    "revisions": {
-      "9ea0ef68-3c05-44a8-a5aa-373c707cf3fb": [
-        {
-          "scope": "full",
-          "id": "352d82c2-cca8-4748-bdf3-c47e1742a44a-0",
-          "image": "/tmp/claude-0/-home-user-AI-Studio/3d1861a7-2f9e-579c-86c9-4dd0681d0855/scratchpad/th/frame-00-at-0.5s.png",
-          "time": 0.5,
-          "metadata": {
-            "width": 1080,
-            "height": 1920,
-            "zoomScale": 1,
-            "browserGpuMode": "auto",
-            "warnings": [],
-            "partial": false
-          },
-          "createdAt": 1795065595837,
-          "contentHash": "dec21bd40741d2202354ecb44ec2e9a78029f839d3a3f69633c58d32efa15b11",
-          "revision": "9ea0ef68-3c05-44a8-a5aa-373c707cf3fb",
-          "inputFingerprint": "105f46f7e77b08981c29815c22c489f9f7b99488e0ee1efe726618337dd84d93",
-          "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
-        }
-      ]
-    },
+    "latest": null,
+    "revisions": {},
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "80126ef9-db39-4c68-86d4-9cf3ecb445a1",
+      "completedAt": 1795146545585,
+      "output": "/tmp/claude-0/-home-user-AI-Studio/20136ad0-3d3c-58f7-bd0a-abe72b68e750/scratchpad/thumbseq",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

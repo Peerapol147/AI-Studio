@@ -24,3 +24,11 @@
 - music-jamendo-a573d9da.mp3: "Dark Space" by ＣＡＩＭＯ１ (CC BY 3.0) https://www.jamendo.com/track/1544453
 
 <!-- auto-credits:end -->
+
+## sfx + อื่นๆ ที่ใช้ในคลิป (editor 2026-11-20)
+- เสียงประกอบ 14 ไฟล์ จากคลัง skill sound-effects ทั้งหมด CC0 1.0 (ไม่ต้องให้เครดิต): รายชื่อ+ลิงก์ใน `renders/sound-th/CREDITS.txt`
+  (Shinplaster, florianreichelt, Sadiquecat, Xinematix, Halgrimm, LilMati, SamsterBirdies, migoreng1, Breviceps via Freesound; Kenney interface/impact sounds)
+- เพลง "Dark Space" by CAIMO1 (CC BY 3.0) ใช้แบบ high-pass 140 Hz + ลด 4 dB ช่วงหักมุม (`video/prep_music.sh`) — CC BY ต้องใส่เครดิตในคำอธิบายคลิป
+- ฟอนต์ Kanit / Sarabun (SIL OFL 1.1) จาก `assets/fonts/`
+- grain-overlay, vignette, editorial-flash-overlay (ดัดแปลง) จาก HyperFrames registry
+- pixabay-135760.mp4 (วัด) ไม่ได้ใช้แล้ว: แทนด้วยวัดกราฟิกวาดเอง

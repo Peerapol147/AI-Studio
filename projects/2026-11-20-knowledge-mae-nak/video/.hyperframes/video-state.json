@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "1e4bbfb4-5faf-4b3b-8c95-fd56c650b158",
-  "currentRevision": "6528f6e8-5b77-4fa1-8999-fc6e9dc1a3ac",
+  "currentRevision": "e19776b2-b564-4049-a11d-771c6093e7a3",
   "pendingChanges": false,
   "files": {
     ".media/manifest.jsonl": {
@@ -193,16 +193,16 @@
       "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/54/545999a5d057c5736b872ffd0425a813bdfd0e60af23e2822d4045488c4fb01e"
     },
     "selfcheck.md": {
-      "hash": "d2e3601d05ae39dec90146e434380f9a581084c8c397922c05ff628020f5b413",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d2/d2e3601d05ae39dec90146e434380f9a581084c8c397922c05ff628020f5b413"
+      "hash": "f3c99a3ff8dd892eb5670e62a618a78aa0a5684228ebafa2dca59b25876face2",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/f3/f3c99a3ff8dd892eb5670e62a618a78aa0a5684228ebafa2dca59b25876face2"
     },
     "sound/cues-th.json": {
-      "hash": "51bb1fe105e704260ca0d102b9a4c34baa83e3e8ec3c490f1a3c9ca2440de707",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/51/51bb1fe105e704260ca0d102b9a4c34baa83e3e8ec3c490f1a3c9ca2440de707"
+      "hash": "d0a47a710aa81224aca6c2c05a1ce84373b21d17a29efbcd8b31065a047ab3c2",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d0/d0a47a710aa81224aca6c2c05a1ce84373b21d17a29efbcd8b31065a047ab3c2"
     },
     "sound/make_cues.py": {
-      "hash": "5f327c9614dd9f864ade7031e750a480ca6d07d06a63072f9b2c9bd2a1edec31",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/5f/5f327c9614dd9f864ade7031e750a480ca6d07d06a63072f9b2c9bd2a1edec31"
+      "hash": "45051a3ec65a8214fc963478bd2cde449888b4b7b22895c7b0d87e12ec2935b9",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/45/45051a3ec65a8214fc963478bd2cde449888b4b7b22895c7b0d87e12ec2935b9"
     },
     "thumb/assets/canal-cover.jpg": {
       "hash": "e76a598d48e244d1a0f1c5971e024449596cdf2eeae7565f745a6f17e4e87fb0",
@@ -537,15 +537,75 @@
           "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/9d/9df156ae4a5fecda3cb6d003bab4b3954993ffb5c4051e2d76f1b27c305430d7"
         }
       }
+    },
+    "e19776b2-b564-4049-a11d-771c6093e7a3": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795146841939,
+      "endedAt": 1795146841946,
+      "files": {
+        "selfcheck.md": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d2/d2e3601d05ae39dec90146e434380f9a581084c8c397922c05ff628020f5b413",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/f3/f3c99a3ff8dd892eb5670e62a618a78aa0a5684228ebafa2dca59b25876face2"
+        },
+        "sound/cues-th.json": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/51/51bb1fe105e704260ca0d102b9a4c34baa83e3e8ec3c490f1a3c9ca2440de707",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/d0/d0a47a710aa81224aca6c2c05a1ce84373b21d17a29efbcd8b31065a047ab3c2"
+        },
+        "sound/make_cues.py": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/5f/5f327c9614dd9f864ade7031e750a480ca6d07d06a63072f9b2c9bd2a1edec31",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/45/45051a3ec65a8214fc963478bd2cde449888b4b7b22895c7b0d87e12ec2935b9"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": null,
-      "id": "daadfd98-a05e-4b65-bd3a-5b29305511e5"
+      "revision": "e19776b2-b564-4049-a11d-771c6093e7a3",
+      "id": "3f0d7808-eb64-4c6f-8193-5ef16dc40547"
     },
     "revisions": {
-      "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0": []
+      "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0": [],
+      "e19776b2-b564-4049-a11d-771c6093e7a3": [
+        {
+          "id": "3f0d7808-eb64-4c6f-8193-5ef16dc40547",
+          "scope": "project",
+          "report": "/home/user/AI-Studio/projects/2026-11-20-knowledge-mae-nak/video/.hyperframes/artifacts/checks/3f0d7808-eb64-4c6f-8193-5ef16dc40547.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795146865960,
+          "contentHash": "b8d638b439c2242a3f32b6f8fe8eb35440394f4a80d97577d01684a6c408d70d",
+          "revision": "e19776b2-b564-4049-a11d-771c6093e7a3",
+          "inputFingerprint": "a874ce5b940faf520e6fec53f27485ecac3902f3e4952c726462dc0d9ccfbf37",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
     },
     "unversioned": [
       {
@@ -1623,13 +1683,14 @@
   },
   "renders": {
     "latest": {
-      "id": "26cc6757-2bb9-4f65-9bc8-9f19767461e9",
-      "completedAt": 1795146020660,
+      "id": "bf87d0c7-cf6f-4d9e-acdc-0c2b16b8b87a",
+      "completedAt": 1795146527218,
       "output": "/home/user/AI-Studio/projects/2026-11-20-knowledge-mae-nak/renders/mae-nak-th-silent.mp4",
       "status": "completed",
-      "revision": null
+      "revision": "6528f6e8-5b77-4fa1-8999-fc6e9dc1a3ac"
     },
     "retainedRevisions": [
+      "6528f6e8-5b77-4fa1-8999-fc6e9dc1a3ac",
       "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
     ]
   },
