@@ -1,6 +1,6 @@
 # อัปโหลด: แม่นาค ฉบับเก่าสุด ผัวไม่ได้ชื่อมาก (ไทย)
 
-ไฟล์: `renders/mae-nak-th.mp4` (LENGTH วิ, 9:16 ไฟล์เดียวใช้ได้ทุกแพลตฟอร์ม) | ปก: `renders/mae-nak-th-thumb.jpg`
+ไฟล์: `renders/mae-nak-th.mp4` (58.3 วิ, 9:16 ไฟล์เดียวใช้ได้ทุกแพลตฟอร์ม) | ปก: `renders/mae-nak-th-thumb.jpg`
 
 ## YouTube Shorts
 **ชื่อคลิป (เลือก 1)**
@@ -20,7 +20,7 @@
 เครดิต
 เพลง: "Dark Space" by CAIMO1 (CC BY 3.0) https://www.jamendo.com/track/1544453 — https://creativecommons.org/licenses/by/3.0/
 ภาพ: "stilthouse" by letsgoeverywhere (CC BY 2.0, ครอปและปรับสี) https://www.flickr.com/photos/26263283@N00/2420086781 — https://creativecommons.org/licenses/by/2.0/
-วิดีโอ: Drjhony, adege, AndersonCampos, cryptoblender, Вили77, klimkin, jevtajevtic7, ri1yad, Joe_hackney, tv84, XiaosKitchen, TravelingOnTheGoYoutubeCh, Macb3t, MonitorFantasma, Payne_Backgrounds via Pixabay
+วิดีโอ: Drjhony, adege, AndersonCampos, cryptoblender, Вили77, klimkin, jevtajevtic7, ri1yad, Joe_hackney, tv84, XiaosKitchen, Macb3t, MonitorFantasma, Payne_Backgrounds via Pixabay
 เสียงพากย์: ElevenLabs (AI)
 
 #แม่นาค #แม่นาคพระโขนง #เรื่องผี #ตำนานไทย #shorts
