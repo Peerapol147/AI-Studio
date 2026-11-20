@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Writes sound/cues-th.json from the same word-locked times the composition uses (build_index.DATA).
-Storyboard sfx column, key moments only (12 cues, not every shot). Files from the sound-effects skill (CC0)."""
+One real sound per key moment (16 cues over 57 s, not every shot). Files from the sound-effects skill (CC0).
+No cue uses type scene_cut/reveal on purpose: the sound pass then keeps the music at its own start (0 s of the
+trimmed bed) instead of shifting it, so the baked quiet section (retire -> end, prep_assets.py) stays at 46.3 s."""
 import json, pathlib, sys, contextlib, io
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
@@ -9,23 +11,24 @@ with contextlib.redirect_stdout(io.StringIO()):
 D = B.DATA
 T = {k: v['start'] for k, v in D['sh'].items()}; H = {k: v['hit'] for k, v in D['sh'].items()}; K = D['k']
 c = [
-    (0.30, 'movement', 'hook: soft whoosh under the title (finger on the glowing feed)', 'whoosh/fs-683101-quick-woosh.ogg', -20),
-    (K['tsong'], 'hover_or_small_ui', '"02:00" chip + moon pops on "ตีสอง"', 'tick/fs384187.ogg', -12),
-    (K['nao'] + 0.05, 'appear', 'brain melts on "เน่า" (soft drip)', 'pop/kenney-interface-drop-002.ogg', -10),
-    (K['oxford'], 'appear', 'zoom punch: Oxford card + green pill', 'pop/fs-824189-pop-in-sfx.ogg', -9),
-    (K['year'] + 0.1, 'hover_or_small_ui', '+230% counter runs', 'click/kenney-interface-tick-001.ogg', -13),
-    (T['supposed'], 'error_or_tech', 'glitch cut on "คนคิดว่า"', 'glitch/kenney-interface-glitch-002.ogg', -10),
-    (K['clip'], 'movement', 'brain un-melts (reverse swoosh) on "คลิปสั้น"', 'riser/fs-174363-rewind.ogg', -14),
-    (T['heavy'], 'scene_cut', 'fast scroll footage', 'whoosh/fs-127197-fast-simple-chop-5-aif.ogg', -13),
-    (K['yae'], 'hover_or_small_ui', 'focus bar drops on "แย่กว่า"', 'ui-blip/kenney-digital-twotone2.ogg', -13),
-    (T['corr'], 'error_or_tech', 'glitch cut on "สัมพันธ์"', 'glitch/kenney-sci-computernoise-001.ogg', -22),
-    (K['trick'], 'success', 'zoom punch + lightbulb on "ทริก"', 'ding/kenney-interface-confirmation-001.ogg', -20),
-    (H['putdown'], 'reveal', 'phone lands face-down on the nightstand on "เตียง"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -22),
-    (K['kimong'], 'appear', 'comment bubble "กี่โมง?" pops', 'kit/pop.ogg', -18),
+    (T['chat'] + 0.06, 'appear', 'group chat: first bubble pops', 'pop/kenney-interface-pluck-001.ogg', -18),
+    (K['taek'], 'movement', 'chat panel cracks in two on "แตก"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -16),
+    (K['thiang'] + 0.25, 'appear', 'two speech bubbles collide on "เถียง"', 'pop/fs-258269-mouth-pop.ogg', -16),
+    (K['bdo'], 'hover_or_small_ui', 'golden balls drop into the year slots', 'ding/fs-634690-lil-pip.ogg', -20),
+    (H['split55'], 'movement', '"5 : 5" scoreboard slams on "ห้าใบ"', 'impact/fs-222517-dramatic-hit.ogg', -18),
+    (K['ngan'], 'success', 'boxing bell rings on "งั้น"', 'ding/fs-349504-triangle-open-04.ogg', -12),
+    (H['bell'], 'movement', 'gloves collide on "หมัด"', 'impact/kenney-impact-impactpunch-heavy-000.ogg', -14),
+    (K['pidiao'], 'hover_or_small_ui', 'counter rolls to 91', 'tick/fs384187.ogg', -18),
+    (K['guin'], 'movement', '"สถิติโลก" stamp lands', 'impact/kenney-impact-impactsoft-heavy-001.ogg', -16),
+    (K['suan'], 'movement', 'CR7 counter-punch glove on "สวน"', 'impact/kenney-impact-impactpunch-heavy-001.ogg', -14),
+    (K['n140'], 'hover_or_small_ui', 'counter rolls to 140', 'tick/fs384187.ogg', -18),
+    (K['paetbai'], 'success', '8 golden balls pop in', 'ding/kenney-interface-confirmation-001.ogg', -20),
+    (K['n146'], 'hover_or_small_ui', 'counter rolls to 146 (hit)', 'tick/fs384187.ogg', -18),
+    (K['samat'], 'movement', '"3 : 3" scoreboard, split back to centre', 'impact/fs-177242-cinematic-impact.ogg', -18),
+    (T['retire'], 'movement', 'tone change: soft whoosh into black and white', 'transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg', -16),
+    (H['lucky'], 'success', 'colour returns, "โชคดีที่สุด" shimmer', 'ding/fs-571513-soft-notifications-bell-ding-d.ogg', -20),
+    (T['cta'] + 0.08, 'appear', 'team buttons pop', 'pop/fs-824189-pop-in-sfx.ogg', -18),
 ]
-# review 2026-11-19: SFX masked the voice in the speech band at 16.86/19.34/20.26 -> every cue sits on speech, all -8 dB;
-# remeasure: glitch 16.86 / ding 19.34 / thump 20.26 / pop 24.18 still within 0-4 dB of the voice -> those 4 a further 8-12 dB down
-DUCK = -8
-out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g + DUCK} for t, ty, d, f, g in c]
+out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g} for t, ty, d, f, g in c]
 (HERE / 'cues-th.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
 print('th', len(out), 'cues')

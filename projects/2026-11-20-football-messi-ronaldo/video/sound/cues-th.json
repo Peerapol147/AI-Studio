@@ -1,0 +1,121 @@
+[
+ {
+  "t": 3.0,
+  "type": "appear",
+  "desc": "group chat: first bubble pops",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -18
+ },
+ {
+  "t": 3.88,
+  "type": "movement",
+  "desc": "chat panel cracks in two on \"แตก\"",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -16
+ },
+ {
+  "t": 5.17,
+  "type": "appear",
+  "desc": "two speech bubbles collide on \"เถียง\"",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -16
+ },
+ {
+  "t": 9.48,
+  "type": "hover_or_small_ui",
+  "desc": "golden balls drop into the year slots",
+  "sfx": "ding/fs-634690-lil-pip.ogg",
+  "gain": -20
+ },
+ {
+  "t": 12.18,
+  "type": "movement",
+  "desc": "\"5 : 5\" scoreboard slams on \"ห้าใบ\"",
+  "sfx": "impact/fs-222517-dramatic-hit.ogg",
+  "gain": -18
+ },
+ {
+  "t": 13.18,
+  "type": "success",
+  "desc": "boxing bell rings on \"งั้น\"",
+  "sfx": "ding/fs-349504-triangle-open-04.ogg",
+  "gain": -12
+ },
+ {
+  "t": 13.68,
+  "type": "movement",
+  "desc": "gloves collide on \"หมัด\"",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg",
+  "gain": -14
+ },
+ {
+  "t": 17.78,
+  "type": "hover_or_small_ui",
+  "desc": "counter rolls to 91",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -18
+ },
+ {
+  "t": 19.7,
+  "type": "movement",
+  "desc": "\"สถิติโลก\" stamp lands",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-001.ogg",
+  "gain": -16
+ },
+ {
+  "t": 22.56,
+  "type": "movement",
+  "desc": "CR7 counter-punch glove on \"สวน\"",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-001.ogg",
+  "gain": -14
+ },
+ {
+  "t": 24.64,
+  "type": "hover_or_small_ui",
+  "desc": "counter rolls to 140",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -18
+ },
+ {
+  "t": 30.86,
+  "type": "success",
+  "desc": "8 golden balls pop in",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 39.28,
+  "type": "hover_or_small_ui",
+  "desc": "counter rolls to 146 (hit)",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -18
+ },
+ {
+  "t": 42.82,
+  "type": "movement",
+  "desc": "\"3 : 3\" scoreboard, split back to centre",
+  "sfx": "impact/fs-177242-cinematic-impact.ogg",
+  "gain": -18
+ },
+ {
+  "t": 46.32,
+  "type": "movement",
+  "desc": "tone change: soft whoosh into black and white",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -16
+ },
+ {
+  "t": 49.98,
+  "type": "success",
+  "desc": "colour returns, \"โชคดีที่สุด\" shimmer",
+  "sfx": "ding/fs-571513-soft-notifications-bell-ding-d.ogg",
+  "gain": -20
+ },
+ {
+  "t": 54.92,
+  "type": "appear",
+  "desc": "team buttons pop",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -18
+ }
+]

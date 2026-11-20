@@ -306,7 +306,7 @@ SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; $(s.id).style.zIndex
 $('g-hook').style.zIndex='40';
 const XF=0.12;
 function sceneState(s,t){
-  if(s.id==='g-hook'&&t>=LOOP){const u=t-LOOP; return {o:eio(u/0.12),tx:0,sc:1+0.35*(1-S(u,20,0.9)),bl:0};}
+  if(s.id==='g-hook'&&t>=LOOP){const u=t-LOOP; return {o:eio(u/0.12),tx:0,sc:1+0.3*(1-eo(u/0.26)),bl:0};}
   if(t<s.a)return null;
   const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1,bl=0;
   if(s.in==='whip'){ tx=(s.dir||1)*1080*(1-eo(u/XF)); bl=Math.sin(Math.PI*clamp(u/XF)); }
@@ -316,7 +316,7 @@ function sceneState(s,t){
     if(nx.in==='whip'){ if(t>=end+XF)return null; if(t>=end){ tx=-(nx.dir||1)*1080*eo((t-end)/XF); bl=Math.sin(Math.PI*clamp((t-end)/XF)); } }
     else if(nx.in==='cut'){ if(t>=end)return null; }
     else { if(t>=end+XF)return null; if(nx.in==='zoom'&&t>end-0.1) sc*=1+0.5*ei((t-end+0.1)/0.22); }
-  } else if(t>=LOOP){ sc*=1+0.4*ei((t-LOOP)/0.3); }
+  } else if(t>=LOOP){ sc*=1+0.4*ei((t-LOOP)/0.3); o*=1-eio((t-LOOP)/0.16); }
   return {o,tx,sc,bl};
 }
 let whipNow=0;
@@ -393,7 +393,7 @@ TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
 function title(t){
   let o,sc;
   if(t<LOOP){ const out=eo((t-(T.chat-0.04))/0.12); o=1-out; sc=(1+0.25*out)*(t>=K.khrai?1+0.16*(1-S(t-K.khrai,22,0.55)):1); }
-  else { const a=S(t-LOOP-0.06,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
+  else { const a=eo((t-LOOP-0.04)/0.24); o=clamp(a*1.6); sc=1+0.12*(1-a); }
   show($('title'),o); show($('tshade'),o);
   const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<LOOP?1:0;
   TL.forEach(([id],i)=>{$(id).style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.5*live*Math.sin(t*2.4):0)}deg) scale(${((t<LOOP?br:1)*sc).toFixed(4)})`;});
