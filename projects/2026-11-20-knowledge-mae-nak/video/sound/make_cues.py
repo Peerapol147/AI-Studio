@@ -1,31 +1,41 @@
 #!/usr/bin/env python3
 """Writes sound/cues-th.json from the same word-locked times the composition uses (build_index.DATA).
-Storyboard sfx column, key moments only (12 cues, not every shot). Files from the sound-effects skill (CC0)."""
+Storyboard "เสียง": wind/fog, candle out, the arm (creak stand-in), paper on the twist; no screams, no jump-scare hit.
+Files from the sound-effects skill library (all CC0). The library has no wood-creak or paper-flip recording:
+arm = a soft scary riser ending on "ยาว" + a soft heavy thump; paper = swipe/swoosh takes; lights-on = a toggle click.
+No cue uses type scene_cut/reveal, so sound_pass_vo.py keeps the music at offset 0 (the twist volume envelope
+baked into assets/music-bed.wav by prep_music.sh stays aligned)."""
 import json, pathlib, sys, contextlib, io
 HERE = pathlib.Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
+sys.path.insert(0, str(HERE.parent)); sys.argv = [sys.argv[0]]
 with contextlib.redirect_stdout(io.StringIO()):
     import build_index as B
 D = B.DATA
 T = {k: v['start'] for k, v in D['sh'].items()}; H = {k: v['hit'] for k, v in D['sh'].items()}; K = D['k']
 c = [
-    (0.30, 'movement', 'hook: soft whoosh under the title (finger on the glowing feed)', 'whoosh/fs-683101-quick-woosh.ogg', -20),
-    (K['tsong'], 'hover_or_small_ui', '"02:00" chip + moon pops on "ตีสอง"', 'tick/fs384187.ogg', -12),
-    (K['nao'] + 0.05, 'appear', 'brain melts on "เน่า" (soft drip)', 'pop/kenney-interface-drop-002.ogg', -10),
-    (K['oxford'], 'appear', 'zoom punch: Oxford card + green pill', 'pop/fs-824189-pop-in-sfx.ogg', -9),
-    (K['year'] + 0.1, 'hover_or_small_ui', '+230% counter runs', 'click/kenney-interface-tick-001.ogg', -13),
-    (T['supposed'], 'error_or_tech', 'glitch cut on "คนคิดว่า"', 'glitch/kenney-interface-glitch-002.ogg', -10),
-    (K['clip'], 'movement', 'brain un-melts (reverse swoosh) on "คลิปสั้น"', 'riser/fs-174363-rewind.ogg', -14),
-    (T['heavy'], 'scene_cut', 'fast scroll footage', 'whoosh/fs-127197-fast-simple-chop-5-aif.ogg', -13),
-    (K['yae'], 'hover_or_small_ui', 'focus bar drops on "แย่กว่า"', 'ui-blip/kenney-digital-twotone2.ogg', -13),
-    (T['corr'], 'error_or_tech', 'glitch cut on "สัมพันธ์"', 'glitch/kenney-sci-computernoise-001.ogg', -22),
-    (K['trick'], 'success', 'zoom punch + lightbulb on "ทริก"', 'ding/kenney-interface-confirmation-001.ogg', -20),
-    (H['putdown'], 'reveal', 'phone lands face-down on the nightstand on "เตียง"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -22),
-    (K['kimong'], 'appear', 'comment bubble "กี่โมง?" pops', 'kit/pop.ogg', -18),
+    (0.05, 'movement', 'hook: night wind over the canal (fog)', 'whoosh/fs-264777-swoosh.ogg', -18),
+    (T['h2_name'], 'movement', 'fog dissolve into "มาก?"', 'transition/fs-683096-woosh.ogg', -18),
+    (H['s7_out'] - 0.06, 'movement', 'candle blown out on "ตายทั้งกลม"', 'transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg', -10),
+    (K['tok'], 'appear', 'lime drops through the floor gap ("ตก")', 'pop/kenney-interface-drop-001.ogg', -14),
+    (K['yuen'], 'build_up', 'the arm reaches down, stretch builds to "ยาว" (creak stand-in)', 'riser/fs-396161-scary-hits-risers-001.ogg', -16, H['s15_arm'] - K['yuen']),
+    (H['s15_arm'], 'appear', 'arm stretches long on "ยาว": soft low thump (not a jump scare)', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -16),
+    (T['s18_rampage'], 'movement', 'gale over the water, lantern swings', 'whoosh/fs-169867-swoosh.ogg', -14),
+    (T['t1_paper'], 'click', 'lights on: switch click under the flash', 'click/kenney-interface-toggle-001.ogg', -12),
+    (T['t1_paper'] + 0.05, 'movement', 'paper swish as the page appears', 'transition/fs-702773-swipe-wav.ogg', -16),
+    (K['nangsue'] + 0.1, 'appear', 'stamp "ฉบับเขียนเก่าสุดที่พบ"', 'impact/fs745291.ogg', -16),
+    (T['t3_khunsri'], 'movement', 'card content turns (paper)', 'transition/fs-786514-swoosh-v2.ogg', -18),
+    (K['chum'], 'appear', '"ชุ่ม" lands', 'pop/fs-447910-plop.ogg', -16),
+    (K['wakan'], 'hover_or_small_ui', 'tag "ว่ากันว่า"', 'pop/kenney-interface-pluck-001.ogg', -18),
+    (T['t5b_some'], 'movement', 'old book pages turn ("บางตำรา")', 'transition/fs-702773-swipe-wav.ogg', -16),
+    (T['t8_lime'], 'appear', 'lime rolls back in', 'pop/kenney-interface-drop-002.ogg', -18),
+    (T['c1_loop'], 'movement', 'back to the dark canal: wind', 'whoosh/fs-264777-swoosh.ogg', -18),
 ]
-# review 2026-11-19: SFX masked the voice in the speech band at 16.86/19.34/20.26 -> every cue sits on speech, all -8 dB;
-# remeasure: glitch 16.86 / ding 19.34 / thump 20.26 / pop 24.18 still within 0-4 dB of the voice -> those 4 a further 8-12 dB down
-DUCK = -8
-out = [{'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g + DUCK} for t, ty, d, f, g in c]
+DUCK = -4
+out = []
+for row in c:
+    t, ty, d, f, g = row[:5]
+    e = {'t': round(t, 3), 'type': ty, 'desc': d, 'sfx': f, 'gain': g + DUCK}
+    if len(row) > 5: e['dur'] = round(row[5], 3)
+    out.append(e)
 (HERE / 'cues-th.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
 print('th', len(out), 'cues')

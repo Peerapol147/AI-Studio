@@ -1,40 +1,40 @@
 <!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A: the frame-0 image (hook-a at source 2.0 s, same crop and
-     night grade = video/assets/hook0.jpg), same title zone (Y 240-700) and stroke as frame 0; text "สมองเน่าจริงไหม"
-     (Kanit 900, white, dark outline) + small yellow tag "Brainrot"; the pink cartoon brain (own drawing, slightly melting)
-     floats up out of the glowing phone screen. Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md main concept = the frame-0 image: canal at night (159306 at source 0,
+     same crop/grade as canal-v = video/assets/canal0.jpg, the Chinese window lattice cropped out), the drawn woman with long
+     hair on the landing (same shape and place as the clip), text "ผัวแม่นาค / ไม่ได้ชื่อมาก?" (Kanit 900, white, dark outline,
+     มาก yellow, no strike) in Y 240-700. Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
 <style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
-#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B1026}
-#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
-.shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(rgba(6,8,24,.82) 0%,rgba(6,8,24,.6) 55%,rgba(6,8,24,0) 100%)}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B1A24}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform:scale(1.04);transform-origin:50% 45%}
+.shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(rgba(4,9,13,.84) 0%,rgba(4,9,13,.6) 55%,rgba(4,9,13,0) 100%)}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse 75% 62% at 50% 46%,rgba(4,8,12,0) 50%,rgba(4,8,12,.72) 100%)}
 .t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
-  -webkit-text-stroke:30px #10080A;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
-#t1{top:364px;font-size:196px}
-#t2{top:548px;font-size:150px}
-.tag{position:absolute;left:50%;top:256px;transform:translateX(-50%) rotate(-4deg);padding:2px 40px 12px;border-radius:44px;background:#FFE14D;
-  border:9px solid #10080A;box-shadow:0 12px 0 rgba(0,0,0,.45);color:#10080A;font-weight:900;font-size:76px;white-space:nowrap}
-#brain{position:absolute;left:0;top:0;width:1080px;height:1920px}
+  -webkit-text-stroke:30px #05090C;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
+.t em{font-style:normal;color:#FFE14D}
+#t1{top:270px;font-size:210px}
+#t2{top:512px;font-size:150px}
+#sil{position:absolute;left:0;top:0;width:1080px;height:1920px}
 </style></head><body>
 <div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
-<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-cover.jpg" alt=""/>
-<div class="shade"></div>
-<svg id="brain" viewBox="0 0 1080 1920">
-  <defs><radialGradient id="gl"><stop offset="0" stop-color="#7FD3FF" stop-opacity=".55"/><stop offset="1" stop-color="#7FD3FF" stop-opacity="0"/></radialGradient></defs>
-  <ellipse cx="640" cy="1140" rx="300" ry="190" fill="url(#gl)"/>
-  <g transform="translate(660 960) rotate(-8) scale(0.92)">
-    <path d="M-200 70 C-215 10 -175 -50 -110 -55 C-85 -95 -5 -100 25 -75 C70 -100 150 -85 165 -35 C215 -15 225 50 195 85 C200 120 175 140 150 135 L150 210 C150 235 120 235 120 210 L120 150 C80 160 40 158 20 150 L20 250 C20 278 -12 278 -12 250 L-12 150 C-50 158 -90 150 -110 145 L-110 190 C-110 214 -140 214 -140 190 L-140 135 C-185 125 -205 100 -200 70 Z"
-      fill="#FF6FAE" stroke="#10080A" stroke-width="10" stroke-linejoin="round" transform="scale(1 0.92)"/>
-    <g fill="none" stroke="#C2407F" stroke-width="8" stroke-linecap="round" transform="translate(0 24) scale(1 0.8)">
-      <path d="M0 -100 C-14 -60 14 -20 0 30"/><path d="M-130 -10 q30 -30 60 0 q30 30 60 0"/><path d="M40 -30 q40 -30 90 0"/></g>
-    <g transform="translate(0 30)"><ellipse cx="-52" cy="20" rx="16" ry="12" fill="#10080A"/><ellipse cx="52" cy="20" rx="16" ry="12" fill="#10080A"/>
-      <path d="M-36 66 q9 -12 18 0 t18 0 t18 0 t18 0" fill="none" stroke="#10080A" stroke-width="7" stroke-linecap="round"/>
-      <ellipse cx="-92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/><ellipse cx="92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/></g>
-    <path d="M0 -26 C10 -10 18 0 18 10 A18 18 0 0 1 -18 10 C-18 0 -10 -10 0 -26 Z" fill="#FF6FAE" stroke="#10080A" stroke-width="5" transform="translate(4 310) scale(.9)"/>
-  </g>
+<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/canal-cover.jpg" alt=""/>
+<svg id="sil" viewBox="0 0 1080 1920">
+ <defs><radialGradient id="mg"><stop offset="0" stop-color="#9FC6CC" stop-opacity=".35"/><stop offset="1" stop-color="#9FC6CC" stop-opacity="0"/></radialGradient></defs>
+ <ellipse cx="300" cy="1060" rx="300" ry="420" fill="url(#mg)"/>
+ <rect x="120" y="1328" width="300" height="22" fill="#071015" stroke="rgba(160,205,214,.3)" stroke-width="2"/>
+ <rect x="150" y="1340" width="14" height="110" fill="#060D11"/><rect x="250" y="1340" width="14" height="110" fill="#060D11"/><rect x="380" y="1340" width="14" height="110" fill="#060D11"/>
+ <g transform="translate(262 1330) scale(-0.92 0.92)" fill="#03070A" stroke="rgba(160,205,214,.3)" stroke-width="3" stroke-linejoin="round">
+  <path d="M-44 -212 L44 -212 C50 -130 56 -50 62 0 L-62 0 C-56 -50 -50 -130 -44 -212 Z"/>
+  <path d="M-16 -418 L16 -418 C44 -404 58 -380 56 -330 L46 -256 C44 -236 44 -222 46 -206 L-46 -206 C-44 -222 -44 -236 -46 -256 L-56 -330 C-58 -380 -44 -404 -16 -418 Z"/>
+  <g transform="translate(-50 -388)"><path d="M4 0 C-12 50 -14 110 -8 176 L10 176 C8 110 12 60 14 8 Z"/></g>
+  <g transform="translate(50 -388)"><path d="M-4 0 C12 50 14 110 8 176 L-10 176 C-8 110 -12 60 -14 8 Z"/></g>
+  <g transform="translate(0 -458)"><ellipse cx="0" cy="0" rx="31" ry="37"/>
+   <path d="M-30 -18 C-44 30 -56 120 -64 228 C-40 240 -8 236 14 222 C20 140 30 40 30 -16 C20 -40 -20 -42 -30 -18 Z"/></g>
+ </g>
 </svg>
-<div class="tag">Brainrot</div>
-<div class="t" id="t1">สมองเน่า</div>
-<div class="t" id="t2">จริงไหม</div>
+<div class="vig"></div>
+<div class="shade"></div>
+<div class="t" id="t1">ผัวแม่นาค</div>
+<div class="t" id="t2">ไม่ได้ชื่อ<em>มาก?</em></div>
 </div><script>
 const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

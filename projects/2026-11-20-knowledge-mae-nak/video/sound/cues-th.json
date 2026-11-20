@@ -1,93 +1,115 @@
 [
  {
-  "t": 0.3,
+  "t": 0.05,
   "type": "movement",
-  "desc": "hook: soft whoosh under the title (finger on the glowing feed)",
-  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
-  "gain": -28
- },
- {
-  "t": 2.58,
-  "type": "hover_or_small_ui",
-  "desc": "\"02:00\" chip + moon pops on \"ตีสอง\"",
-  "sfx": "tick/fs384187.ogg",
-  "gain": -20
- },
- {
-  "t": 4.19,
-  "type": "appear",
-  "desc": "brain melts on \"เน่า\" (soft drip)",
-  "sfx": "pop/kenney-interface-drop-002.ogg",
-  "gain": -18
- },
- {
-  "t": 4.74,
-  "type": "appear",
-  "desc": "zoom punch: Oxford card + green pill",
-  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
-  "gain": -17
- },
- {
-  "t": 6.04,
-  "type": "hover_or_small_ui",
-  "desc": "+230% counter runs",
-  "sfx": "click/kenney-interface-tick-001.ogg",
-  "gain": -21
- },
- {
-  "t": 9.64,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"คนคิดว่า\"",
-  "sfx": "glitch/kenney-interface-glitch-002.ogg",
-  "gain": -18
- },
- {
-  "t": 11.78,
-  "type": "movement",
-  "desc": "brain un-melts (reverse swoosh) on \"คลิปสั้น\"",
-  "sfx": "riser/fs-174363-rewind.ogg",
+  "desc": "hook: night wind over the canal (fog)",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
   "gain": -22
  },
  {
-  "t": 13.66,
-  "type": "scene_cut",
-  "desc": "fast scroll footage",
-  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -21
+  "t": 2.18,
+  "type": "movement",
+  "desc": "fog dissolve into \"มาก?\"",
+  "sfx": "transition/fs-683096-woosh.ogg",
+  "gain": -22
  },
  {
-  "t": 15.82,
-  "type": "hover_or_small_ui",
-  "desc": "focus bar drops on \"แย่กว่า\"",
-  "sfx": "ui-blip/kenney-digital-twotone2.ogg",
-  "gain": -21
+  "t": 12.88,
+  "type": "movement",
+  "desc": "candle blown out on \"ตายทั้งกลม\"",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -14
  },
  {
-  "t": 16.86,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"สัมพันธ์\"",
-  "sfx": "glitch/kenney-sci-computernoise-001.ogg",
-  "gain": -30
- },
- {
-  "t": 19.34,
-  "type": "success",
-  "desc": "zoom punch + lightbulb on \"ทริก\"",
-  "sfx": "ding/kenney-interface-confirmation-001.ogg",
-  "gain": -28
- },
- {
-  "t": 20.26,
-  "type": "reveal",
-  "desc": "phone lands face-down on the nightstand on \"เตียง\"",
-  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -30
- },
- {
-  "t": 24.18,
+  "t": 23.04,
   "type": "appear",
-  "desc": "comment bubble \"กี่โมง?\" pops",
-  "sfx": "kit/pop.ogg",
-  "gain": -26
+  "desc": "lime drops through the floor gap (\"ตก\")",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -18
+ },
+ {
+  "t": 24.66,
+  "type": "build_up",
+  "desc": "the arm reaches down, stretch builds to \"ยาว\" (creak stand-in)",
+  "sfx": "riser/fs-396161-scary-hits-risers-001.ogg",
+  "gain": -20,
+  "dur": 0.98
+ },
+ {
+  "t": 25.64,
+  "type": "appear",
+  "desc": "arm stretches long on \"ยาว\": soft low thump (not a jump scare)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -20
+ },
+ {
+  "t": 30.4,
+  "type": "movement",
+  "desc": "gale over the water, lantern swings",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -18
+ },
+ {
+  "t": 32.039,
+  "type": "click",
+  "desc": "lights on: switch click under the flash",
+  "sfx": "click/kenney-interface-toggle-001.ogg",
+  "gain": -16
+ },
+ {
+  "t": 32.089,
+  "type": "movement",
+  "desc": "paper swish as the page appears",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -20
+ },
+ {
+  "t": 34.3,
+  "type": "appear",
+  "desc": "stamp \"ฉบับเขียนเก่าสุดที่พบ\"",
+  "sfx": "impact/fs745291.ogg",
+  "gain": -20
+ },
+ {
+  "t": 37.26,
+  "type": "movement",
+  "desc": "card content turns (paper)",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 39.22,
+  "type": "appear",
+  "desc": "\"ชุ่ม\" lands",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 41.1,
+  "type": "hover_or_small_ui",
+  "desc": "tag \"ว่ากันว่า\"",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 44.64,
+  "type": "movement",
+  "desc": "old book pages turn (\"บางตำรา\")",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -20
+ },
+ {
+  "t": 51.02,
+  "type": "appear",
+  "desc": "lime rolls back in",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 54.76,
+  "type": "movement",
+  "desc": "back to the dark canal: wind",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -22
  }
 ]
