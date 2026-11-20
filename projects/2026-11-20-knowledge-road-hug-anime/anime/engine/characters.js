@@ -166,6 +166,13 @@ const CH = (() => {
     for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2 + t * 0.6, r0 = r * (0.9 + 0.2 * Math.sin(t * 20 + i)); A.stroke([[x + cos(a) * r0, y + sin(a) * r0], [x + cos(a) * r0 * 1.35, y + sin(a) * r0 * 1.35]], { ink: color, w: 3.2 }); }
   }
   function sparkle(x, y, s, t) { const k = s * (0.6 + 0.4 * Math.abs(Math.sin(t * 5))); A.poly([[x, y - k], [x + k * 0.25, y - k * 0.25], [x + k, y], [x + k * 0.25, y + k * 0.25], [x, y + k], [x - k * 0.25, y + k * 0.25], [x - k, y], [x - k * 0.25, y - k * 0.25]], { fill: '#fff4c2', w: 0, curv: 0 }); }
+  function heart(x, y, s, col = '#ff6f9f') { A.push(); A.translate(x, y); A.scale(s / 20);
+    A.poly([[0, 6], [-10, -2], [-11, -9], [-6, -13], [0, -9], [6, -13], [11, -9], [10, -2]], { fill: col, w: 1.2, curv: 0.45 }); A.ell(-5, -8, 2, 1.6, { fill: '#ffffff', w: 0 }, -0.6); A.pop(); }
+  function hearts(t, n, sc = 1) { // slow floating hearts (screen space)
+    A.push(); A.reset();
+    for (let i = 0; i < n; i++) { const sp = 0.07 + 0.04 * ((i * 37) % 5) / 5, k = (t * sp + i / n) % 1, x = 90 + ((i * 263) % 900) + 30 * Math.sin(t * 0.8 + i);
+      heart(x, 1500 - k * 1300, (22 + (i * 13) % 26) * sc * (0.6 + 0.4 * Math.sin(k * Math.PI)), i % 3 ? '#ff7aa8' : '#ff9fc2'); }
+    A.pop(); }
   // ---------- vehicles (generic: no plates, no logos) ----------
   function carSide(x, y, s, f, col, t, hazard) { // y = ground, s = length px
     A.push(); A.translate(x, y); A.scale(f * s / 100, s / 100);
@@ -203,5 +210,5 @@ const CH = (() => {
     A.pop();
   }
   const shadeHex = (hex, f) => { const n = parseInt(hex.slice(1), 16); const r = (n >> 16) * f | 0, g = ((n >> 8) & 255) * f | 0, b = (n & 255) * f | 0; return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1); };
-  return { person, face, angerMark, shoutLines, sparkle, carSide, carRear, motoSide, shadeHex };
+  return { person, face, heart, hearts, angerMark, shoutLines, sparkle, carSide, carRear, motoSide, shadeHex };
 })();

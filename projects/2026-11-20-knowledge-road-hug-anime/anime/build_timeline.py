@@ -4,7 +4,7 @@ import json, sys, subprocess, numpy as np
 proj = sys.argv[1]; FPS = 24
 T = json.load(open(f"{proj}/assets/audio/lines-timing.json")); C = json.load(open(f"{proj}/anime/chunks.json"))
 ORDER = ["N1","N2","R1","D1","R2","N3","D2","R3","D3","R4","N4","N5","N6"]
-GAPS = {"N1":0.45,"N2":0.15,"R1":0.0,"D1":0.05,"R2":0.25,"N3":0.1,"D2":0.03,"R3":1.5,"D3":0.35,"R4":0.6,"N4":0.5,"N5":0.45,"N6":0.9}
+GAPS = {"N1":0.45,"N2":0.15,"R1":0.0,"D1":0.05,"R2":0.25,"N3":0.1,"D2":0.03,"R3":1.5,"D3":0.35,"R4":1.9,"N4":0.5,"N5":0.45,"N6":0.9}
 t = 0.05; lines = {}; SR = 48000; bleeps = []
 for i in ORDER:
     lines[i] = {"start": round(t,3), "end": round(t + T[i]["dur"],3), "v": T[i]["v"], "text": T[i]["text"]}; t += T[i]["dur"] + GAPS[i]

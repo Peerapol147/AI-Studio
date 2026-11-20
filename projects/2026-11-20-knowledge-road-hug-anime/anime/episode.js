@@ -119,23 +119,29 @@ const EP = { shots: [
     cam: lt => ({ p: 1.02 + 0.05 * ease(lt / 3.3) }),
     draw: (lt, t) => { const k = ease(lt / 2.5); const sigh = lt < 0.9;
       CH.face({ who: 'D', x: 540, y: 800 + 10 * k, s: 470, anger: 0.5 * (1 - k), mood: k > 0.5 ? 'sad' : 'calm', mouth: mouth('D', t), eyesClosed: sigh, blink: blink(t, 0.3), shrug: 14 * k }); } },
-  { id: 'S16_sorry', t0: 0, t1: L('R4').start - 0.03, cam0: { zoom: 1.35, cx: 560, cy: 960 }, bg: () => SC.side('warm'), bgKey: 'side_warm_135',
+  { id: 'S16_sorry', t0: 0, t1: cut('กูขอโทษ'), cam0: { zoom: 1.35, cx: 560, cy: 960 }, bg: () => SC.side('warm'), bgKey: 'side_warm_135',
     cam: lt => ({ p: 1 + 0.025 * lt }),
-    draw: (lt, t) => { vehicles(t); const bow = ease((t - (CAP('กูขอโทษ') - 0.05)) / 0.4);
-      duo(t, { lean: 0.02, anger: lerp(1, 0.3, ease(lt / 3)), mouth: 0, blink: blink(t, 0.2) },
-        { lean: 0.05 + 0.2 * bow, tilt: 0.25 * bow, mood: 'sad', mouth: mouth('D', t), armFront: [0.5 + 0.3 * bow, 1.1], armBack: [0.5, 1.1], blink: blink(t, 0.7) });
-      if (bow > 0.5) CH.sparkle(600, 640, 18, t); } },
-  { id: 'S17_riderSoft', t0: L('R4').start - 0.03, t1: L('R4').end - 0.1, cam0: CLOSE, bg: () => SC.close('warm'), bgKey: 'close_warm',
-    cam: lt => ({ p: 1.05 - 0.04 * ease(lt / 1.8) }),
-    draw: (lt, t) => { const k = ease(lt / 1.4);
-      for (let i = 0; i < 6; i++) CH.sparkle(160 + i * 160, 360 + 90 * Math.sin(i * 2.3 + t), 16, t + i);
-      CH.face({ who: 'R', x: 540, y: 800, s: 480, anger: 0.4 * (1 - k), mood: k > 0.6 ? 'happy' : 'calm', mouth: mouth('R', t), blink: blink(t, 0.4), blush: k }); } },
-  { id: 'S18_hug', t0: L('R4').end - 0.1, t1: cut('เอ้า!', 0.03), cam0: { zoom: 1.35, cx: 560, cy: 960 }, bg: () => SC.side('warm'), bgKey: 'side_warm_135',
-    cam: lt => ({ p: 1 + 0.04 * lt }),
-    draw: (lt, t) => { vehicles(t); const k = ease(tq(lt) / 0.35);
-      duo(t, { x: lerp(440, 512, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.8, mood: 'happy', blush: 0.6 },
-        { x: lerp(680, 600, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.8, mood: 'happy', blush: 0.6 });
-      CH.sparkle(470, 620, 20, t); CH.sparkle(690, 600, 16, t + 1); } },
+    draw: (lt, t) => { vehicles(t);
+      duo(t, { lean: 0.02, anger: lerp(1, 0.4, ease(lt / 2)), mouth: 0, blink: blink(t, 0.2) },
+        { lean: 0.06, mood: 'sad', mouth: mouth('D', t), armFront: [0.5, 1.1], armBack: [0.5, 1.1], blink: blink(t, 0.7) }); } },
+  // ---- LOVE SCENE (parody): pink, slow motion, hearts — broken by the narrator's "เอ้า!" hard cut
+  { id: 'S16b_loveSorry', love: true, t0: cut('กูขอโทษ'), t1: L('R4').start - 0.03, cam0: { zoom: 1.6, cx: 600, cy: 900 }, bg: () => SC.side('pink'), bgKey: 'side_pink_160',
+    cam: lt => ({ p: 1 + 0.06 * ease(lt / 2), rot: -0.02 * ease(lt / 2) }),
+    draw: (lt, t) => { vehicles(t); const bow = ease(lt / 1.4); // slow, smooth (not on twos)
+      duo(t, { lean: 0.02, anger: 0, mood: 'calm', mouth: 0, blush: bow, blink: 0 },
+        { lean: 0.05 + 0.18 * bow, tilt: 0.22 * bow, mood: 'sad', mouth: mouth('D', t), armFront: [0.6 + 0.3 * bow, 1.2], armBack: [0.6, 1.2], blush: bow, blink: 0 });
+      CH.hearts(t, 8, 1.8); } },
+  { id: 'S17_riderSoft', love: true, t0: L('R4').start - 0.03, t1: L('R4').end + 0.05, cam0: CLOSE, bg: () => SC.close('pink'), bgKey: 'close_pink',
+    cam: lt => ({ p: 1.08 - 0.06 * ease(lt / 2.2) }),
+    draw: (lt, t) => { const k = ease(lt / 1.6);
+      CH.hearts(t, 10, 2.0); for (let i = 0; i < 6; i++) CH.sparkle(160 + i * 160, 380 + 90 * Math.sin(i * 2.3 + t * 0.6), 18, t * 0.5 + i);
+      CH.face({ who: 'R', x: 540, y: 800, s: 480, anger: 0, mood: k > 0.4 ? 'happy' : 'calm', mouth: mouth('R', t), blink: 0, blush: 0.4 + 0.6 * k, tear: k > 0.5 }); } },
+  { id: 'S18_hug', love: true, t0: L('R4').end + 0.05, t1: cut('เอ้า!', 0.03), cam0: { zoom: 1.5, cx: 560, cy: 920 }, bg: () => SC.side('pink'), bgKey: 'side_pink_150',
+    cam: lt => ({ p: 1 + 0.07 * ease(lt / 2), rot: 0.015 * Math.sin(lt * 1.2) }),
+    draw: (lt, t) => { vehicles(t); const k = ease(lt / 1.3); // slow-motion run-in hug
+      duo(t, { x: lerp(440, 512, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.7, mood: 'happy', blush: 1 },
+        { x: lerp(680, 600, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.7, mood: 'happy', blush: 1 });
+      CH.hearts(t, 12, 1.9); if (k > 0.8) CH.heart(556, 600 - 30 * (lt - 1.04), 46 + 10 * Math.sin(t * 6)); } },
   { id: 'S19_povHug', t0: cut('เอ้า!', 0.03), t1: L('N5').start - 0.03, cam0: { zoom: 1.5, cx: 400, cy: 1000 }, bg: () => SC.pov('warm'), bgKey: 'pov_warm_150',
     cam: (lt, t) => ({ p: 1.35 - 0.3 * A.spring(lt, 16, 0.55) + 0.03 * lt, ...shake(t, 6 * Math.max(0, 1 - lt / 0.4), 31) }),
     draw: (lt, t) => { povFigures(lt, 'hug'); CH.sparkle(330, 940, 12, t); CH.sparkle(410, 930, 10, t + 1); SC.interior(); phoneInHand(t, 760, 1640, 1); } },
@@ -174,6 +180,7 @@ window.overlay = (t) => {
   else tag.style.display = 'none';
   const qs = shot.id === 'S21_question';
   q.style.display = qs ? 'block' : 'none'; if (qs) q.style.transform = `translateX(-50%) scale(${0.8 + 0.2 * A.spring(lt, 16, 0.5)})`;
+  document.getElementById('love').style.display = shot.love ? 'block' : 'none';
   cm.innerHTML = '';
   if (shot.id === 'S20_warmWide') COMMENTS.forEach(([at, txt], i) => { if (lt < at) return; const d = document.createElement('div'); d.className = 'cm'; d.style.top = (330 + i * 120) + 'px'; d.style.left = (90 + i * 60) + 'px';
     d.style.transform = `scale(${0.6 + 0.4 * A.spring(lt - at, 20, 0.5)})`; d.innerHTML = `<i style="background:${['#f4a261', '#8ecae6', '#cdb4db'][i]}"></i>${txt}`; cm.appendChild(d); });
