@@ -46,6 +46,7 @@
 | yt-hook-scripter | ร่าง hook 3 วิแรก (ใส่ใน brief) |
 | yt-title-optimizer / yt-thumbnail-brief / yt-description-writer | ชื่อ ปก คำอธิบาย (ห้ามขั้น publish) |
 | caveman | ตอบแชตสั้น (ห้ามใช้กับ brief/บท) |
+| **superpowers** (ผู้ใช้สั่ง "อย่าลืม super") brainstorming, writing-plans, verification-before-completion, dispatching-parallel-agents | brainstorming ก่อนเสนอแนว creative ใหม่/ซีรีส์ใหม่ → writing-plans ทำแผน → verification ก่อนบอกว่าเสร็จ → dispatching เมื่อค้นหลายหัวข้อพร้อมกัน; **อยู่บน branch นี้เท่านั้น ห้าม merge main** (ดู `.claude/skills/_superpowers/README.md`) |
 
 **สายพานทำคลิป (ห้องทำคลิปใช้ ห้องนี้ต้องรู้เพื่อเขียน brief ให้ถูก ห้ามทำเอง)**
 | skill/agent | หน้าที่ในสายพาน |
