@@ -1,0 +1,40 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A: the frame-0 image (hook-a at source 2.0 s, same crop and
+     night grade = video/assets/hook0.jpg), same title zone (Y 240-700) and stroke as frame 0; text "สมองเน่าจริงไหม"
+     (Kanit 900, white, dark outline) + small yellow tag "Brainrot"; the pink cartoon brain (own drawing, slightly melting)
+     floats up out of the glowing phone screen. Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. -->
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#0B1026}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.shade{position:absolute;left:0;top:0;width:1080px;height:900px;background:linear-gradient(rgba(6,8,24,.82) 0%,rgba(6,8,24,.6) 55%,rgba(6,8,24,0) 100%)}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:30px #10080A;paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.5)}
+#t1{top:364px;font-size:196px}
+#t2{top:548px;font-size:150px}
+.tag{position:absolute;left:50%;top:256px;transform:translateX(-50%) rotate(-4deg);padding:2px 40px 12px;border-radius:44px;background:#FFE14D;
+  border:9px solid #10080A;box-shadow:0 12px 0 rgba(0,0,0,.45);color:#10080A;font-weight:900;font-size:76px;white-space:nowrap}
+#brain{position:absolute;left:0;top:0;width:1080px;height:1920px}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-cover.jpg" alt=""/>
+<div class="shade"></div>
+<svg id="brain" viewBox="0 0 1080 1920">
+  <defs><radialGradient id="gl"><stop offset="0" stop-color="#7FD3FF" stop-opacity=".55"/><stop offset="1" stop-color="#7FD3FF" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="640" cy="1140" rx="300" ry="190" fill="url(#gl)"/>
+  <g transform="translate(660 960) rotate(-8) scale(0.92)">
+    <path d="M-200 70 C-215 10 -175 -50 -110 -55 C-85 -95 -5 -100 25 -75 C70 -100 150 -85 165 -35 C215 -15 225 50 195 85 C200 120 175 140 150 135 L150 210 C150 235 120 235 120 210 L120 150 C80 160 40 158 20 150 L20 250 C20 278 -12 278 -12 250 L-12 150 C-50 158 -90 150 -110 145 L-110 190 C-110 214 -140 214 -140 190 L-140 135 C-185 125 -205 100 -200 70 Z"
+      fill="#FF6FAE" stroke="#10080A" stroke-width="10" stroke-linejoin="round" transform="scale(1 0.92)"/>
+    <g fill="none" stroke="#C2407F" stroke-width="8" stroke-linecap="round" transform="translate(0 24) scale(1 0.8)">
+      <path d="M0 -100 C-14 -60 14 -20 0 30"/><path d="M-130 -10 q30 -30 60 0 q30 30 60 0"/><path d="M40 -30 q40 -30 90 0"/></g>
+    <g transform="translate(0 30)"><ellipse cx="-52" cy="20" rx="16" ry="12" fill="#10080A"/><ellipse cx="52" cy="20" rx="16" ry="12" fill="#10080A"/>
+      <path d="M-36 66 q9 -12 18 0 t18 0 t18 0 t18 0" fill="none" stroke="#10080A" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="-92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/><ellipse cx="92" cy="52" rx="22" ry="12" fill="#FF3D8B" opacity=".5"/></g>
+    <path d="M0 -26 C10 -10 18 0 18 10 A18 18 0 0 1 -18 10 C-18 0 -10 -10 0 -26 Z" fill="#FF6FAE" stroke="#10080A" stroke-width="5" transform="translate(4 310) scale(.9)"/>
+  </g>
+</svg>
+<div class="tag">Brainrot</div>
+<div class="t" id="t1">สมองเน่า</div>
+<div class="t" id="t2">จริงไหม</div>
+</div><script>
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>
