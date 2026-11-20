@@ -3,23 +3,24 @@
  "lead": 0.08,
  "duration": 55.948,
  "inputs": {
-  "shots.json": "782c2261013c41b71aec52cc3b3176c7026e0d5180562d7fa47cb5635c2d7532",
-  "footage.json": null,
+  "shots.json": "3c9e54393d2c8dafc1f429c52ce3a67c85af8f49943ae78d1cae71d0bce81da0",
+  "footage.json": "e1a20120d6241d2411ef9dae18ed3b9153519918352d228cb880137fbbd4d2b6",
   "assets/audio/words.json": "add23835432870890708556d9f2b0ed010651b72459a011c4cd016bc8bd822b8"
  },
  "shots": [
   {
    "id": "s01",
-   "src": null,
+   "src": "assets/footage/pixabay-172681.mp4",
    "cue": "ปี",
    "word_at": 0.08,
    "start": 0.0,
    "end": 1.72,
-   "dur": 1.72
+   "dur": 1.72,
+   "media_start": 5.0
   },
   {
    "id": "s02",
-   "src": null,
+   "src": "assets/footage/pixabay-2739143.jpg",
    "cue": "ยาย Gen Z",
    "word_at": 1.8,
    "start": 1.72,
@@ -28,7 +29,7 @@
   },
   {
    "id": "s03",
-   "src": null,
+   "src": "assets/footage/pixabay-4478084.jpg",
    "cue": "TikTok",
    "word_at": 3.18,
    "start": 3.1,
@@ -37,7 +38,7 @@
   },
   {
    "id": "s04",
-   "src": null,
+   "src": "assets/footage/pixabay-241224.mp4",
    "cue": "Gen Z คือ",
    "word_at": 4.68,
    "start": 4.6,
@@ -82,7 +83,7 @@
   },
   {
    "id": "s07",
-   "src": null,
+   "src": "assets/footage/pixabay-3188291.jpg",
    "cue": "ยายยุคนี้",
    "word_at": 11.52,
    "start": 11.44,
@@ -91,7 +92,7 @@
   },
   {
    "id": "s08",
-   "src": null,
+   "src": "assets/footage/pixabay-16453.mp4",
    "cue": "ดอกไม้",
    "word_at": 13.1,
    "start": 13.02,
@@ -109,7 +110,7 @@
   },
   {
    "id": "s09",
-   "src": null,
+   "src": "assets/footage/pixabay-174009.mp4",
    "cue": "ส่วนยาย Gen Z",
    "word_at": 14.92,
    "start": 14.84,
@@ -118,7 +119,7 @@
   },
   {
    "id": "s10",
-   "src": null,
+   "src": "assets/footage/pixabay-179212.mp4",
    "cue": "รูปแมว",
    "word_at": 16.46,
    "start": 16.38,
@@ -127,7 +128,7 @@
   },
   {
    "id": "s12",
-   "src": null,
+   "src": "assets/footage/pixabay-73613.mp4",
    "cue": "เพราะปี",
    "word_at": 18.18,
    "start": 18.1,
@@ -163,7 +164,7 @@
   },
   {
    "id": "s14",
-   "src": null,
+   "src": "assets/footage/pixabay-143126.mp4",
    "cue": "ยายยุคนี้",
    "word_at": 24.4,
    "start": 24.32,
@@ -181,7 +182,7 @@
   },
   {
    "id": "s16",
-   "src": null,
+   "src": "assets/footage/pixabay-161062.mp4",
    "cue": "ส่วนยาย Gen Z",
    "word_at": 26.96,
    "start": 26.88,
@@ -190,12 +191,13 @@
   },
   {
    "id": "s17",
-   "src": null,
+   "src": "assets/footage/pixabay-172681.mp4",
    "cue": "หา",
    "word_at": 28.32,
    "start": 28.24,
    "end": 30.68,
-   "dur": 2.44
+   "dur": 2.44,
+   "media_start": 2.92
   },
   {
    "id": "s18",
@@ -217,7 +219,7 @@
   },
   {
    "id": "s19",
-   "src": null,
+   "src": "assets/footage/pixabay-2284.mp4",
    "cue": "เสี่ยงหู",
    "word_at": 33.9,
    "start": 33.82,
@@ -226,7 +228,7 @@
   },
   {
    "id": "s20",
-   "src": null,
+   "src": "assets/footage/pixabay-4117523.jpg",
    "cue": "ยายยุคนี้",
    "word_at": 35.94,
    "start": 35.86,
@@ -244,7 +246,7 @@
   },
   {
    "id": "s21",
-   "src": null,
+   "src": "assets/footage/pixabay-28043.mp4",
    "cue": "ส่วนยาย Gen Z",
    "word_at": 38.84,
    "start": 38.76,
@@ -253,7 +255,7 @@
   },
   {
    "id": "s22",
-   "src": null,
+   "src": "assets/footage/pixabay-28043.mp4",
    "cue": "ใส่ทั้งวัน",
    "word_at": 40.2,
    "start": 40.12,
@@ -307,7 +309,7 @@
   },
   {
    "id": "s26",
-   "src": null,
+   "src": "assets/footage/pixabay-84583.mp4",
    "cue": "เบาเสียง",
    "word_at": 48.8,
    "start": 48.72,
@@ -334,7 +336,7 @@
   },
   {
    "id": "s28",
-   "src": null,
+   "src": "assets/footage/pixabay-1546130.jpg",
    "cue": "แล้วตอนแก่",
    "word_at": 53.06,
    "start": 52.98,
