@@ -43,7 +43,7 @@ r1+r2: get.sh (temp+mv, 403/429/5xx/timeout=75, 4xx อื่น=1, quota_exceed
 ## เงิน/โควตา
 - เป้า ≤$10-15/คลิป
 - **ElevenLabs เปลี่ยนคีย์แล้ว (2026-11-20)** เก็บเป็น network secret ของ environment (ทุกห้องใช้อัตโนมัติ) ห้ามรับคีย์ในแชต → ใช้ `request_credential` (host api.elevenlabs.io, header xi-api-key; คีย์จริงขึ้นต้น `sk_` — ผู้ใช้เคยส่ง key ID ผิดมา) คีย์ใหม่ = free tier, ~3,870 ตัวอักษรก่อนห้อง Gen Z, รีเซ็ต 17 ธ.ค. 16:19 น. ไทย; free tier ไม่มีสิทธิ์เชิงพาณิชย์ → เตือนก่อนเปิดรายได้
-- Apify (ต่ออยู่ผ่าน proxy, MCP ที่ mcp.apify.com เรียกด้วย curl JSON-RPC): `streamers/youtube-scraper` ~$0.004/คลิป, AI video description ~$0.015/นาที ใช้ถอดสูตรคลิปไวรัลได้ (ผลอยู่ใน strategy-notes 2026-11-20)
+- Apify (ต่ออยู่ผ่าน proxy, MCP ที่ mcp.apify.com เรียกด้วย curl JSON-RPC): `streamers/youtube-scraper` ~$0.004/คลิป, AI video description ~$0.015/นาที ใช้ถอดสูตรคลิปไวรัลได้ (ผลอยู่ใน strategy-notes 2026-11-20) — สคริปต์ `tools/apify_mcp.sh` มีวิธีใช้ในไฟล์
 
 ## ไอเดียคิวถัดไป (ผ่านเกณฑ์แล้ว)
 ผีปอบ (ไทย 3.1M/2.3M/1.3M — ระวังประเด็นคนถูกกล่าวหาจริง), แมวกลัวแตงกวาจริงไหม (ไทย 800K/150K), ทำไมคนส่วนใหญ่ถนัดขวา (ไทย 590K/370K), อยุธยา+ของยุคใหม่ ("F-16 ย้อนไปอยุธยา" 560K)
