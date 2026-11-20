@@ -1,0 +1,587 @@
+[
+ {
+  "file": "01-01-ton.mp3",
+  "section": 1,
+  "line": 1,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 37,
+  "text": "หนาวชะมัด… ปลาทู เปิดฮีตเตอร์ให้หน่อย"
+ },
+ {
+  "file": "01-02-ton.mp3",
+  "section": 1,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 27,
+  "text": "…เออ ลืม ปิดแกไปแล้วนี่หว่า"
+ },
+ {
+  "file": "01-03-narrator.mp3",
+  "section": 1,
+  "line": 3,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 56,
+  "text": "ยานลำนี้มีคนอยู่คนเดียว คนที่ใกล้สุด วิทยุยังเรียกไม่ถึง"
+ },
+ {
+  "file": "01-04-ton.mp3",
+  "section": 1,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 51,
+  "text": "ข้างนอกนั่นมันสุญญากาศนะเว้ย ไม่มีใครยืนเคาะได้หรอก"
+ },
+ {
+  "file": "01-05-ton.mp3",
+  "section": 1,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 9,
+  "text": "ใครเคาะวะ"
+ },
+ {
+  "file": "02-01-narrator.mp3",
+  "section": 2,
+  "line": 1,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 83,
+  "text": "ดวงจันทร์หันหน้าเดียวให้โลกตลอด ใครอ้อมไปอยู่ด้านหลัง ต้องมีดาวเทียมคอยส่งต่อสัญญาณ"
+ },
+ {
+  "file": "02-02-ton.mp3",
+  "section": 2,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 48,
+  "text": "กล้องใหม่ติดเสร็จ! หอกระจายพร้อมโทรแล้วครับพี่อร"
+ },
+ {
+  "file": "02-03-boss.mp3",
+  "section": 2,
+  "line": 3,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 75,
+  "text": "เก่งมาก พรุ่งนี้ช้างน้อยขนของไปเปิดระบบ วันนี้มันแค่ส่งรูปเช็กกล้องมาให้พี่"
+ },
+ {
+  "file": "02-04-boss.mp3",
+  "section": 2,
+  "line": 4,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 28,
+  "text": "เอ๊ะ ในรูปมีอะไรเบลอๆ ไม่รู้"
+ },
+ {
+  "file": "02-05-ton.mp3",
+  "section": 2,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 38,
+  "text": "ฝุ่นเกาะเลนส์มั้งพี่ พรุ่งนี้ผมเช็กให้"
+ },
+ {
+  "file": "02-06-boss.mp3",
+  "section": 2,
+  "line": 6,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 91,
+  "text": "อีกสิบนาทีอ้อมหลังดวงจันทร์ สัญญาณขาดสี่สิบกว่านาทีตามรอบ แล้วก็ประหยัดเชื้อเพลิงด้วยนะ แพง"
+ },
+ {
+  "file": "02-07-platu.mp3",
+  "section": 2,
+  "line": 7,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 51,
+  "text": "แจ้งเตือนครับ ชุดอวกาศน้ำหนักเกินมาตรฐานสองกิโลกรัม"
+ },
+ {
+  "file": "02-08-ton.mp3",
+  "section": 2,
+  "line": 8,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 38,
+  "text": "ถังสำรองส่วนตัว ทุกอย่างต้องมีแผนสำรอง"
+ },
+ {
+  "file": "03-01-ton.mp3",
+  "section": 3,
+  "line": 1,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 39,
+  "text": "ได้เวลาฉลอง บะหมี่ที่แม่ยัดใส่กระเป๋ามา"
+ },
+ {
+  "file": "03-02-platu.mp3",
+  "section": 3,
+  "line": 2,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 62,
+  "text": "งานเสร็จสมบูรณ์ครับ กรุณาให้คะแนนการเดินทาง หนึ่งถึงห้าดาวครับ"
+ },
+ {
+  "file": "03-03-narrator.mp3",
+  "section": 3,
+  "line": 3,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 64,
+  "text": "หินอวกาศเม็ดเล็กกว่าเมล็ดถั่ว แต่พุ่งมาเร็วหลายกิโลเมตรต่อวินาที"
+ },
+ {
+  "file": "03-04-platu.mp3",
+  "section": 3,
+  "line": 4,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 35,
+  "text": "ตรวจพบ… ความเสียหาย… กรุณาให้คะแนน…"
+ },
+ {
+  "file": "03-05-ton.mp3",
+  "section": 3,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 18,
+  "text": "ไม่ใช่ตอนนี้ปลาทู!"
+ },
+ {
+  "file": "03-06-boss.mp3",
+  "section": 3,
+  "line": 6,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 36,
+  "text": "สัญญาณต้นขาดแล้ว ตามรอบ เดี๋ยวก็โผล่"
+ },
+ {
+  "file": "03-07-platu.mp3",
+  "section": 3,
+  "line": 7,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 23,
+  "text": "แจ้งเตือนครับ อากาศรั่ว"
+ },
+ {
+  "file": "03-08-ton.mp3",
+  "section": 3,
+  "line": 8,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 14,
+  "text": "รั่ว… ตรงไหนวะ"
+ },
+ {
+  "file": "04-01-platu.mp3",
+  "section": 4,
+  "line": 1,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 47,
+  "text": "ไฟหลักดับครับ แผงโซลาร์ฉีก เหลือแบตสำรองสามก้อน"
+ },
+ {
+  "file": "04-02-ton.mp3",
+  "section": 4,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 22,
+  "text": "โอเค ใจเย็น นับของก่อน"
+ },
+ {
+  "file": "04-03-ton.mp3",
+  "section": 4,
+  "line": 3,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 98,
+  "text": "ออกซิเจนยังพออีกหลายชั่วโมง แต่ถ้าเครื่องฟอกดับ ลมหายใจเสียจะอั้นอยู่ในยาน หัวจะหนัก คิดอะไรไม่ออก"
+ },
+ {
+  "file": "04-04-ton.mp3",
+  "section": 4,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 88,
+  "text": "ก้อนแรก ให้เครื่องฟอก ฮีตเตอร์เปิดต่ำสุดพอ ส่วนถังสำรองในชุด ห้ามแตะ เก็บไว้ตอนมีคนมาถึง"
+ },
+ {
+  "file": "04-05-ton.mp3",
+  "section": 4,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 52,
+  "text": "ส่วนรอยรั่ว ยานหมุนอยู่แบบนี้ เสียงฟู่มาจากทุกทางเลย"
+ },
+ {
+  "file": "04-06-ton.mp3",
+  "section": 4,
+  "line": 6,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 16,
+  "text": "หินชนอีกแล้วเหรอ"
+ },
+ {
+  "file": "04-07-platu.mp3",
+  "section": 4,
+  "line": 7,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 42,
+  "text": "ตรวจพบแรงกระทบสามครั้ง ห่างเท่ากันเป๊ะครับ"
+ },
+ {
+  "file": "04-08-ton.mp3",
+  "section": 4,
+  "line": 8,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 32,
+  "text": "…หินมันชนเป็นจังหวะได้ด้วยเหรอวะ"
+ },
+ {
+  "file": "05-01-narrator.mp3",
+  "section": 5,
+  "line": 1,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 88,
+  "text": "แผนแรก ต่อเสาวิทยุ อีกไม่กี่นาทียานจะอ้อมพ้นขอบดวงจันทร์ ถ้าเสาติดทันตอนนั้น ก็โทรออกได้"
+ },
+ {
+  "file": "05-02-ton.mp3",
+  "section": 5,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 46,
+  "text": "เทปดำ ขอให้ติดเถอะ… แบตก้อนสองต่อตรงเข้าเสาเลย"
+ },
+ {
+  "file": "05-03-ton.mp3",
+  "section": 5,
+  "line": 3,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 45,
+  "text": "เกล็ดน้ำแข็งจากรอยรั่วเหรอ… ทำไมมันเรืองแสงวะ"
+ },
+ {
+  "file": "05-04-ton.mp3",
+  "section": 5,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 16,
+  "text": "ไม่ ไม่ ไม่ ไม่!"
+ },
+ {
+  "file": "05-05-ton.mp3",
+  "section": 5,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 40,
+  "text": "โลกอยู่ตรงหน้าแท้ๆ… ฮัลโหล ใครได้ยินบ้าง"
+ },
+ {
+  "file": "05-06-ton.mp3",
+  "section": 5,
+  "line": 6,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 16,
+  "text": "เทปเหลือรอบเดียว"
+ },
+ {
+  "file": "06-01-platu.mp3",
+  "section": 6,
+  "line": 1,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 25,
+  "text": "อากาศลดลงเร็วกว่าปกติครับ"
+ },
+ {
+  "file": "06-02-ton.mp3",
+  "section": 6,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 44,
+  "text": "เหงื่อมันไม่หยดเว้ย เกาะหน้าอยู่อย่างนี้แหละ"
+ },
+ {
+  "file": "06-03-ton.mp3",
+  "section": 6,
+  "line": 3,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 39,
+  "text": "ตรงนี้… มือโดนดูดเลย เย็นเฉียบ เจอแล้ว!"
+ },
+ {
+  "file": "06-04-ton.mp3",
+  "section": 6,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 20,
+  "text": "เทปไม่พอ… ขอโทษนะแม่"
+ },
+ {
+  "file": "06-05-platu.mp3",
+  "section": 6,
+  "line": 5,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 44,
+  "text": "อากาศคงที่ครับ ยานหยุดหมุนแล้ว ยินดีด้วยครับ"
+ },
+ {
+  "file": "06-06-narrator.mp3",
+  "section": 6,
+  "line": 6,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 65,
+  "text": "ลมที่พุ่งออกจากรู ผลักยานให้หมุนมาตลอด อุดรูเดียว แก้ได้สองเรื่อง"
+ },
+ {
+  "file": "06-07-boss.mp3",
+  "section": 6,
+  "line": 7,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 66,
+  "text": "ช้างน้อยวนหาตรงวงโคจรเดิมมาสองชั่วโมงแล้ว ไม่เจอ ยานมันไหลออกไปไหน"
+ },
+ {
+  "file": "06-08-boss.mp3",
+  "section": 6,
+  "line": 8,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 28,
+  "text": "หาต่อ เชื้อเพลิงแพงก็ช่างมัน"
+ },
+ {
+  "file": "06-09-ton.mp3",
+  "section": 6,
+  "line": 9,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 46,
+  "text": "มันเคาะตรงรูรั่วพอดีเลยนะ… บังเอิญ หรือเปล่าวะ"
+ },
+ {
+  "file": "07-01-ton.mp3",
+  "section": 7,
+  "line": 1,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 30,
+  "text": "ปวดหัวตุบๆ หายใจยังไงก็ไม่อิ่ม"
+ },
+ {
+  "file": "07-02-platu.mp3",
+  "section": 7,
+  "line": 2,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 90,
+  "text": "แบตก้อนแรกหมดครับ ก้อนสุดท้ายพอสำหรับเครื่องฟอกอย่างเดียว ต้องปิดฮีตเตอร์… แล้วก็ปิดผมครับ"
+ },
+ {
+  "file": "07-03-platu.mp3",
+  "section": 7,
+  "line": 3,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 42,
+  "text": "ก่อนปิด… ท่านผู้โดยสารให้คะแนนผมได้ไหมครับ"
+ },
+ {
+  "file": "07-04-ton.mp3",
+  "section": 7,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 23,
+  "text": "ห้าดาว… ห้าดาวเว้ยปลาทู"
+ },
+ {
+  "file": "07-05-ton.mp3",
+  "section": 7,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 67,
+  "text": "แม่ครับ ถ้าแม่ได้ฟังนะ งานผมเสร็จแล้ว ผมยังไม่ได้กินบะหมี่ของแม่เลย"
+ },
+ {
+  "file": "07-06-mom.mp3",
+  "section": 7,
+  "line": 6,
+  "speaker": "แม่",
+  "voice": "pFZP5JQG7iQjIQuC4Bku",
+  "chars": 56,
+  "text": "ข้างบนไม่มีร้านนะลูก เอาไปเผื่อหิว ถึงแล้วโทรหาแม่ด้วยนะ"
+ },
+ {
+  "file": "08-01-narrator.mp3",
+  "section": 8,
+  "line": 1,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 144,
+  "text": "หลุมขั้วดวงจันทร์ที่แดดไม่เคยส่องถึง เย็นต่ำกว่าลบสองร้อยองศา เย็นพอให้น้ำแข็งอยู่ได้ตลอดกาล แล้วถ้ามีอะไรสักอย่าง กินน้ำแข็งพวกนั้นเป็นอาหารล่ะ"
+ },
+ {
+  "file": "08-02-ton.mp3",
+  "section": 8,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 66,
+  "text": "แกกินเกล็ดน้ำแข็งตรงรูรั่ว… ที่เคาะมาตลอด แกพาฉันไปเจอรูรั่วเหรอวะ"
+ },
+ {
+  "file": "08-03-ton.mp3",
+  "section": 8,
+  "line": 3,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 14,
+  "text": "หรือแกแค่หิววะ"
+ },
+ {
+  "file": "09-01-ton.mp3",
+  "section": 9,
+  "line": 1,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 53,
+  "text": "ไฟเขียวนั่น หอกระจาย… กล้องที่ผมเพิ่งติด ส่งรูปไปศาลา"
+ },
+ {
+  "file": "09-02-ton.mp3",
+  "section": 9,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 61,
+  "text": "ชอบน้ำแข็งใช่มั้ย เดี๋ยวเลี้ยงให้อิ่ม ตามไปให้กล้องมันเห็นเลย"
+ },
+ {
+  "file": "09-03-narrator.mp3",
+  "section": 9,
+  "line": 3,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 106,
+  "text": "ปล่อยอากาศทิ้งหมด ต้นต้องหายใจจากชุด ถังหลักหมดไปตั้งแต่ออกไปต่อเสา เหลือแค่ถังที่สัญญากับตัวเองว่าห้ามแตะ"
+ },
+ {
+  "file": "09-04-ton.mp3",
+  "section": 9,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 21,
+  "text": "แผนสำรอง… ถึงเวลาแล้ว"
+ },
+ {
+  "file": "09-05-ton.mp3",
+  "section": 9,
+  "line": 5,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 30,
+  "text": "น้ำครึ่งถุงนี่ด้วย เอาไปให้หมด"
+ },
+ {
+  "file": "09-06-ton.mp3",
+  "section": 9,
+  "line": 6,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 36,
+  "text": "ยังเงียบอยู่เลย… ใครก็ได้ เห็นทีเถอะ"
+ },
+ {
+  "file": "10-01-boss.mp3",
+  "section": 10,
+  "line": 1,
+  "speaker": "หัวหน้า",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "chars": 79,
+  "text": "แสงธรรมชาติที่ไหนจะกะพริบสามทีเป็นจังหวะ… นั่นต้น! ส่งพิกัดให้ช้างน้อยเดี๋ยวนี้"
+ },
+ {
+  "file": "10-02-ton.mp3",
+  "section": 10,
+  "line": 2,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 7,
+  "text": "…มาแล้ว"
+ },
+ {
+  "file": "10-03-platu.mp3",
+  "section": 10,
+  "line": 3,
+  "speaker": "ปลาทู",
+  "voice": "SAz9YHcvj6GT2YYXdXww",
+  "chars": 44,
+  "text": "ยินดีต้อนรับกลับครับ กรุณาให้คะแนนการเดินทาง"
+ },
+ {
+  "file": "10-04-ton.mp3",
+  "section": 10,
+  "line": 4,
+  "speaker": "ต้น",
+  "voice": "iP95p4xoKVk53GoZ742B",
+  "chars": 10,
+  "text": "ห้าดาวเว้ย"
+ },
+ {
+  "file": "10-05-narrator.mp3",
+  "section": 10,
+  "line": 5,
+  "speaker": "ผู้บรรยาย",
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "chars": 60,
+  "text": "รูปจากกล้องเห็นแค่แสงกะพริบ ต้นเล่าให้ใครฟัง ก็ไม่มีใครเชื่อ"
+ },
+ {
+  "file": "10-06-mom.mp3",
+  "section": 10,
+  "line": 6,
+  "speaker": "แม่",
+  "voice": "pFZP5JQG7iQjIQuC4Bku",
+  "chars": 26,
+  "text": "เออ ๆ กินก่อนลูก เดี๋ยวอืด"
+ }
+]
