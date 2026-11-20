@@ -369,7 +369,7 @@ function splitF(t){
 }
 // blurred plates behind the cards (each card sits on its own blurred photo, tinted by the side colour)
 const BD=[['bl-mf2',T.messi_card,T.cr7_card],['bl-mf',T.messi_answer,T.round3_wc],['bl-mh',T.round3_wc,T.dream],['bl-mf',T.dream,T.ronaldo_pt],
-  ['br-rf',T.cr7_card,T.round2_cups],['br-rx',T.round2_cups,T.round3_wc],['br-rr',T.ronaldo_pt,T.score33],
+  ['br-rf',T.cr7_card,T.round2_cups],['br-rx',T.round2_cups,T.messi_answer],['br-rr',T.ronaldo_pt,T.count146],
   ['bc-pb',T.retire,T.era],['bc-pc',T.lucky,T.era],['bc-pc',T.both,T.cta]];
 function backdrops(t){const o={}; BD.forEach(([id,a,b])=>{const v=(t<a||t>=b+0.12)?0:clamp((t-a)/0.12)*(t>b?1-clamp((t-b)/0.12):1); o[id]=Math.max(o[id]||0,v);});
   for(const id in o){const e=$(id); let v=o[id]*(id[1]==='c'?0.5:0.42); if(id==='bc-pc'&&t<T.era)v*=eio((t-T.lucky)/(H.lucky-T.lucky)); show(e,v);
@@ -544,7 +544,7 @@ const B8=[...Array(8)].map((_,i)=>el('use',{href:'#ball',x:-60,y:-60,width:120,h
 function r2F(t){ if(t<T.round2_cups-0.1||t>T.round3_wc+0.2)return; const end=T.round3_wc;
   P($('r2chip'),540,300+flt(t,0,4),slam(t,T.round2_cups),-3+2*W(t),win(t,T.round2_cups,end,FAST));
   const sh=t>=T.messi_answer?S(t-T.messi_answer,14,0.85):0;
-  P($('fistcard'),lerp(lerp(1300,740,clamp(S(t-T.round2_cups,16,0.75))),880,sh),lerp(560,470,sh)+flt(t,1,5),lerp(1,0.6,sh),4-2*W(t),1);
+  P($('fistcard'),lerp(lerp(1300,740,clamp(S(t-T.round2_cups,16,0.75))),880,sh),lerp(560,470,sh)+flt(t,1,5),lerp(1,0.6,sh),4-2*W(t),t<T.messi_answer?1:1-eo((t-T.messi_answer)/0.12));
   kb($('fistcard'),t,T.round2_cups,end,1.0,1.12);
   CUPS.forEach((c,i)=>{const a=K.haasamai+i*0.06; if(t<a){c.setAttribute('opacity','0');return;}
     const row=i<3, x0=row?600+i*115:657+(i-3)*115, y0=row?900:1020; const x1=760+i*58, y1=700;
@@ -570,7 +570,7 @@ function m3F(t){ if(t<T.round3_wc-0.1||t>T.ronaldo_pt+0.2)return; const end=T.ro
 // ---------- G ronaldo3 ----------
 function r3F(t){ if(t<T.ronaldo_pt-0.1||t>T.score33+0.2)return; const end=T.score33;
   const ca=T.ronaldo_pt, mv=t>=T.euro2016?S(t-T.euro2016,14,0.85):0;
-  P($('runcard'),lerp(lerp(1380,660,clamp(S(t-ca,16,0.75))),850,mv),lerp(700,470,mv)+flt(t,1,6),lerp(1,0.52,mv),3-2*W(t),1); kb($('runcard'),t,ca,end,1.0,1.14,0,12);
+  P($('runcard'),lerp(lerp(1380,660,clamp(S(t-ca,16,0.75))),850,mv),lerp(700,470,mv)+flt(t,1,6),lerp(1,0.52,mv),3-2*W(t),t<T.count146?1:1-eo((t-T.count146)/0.12)); kb($('runcard'),t,ca,end,1.0,1.14,0,12);
   const cnt=T.count146, gone=t>=cnt?eo((t-cnt)/0.25):0;
   const ev=t>=K.euro?S(t-K.euro,16,0.5):0; U($('euroU'),470,640+flt(t,2,6),Math.max(0.001,1.5*ev*(1-gone)),4*Math.sin(t*2.6),t>=K.euro?1-gone:0);
   P($('euroT'),470,860,t>=K.y2016?slam(t,K.y2016)*(1-gone):0,-3+2*W(t),t>=K.y2016?1-gone:0);
