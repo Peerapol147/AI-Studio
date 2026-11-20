@@ -2,92 +2,155 @@
  {
   "t": 0.3,
   "type": "movement",
-  "desc": "hook: soft whoosh under the title (finger on the glowing feed)",
+  "desc": "hook: soft whoosh under the title, year chip starts counting",
   "sfx": "whoosh/fs-683101-quick-woosh.ogg",
   "gain": -28
  },
  {
-  "t": 2.58,
-  "type": "hover_or_small_ui",
-  "desc": "\"02:00\" chip + moon pops on \"ตีสอง\"",
-  "sfx": "tick/fs384187.ogg",
+  "t": 0.42,
+  "type": "appear",
+  "desc": "year chip lands on 2070 + punch-in",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -20
  },
  {
-  "t": 4.19,
+  "t": 1.66,
+  "type": "scene_cut",
+  "desc": "whip to grandma laughing",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -24
+ },
+ {
+  "t": 3.18,
   "type": "appear",
-  "desc": "brain melts on \"เน่า\" (soft drip)",
-  "sfx": "pop/kenney-interface-drop-002.ogg",
-  "gain": -18
- },
- {
-  "t": 4.74,
-  "type": "appear",
-  "desc": "zoom punch: Oxford card + green pill",
-  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
-  "gain": -17
- },
- {
-  "t": 6.04,
-  "type": "hover_or_small_ui",
-  "desc": "+230% counter runs",
-  "sfx": "click/kenney-interface-tick-001.ogg",
-  "gain": -21
- },
- {
-  "t": 9.64,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"คนคิดว่า\"",
-  "sfx": "glitch/kenney-interface-glitch-002.ogg",
-  "gain": -18
- },
- {
-  "t": 11.78,
-  "type": "movement",
-  "desc": "brain un-melts (reverse swoosh) on \"คลิปสั้น\"",
-  "sfx": "riser/fs-174363-rewind.ogg",
+  "desc": "phone frame, hearts float",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
   "gain": -22
  },
  {
-  "t": 13.66,
-  "type": "scene_cut",
-  "desc": "fast scroll footage",
-  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
-  "gain": -21
- },
- {
-  "t": 15.82,
-  "type": "hover_or_small_ui",
-  "desc": "focus bar drops on \"แย่กว่า\"",
-  "sfx": "ui-blip/kenney-digital-twotone2.ogg",
-  "gain": -21
- },
- {
-  "t": 16.86,
-  "type": "error_or_tech",
-  "desc": "glitch cut on \"สัมพันธ์\"",
-  "sfx": "glitch/kenney-sci-computernoise-001.ogg",
-  "gain": -30
- },
- {
-  "t": 19.34,
-  "type": "success",
-  "desc": "zoom punch + lightbulb on \"ทริก\"",
-  "sfx": "ding/kenney-interface-confirmation-001.ogg",
-  "gain": -28
- },
- {
-  "t": 20.26,
-  "type": "reveal",
-  "desc": "phone lands face-down on the nightstand on \"เตียง\"",
-  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
-  "gain": -30
- },
- {
-  "t": 24.18,
+  "t": 6.08,
   "type": "appear",
-  "desc": "comment bubble \"กี่โมง?\" pops",
-  "sfx": "kit/pop.ogg",
+  "desc": "timeline node 1997 pops",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 7.8,
+  "type": "appear",
+  "desc": "timeline node 2012 pops, bar fills",
+  "sfx": "pop/kenney-interface-drop-003.ogg",
+  "gain": -20
+ },
+ {
+  "t": 9.08,
+  "type": "reveal",
+  "desc": "\"2070\" chip jumps to the centre (zoom punch)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 11.38,
+  "type": "scene_cut",
+  "desc": "whip into split screen 1",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
   "gain": -26
+ },
+ {
+  "t": 14.1,
+  "type": "appear",
+  "desc": "chat bubble \"สวัสดีวันจันทร์\" pops",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 14.84,
+  "type": "success",
+  "desc": "right panel \"Gen Z\" opens",
+  "sfx": "ding/fs-634690-lil-pip.ogg",
+  "gain": -24
+ },
+ {
+  "t": 19.74,
+  "type": "hover_or_small_ui",
+  "desc": "counter runs to 462,240",
+  "sfx": "click/kenney-interface-tick-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 24.26,
+  "type": "scene_cut",
+  "desc": "whip into split screen 2",
+  "sfx": "transition/fs-850347-swipe-various.ogg",
+  "gain": -26
+ },
+ {
+  "t": 28.32,
+  "type": "error_or_tech",
+  "desc": "\"หา?\" shakes on the man in headphones",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 32.94,
+  "type": "hover_or_small_ui",
+  "desc": "counter runs to 1,000 ล้าน",
+  "sfx": "click/kenney-interface-select-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 35.8,
+  "type": "scene_cut",
+  "desc": "whip into split screen 3",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -26
+ },
+ {
+  "t": 43.0,
+  "type": "appear",
+  "desc": "2050 pops",
+  "sfx": "pop/kenney-interface-maximize-001.ogg",
+  "gain": -21
+ },
+ {
+  "t": 44.96,
+  "type": "movement",
+  "desc": "myopic blur -> sharp",
+  "sfx": "riser/fs-174363-rewind.ogg",
+  "gain": -26
+ },
+ {
+  "t": 46.12,
+  "type": "error_or_tech",
+  "desc": "serious turn: glitch cut to the dark ear scene",
+  "sfx": "glitch/kenney-sci-computernoise-000.ogg",
+  "gain": -24
+ },
+ {
+  "t": 48.8,
+  "type": "hover_or_small_ui",
+  "desc": "volume slider slides down",
+  "sfx": "ui-blip/kenney-ui-rollover2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 51.7,
+  "type": "reveal",
+  "desc": "\"ถาวร\" lands (zoom punch)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -24
+ },
+ {
+  "t": 52.92,
+  "type": "scene_cut",
+  "desc": "whip to the dancing couple",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -26
+ },
+ {
+  "t": 55.2,
+  "type": "appear",
+  "desc": "\"เมนต์บอกหน่อย\" pops in the comment bubble",
+  "sfx": "kit/pop.ogg",
+  "gain": -24
  }
 ]

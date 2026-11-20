@@ -21,6 +21,7 @@ ap.add_argument('--sfx-db',type=float,default=-3.0)
 ap.add_argument('--music-source',default=None,help='where the music came from (track, artist, link), for CREDITS.txt')
 ap.add_argument('--music-license',default=None,help='the music licence the user confirmed, e.g. "Mixkit Stock Music Free License"')
 ap.add_argument('--use-case',default=None,help='where the video will be published, e.g. "YouTube and Instagram"; checked against known licence limits')
+ap.add_argument('--music-dips',default=None,help='extra music cuts as JSON [[t0,t1,db],...] (e.g. a dramatic turn), 0.15 s ramps')
 ap.add_argument('--seed',type=int,default=7)
 ap.add_argument('--swaps',default=None,help='swaps.json from report.html: {cue_index: file|runtime_url|"auto"}')
 A=ap.parse_args(); os.makedirs(A.out,exist_ok=True); os.makedirs(f'{A.out}/checks',exist_ok=True)
@@ -32,7 +33,8 @@ cues=json.load(open(A.cues)); man=json.load(open(A.manifest)); base=os.path.dirn
 log=[]
 # 1. beat grid + sub-120Hz check
 y,_=librosa.load(A.music,sr=SR,mono=True)
-tempo,bf=librosa.beat.beat_track(y=y,sr=SR); beats=librosa.frames_to_time(bf,sr=SR); period=float(np.median(np.diff(beats)))
+# beat_track at 48 kHz can return a single beat on some tracks (genz-old music): track at 22.05 kHz
+y22=librosa.resample(y,orig_sr=SR,target_sr=22050); tempo,bf=librosa.beat.beat_track(y=y22,sr=22050); beats=librosa.frames_to_time(bf,sr=22050); period=float(np.median(np.diff(beats)))
 low=sosfiltfilt(butter(4,120,'low',fs=SR,output='sos'),y)
 env=np.abs(low); hop=240; envd=env[:len(env)//hop*hop].reshape(-1,hop).max(1); te=np.arange(len(envd))*hop/SR
 pk,_=find_peaks(np.where(te>0.1,envd,0),height=envd[te>0.1].max()*0.5,distance=int(period*0.6*SR/hop)); kicks=te[pk]
@@ -120,7 +122,14 @@ hop=480; vm=np.abs(vo).mean(1); n=len(vm)//hop; rms=np.sqrt((vm[:n*hop].reshape(
 g=np.zeros(n); att,rel=np.exp(-1/(0.04*SR/hop)),np.exp(-1/(0.35*SR/hop)); x=0.0
 for k in range(n): a_=att if act[k]>x else rel; x=a_*x+(1-a_)*act[k]; g[k]=x
 duck=10**(-A.duck_db*np.interp(np.arange(len(seg)),np.arange(n)*hop,g)/20)
-seg=seg*duck[:,None]; mix[:len(seg)]+=seg
+seg=seg*duck[:,None]
+if A.music_dips:
+  env_=np.zeros(len(seg)); tt=np.arange(len(seg))/SR
+  for t0,t1,db in json.loads(A.music_dips):
+    w=np.clip(np.minimum((tt-t0)/0.15+1,(t1-tt)/0.15+1),0,1); env_=np.minimum(env_,db*w)
+    log.append(f"Music dip {db:+.0f} dB {t0:.2f}-{t1:.2f}s (0.15 s ramps).")
+  seg=seg*(10**(env_/20))[:,None]
+mix[:len(seg)]+=seg
 log.append(f"Voice {os.path.basename(A.voice)} at 0 dB; music bed {A.music_db:+.0f} dB, ducked {A.duck_db:.0f} dB under the voice; SFX offset {A.sfx_db:+.0f} dB.")
 mix[:min(len(vo),len(mix))]+=vo[:min(len(vo),len(mix))]
 mix=mix[:int(dur*SR)]; sf.write(f'{A.out}/mix_raw.wav',mix,SR)

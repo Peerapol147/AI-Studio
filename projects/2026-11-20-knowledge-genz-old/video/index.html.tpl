@@ -367,7 +367,7 @@ function yearF(t){
   $('yrn').textContent=String(y);
   const w=e.offsetWidth||230, ping=(t>=K.y2070&&t<K.y2070+0.4)?0.18*Math.exp(-(t-K.y2070)*9)*Math.cos((t-K.y2070)*16):0;
   e.style.transform=`translate(${f2(yX(t)-w/2)}px,${f2(yY(t)-40)}px) rotate(${f2(-3+1.5*Math.sin(t*2))}deg) scale(${sc1(v*(yK(t)+ping))})`;
-  e.style.background=t>=K.y2070?YEL:mix('#FFF8EE',YEL,clamp(t/K.y2070));
+  e.style.background=t>=TBACK?mix(YEL,'#FFF8EE',eio((t-TBACK)/0.25)):(t>=K.y2070?YEL:mix('#FFF8EE',YEL,clamp(t/K.y2070)));
 }
 
 // ---------- the pill (one element morphing) ----------
@@ -428,10 +428,11 @@ const TLN=el('g',{opacity:0},G);
 el('line',{x1:190,y1:800,x2:890,y2:800,stroke:INK,'stroke-width':30,'stroke-linecap':'round'},TLN);
 const tlBase=el('line',{x1:190,y1:800,x2:190,y2:800,stroke:'#FFF8EE','stroke-width':16,'stroke-linecap':'round'},TLN);
 const tlFill=el('line',{x1:220,y1:800,x2:220,y2:800,stroke:GRN,'stroke-width':30,'stroke-linecap':'round'},TLN);
+const PULSE=[0,1,2].map(()=>el('circle',{cx:220,cy:800,r:0,fill:'#FFFFFF',opacity:0},TLN));
 const nA=el('circle',{cx:220,cy:800,r:0,fill:YEL,stroke:INK,'stroke-width':9},TLN), nB=el('circle',{cx:860,cy:800,r:0,fill:YEL,stroke:INK,'stroke-width':9},TLN);
 function timelineF(t){
   const v=win(t,T.s05,T.s06+0.3,FAST), out=t>=T.s06?eo((t-T.s06)/0.3):0;
-  TLN.setAttribute('opacity',f2(clamp(v*2)*(1-out))); TLN.setAttribute('transform',`translate(540 ${f2(800+260*out)}) scale(${f2(1-0.4*out)}) translate(-540 -800)`);
+  TLN.setAttribute('opacity',f2(clamp(v*2)*(1-out))); TLN.setAttribute('transform',`translate(540 ${f2(800+260*out+12*Math.sin(t*2.4))}) rotate(${f2(1.5*Math.sin(t*1.7))}) scale(${f2((1-0.4*out)*(1+0.03*Math.sin(t*3.1)))}) translate(-540 -800)`);
   tlBase.setAttribute('x2',f2(lerp(190,890,clamp(S(t-T.s05,8,0.95)))));
   const a=t>=K.y1997?S(t-K.y1997,POP[0],POP[1]):0, b=t>=K.y2012?S(t-K.y2012,POP[0],POP[1]):0;
   nA.setAttribute('r',f2(Math.max(0,34*a))); nB.setAttribute('r',f2(Math.max(0,34*b)));
@@ -439,6 +440,8 @@ function timelineF(t){
   if(t>=K.y2012) tlFill.setAttribute('x2',f2(lerp(lerp(220,860,0.85*clamp(S(K.y2012-K.y1997-0.2,3.2,1))),860,clamp(S(t-K.y2012,14,0.85)))));
   [['lab97',a,220],['lab12',b,860]].forEach(([id,s,x])=>{const e=$(id); if(!show(e,clamp(s*2)*(1-out)))return;
     e.style.transform=`translate(${f2(x-150)}px,${f2(640+20*(1-clamp(s)))}px) scale(${sc1(s)}) rotate(${f2(-3*Math.sin(t*2+x))}deg)`;});
+  const fx2=+tlFill.getAttribute('x2')||220;
+  PULSE.forEach((c,i)=>{const on=t>=K.y1997+0.2&&fx2>240; const ph=((t*1.3)+i/3)%1; c.setAttribute('cx',f2(lerp(220,fx2,ph))); c.setAttribute('r',f2(on?14+6*Math.sin(ph*Math.PI):0)); c.setAttribute('opacity',on?f2(Math.sin(ph*Math.PI)):'0');});
   show($('pew'),pinO(t,K.y2012+0.25,T.s06)*0.95);
 }
 
