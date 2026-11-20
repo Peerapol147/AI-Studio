@@ -13,7 +13,7 @@ T = {k: v['start'] for k, v in D['sh'].items()}; H = {k: v['hit'] for k, v in D[
 c = [
     (T['chat'] + 0.06, 'appear', 'group chat: first bubble pops', 'pop/kenney-interface-pluck-001.ogg', -18),
     (K['taek'], 'movement', 'chat panel cracks in two on "แตก"', 'impact/kenney-impact-impactsoft-heavy-000.ogg', -16),
-    (K['thiang'] + 0.25, 'appear', 'two speech bubbles collide on "เถียง"', 'pop/fs-258269-mouth-pop.ogg', -16),
+    (K['thiang'] + 0.08, 'appear', 'two speech bubbles collide on "เถียง"', 'pop/fs-258269-mouth-pop.ogg', -16),
     (K['bdo'], 'hover_or_small_ui', 'golden balls drop into the year slots', 'ding/fs-634690-lil-pip.ogg', -20),
     (H['split55'], 'movement', '"5 : 5" scoreboard slams on "ห้าใบ"', 'impact/fs-222517-dramatic-hit.ogg', -18),
     (K['ngan'], 'success', 'boxing bell rings on "งั้น"', 'ding/fs-349504-triangle-open-04.ogg', -12),

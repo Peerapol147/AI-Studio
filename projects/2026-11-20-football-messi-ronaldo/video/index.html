@@ -408,7 +408,7 @@ const CX=track(540,[[0.30,610,MORPH],[K.ronaldo0,470,MORPH],[K.khrai,540,BOUNCE]
   [T.score33,540,BOUNCE],[T.cta,540]]);
 const SWING=[[0.30,-1],[K.ronaldo0,1],[T.round1,-1],[T.cr7_card,1],[K.suan,1.3],[T.messi_answer,-1],[T.round3_wc,-0.7],[T.ronaldo_pt,1],[H.count146,0.8],[T.score33,-0.6]];
 const lean=t=>{let v=0;SWING.forEach(([a,d])=>{const u=t-a;if(u>0&&u<2.5)v+=d*150*Math.exp(-u*3.2)*Math.sin(u*11);});return v;};
-const ZIG=[K.khrai,K.taek,K.thiang+0.25,H.split55,H.bell,H.count91,K.suan,H.count146,K.samat];
+const ZIG=[K.khrai,K.taek,K.thiang+0.08,H.split55,H.bell,H.count91,K.suan,H.count146,K.samat];
 const zig=t=>{let v=0;ZIG.forEach(a=>{const u=t-a;if(u>0&&u<1.2)v+=60*Math.exp(-u*5);});return v;};
 // grey (retire) and unify (era) amounts
 const greyA=t=>t<T.retire?0:(t<T.lucky?eio((t-T.retire)/0.6):1-eio((t-T.lucky)/(H.lucky-T.lucky+0.2)));
@@ -451,7 +451,7 @@ function texture(t){$('stripes').setAttribute('transform',`rotate(28 540 960) tr
 
 // ---------- camera: punches on hits, 3-frame shake on slams ----------
 const PUNCH=[0.30,K.ronaldo0,K.khrai,H.split55,H.count91,K.guin,H.count146,K.sathiti2,K.samat,H.lucky,K.prakot,K.teamnai];
-const SHAKE=[H.bell,K.suan,K.taek,K.thiang+0.25];
+const SHAKE=[H.bell,K.suan,K.taek,K.thiang+0.08];
 const SHK=[[14,-8],[-12,6],[8,-4]];
 function camera(t){let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.07*Math.exp(-u*7)*Math.cos(u*13);});
   let sx=0,sy=0; SHAKE.forEach(a=>{const fi=Math.floor((t-a)*30); if(fi>=0&&fi<3){sx=SHK[fi][0];sy=SHK[fi][1];}});
@@ -507,8 +507,8 @@ function makePile(host,items){return items.map(([txt,c],i)=>{const d=document.cr
 const PILE1=makePile($('pile1'),[['เมสซี่!','#2F86D6'],['CR7!','#D7263D'],['ไม่จริง!','#2F86D6'],['ฟังก่อน','#D7263D'],['?!','#2F86D6'],['GOAT','#D7263D'],['มั่วละ','#2F86D6'],['!!','#D7263D'],['ตัวจริง','#2F86D6']]);
 const PILE2=makePile($('pile2'),[['ก็บอกแล้ว','#2F86D6'],['ไม่ยอม!','#D7263D'],['?!','#2F86D6'],['ตัดสินไม่ได้','#D7263D'],['!!','#2F86D6'],['อีกรอบ','#D7263D'],['เถียงต่อ','#2F86D6']]);
 function pileF(P0,t,a,b,dt=0.08){ P0.forEach(p=>{const s=a+p.i*dt, v=win(t,s,b,BOUNCE); if(v<=0){p.e.style.opacity='0';return;}
-  const land=clamp(S(t-s,16,0.6)); const x=540+(p.i%2?1:-1)*(60+((p.i*37)%60))+6*Math.sin(t*4+p.i); const y0=1030-p.i*74;
-  P(p.e,x,lerp(y0-700,y0,land),1,(p.i%2?1:-1)*(4+(p.i*7)%6)+2*Math.sin(t*5+p.i),clamp(v*3));});}
+  const land=clamp(S(t-s,22,0.6)); const x=540+(p.i%2?1:-1)*(60+((p.i*37)%60))+6*Math.sin(t*4+p.i); const y0=1030-p.i*74;
+  P(p.e,x,lerp(y0-320,y0,land),1,(p.i%2?1:-1)*(4+(p.i*7)%6)+2*Math.sin(t*5+p.i),clamp(v*3));});}
 // ---------- G argue ----------
 const BUR=(g)=>[...Array(10)].map((_,i)=>el('path',{d:'M0 -18 L10 0 L0 18 L-10 0 Z',fill:i%2?YEL:'#fff',stroke:INK,'stroke-width':4,opacity:0},$(g)));
 const B1=BUR('burst1'),B2=BUR('burst2'),B3=BUR('burst3');
@@ -516,11 +516,11 @@ function burst(B,t,a,cx,cy,R=260){B.forEach((p,i)=>{const u=t-a; if(u<0||u>0.7){
   const ang=i*36*Math.PI/180, r=60+R*eo(u/0.5); p.setAttribute('opacity',f2(1-clamp((u-0.4)/0.3)));
   p.setAttribute('transform',`translate(${f2(cx+r*Math.cos(ang))} ${f2(cy+r*Math.sin(ang))}) rotate(${f2(i*36+90)}) scale(${f2(2.2-1.4*eo(u/0.7))} 1)`);});}
 function argueF(t){ if(t<T.argue-0.1||t>T.decade+0.2)return;
-  const hit=K.thiang+0.25, a=T.argue;
-  const pin=clamp((t-a)/(hit-a)), xin=ei(pin), rec=t>=hit?S(t-hit,14,0.45):0, out=t>=K.sakwong?eo((t-K.sakwong)/0.3):0;
-  const xL=lerp(-300,315,xin)-40*rec+0*out, xR=lerp(1380,765,xin)+40*rec;
+  const hit=K.thiang+0.08, a=T.argue;
+  const pin=clamp((t-a)/(hit-a)), xin=ei(pin), rec=t>=hit?S(t-hit,14,0.45):0, out=t>=T.argue_pile?eo((t-T.argue_pile)/0.3):0;
+  const xL=lerp(60,315,xin)-40*rec, xR=lerp(1020,765,xin)+40*rec;
   P($('abL'),xL,560-480*out+flt(t,0,6),1-0.4*out,-6+4*W(t),1-out); P($('abR'),xR,560-480*out+flt(t,1,6),1-0.4*out,6-4*W(t+1),1-out);
-  burst(B1,t,hit,540,560); pileF(PILE1,t,K.sakwong,T.decade,0.09);
+  burst(B1,t,hit,540,560); pileF(PILE1,t,T.argue_pile,T.decade,0.07);
 }
 // ---------- G decade ----------
 const YEARS=[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017], WIN=['R','M','M','M','M','R','R','M','R','R'];
@@ -536,7 +536,7 @@ function decF(t){ if(t<T.decade-0.1||t>T.bell+0.2)return;
   const up=t>=tl?S(t-tl,14,0.85):0, s0=slam(t,T.decade);
   P($('ten'),540+flt(t,0,4),lerp(640,320,up),(t<tl?s0:1)*lerp(1,0.5,up)*(1+0.02*Math.sin(t*5)),-2+2*W(t),clamp(v*3));
   const leave=T.split55;
-  SLOTS.forEach(s=>{const a=K.y0817+s.i*0.08, sv=win(t,a,T.bell,BOUNCE), lv=t>=leave?eo((t-leave-s.i*0.03)/0.3):0;
+  SLOTS.forEach(s=>{const a=T.timeline+s.i*0.05, sv=win(t,a,T.bell,BOUNCE), lv=t>=leave?eo((t-leave-s.i*0.03)/0.3):0;
     const sc=Math.max(0.001,sv*(1-lv)); s.g.setAttribute('opacity',f2(clamp(sv*2)*(1-lv)));
     s.g.setAttribute('transform',`translate(${s.cx} ${f2(s.cy+flt(t,s.i,4))}) scale(${f2(sc)})`);
     const wc=t>=K.songkhon+s.i*0.05?clamp((t-K.songkhon-s.i*0.05)/0.15):0;
@@ -556,7 +556,7 @@ function bellF(t){ if(t<T.bell-0.1||t>T.round1+0.2)return;
   U($('bellU'),540,400+flt(t,0,5),Math.max(0.001,v),sw,clamp(v*2));
   RINGS.forEach((r,i)=>{const u=((t-a)-i*0.18); if(u<0||t>T.round1){r.setAttribute('opacity','0');return;} const ph=(u%0.6)/0.6; r.setAttribute('r',f2(130+200*ph)); r.setAttribute('opacity',f2(0.8*(1-ph)));});
   const hit=H.bell, pin=clamp((t-T.bell)/(hit-T.bell)), xin=ei(pin), rec=t>=hit?S(t-hit,12,0.45):0;
-  U($('glL'),lerp(-260,430,xin)-60*rec,960,1.15,0,1); U($('glR'),lerp(1340,650,xin)+60*rec,960,1.15,0,1);
+  U($('glL'),lerp(110,430,xin)-60*rec,960,1.15,0,1); U($('glR'),lerp(970,650,xin)+60*rec,960,1.15,0,1);
   $('glR').setAttribute('transform',$('glR').getAttribute('transform')+' scale(-1 1)');
   burst(B2,t,hit,540,960,300);
   const s=t>=hit?slam(t,hit):0; P($('laekT'),540,700,s*(1+0.03*Math.sin(t*8)),-3+2*W(t),t>=hit?clamp((t-hit)/0.06):0);
@@ -675,7 +675,7 @@ function endF(t){ if(t<T.retire-0.1||t>T.cta+0.2)return; const end=T.cta, r=T.re
   P($('retT'),540,398,1,0,pinO(t,K.lerk,lu));
   P($('luckT'),540,lerp(330,300,out),t>=H.lucky?slam(t,H.lucky)*(1+0.03*Math.sin(t*5)):0,-2+1.5*W(t),pinO(t,H.lucky,K.prakot));
   // era: the two faces drift into the single light
-  const bv=win(t,era,bo,SLOW), dr=clamp((t-era)/(bo-era));
+  const bv=win(t,era,bo,BOUNCE), dr=clamp((t-era)/(bo-era));
   P($('badM'),lerp(230,350,eio(dr)),760+flt(t,2,8),Math.max(0.001,bv),-4+2*W(t),clamp(bv*2)); kb($('badM'),t,era,bo,1.05,1.15);
   P($('badR'),lerp(850,730,eio(dr)),760+flt(t,3,8),Math.max(0.001,bv),4-2*W(t),clamp(bv*2)); kb($('badR'),t,era,bo,1.05,1.15);
   P($('phenT'),540,440,t>=K.prakot?slam(t,K.prakot)*(1+0.02*Math.sin(t*5)):0,-2+W(t),pinO(t,K.prakot,bo+0.02));
