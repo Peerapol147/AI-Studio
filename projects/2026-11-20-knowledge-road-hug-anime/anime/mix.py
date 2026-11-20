@@ -9,11 +9,11 @@ cues = [  # (time, file, gain dB)
     (0.0, "kit/impact.ogg", -9), (S["S02_wide"]["t0"], "whoosh/fs-683101-quick-woosh.ogg", -14),
     (S["S08_rightLane"]["t0"] + 0.5, "whoosh/fs-264777-swoosh.ogg", -5), (S["S14_silence"]["t0"] + 0.25, "whoosh/fs-264777-swoosh.ogg", -5),
     (D["lines"]["R3"]["start"], "riser/fs-685256-riser-sound-effect-short-wav.ogg", -17),
-    (cap("กูขอโทษ") - 0.05, "ding/fs-349504-triangle-open-04.ogg", -12), (S["S18_hug"]["t0"] + 0.3, "ding/fs-571513-soft-notifications-bell-ding-d.ogg", -10),
+    (cap("กูขอโทษ") - 0.05, "ding/fs-349504-triangle-open-04.ogg", -12), (S["S18_hug"]["t0"] + 0.3, "ding/fs-571513-soft-notifications-bell-ding-d.ogg", -10), (S["S19_povHug"]["t0"], "impact/kenney-impact-impactsoft-heavy-000.ogg", -9),
     (S["S20_warmWide"]["t0"] + 0.6, "kit/pop.ogg", -12), (S["S20_warmWide"]["t0"] + 1.1, "kit/pop.ogg", -12), (S["S20_warmWide"]["t0"] + 1.6, "kit/pop.ogg", -12),
     (S["S21_question"]["t0"], "kit/pop.ogg", -11), (S["S22_loop"]["t0"], "kit/impact.ogg", -12),
 ]
-m0, m1 = S["S14_silence"]["t0"], S["S15_driverSoft"]["t0"] + 1.0  # music drops out for the tense beat
+m0, m1 = S["S14_silence"]["t0"], S["S18_hug"]["t0"]  # music drops out from the tense beat until the hug (punchline)
 inputs = ["-i", vid, "-i", f"{proj}/assets/audio/vo.wav", "-ss", "4", "-i", f"{proj}/assets/audio/music-jamendo-e54690db.mp3",
           "-f", "lavfi", "-t", str(dur), "-i", "anoisesrc=color=brown:amplitude=0.5:seed=3"]
 for t, f, g in cues: inputs += ["-i", f"{SFX}/{f}"]

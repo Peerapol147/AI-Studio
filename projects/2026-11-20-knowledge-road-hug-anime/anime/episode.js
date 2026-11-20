@@ -130,14 +130,14 @@ const EP = { shots: [
     draw: (lt, t) => { const k = ease(lt / 1.4);
       for (let i = 0; i < 6; i++) CH.sparkle(160 + i * 160, 360 + 90 * Math.sin(i * 2.3 + t), 16, t + i);
       CH.face({ who: 'R', x: 540, y: 800, s: 480, anger: 0.4 * (1 - k), mood: k > 0.6 ? 'happy' : 'calm', mouth: mouth('R', t), blink: blink(t, 0.4), blush: k }); } },
-  { id: 'S18_hug', t0: L('R4').end - 0.1, t1: cut('กอดกันซะงั้น'), cam0: { zoom: 1.35, cx: 560, cy: 960 }, bg: () => SC.side('warm'), bgKey: 'side_warm_135',
+  { id: 'S18_hug', t0: L('R4').end - 0.1, t1: cut('เอ้า!', 0.03), cam0: { zoom: 1.35, cx: 560, cy: 960 }, bg: () => SC.side('warm'), bgKey: 'side_warm_135',
     cam: lt => ({ p: 1 + 0.04 * lt }),
     draw: (lt, t) => { vehicles(t); const k = ease(tq(lt) / 0.35);
       duo(t, { x: lerp(440, 512, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.8, mood: 'happy', blush: 0.6 },
         { x: lerp(680, 600, k), lean: 0.08 * k, armFront: [lerp(0.2, 1.35, k), lerp(0.3, 1.0, k)], armBack: [lerp(0.2, 1.2, k), 0.9], eyesClosed: k > 0.8, mood: 'happy', blush: 0.6 });
       CH.sparkle(470, 620, 20, t); CH.sparkle(690, 600, 16, t + 1); } },
-  { id: 'S19_povHug', t0: cut('กอดกันซะงั้น'), t1: L('N5').start - 0.03, cam0: { zoom: 1.5, cx: 400, cy: 1000 }, bg: () => SC.pov('warm'), bgKey: 'pov_warm_150',
-    cam: lt => ({ p: 1 + 0.04 * lt }),
+  { id: 'S19_povHug', t0: cut('เอ้า!', 0.03), t1: L('N5').start - 0.03, cam0: { zoom: 1.5, cx: 400, cy: 1000 }, bg: () => SC.pov('warm'), bgKey: 'pov_warm_150',
+    cam: (lt, t) => ({ p: 1.35 - 0.3 * A.spring(lt, 16, 0.55) + 0.03 * lt, ...shake(t, 6 * Math.max(0, 1 - lt / 0.4), 31) }),
     draw: (lt, t) => { povFigures(lt, 'hug'); CH.sparkle(330, 940, 12, t); CH.sparkle(410, 930, 10, t + 1); SC.interior(); phoneInHand(t, 760, 1640, 1); } },
   { id: 'S20_warmWide', t0: L('N5').start - 0.03, t1: L('N6').start - 0.03, cam0: { zoom: 1.0, cx: 560, cy: 1000 }, bg: () => SC.side('warm'), bgKey: 'side_warm_100',
     cam: lt => ({ p: 1.12 - 0.1 * ease(lt / 2.6) }),
