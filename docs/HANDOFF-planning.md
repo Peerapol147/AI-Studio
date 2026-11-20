@@ -49,6 +49,9 @@ r1+r2: get.sh (temp+mv, 403/429/5xx/timeout=75, 4xx อื่น=1, quota_exceed
 ผีปอบ (ไทย 3.1M/2.3M/1.3M — ระวังประเด็นคนถูกกล่าวหาจริง), แมวกลัวแตงกวาจริงไหม (ไทย 800K/150K), ทำไมคนส่วนใหญ่ถนัดขวา (ไทย 590K/370K), อยุธยา+ของยุคใหม่ ("F-16 ย้อนไปอยุธยา" 560K)
 ข้อเสนอค้าง: ตัวละครประจำช่อง (mascot), เสียงเอฟเฟกต์ตลก, ซีรีส์ "ย้อนเวลา" (รอผลปี 2000)
 
+## เครื่องมือ/skill (ทุก skill ใน `.claude/skills/` + superpowers 4 ตัว: brainstorming, writing-plans, verification-before-completion, dispatching-parallel-agents — ห้าม merge 4 ตัวนี้เข้า main)
+ค้นยอดวิว: `python3 -I tools/yt_views.py "คำค้นไทย"`; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`
+
 **วางแผน/วิเคราะห์ (ใช้เอง)**
 | skill | ใช้ทำ |
 |---|---|
