@@ -17,7 +17,7 @@
 
 การ์ตูนเล่าเรื่องจากเหตุการณ์ที่เป็นข่าว ตัวละครเป็นตัวละครสมมติ ไม่ระบุตัวบุคคล
 เสียงพากย์สร้างด้วย AI (elevenlabs.io) | ภาพวาดด้วยโค้ด (p5.js + p5.brush)
-เพลง: "LIFE IS A COMEDY" by The Produca (CC BY 3.0) https://www.jamendo.com/track/1754835
+เพลง: "Suspense and Tension-stem-5-1min" by 3minutetunes (CC BY 3.0) https://www.jamendo.com/track/1172853 / "Imagination" by Yakov Golman (CC BY 3.0) https://www.jamendo.com/track/1559873
 เสียงเอฟเฟกต์: CC0
 
 #การ์ตูน #น้ำใจบนท้องถนน #ทางด่วน #ไรเดอร์ #shorts
@@ -26,9 +26,9 @@
 ## TikTok
 แคปชัน (≤150): `นึกว่าจะต่อยกัน… สุดท้ายกอดกันซะงั้น 🥹 ถ้าเป็นเรา จะขอโทษก่อนไหม? #การ์ตูน #น้ำใจบนท้องถนน #ไรเดอร์ #ทางด่วน`
 - เปิด "AI-generated content" ในการตั้งค่าโพสต์
-- คอมเมนต์แรก (ปักหมุด): `การ์ตูนเล่าเรื่องจากเหตุการณ์ที่เป็นข่าว ตัวละครสมมติ | เพลง "LIFE IS A COMEDY" by The Produca (CC BY 3.0) | เสียง AI: elevenlabs.io`
+- คอมเมนต์แรก (ปักหมุด): `การ์ตูนเล่าเรื่องจากเหตุการณ์ที่เป็นข่าว ตัวละครสมมติ | เพลง "Suspense and Tension-stem-5-1min" by 3minutetunes + "Imagination" by Yakov Golman (CC BY 3.0) | เสียง AI: elevenlabs.io`
 
 ## Facebook Reels
-ชื่อ/แคปชัน: `เถียงกันเรื่องไฟเลี้ยวจนนึกว่าจะต่อยกัน… แต่ตอนจบทำใจฟู 🥹 ถ้าเป็นคุณ จะขอโทษก่อนไหม? (การ์ตูนเล่าเรื่องจากข่าว ตัวละครสมมติ ไม่ระบุตัวบุคคล | เสียง AI | เพลง "LIFE IS A COMEDY" by The Produca, CC BY 3.0)`
+ชื่อ/แคปชัน: `เถียงกันเรื่องไฟเลี้ยวจนนึกว่าจะต่อยกัน… แต่ตอนจบทำใจฟู 🥹 ถ้าเป็นคุณ จะขอโทษก่อนไหม? (การ์ตูนเล่าเรื่องจากข่าว ตัวละครสมมติ ไม่ระบุตัวบุคคล | เสียง AI | เพลง "Suspense and Tension-stem-5-1min" by 3minutetunes / "Imagination" by Yakov Golman, CC BY 3.0)`
 แฮชแท็ก: `#การ์ตูน #น้ำใจบนท้องถนน #reels #ไรเดอร์`
 - ติด label "AI info" ตอนโพสต์

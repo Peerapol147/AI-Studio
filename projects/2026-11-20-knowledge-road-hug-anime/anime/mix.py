@@ -15,18 +15,28 @@ cues = [  # (time, file, gain dB)
 ]
 m0, m1 = S["S14_silence"]["t0"], S["S19_povHug"]["t0"]  # main music out from the tense beat until "เอ้า!"
 l0, l1 = S["S16b_loveSorry"]["t0"], S["S19_povHug"]["t0"]  # love scene: slowed dreamy copy of the track, cut dead on "เอ้า!"
-inputs = ["-i", vid, "-i", f"{proj}/assets/audio/vo.wav", "-ss", "4", "-i", f"{proj}/assets/audio/music-jamendo-e54690db.mp3",
-          "-f", "lavfi", "-t", str(dur), "-i", "anoisesrc=color=brown:amplitude=0.5:seed=3", "-ss", "40", "-i", f"{proj}/assets/audio/music-jamendo-e54690db.mp3"]
-LOVE = 4
+TEN, LOV = f"{proj}/assets/audio/tense-a.mp3", f"{proj}/assets/audio/love.mp3"
+TOFF, LOFF = 27.0, 0.9  # tense track builds to its peak right where the argument peaks (~clip 24 s)
+n5 = S["S20_warmWide"]["t0"]; lp = S["S22_loop"]["t0"]
+# (file, track offset, clip start, clip end, gain dB, fade-in, fade-out, ducked?)
+SEG = [(TEN, TOFF, 0.0, m0, -19, 0.0, 0.12, 1),            # fiery: hook -> shouting peak, cut dead at the silent beat
+       (LOV, LOFF, l0, l1, -15, 0.3, 0.0, 0),              # in-love: "กูขอโทษ" -> slow-mo hug, cut dead on "เอ้า!"
+       (LOV, LOFF + (l1 - l0) + 0.6, n5, lp, -22, 0.5, 0.4, 1),  # soft warm tail under the wrap-up
+       (TEN, TOFF, lp, dur, -19, 0.0, 0.0, 1)]             # loop shot = same music as frame 0 for a seamless loop
+inputs = ["-i", vid, "-i", f"{proj}/assets/audio/vo.wav", "-f", "lavfi", "-t", str(dur), "-i", "anoisesrc=color=brown:amplitude=0.5:seed=3"]
+for f, off, c0, c1, g, fi, fo, dk in SEG: inputs += ["-ss", str(off), "-t", str(c1 - c0 + 0.05), "-i", f]
+OFF = 3 + len(SEG)
 for t, f, g in cues: inputs += ["-i", f"{SFX}/{f}"]
-OFF = 5
-fc = [f"[2:a]atrim=0:{dur},asetpts=PTS-STARTPTS,volume=-21dB,volume='if(between(t,{m0},{m1}),0.08,1)':eval=frame,afade=t=out:st={dur-1.2}:d=1.2[mus]",
-      "[1:a]asplit=2[vo][sc]", "[mus][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=300[mduck]",
-      f"[3:a]lowpass=f=500,highpass=f=60,volume=-30dB,afade=t=in:d=0.3[amb]",
-      f"[{LOVE}:a]asetrate=44100*0.82,aresample=48000,lowpass=f=2600,aecho=0.8:0.7:120|260:0.35|0.25,atrim=0:{l1-l0},asetpts=PTS-STARTPTS,volume=-15dB,afade=t=in:d=0.25,adelay={int(l0*1000)}|{int(l0*1000)}[love]"]
-mixin = "[vo][mduck][amb][love]"
+fc = ["[1:a]asplit=2[vo][sc]", "[2:a]lowpass=f=500,highpass=f=60,volume=-30dB,afade=t=in:d=0.3[amb]"]
+dk_l, raw_l = [], []
+for k, (f, off, c0, c1, g, fi, fo, dk) in enumerate(SEG):
+    ch = f"[{3+k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g}dB" + (f",afade=t=in:d={fi}" if fi else "") + (f",afade=t=out:st={max(0, c1-c0-fo)}:d={fo}" if fo else "") + f",adelay={int(c0*1000)}|{int(c0*1000)}[m{k}]"
+    fc.append(ch); (dk_l if dk else raw_l).append(f"[m{k}]")
+fc.append(f"{''.join(dk_l)}amix=inputs={len(dk_l)}:normalize=0:duration=longest[md]")
+fc.append("[md][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=300[mduck]")
+mixin = "[vo][mduck][amb]" + "".join(raw_l)
 for k, (t, f, g) in enumerate(cues):
     fc.append(f"[{OFF+k}:a]volume={g}dB,adelay={int(t*1000)}|{int(t*1000)}[s{k}]"); mixin += f"[s{k}]"
-fc.append(f"{mixin}amix=inputs={4+len(cues)}:normalize=0:duration=first,atrim=0:{dur},loudnorm=I=-16:TP=-5:LRA=11[a]")
+fc.append(f"{mixin}amix=inputs={3+len(raw_l)+len(cues)}:normalize=0:duration=first,atrim=0:{dur},loudnorm=I=-16:TP=-5:LRA=11[a]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", str(dur), out], check=True)
 print("mixed", out)
