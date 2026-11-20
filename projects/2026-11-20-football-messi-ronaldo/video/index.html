@@ -1,0 +1,713 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="vendor/rough.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#0B1026}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 42%}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.bdw{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.bdi{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;opacity:0;mix-blend-mode:luminosity}
+#bdC .bdi{mix-blend-mode:normal}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.ab{position:absolute;left:0;top:0;opacity:0;transform-origin:50% 50%}
+/* photo card: sharp still on its own blurred plate, white frame + ink outline */
+.card{border-radius:30px;overflow:hidden;background:#111;box-shadow:0 0 0 10px #fff,0 0 0 17px #10080A,0 34px 70px rgba(0,0,0,.55)}
+.card img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 35%}
+.nm{position:absolute;bottom:20px;height:92px;padding:0 30px;border-radius:24px;border:6px solid #10080A;color:#fff;font-weight:900;font-size:58px;
+  line-height:80px;white-space:nowrap;box-shadow:0 8px 0 rgba(0,0,0,.4)}
+.chip{display:flex;align-items:center;justify-content:center;gap:18px;border-radius:32px;border:8px solid #10080A;font-weight:900;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.4);color:#fff}
+.chip svg{width:64px;height:64px}
+.hl{display:flex;align-items:center;justify-content:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:22px #10080A;paint-order:stroke fill}
+.cnt{display:flex;align-items:flex-start;justify-content:center;font-weight:900;color:#fff;-webkit-text-stroke:20px #10080A;paint-order:stroke fill;line-height:1}
+.cnt .dg{display:inline-block;height:1.08em;overflow:hidden;padding:0.04em 0.02em 0}
+.cnt .strip{display:flex;flex-direction:column}
+.cnt .strip span{height:1.04em;line-height:1.04em}
+.sub{color:#fff;font-weight:700;font-size:50px;text-align:center;white-space:nowrap;-webkit-text-stroke:12px #10080A;paint-order:stroke fill;
+  display:flex;align-items:center;justify-content:center}
+.bub{display:flex;align-items:center;justify-content:center;border-radius:46px;border:7px solid #10080A;font-weight:900;color:#fff;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.35)}
+.msg{display:flex;align-items:center;padding:0 30px;border-radius:34px;font-weight:700;font-size:44px;color:#fff;white-space:nowrap;
+  border:5px solid #10080A;box-shadow:0 6px 0 rgba(0,0,0,.3)}
+#title{position:absolute;left:0;top:0;width:1080px;height:700px;z-index:30}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:760px;z-index:29;background:linear-gradient(rgba(6,8,24,.7) 0%,rgba(6,8,24,.45) 60%,rgba(6,8,24,0) 100%)}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#FFE14D;
+  -webkit-text-stroke:28px #10080A;paint-order:stroke fill;transform-origin:50% 60%;text-shadow:0 14px 0 rgba(0,0,0,.5)}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+/* captions: centred on X 510 (safe band X 120-900), text box ~Y 1130-1245 */
+.cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFE14D}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="57.0" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-trophy" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /></symbol>
+<symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-globe" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
+<symbol id="ic-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-message-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></symbol>
+<symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-flame" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" /></symbol>
+<symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-calendar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></symbol>
+<symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></symbol>
+<!-- hand-drawn props (own drawings, no real trophies/logos) -->
+<symbol id="cup" viewBox="-70 -75 140 150" overflow="visible">
+  <path d="M-38 -32 C-66 -34 -66 6 -30 10" fill="none" stroke="#10080A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M38 -32 C66 -34 66 6 30 10" fill="none" stroke="#10080A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M-38 -32 C-66 -34 -66 6 -30 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <path d="M38 -32 C66 -34 66 6 30 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <path d="M-42 -62 H42 V-30 C42 4 20 20 0 22 C-20 20 -42 4 -42 -30 Z" fill="currentColor" stroke="#10080A" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M-26 -52 V-28 C-26 -12 -16 0 -6 4" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+  <path d="M-9 22 H9 L12 44 H-12 Z" fill="currentColor" stroke="#10080A" stroke-width="7" stroke-linejoin="round"/>
+  <rect x="-32" y="44" width="64" height="22" rx="5" fill="#3B2A1A" stroke="#10080A" stroke-width="7"/>
+</symbol>
+<symbol id="wcup" viewBox="-80 -110 160 220" overflow="visible">
+  <path d="M-22 10 C-40 30 -30 60 -26 86 H26 C30 60 40 30 22 10 Z" fill="#F2B632" stroke="#10080A" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M-12 20 C-22 40 -16 60 -14 80" fill="none" stroke="#FFE7A0" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="0" cy="-36" r="52" fill="#F2B632" stroke="#10080A" stroke-width="8"/>
+  <path d="M-52 -36 H52 M0 -88 C-26 -60 -26 -12 0 16 M0 -88 C26 -60 26 -12 0 16 M-44 -62 C-14 -54 14 -54 44 -62 M-44 -10 C-14 -18 14 -18 44 -10" fill="none" stroke="#9A6A08" stroke-width="5"/>
+  <rect x="-40" y="84" width="80" height="20" rx="5" fill="#2F7A3A" stroke="#10080A" stroke-width="7"/>
+</symbol>
+<symbol id="ball" viewBox="-60 -60 120 120" overflow="visible">
+  <circle r="50" fill="url(#gold)" stroke="#10080A" stroke-width="7"/>
+  <path d="M0 -20 L19 -6 L12 16 L-12 16 L-19 -6 Z" fill="#B8860B" stroke="#7A5300" stroke-width="3"/>
+  <path d="M0 -20 V-48 M19 -6 L45 -16 M12 16 L28 40 M-12 16 L-28 40 M-19 -6 L-45 -16" stroke="#7A5300" stroke-width="4"/>
+  <ellipse cx="-18" cy="-26" rx="14" ry="8" fill="#fff" opacity=".6" transform="rotate(-30 -18 -26)"/>
+</symbol>
+<symbol id="glove" viewBox="-110 -80 220 160" overflow="visible">
+  <path d="M-62 -48 C-60 -84 30 -88 62 -50 C92 -14 78 44 34 58 L-46 58 C-66 58 -72 40 -72 20 Z" fill="currentColor" stroke="#10080A" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M-30 6 C-6 -10 26 -6 38 16" fill="none" stroke="#10080A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M-40 -46 C-10 -66 30 -62 48 -40" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".5"/>
+  <rect x="-104" y="-40" width="40" height="92" rx="12" fill="#F4F1EA" stroke="#10080A" stroke-width="9"/>
+</symbol>
+<symbol id="bell" viewBox="-120 -120 240 240" overflow="visible">
+  <rect x="-10" y="-112" width="20" height="30" rx="6" fill="#7A5300" stroke="#10080A" stroke-width="7"/>
+  <path d="M-96 40 C-96 -40 -54 -86 0 -86 C54 -86 96 -40 96 40 Z" fill="url(#gold)" stroke="#10080A" stroke-width="9" stroke-linejoin="round"/>
+  <rect x="-112" y="34" width="224" height="30" rx="12" fill="#B8860B" stroke="#10080A" stroke-width="9"/>
+  <path d="M-56 -34 C-48 -60 -24 -70 -6 -72" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+  <circle cx="0" cy="80" r="16" fill="#7A5300" stroke="#10080A" stroke-width="7"/>
+</symbol>
+<radialGradient id="gold" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".45" stop-color="#FFC83D"/><stop offset="1" stop-color="#C48A0C"/></radialGradient>
+<filter id="whipblur" x="-30%" y="-5%" width="160%" height="110%"><feGaussianBlur id="whipdev" stdDeviation="0 0"/></filter>
+</defs></svg>
+
+<div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
+<!-- ONE shape: the split. Left = Messi blue/white, right = Ronaldo red. The centre line leans/pushes toward whoever throws the punch -->
+<svg class="full" id="bg" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="gL" x1="0" y1="0" x2="0" y2="1"><stop id="gL0" offset="0" stop-color="#6CB4EE"/><stop id="gL1" offset="1" stop-color="#1D4E89"/></linearGradient>
+    <linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop id="gR0" offset="0" stop-color="#D7263D"/><stop id="gR1" offset="1" stop-color="#6E0A18"/></linearGradient>
+    <pattern id="pS" width="64" height="64" patternUnits="userSpaceOnUse"><rect width="22" height="64" fill="#fff" opacity=".07"/></pattern>
+    <radialGradient id="vig" cx="50%" cy="45%" r="70%"><stop offset=".55" stop-color="#0B1026" stop-opacity="0"/><stop offset="1" stop-color="#0B1026" stop-opacity=".55"/></radialGradient>
+  </defs>
+  <polygon id="polyL" fill="url(#gL)"/><polygon id="polyR" fill="url(#gR)"/>
+</svg>
+<div class="bdw" id="bdL"><img class="bdi" id="bl-mf" src="assets/img/messi_face_bg.jpg" alt=""/><img class="bdi" id="bl-mf2" src="assets/img/messi_face2_bg.jpg" alt=""/><img class="bdi" id="bl-mh" src="assets/img/messi_half_bg.jpg" alt=""/></div>
+<div class="bdw" id="bdR"><img class="bdi" id="br-rf" src="assets/img/ronaldo_face_bg.jpg" alt=""/><img class="bdi" id="br-rx" src="assets/img/ronaldo_fist_bg.jpg" alt=""/><img class="bdi" id="br-rr" src="assets/img/ronaldo_run_bg.jpg" alt=""/></div>
+<div class="bdw" id="bdC"><img class="bdi" id="bc-pb" src="assets/img/pair_bw_bg.jpg" alt=""/><img class="bdi" id="bc-pc" src="assets/img/pair_bg.jpg" alt=""/></div>
+<svg class="full" id="tex" viewBox="0 0 1080 1920"><rect id="stripes" x="-400" y="-400" width="1880" height="2720" fill="url(#pS)"/><g id="sparks"></g><rect width="1080" height="1920" fill="url(#vig)"/></svg>
+<svg class="full" id="divsvg" viewBox="0 0 1080 1920">
+  <defs><linearGradient id="gBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE7A0" stop-opacity="0"/><stop offset=".5" stop-color="#FFF6D8" stop-opacity=".95"/><stop offset="1" stop-color="#FFE7A0" stop-opacity="0"/></linearGradient></defs>
+  <polygon id="beam" fill="url(#gBeam)" opacity="0"/>
+  <polygon id="divInk" fill="#10080A"/><polygon id="divCore" fill="#FFFFFF"/>
+</svg>
+
+<div id="scenes" class="full" data-layout-allow-overflow data-layout-allow-overlap>
+<!-- G hook (frame 0 = cover) -->
+<div class="sc" id="g-hook">
+  <div class="ab card" id="hkM" style="width:460px;height:560px"><img src="assets/img/messi_face.jpg" alt=""/><div class="nm" style="left:50%;transform:translateX(-50%);background:#2F86D6">เมสซี่</div></div>
+  <div class="ab card" id="hkR" style="width:460px;height:560px"><img src="assets/img/ronaldo_face.jpg" alt=""/><div class="nm" style="left:34px;background:#D7263D">โรนัลโด้</div></div>
+  <div class="ab chip" id="hkVS" style="width:200px;height:200px;border-radius:100px;background:#FFE14D;color:#10080A;font-size:96px;border-width:10px">VS</div>
+</div>
+<!-- G chat: group chat argument, breaks on "แตก" -->
+<div class="sc" id="g-chat">
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="chatPanel"><polygon id="chatL" fill="#151A30" stroke="#10080A" stroke-width="8"/><polygon id="chatR" fill="#151A30" stroke="#10080A" stroke-width="8"/>
+    <polyline id="crack" fill="none" stroke="#FFE14D" stroke-width="10" stroke-linejoin="round" opacity="0"/></g></svg>
+  <div class="ab chip" id="chatHd" style="width:620px;height:100px;background:#252B4A;font-size:46px;font-weight:700;border-width:6px"><svg class="ic" style="color:#FFE14D"><use href="#ic-users"/></svg>แก๊งดูบอล</div>
+  <div class="ab msg" id="m0" style="width:420px;height:92px;background:#2F86D6">เมสซี่ดีสุดแล้ว!</div>
+  <div class="ab msg" id="m1" style="width:380px;height:92px;background:#D7263D">CR7 ต่างหาก!!</div>
+  <div class="ab msg" id="m2" style="width:420px;height:92px;background:#2F86D6">บัลลงดอร์ 8 ใบนะ</div>
+  <div class="ab msg" id="m3" style="width:420px;height:92px;background:#D7263D">ยิงทีมชาติ 146!</div>
+  <div class="ab msg" id="m4" style="width:350px;height:92px;background:#2F86D6">ไม่ยอมโว้ย</div>
+  <div class="ab msg" id="m5" style="width:330px;height:92px;background:#D7263D">ไม่ยอม!!</div>
+</div>
+<!-- G argue: bubbles collide, then pile up -->
+<div class="sc" id="g-argue">
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="burst1"></g></svg>
+  <div class="ab bub" id="abL" style="width:430px;height:210px;background:#2F86D6;font-size:84px">เมสซี่!</div>
+  <div class="ab bub" id="abR" style="width:470px;height:210px;background:#D7263D;font-size:84px">โรนัลโด้!</div>
+  <div id="pile1"></div>
+</div>
+<!-- G decade: 10 years -> 10 slots -> golden balls -> 5 : 5 -->
+<div class="sc" id="g-dec">
+  <div class="ab hl" id="ten" style="width:900px;height:300px;font-size:250px;color:#FFE14D">10 ปี</div>
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="slots"></g><g id="balls"></g></svg>
+  <div class="ab chip" id="s55" style="width:720px;height:250px;background:#10080A;font-size:200px;gap:46px;border-color:#fff">
+    <span style="color:#6CB4EE">5</span><span style="color:#fff">:</span><span style="color:#FF5468">5</span></div>
+</div>
+<!-- G bell: "แลกหมัด" -->
+<div class="sc" id="g-bell">
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="bellRings"></g><use id="bellU" href="#bell" x="-120" y="-120" width="240" height="240"/>
+    <use id="glL" href="#glove" x="-110" y="-80" width="220" height="160" style="color:#4FA3E8"/>
+    <use id="glR" href="#glove" x="-110" y="-80" width="220" height="160" style="color:#E23048"/><g id="burst2"></g></svg>
+  <div class="ab hl" id="laekT" style="width:960px;height:200px;font-size:170px;color:#FFE14D">แลกหมัด!</div>
+</div>
+<!-- G messi1: punch 1, Messi, 2012, 91 goals, world record -->
+<div class="sc" id="g-m1">
+  <div class="ab chip" id="r1chip" style="width:430px;height:120px;background:#2F86D6;font-size:72px"><svg class="ic" style="color:#FFE14D"><use href="#ic-zap"/></svg>หมัดแรก</div>
+  <div class="ab card" id="m1card" style="width:480px;height:550px"><img src="assets/img/messi_face2.jpg" alt=""/><div class="nm" style="left:50%;transform:translateX(-50%);background:#2F86D6">เมสซี่</div></div>
+  <div class="ab chip" id="y12" style="width:330px;height:124px;background:#FFE14D;color:#10080A;font-size:76px">ปี 2012</div>
+  <div class="ab cnt" id="c91" data-value="91" style="width:520px;height:360px;font-size:330px"></div>
+  <div class="ab sub" id="c91s" style="width:620px;height:70px">ประตู ในปีเดียว</div>
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="stamp1"></g></svg>
+  <div class="ab sub" id="gwr" style="width:700px;height:60px;font-size:38px;-webkit-text-stroke:9px #10080A">บันทึกโดย Guinness World Records</div>
+</div>
+<!-- G ronaldo1: CR7 counters, Champions League, 140 -->
+<div class="sc" id="g-r1">
+  <div class="ab card" id="r1card" style="width:480px;height:550px"><img src="assets/img/ronaldo_face.jpg" alt=""/><div class="nm" style="left:50%;transform:translateX(-50%);background:#D7263D">CR7</div></div>
+  <svg class="ov" viewBox="0 0 1080 1920"><use id="punchR" href="#glove" x="-110" y="-80" width="220" height="160" style="color:#E23048"/><g id="burst3"></g></svg>
+  <div class="ab chip" id="uclT" style="width:600px;height:116px;background:#1B1F3B;font-size:62px"><svg class="ic" style="color:#FFC83D"><use href="#ic-trophy"/></svg>แชมเปียนส์ลีก</div>
+  <div class="ab cnt" id="c140" data-value="140" style="width:640px;height:360px;font-size:330px"></div>
+  <div class="ab sub" id="c140s" style="width:700px;height:70px">ประตูในแชมเปียนส์ลีก</div>
+  <div class="ab chip" id="allT" style="width:640px;height:124px;background:#FFC83D;color:#10080A;font-size:66px"><svg class="ic" style="color:#10080A"><use href="#ic-star"/></svg>อันดับ 1 ตลอดกาล</div>
+</div>
+<!-- G round2: UCL x5 vs Ballon d'Or x8 -->
+<div class="sc" id="g-r2">
+  <div class="ab chip" id="r2chip" style="width:420px;height:116px;background:#FFE14D;color:#10080A;font-size:68px">หมัดที่ 2</div>
+  <div class="ab card" id="fistcard" style="width:360px;height:320px"><img src="assets/img/ronaldo_fist.jpg" alt=""/></div>
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="cups5"></g><g id="balls8"></g></svg>
+  <div class="ab card" id="m2card" style="width:420px;height:374px"><img src="assets/img/messi_face.jpg" alt=""/></div>
+  <div class="ab chip" id="x5" style="width:190px;height:100px;background:#D7263D;font-size:64px">×5</div>
+  <div class="ab chip" id="x8" style="width:190px;height:100px;background:#2F86D6;font-size:64px">×8</div>
+</div>
+<!-- G messi3: World Cup 2022, the dream -->
+<div class="sc" id="g-m3">
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="rays"></g></svg>
+  <div class="ab chip" id="r3chip" style="width:420px;height:116px;background:#FFE14D;color:#10080A;font-size:68px">หมัดที่ 3</div>
+  <div class="ab card" id="mhcard" style="width:470px;height:500px"><img src="assets/img/messi_half.jpg" alt="" style="object-position:50% 20%"/></div>
+  <svg class="ov" viewBox="0 0 1080 1920"><use id="wcU" href="#wcup" x="-80" y="-110" width="160" height="220"/></svg>
+  <div class="ab chip" id="y22" style="width:300px;height:116px;background:#2F86D6;font-size:76px">2022</div>
+  <div class="ab card" id="dreamcard" style="width:740px;height:658px"><img src="assets/img/messi_face.jpg" alt=""/></div>
+</div>
+<!-- G ronaldo3: Euro 2016, 146 -->
+<div class="sc" id="g-r3">
+  <div class="ab card" id="runcard" style="width:440px;height:540px"><img src="assets/img/ronaldo_run.jpg" alt=""/></div>
+  <svg class="ov" viewBox="0 0 1080 1920"><use id="euroU" href="#cup" x="-70" y="-75" width="140" height="150" style="color:#D9DEE6"/><g id="stamp2"></g></svg>
+  <div class="ab chip" id="euroT" style="width:440px;height:120px;background:#D7263D;font-size:72px">ยูโร 2016</div>
+  <div class="ab cnt" id="c146" data-value="146" style="width:640px;height:360px;font-size:330px"></div>
+  <div class="ab sub" id="c146s" style="width:600px;height:70px">ประตูทีมชาติ</div>
+  <div class="ab sub" id="menT" style="width:600px;height:70px;font-size:52px">ฝั่งผู้ชาย</div>
+</div>
+<!-- G score: 3 : 3, nobody falls, the argument again -->
+<div class="sc" id="g-sc">
+  <div class="ab chip" id="s33" style="width:720px;height:250px;background:#10080A;font-size:200px;gap:46px;border-color:#fff">
+    <span style="color:#6CB4EE">3</span><span style="color:#fff">:</span><span style="color:#FF5468">3</span></div>
+  <div class="ab sub" id="s33l" style="width:720px;height:70px;justify-content:space-between;padding:0 40px"><span>เมสซี่</span><span>โรนัลโด้</span></div>
+  <svg class="ov" viewBox="0 0 1080 1920"><use id="stL" href="#glove" x="-110" y="-80" width="220" height="160" style="color:#4FA3E8"/>
+    <use id="stR" href="#glove" x="-110" y="-80" width="220" height="160" style="color:#E23048"/></svg>
+  <div id="pile2"></div>
+</div>
+<!-- G end: retire (b/w) -> lucky (colour) -> one light -> phenomenon -> both -->
+<div class="sc" id="g-end">
+  <svg class="ov" viewBox="0 0 1080 1920"><g id="motes"></g></svg>
+  <div class="ab card" id="paircard" style="width:860px;height:643px"><img id="pairC" src="assets/img/pair.jpg" alt=""/><img id="pairB" src="assets/img/pair_bw.jpg" alt=""/></div>
+  <div class="ab chip" id="y26" style="width:270px;height:116px;background:#2A2A2A;font-size:76px;border-color:#fff">2026</div>
+  <div class="ab sub" id="retT" style="width:600px;height:70px">อำลาทีมชาติ</div>
+  <div class="ab hl" id="luckT" style="width:1000px;height:200px;font-size:150px;color:#FFE14D">โชคดีที่สุด</div>
+  <div class="ab card" id="badM" style="width:300px;height:300px;border-radius:150px"><img src="assets/img/messi_face2.jpg" alt=""/></div>
+  <div class="ab card" id="badR" style="width:300px;height:300px;border-radius:150px"><img src="assets/img/ronaldo_face.jpg" alt=""/></div>
+  <div class="ab hl" id="phenT" style="width:1000px;height:200px;font-size:140px;color:#FFF3C4">ปรากฏการณ์</div>
+</div>
+<!-- G cta -->
+<div class="sc" id="g-cta">
+  <div class="ab hl" id="whichT" style="width:900px;height:200px;font-size:160px;color:#FFE14D">ทีมไหน?</div>
+  <div class="ab chip" id="btnM" style="width:420px;height:150px;background:#2F86D6;font-size:70px;border-width:9px">ทีมเมสซี่</div>
+  <div class="ab chip" id="btnR" style="width:400px;height:150px;background:#D7263D;font-size:70px;border-width:9px">ทีม CR7</div>
+  <div class="ab chip" id="cmt" style="width:130px;height:130px;border-radius:65px;background:#FFE14D;color:#10080A"><svg class="ic" style="width:76px;height:76px"><use href="#ic-message-circle"/></svg></div>
+</div>
+</div>
+<div id="tshade"></div>
+<div id="title"><div class="tl" id="tl1">ใคร</div><div class="tl" id="tl2">เก่งกว่า?</div></div>
+</div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="3.02" data-duration="0.68" data-track-index="20"><span style="font-size:96px">ถามทีไร</span></div>
+  <div id="c1" class="clip cap" data-start="3.7" data-duration="1.22" data-track-index="20"><span style="font-size:96px">วง<em>แตก</em>ทุกที</span></div>
+  <div id="c2" class="clip cap" data-start="4.92" data-duration="0.86" data-track-index="20"><span style="font-size:80px"><em>เถียง</em>กันไม่เคยจบ</span></div>
+  <div id="c3" class="clip cap" data-start="5.78" data-duration="1.02" data-track-index="20"><span style="font-size:96px">สักวงเลย</span></div>
+  <div id="c4" class="clip cap" data-start="6.8" data-duration="0.86" data-track-index="20"><span style="font-size:96px">ก็<em>10 ปี</em>เต็ม</span></div>
+  <div id="c5" class="clip cap" data-start="7.66" data-duration="1.82" data-track-index="20"><span style="font-size:80px">จาก <em>2008-2017</em></span></div>
+  <div id="c6" class="clip cap" data-start="9.48" data-duration="0.48" data-track-index="20"><span style="font-size:96px"><em>บัลลงดอร์</em></span></div>
+  <div id="c7" class="clip cap" data-start="9.96" data-duration="0.48" data-track-index="20"><span style="font-size:96px">มีเจ้าของ</span></div>
+  <div id="c8" class="clip cap" data-start="10.44" data-duration="1.14" data-track-index="20"><span style="font-size:96px">แค่<em>สองคน</em></span></div>
+  <div id="c9" class="clip cap" data-start="11.58" data-duration="0.6" data-track-index="20"><span style="font-size:96px">แบ่งกันคนละ</span></div>
+  <div id="c10" class="clip cap" data-start="12.18" data-duration="1.0" data-track-index="20"><span style="font-size:96px"><em>5 ใบ</em>เป๊ะ</span></div>
+  <div id="c11" class="clip cap" data-start="13.18" data-duration="0.68" data-track-index="20"><span style="font-size:88px">งั้นมา<em>แลกหมัด</em></span></div>
+  <div id="c12" class="clip cap" data-start="13.86" data-duration="0.82" data-track-index="20"><span style="font-size:96px">กันเลยครับ</span></div>
+  <div id="c13" class="clip cap" data-start="14.68" data-duration="0.84" data-track-index="20"><span style="font-size:96px"><em>หมัดแรก</em></span></div>
+  <div id="c14" class="clip cap" data-start="15.52" data-duration="0.9" data-track-index="20"><span style="font-size:96px"><em>เมสซี่</em></span></div>
+  <div id="c15" class="clip cap" data-start="16.42" data-duration="1.36" data-track-index="20"><span style="font-size:96px">ปี <em>2012</em></span></div>
+  <div id="c16" class="clip cap" data-start="17.78" data-duration="0.74" data-track-index="20"><span style="font-size:96px">ปีเดียวยิงไป</span></div>
+  <div id="c17" class="clip cap" data-start="18.52" data-duration="1.18" data-track-index="20"><span style="font-size:96px"><em>91 ลูก</em></span></div>
+  <div id="c18" class="clip cap" data-start="19.7" data-duration="0.62" data-track-index="20"><span style="font-size:88px">กินเนสส์บันทึก</span></div>
+  <div id="c19" class="clip cap" data-start="20.32" data-duration="1.4" data-track-index="20"><span style="font-size:96px">เป็น<em>สถิติโลก</em></span></div>
+  <div id="c20" class="clip cap" data-start="21.72" data-duration="0.84" data-track-index="20"><span style="font-size:96px"><em>CR7</em></span></div>
+  <div id="c21" class="clip cap" data-start="22.56" data-duration="1.1" data-track-index="20"><span style="font-size:96px"><em>สวน</em>ทันที</span></div>
+  <div id="c22" class="clip cap" data-start="23.66" data-duration="0.98" data-track-index="20"><span style="font-size:80px">ยิงใน<em>แชมเปียนส์ลีก</em></span></div>
+  <div id="c23" class="clip cap" data-start="24.64" data-duration="1.2" data-track-index="20"><span style="font-size:96px"><em>140 ลูก</em></span></div>
+  <div id="c24" class="clip cap" data-start="25.84" data-duration="1.42" data-track-index="20"><span style="font-size:80px">มากสุด<em>ตลอดกาล</em></span></div>
+  <div id="c25" class="clip cap" data-start="27.26" data-duration="0.86" data-track-index="20"><span style="font-size:88px">โรนัลโด้<em>ยกถ้วย</em></span></div>
+  <div id="c26" class="clip cap" data-start="28.12" data-duration="0.64" data-track-index="20"><span style="font-size:88px">แชมเปียนส์ลีก</span></div>
+  <div id="c27" class="clip cap" data-start="28.76" data-duration="0.94" data-track-index="20"><span style="font-size:96px"><em>5 สมัย</em></span></div>
+  <div id="c28" class="clip cap" data-start="29.7" data-duration="0.7" data-track-index="20"><span style="font-size:88px">เมสซี่ตอบด้วย</span></div>
+  <div id="c29" class="clip cap" data-start="30.4" data-duration="0.46" data-track-index="20"><span style="font-size:96px"><em>บัลลงดอร์</em></span></div>
+  <div id="c30" class="clip cap" data-start="30.86" data-duration="0.96" data-track-index="20"><span style="font-size:96px"><em>8 ใบ</em></span></div>
+  <div id="c31" class="clip cap" data-start="31.82" data-duration="0.52" data-track-index="20"><span style="font-size:96px">เมสซี่ได้</span></div>
+  <div id="c32" class="clip cap" data-start="32.34" data-duration="0.56" data-track-index="20"><span style="font-size:96px"><em>แชมป์โลก</em></span></div>
+  <div id="c33" class="clip cap" data-start="32.9" data-duration="1.28" data-track-index="20"><span style="font-size:96px"><em>2022</em></span></div>
+  <div id="c34" class="clip cap" data-start="34.18" data-duration="0.64" data-track-index="20"><span style="font-size:96px">ฝันที่รอมา</span></div>
+  <div id="c35" class="clip cap" data-start="34.82" data-duration="0.82" data-track-index="20"><span style="font-size:96px">ทั้งชีวิต</span></div>
+  <div id="c36" class="clip cap" data-start="35.64" data-duration="0.72" data-track-index="20"><span style="font-size:96px">โรนัลโด้พา</span></div>
+  <div id="c37" class="clip cap" data-start="36.36" data-duration="0.54" data-track-index="20"><span style="font-size:96px">โปรตุเกส</span></div>
+  <div id="c38" class="clip cap" data-start="36.9" data-duration="1.5" data-track-index="20"><span style="font-size:88px">คว้า<em>ยูโร 2016</em></span></div>
+  <div id="c39" class="clip cap" data-start="38.4" data-duration="0.88" data-track-index="20"><span style="font-size:88px">แถมยิงทีมชาติ</span></div>
+  <div id="c40" class="clip cap" data-start="39.28" data-duration="1.34" data-track-index="20"><span style="font-size:96px"><em>146 ลูก</em></span></div>
+  <div id="c41" class="clip cap" data-start="40.62" data-duration="0.66" data-track-index="20"><span style="font-size:96px"><em>สถิติโลก</em></span></div>
+  <div id="c42" class="clip cap" data-start="41.28" data-duration="1.26" data-track-index="20"><span style="font-size:88px">ฝั่งผู้ชายเลยนะ</span></div>
+  <div id="c43" class="clip cap" data-start="42.54" data-duration="0.78" data-track-index="20"><span style="font-size:96px">ฝั่งละ <em>3 หมัด</em></span></div>
+  <div id="c44" class="clip cap" data-start="43.32" data-duration="1.18" data-track-index="20"><span style="font-size:96px">ไม่มีใคร<em>ล้ม</em></span></div>
+  <div id="c45" class="clip cap" data-start="44.5" data-duration="0.42" data-track-index="20"><span style="font-size:96px">แบบนี้</span></div>
+  <div id="c46" class="clip cap" data-start="44.92" data-duration="0.56" data-track-index="20"><span style="font-size:88px">จะให้<em>เถียงจบ</em></span></div>
+  <div id="c47" class="clip cap" data-start="45.48" data-duration="0.92" data-track-index="20"><span style="font-size:96px">ได้ไงล่ะ</span></div>
+  <div id="c48" class="clip cap" data-start="46.4" data-duration="0.64" data-track-index="20"><span style="font-size:96px">ปีนี้ทั้งคู่</span></div>
+  <div id="c49" class="clip cap" data-start="47.04" data-duration="0.44" data-track-index="20"><span style="font-size:96px">ก็ประกาศ</span></div>
+  <div id="c50" class="clip cap" data-start="47.48" data-duration="0.8" data-track-index="20"><span style="font-size:88px"><em>เลิกเล่นทีมชาติ</em></span></div>
+  <div id="c51" class="clip cap" data-start="48.28" data-duration="0.82" data-track-index="20"><span style="font-size:96px">ไปแล้ว</span></div>
+  <div id="c52" class="clip cap" data-start="49.1" data-duration="0.46" data-track-index="20"><span style="font-size:96px">แต่ยังไง</span></div>
+  <div id="c53" class="clip cap" data-start="49.56" data-duration="0.42" data-track-index="20"><span style="font-size:96px">พวกเราก็</span></div>
+  <div id="c54" class="clip cap" data-start="49.98" data-duration="1.08" data-track-index="20"><span style="font-size:96px"><em>โชคดีที่สุด</em></span></div>
+  <div id="c55" class="clip cap" data-start="51.06" data-duration="0.68" data-track-index="20"><span style="font-size:96px">ที่เกิดทันดู</span></div>
+  <div id="c56" class="clip cap" data-start="51.74" data-duration="0.7" data-track-index="20"><span style="font-size:88px">ยุคของนักเตะ</span></div>
+  <div id="c57" class="clip cap" data-start="52.44" data-duration="0.8" data-track-index="20"><span style="font-size:80px">ระดับ<em>ปรากฏการณ์</em></span></div>
+  <div id="c58" class="clip cap" data-start="53.24" data-duration="0.56" data-track-index="20"><span style="font-size:96px">อย่าง<em>เมสซี่</em></span></div>
+  <div id="c59" class="clip cap" data-start="53.8" data-duration="1.12" data-track-index="20"><span style="font-size:96px">กับ<em>โรนัลโด้</em></span></div>
+  <div id="c60" class="clip cap" data-start="54.92" data-duration="0.5" data-track-index="20"><span style="font-size:96px">แล้วเพื่อนอยู่</span></div>
+  <div id="c61" class="clip cap" data-start="55.42" data-duration="0.82" data-track-index="20"><span style="font-size:96px"><em>ทีมไหน?</em></span></div>
+  <div id="c62" class="clip cap" data-start="56.24" data-duration="0.76" data-track-index="20"><span style="font-size:96px"><em>เมนต์</em>มาเลย</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="57.0" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="57.0" data-track-index="31" data-volume="0.1" src="assets/music-bed.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine, brainrot-v2 template). Shot times = assets/audio/shots-th.json,
+   word anchors = words.json (both injected by build_index.py). ONE shape: the split line between the blue (Messi) and
+   red (Ronaldo) halves. It pushes/leans toward whoever lands a punch, cracks into a zigzag on impacts, goes grey for the
+   retirement beat and melts into one light at "ยุค". Everything is a function of t (seek-safe). Registry techniques
+   adapted: number-wheel (rolling digit columns), headline-slam (expo landing + 3-frame shake), whip-pan-cut (capped
+   directional blur peaking mid-whip). */
+(function(){
+const D={"dur": 57.0, "capt": [3.02, 3.7, 4.92, 5.78, 6.8, 7.66, 9.48, 9.96, 10.44, 11.58, 12.18, 13.18, 13.86, 14.68, 15.52, 16.42, 17.78, 18.52, 19.7, 20.32, 21.72, 22.56, 23.66, 24.64, 25.84, 27.26, 28.12, 28.76, 29.7, 30.4, 30.86, 31.82, 32.34, 32.9, 34.18, 34.82, 35.64, 36.36, 36.9, 38.4, 39.28, 40.62, 41.28, 42.54, 43.32, 44.5, 44.92, 45.48, 46.4, 47.04, 47.48, 48.28, 49.1, 49.56, 49.98, 51.06, 51.74, 52.44, 53.24, 53.8, 54.92, 55.42, 56.24], "k": {"messi0": 0.06, "ronaldo0": 0.9, "khrai": 1.86, "tham": 3.02, "taek": 3.88, "thiang": 4.92, "sakwong": 5.78, "sippi": 6.96, "y0817": 7.92, "bdo": 9.48, "songkhon": 10.64, "haabai": 12.18, "ngan": 13.18, "laek": 13.42, "mat": 13.68, "matraek": 14.68, "messi1": 15.52, "y2012": 16.7, "pidiao": 17.78, "n91": 18.52, "luk91": 19.04, "guin": 19.7, "sathiti": 20.5, "cr7": 21.72, "suan": 22.56, "ucl": 23.9, "n140": 24.64, "luk140": 25.16, "makssud": 25.84, "talod": 26.18, "ronaldo2": 27.26, "yokthuay": 27.8, "haasamai": 28.76, "messi3": 29.7, "bdo2": 30.4, "paetbai": 30.86, "messi4": 31.82, "champlok": 32.34, "y2022": 32.9, "fan": 34.18, "ronaldo3": 35.64, "euro": 37.1, "y2016": 37.54, "thaem": 38.4, "n146": 39.28, "luk146": 39.94, "sathiti2": 40.62, "phuchai": 41.46, "samat": 42.82, "lom": 43.82, "baebni": 44.5, "thiangjob": 45.08, "pini": 46.4, "lerk": 47.48, "chokdee": 49.98, "kerdtan": 51.06, "yuk": 51.74, "prakot": 52.7, "messi5": 53.38, "ronaldo5": 53.92, "teamnai": 55.42, "men": 56.24}, "sh": {"hook_vs": {"start": 0.0, "end": 1.78, "word": 0.06, "hit": null}, "hook_q": {"start": 1.78, "end": 2.94, "word": 1.86, "hit": null}, "chat": {"start": 2.94, "end": 3.62, "word": 3.02, "hit": null}, "chat_break": {"start": 3.62, "end": 4.84, "word": 3.7, "hit": null}, "argue": {"start": 4.84, "end": 5.7, "word": 4.92, "hit": null}, "argue_pile": {"start": 5.7, "end": 6.88, "word": 5.78, "hit": null}, "decade": {"start": 6.88, "end": 7.84, "word": 6.96, "hit": null}, "timeline": {"start": 7.84, "end": 9.4, "word": 7.92, "hit": null}, "bdo_drop": {"start": 9.4, "end": 10.56, "word": 9.48, "hit": null}, "two_owners": {"start": 10.56, "end": 11.5, "word": 10.64, "hit": null}, "split55": {"start": 11.5, "end": 13.1, "word": 11.58, "hit": 12.18}, "bell": {"start": 13.1, "end": 14.6, "word": 13.18, "hit": 13.68}, "round1": {"start": 14.6, "end": 15.44, "word": 14.68, "hit": null}, "messi_card": {"start": 15.44, "end": 16.62, "word": 15.52, "hit": null}, "year2012": {"start": 16.62, "end": 17.7, "word": 16.7, "hit": null}, "count91": {"start": 17.7, "end": 19.62, "word": 17.78, "hit": 18.52}, "guinness": {"start": 19.62, "end": 21.64, "word": 19.7, "hit": null}, "cr7_card": {"start": 21.64, "end": 22.48, "word": 21.72, "hit": null}, "counter": {"start": 22.48, "end": 23.58, "word": 22.56, "hit": null}, "ucl_label": {"start": 23.58, "end": 24.56, "word": 23.66, "hit": null}, "count140": {"start": 24.56, "end": 25.76, "word": 24.64, "hit": null}, "alltime": {"start": 25.76, "end": 27.18, "word": 25.84, "hit": null}, "round2_cups": {"start": 27.18, "end": 28.68, "word": 27.26, "hit": null}, "five_cups": {"start": 28.68, "end": 29.62, "word": 28.76, "hit": null}, "messi_answer": {"start": 29.62, "end": 30.78, "word": 29.7, "hit": null}, "eight_bdo": {"start": 30.78, "end": 31.74, "word": 30.86, "hit": null}, "round3_wc": {"start": 31.74, "end": 32.82, "word": 31.82, "hit": null}, "wc2022": {"start": 32.82, "end": 34.1, "word": 32.9, "hit": null}, "dream": {"start": 34.1, "end": 35.56, "word": 34.18, "hit": null}, "ronaldo_pt": {"start": 35.56, "end": 37.02, "word": 35.64, "hit": null}, "euro2016": {"start": 37.02, "end": 38.32, "word": 37.1, "hit": null}, "count146": {"start": 38.32, "end": 40.54, "word": 38.4, "hit": 39.28}, "record_men": {"start": 40.54, "end": 42.46, "word": 40.62, "hit": null}, "score33": {"start": 42.46, "end": 43.24, "word": 42.54, "hit": null}, "nobody_falls": {"start": 43.24, "end": 44.42, "word": 43.32, "hit": null}, "argue_back": {"start": 44.42, "end": 46.32, "word": 44.5, "hit": null}, "retire": {"start": 46.32, "end": 49.02, "word": 46.4, "hit": null}, "lucky": {"start": 49.02, "end": 50.98, "word": 49.1, "hit": 49.98}, "era": {"start": 50.98, "end": 52.62, "word": 51.06, "hit": null}, "phenomenon": {"start": 52.62, "end": 53.3, "word": 52.7, "hit": null}, "both": {"start": 53.3, "end": 54.84, "word": 53.38, "hit": null}, "cta": {"start": 54.84, "end": 57.0, "word": 54.92, "hit": null}}}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
+const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const expo=x=>{x=clamp(x);return x>=1?1:1-Math.pow(2,-10*x)};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[6,0.95],BOUNCE=[18,0.55],POP=[22,0.5],OUT=[30,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return '#'+x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u))).toString(16).padStart(2,'0')).join('');};
+const gray=h=>{const c=hex(h);const l=Math.round(0.3*c[0]+0.59*c[1]+0.11*c[2]);return '#'+[l,l,l].map(v=>v.toString(16).padStart(2,'0')).join('');};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':Math.min(1,o).toFixed(4);return o>=0.003;};
+const f2=v=>v.toFixed(2);
+// window visibility: spring in at a, quick fade at b
+const win=(t,a,b,sp=POP)=>{if(t<a||t>=b+0.1)return 0; const i=S(t-a,sp[0],sp[1]); const o=t>b?1-clamp((t-b)/0.08):1; return Math.max(0,i)*o;};
+const pinO=(t,a,b,fi=0.06)=>(t<a||t>=b+0.1)?0:clamp((t-a)/fi)*(t>b?1-clamp((t-b)/0.08):1);
+// place an absolutely positioned box (inline width/height) by its centre
+const P=(e,x,y,s=1,r=0,o=1)=>{if(!show(e,o))return false; const w=parseFloat(e.style.width), h=parseFloat(e.style.height);
+  e.style.transform=`translate(${f2(x-w/2)}px,${f2(y-h/2)}px) rotate(${f2(r)}deg) scale(${Math.max(0.001,s).toFixed(4)})`; return true;};
+// svg <use> by centre
+const U=(e,x,y,s=1,r=0,o=1)=>{e.setAttribute('opacity',f2(clamp(o))); e.setAttribute('transform',`translate(${f2(x)} ${f2(y)}) rotate(${f2(r)}) scale(${f2(Math.max(0.001,s))})`);};
+// headline slam (registry headline-slam): scale 1.7 -> 1 with expo.out over 0.22 s, opacity in 0.08 s
+const slam=(t,a)=>t<a?0:1+0.7*(1-expo((t-a)/0.22));
+// card push-in on the photo (Ken Burns 8-15% + drift) - stills never stand still
+const kb=(e,t,a,b,s0=1.02,s1=1.14,dx=0,dy=0)=>{const img=e.querySelector('img'); const u=clamp((t-a)/Math.max(0.5,b-a));
+  img.style.transform=`translate(${f2(dx*u)}px,${f2(dy*u)}px) scale(${lerp(s0,s1,u).toFixed(4)})`;};
+const INK='#10080A',YEL='#FFE14D',GOLD='#FFC83D',BL='#6CB4EE',RD='#D7263D';
+const flt=(t,i,a=8)=>a*Math.sin(t*2.1+i*1.7);   // idle float
+const W=t=>Math.sin(t*1.6);
+
+// ---------- groups / transitions ----------
+// in: none | cut | whip (from left/right, 0.12 s push, capped blur) | zoom (punch-in, 0.1 s fade) | match (0.12 s crossfade)
+const SC=[
+ {id:'g-hook',a:0,in:'none'},
+ {id:'g-chat',a:T.chat,in:'zoom'},
+ {id:'g-argue',a:T.argue,in:'whip',dir:1},
+ {id:'g-dec',a:T.decade,in:'zoom'},
+ {id:'g-bell',a:T.bell,in:'whip',dir:-1},
+ {id:'g-m1',a:T.round1,in:'zoom'},
+ {id:'g-r1',a:T.cr7_card,in:'whip',dir:1},
+ {id:'g-r2',a:T.round2_cups,in:'zoom'},
+ {id:'g-m3',a:T.round3_wc,in:'whip',dir:-1},
+ {id:'g-r3',a:T.ronaldo_pt,in:'whip',dir:1},
+ {id:'g-sc',a:T.score33,in:'zoom'},
+ {id:'g-end',a:T.retire,in:'match'},
+ {id:'g-cta',a:T.cta,in:'zoom'},
+];
+const LOOP=DUR-0.36; // the hook group comes back (zoom-through) so the last frame = frame 0
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; $(s.id).style.zIndex=String(i+1);});
+$('g-hook').style.zIndex='40';
+const XF=0.12;
+function sceneState(s,t){
+  if(s.id==='g-hook'&&t>=LOOP){const u=t-LOOP; return {o:eio(u/0.12),tx:0,sc:1+0.35*(1-S(u,20,0.9)),bl:0};}
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1,bl=0;
+  if(s.in==='whip'){ tx=(s.dir||1)*1080*(1-eo(u/XF)); bl=Math.sin(Math.PI*clamp(u/XF)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.3*(1-S(u,18,0.9)); }
+  else if(s.in==='match'){ o=eio(u/XF); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+XF)return null; if(t>=end){ tx=-(nx.dir||1)*1080*eo((t-end)/XF); bl=Math.sin(Math.PI*clamp((t-end)/XF)); } }
+    else if(nx.in==='cut'){ if(t>=end)return null; }
+    else { if(t>=end+XF)return null; if(nx.in==='zoom'&&t>end-0.1) sc*=1+0.5*ei((t-end+0.1)/0.22); }
+  } else if(t>=LOOP){ sc*=1+0.4*ei((t-LOOP)/0.3); }
+  return {o,tx,sc,bl};
+}
+let whipNow=0;
+function scenes(t){
+  whipNow=0;
+  SC.forEach(s=>{const r=sceneState(s,t), e=$(s.id);
+    if(!r){e.style.opacity='0';e.style.filter='none';return;}
+    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    if(r.bl>0.02){e.style.filter='url(#whipblur)'; whipNow=Math.max(whipNow,r.bl);} else e.style.filter='none';
+  });
+  $('whipdev').setAttribute('stdDeviation',`${f2(16*whipNow)} 0`);   // capped at 16 px, peak mid-whip
+}
+
+// ---------- THE split line ----------
+// centre x at Y 960 (spring track), lean (damped swing on each push), zigzag crack amplitude on impacts, beam width
+const CX=track(540,[[0.30,610,MORPH],[K.ronaldo0,470,MORPH],[K.khrai,540,BOUNCE],
+  [T.round1,690],[T.messi_card,720],[T.cr7_card,400,BOUNCE],[K.suan,330,BOUNCE],[T.ucl_label,380],
+  [T.round2_cups,400],[T.messi_answer,700,BOUNCE],[T.round3_wc,700],[T.dream,760],[T.ronaldo_pt,380,BOUNCE],[H.count146,330,BOUNCE],[T.record_men,380],
+  [T.score33,540,BOUNCE],[T.cta,540]]);
+const SWING=[[0.30,-1],[K.ronaldo0,1],[T.round1,-1],[T.cr7_card,1],[K.suan,1.3],[T.messi_answer,-1],[T.round3_wc,-0.7],[T.ronaldo_pt,1],[H.count146,0.8],[T.score33,-0.6]];
+const lean=t=>{let v=0;SWING.forEach(([a,d])=>{const u=t-a;if(u>0&&u<2.5)v+=d*150*Math.exp(-u*3.2)*Math.sin(u*11);});return v;};
+const ZIG=[K.khrai,K.taek,K.thiang+0.25,H.split55,H.bell,H.count91,K.suan,H.count146,K.samat];
+const zig=t=>{let v=0;ZIG.forEach(a=>{const u=t-a;if(u>0&&u<1.2)v+=60*Math.exp(-u*5);});return v;};
+// grey (retire) and unify (era) amounts
+const greyA=t=>t<T.retire?0:(t<T.lucky?eio((t-T.retire)/0.6):1-eio((t-T.lucky)/(H.lucky-T.lucky+0.2)));
+const uniA=t=>t<T.era?0:(t<T.cta?eio((t-T.era)/0.8):1-eio((t-T.cta)/0.25));
+const beamW=t=>t<T.era?0:(t<T.cta?S(t-T.era,6,0.9)*420:420*(1-eio((t-T.cta)/0.25)));
+const NPT=48;
+function lineX(t){const cx=CX(t), ln=lean(t), z=zig(t), xs=[];
+  for(let i=0;i<=NPT;i++){const y=i*1920/NPT; const zz=(i%2?1:-1)*z*Math.sin(Math.PI*i/NPT)*(i>0&&i<NPT?1:0);
+    xs.push([cx+ln*(960-y)/960+zz+6*Math.sin(t*1.3+i*0.4)*0.5,y]);} return xs;}
+const pts=a=>a.map(p=>f2(p[0])+','+f2(p[1])).join(' ');
+const CL=['#6CB4EE','#1D4E89'], CR=['#D7263D','#6E0A18'], CU=['#3B2A63','#140B2C'];
+function splitF(t){
+  const L=lineX(t), g=greyA(t), u=uniA(t);
+  const col=(c,i)=>{let v=mix(c,gray(c),g*0.85); return mix(v,CU[i],u);};
+  $('gL0').setAttribute('stop-color',col(CL[0],0)); $('gL1').setAttribute('stop-color',col(CL[1],1));
+  $('gR0').setAttribute('stop-color',col(CR[0],0)); $('gR1').setAttribute('stop-color',col(CR[1],1));
+  $('polyL').setAttribute('points','0,0 '+pts(L)+' 0,1920'); $('polyR').setAttribute('points','1080,0 '+pts(L)+' 1080,1920');
+  const off=(a,d)=>a.map(p=>[p[0]+d,p[1]]);
+  const wI=14+0.3*zig(t), wC=6+0.15*zig(t), fadeLine=1-clamp(u*1.4);
+  $('divInk').setAttribute('points',pts(off(L,-wI))+' '+pts(off(L,wI).reverse())); $('divInk').setAttribute('opacity',f2(fadeLine));
+  $('divCore').setAttribute('points',pts(off(L,-wC))+' '+pts(off(L,wC).reverse())); $('divCore').setAttribute('opacity',f2(Math.max(fadeLine,0.6*u)));
+  const bw=beamW(t)*(1+0.06*Math.sin(t*4)); $('beam').setAttribute('opacity',f2(clamp(bw/60)));
+  $('beam').setAttribute('points',pts(off(L,-bw))+' '+pts(off(L,bw).reverse()));
+  // backdrops follow the split
+  const cpL='polygon(0px 0px,'+L.map(p=>f2(p[0])+'px '+f2(p[1])+'px').join(',')+',0px 1920px)';
+  const cpR='polygon(1080px 0px,'+L.map(p=>f2(p[0])+'px '+f2(p[1])+'px').join(',')+',1080px 1920px)';
+  $('bdL').style.clipPath=cpL; $('bdR').style.clipPath=cpR;
+}
+// blurred plates behind the cards (each card sits on its own blurred photo, tinted by the side colour)
+const BD=[['bl-mf2',T.messi_card,T.cr7_card],['bl-mf',T.messi_answer,T.round3_wc],['bl-mh',T.round3_wc,T.dream],['bl-mf',T.dream,T.ronaldo_pt],
+  ['br-rf',T.cr7_card,T.round2_cups],['br-rx',T.round2_cups,T.round3_wc],['br-rr',T.ronaldo_pt,T.score33],
+  ['bc-pb',T.retire,T.era],['bc-pc',T.lucky,T.era],['bc-pc',T.both,T.cta]];
+function backdrops(t){const o={}; BD.forEach(([id,a,b])=>{const v=(t<a||t>=b+0.12)?0:clamp((t-a)/0.12)*(t>b?1-clamp((t-b)/0.12):1); o[id]=Math.max(o[id]||0,v);});
+  for(const id in o){const e=$(id); let v=o[id]*(id[1]==='c'?0.5:0.42); if(id==='bc-pc'&&t<T.era)v*=eio((t-T.lucky)/(H.lucky-T.lucky)); show(e,v);
+    if(v>0.003)e.style.transform=`translate(${f2(20*Math.sin(t*0.7))}px,${f2(14*Math.cos(t*0.6))}px) scale(${(1.04+0.03*Math.sin(t*0.5)).toFixed(4)})`;}}
+// moving texture + sparks (never a still frame)
+const SPK=[...Array(34)].map((_,i)=>({e:el('circle',{r:2+(i%4)*1.5,fill:i%5?'#fff':'#FFE14D',opacity:0},$('sparks')),x:(i*197)%1080,y:(i*331)%1920,v:40+(i%6)*18,i}));
+function texture(t){$('stripes').setAttribute('transform',`rotate(28 540 960) translate(${f2((t*46)%64)} 0)`);
+  SPK.forEach(s=>{s.e.setAttribute('cx',f2(s.x+18*Math.sin(t*0.9+s.i))); s.e.setAttribute('cy',f2(((s.y-t*s.v)%1920+1920)%1920)); s.e.setAttribute('opacity',f2(0.18+0.3*(0.5+0.5*Math.sin(t*2.6+s.i))));});}
+
+// ---------- camera: punches on hits, 3-frame shake on slams ----------
+const PUNCH=[0.30,K.ronaldo0,K.khrai,H.split55,H.count91,K.guin,H.count146,K.sathiti2,K.samat,H.lucky,K.prakot,K.teamnai];
+const SHAKE=[H.bell,K.suan,K.taek,K.thiang+0.25];
+const SHK=[[14,-8],[-12,6],[8,-4]];
+function camera(t){let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.07*Math.exp(-u*7)*Math.cos(u*13);});
+  let sx=0,sy=0; SHAKE.forEach(a=>{const fi=Math.floor((t-a)*30); if(fi>=0&&fi<3){sx=SHK[fi][0];sy=SHK[fi][1];}});
+  $('stage').style.transform=`translate(${sx}px,${sy}px) scale(${(1+p).toFixed(4)})`;}
+
+// ---------- hook title: complete at frame 0 (no fade-in), breathes 1.0<->1.04, slams on "ใคร", back for the loop ----------
+const TL=[['tl1',250,200],['tl2',446,180]];
+TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
+function title(t){
+  let o,sc;
+  if(t<LOOP){ const out=eo((t-(T.chat-0.04))/0.12); o=1-out; sc=(1+0.25*out)*(t>=K.khrai?1+0.16*(1-S(t-K.khrai,22,0.55)):1); }
+  else { const a=S(t-LOOP-0.06,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
+  show($('title'),o); show($('tshade'),o);
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<LOOP?1:0;
+  TL.forEach(([id],i)=>{$(id).style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.5*live*Math.sin(t*2.4):0)}deg) scale(${((t<LOOP?br:1)*sc).toFixed(4)})`;});
+}
+// ---------- G hook ----------
+function hookF(t){
+  const back=t>=LOOP; if(t>=T.chat+0.2&&!back)return;
+  const pm=(t>=0.30&&!back)?0.07*Math.exp(-(t-0.30)*5)*Math.cos((t-0.30)*12):0, pr=(t>=K.ronaldo0&&!back)?0.07*Math.exp(-(t-K.ronaldo0)*5)*Math.cos((t-K.ronaldo0)*12):0;
+  const q=(t>=K.khrai&&!back)?S(t-K.khrai,14,0.7):0;
+  const lt=back?0:t;
+  P($('hkM'),285-30*q+flt(lt,0,4),940+flt(lt,1,5),1+pm,-3+1.2*W(lt));
+  P($('hkR'),795+30*q+flt(lt,2,4),940+flt(lt,3,5),1+pr,3-1.2*W(lt+1));
+  kb($('hkM'),back?0:t,0,T.chat,1.0,1.08); kb($('hkR'),back?0:t,0,T.chat,1.0,1.08);
+  const vs=1+0.05*Math.sin(lt*7)+(t>=K.khrai&&!back?0.35*(1-S(t-K.khrai,18,0.5)):0);
+  P($('hkVS'),540+0.6*(CX(lt)-540),940,vs,(t>=K.khrai&&!back?360*eo((t-K.khrai)/0.5):0)+4*Math.sin(lt*3));
+}
+// ---------- G chat ----------
+const MSG=[0,1,2,3,4,5].map(i=>({e:$('m'+i),side:i%2?1:-1,a:T.chat+0.06+i*0.12}));
+function chatF(t){ if(t<T.chat-0.1||t>T.argue+0.2)return;
+  const br=t>=K.taek?t-K.taek:-1, sep=br>0?eo(br/0.5):0, fall=br>0?br*br*900:0;
+  // panel halves with a zigzag crack (same zigzag as the split line)
+  const zx=[540,500,580,505,575,520,560], zy=[330,430,540,650,760,880,1060];
+  const ed=zx.map((x,i)=>[x,zy[i]]);
+  const Lp=[[150,330],...ed,[150,1060]], Rp=[[930,330],...ed,[930,1060]];
+  const tf=(p,s)=>p.map(([x,y])=>[x+s*220*sep+(y-700)*0.12*s*sep,y+fall*(0.6+0.4*(y-330)/730)]);
+  $('chatL').setAttribute('points',pts(tf(Lp,-1))); $('chatR').setAttribute('points',pts(tf(Rp,1)));
+  const pin=win(t,T.chat,T.argue,BOUNCE); $('chatPanel').setAttribute('opacity',f2(clamp(pin*1.5)*(1-clamp(br/0.7))));
+  $('chatPanel').setAttribute('transform',`translate(540 700) scale(${f2(Math.max(0.001,0.8+0.2*pin))}) translate(-540 -700)`);
+  $('crack').setAttribute('points',pts(ed)); $('crack').setAttribute('opacity',f2(br>=0?clamp(1-br/0.25):0));
+  P($('chatHd'),540-220*sep*0,394-0+fall*0.3,Math.max(0.001,0.8+0.2*pin),0,clamp(pin*1.5)*(1-clamp(br/0.4)));
+  const n=MSG.filter(m=>t>=m.a).length;
+  MSG.forEach((m,i)=>{const v=win(t,m.a,T.argue,POP); if(v<=0){m.e.style.opacity='0';return;}
+    const w=parseFloat(m.e.style.width);
+    let x=m.side<0?190+w/2:890-w/2, yy=980-112*(n-1-i)+(1-clamp(S(t-m.a,20,0.8)))*60, r=0;
+    if(br>0){x+=m.side*900*eo(br/0.6)*(0.6+0.1*i); yy+=fall*(0.8+0.1*i); r=m.side*50*br;}
+    P(m.e,x,yy,v,r+(br>0?0:1.5*Math.sin(t*3+i)),clamp(v*2));});
+}
+// ---------- bubble piles (argue + callback) ----------
+function makePile(host,items){return items.map(([txt,c],i)=>{const d=document.createElement('div'); d.className='ab bub';
+  const w=Math.max(220,txt.length*44+90); d.style.cssText=`width:${w}px;height:112px;background:${c};font-size:60px`; d.textContent=txt; host.appendChild(d); return {e:d,i,w};});}
+const PILE1=makePile($('pile1'),[['เมสซี่!','#2F86D6'],['CR7!','#D7263D'],['ไม่จริง!','#2F86D6'],['ฟังก่อน','#D7263D'],['?!','#2F86D6'],['GOAT','#D7263D'],['มั่วละ','#2F86D6'],['!!','#D7263D'],['ตัวจริง','#2F86D6']]);
+const PILE2=makePile($('pile2'),[['ก็บอกแล้ว','#2F86D6'],['ไม่ยอม!','#D7263D'],['?!','#2F86D6'],['ตัดสินไม่ได้','#D7263D'],['!!','#2F86D6'],['อีกรอบ','#D7263D'],['เถียงต่อ','#2F86D6']]);
+function pileF(P0,t,a,b,dt=0.08){ P0.forEach(p=>{const s=a+p.i*dt, v=win(t,s,b,BOUNCE); if(v<=0){p.e.style.opacity='0';return;}
+  const land=clamp(S(t-s,16,0.6)); const x=540+(p.i%2?1:-1)*(60+((p.i*37)%60))+6*Math.sin(t*4+p.i); const y0=1030-p.i*74;
+  P(p.e,x,lerp(y0-700,y0,land),1,(p.i%2?1:-1)*(4+(p.i*7)%6)+2*Math.sin(t*5+p.i),clamp(v*3));});}
+// ---------- G argue ----------
+const BUR=(g)=>[...Array(10)].map((_,i)=>el('path',{d:'M0 -18 L10 0 L0 18 L-10 0 Z',fill:i%2?YEL:'#fff',stroke:INK,'stroke-width':4,opacity:0},$(g)));
+const B1=BUR('burst1'),B2=BUR('burst2'),B3=BUR('burst3');
+function burst(B,t,a,cx,cy,R=260){B.forEach((p,i)=>{const u=t-a; if(u<0||u>0.7){p.setAttribute('opacity','0');return;}
+  const ang=i*36*Math.PI/180, r=60+R*eo(u/0.5); p.setAttribute('opacity',f2(1-clamp((u-0.4)/0.3)));
+  p.setAttribute('transform',`translate(${f2(cx+r*Math.cos(ang))} ${f2(cy+r*Math.sin(ang))}) rotate(${f2(i*36+90)}) scale(${f2(2.2-1.4*eo(u/0.7))} 1)`);});}
+function argueF(t){ if(t<T.argue-0.1||t>T.decade+0.2)return;
+  const hit=K.thiang+0.25, a=T.argue;
+  const pin=clamp((t-a)/(hit-a)), xin=ei(pin), rec=t>=hit?S(t-hit,14,0.45):0, out=t>=K.sakwong?eo((t-K.sakwong)/0.3):0;
+  const xL=lerp(-300,315,xin)-40*rec+0*out, xR=lerp(1380,765,xin)+40*rec;
+  P($('abL'),xL,560-480*out+flt(t,0,6),1-0.4*out,-6+4*W(t),1-out); P($('abR'),xR,560-480*out+flt(t,1,6),1-0.4*out,6-4*W(t+1),1-out);
+  burst(B1,t,hit,540,560); pileF(PILE1,t,K.sakwong,T.decade,0.09);
+}
+// ---------- G decade ----------
+const YEARS=[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017], WIN=['R','M','M','M','M','R','R','M','R','R'];
+const SLOTS=YEARS.map((y,i)=>{const g=el('g',{opacity:0},$('slots')); const cx=180+(i%5)*180, cy=i<5?520:720;
+  const r=el('rect',{x:-78,y:-88,width:156,height:176,rx:26,fill:'#141833',stroke:INK,'stroke-width':8},g);
+  const tx=el('text',{x:0,y:70,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':40,fill:'#fff'},g); tx.textContent=y;
+  const ring=el('circle',{cx:0,cy:-14,r:50,fill:'none',stroke:'rgba(255,255,255,.35)','stroke-width':5,'stroke-dasharray':'10 8'},g);
+  return {g,r,cx,cy,i,w:WIN[i]};});
+const PILEPOS={M:[[240,1000],[330,1000],[420,1000],[285,915],[375,915]],R:[[660,1000],[750,1000],[840,1000],[705,915],[795,915]]};
+const BALLS=SLOTS.map((s,i)=>{const u=el('use',{href:'#ball',x:-60,y:-60,width:120,height:120,opacity:0},$('balls')); const k=WIN.slice(0,i).filter(w=>w===WIN[i]).length; return {u,s,i,dst:PILEPOS[WIN[i]][k]};});
+function decF(t){ if(t<T.decade-0.1||t>T.bell+0.2)return;
+  const tl=T.timeline, v=win(t,T.decade,T.bell,[20,0.7]);
+  const up=t>=tl?S(t-tl,14,0.85):0, s0=slam(t,T.decade);
+  P($('ten'),540+flt(t,0,4),lerp(640,320,up),(t<tl?s0:1)*lerp(1,0.5,up)*(1+0.02*Math.sin(t*5)),-2+2*W(t),clamp(v*3));
+  const leave=T.split55;
+  SLOTS.forEach(s=>{const a=K.y0817+s.i*0.08, sv=win(t,a,T.bell,BOUNCE), lv=t>=leave?eo((t-leave-s.i*0.03)/0.3):0;
+    const sc=Math.max(0.001,sv*(1-lv)); s.g.setAttribute('opacity',f2(clamp(sv*2)*(1-lv)));
+    s.g.setAttribute('transform',`translate(${s.cx} ${f2(s.cy+flt(t,s.i,4))}) scale(${f2(sc)})`);
+    const wc=t>=K.songkhon+s.i*0.05?clamp((t-K.songkhon-s.i*0.05)/0.15):0;
+    s.r.setAttribute('fill',mix('#141833',s.w==='M'?'#2F86D6':'#C81F35',wc));
+    const sweep=t>=a&&t<a+0.25?1:0; s.r.setAttribute('stroke',sweep?YEL:INK);});
+  BALLS.forEach(b=>{const a=K.bdo+b.i*0.07; if(t<a){b.u.setAttribute('opacity','0');return;}
+    const land=S(t-a,16,0.5), x0=b.s.cx, y0=b.s.cy-14; let x=x0, y=lerp(y0-520,y0,land), sc=0.82;
+    const fa=leave+0.05+b.i*0.04; if(t>=fa){const u=eio((t-fa)/0.45); x=lerp(x0,b.dst[0],u); y=lerp(y0,b.dst[1],u)-160*Math.sin(Math.PI*u); sc=lerp(0.82,0.78,u);}
+    const pop=t>=H.split55?0.18*Math.exp(-(t-H.split55)*6)*Math.cos((t-H.split55)*14):0;
+    U(b.u,x,y,sc*(1+pop),t*40+b.i*30,1);});
+  const s5=t>=H.split55?slam(t,H.split55):0; P($('s55'),540,640,s5*(1+0.02*Math.sin(t*6)),-2+1.5*W(t),t>=H.split55?clamp((t-H.split55)/0.06):0);
+}
+// ---------- G bell ----------
+const RINGS=[0,1,2].map(i=>el('circle',{cx:540,cy:400,r:120,fill:'none',stroke:YEL,'stroke-width':10,opacity:0},$('bellRings')));
+function bellF(t){ if(t<T.bell-0.1||t>T.round1+0.2)return;
+  const a=K.ngan, sw=t>=a?22*Math.exp(-(t-a)*2.5)*Math.sin((t-a)*16):0, v=win(t,T.bell,T.round1,BOUNCE);
+  U($('bellU'),540,400+flt(t,0,5),Math.max(0.001,v),sw,clamp(v*2));
+  RINGS.forEach((r,i)=>{const u=((t-a)-i*0.18); if(u<0||t>T.round1){r.setAttribute('opacity','0');return;} const ph=(u%0.6)/0.6; r.setAttribute('r',f2(130+200*ph)); r.setAttribute('opacity',f2(0.8*(1-ph)));});
+  const hit=H.bell, pin=clamp((t-T.bell)/(hit-T.bell)), xin=ei(pin), rec=t>=hit?S(t-hit,12,0.45):0;
+  U($('glL'),lerp(-260,430,xin)-60*rec,960,1.15,0,1); U($('glR'),lerp(1340,650,xin)+60*rec,960,1.15,0,1);
+  $('glR').setAttribute('transform',$('glR').getAttribute('transform')+' scale(-1 1)');
+  burst(B2,t,hit,540,960,300);
+  const s=t>=hit?slam(t,hit):0; P($('laekT'),540,700,s*(1+0.03*Math.sin(t*8)),-3+2*W(t),t>=hit?clamp((t-hit)/0.06):0);
+}
+// ---------- rolling counters (registry number-wheel, closed form) ----------
+function buildCounter(e){const v=e.dataset.value; e.textContent=''; e._cols=[];
+  [...v].forEach(ch=>{const d=document.createElement('span'); d.className='dg'; const st=document.createElement('span'); st.className='strip';
+    const stops=10+Number(ch); for(let i=0;i<=stops;i++){const s=document.createElement('span'); s.textContent=String(i%10); st.appendChild(s);} d.appendChild(st); e.appendChild(d); e._cols.push({st,stops});});}
+['c91','c140','c146'].forEach(id=>buildCounter($(id)));
+function counter(e,t,a,b){const u=clamp((t-a)/(b-a)); e._cols.forEach((c,i)=>{const p=1-Math.pow(1-u,3+i*0.4); c.st.style.transform=`translateY(${f2(-c.stops*p*1.04)}em)`;});}
+// ---------- stamp (rough.js ring, seeded = deterministic) ----------
+function makeStamp(gid,label){const g=$(gid); const rc=rough.svg(g.ownerSVGElement);
+  const o={seed:7,roughness:1.6,stroke:'#FFC83D',strokeWidth:9,fill:'none'};
+  const n1=rc.rectangle(-270,-95,540,190,o), n2=rc.rectangle(-252,-78,504,156,{...o,seed:11,strokeWidth:5});
+  const inner=el('g',{},g); inner.appendChild(n1); inner.appendChild(n2);
+  const tx=el('text',{x:0,y:34,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':104,fill:'#FFC83D',stroke:INK,'stroke-width':14,'paint-order':'stroke'},inner); tx.textContent=label;
+  g.setAttribute('opacity','0'); return g;}
+const ST1=makeStamp('stamp1','สถิติโลก'), ST2=makeStamp('stamp2','สถิติโลก');
+function stampF(g,t,a,b,x,y){const v=t>=a&&t<b+0.1?1:0; if(!v){g.setAttribute('opacity','0');return;}
+  const s=slam(t,a)*1.0; g.setAttribute('opacity',f2(clamp((t-a)/0.06)*(t>b?1-clamp((t-b)/0.08):1)));
+  g.setAttribute('transform',`translate(${f2(x)} ${f2(y+flt(t,2,3))}) rotate(${f2(-8+1.5*W(t))}) scale(${f2(s)})`);}
+// ---------- G messi1 ----------
+function m1F(t){ if(t<T.round1-0.1||t>T.cr7_card+0.2)return; const end=T.cr7_card;
+  const rs=slam(t,T.round1); P($('r1chip'),540,300+flt(t,0,4),rs,-3+2*W(t),win(t,T.round1,T.count91,FAST));
+  const ca=T.messi_card, cv=win(t,ca,end,BOUNCE), mv=t>=T.count91?S(t-T.count91,14,0.85):0;
+  P($('m1card'),lerp(lerp(-300,380,clamp(S(t-ca,16,0.75))),255,mv),lerp(700,480,mv)+flt(t,1,6),lerp(1,0.55,mv),-3+2*W(t),t>=ca?clamp((t-ca)/0.08)*(t>end?0:1):0);
+  kb($('m1card'),t,ca,end,1.0,1.14,0,10);
+  const yv=t>=K.y2012?slam(t,K.y2012):0; P($('y12'),lerp(600,440,mv),lerp(430,250+0*mv,mv)+flt(t,2,4),yv*lerp(1,0.7,mv),6+2*W(t),t>=K.y2012&&t<end+0.1?clamp((t-K.y2012)/0.06):0);
+  const cv2=win(t,T.count91,end,POP), gu=t>=T.guinness?S(t-T.guinness,14,0.85):0, land=K.luk91;
+  counter($('c91'),t,K.pidiao,land);
+  const lp=t>=land?0.12*Math.exp(-(t-land)*6)*Math.cos((t-land)*16):0, hp=t>=H.count91?0.1*Math.exp(-(t-H.count91)*6)*Math.cos((t-H.count91)*14):0;
+  P($('c91'),lerp(600,620,gu),lerp(760,590,gu),(0.7+0.3*cv2)*(1+lp+hp)*lerp(1,0.78,gu),-2+W(t),clamp(cv2*2));
+  P($('c91s'),lerp(600,620,gu),lerp(980,775,gu),1,0,pinO(t,T.count91+0.15,end));
+  stampF(ST1,t,K.guin,end,580,935); P($('gwr'),580,1048,1,0,pinO(t,K.guin+0.25,end));
+}
+// ---------- G ronaldo1 ----------
+function r1F(t){ if(t<T.cr7_card-0.1||t>T.round2_cups+0.2)return; const end=T.round2_cups;
+  const ca=T.cr7_card, mv=t>=T.count140?S(t-T.count140,14,0.85):0, sh=(t>=K.suan&&t<K.suan+0.3)?10*Math.sin((t-K.suan)*80)*Math.exp(-(t-K.suan)*8):0;
+  P($('r1card'),lerp(lerp(1380,650,clamp(S(t-ca,16,0.75))),835,mv)+sh,lerp(700,470,mv)+flt(t,1,6),lerp(1,0.55,mv),3-2*W(t),1);
+  kb($('r1card'),t,ca,end,1.0,1.14,0,10);
+  // the counter-punch on "สวน": red glove crosses from the right, lands, pulls back
+  const pa=T.counter, ph=K.suan, u=t<ph?clamp((t-pa)/(ph-pa)):1, back=t>=ph?eo((t-ph-0.15)/0.35):0;
+  U($('punchR'),lerp(1350,520,ei(u))+lerp(0,800,back),600,1.3,0,(t>=pa&&back<1&&t<end)?1:0); $('punchR').setAttribute('transform',$('punchR').getAttribute('transform')+' scale(-1 1)');
+  burst(B3,t,ph,400,600,240);
+  const us=t>=T.ucl_label?slam(t,T.ucl_label):0; P($('uclT'),lerp(560,450,mv),lerp(300,290,mv)+flt(t,2,3),us*lerp(1,0.85,mv),-2+1.5*W(t),t>=T.ucl_label&&t<end+0.1?clamp((t-T.ucl_label)/0.06):0);
+  const cv=win(t,T.count140,end,POP), land=K.luk140, al=t>=T.alltime?S(t-T.alltime,14,0.85):0;
+  counter($('c140'),t,K.n140,land); const lp=t>=land?0.12*Math.exp(-(t-land)*6)*Math.cos((t-land)*16):0;
+  P($('c140'),lerp(470,470,al),lerp(740,640,al),(0.7+0.3*cv)*(1+lp)*lerp(1,0.85,al),2-W(t),clamp(cv*2));
+  P($('c140s'),470,lerp(960,840,al),1,0,pinO(t,T.count140+0.15,end));
+  const as=t>=K.makssud?slam(t,K.makssud):0; P($('allT'),480,990,as*(1+0.02*Math.sin(t*6)),-2+1.5*W(t),t>=K.makssud&&t<end+0.1?clamp((t-K.makssud)/0.06):0);
+}
+// ---------- G round2 ----------
+const CUPS=[...Array(5)].map((_,i)=>el('use',{href:'#cup',x:-70,y:-75,width:140,height:150,opacity:0,style:'color:#FFC83D'},$('cups5')));
+const B8=[...Array(8)].map((_,i)=>el('use',{href:'#ball',x:-60,y:-60,width:120,height:120,opacity:0},$('balls8')));
+function r2F(t){ if(t<T.round2_cups-0.1||t>T.round3_wc+0.2)return; const end=T.round3_wc;
+  P($('r2chip'),540,300+flt(t,0,4),slam(t,T.round2_cups),-3+2*W(t),win(t,T.round2_cups,end,FAST));
+  const sh=t>=T.messi_answer?S(t-T.messi_answer,14,0.85):0;
+  P($('fistcard'),lerp(lerp(1300,740,clamp(S(t-T.round2_cups,16,0.75))),880,sh),lerp(560,470,sh)+flt(t,1,5),lerp(1,0.6,sh),4-2*W(t),1);
+  kb($('fistcard'),t,T.round2_cups,end,1.0,1.12);
+  CUPS.forEach((c,i)=>{const a=K.haasamai+i*0.06; if(t<a){c.setAttribute('opacity','0');return;}
+    const row=i<3, x0=row?600+i*115:657+(i-3)*115, y0=row?900:1020; const x1=760+i*58, y1=700;
+    const s=S(t-a,18,0.5); U(c,lerp(x0,x1,sh),lerp(y0,y1,sh)+flt(t,i,4),Math.max(0.001,s*lerp(0.75,0.42,sh)),3*Math.sin(t*3+i),1);});
+  P($('x5'),lerp(880,960,sh)-60,lerp(800,610,sh),t>=K.haasamai?slam(t,K.haasamai+0.3)*lerp(1,0.6,sh):0,4,t>=K.haasamai+0.3?1:0);
+  const ma=T.messi_answer; P($('m2card'),lerp(-300,330,clamp(S(t-ma,16,0.75))),600+flt(t,2,6),1,-3+2*W(t),t>=ma?1:0); kb($('m2card'),t,ma,end,1.0,1.12);
+  B8.forEach((b,i)=>{const a=K.paetbai+i*0.05; if(t<a){b.setAttribute('opacity','0');return;}
+    const x=120+(i%4)*120, y=i<4?885:1010, s=S(t-a,18,0.5); U(b,x,y+flt(t,i,4)-(1-clamp(s))*120,Math.max(0.001,s*0.95),t*30+i*40,1);});
+  P($('x8'),640,945,t>=K.paetbai?slam(t,K.paetbai+0.42):0,-4,t>=K.paetbai+0.42?1:0);
+}
+// ---------- G messi3 ----------
+const RAYS=[...Array(14)].map((_,i)=>el('path',{d:'M0 0 L-60 -900 L60 -900 Z',fill:'#FFE7A0',opacity:0},$('rays')));
+function m3F(t){ if(t<T.round3_wc-0.1||t>T.ronaldo_pt+0.2)return; const end=T.ronaldo_pt, dr=T.dream;
+  P($('r3chip'),540,300+flt(t,0,4),slam(t,T.round3_wc),-3+2*W(t),win(t,T.round3_wc,dr,FAST));
+  const mv=t>=T.wc2022?S(t-T.wc2022,14,0.85):0, ca=T.round3_wc;
+  P($('mhcard'),lerp(lerp(-300,400,clamp(S(t-ca,16,0.75))),300,mv),lerp(720,680,mv)+flt(t,1,6),lerp(1,0.82,mv),-3+2*W(t),t<dr?1:0); kb($('mhcard'),t,ca,dr,1.0,1.12,0,8);
+  const wv=t>=K.y2022-0.1?S(t-(K.y2022-0.1),16,0.5):0; U($('wcU'),760,600+flt(t,3,8),Math.max(0.001,1.35*wv),5*Math.sin(t*2.5),t>=K.y2022-0.1&&t<dr?1:0);
+  P($('y22'),760,860,t>=K.y2022?slam(t,K.y2022):0,4+2*W(t),t>=K.y2022&&t<dr?1:0);
+  // the dream: big push-in on Messi, golden rays behind
+  const dv=t>=dr?S(t-dr,10,0.85):0; P($('dreamcard'),530,700+flt(t,4,5),Math.max(0.001,0.9+0.1*dv),-1.5+W(t),t>=dr?clamp((t-dr)/0.1):0); kb($('dreamcard'),t,dr,end,1.02,1.16,0,14);
+  RAYS.forEach((r,i)=>{r.setAttribute('opacity',t>=dr?f2(0.18*clamp((t-dr)/0.3)):'0'); r.setAttribute('transform',`translate(530 700) rotate(${f2(i*360/14+t*18)})`);});
+}
+// ---------- G ronaldo3 ----------
+function r3F(t){ if(t<T.ronaldo_pt-0.1||t>T.score33+0.2)return; const end=T.score33;
+  const ca=T.ronaldo_pt, mv=t>=T.euro2016?S(t-T.euro2016,14,0.85):0;
+  P($('runcard'),lerp(lerp(1380,660,clamp(S(t-ca,16,0.75))),850,mv),lerp(700,470,mv)+flt(t,1,6),lerp(1,0.52,mv),3-2*W(t),1); kb($('runcard'),t,ca,end,1.0,1.14,0,12);
+  const cnt=T.count146, gone=t>=cnt?eo((t-cnt)/0.25):0;
+  const ev=t>=K.euro?S(t-K.euro,16,0.5):0; U($('euroU'),470,640+flt(t,2,6),Math.max(0.001,1.5*ev*(1-gone)),4*Math.sin(t*2.6),t>=K.euro?1-gone:0);
+  P($('euroT'),470,860,t>=K.y2016?slam(t,K.y2016)*(1-gone):0,-3+2*W(t),t>=K.y2016?1-gone:0);
+  const cv=win(t,cnt,end,POP), land=K.luk146, rm=t>=T.record_men?S(t-T.record_men,14,0.85):0;
+  counter($('c146'),t,K.thaem,land);
+  const hp=t>=H.count146?0.1*Math.exp(-(t-H.count146)*6)*Math.cos((t-H.count146)*14):0, lp=t>=land?0.12*Math.exp(-(t-land)*6)*Math.cos((t-land)*16):0;
+  P($('c146'),470,lerp(720,600,rm),(0.7+0.3*cv)*(1+hp+lp)*lerp(1,0.78,rm),2-W(t),clamp(cv*2));
+  P($('c146s'),470,lerp(940,780,rm),1,0,pinO(t,cnt+0.15,end));
+  stampF(ST2,t,K.sathiti2,end,470,930); P($('menT'),470,1050,t>=K.phuchai?slam(t,K.phuchai):0,0,pinO(t,K.phuchai,end));
+}
+// ---------- G score ----------
+function scF(t){ if(t<T.score33-0.1||t>T.retire+0.2)return; const end=T.retire, ab=T.argue_back;
+  const up=t>=ab?S(t-ab,14,0.85):0;
+  P($('s33'),540,lerp(560,330,up),slam(t,T.score33+0.04)*lerp(1,0.6,up)*(1+0.02*Math.sin(t*6)),-2+1.5*W(t),t>=T.score33+0.04?1:0);
+  P($('s33l'),540,lerp(735,440,up),lerp(1,0.6,up),0,pinO(t,T.score33+0.2,end)*(1-up));
+  const nv=win(t,T.nobody_falls,end,BOUNCE), wob=t>=K.lom?14*Math.exp(-(t-K.lom)*3)*Math.sin((t-K.lom)*10):0;
+  U($('stL'),330,lerp(920,1300,up),Math.max(0.001,nv*1.1),-90+wob,clamp(nv*2)*(1-up)); U($('stR'),750,lerp(920,1300,up),Math.max(0.001,nv*1.1),-90-wob,clamp(nv*2)*(1-up));
+  $('stR').setAttribute('transform',$('stR').getAttribute('transform')+' scale(1 -1)');
+  pileF(PILE2,t,ab+0.06,end,0.11);
+}
+// ---------- G end ----------
+const MOTES=[...Array(26)].map((_,i)=>el('circle',{r:3+(i%4)*2,fill:'#FFE7A0',opacity:0},$('motes')));
+function endF(t){ if(t<T.retire-0.1||t>T.cta+0.2)return; const end=T.cta, r=T.retire, lu=T.lucky, era=T.era, bo=T.both;
+  // pair card: b/w slow pull-out -> colour by "โชคดี" -> leaves for the light -> back in colour on "เมสซี่กับโรนัลโด้"
+  const out=t>=era?eo((t-era)/0.25):0, back=t>=bo?S(t-bo,14,0.8):0, vis=t<era+0.3?1-out:back;
+  const sc=t<bo?lerp(1,0.8,out):lerp(0.8,1,back);
+  P($('paircard'),540,(t<bo?(t<lu?760:lerp(760,720,eio((t-lu)/0.5))):lerp(820,720,back))+flt(t,1,4),sc,(t<bo?-1:1)*1.2*W(t),vis);
+  const img=t<bo?(t-r)/(era-r):(t-bo)/(end-bo);
+  ['pairC','pairB'].forEach(id=>{$(id).style.transform=`scale(${lerp(t<bo?1.16:1.0,t<bo?1.02:1.1,clamp(img)).toFixed(4)})`; $(id).style.transformOrigin='50% 40%';});
+  const col=t<lu?0:eio((t-lu)/(H.lucky-lu)); $('pairB').style.opacity=f2(t>=bo?0:1-col);
+  P($('y26'),540,300+flt(t,0,4),t>=K.pini?slam(t,K.pini):0,-3+2*W(t),pinO(t,K.pini,lu));
+  P($('retT'),540,398,1,0,pinO(t,K.lerk,lu));
+  P($('luckT'),540,lerp(330,300,out),t>=H.lucky?slam(t,H.lucky)*(1+0.03*Math.sin(t*5)):0,-2+1.5*W(t),pinO(t,H.lucky,K.prakot));
+  // era: the two faces drift into the single light
+  const bv=win(t,era,bo,SLOW), dr=clamp((t-era)/(bo-era));
+  P($('badM'),lerp(230,350,eio(dr)),760+flt(t,2,8),Math.max(0.001,bv),-4+2*W(t),clamp(bv*2)); kb($('badM'),t,era,bo,1.05,1.15);
+  P($('badR'),lerp(850,730,eio(dr)),760+flt(t,3,8),Math.max(0.001,bv),4-2*W(t),clamp(bv*2)); kb($('badR'),t,era,bo,1.05,1.15);
+  P($('phenT'),540,440,t>=K.prakot?slam(t,K.prakot)*(1+0.02*Math.sin(t*5)):0,-2+W(t),pinO(t,K.prakot,bo+0.02));
+  MOTES.forEach((m,i)=>{if(t<era){m.setAttribute('opacity','0');return;} const ph=((t*0.25+i*0.137)%1); m.setAttribute('cx',f2(540+(((i*151)%600)-300)*(0.4+0.6*ph)+20*Math.sin(t+i)));
+    m.setAttribute('cy',f2(1400-1150*ph)); m.setAttribute('opacity',f2(0.8*Math.sin(Math.PI*ph)*clamp((t-era)/0.4)));});
+}
+// ---------- G cta ----------
+function ctaF(t){ if(t<T.cta-0.1)return; const a=T.cta;
+  const wt=t>=a?S(t-a,20,0.6):0, emph=t>=K.teamnai?0.25*(1-S(t-K.teamnai,20,0.5)):0;
+  P($('whichT'),540,320+flt(t,0,4),wt*(1+emph+0.03*Math.sin(t*5)),-3+2*W(t),clamp(wt*2));
+  const pm=1+0.06*Math.max(0,Math.sin((t-a)*7)), pr=1+0.06*Math.max(0,Math.sin((t-a)*7+Math.PI));
+  P($('btnM'),300,640+flt(t,1,5),Math.max(0.001,S(t-a-0.08,18,0.55))*pm,-3,t>=a+0.08?1:0);
+  P($('btnR'),780,640+flt(t,2,5),Math.max(0.001,S(t-a-0.16,18,0.55))*pr,3,t>=a+0.16?1:0);
+  P($('cmt'),540,860+flt(t,3,6),t>=K.men?Math.max(0.001,S(t-K.men,20,0.5)):0,8*Math.sin(t*6),t>=K.men?1:0);
+}
+// ---------- captions: spring in on the word; hidden while the hook title is up; last chunk clears before the loop seam ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  const fade=i===CAPT.length-1?1-clamp((t-(LOOP-0.06))/0.1):1;
+  capEls[i].style.opacity=f2(fade);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+function render(t){ scenes(t); splitF(t); backdrops(t); texture(t); camera(t); title(t); hookF(t); chatF(t); argueF(t); decF(t); bellF(t);
+  m1F(t); r1F(t); r2F(t); m3F(t); r3F(t); scF(t); endF(t); ctaF(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:57.0,duration:57.0,ease:'none'},0);
+render(0);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render(proxy._t));
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>
