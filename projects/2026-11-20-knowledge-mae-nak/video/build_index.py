@@ -144,8 +144,7 @@ FOOT = [('h1_canal', 'canal-v', SH['h1_canal']['ms']), ('h2_name', 'nameb-v', 0)
         ('s2_khlong', 'khlong-v', 0), ('s3_couple', 'couple-v', 0), ('s4_soldier', 'soldier-v', 0),
         ('s5_pregnant', 'preg-v', 0), ('s6_candle', 'candle-v', 0), ('s7_out', 'out-v', 0), ('s8_boat', 'boat-v', 0),
         ('s9_wait', 'wait-v', 0), ('s10_neigh', 'neigh-v', 0), ('s11_nope', 'nope-v', 0), ('s12_mortar', 'mortar-v', 0),
-        ('s14_under', 'under-v', 0), ('s15_arm', 'under2-v', 0), ('s17_temple', 'temple-v', 0),
-        ('s18_rampage', 'storm-v', 0), ('t1_paper', 'paper-v', 0), ('t5_stage', 'stage-v', 0),
+        ('s14_under', 'under-v', 0), ('s15_arm', 'under2-v', 0), ('s18_rampage', 'storm-v', 0), ('t1_paper', 'paper-v', 0), ('t5_stage', 'stage-v', 0),
         ('c1_loop', 'loop-v', round(LOOPLEN - (DUR - SH['c1_loop']['start']), 3))]
 XF = 0.12  # outgoing plate stays 0.12 s under the incoming transition (crossfade <= 0.12 s)
 def videos():

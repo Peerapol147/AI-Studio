@@ -40,7 +40,7 @@ plate nope    pixabay-6714.mp4   1.4  2.2 405:720:440:0   "$(night -0.04)" "" re
 plate mortar  pixabay-11690.mp4  1.2  1.25 405:720:470:0  "$(night 0.08 "curves=all='0/0 0.5/0.36 1/0.8'")"
 still under   stilthouse-flickr.jpg 1.4 360:640:250:30 "$(night -0.04 "$DAY")"
 still under2  stilthouse-flickr.jpg 2.5 300:533:330:150 "$(night -0.08 "$DAY")"
-plate temple  pixabay-135760.mp4 0    1.75 540:960:260:480 "$(night 0.06 "curves=all='0/0 0.4/0.2 0.8/0.5 1/0.66'")"
+# s17_temple: 135760 (daytime aerial, modern skyline) replaced by a drawn temple at night (user: "Motion ได้นะ")
 plate storm   pixabay-16160.mp4  0    1.8 405:720:440:0   "$(night 0.04)"
 # --- twist (paper) ---
 plate paper   pixabay-170043.mp4 0    2.25 405:720:300:0  "$(paper 0.02)"

@@ -107,6 +107,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%ICONS%%
 <radialGradient id="warm"><stop offset="0" stop-color="#F2B25C" stop-opacity=".85"/><stop offset=".35" stop-color="#F2B25C" stop-opacity=".35"/><stop offset="1" stop-color="#F2B25C" stop-opacity="0"/></radialGradient>
 <radialGradient id="limeG" cx=".38" cy=".34"><stop offset="0" stop-color="#D8F27A"/><stop offset=".6" stop-color="#8CC63F"/><stop offset="1" stop-color="#4E8A1E"/></radialGradient>
+<radialGradient id="moonG"><stop offset="0" stop-color="#8DB7BE" stop-opacity=".42"/><stop offset=".55" stop-color="#6E9AA3" stop-opacity=".18"/><stop offset="1" stop-color="#6E9AA3" stop-opacity="0"/></radialGradient>
 <linearGradient id="winG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD58A"/><stop offset="1" stop-color="#E98F3A"/></linearGradient>
 </defs></svg>
 
@@ -130,7 +131,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <div class="sc" id="sh-s14"><div class="kb" id="kb-s14">%%V_S14%%<svg class="sil" id="sv-s14" viewBox="0 0 1080 1920"></svg></div></div>
   <div class="sc" id="sh-s15"><div class="kb" id="kb-s15">%%V_S15%%<svg class="sil" id="sv-s15" viewBox="0 0 1080 1920"></svg></div></div>
   <div class="sc" id="sh-s16"><div class="nbg" style="background:radial-gradient(ellipse at 50% 38%,#163039 0%,#0A161C 50%,#030608 100%)"></div><div class="kb" id="kb-s16"><svg class="sil" id="sv-s16" viewBox="0 0 1080 1920"></svg></div></div>
-  <div class="sc" id="sh-s17"><div class="kb" id="kb-s17">%%V_S17%%</div></div>
+  <div class="sc" id="sh-s17"><div class="nbg" style="background:radial-gradient(ellipse at 62% 30%,#2A4A54 0%,#14262E 40%,#060D12 100%)"></div><div class="kb" id="kb-s17"><svg class="sil" id="sv-s17" viewBox="0 0 1080 1920"></svg></div></div>
   <div class="sc" id="sh-s18"><div class="kb" id="kb-s18">%%V_S18%%<svg class="sil" id="sv-s18" viewBox="0 0 1080 1920"></svg></div></div>
   <div class="sc" id="sh-t1"><div class="kb" id="kb-t1">%%V_T1%%</div></div>
   <div class="sc" id="sh-desk"><div id="desk">
@@ -207,7 +208,7 @@ const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
 const f2=v=>v.toFixed(2);
 const win=(t,a,b,sp=POP)=>{if(t<a||t>=b+0.1)return 0; const i=S(t-a,sp[0],sp[1]); const o=t>b?1-clamp((t-b)/0.08):1; return Math.max(0,i)*o;};
 const fade=(t,a,b,fi=0.15,fo=0.1)=>(t<a||t>=b+fo)?0:clamp((t-a)/fi)*(t>b?1-clamp((t-b)/fo):1);
-const SIL='#03070A', RIM='rgba(160,205,214,.42)', INKC='#3B2414', INKL='#6B4426';
+const SIL='#03070A', RIM='rgba(160,205,214,.3)', INKC='#3B2414', INKL='#6B4426';
 const sv=id=>$('sv-'+id);
 const TW=T.t1_paper, TD=T.t2_doc, TC=T.c1_loop;
 
@@ -419,18 +420,22 @@ function limeUnder(t){ L14.setAttribute('transform',`translate(380 1330) rotate(
 
 // ---------- s15 THE ARM: reaches down through the floor, stretches long on "ยาว" ----------
 const C15=sv('s15');
+const back15=el('ellipse',{cx:470,cy:1000,rx:460,ry:560,fill:'url(#moonG)'},C15);   // cold moonlight behind the arm so the black shape reads
 el('rect',{x:-100,y:500,width:1300,height:70,fill:'#05090C',stroke:'rgba(160,205,214,.25)','stroke-width':3},C15);
 [160,880].forEach(x=>el('rect',{x,y:570,width:36,height:900,fill:'#04080A'},C15));
+el('rect',{x:-100,y:1360,width:1300,height:120,fill:'rgba(4,8,10,.6)'},C15);
 const L15=lime(C15); L15.setAttribute('transform','translate(380 1330) rotate(-20) scale(.85)');
-const ARM=el('g',{},C15), armP=el('path',{fill:SIL,stroke:RIM,'stroke-width':3},ARM), HAND=el('g',{},ARM);
-el('path',{d:'M-22 -6 C-30 20 -26 44 -10 54 L12 54 C26 44 30 20 22 -6 Z',fill:SIL,stroke:RIM,'stroke-width':3},HAND);
-[-16,-6,5,15].forEach((x,i)=>el('path',{d:`M${x} 46 L${x+(i-1.5)*3} ${82+(i===1||i===2?8:0)}`,stroke:SIL,'stroke-width':10,'stroke-linecap':'round'},HAND));
-const ANG=17.3, LMAX=724;
+const ARM=el('g',{},C15), armP=el('path',{fill:'#020405',stroke:'rgba(150,200,210,.3)','stroke-width':3},ARM), HAND=el('g',{},ARM);
+const HP={fill:'#020405',stroke:'rgba(150,200,210,.3)','stroke-width':3};
+el('path',{d:'M-30 -8 C-40 26 -36 58 -16 72 L16 72 C36 58 40 26 30 -8 Z',...HP},HAND);
+[[-26,64,-38,128],[-10,70,-14,146],[6,70,8,150],[22,64,30,134]].forEach(([x1,y1,x2,y2])=>el('path',{d:`M${x1} ${y1} L${x2} ${y2}`,stroke:'#020405','stroke-width':15,'stroke-linecap':'round'},HAND));
+el('path',{d:'M-30 20 L-58 70',stroke:'#020405','stroke-width':15,'stroke-linecap':'round'},HAND);
+const ANG=17.3, LMAX=660;
 function arm(t){
   const a=K.yuen, h=H.s15_arm;
   const L=t<a?0:(t<h?150*S(t-a,4,0.9):150+(LMAX-150)*S(t-h,7,0.85));
   const bend=24*Math.sin(t*3.1)*clamp(L/300);
-  armP.setAttribute('d',`M-18 0 Q${f2(-18+bend)} ${f2(L/2)} -13 ${f2(L)} L13 ${f2(L)} Q${f2(18+bend)} ${f2(L/2)} 18 0 Z`);
+  armP.setAttribute('d',`M-26 0 Q${f2(-26+bend)} ${f2(L/2)} -20 ${f2(L)} L20 ${f2(L)} Q${f2(26+bend)} ${f2(L/2)} 26 0 Z`); back15.setAttribute('opacity',f2(0.8+0.2*Math.sin(t*3)));
   HAND.setAttribute('transform',`translate(0 ${f2(L-6)}) rotate(${f2(4*Math.sin(t*5))})`);
   ARM.setAttribute('transform',`translate(620 560) rotate(${ANG})`);
   ARM.setAttribute('opacity',L>2?'1':'0');
@@ -452,6 +457,31 @@ function eyes(t){
     const lx=6*Math.sin(t*1.7); e.iris.setAttribute('cx',f2(lx)); e.pup.setAttribute('cx',f2(lx)); e.pup.setAttribute('r',f2(22-9*w)); e.hl.setAttribute('cx',f2(lx+14));
     e.brow.setAttribute('transform',`translate(0 ${f2(-30*w-10*o)})`);});
   band.setAttribute('opacity',f2(0.2+0.06*Math.sin(t*7)));
+}
+
+// ---------- s17 temple at night (graphic: the daytime aerial footage showed a modern skyline) + the husband running to it ----------
+const C17=sv('s17');
+const moon17=el('circle',{cx:720,cy:470,r:70,fill:'#DCE8E6',opacity:.85},C17); el('circle',{cx:720,cy:470,r:190,fill:'rgba(200,230,235,.12)'},C17);
+const TMP=el('g',{transform:'translate(640 1250)'},C17);
+const TF={fill:'#03070A',stroke:'rgba(160,205,214,.35)','stroke-width':3,'stroke-linejoin':'round'};
+el('path',{d:'M-330 0 L330 0 L310 -40 L-310 -40 Z',...TF},TMP);
+el('path',{d:'M-250 -40 L250 -40 L250 -230 L-250 -230 Z',...TF},TMP);
+[-190,-110,-30,50,130,210].forEach(x=>el('rect',{x:x-6,y:-200,width:22,height:150,fill:'#F2B25C',opacity:.55},TMP));
+el('path',{d:'M-310 -220 L310 -220 L200 -330 L-200 -330 Z',...TF},TMP);
+el('path',{d:'M-230 -320 L230 -320 L120 -450 L-120 -450 Z',...TF},TMP);
+el('path',{d:'M-140 -440 L140 -440 L0 -600 Z',...TF},TMP);
+el('path',{d:'M0 -600 C6 -640 22 -660 40 -650',fill:'none',stroke:'#03070A','stroke-width':12,'stroke-linecap':'round'},TMP);
+[[-310,-220],[310,-220],[-230,-320],[230,-320]].forEach(([x,y])=>el('path',{d:`M${x} ${y} C${x+(x<0?-20:20)} ${y-30} ${x+(x<0?-10:10)} ${y-60} ${x+(x<0?-34:34)} ${y-66}`,fill:'none',stroke:'#03070A','stroke-width':10,'stroke-linecap':'round'},TMP));
+el('rect',{x:-1000,y:1250,width:3000,height:700,fill:'#03070A'},C17);
+const glow17=glow(C17,640,1120,260);
+const run17=person(C17,{lower:'legs'});
+function temple(t){
+  const u=clamp((t-T.s17_temple)/1.6), x=lerp(150,470,eo(u)), sc=lerp(0.62,0.42,u);
+  place(run17,x,lerp(1420,1330,u)+6*Math.abs(Math.sin(t*14)),sc,false);
+  run17.g.setAttribute('transform',run17.g.getAttribute('transform')+' rotate(8)');
+  run17.legs.forEach((l,i)=>l.setAttribute('transform',`translate(${i?16:-16} -215) rotate(${f2((i?1:-1)*34*Math.sin(t*14))})`));
+  run17.arms.forEach((ag,i)=>ag.setAttribute('transform',`translate(${i?50:-50} -388) rotate(${f2((i?-1:1)*30*Math.sin(t*14))})`));
+  glow17.setAttribute('r',f2(250+14*Math.sin(t*6))); moon17.setAttribute('opacity',f2(0.8+0.05*Math.sin(t*2)));
 }
 
 // ---------- s18 rampage: a lantern swinging in the gale ----------
@@ -480,8 +510,8 @@ function desk(t){
 }
 // the document card: one element, content morphs A (สยามประเภท 2442) -> B (นาก = ลูกสาวขุนศรี) -> C (ผัว ชุ่ม / มาก fades)
 const docV=t=>win(t,TD,T.t5b_some,BOUNCE);
-const docS=track(1,[[T.t2b_year,0.9],[T.t3_khunsri,1],[T.t4b_rumor,0.72],[T.t5_stage,0.62]]), docY=track(0,[[T.t2b_year,-60],[T.t3_khunsri,0],[T.t4b_rumor,-80],[T.t5_stage,-110]]);
-const docXs=track(0,[[T.t5_stage,-150]]);
+const docS=track(1,[[T.t2b_year,0.9],[T.t3_khunsri,1],[T.t4b_rumor,0.72],[T.t5_stage,0.55]]), docY=track(0,[[T.t2b_year,-60],[T.t3_khunsri,0],[T.t4b_rumor,-80],[T.t5_stage,-110]]);
+const docXs=track(0,[[T.t5_stage,-175]]);
 function docF(t){
   const v=docV(t), d=$('doc'); if(!show(d,clamp(v*1.6)))return;
   d.style.transform=`translate(${f2(docXs(t))}px,${f2(docY(t)+40*(1-clamp(v))+5*Math.sin(t*1.6))}px) rotate(${f2(-1.2+0.6*Math.sin(t*1.1)-2*(1-clamp(v)))}deg) scale(${f2(Math.max(0.001,docS(t)*(0.8+0.2*v)))})`;
@@ -495,8 +525,8 @@ function docF(t){
   const ch=t>=K.chum?S(t-K.chum,16,0.55):0; $('chum').style.transform=`scale(${f2(Math.max(0.001,0.3+0.7*ch))})`; $('chum').style.opacity=f2(clamp(ch*2));
 }
 // "มาก": sits beside ชุ่ม (big, grey), fades + shrinks on "ไม่ใช่มาก" (no strike-through), then floats to the later part of the timeline
-const mX=track(640,[[T.t4b_rumor,700,MORPH]]), mY=track(560,[[H.t4_chum,640,SOFT],[T.t4b_rumor,905,MORPH]]);
-const mS=track(1.25,[[H.t4_chum,0.7,MORPH],[T.t4b_rumor,0.62,MORPH]]), mO=track(0.75,[[H.t4_chum,0.32,SOFT],[K.wakan,0.95,MORPH]]);
+const mX=track(760,[[T.t4b_rumor,620,MORPH]]), mY=track(500,[[H.t4_chum,560,SOFT],[T.t4b_rumor,905,MORPH]]);
+const mS=track(1.0,[[H.t4_chum,0.7,MORPH],[T.t4b_rumor,0.62,MORPH]]), mO=track(0.75,[[H.t4_chum,0.32,SOFT],[K.wakan,0.95,MORPH]]);
 function makF(t){
   const e=$('makC'), a=T.t4_chum+0.2, v=win(t,a,T.t5b_some,POP); if(!show(e,clamp(v*1.4)*clamp(mO(t))))return;
   const col=t>=K.wakan?mix('#7A6A58','#8A4B12',clamp((t-K.wakan)/0.3)):'#7A6A58'; e.style.color=col;
@@ -511,8 +541,8 @@ const tYr=el('text',{x:200,y:TY+76,'text-anchor':'middle','font-family':'Kanit',
 const tNow=el('text',{x:790,y:TY+72,'text-anchor':'middle','font-family':'Kanit','font-weight':700,'font-size':44,fill:INKL},TLg); tNow.textContent='ปัจจุบัน';
 const tBr=el('path',{d:`M220 ${TY-46} Q510 ${TY-110} 800 ${TY-46}`,stroke:INKL,'stroke-width':6,fill:'none','stroke-dasharray':'14 12'},TLg);
 const tBrT=el('text',{x:510,y:TY-104,'text-anchor':'middle','font-family':'Kanit','font-weight':700,'font-size':46,fill:INKL},TLg); tBrT.textContent='ร้อยกว่าปี';
-const tLate=el('circle',{cx:700,cy:TY,r:18,fill:'#F3E3BF',stroke:'#8A4B12','stroke-width':6,'stroke-dasharray':'8 6'},TLg);
-const tLateT=el('text',{x:700,y:TY+72,'text-anchor':'middle','font-family':'Kanit','font-weight':700,'font-size':44,fill:'#8A4B12'},TLg); tLateT.textContent='ทีหลัง';
+const tLate=el('circle',{cx:620,cy:TY,r:18,fill:'#F3E3BF',stroke:'#8A4B12','stroke-width':6,'stroke-dasharray':'8 6'},TLg);
+const tLateT=el('text',{x:620,y:TY+72,'text-anchor':'middle','font-family':'Kanit','font-weight':700,'font-size':44,fill:'#8A4B12'},TLg); tLateT.textContent='ทีหลัง';
 function timeline(t){
   const v=win(t,T.t2b_year,T.t5b_some,FAST); TLg.setAttribute('opacity',f2(clamp(v*1.5))); if(v<0.003)return;
   const g=clamp(S(t-T.t2b_year,6,1)); tLine.setAttribute('d',`M150 ${TY} L${f2(150+690*g)} ${TY}`); tHead.setAttribute('opacity',f2(clamp((g-0.9)*10)));
@@ -525,15 +555,15 @@ function timeline(t){
 // tags ว่ากันว่า / บางตำรา (⚠️ claims): the บางตำรา tag stays on screen through t6 and t7
 function tags(t){
   const w=$('tagW'), vw=win(t,K.wakan,T.t5b_some,BOUNCE);
-  if(show(w,clamp(vw*2))) w.style.transform=`translate(${f2(120)}px,${f2(262+4*Math.sin(t*2))}px) rotate(${f2(-3+Math.sin(t*1.6))}deg) scale(${f2(Math.max(0.001,vw))})`;
+  if(show(w,clamp(vw*2))) w.style.transform=`translate(${f2(120)}px,${f2(770+4*Math.sin(t*2))}px) rotate(${f2(-3+Math.sin(t*1.6))}deg) scale(${f2(Math.max(0.001,vw))})`;
   const b=$('tagB'), vb=win(t,K.bang,T.t8_lime,BOUNCE), small=t>=T.t6_boy?S(t-T.t6_boy,FAST[0],FAST[1]):0;
   if(show(b,clamp(vb*2))) b.style.transform=`translate(${f2(lerp(300,120,small))}px,${f2(lerp(330,262,small)+4*Math.sin(t*2))}px) rotate(${f2(-3+Math.sin(t*1.6))}deg) scale(${f2(Math.max(0.001,vb*lerp(1.5,1,small)))})`;
 }
 // t5 stage card (the curtain footage as a photo card, not full frame) pinned above "ทีหลัง"
 function stageF(t){
   const c=$('stageCard'), l=$('stageLab'), v=win(t,T.t5_stage,T.t5b_some,BOUNCE);
-  if(show(c,clamp(v*1.6))) c.style.transform=`translate(${f2(470)}px,${f2(420+30*(1-clamp(v)))}px) rotate(${f2(3-1.2*Math.sin(t*1.4))}deg) scale(${f2(Math.max(0.001,0.7+0.3*v))})`;
-  const lv=t>=K.lakhon?win(t,K.lakhon,T.t5b_some,POP):0; if(show(l,clamp(lv*2))) l.style.transform=`translate(${f2(560)}px,${f2(860)}px) scale(${f2(Math.max(0.001,lv))})`;
+  if(show(c,clamp(v*1.6))) c.style.transform=`translate(${f2(540)}px,${f2(300+30*(1-clamp(v)))}px) rotate(${f2(3-1.2*Math.sin(t*1.4))}deg) scale(${f2(Math.max(0.001,0.7+0.3*v))})`;
+  const lv=t>=K.lakhon?win(t,K.lakhon,T.t5b_some,POP):0; if(show(l,clamp(lv*2))) l.style.transform=`translate(${f2(640)}px,${f2(760)}px) scale(${f2(Math.max(0.001,lv))})`;
 }
 // t5b-t8b ink drawings (sketchy, dashed, semi-transparent: "บางตำรา", not fact)
 const DK=sv('desk2');
@@ -556,12 +586,12 @@ function inkF(t){
   // boy (from "อุบาย") + ? ; dad + new wife join on "เมียใหม่"; boy steps aside
   const vy=win(t,T.t6_boy,T.t8_lime,BOUNCE), side=t>=T.t7_dad?S(t-T.t7_dad,MORPH[0],MORPH[1]):0;
   boy.g.setAttribute('opacity',f2(clamp(vy*1.5))); place(boy,lerp(540,300,side),1000+20*(1-clamp(vy)),0.82,false);
-  boy.arms.forEach((ag,i)=>ag.setAttribute('transform',`translate(${i?50:-50} -388) rotate(${f2((i?-1:1)*(10+40*side))})`));
+  boy.arms.forEach((ag,i)=>ag.setAttribute('transform',`translate(${i?50:-50} -388) rotate(${f2((i?-1:1)*(8+10*side))})`));
   QM.setAttribute('opacity',f2(clamp(vy*1.5))); QM.setAttribute('x',f2(lerp(720,300,side))); QM.setAttribute('y',f2(lerp(700,520,side)+10*Math.sin(t*3)));
   QM.setAttribute('transform',`rotate(${f2(8*Math.sin(t*2.6))} ${f2(lerp(720,300,side))} 640)`);
   const vd=win(t,T.t7_dad,T.t8_lime,BOUNCE), sp=t>=K.miamai?S(t-K.miamai,BOUNCE[0],BOUNCE[1]):0;
   dad.g.setAttribute('opacity',f2(clamp(vd*1.5))); place(dad,600,1000+30*(1-clamp(vd)),1.05,false);
-  nw.g.setAttribute('opacity',f2(clamp(sp*1.5))); place(nw,770,1000+30*(1-clamp(sp)),0.98,true); hairSway(nw,t);
+  nw.g.setAttribute('opacity',f2(clamp(sp*1.5)*clamp(win(t,K.miamai,T.t8_lime,POP)*1.5))); place(nw,770,1000+30*(1-clamp(sp)),0.98,true); hairSway(nw,t);
   // t8: the lime rolls back in + "มาจากฉบับไหน?"
   const vl=win(t,T.t8_lime,TC,FAST), rl=t>=T.t8_lime?eo((t-T.t8_lime)/0.7):0;
   L8.setAttribute('opacity',f2(clamp(vl*2))); L8.setAttribute('transform',`translate(${f2(lerp(980,540,rl))} ${f2(700+14*Math.abs(Math.sin(rl*9))*(1-rl))}) rotate(${f2(-440*rl)}) scale(1.5)`);
@@ -590,7 +620,7 @@ function captions(t){
   capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
 }
 
-function render(t){ scenes(t); atmos(t); fx(t); title(t); kin(t); people(t); limeDrop(t); limeUnder(t); arm(t); eyes(t); lantern(t);
+function render(t){ scenes(t); atmos(t); fx(t); title(t); kin(t); people(t); limeDrop(t); limeUnder(t); arm(t); eyes(t); temple(t); lantern(t);
   t1h(t); desk(t); docF(t); makF(t); timeline(t); tags(t); stageF(t); inkF(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
