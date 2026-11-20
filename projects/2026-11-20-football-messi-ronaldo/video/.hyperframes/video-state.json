@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "1e4bbfb4-5faf-4b3b-8c95-fd56c650b158",
-  "currentRevision": "024e0b79-cb41-408d-b295-99b508fcc3e0",
+  "currentRevision": "65711518-dbe3-4586-9403-dcbba55796f9",
   "pendingChanges": false,
   "files": {
     ".media/manifest.jsonl": {
@@ -221,12 +221,12 @@
       "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/2c/2cbf7e7f0dd6a1795cd3ea6457347a95374179307aba09c486c651636c8120db"
     },
     "index.html": {
-      "hash": "94133b0144cc8ababfd96b4e7805ba626a151b68a791f566fadf6ad40782599f",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/94/94133b0144cc8ababfd96b4e7805ba626a151b68a791f566fadf6ad40782599f"
+      "hash": "42ec2c45c25306e79732d87da22348536065314e6fa9f26e67a809acf68573ff",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/42/42ec2c45c25306e79732d87da22348536065314e6fa9f26e67a809acf68573ff"
     },
     "index.html.tpl": {
-      "hash": "6a5be142838aa7f97004b05e3a71970bc1d1f21571588bad9151ac858feed338",
-      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/6a/6a5be142838aa7f97004b05e3a71970bc1d1f21571588bad9151ac858feed338"
+      "hash": "a06e49dc501458c20685c8aa6eec2af7158eb542e9920783836fee55646a749d",
+      "content": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/a0/a06e49dc501458c20685c8aa6eec2af7158eb542e9920783836fee55646a749d"
     },
     "meta.json": {
       "hash": "dcae9d3f4572bef6a6db1e8f79c5421fc424aa46ccd238ca472210d53cd8c32c",
@@ -513,6 +513,25 @@
           "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/36/367463d40f658a0b3f0f5c26d0e5af7dc37c16d22b710c63435204a4a109c602"
         }
       }
+    },
+    "65711518-dbe3-4586-9403-dcbba55796f9": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795152612914,
+      "endedAt": 1795152612921,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/94/94133b0144cc8ababfd96b4e7805ba626a151b68a791f566fadf6ad40782599f",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/42/42ec2c45c25306e79732d87da22348536065314e6fa9f26e67a809acf68573ff"
+        },
+        "index.html.tpl": {
+          "before": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/6a/6a5be142838aa7f97004b05e3a71970bc1d1f21571588bad9151ac858feed338",
+          "after": "/root/.cache/hyperframes/history/1e4bbfb4-5faf-4b3b-8c95-fd56c650b158/blobs/a0/a06e49dc501458c20685c8aa6eec2af7158eb542e9920783836fee55646a749d"
+        }
+      }
     }
   },
   "checks": {
@@ -521,7 +540,6 @@
       "id": "e4e708a2-b4aa-45af-b0c4-26dc19a51eb8"
     },
     "revisions": {
-      "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0": [],
       "2e11dcba-5255-4ada-8102-89fdce0ab240": [
         {
           "id": "e4e708a2-b4aa-45af-b0c4-26dc19a51eb8",
