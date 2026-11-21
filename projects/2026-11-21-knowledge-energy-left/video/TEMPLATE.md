@@ -1,0 +1,1 @@
+แม่แบบตัดต่อหลัก (ผู้ใช้: "ตัดต่อดีมาก โคตรชอบ") คัดลอกจาก branch claude/ep-2026-11-19-brainrot commit 7b088c8 (projects/2026-11-19-knowledge-brainrot/video/) ไม่รวม assets/ — ภาพ/เสียงของตอนใหม่ใส่เอง
