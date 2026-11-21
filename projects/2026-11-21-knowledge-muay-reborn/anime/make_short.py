@@ -13,6 +13,6 @@ D["short"] = {"segments": seg, "length": round(sum(b - a for a, b in seg), 2)}; 
 fc, ins = [], []
 for k, (a, b) in enumerate(seg):
     ins += ["-ss", str(a), "-t", str(b - a), "-i", f"{proj}/assets/audio/final-mix.wav"]; fc.append(f"[{k}:a]afade=t=in:d=0.04,afade=t=out:st={b - a - 0.04:.3f}:d=0.04[s{k}]")
-fc.append("".join(f"[s{k}]" for k in range(len(seg))) + f"concat=n={len(seg)}:v=0:a=1,loudnorm=I=-14:TP=-1.5[a]")
+fc.append("".join(f"[s{k}]" for k in range(len(seg))) + f"concat=n={len(seg)}:v=0:a=1,loudnorm=I=-16:TP=-4.5,alimiter=limit=0.47:level=false[a]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", ";".join(fc), "-map", "[a]", "-c:a", "aac", "-b:a", "256k", f"{proj}/assets/audio/final-mix-short.m4a"], check=True)
 print("short", D["short"])

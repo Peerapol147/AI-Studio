@@ -26,8 +26,9 @@ const A = (() => {
     brush.noFill(); brush.noHatch && brush.noHatch();
     if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || 'pen', o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2));
   }
+  let mute = false; // static/background passes silence dynamic drawing
   function poly(pts, o = {}) { // closed shape
-    if (pts.length < 2) return; style(o);
+    if (mute || pts.length < 2) return; style(o);
     brush.beginShape(o.curv === undefined ? 0.35 : o.curv);
     for (const p of pts) { const q = pt(p[0], p[1]); brush.vertex(q[0], q[1]); }
     brush.endShape(o.open ? false : true);
@@ -45,6 +46,7 @@ const A = (() => {
   const rect = (x, y, w, h, o = {}) => poly([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], { curv: 0, ...o });
   // watercolor fill (texture) — for backgrounds; no ink
   function wc(pts, color, alpha = 110, bleed = 0.15, tex = 0.4) {
+    if (mute) return;
     brush.noWash(); brush.noStroke(); brush.fill(color, alpha); brush.fillBleed(bleed); brush.fillTexture(tex, 0.25);
     brush.beginShape(0); for (const p of pts) { const q = pt(p[0], p[1]); brush.vertex(q[0], q[1]); } brush.endShape(true); brush.noFill();
   }
@@ -64,5 +66,9 @@ const A = (() => {
   // spring 0->1 with overshoot
   const spring = (t, w = 14, z = 0.45) => t <= 0 ? 0 : 1 - Math.exp(-z * w * t) * Math.cos(w * Math.sqrt(1 - z * z) * t);
   return { W, H, seed, R, push, pop, translate, scale, rotate, pt, k, reset, poly, stroke, ell, ellPts, capsule, limb, rect, wc, grad, camera, ease, lerp, clamp, spring,
-    setInk: (c, w) => { INK = c; INKW = w; }, get INK() { return INK; } };
+    setInk: (c, w) => { INK = c; INKW = w; }, get INK() { return INK; }, get mute() { return mute; }, set mute(v) { mute = v; } };
 })();
+
+// static-layer helpers (used by episode.js, consumed by player.js)
+window.LAYER = 'fg'; window.SIG = null;
+window.STATIC = (fn) => (...args) => { if (LAYER === 'sig') { window.SIG.push(JSON.stringify(args.map(a => typeof a === 'number' ? +a.toFixed(1) : a))); return; } if (LAYER !== 'bg') return; const m = A.mute; A.mute = false; fn(...args); A.mute = m; };

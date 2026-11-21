@@ -10,11 +10,15 @@ document.documentElement.className = FMT.name;
 html,body{margin:0;width:var(--W);height:var(--H);overflow:hidden;background:#000}
 main{position:relative;width:var(--W);height:var(--H)}
 canvas{position:absolute;left:0;top:0}
+#art{filter:contrast(1.07) saturate(1.1)}
+#grade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(40,90,110,.16),rgba(0,0,0,0) 45%,rgba(255,150,60,.10));mix-blend-mode:soft-light}
+#grain{position:absolute;inset:0;width:100%;height:100%;opacity:.07;mix-blend-mode:overlay;pointer-events:none;image-rendering:pixelated}
+.bars #sub{bottom:8px;font-size:44px}.short.bars #sub{bottom:auto}
 #ov{position:absolute;inset:0;pointer-events:none;font-family:'Kanit',sans-serif}
 .st{-webkit-text-stroke:12px #15101a;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.35)}
 /* subtitles (narration + dialogue) */
-#sub{position:absolute;left:50%;bottom:56px;max-width:1500px;text-align:center;font-weight:700;font-size:56px;line-height:1.25;color:#fff;transform:translateX(-50%)}
-.short #sub{bottom:auto;top:1290px;max-width:860px;font-size:64px}
+#sub{position:absolute;left:50%;bottom:56px;white-space:nowrap;text-align:center;font-weight:700;font-size:56px;line-height:1.25;color:#fff;transform:translateX(-50%)}
+.short #sub{bottom:auto;top:1290px;font-size:64px}
 #sub i{font-style:normal;font-weight:400;font-size:.62em;display:block;opacity:.9;margin-bottom:-6px}
 /* speech bubbles */
 .bub{position:absolute;background:#fffdf6;color:#15101a;border:6px solid #15101a;border-radius:46px;padding:14px 34px 20px;font-weight:700;font-size:48px;line-height:1.2;white-space:nowrap;transform-origin:50% 100%;box-shadow:0 8px 0 rgba(0,0,0,.25)}
@@ -51,7 +55,7 @@ canvas{position:absolute;left:0;top:0}
 #flash{position:absolute;inset:0;background:#fff;opacity:0}
 #bars{position:absolute;inset:0;display:none;border-top:90px solid #000;border-bottom:90px solid #000}
 </style></head><body><main>
-<div id="sepia"></div><div id="vig" style="position:absolute;inset:0;display:none;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(10,6,14,0) 55%,rgba(10,6,14,.85) 100%)"></div><div id="bars"></div>
+<div id="grade"></div><canvas id="grain" width="480" height="270"></canvas><div id="sepia"></div><div id="vig" style="position:absolute;inset:0;display:none;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(10,6,14,0) 55%,rgba(10,6,14,.85) 100%)"></div><div id="bars"></div>
 <div id="ov">
   <div id="hook" class="st"></div>
   <div id="bubs"></div><div id="fxs"></div>
@@ -72,6 +76,6 @@ const xhr = new XMLHttpRequest(); xhr.open('GET', 'episode-data.json', false); x
 <script src="engine/overlay.js"></script>
 <script>
 window.addEventListener('load', async () => { await document.fonts.ready; for (const w of ['400 40px Kanit', '700 80px Kanit', '900 100px Kanit']) await document.fonts.load(w, 'กขค');
-  const c = document.querySelector('canvas'); if (c) document.querySelector('main').prepend(c); window.ready = true; });
+  const c = document.querySelector('canvas:not(#grain)'); if (c) { c.id = 'art'; document.querySelector('main').prepend(c); } window.ready = true; });
 </script>
 </body></html>

@@ -24,7 +24,12 @@ for name, ls in groups.items():
         for k, ch in enumerate(t): sc.append((ch, w["start"] + (w["end"] - w["start"]) * k / n, w["start"] + (w["end"] - w["start"]) * (k + 1) / n))
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src]))
     # script chars, with the line index each belongs to
-    script = [];
+    # align against EVERYTHING recorded in this take (an older take may still hold lines that were re-recorded elsewhere);
+    # segments that are not current lines of this group are aligned but not exported
+    tj = json.load(open(f"{proj}/assets/audio/{name}.json")); segs = [x for x in tj.get("text", "").split("\n\n") if x.strip()] or [l["text"] for l in ls]
+    bytext = {norm(strip(l["text"])): l for l in ls}
+    ls = [bytext.get(norm(strip(sg)), {"id": None, "text": sg, "v": None}) for sg in segs]
+    script = []
     for li, l in enumerate(ls):
         for ch in norm(strip(l["text"])): script.append((ch, li))
     sm = difflib.SequenceMatcher(None, [c for c, _ in script], [c[0] for c in sc], autojunk=False)
@@ -38,9 +43,10 @@ for name, ls in groups.items():
     for li, l in enumerate(ls):
         idx = [k for k, (c, i) in enumerate(script) if i == li]; hit = [m[k] for k in idx if k in m]
         ratio = len(hit) / max(1, len(idx))
-        if ratio < 0.7: print(f"WARN {l['id']} match {ratio:.0%}")
+        if ratio < 0.7 and l["id"]: print(f"WARN {l['id']} match {ratio:.0%}")
         spans.append((sc[min(hit)][1] if hit else None, sc[max(hit)][2] if hit else None, l, ratio))
     for n, (s0, s1, l, ratio) in enumerate(spans):
+        if l["id"] is None: continue
         # boundaries: the silence that straddles the gap between this line's end and the next line's start
         prev_end = spans[n - 1][1] if n else 0.0; next_start = spans[n + 1][0] if n + 1 < len(spans) else dur
         def pick(lo, hi, side):

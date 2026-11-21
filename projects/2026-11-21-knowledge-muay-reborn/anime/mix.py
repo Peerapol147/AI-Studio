@@ -63,7 +63,7 @@ inputs = ["-i", f"{A}/vo.wav"]
 for f, off, c0, c1, g, fi, fo, dk in SEG: inputs += ["-ss", str(off), "-t", str(c1 - c0 + 0.05), "-i", f]
 OFF = 1 + len(SEG)
 for t, f, g in cues: inputs += ["-i", f"{SFX}/{f}"]
-fc = ["[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit=2[vo][sc]"]
+fc = ["[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit=3[vo][sc][sc2]"]
 dk_l, raw_l = [], []
 for k, (f, off, c0, c1, g, fi, fo, dk) in enumerate(SEG):
     ch = f"[{1+k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g}dB" + (f",afade=t=in:d={fi}" if fi else "") + (f",afade=t=out:st={max(0, c1-c0-fo):.3f}:d={fo}" if fo else "") + f",adelay={int(c0*1000)}|{int(c0*1000)}[m{k}]"
@@ -71,9 +71,14 @@ for k, (f, off, c0, c1, g, fi, fo, dk) in enumerate(SEG):
 fc.append(f"{''.join(dk_l)}amix=inputs={len(dk_l)}:normalize=0:duration=longest[md]")
 fc.append("[md][sc]sidechaincompress=threshold=0.03:ratio=5:attack=20:release=350[mduck]")
 mixin = "[vo][mduck]" + "".join(raw_l)
+sfx_l = []
 for k, (t, f, g) in enumerate(cues):
-    fc.append(f"[{OFF+k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g}dB,adelay={int(t*1000)}|{int(t*1000)}[s{k}]"); mixin += f"[s{k}]"
-fc.append(f"{mixin}amix=inputs={2+len(raw_l)+len(cues)}:normalize=0:duration=first,apad,atrim=0:{dur},loudnorm=I=-16:TP=-2:LRA=11[a]")
+    fc.append(f"[{OFF+k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g}dB,adelay={int(t*1000)}|{int(t*1000)}[s{k}]"); sfx_l.append(f"[s{k}]")
+# effects bus ducks under the voice too (reviewer: the hit buried "จระเข้ฟาดหาง", tails masked N03/N20) — hits between lines stay full
+fc.append(f"{''.join(sfx_l)}amix=inputs={len(sfx_l)}:normalize=0:duration=longest[sx]")
+fc.append("[sx][sc2]sidechaincompress=threshold=0.02:ratio=8:attack=5:release=250:makeup=1[sxd]")
+mixin += "[sxd]"
+fc.append(f"{mixin}amix=inputs={3+len(raw_l)}:normalize=0:duration=first,apad,atrim=0:{dur},loudnorm=I=-16:TP=-4.5:LRA=11,alimiter=limit=0.58:level=false[a]")
 out = f"{A}/final-mix.wav"
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "[a]", "-ar", "48000", "-c:a", "pcm_s16le", out], check=True)
 r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
