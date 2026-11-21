@@ -85,86 +85,86 @@ const S = [];
 const add = (t0, o) => S.push(Object.assign({ t0 }, o));
 // ---------------- PART 1: cold open
 add(0, { id: 'p1_hook', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', hook: 'ทุกคนคิดว่ามันขี้แพ้...', noSub: true, vig: 0.5,
-  cam: (lt) => aim({ cam0: WIDE }, 900, 640, 1.05 + 0.06 * ease(lt / 2), { rot: -0.03 }), draw: (lt, t) => { hookScene(t); vignette(90); } });
+  cam: (lt, t, sh) => aim(sh, 900, 640, 1.05 + 0.06 * ease(lt / 2), { rot: -0.03 }), draw: (lt, t) => { hookScene(t); vignette(90); } });
 add(at('B01'), { id: 'p1_bossShout', cam0: CU(1130, 520, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu_boss',
   cam: (lt, t) => Object.assign({ p: 1 + 0.04 * lt, rot: 0.04 }, shake(t, 5 * Math.max(0, 1 - lt / 0.5))),
   draw: (lt, t) => { speed(t, 980, 520, 24, '#ffe9d6'); FACE('boss', 1130, 470, 150, { anger: 1, mouth: Math.max(0.3, mouth('B', t)), eyes: 'normal' }); } });
 add(at('freeze', 0), { id: 'p1_freeze', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', flash: 0.25,
-  cam: () => aim({ cam0: WIDE }, 1000, 600, 1.35), draw: (lt, t) => { hookScene(0.4, 'shout'); vignette(140); } });
+  cam: (lt, t, sh) => aim(sh, 1000, 600, 1.35), draw: (lt, t) => { hookScene(0.4, 'shout'); vignette(140); } });
 add(at('rewind', 0), { id: 'p1_rewind', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
-  cam: (lt) => aim({ cam0: WIDE }, 1000, 600, 1.35 - 0.3 * ease(lt / 0.8)), draw: (lt, t) => { hookScene(-lt * 6); glitch(t, 18); } });
-add(at('N02', 0.05), { id: 'p1_eyes', cam0: CU(960, 470, 2.6), bg: () => STAGE.burst('#3a1a24', '#120a10'), bgKey: 'burst_dark',
-  cam: (lt) => ({ p: 1 + 0.05 * lt }), draw: (lt, t) => { FACE('kla', 960, 520, 300, { eyes: 'fierce', bangsUp: false, blink: 0 }); } });
+  cam: (lt, t, sh) => aim(sh, 1000, 600, 1.35 - 0.3 * ease(lt / 0.8)), draw: (lt, t) => { hookScene(-lt * 6); glitch(t, 18); } });
+add(at('N02', 0.05), { id: 'p1_eyes', cam0: CU(960, 470, 2.6), vig: 0.6, bg: () => STAGE.burst('#3a1a24', '#120a10'), bgKey: 'burst_dark',
+  cam: (lt) => ({ p: 1 + 0.05 * lt }), draw: (lt, t) => { FACE('kla', 960, 505, 150, { eyes: 'fierce', bangsUp: false, blink: 0 }); } });
 add(at('title', 0), { id: 'p1_title', cam0: WIDE, bg: () => STAGE.burst('#b3121f', '#3a0a10'), bgKey: 'burst_red', title: true, noSub: true,
   cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: () => {} });
 // ---------------- PART 2: the forgotten champion (gym)
 add(at('N03', 0.1), { id: 'p2_gymWide', cam0: WIDE, bg: () => STAGE.gym(), bgKey: 'gym', tag: { text: '7 วันก่อน', col: '#ffffff' },
-  cam: (lt) => aim({ cam0: WIDE }, 960, 560, 1.12 - 0.08 * ease(lt / 4)),
+  cam: (lt, t, sh) => aim(sh, 960, 560, 1.12 - 0.08 * ease(lt / 4)),
   draw: (lt, t) => { const k = Math.sin(tq(lt) * 5); A.push(); A.translate(1080, 150); A.rotate(0.03 * k); A.translate(-1080, -150); A.pop(); P('saeng', 1240, -1, k > 0.6 ? PO.jab : PO.guard, { blink: blink(t, 0.1), mood: 'calm' }); } });
 add(at('N04', 0.1), { id: 'p2_saengIntro', cam0: CU(1150, 620, 1.6), bg: () => STAGE.gym(), bgKey: 'gym_160', tag: { text: 'แสงชัย', sub: 'อดีตแชมป์มวยไทย 3 สมัย • 52 ปี', at: 0.3 },
   cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { const k = Math.sin(tq(lt) * 4); P('saeng', 1240, -1, mix(PO.guard, PO.jab, clamp01(k)), { blink: blink(t, 0.3) }); } });
 add(at('N05', 0.1), { id: 'p2_empty', cam0: CU(400, 640, 1.5), bg: () => STAGE.gym(), bgKey: 'gym_ring',
   cam: (lt) => ({ p: 1 + 0.02 * lt, dx: -30 * lt }), draw: () => {} ,
-  fxs: [{ d: 0.4, text: 'ค่าเรียน <s>500</s> <s>300</s> <b>200</b> บาท', x: 620, y: 230, size: 64, rot: -4, html: true, len: 4 }] });
+  fxs: [{ d: 0.4, text: 'ค่าเรียน <s>500</s> <s>300</s> <b>200</b> บาท', cls: 'price', x: 620, y: 230, size: 64, rot: -4, html: true, len: 4 }] });
 add(at('belt', 0), { id: 'p2_belt', cam0: CU(900, 420, 2.0), bg: () => STAGE.gym(), bgKey: 'gym_belt',
-  cam: (lt) => ({ p: 1 + 0.05 * ease(lt / 2) }), draw: (lt, t) => { P('saeng', 1150, -1, Object.assign({}, PO.stand, { head: 0.2 }), { mood: 'sad', blink: blink(t, 0.5) }); } });
+  cam: (lt) => ({ p: 1 + 0.05 * ease(lt / 2) }), draw: (lt, t) => { P('saeng', 1040, -1, Object.assign({}, PO.stand, { head: 0.2 }), { mood: 'sad', blink: blink(t, 0.5) }); } });
 add(at('S01'), { id: 'p2_sigh', cam0: CU(960, 470, 2.4), bg: () => STAGE.gym(), bgKey: 'gym_cu',
-  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('legend', 960, 520, 300, { mood: 'sad', mouth: mouth('S', t), blink: blink(t, 0.1), look: -1 }); } });
-add(at('N06', 0.1), { id: 'p2_door', cam0: CU(1700, 480, 1.5), bg: () => STAGE.gym(), bgKey: 'gym_door',
+  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('legend', 960, 505, 150, { mood: 'sad', mouth: mouth('S', t), blink: blink(t, 0.1), look: -1 }); } });
+add(at('N06', 0.1), { id: 'p2_door', cam0: CU(1560, 480, 1.5), bg: () => STAGE.gym(), bgKey: 'gym_door',
   cam: (lt) => ({ p: 1 + 0.08 * ease(lt / 3) }), draw: () => {} });
 add(at('kidgate', 0), { id: 'p2_kidDoor', cam0: CU(1500, 620, 1.4), bg: () => STAGE.gym(), bgKey: 'gym_kid', sepia: true,
   cam: (lt) => ({ p: 1 + 0.02 * lt }), draw: (lt, t) => { P('kidK', 1620, -1, PO.meek, { blink: blink(t, 0.7) }); P('saeng', 1300, 1, PO.stand, { blink: blink(t, 0.2) }); } });
 add(at('K01'), { id: 'p2_kidCU', cam0: CU(960, 470, 2.4), bg: () => STAGE.gym(), bgKey: 'gym_cu2', sepia: true,
-  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('kidK', 960, 520, 280, { mood: 'sad', mouth: mouth('K', t), blink: blink(t, 0.6), look: 1 }); } });
-add(at('S02'), { id: 'p2_headpat', cam0: CU(1460, 620, 1.5), bg: () => STAGE.gym(), bgKey: 'gym_kid2', sepia: true,
-  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { P('kidK', 1580, -1, Object.assign({}, PO.meek, { head: 0.1 }), { blink: blink(t, 0.7) });
-    P('saeng', 1380, 1, { armF: [2.1 + 0.06 * Math.sin(tq(lt) * 6), 0.4], handF: 'open', lean: 0.12, legF: [0.3, -0.5], legB: [-0.5, -0.9] }, { mood: 'happy', mouth: mouth('S', t) }); } });
+  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('kidK', 960, 505, 140, { mood: 'sad', mouth: mouth('K', t), blink: blink(t, 0.6), look: 1 }); } });
+add(at('S02'), { id: 'p2_headpat', cam0: CU(1500, 600, 1.6), bg: () => STAGE.gym(), bgKey: 'gym_kid2', sepia: true,
+  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { P('kidK', 1585, -1, Object.assign({}, PO.meek, { head: -0.05 }), { blink: blink(t, 0.7), look: -1 });
+    P('saeng', 1460, 1, { armF: [1.6 + 0.04 * Math.sin(tq(lt) * 6), 0.35], handF: 'open', lean: 0.16, head: 0.15 }, { mood: 'happy', mouth: mouth('S', t) }); } });
 add(at('N07', 0.1), { id: 'p2_kidLeaves', cam0: CU(1560, 620, 1.4), bg: () => STAGE.gym(), bgKey: 'gym_kid', sepia: true,
   draw: (lt, t) => { P('saeng', 1300, 1, PO.stand, { blink: blink(t, 0.2) }); P('kidK', 1620 + lt * 120, 1, walk(lt), {}); } });
 add(at('S03', 0.3), { id: 'p2_alone', cam0: CU(960, 470, 2.2), bg: () => STAGE.gymNight(), bgKey: 'gym_night_cu',
-  cam: (lt) => ({ p: 1 + 0.04 * lt }), draw: (lt, t) => { FACE('legend', 960, 520, 280, { mood: 'sad', mouth: mouth('S', t), eyes: lt > 1.6 ? 'shut' : 'normal', look: -1 }); } });
+  cam: (lt) => ({ p: 1 + 0.04 * lt }), draw: (lt, t) => { FACE('legend', 960, 505, 140, { mood: 'sad', mouth: mouth('S', t), eyes: lt > 1.6 ? 'shut' : 'normal', look: -1 }); } });
 // ---------------- PART 3: wake up as someone else
-add(at('N08', 0.2), { id: 'p3_bed', cam0: CU(900, 560, 1.45), bg: () => STAGE.bedroom(), bgKey: 'bed', vig: 0.6,
-  cam: (lt) => ({ p: 1 + 0.05 * lt }), draw: (lt, t) => { // lying on his back, head on the pillow (left), blanket over the body
-    FT.body({ look: 'saeng', x: 760, y: 652, s: H * 1.05, f: -1, pose: { lie: 1, lieDir: -1, armF: [0.2, 0.3], armB: [0.1, 0.2], legF: [0.02, 0], legB: [-0.02, 0] }, face: { eyes: 'shut', mouth: 0.12 * (1 + Math.sin(t * 2)) }, noShadow: true });
-    A.poly([[590, 600], [1640, 596], [1660, 700], [1630, 760], [600, 770], [570, 690]], { fill: '#5a6a9a', w: 1.3, curv: 0.3 }); A.stroke([[700, 640], [1500, 650]], { ink: '#46557e', w: 0.8 }); zzz(420, 430, t); } });
-add(at('bell', 0), { id: 'p3_black', cam0: WIDE, bg: () => STAGE.flat('#0a0a0e', '#000000'), bgKey: 'black',
+add(at('N08', 0.2), { id: 'p3_bed', cam0: CU(820, 560, 1.5), bg: () => STAGE.bedroom(), bgKey: 'bed', vig: 0.6,
+  cam: (lt) => ({ p: 1 + 0.05 * lt }), draw: (lt, t) => { // head on the pillow, blanket up to the chin
+    FACE('legend', 470, 560, 120, { eyes: 'shut', tilt: -1.45, noBody: true, mouth: 0.1 * (1 + Math.sin(t * 2)) });
+    A.poly([[540, 560], [1100, 520], [1500, 540], [1660, 600], [1660, 720], [560, 730], [520, 640]], { fill: '#5a6a9a', w: 1.4, curv: 0.35 }); A.stroke([[640, 600], [1500, 610]], { ink: '#46557e', w: 0.8 }); A.stroke([[1000, 540], [1040, 720]], { ink: '#46557e', w: 0.7 }); zzz(500, 400, t); } });
+add(at('bell', 0), { id: 'p3_black', cam0: WIDE, bg: () => STAGE.flat('#0a0a0e', '#000000', true), bgKey: 'black',
   draw: () => {}, fxs: [{ d: 0.15, text: 'กริ๊งงงง!', x: 960, y: 520, size: 150, len: 0.8 }] });
 add(at('C01'), { id: 'p3_class', cam0: WIDE, bg: () => STAGE.classroom(), bgKey: 'cls',
-  cam: (lt) => aim({ cam0: WIDE }, 900, 600, 1.08), draw: (lt, t) => { P('teacher', 300, 1, lt > 0.2 ? PO.point : PO.stand, { anger: 0.6, mouth: mouth('C', t) });
+  cam: (lt, t, sh) => aim(sh, 900, 600, 1.08), draw: (lt, t) => { P('teacher', 300, 1, lt > 0.2 ? PO.point : PO.stand, { anger: 0.6, mouth: mouth('C', t) });
     seated(t); SCH.desk(640, G, DK); P('kla', 790 - 150 + 150, -1, PO.sleep, { eyes: 'shut' }); } });
 add(at('jolt', 0), { id: 'p3_jolt', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu',
-  cam: (lt, t) => Object.assign({ p: 1.02 }, shake(t, 8 * Math.max(0, 1 - lt / 0.3))), draw: (lt, t) => { FACE('kla', 960, 540 - 40 * spr(lt, 20), 300, KF(t, { eyes: 'wide', sweat: 1 })); },
+  cam: (lt, t) => Object.assign({ p: 1.02 }, shake(t, 8 * Math.max(0, 1 - lt / 0.3))), draw: (lt, t) => { FACE('kla', 960, 515 - 30 * spr(lt, 20), 150, KF(t, { eyes: 'wide', sweat: 1 })); },
   fxs: [{ d: 0, text: '!?', x: 1260, y: 260, size: 160, len: 0.8 }] });
 add(at('S05', 0.1), { id: 'p3_hands', cam0: CU(960, 540, 1.8), bg: () => STAGE.classroom(), bgKey: 'cls_hands',
   draw: (lt, t) => { A.push(); A.reset(); const j = 4 * Math.sin(t * 40); for (const sx of [-1, 1]) { A.limb(960 + sx * 520, 1200, 960 + sx * 200 + j, 640, 34, 26, { fill: '#f1c9a5', w: 1.6 }); A.ell(960 + sx * 190 + j, 600, 60, 74, { fill: '#f1c9a5', w: 1.6 }); for (let f = 0; f < 4; f++) A.limb(960 + sx * (160 + f * 22) + j, 560, 960 + sx * (150 + f * 26) + j, 470 - (f === 1 || f === 2 ? 20 : 0), 12, 10, { fill: '#f1c9a5', w: 1.2 }); A.limb(960 + sx * 250 + j, 620, 960 + sx * 300 + j, 540, 13, 11, { fill: '#f1c9a5', w: 1.2 }); A.limb(960 + sx * 520, 1200, 960 + sx * 360, 960, 52, 44, { fill: '#fbfaf5', w: 1.6 }); } A.pop(); } });
 add(at('N09', 0.1), { id: 'p3_run', cam0: WIDE, bg: () => STAGE.corridor(), bgKey: 'corr',
   draw: (lt, t) => { const k = lt / (end('run') - at('N09', 0.1)); P('kla', lerp(-100, 2000, k), 1, mix(PO.run, Object.assign({}, PO.run, { legF: [-0.6, -1.0], legB: [0.9, -1.1], armF: [0.9, 1.4], armB: [-0.6, 1.6] }), 0.5 + 0.5 * Math.sin(tq(lt) * 16)), { eyes: 'wide', sweat: 1 }); } });
 add(at('mirror', 0), { id: 'p3_mirror', cam0: WIDE, bg: () => STAGE.bathroom(), bgKey: 'bath',
-  cam: (lt) => aim({ cam0: WIDE }, 960, 420, 1.0 + 0.25 * ease(lt / 2.2)), draw: (lt, t) => { FACE('kla', 960, 380, 260, KF(t, { eyes: 'wide', sweat: 1, mouth: lt > 0.8 ? Math.max(0.3, mouth('S', t)) : 0 })); } });
-add(at('shadowbox', 0), { id: 'p3_shadow', cam0: CU(900, 620, 1.3), bg: () => STAGE.bathroom(), bgKey: 'bath_130',
+  cam: (lt, t, sh) => aim(sh, 960, 420, 1.0 + 0.25 * ease(lt / 2.2)), draw: (lt, t) => { FACE('kla', 960, 380, 160, KF(t, { eyes: 'wide', sweat: 1, mouth: lt > 0.8 ? Math.max(0.3, mouth('S', t)) : 0 })); } });
+add(at('shadowbox', 0), { id: 'p3_shadow', cam0: CU(880, 640, 1.75), bg: () => STAGE.bathroom(), bgKey: 'bath_175',
   draw: (lt, t) => { const k = lt < 0.9 ? (Math.sin(tq(lt) * 14) > 0 ? 1 : 0) : 0; P('kla', 860, 1, lt < 1.0 ? mix(PO.guard, PO.jab, k) : PO.pant, KF(t, { sweat: lt > 1, mouth: lt > 1 ? Math.max(0.3, mouth('S', t)) : 0 })); if (lt > 1) sweatDrops(900, 380, t); } });
-add(at('pondbehind', 0), { id: 'p3_pond', cam0: CU(800, 620, 1.3), bg: () => STAGE.bathroom(), bgKey: 'bath_130b',
-  draw: (lt, t) => { P('kla', 960, 1, PO.pant, KF(t, { sweat: 1 })); P('pond', 560, 1, PO.stand, { mouth: mouth('P', t), blink: blink(t, 0.3) }); if (lt > end('P01') - at('pondbehind', 0)) {} } });
+add(at('pondbehind', 0), { id: 'p3_pond', cam0: CU(780, 640, 1.55), bg: () => STAGE.bathroom(), bgKey: 'bath_155',
+  draw: (lt, t) => { P('kla', 960, 1, PO.pant, KF(t, { sweat: 1 })); P('pond', 600, 1, PO.stand, { mouth: mouth('P', t), blink: blink(t, 0.3) }); if (lt > end('P01') - at('pondbehind', 0)) {} } });
 // ---------------- PART 4: Kla's life (classroom, break)
 add(at('P02'), { id: 'p4_twoShot', cam0: CU(900, 620, 1.35), bg: () => STAGE.classroom(), bgKey: 'cls_135',
   draw: (lt, t) => { SCH.desk(560, G, DK); SCH.desk(1080, G, DK); P('pond', 760, -1, PO.sit, { mouth: mouth('P', t), blink: blink(t, 0.3) }); P('kla', 1040, 1, PO.sit, KF(t, { look: -1 })); } });
-add(at('S08'), { id: 'p4_who', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 520, 290, KF(t, { look: -1 })) });
-add(at('P03'), { id: 'p4_whisper', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu2', draw: (lt, t) => FACE('pond', 960, 520, 290, { mouth: mouth('P', t), sweat: 1, look: Math.sin(tq(lt) * 3) > 0 ? 1 : -1 }) });
+add(at('S08'), { id: 'p4_who', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { look: -1 })) });
+add(at('P03'), { id: 'p4_whisper', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu2', draw: (lt, t) => FACE('pond', 960, 505, 145, { mouth: mouth('P', t), sweat: 1, look: Math.sin(tq(lt) * 3) > 0 ? 1 : -1 }) });
 add(at('N10', 0.1), { id: 'p4_bag', cam0: WIDE, bg: () => STAGE.flat('#c98d52', '#a8703e'), bgKey: 'desk_top',
   draw: (lt, t) => { const k = ease(lt / 1.6); A.rect(380, 260, 700, 520, { fill: '#2a3a5e', w: 1.6 }); A.rect(400, 280, 660, 120, { fill: '#33476e', w: 1 }); bookProp(lerp(730, 1260, k), lerp(520, 560, k), 340, lerp(0.2, -0.05, k)); } });
 add(at('openbook', 0), { id: 'p4_page1', cam0: WIDE, bg: () => STAGE.flat('#c98d52', '#a8703e'), bgKey: 'desk_top',
   cam: (lt) => ({ p: 1 + 0.06 * lt }), draw: () => { SCH.sketchbook(960, 560, 640, 0); },
   fxs: [{ d: 1.0, text: 'สักวันจะเก่ง<br>แบบพี่แสงชัย!', x: 1320, y: 520, size: 70, rot: -3, html: true, len: 9, cls: 'hand' }] });
-add(at('S09'), { id: 'p4_surprised', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 520, 290, KF(t, { eyes: 'wide' })) });
+add(at('S09'), { id: 'p4_surprised', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { eyes: 'wide' })) });
 add(at('lastpage', 0.4), { id: 'p4_lastpage', cam0: WIDE, bg: () => STAGE.flat('#c98d52', '#a8703e'), bgKey: 'desk_top',
   cam: (lt) => ({ p: 1.05 + 0.08 * ease(lt / 3) }), draw: () => { A.poly([[400, 180], [1520, 190], [1530, 930], [390, 920]], { fill: '#fbf7ec', w: 1.6, curv: 0.05 }); for (let i = 0; i < 9; i++) A.stroke([[460, 260 + i * 75], [1460, 262 + i * 75]], { ink: '#d8d2c2', w: 0.5, curv: 0 }); },
   fxs: [{ d: 0.6, text: 'มวยมีไว้<br>ปกป้องคน', x: 960, y: 540, size: 150, rot: -2, html: true, len: 9, cls: 'hand' }] });
 add(at('overlay', 0), { id: 'p4_memory', cam0: CU(960, 470, 2.4), bg: () => STAGE.gym(), bgKey: 'gym_cu2', sepia: true,
-  draw: (lt, t) => FACE('kidK', 960, 520, 280, { mood: 'sad', look: 1, blink: blink(t, 0.6) }) });
-add(at('S10'), { id: 'p4_realize', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 520, 290, KF(t, { mood: 'sad', tear: 1 })) });
+  draw: (lt, t) => FACE('kidK', 960, 505, 140, { mood: 'sad', look: 1, blink: blink(t, 0.6) }) });
+add(at('S10'), { id: 'p4_realize', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { mood: 'sad', tear: 1 })) });
 add(at('doorbang', 0), { id: 'p4_bang', cam0: WIDE, bg: () => STAGE.classroom(), bgKey: 'cls',
-  cam: (lt, t) => Object.assign(aim({ cam0: WIDE }, 1200, 600, 1.1), shake(t, 10 * Math.max(0, 1 - lt / 0.4))), draw: (lt, t) => { seated(t); },
+  cam: (lt, t, sh) => Object.assign(aim(sh, 1200, 600, 1.1), shake(t, 10 * Math.max(0, 1 - lt / 0.4))), draw: (lt, t) => { seated(t); },
   fxs: [{ d: 0, text: 'ปัง!!', x: 1500, y: 300, size: 170, len: 0.8 }] });
 // ---------------- PART 5: bully #1 (classroom)
 const klaDesk = (t, face = {}, pose = PO.sit) => { SCH.desk(800, G, DK); P('kla', 1000 - 60, -1, pose, KF(t, face)); };
@@ -175,17 +175,17 @@ add(at('B02', 0.05), { id: 'p5_slam', cam0: CU(1000, 600, 1.2), bg: () => STAGE.
 add(at('N14', 0.1), { id: 'p5_gang', cam0: CU(1300, 560, 1.4), bg: () => STAGE.classroom(), bgKey: 'cls_gang',
   cam: (lt) => ({ p: 1 + 0.03 * lt, rot: 0.02 }), tag: { text: 'บอส', sub: 'หัวโจก ม.5', col: '#ff8a80', at: 0.2 },
   draw: (lt, t) => { P('jo', 1460, -1, PO.stand, { mood: 'smirk', blink: blink(t, 0.4) }); P('te', 1640, -1, Object.assign({}, PO.stand, { head: -0.1 }), { mood: 'smirk', blink: blink(t, 0.8) }); P('boss', 1200, -1, PO.stand, { anger: 0.7, blink: blink(t, 0.1) }); } });
-add(at('S11'), { id: 'p5_calm', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 520, 290, KF(t, { eyes: 'shut', mood: 'calm' })) });
+add(at('S11'), { id: 'p5_calm', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { eyes: 'shut', mood: 'calm' })) });
 add(at('S12'), { id: 'p5_no', cam0: CU(1000, 600, 1.2), bg: () => STAGE.classroom(), bgKey: 'cls_120',
   draw: (lt, t) => { klaDesk(t, { look: 1 }); P('boss', 1180, -1, PO.slam, { anger: 0.5, eyes: 'wide' }); } });
-add(at('B03'), { id: 'p5_bossLaugh', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu2', draw: (lt, t) => FACE('boss', 960, 520, 290, { mood: 'smirk', mouth: mouth('B', t), anger: 0.4 }) });
+add(at('B03'), { id: 'p5_bossLaugh', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu2', draw: (lt, t) => FACE('boss', 960, 505, 145, { mood: 'smirk', mouth: mouth('B', t), anger: 0.4 }) });
 add(at('flick', 0), { id: 'p5_flick', cam0: CU(1080, 520, 1.7), bg: () => STAGE.classroom(), bgKey: 'cls_170',
   cam: (lt, t) => Object.assign({ p: 1 }, shake(t, 6 * Math.max(0, 1 - Math.abs(lt - 0.35) / 0.2))),
   draw: (lt, t) => { klaDesk(t, { eyes: lt > 0.35 && lt < 0.5 ? 'shut' : 'normal' }, Object.assign({}, PO.sit, { head: lt > 0.35 && lt < 0.6 ? -0.25 : 0 })); P('boss', 1180, -1, mix(PO.stand, PO.flick, ease(lt / 0.3)), { mood: 'smirk' }); },
   fxs: [{ d: 0.35, text: 'เป๊าะ!', x: 940, y: 300, size: 120, len: 0.6 }] });
 add(at('J01'), { id: 'p5_joLaugh', cam0: WIDE, bg: () => STAGE.classroom(), bgKey: 'cls',
-  cam: () => aim({ cam0: WIDE }, 1200, 600, 1.15), draw: (lt, t) => { backCrowd(t, 'laugh', [260, 520, 1500, 1760]); klaDesk(t); P('boss', 1180, -1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.4 }); P('jo', 1420, -1, PO.laugh, { mood: 'happy', mouth: mouth('J', t) }); P('te', 1620, -1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.5 }); } });
-add(at('S13'), { id: 'p5_smile', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 520, 290, KF(t, { mood: 'happy' })) });
+  cam: (lt, t, sh) => aim(sh, 1200, 600, 1.15), draw: (lt, t) => { backCrowd(t, 'laugh', [260, 520, 1500, 1760]); klaDesk(t); P('boss', 1180, -1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.4 }); P('jo', 1420, -1, PO.laugh, { mood: 'happy', mouth: mouth('J', t) }); P('te', 1620, -1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.5 }); } });
+add(at('S13'), { id: 'p5_smile', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { mood: 'happy' })) });
 add(at('B04'), { id: 'p5_threat', cam0: CU(1080, 430, 1.9), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
   cam: (lt) => ({ p: 1 + 0.06 * lt, rot: -0.04 }), draw: (lt, t) => { klaDesk(t, { look: 1 }); P('boss', 1130, -1, Object.assign({}, PO.slam, { lean: 0.4, head: 0.2 }), { anger: 1, mouth: mouth('B', t) }); vignette(130); } });
 // ---------------- PART 6: bully #2 + night training
@@ -195,11 +195,11 @@ add(at('dump', 0), { id: 'p6_dump', cam0: CU(1000, 600, 1.3), bg: () => STAGE.ba
   draw: (lt, t) => { P('kla', 900, 1, PO.meek, { eyes: 'shut' }); P('jo', 1120, -1, { armF: [2.8, 0.3], armB: [2.7, 0.4], handF: 'open', handB: 'open' }, { mood: 'happy', mouth: 0.4 });
     A.rect(960, 360, 120, 90, { fill: '#2a3a5e', w: 1.2 }); for (let i = 0; i < 5; i++) { const k = clamp01(lt * 1.5 - i * 0.15); A.rect(980 + i * 22 - k * 60 * (i % 2 ? 1 : -1), 460 + k * 420, 60, 44, { fill: ['#e8d8b8', '#8ecae6', '#f4a3a8', '#b8e0a8', '#3c5a8a'][i], w: 1 }); } },
   fxs: [{ d: 0.3, text: 'ตุบ ตับ!', x: 760, y: 360, size: 110, len: 0.8 }] });
-add(at('T01'), { id: 'p6_teMock', cam0: CU(960, 470, 2.4), bg: () => STAGE.backyard(), bgKey: 'back_cu', draw: (lt, t) => FACE('te', 960, 520, 290, { mood: 'happy', mouth: mouth('T', t), eyes: Math.sin(tq(lt) * 6) > 0 ? 'shut' : 'normal' }) });
+add(at('T01'), { id: 'p6_teMock', cam0: CU(960, 470, 2.4), bg: () => STAGE.backyard(), bgKey: 'back_cu', draw: (lt, t) => FACE('te', 960, 505, 145, { mood: 'happy', mouth: mouth('T', t), eyes: Math.sin(tq(lt) * 6) > 0 ? 'shut' : 'normal' }) });
 add(at('N16', 0.1), { id: 'p6_pickup', cam0: CU(900, 640, 1.3), bg: () => STAGE.backyard(), bgKey: 'back_130',
   draw: (lt, t) => { const k = clamp01((lt - 1.6) / 2); if (k <= 0) P('kla', 900, 1, { lean: 0.9, armF: [0.8, 0.2], legF: [0.5, -1.2], legB: [-0.4, -1.0], head: 0.3 }, {}); else P('kla', 900 + k * 700, 1, walk(lt), {}); } });
 add(at('N17', 0.1), { id: 'p6_night', cam0: WIDE, bg: () => STAGE.kidroom(), bgKey: 'kid',
-  cam: (lt) => aim({ cam0: WIDE }, 1200, 560, 1.05 + 0.05 * lt), draw: (lt, t) => { P('kla', 1100, 1, PO.guard, { blink: blink(t, 0.1) }); } });
+  cam: (lt, t, sh) => aim(sh, 1200, 560, 1.05 + 0.05 * lt), draw: (lt, t) => { P('kla', 1100, 1, PO.guard, { blink: blink(t, 0.1) }); } });
 add(at('pushups', 0), { id: 'p6_push', cam0: CU(900, 760, 1.5), bg: () => STAGE.kidroom(), bgKey: 'kid_150',
   draw: (lt, t) => { const k = Math.sin(tq(lt) * 6); const fall = lt > end('S14') - at('pushups', 0) - 0.4; P('kla', 900, 1, fall ? Object.assign({}, PO.down, { lieDir: -1, armF: [2.9, 0.4] }) : mix(PO.pushUp, PO.pushDown, 0.5 + 0.5 * k), KF(t, { sweat: 1, eyes: fall ? 'shut' : 'normal' })); if (!fall) sweatDrops(980, 600, t); },
   fxs: [{ d: 0.2, text: '1...', x: 600, y: 300, size: 90, len: 0.5 }, { d: 0.7, text: '2...', x: 700, y: 280, size: 90, len: 0.5 }] });
@@ -225,19 +225,19 @@ add(at('stomp', 0), { id: 'p7_stomp', cam0: CU(960, 840, 2.2), bg: () => STAGE.c
   draw: (lt, t) => { const dn = ease((lt - 0.2) / 0.25); A.push(); A.translate(960, G - 8); A.scale(1, 0.32); SCH.sketchbook(0, 0, 220, 0, false, dn > 0.9); A.pop();
     P('boss', 1020, -1, { legF: [lerp(0.9, 0.35, dn), lerp(-1.1, -0.1, dn)], legB: [-0.2, -0.1], groundF: false, lean: 0.1 }, { anger: 1 }); },
   fxs: [{ d: 0.45, text: 'แกร๊บ!', x: 760, y: 620, size: 120, len: 0.7 }] });
-add(at('B07'), { id: 'p7_sneer', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('boss', 960, 520, 290, { mood: 'smirk', anger: 0.8, mouth: mouth('B', t) }) });
+add(at('B07'), { id: 'p7_sneer', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('boss', 960, 505, 145, { mood: 'smirk', anger: 0.8, mouth: mouth('B', t) }) });
 add(at('flashback', 0), { id: 'p7_flash', cam0: CU(960, 470, 2.4), bg: () => STAGE.gym(), bgKey: 'gym_cu', sepia: true, flash: 0.2,
-  draw: (lt, t) => FACE('legend', 960, 520, 280, { mood: 'happy', blink: 0 }),
+  draw: (lt, t) => FACE('legend', 960, 505, 140, { mood: 'happy', blink: 0 }),
   fxs: [{ d: 0.1, text: '"มวยมีไว้ปกป้องคน"', x: 960, y: 900, size: 90, len: 9, rot: 0 }] });
 add(at('bangs', 0), { id: 'p7_bangs', cam0: CU(960, 470, 2.6), bg: () => STAGE.burst('#5a0a14', '#14060a'), bgKey: 'burst_blood',
-  cam: (lt) => ({ p: 1 + 0.06 * lt }), draw: (lt, t) => { const up = lt > 0.45; FACE('kla', 960, 520, 300, KF(t, { eyes: up ? 'fierce' : 'normal', bangsUp: up, blink: 0 }));
-    if (!up) { const k = ease(lt / 0.45); A.limb(1300, 1100, lerp(1100, 980, k), lerp(380, 300, k), 30, 24, { fill: '#f1c9a5', w: 1.6 }); } } });
+  cam: (lt) => ({ p: 1 + 0.06 * lt }), draw: (lt, t) => { const up = lt > 0.45; FACE('kla', 960, 505, 150, KF(t, { eyes: up ? 'fierce' : 'normal', bangsUp: up, blink: 0 }));
+    if (!up) { const k = ease(lt / 0.45); A.limb(1150, 800, lerp(1060, 980, k), lerp(450, 410, k), 16, 13, { fill: '#f1c9a5', w: 1.6 }); } } });
 add(at('N20', 0.1), { id: 'p7_rise', cam0: CU(940, 620, 1.3), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_130',
   cam: (lt) => ({ p: 1 + 0.05 * lt }), draw: (lt, t) => { const k = ease(lt / 1.2); SCH.desk(800 - 150, G, DK); P('kla', 960, 1, mix(PO.sit, PO.stand, k), { eyes: 'fierce' }, { lookOver: { bangsUp: true } }); P('boss', 1260, -1, PO.stand, { eyes: 'wide', sweat: 1 }); } });
 add(at('wai', 0), { id: 'p7_wai', cam0: CU(960, 560, 1.6), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_160', tag: { text: 'ไหว้ครู', sub: 'ก่อนออกอาวุธ', col: '#ffd23f', at: 0.2 },
   draw: (lt, t) => { P('kla', 960, 1, PO.wai, { eyes: 'shut' }, { lookOver: { bangsUp: true } }); } });
 add(at('stance', 0), { id: 'p7_stance', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', hook: '...จนกระทั่งวันนี้', vig: 0.5,
-  cam: (lt) => aim({ cam0: WIDE }, 900, 640, 1.05 + 0.06 * ease(lt / 2), { rot: -0.03 }), draw: (lt, t) => { hookScene(t, lt > 1.0 ? 'shout' : 'hook'); vignette(90); } });
+  cam: (lt, t, sh) => aim(sh, 900, 640, 1.05 + 0.06 * ease(lt / 2), { rot: -0.03 }), draw: (lt, t) => { hookScene(t, lt > 1.0 ? 'shout' : 'hook'); vignette(90); } });
 // ---------------- PART 8: the fight — ONE continuous moving camera in the classroom; cutaways only for reactions
 const F0 = at('J02', 0.05);
 const tm = n => (DATA.lines[n] || DATA.marks[n]).start - F0, te_ = n => (DATA.lines[n] || DATA.marks[n]).end - F0;
@@ -282,40 +282,40 @@ function fightDraw(lt, t) {
   if (s.jo.pose === PO.down) FT.stars(1560, 790, 60, t); if (lt > tm('naka') + 1.4) FT.stars(1230, 800, 55, t + 1);
   if (lt > tm('crash') + 0.3) FT.stars(1470, 780, 70, t + 2);
 }
-function fightCam(lt, t) { // continuous camera: medium -> push on the teep -> follow Jo -> reframe on Te -> low push on the catch -> pan with Boss -> slow push on the spin
+function fightCam(lt, t, sh) { // continuous camera: medium -> push on the teep -> follow Jo -> reframe on Te -> low push on the catch -> pan with Boss -> slow push on the spin
   const keys = [[0, 1000, 620, 1.25], [tm('teep') + 0.5, 960, 640, 1.55], [tm('teep') + 0.9, 1180, 640, 1.3], [te_('teepland'), 1150, 640, 1.2], [tm('naka'), 1000, 640, 1.45], [tm('naka') + 0.6, 1020, 680, 1.65], [te_('nakaland'), 1100, 640, 1.25],
     [tm('B08'), 1300, 600, 1.2], [tm('spin'), 1000, 620, 1.45], [tm('spinhit') + 0.1, 960, 600, 1.85], [te_('spinhit'), 980, 600, 1.9], [tm('crash'), 1250, 640, 1.2], [99, 1250, 640, 1.18]];
   let i = 0; while (i < keys.length - 2 && lt > keys[i + 1][0]) i++; const [a0, x0, y0, p0] = keys[i], [a1, x1, y1, p1] = keys[i + 1], k = ease(clamp01((lt - a0) / (a1 - a0)));
-  const s = fightState(lt); let sh = { dx: 0, dy: 0 }; if (s.impact) sh = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
-  const c = aim({ cam0: WIDE }, lerp(x0, x1, k), lerp(y0, y1, k), lerp(p0, p1, k), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += sh.dx; c.dy += sh.dy; return c;
+  const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
+  const c = aim(sh, lerp(x0, x1, k), lerp(y0, y1, k), lerp(p0, p1, k), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += shk.dx; c.dy += shk.dy; return c;
 }
-const fightShot = (id, t0) => ({ id, cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t) => fightCam(t - F0, t), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
+const fightShot = (id, t0) => ({ id, cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
-add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('mew', 960, 520, 290, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18), blink: 0 }) });
+add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('mew', 960, 505, 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18), blink: 0 }) });
 add(at('te', 0.05), fightShot('p8_fightB'));
-add(at('F01', 0.05), { id: 'p8_fern', cam0: CU(860, 470, 2.2), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu2', draw: (lt, t) => { FACE('nut', 640, 540, 250, { eyes: 'wide', mouthO: 0.5 }); FACE('fern', 1080, 520, 280, { eyes: 'wide', mouthO: 0.3 + 0.4 * spr(lt, 16) }); } });
+add(at('F01', 0.05), { id: 'p8_fern', cam0: CU(860, 470, 2.2), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu2', draw: (lt, t) => { FACE('nut', 760, 520, 118, { eyes: 'wide', mouthO: 0.5 }); FACE('fern', 975, 505, 130, { eyes: 'wide', mouthO: 0.3 + 0.4 * spr(lt, 16) }); } });
 add(at('boss', 0.05), fightShot('p8_fightC'));
 // ---------------- PART 9: why?
 add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
-  cam: (lt) => aim({ cam0: WIDE }, 1150, 640, 1.25 - 0.1 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('jo', 1560, -1, PO.down, { eyes: 'dazed' }); P('te', 1220, 1, Object.assign({}, PO.down, { lieDir: -1 }), { eyes: 'dazed' }); P('boss', 1470, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); FT.stars(1560, 790, 60, t); FT.stars(1230, 800, 55, t + 1); FT.stars(1470, 780, 70, t + 2);
+  cam: (lt, t, sh) => aim(sh, 1150, 640, 1.25 - 0.1 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('jo', 1560, -1, PO.down, { eyes: 'dazed' }); P('te', 1220, 1, Object.assign({}, PO.down, { lieDir: -1 }), { eyes: 'dazed' }); P('boss', 1470, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); FT.stars(1560, 790, 60, t); FT.stars(1230, 800, 55, t + 1); FT.stars(1470, 780, 70, t + 2);
     P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } }); },
   fxs: [{ d: 0.1, text: 'ตุ้บ!', x: 1400, y: 560, size: 130, len: 0.7 }] });
 add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
-  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('mew', 560, 560, 230, { eyes: 'wide', mouthO: 0.6 }); FACE('nut', 960, 540, 250, { eyes: 'wide', mouth: Math.max(0.3, mouth('X', t)) }); FACE('fern', 1360, 560, 230, { eyes: 'wide', mouthO: 0.7 }); } });
+  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('mew', 740, 520, 112, { eyes: 'wide', mouthO: 0.6 }); FACE('nut', 960, 505, 122, { eyes: 'wide', mouth: Math.max(0.3, mouth('X', t)) }); FACE('fern', 1180, 520, 112, { eyes: 'wide', mouthO: 0.7 }); } });
 add(at('S17'), { id: 'p9_tired', cam0: CU(860, 620, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_140',
   draw: (lt, t) => { const wob = 0.06 * Math.sin(tq(lt) * 20); P('kla', 860, 1, Object.assign({}, PO.pant, { legF: [0.2 + wob, -0.4], legB: [-0.18 - wob, -0.35] }), KF(t, { sweat: 1 }), { lookOver: { bangsUp: true } }); sweatDrops(900, 440, t); } });
 add(at('S18'), { id: 'p9_hand', cam0: CU(760, 680, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_hand',
   draw: (lt, t) => { P('pond', 560, 1, PO.down, { eyes: 'normal', look: 1 }); glassesProp(380, G - 10, 30, 0.3); P('kla', 820, -1, { lean: 0.5, head: 0.2, armF: [1.2, 0.3], handF: 'open', legF: [0.4, -0.5], legB: [-0.3, -0.3] }, KF(t, { mood: 'happy' }), { lookOver: { bangsUp: true } }); } });
-add(at('P05'), { id: 'p9_pondAsk', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('pond', 960, 520, 290, { eyes: 'wide', mouth: mouth('P', t), look: 1 }) });
+add(at('P05'), { id: 'p9_pondAsk', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('pond', 960, 505, 145, { eyes: 'wide', mouth: mouth('P', t), look: 1 }) });
 add(at('S19'), { id: 'p9_book', cam0: CU(960, 470, 2.2), bg: () => STAGE.classroom(), bgKey: 'cls_cu3',
-  draw: (lt, t) => { FACE('kla', 960, 500, 270, KF(t, { mood: 'happy', bangsUp: true, eyes: 'normal' })); bookProp(1000, 880, 220, -0.1, false); } });
+  draw: (lt, t) => { FACE('kla', 960, 490, 135, KF(t, { mood: 'happy', bangsUp: true, eyes: 'normal' })); bookProp(1000, 880, 220, -0.1, false); } });
 add(at('N24', 0.1), { id: 'p9_corridor', cam0: WIDE, bg: () => STAGE.corridor(), bgKey: 'corr',
-  cam: (lt) => aim({ cam0: WIDE }, 1250, 480, 1.0 + 0.25 * ease(lt / 3.5)), draw: (lt, t) => { P('shadow', 1300, -1, PO.stand, { eyes: 'normal' }); vignette(150); } });
-add(at('window', 0), { id: 'p9_mystery', cam0: CU(960, 470, 2.4), bg: () => STAGE.flat('#1a1622', '#0c0a10'), bgKey: 'dark',
-  draw: (lt, t) => { FACE('shadow', 960, 520, 300, { mood: 'smirk', eyes: 'fierce', mouth: mouth('M', t) }); } });
+  cam: (lt, t, sh) => aim(sh, 1250, 480, 1.0 + 0.25 * ease(lt / 3.5)), draw: (lt, t) => { P('shadow', 1300, -1, PO.stand, { eyes: 'normal' }); vignette(150); } });
+add(at('window', 0), { id: 'p9_mystery', cam0: CU(960, 470, 2.4), bg: () => STAGE.flat('#1a1622', '#0c0a10', true), bgKey: 'dark',
+  draw: (lt, t) => { FACE('shadow', 960, 505, 150, { mood: 'smirk', eyes: 'fierce', mouth: mouth('M', t) }); } });
 add(at('N25', 0.1), { id: 'p9_next', cam0: WIDE, bg: () => STAGE.burst('#1a1a2e', '#06060c'), bgKey: 'burst_night', endq: ['ตอนต่อไป', 'แล้ว<b>กล้าตัวจริง</b><br>หายไปไหน?'], noSub: true, draw: () => {} });
 add(at('N26', 0.1), { id: 'p9_question', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', endq: ['เมนต์บอกหน่อย', 'สู้ตั้งแต่ครั้งแรก<br>หรือ <b>ทนแบบแสงชัย?</b>'], noSub: true,
-  cam: (lt) => aim({ cam0: WIDE }, 1000, 600, 1.05), draw: (lt, t) => { hookScene(t, 'end'); vignette(170); } });
+  cam: (lt, t, sh) => aim(sh, 1000, 600, 1.05), draw: (lt, t) => { hookScene(t, 'end'); vignette(170); } });
 // ---- finalize: t1 = next t0; bubbles/fx from shot.fxs; move cards
 S.sort((a, b) => a.t0 - b.t0); S.forEach((s, i) => { s.t1 = i + 1 < S.length ? S[i + 1].t0 : DATA.duration + 1; });
 const FXS = []; S.forEach(s => (s.fxs || []).forEach(f => FXS.push({ t0: s.t0 + f.d, t1: Math.min(s.t1, s.t0 + f.d + (f.len || 0.7)), text: f.text, x: f.x, y: f.y, size: f.size, rot: f.rot, html: f.html, cls: f.cls })));
@@ -325,3 +325,6 @@ const EP = { shots: S, fx: FXS, bubbles: [],
   COL: { N: '#ffffff', S: '#ffd23f', B: '#ff8a80', P: '#9fe3ff', J: '#ffb36b', T: '#ffb36b', G: '#f7b2d9', F: '#f7b2d9', X: '#c8f7a8', C: '#e0c8ff', M: '#b0a8c8', K: '#ffe7a0' } };
 // before the switch into Kla's body, Saengchai's lines are his own (no "in Kla's body" label)
 EP.NAMES_AT = (v, t) => (v === 'S' && t < DATA.lines.S04.start - 0.2 ? 'แสงชัย' : EP.NAMES[v]);
+
+// ---- 9:16 Short: same shots, re-framed (tighter zoom, action a bit higher so subtitles sit on the floor area)
+if (window.FMT && FMT.name === 'short') for (const sh of S) { const c = sh.cam0; sh.cam0 = { zoom: Math.max(1.42, c.zoom * 1.3), cx: sh.scx || c.cx, cy: c.cy + (c.zoom < 1.3 ? 150 : 40) }; sh.bgKey = (sh.bgKey || sh.id) + '_short'; }

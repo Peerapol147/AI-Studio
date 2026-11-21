@@ -165,12 +165,12 @@ const FT = (() => {
     const ink0 = A.INK; A.setInk(ink0, 3.4); A.push(); A.translate(c.x, c.y); A.scale(c.s / 100); A.rotate(c.tilt || 0);
     const sh = c.shrug || 0, nk = F.neck || 1;
     // body / uniform
-    if (F.shirt === 'boy' || F.shirt === 'girl') {
+    if (c.noBody) {} else if (F.shirt === 'boy' || F.shirt === 'girl') {
       A.poly([[-126, 220], [-118, 100 + sh], [-58, 70], [58, 70], [118, 100 + sh], [126, 220]], { fill: '#fbfaf5', w: 1.4, curv: 0.25 });
       if (F.shirt === 'boy') { A.poly([[-34, 62], [0, 100], [-10, 112], [-44, 76]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.poly([[34, 62], [0, 100], [10, 112], [44, 76]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.stroke([[0, 104], [0, 220]], { w: 0.8 }); if (F.mark) A.stroke([[40, 150], [64, 148]], { ink: F.mark, w: 1.4 }); }
       else { A.poly([[-30, 64], [0, 92], [30, 64], [22, 60], [0, 80], [-22, 60]], { fill: '#eef0f4', w: 1, curv: 0.1 }); A.poly([[-4, 92], [-26, 130], [-10, 140], [0, 104], [10, 140], [26, 130], [4, 92]], { fill: F.tie, w: 1, curv: 0.2 }); A.ell(0, 96, 9, 7, { fill: F.tie, w: 1 }); }
     } else A.poly([[-130, 220], [-122, 100 + sh], [-60, 70], [60, 70], [122, 100 + sh], [130, 220]], { fill: F.shirt, w: 1.4, curv: 0.25 });
-    A.limb(0, 40, 0, 76, 16 * nk, 18 * nk, { fill: shadeHex(F.skin, 0.86), w: 1 });
+    if (!c.noBody) A.limb(0, 40, 0, 76, 16 * nk, 18 * nk, { fill: shadeHex(F.skin, 0.86), w: 1 });
     // back hair
     const st = F.style;
     if (st === 'girlBob') A.poly([[-58, 40], [-56, -30], [-36, -64], [0, -72], [36, -64], [56, -30], [58, 40], [40, 46], [44, 10], [-44, 10], [-40, 46]], { fill: F.hair, w: 1.2, curv: 0.35 });

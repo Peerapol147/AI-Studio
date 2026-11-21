@@ -5,10 +5,11 @@ const { spawnSync } = require('child_process'); const fs = require('fs'); const 
 const fmt = process.argv[2] || 'long'; const only = (process.argv[3] || '').split(',').filter(Boolean);
 const proj = path.resolve(__dirname, '..'); const D = JSON.parse(fs.readFileSync(path.join(__dirname, 'episode-data.json')));
 const outDir = path.join(proj, 'renders', 'parts'); fs.mkdirSync(outDir, { recursive: true });
-const parts = fmt === 'short' ? [['short', ...D.short.range]] : Object.entries(D.parts).map(([n, [a, b]]) => [n, a, n === String(Object.keys(D.parts).length) ? D.duration : b]);
+const parts = fmt === 'short' ? D.short.segments.map(([a, b], i) => [i + 1, a, b]) : Object.entries(D.parts).map(([n, [a, b]]) => [n, a, n === String(Object.keys(D.parts).length) ? D.duration : b]);
 const env = Object.assign({}, process.env, { GPU: '1', FMT: fmt });
 const list = [];
-for (const [n, a, b] of parts) {
+const fr = x => Math.round(x * 24) / 24; // part edges on the 24 fps frame grid (no audio drift across joins)
+for (const [n, a0, b0] of parts) { const a = fr(a0), b = fr(b0);
   const out = path.join(outDir, `${fmt}-p${String(n).padStart(2, '0')}.mp4`); list.push(out);
   if (only.length && !only.includes(String(n))) continue;
   if (fs.existsSync(out)) { console.log('skip (exists)', out); continue; }

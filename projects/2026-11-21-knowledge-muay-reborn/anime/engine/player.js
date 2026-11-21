@@ -18,7 +18,7 @@ function shotAt(t) { return EP.shots.find(s => t >= s.t0 && t < s.t1) || EP.shot
 function setup() { createCanvas(A.W, A.H, WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(1.6); }
 function draw() {
   const t = T, fr = Math.round(t * DATA.fps), shot = shotAt(t), lt = t - shot.t0;
-  const c = Object.assign({ p: 1, dx: 0, dy: 0, rot: 0 }, shot.cam ? shot.cam(lt, t) : {});
+  const c = Object.assign({ p: 1, dx: 0, dy: 0, rot: 0 }, shot.cam ? shot.cam(lt, t, shot) : {});
   background('#000');
   const fb = getBg(shot);
   push(); translate(c.dx, c.dy); rotate(c.rot); scale(c.p); image(fb, -fb.width / 2, -fb.height / 2, fb.width, fb.height); pop();

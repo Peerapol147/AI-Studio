@@ -20,7 +20,7 @@ window.overlay = (t) => {
   for (const b of (EP.bubbles || [])) if (t >= b.t0 && t < b.t1) { const d = document.createElement('div'); d.className = 'bub ' + (b.kind || ''); d.textContent = b.text;
     d.style.left = b.x + 'px'; d.style.top = b.y + 'px'; if (b.tx) d.style.setProperty('--tx', b.tx); if (b.col) d.style.borderColor = b.col; d.style.transform = `translate(-50%,-100%) scale(${0.5 + 0.5 * sp(t - b.t0, 22, 0.45)})`; bb.appendChild(d); }
   const fx = $('fxs'); fx.innerHTML = '';
-  for (const f of (EP.fx || [])) if (t >= f.t0 && t < f.t1) { const d = document.createElement('div'); d.className = 'fx ' + (f.cls || ''); if (f.html) d.innerHTML = f.text; else d.textContent = f.text; d.style.left = f.x + 'px'; d.style.top = f.y + 'px';
+  for (const f of (EP.fx || [])) if (t >= f.t0 && t < f.t1) { const d = document.createElement('div'); d.className = 'fx ' + (f.cls || ''); if (f.html) d.innerHTML = f.text; else d.textContent = f.text; const sx = FMT.name === 'short' ? 540 + (f.x - 960) * 0.56 : f.x, sy = FMT.name === 'short' ? 960 + (f.y - 540) * 1.1 : f.y; d.style.left = sx + 'px'; d.style.top = sy + 'px';
     if (f.size) d.style.fontSize = f.size + 'px'; d.style.transform = `translate(-50%,-50%) rotate(${f.rot || -8}deg) scale(${0.4 + 0.75 * sp(t - f.t0, 26, 0.35)})`; fx.appendChild(d); }
   // title / hook text / end question
   const ti = $('title'); ti.style.display = shot.title ? 'flex' : 'none'; if (shot.title) ti.style.transform = `scale(${0.9 + 0.1 * sp(lt, 12, 0.5) + 0.01 * lt})`;

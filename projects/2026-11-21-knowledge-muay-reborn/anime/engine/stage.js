@@ -115,11 +115,11 @@ const STAGE = (() => {
   function corridor() {
     A.grad(NP, X0, -200, X1 - X0, 1500, [[0, '#d8c4a4'], [1, '#c4ad8a']]);
     A.rect(300, 80, 1320, 760, { fill: '#8a5a36', w: 1.6 }); A.rect(330, 110, 1260, 700, { fill: '#e9e0cf', w: 0.8 });
-    A.wc([[340, 120], [1580, 120], [1580, 800], [340, 800]], '#f6efe0', 120, 0.2, 0.4);
+    A.grad(NP, 330, 110, 1260, 700, [[0, '#9fd0f0'], [0.6, '#d6ecf6'], [1, '#e8f4f0']]); A.seed(17); for (let i = 0; i < 6; i++) A.wc(A.ellPts(400 + i * 220, 640 + A.R(-40, 40), A.R(120, 200), A.R(90, 160)), i % 2 ? '#6f9f58' : '#86b46a', 150, 0.2, 0.5); A.rect(330, 700, 1260, 110, { fill: '#b8a88a', w: 0.6 });
     A.stroke([[960, 110], [960, 810]], { w: 1.4 }); A.stroke([[330, 460], [1590, 460]], { w: 1.2 });
     A.rect(X0, 840, X1 - X0, 500, { fill: '#c8ab84', w: 1.2 });
   }
-  function flat(c1, c2) { A.grad(NP, X0, -300, X1 - X0, 1700, [[0, c1], [1, c2]]); A.seed(9); for (let i = 0; i < 6; i++) A.wc(A.ellPts(A.R(0, 1920), A.R(0, 1080), A.R(200, 420), A.R(200, 420)), '#ffffff', 40, 0.3, 0.5); }
+  function flat(c1, c2, plain) { A.grad(NP, X0, -300, X1 - X0, 1700, [[0, c1], [1, c2]]); if (plain) return; A.seed(9); for (let i = 0; i < 6; i++) A.wc(A.ellPts(A.R(0, 1920), A.R(0, 1080), A.R(200, 420), A.R(200, 420)), '#ffffff', 40, 0.3, 0.5); }
   function burst(c1, c2, cx = 960, cy = 540) { A.grad(NP, X0, -300, X1 - X0, 1700, [[0, c1], [1, c2]]);
     for (let i = 0; i < 40; i++) { const a = i / 40 * Math.PI * 2, b = a + Math.PI / 40 * 0.8; A.poly([[cx, cy], [cx + Math.cos(a) * 2600, cy + Math.sin(a) * 2600], [cx + Math.cos(b) * 2600, cy + Math.sin(b) * 2600]], { fill: i % 2 ? '#000000' : '#ffffff', alpha: i % 2 ? 45 : 30, w: 0, curv: 0 }); } }
   return { G, HT, DESK, WB, M, classroom, classroomTense: () => classroom('tense'), gym, gymNight: () => gym('night'), bedroom, bathroom, backyard, kidroom, corridor, flat, burst };
