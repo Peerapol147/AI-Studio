@@ -24,3 +24,7 @@ const audio = path.join(proj, 'assets', 'audio', fmt === 'short' ? 'final-mix-sh
 const final = path.join(proj, 'renders', `muay-reborn-${fmt}.mp4`);
 const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', txt, '-i', audio, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'copy', '-shortest', '-movflags', '+faststart', final], { stdio: 'inherit' });
 if (r.status !== 0) process.exit(1); console.log('DONE ->', final);
+// deliver: copy the clip + thumbnail + titles/description into the user's Downloads folder
+const dl = path.join(require('os').homedir(), 'Downloads', 'muay-reborn'); fs.mkdirSync(dl, { recursive: true });
+for (const f of [final, path.join(proj, 'renders', 'muay-reborn-thumb.jpg'), path.join(proj, 'upload.md')]) if (fs.existsSync(f)) fs.copyFileSync(f, path.join(dl, path.basename(f)));
+console.log('COPIED to', dl);

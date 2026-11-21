@@ -40,11 +40,12 @@ node render-gpu.js short
 - ทำทีละท่อน ท่อนที่เสร็จแล้วจะข้าม (ล้มกลางทาง = รันคำสั่งเดิมซ้ำได้เลย)
 - อยากเรนเดอร์ท่อนเดียวใหม่: ลบ `..\renders\parts\long-pNN.mp4` แล้วรันใหม่ หรือ `node render-gpu.js long 8`
 
-## 5. ไฟล์ผลลัพธ์
+## 5. ไฟล์ผลลัพธ์ (สคริปต์คัดลอกไปที่ `%USERPROFILE%\Downloads\muay-reborn\` ให้อัตโนมัติ: MP4 + ปก + upload.md ชื่อคลิป)
 | ไฟล์ | คืออะไร |
 |---|---|
 | `projects\2026-11-21-knowledge-muay-reborn\renders\muay-reborn-long.mp4` | คลิปยาว 1920x1080 พร้อมเสียง → YouTube |
 | `projects\2026-11-21-knowledge-muay-reborn\renders\muay-reborn-short.mp4` | Short 1080x1920 พร้อมเสียง → Shorts/TikTok/Reels |
+| `renders\muay-reborn-thumb.jpg` | ปก 1280x720 (อยู่ใน branch แล้ว) |
 | `renders\parts\*.mp4` | ท่อนย่อย (ไม่มีเสียง) ลบได้หลังได้ไฟล์ด้านบน |
 
 ชื่อคลิป/คำอธิบาย/เครดิตเพลง: `upload.md` (อย่าลืมเครดิตเพลง CC BY ในคำอธิบาย)

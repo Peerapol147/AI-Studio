@@ -24,7 +24,7 @@ window.overlay = (t) => {
     if (f.size) d.style.fontSize = f.size + 'px'; d.style.transform = `translate(-50%,-50%) rotate(${f.rot || -8}deg) scale(${0.4 + 0.75 * sp(t - f.t0, 26, 0.35)})`; fx.appendChild(d); }
   // title / hook text / end question
   const ti = $('title'); ti.style.display = shot.title ? 'flex' : 'none'; if (shot.title) ti.style.transform = `scale(${0.9 + 0.1 * sp(lt, 12, 0.5) + 0.01 * lt})`;
-  const hk = $('hook'); hk.style.display = shot.hook ? 'block' : 'none'; if (shot.hook) { hk.textContent = shot.hook; hk.style.transform = `translateX(-50%) scale(${1 + 0.03 * Math.sin(t * 5)})`; }
+  const hk = $('hook'); hk.style.display = shot.hook ? 'block' : 'none'; if (shot.hook) { hk.textContent = shot.hook; if (shot.thumb) { hk.style.fontSize = '170px'; hk.style.color = '#ffe24a'; hk.style.top = '40px'; } hk.style.transform = `translateX(-50%) scale(${1 + 0.03 * Math.sin(t * 5)})`; }
   const eq = $('endq'); eq.style.display = shot.endq ? 'block' : 'none';
   if (shot.endq) { eq.querySelector('.a').textContent = shot.endq[0]; eq.querySelector('.b').innerHTML = shot.endq[1]; eq.style.transform = `translate(-50%,-50%) scale(${0.85 + 0.15 * sp(lt, 14)})`; }
   const vg = $('vig'); vg.style.display = shot.vig ? 'block' : 'none'; if (shot.vig) vg.style.opacity = shot.vig;

@@ -160,17 +160,17 @@ const FT = (() => {
     nut:  { skin: '#e3ad86', hair: '#1c181c', style: 'buzz', shirt: 'boy' },
   };
   function face(c) {
-    const F = FACES[c.who] || Object.assign({ style: LOOK[c.who].hairStyle, shirt: 'boy', glasses: LOOK[c.who].glasses }, LOOK[c.who]);
+    const F = FACES[c.who] || Object.assign({}, LOOK[c.who], { style: LOOK[c.who].hairStyle, shirt: LOOK[c.who].skirt ? 'girl' : 'boy', tie: '#26335a', glasses: LOOK[c.who].glasses });
     const ang = c.anger || 0, m = c.mouth || 0, bl = c.blink || 0, mood = c.mood || 'calm', eyes = c.eyes || 'normal';
     const ink0 = A.INK; A.setInk(ink0, 3.4); A.push(); A.translate(c.x, c.y); A.scale(c.s / 100); A.rotate(c.tilt || 0);
     const sh = c.shrug || 0, nk = F.neck || 1;
+    if (!c.noBody) A.limb(0, 40, 0, 76, 16 * nk, 18 * nk, { fill: shadeHex(F.skin, 0.86), w: 1 });
     // body / uniform
     if (c.noBody) {} else if (F.shirt === 'boy' || F.shirt === 'girl') {
       A.poly([[-126, 220], [-118, 100 + sh], [-58, 70], [58, 70], [118, 100 + sh], [126, 220]], { fill: '#fbfaf5', w: 1.4, curv: 0.25 });
       if (F.shirt === 'boy') { A.poly([[-34, 62], [0, 100], [-10, 112], [-44, 76]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.poly([[34, 62], [0, 100], [10, 112], [44, 76]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.stroke([[0, 104], [0, 220]], { w: 0.8 }); if (F.mark) A.stroke([[40, 150], [64, 148]], { ink: F.mark, w: 1.4 }); }
       else { A.poly([[-30, 64], [0, 92], [30, 64], [22, 60], [0, 80], [-22, 60]], { fill: '#eef0f4', w: 1, curv: 0.1 }); A.poly([[-4, 92], [-26, 130], [-10, 140], [0, 104], [10, 140], [26, 130], [4, 92]], { fill: F.tie, w: 1, curv: 0.2 }); A.ell(0, 96, 9, 7, { fill: F.tie, w: 1 }); }
     } else A.poly([[-130, 220], [-122, 100 + sh], [-60, 70], [60, 70], [122, 100 + sh], [130, 220]], { fill: F.shirt, w: 1.4, curv: 0.25 });
-    if (!c.noBody) A.limb(0, 40, 0, 76, 16 * nk, 18 * nk, { fill: shadeHex(F.skin, 0.86), w: 1 });
     // back hair
     const st = F.style;
     if (st === 'girlBob') A.poly([[-58, 40], [-56, -30], [-36, -64], [0, -72], [36, -64], [56, -30], [58, 40], [40, 46], [44, 10], [-44, 10], [-40, 46]], { fill: F.hair, w: 1.2, curv: 0.35 });
@@ -233,5 +233,16 @@ const FT = (() => {
     A.poly(pts, { fill: col, alpha, w: 0, curv: 0.3 });
   }
   function burst(x, y, r, t, col = '#fff6d8', n = 10) { const pts = []; for (let i = 0; i < n * 2; i++) { const a = i / (n * 2) * Math.PI * 2 + t, rr = i % 2 ? r * 0.45 : r * (0.9 + 0.2 * Math.sin(i * 3.3)); pts.push([x + Math.cos(a) * rr, y + Math.sin(a) * rr]); } A.poly(pts, { fill: col, w: 1.6, curv: 0 }); }
-  return { body, face, at, P, stars, arc, burst, shadeHex, LOOK };
+  // lightning bolt (zigzag) from (x0,y0) to (x1,y1); jitter re-seeded on twos so it crackles
+  function bolt(x0, y0, x1, y1, t, amp = 26, seg = 9, wid = 1) {
+    A.seed(Math.floor(t * 12) * 97 + Math.round(x0 + y1)); const pts = [[x0, y0]], dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L;
+    for (let i = 1; i < seg; i++) { const k = i / seg, o = (A.R() - 0.5) * 2 * amp * Math.sin(Math.PI * k) + (i % 2 ? amp * 0.5 : -amp * 0.5); pts.push([x0 + dx * k + nx * o, y0 + dy * k + ny * o]); }
+    pts.push([x1, y1]);
+    const ribbon = (w, col, al) => { const Lf = [], Rt = []; pts.forEach((p, i) => { const q = pts[Math.min(i + 1, pts.length - 1)], r = pts[Math.max(i - 1, 0)], ddx = q[0] - r[0], ddy = q[1] - r[1], l = Math.hypot(ddx, ddy) || 1, ww = w * (i === 0 || i === pts.length - 1 ? 0.3 : 1);
+      Lf.push([p[0] - ddy / l * ww, p[1] + ddx / l * ww]); Rt.push([p[0] + ddy / l * ww, p[1] - ddx / l * ww]); }); A.poly(Lf.concat(Rt.reverse()), { fill: col, alpha: al, w: 0, curv: 0 }); };
+    ribbon(13 * wid, '#ff8a1a', 150); ribbon(7 * wid, '#ffe24a', 255); ribbon(2.6 * wid, '#ffffff', 255);
+    const b = Math.floor(seg / 2); A.stroke([pts[b], [pts[b][0] + nx * amp * 1.6 + dx * 0.12, pts[b][1] + ny * amp * 1.6 + dy * 0.12]], { ink: '#ffe24a', w: 6 * wid, curv: 0 }); // fork
+  }
+  function sparks(x, y, r, t, n = 6) { for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2 + Math.floor(t * 12) * 0.7; bolt(x, y, x + Math.cos(a) * r, y + Math.sin(a) * r, t + i, r * 0.12, 5, 0.7); } }
+  return { body, face, at, P, stars, arc, burst, shadeHex, LOOK, bolt, sparks };
 })();

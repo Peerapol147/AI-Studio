@@ -7,6 +7,7 @@ D = json.load(open(f"{proj}/anime/episode-data.json")); dur = D["duration"]
 SFX = f"{proj}/../../.claude/skills/sound-effects/sfx"; A = f"{proj}/assets/audio"
 L = lambda i: D["lines"][i]; Mk = lambda n: D["marks"][n]; PT = D["parts"]
 SAD, SUS5, SUS8, BAT = f"{A}/music-jamendo-5193aa1b.mp3", f"{A}/music-jamendo-6f65e2ab.mp3", f"{A}/music-jamendo-f37c6e0b.mp3", f"{A}/music-jamendo-0be997f0.mp3"
+RING = f"{A}/ring-3476f034.mp3"  # CC0 field recording of Muay Thai ring music (pi java + drums), played for the wai kru and the fight
 # (file, track offset, clip start, clip end, gain dB, fade in, fade out, duck under voice?)
 SEG = [
     (SUS5, 22.0, 0.0, Mk("title")["start"], -19, 0.0, 0.15, 1),                       # cold open: rising tension, cut on the title hit
@@ -16,8 +17,8 @@ SEG = [
     (SUS8, 5.0, PT["5"][0], L("N17")["start"], -21, 0.0, 1.0, 1),                        # bully #1 + #2
     (SAD, 100.0, L("N17")["start"], PT["6"][1], -22, 0.8, 0.6, 1),                        # night training
     (SUS5, 0.0, Mk("grab")["start"], Mk("bangs")["start"], -20, 0.3, 0.05, 1),          # the line is crossed (cut dead before "พอแล้ว")
-    (SUS5, 40.0, Mk("wai")["start"], PT["8"][0], -18, 0.2, 0.1, 1),                      # wai -> stance
-    (BAT, 8.0, PT["8"][0], Mk("crash")["end"], -17, 0.0, 0.6, 1),                         # the fight
+    (RING, 6.0, Mk("wai")["start"], Mk("spinhit")["start"] - 0.05, -2, 0.3, 0.05, 1),   # wai kru -> fight: ring music (pi java), cut dead into the slow-mo
+    (RING, 60.0, Mk("spinhit")["end"] + 0.5, Mk("crash")["end"] + 1.2, 0, 0.0, 1.2, 1),     # back in after the hit, then fade
     (SAD, 120.0, L("S17")["start"], L("N24")["start"], -22, 0.8, 0.5, 1),                # aftermath
     (SUS8, 30.0, L("N24")["start"], dur, -21, 0.5, 1.5, 1),                              # the watcher + outro
 ]
@@ -44,6 +45,14 @@ cues = [  # (time, file, gain dB)
     (L("B08")["start"], "riser/fs-685256-riser-sound-effect-short-wav.ogg", -12), (Mk("spin")["start"], "whoosh/fs-264777-swoosh.ogg", -6),
     (Mk("spinhit")["start"], "impact/fs-347561-micheal-bay-hit.ogg", -3), (Mk("spinhit")["end"] + 0.6, "impact/kenney-sci-lowfrequency-explosion-000.ogg", -10),
     (Mk("crash")["start"] + 0.2, "impact/kenney-impact-impactsoft-heavy-001.ogg", -6),
+    # extra fight foley: Jo's punch, Te's kick swing, Boss's footsteps, slow-mo heartbeat
+    (Mk("teep")["start"] + 0.3, "whoosh/fs-683101-quick-woosh.ogg", -9), (Mk("naka")["start"] + 0.05, "whoosh/fs-127197-fast-simple-chop-5-aif.ogg", -8),
+    *[(L("B08")["start"] + 0.15 + k * 0.22, "impact/kenney-impact-impactsoft-heavy-000.ogg", -20) for k in range(7)],
+    (Mk("spinhit")["start"] + 0.35, "impact/kenney-sci-lowfrequency-explosion-001.ogg", -14), (Mk("spinhit")["start"] + 0.85, "impact/kenney-impact-impactsoft-heavy-001.ogg", -16),
+    (Mk("teepland")["start"], "impact/kenney-impact-impactpunch-heavy-001.ogg", -8),
+    # electric zaps under the lightning bolts on the fast strikes
+    (Mk("teep")["start"] + 0.3, "transition/fs-856168-cyberpunk-glitch-hologram-tran.ogg", -13), (Mk("naka")["start"] + 0.05, "transition/fs-856168-cyberpunk-glitch-hologram-tran.ogg", -14),
+    (Mk("spinhit")["start"], "glitch/kenney-sci-computernoise-001.ogg", -12), (Mk("spinhit")["start"] + 0.02, "transition/fs-856168-cyberpunk-glitch-hologram-tran.ogg", -10),
     (Mk("pile")["start"] + 0.1, "impact/kenney-impact-impactsoft-heavy-000.ogg", -8),
     (Mk("window")["start"], "riser/fs-396160-scary-hits-risers-002.ogg", -12), (L("N25")["start"], "impact/fs-222517-dramatic-hit.ogg", -9),
     (L("N26")["start"], "pop/fs-824189-pop-in-sfx.ogg", -10),
