@@ -1,0 +1,221 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 40.367,
+ "inputs": {
+  "shots.json": "3dfcad8684b587e7418d9d6d48e471562fe2d150acb92c6dc835f8ba239fb4fb",
+  "footage.json": null,
+  "assets/audio/words.json": "7bc0b28f2ab2da2518674d1536e9748b1daa67f05604da9b9afbfc22224925de"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "น้ำมันจะหมด",
+   "word_at": 0.08,
+   "start": 0.0,
+   "end": 2.0,
+   "dur": 2.0
+  },
+  {
+   "id": "believe",
+   "src": null,
+   "cue": "หลายคน",
+   "word_at": 2.08,
+   "start": 2.0,
+   "end": 2.98,
+   "dur": 0.98
+  },
+  {
+   "id": "hourglass",
+   "src": null,
+   "cue": "สามสิบปีก็หมด",
+   "word_at": 3.06,
+   "start": 2.98,
+   "end": 4.72,
+   "dur": 1.74
+  },
+  {
+   "id": "past",
+   "src": null,
+   "cue": "สี่สิบกว่าปีก่อน",
+   "word_at": 4.8,
+   "start": 4.72,
+   "end": 6.66,
+   "dur": 1.94
+  },
+  {
+   "id": "past2",
+   "src": null,
+   "cue": "เหลือแค่สามสิบ",
+   "word_at": 6.74,
+   "start": 6.66,
+   "end": 8.6,
+   "dur": 1.94
+  },
+  {
+   "id": "count",
+   "src": null,
+   "cue": "ผ่านไป",
+   "word_at": 8.68,
+   "start": 8.6,
+   "end": 10.02,
+   "dur": 1.42
+  },
+  {
+   "id": "count2",
+   "src": null,
+   "cue": "ตัวเลขกลับ",
+   "word_at": 10.1,
+   "start": 10.02,
+   "hit": "ห้าสิบกว่าปีซะ",
+   "hit_at": 10.74,
+   "end": 12.24,
+   "dur": 2.22
+  },
+  {
+   "id": "formula",
+   "src": null,
+   "cue": "เพราะเลขนี้",
+   "word_at": 12.32,
+   "start": 12.24,
+   "end": 13.56,
+   "dur": 1.32
+  },
+  {
+   "id": "dig",
+   "src": null,
+   "cue": "น้ำมันที่ขุด",
+   "word_at": 13.64,
+   "start": 13.56,
+   "end": 15.08,
+   "dur": 1.52
+  },
+  {
+   "id": "divide",
+   "src": null,
+   "cue": "หารด้วย",
+   "word_at": 15.16,
+   "start": 15.08,
+   "end": 17.22,
+   "dur": 2.14
+  },
+  {
+   "id": "drill",
+   "src": null,
+   "cue": "ขุดเก่ง",
+   "word_at": 17.3,
+   "start": 17.22,
+   "end": 18.06,
+   "dur": 0.84
+  },
+  {
+   "id": "newfield",
+   "src": null,
+   "cue": "เจอแหล่งใหม่",
+   "word_at": 18.14,
+   "start": 18.06,
+   "end": 20.72,
+   "dur": 2.66
+  },
+  {
+   "id": "now",
+   "src": null,
+   "cue": "ถ้าใช้",
+   "word_at": 20.8,
+   "start": 20.72,
+   "end": 22.12,
+   "dur": 1.4
+  },
+  {
+   "id": "oil",
+   "src": null,
+   "cue": "น้ำมันเหลือ",
+   "word_at": 22.2,
+   "start": 22.12,
+   "end": 24.1,
+   "dur": 1.98
+  },
+  {
+   "id": "gas",
+   "src": null,
+   "cue": "ก๊าซ",
+   "word_at": 24.18,
+   "start": 24.1,
+   "end": 25.4,
+   "dur": 1.3
+  },
+  {
+   "id": "coal",
+   "src": null,
+   "cue": "ถ่านหิน",
+   "word_at": 25.48,
+   "start": 25.4,
+   "end": 26.98,
+   "dur": 1.58
+  },
+  {
+   "id": "uranium",
+   "src": null,
+   "cue": "ยูเรเนียม",
+   "word_at": 27.06,
+   "start": 26.98,
+   "end": 29.38,
+   "dur": 2.4
+  },
+  {
+   "id": "sun",
+   "src": null,
+   "cue": "แดด",
+   "word_at": 29.46,
+   "start": 29.38,
+   "end": 31.78,
+   "dur": 2.4
+  },
+  {
+   "id": "refill",
+   "src": null,
+   "cue": "ธรรมชาติ",
+   "word_at": 31.86,
+   "start": 31.78,
+   "end": 33.38,
+   "dur": 1.6
+  },
+  {
+   "id": "finite",
+   "src": null,
+   "cue": "แต่ของที่ขุด",
+   "word_at": 33.46,
+   "start": 33.38,
+   "end": 34.84,
+   "dur": 1.46
+  },
+  {
+   "id": "finite2",
+   "src": null,
+   "cue": "ยังไงก็มี",
+   "word_at": 34.92,
+   "start": 34.84,
+   "end": 36.74,
+   "dur": 1.9
+  },
+  {
+   "id": "save",
+   "src": null,
+   "cue": "อย่าลืม",
+   "word_at": 36.82,
+   "start": 36.74,
+   "end": 38.74,
+   "dur": 2.0
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "คิดว่า",
+   "word_at": 38.82,
+   "start": 38.74,
+   "end": 40.367,
+   "dur": 1.627
+  }
+ ]
+}
