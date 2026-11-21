@@ -24,3 +24,9 @@
 - music-jamendo-2f1bc5f2.mp3: "Finding, curious, taking" by Wobinidan (CC BY 3.0) https://www.jamendo.com/track/209419
 
 <!-- auto-credits:end -->
+
+## editor (ตัดต่อ 2026-11-21)
+- ภาพ/วิดีโอทุกชิ้นข้างบน: ครอปและปรับสี (เกรดเดียวกันทั้งคลิป; 848300/643836 ขาวดำ; 4975 เล่นย้อนกลับ)
+- เสียงประกอบ (CC0 1.0) จาก skill sound-effects: "Quick woosh" florianreichelt https://freesound.org/people/florianreichelt/sounds/683101/ · "Fast simple chop 5 aif" dave.des https://freesound.org/people/dave.des/sounds/127197/ · "Pop in sfx" Sadiquecat https://freesound.org/people/Sadiquecat/sounds/824189/ · "POP SFX Neutral" ethernel0 https://freesound.org/people/ethernel0/sounds/776016/ · "Freesound 384187" malle99 https://freesound.org/people/malle99/sounds/384187/ · Kenney interface/impact/digital sounds https://kenney.nl/assets (glitch 002, tick 001, impactsoft heavy 000, digital twotone2, confirmation 001, drop 002, toggle 001)
+- ไอคอน Lucide (ISC) · ฟอนต์ Kanit (OFL) · film grain texture จาก hyperframes-registry `grain-overlay`
+- ข้อมูลเส้นกราฟ: Our World in Data "Years of fossil fuel reserves left" (Energy Institute Statistical Review) CC BY

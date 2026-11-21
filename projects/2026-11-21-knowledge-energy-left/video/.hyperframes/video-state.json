@@ -1341,11 +1341,11 @@
   },
   "renders": {
     "latest": {
-      "id": "98b39d79-c1f3-4d01-986a-fbc9a8463aa7",
-      "completedAt": 1795066538622,
-      "output": "/home/user/AI-Studio/projects/2026-11-19-knowledge-brainrot/renders/brainrot-th-silent.mp4",
+      "id": "39bce45f-4329-4d7c-bf28-67bc712430c2",
+      "completedAt": 1795242271065,
+      "output": "/home/user/AI-Studio/projects/2026-11-21-knowledge-energy-left/renders/energy-left-th-silent.mp4",
       "status": "completed",
-      "revision": "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
+      "revision": null
     },
     "retainedRevisions": [
       "4d36fff2-f782-4b33-8bd3-cdb09d0e25e0"
