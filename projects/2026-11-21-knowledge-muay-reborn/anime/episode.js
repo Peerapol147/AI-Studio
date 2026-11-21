@@ -295,7 +295,7 @@ function fightCam(lt, t, sh) { // continuous camera: medium -> push on the teep 
   const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
   const pp = lerp(p0, p1, k) * (FMT.name === 'short' ? 0.7 : 1); const c = aim(sh, lerp(x0, x1, k) + (FMT.name === 'short' ? 60 : 0), lerp(y0, y1, k), Math.max(1, pp), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += shk.dx; c.dy += shk.dy; return c;
 }
-const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.5, cx: 1000, cy: 590 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
+const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.55, cx: 1000, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
 add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('mew', 960, 505, 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18), blink: 0 }) });
 add(at('te', 0.05), fightShot('p8_fightB'));
