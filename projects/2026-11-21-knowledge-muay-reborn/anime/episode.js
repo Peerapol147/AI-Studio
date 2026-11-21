@@ -293,9 +293,9 @@ function fightCam(lt, t, sh) { // continuous camera: medium -> push on the teep 
     [tm('B08'), 1300, 600, 1.2], [tm('spin'), 1000, 620, 1.45], [tm('spinhit') + 0.1, 960, 600, 1.85], [te_('spinhit'), 980, 600, 1.9], [tm('crash'), 1250, 640, 1.2], [99, 1250, 640, 1.18]];
   let i = 0; while (i < keys.length - 2 && lt > keys[i + 1][0]) i++; const [a0, x0, y0, p0] = keys[i], [a1, x1, y1, p1] = keys[i + 1], k = ease(clamp01((lt - a0) / (a1 - a0)));
   const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
-  const c = aim(sh, lerp(x0, x1, k), lerp(y0, y1, k), lerp(p0, p1, k), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += shk.dx; c.dy += shk.dy; return c;
+  const pp = lerp(p0, p1, k) * (FMT.name === 'short' ? 0.7 : 1); const c = aim(sh, lerp(x0, x1, k) + (FMT.name === 'short' ? 60 : 0), lerp(y0, y1, k), Math.max(1, pp), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += shk.dx; c.dy += shk.dy; return c;
 }
-const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
+const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.5, cx: 1000, cy: 590 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
 add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('mew', 960, 505, 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18), blink: 0 }) });
 add(at('te', 0.05), fightShot('p8_fightB'));
@@ -306,7 +306,7 @@ add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, bg: () => STAGE.classroomTense()
   cam: (lt, t, sh) => aim(sh, 1150, 640, 1.25 - 0.1 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('jo', 1560, -1, PO.down, { eyes: 'dazed' }); P('te', 1220, 1, Object.assign({}, PO.down, { lieDir: -1 }), { eyes: 'dazed' }); P('boss', 1470, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); FT.stars(1560, 790, 60, t); FT.stars(1230, 800, 55, t + 1); FT.stars(1470, 780, 70, t + 2);
     P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } }); },
   fxs: [{ d: 0.1, text: 'ตุ้บ!', x: 1400, y: 560, size: 130, len: 0.7 }] });
-add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
+add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), shortCam0: { zoom: 1.45, cx: 960, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
   cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('mew', 740, 520, 112, { eyes: 'wide', mouthO: 0.6 }); FACE('nut', 960, 505, 122, { eyes: 'wide', mouth: Math.max(0.3, mouth('X', t)) }); FACE('fern', 1180, 520, 112, { eyes: 'wide', mouthO: 0.7 }); } });
 add(at('S17'), { id: 'p9_tired', cam0: CU(860, 620, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_140',
   draw: (lt, t) => { const wob = 0.06 * Math.sin(tq(lt) * 20); P('kla', 860, 1, Object.assign({}, PO.pant, { legF: [0.2 + wob, -0.4], legB: [-0.18 - wob, -0.35] }), KF(t, { sweat: 1 }), { lookOver: { bangsUp: true } }); sweatDrops(900, 440, t); } });
@@ -333,7 +333,7 @@ const EP = { shots: S, fx: FXS, bubbles: [],
 EP.NAMES_AT = (v, t) => (v === 'S' && t < DATA.lines.S04.start - 0.2 ? 'มานพ' : EP.NAMES[v]);
 
 // ---- 9:16 Short: same shots, re-framed (tighter zoom, action a bit higher so subtitles sit on the floor area)
-if (window.FMT && FMT.name === 'short') for (const sh of S) { const c = sh.cam0; sh.cam0 = { zoom: Math.max(1.42, c.zoom * 1.3), cx: sh.scx || c.cx, cy: c.cy + (c.zoom < 1.3 ? 150 : 40) }; sh.bgKey = (sh.bgKey || sh.id) + '_short'; }
+if (window.FMT && FMT.name === 'short') for (const sh of S) { const c = sh.cam0; sh.cam0 = sh.shortCam0 || { zoom: Math.max(1.42, c.zoom * 1.3), cx: sh.scx || c.cx, cy: c.cy + (c.zoom < 1.3 ? 150 : 40) }; sh.bgKey = (sh.bgKey || sh.id) + '_short'; sh.bars = false; }
 // ---- thumbnail (?thumb=1): one still, rendered by `node render.js stills <dir> 0.5` with THUMB=1
 if (new URLSearchParams(location.search).get('thumb')) {
   EP.shots = [{ id: 'thumb', t0: 0, t1: 999, cam0: WIDE, bg: () => STAGE.burst('#c3141f', '#3a0610', 760, 470), bgKey: 'thumb', hook: 'ไม่ใช่เด็กคนเดิม', thumb: true, noSub: true, vig: 0.35,
