@@ -26,3 +26,11 @@
 ห้ามของลอย (ทุกอย่างวางบนพื้น `GROUND`/`VG`), ตัดแข็ง (ไม่ dissolve), กล้อง push ได้ไม่เกิน 16% ของ framebuffer, ล็อกความยาวจากเสียงก่อนวาด,
 ตัวละครขยับแบบ on twos (`tq`), ฟอนต์ `assets/fonts` และซับอยู่ Y 1100-1300 ตาม style.md
 ข้อควรรู้: `A.reset()` ไม่ล้างสแต็ก (ใช้ใน push/pop ได้), วาด native p5 เฉพาะใน bg (ลำดับชั้นกับ brush), node fetch ไม่ผ่าน proxy (ไฟล์โหลดผ่าน `serve.js` ในเครื่อง)
+
+## ต่อยอดในตอน muay-reborn (2026-11-21)
+- **16:9 + 9:16 จากโค้ดชุดเดียว:** `?fmt=long|short` (render.js อ่าน `FMT`), ช็อต short ถูก re-frame อัตโนมัติท้าย `episode.js` (zoom ≥1.42, ยกกล้อง)
+- `engine/fighter.js`: ร่างข้อต่อครบ (ขา/แขน/เอียงตัว/หมุน/ลอย/นอน) มุมเป็นมุมโลก, เท้าติดพื้นอัตโนมัติ, `FT.at` keyframe, หน้าตรงหลายทรงผม/ชุดนักเรียนไทย, FX ดาว/วงเหวี่ยง/ระเบิด/**สายฟ้า** (`FT.bolt`, `FT.sparks`)
+- `engine/stage.js`: ห้องเรียนสัดส่วนจริง (กระดานเริ่ม 0.9 ม.), ค่ายมวย, ห้องนอน, ห้องน้ำ, หลังโรงเรียน, ห้องกล้า, ทางเดิน
+- เสียง: `lines.json` → `tts_takes.py` (เทคเดียวต่อเสียง) → **`split_scribe.py`** (หั่นด้วยเวลา scribe แทน alignment ของ TTS) → `timeline.json` + `build_timeline.py` → `mix.py` → **`make_short.py` (ต้องรันใหม่ทุกครั้งหลัง build_timeline เพราะ build เขียน episode-data ทับ)**
+- เรนเดอร์เต็ม: `render-gpu.js long|short` บนเครื่องผู้ใช้ (ดู `../RENDER-ON-GPU.md`) คลาวด์ใช้ `render.js stills` ตรวจภาพเท่านั้น (~35 วิ/ฉากใหม่)
+- ตรวจภาพ: ภาพนิ่งกลางทุกช็อต → contact sheet ก่อนทุกครั้ง (ผู้ใช้สั่ง "ตรวจสัดส่วนดีๆ ก่อนทุกครั้ง")
