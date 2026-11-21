@@ -8,9 +8,17 @@
 const LOOK = {
   // Thai school uniform: white short-sleeve shirt, navy shorts, white socks, black shoes (generic, no school name)
   kla:   { skin: '#f1c9a5', skinSh: '#d9a07e', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', sock: '#f4f4f0', shoe: '#1d1b22', hair: '#1b1820', build: 0.86, hairStyle: 'mop', mark: '#3a5ccc' },
-  boss:  { skin: '#d9a67c', skinSh: '#b9825e', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#231a18', build: 1.18, hairStyle: 'spike', untucked: true, rolled: true, tank: '#c8443a' },
-  jo:    { skin: '#e8b48c', skinSh: '#c98d68', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#2a2224', build: 1.32, hairStyle: 'buzz', untucked: true },
+  boss:  { tall: 1.1, skin: '#d9a67c', skinSh: '#b9825e', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#231a18', build: 1.18, hairStyle: 'spike', untucked: true, rolled: true, tank: '#c8443a' },
+  jo:    { tall: 1.03, skin: '#e8b48c', skinSh: '#c98d68', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#2a2224', build: 1.32, hairStyle: 'buzz', untucked: true },
   te:    { skin: '#ecc09a', skinSh: '#cf9a74', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#3b2a22', build: 0.95, hairStyle: 'side', untucked: true },
+  saeng: { skin: '#cf9a72', skinSh: '#b07e5a', shirt: '#5a6470', shirtSh: '#4a525c', pants: '#2a2a34', longPants: true, sock: '#2a2a34', shoe: '#3a3030', hair: '#8f8a8e', build: 1.25, hairStyle: 'grey', untucked: true, stache: true },
+  kidK:  { skin: '#f1c9a5', skinSh: '#d9a07e', shirt: '#7aa0c8', shirtSh: '#6a8eb2', pants: '#3a3a44', sock: '#f1c9a5', shoe: '#5a4a3a', hair: '#1b1820', build: 0.8, hairStyle: 'mop', short: 0.74, untucked: true },
+  teacher: { skin: '#f0c8a4', skinSh: '#d8a884', shirt: '#f2b8c6', shirtSh: '#d99aa8', pants: '#3a4660', skirt: true, sock: '#e8c0a0', shoe: '#5a3a3a', hair: '#2a2024', build: 0.92, hairStyle: 'girl', tall: 1.02 },
+  mewS:  { skin: '#f6d3b5', skinSh: '#dcb090', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', skirt: true, sock: '#f4f4f0', shoe: '#1d1b22', hair: '#1f1a1e', build: 0.84, hairStyle: 'girl', short: 0.94 },
+  fernS: { skin: '#e9bb93', skinSh: '#cc9a72', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', skirt: true, sock: '#f4f4f0', shoe: '#1d1b22', hair: '#3a2620', build: 0.84, hairStyle: 'girl', short: 0.95 },
+  nutS:  { skin: '#e3ad86', skinSh: '#c48e68', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', sock: '#f4f4f0', shoe: '#1d1b22', hair: '#1c181c', build: 0.95, hairStyle: 'buzz' },
+  extra: { skin: '#eebf98', skinSh: '#d09c76', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', sock: '#f4f4f0', shoe: '#1d1b22', hair: '#231c20', build: 0.9, hairStyle: 'side' },
+  shadow: { skin: '#26222e', skinSh: '#1d1a24', shirt: '#2c2836', shirtSh: '#221f2a', pants: '#1a1820', sock: '#1a1820', shoe: '#121016', hair: '#121016', build: 1.22, hairStyle: 'side', tall: 1.16, untucked: true },
   pond:  { skin: '#f3d0ae', skinSh: '#d9a985', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', sock: '#f4f4f0', shoe: '#1d1b22', hair: '#1b1820', build: 0.9, hairStyle: 'bowl', glasses: true, short: 0.86 },
 };
 const FT = (() => {
@@ -32,7 +40,7 @@ const FT = (() => {
   // ---------- side view body
   // c: { look, x, y, s, f, pose, face:{mood, anger, mouth, blink, eyes:'normal|fierce|dazed|shut|wide', sweat}, rot }
   function body(c) {
-    const L = LOOK[c.look], po = P(c.pose || {}), u = c.s / 100 * (L.short || 1), bw = L.build;
+    const L = Object.assign({}, LOOK[c.look], c.lookOver || {}), po = P(c.pose || {}), u = c.s / 100 * (L.short || 1) * (L.tall || 1), bw = L.build;
     // auto-ground
     const hip0 = [0, -50];
     const lowF = legPts(hip0, po.legF, 1)[2][1], lowB = legPts(hip0, po.legB, -1)[2][1];
@@ -40,6 +48,7 @@ const FT = (() => {
     const hip = [po.hip, -50 - (lowest - 0) - 3 - (po.air || 0)];
     A.push(); A.translate(c.x, c.y); A.scale((c.f || 1) * u, u);
     if (po.spin) { A.translate(0, hip[1]); A.rotate(po.spin); A.translate(0, -hip[1]); }
+    if (po.lie) { A.translate(0, -hip[1] * po.lie * 0.86); A.translate(0, hip[1]); A.rotate(-Math.PI / 2 * po.lie * (po.lieDir || 1)); A.translate(0, -hip[1]); }
     if (!c.noShadow && !po.air) A.ell(po.hip, -0.5, 16 * bw, 2.2, { fill: '#000000', alpha: 40, w: 0 });
     const up = [sin(po.lean), -cos(po.lean)];
     const sh = add(hip, up, 27), neck = add(hip, up, 30), hc = add(hip, up, 40);
@@ -48,10 +57,11 @@ const FT = (() => {
       const s0 = [sh[0] + side * 1.2 * bw, sh[1]]; const el = add(s0, dir(ang[0]), 15), hd = add(el, dir(ang[0] + ang[1]), 14);
       const far = side < 0, sk = far ? L.skinSh : L.skin;
       // sleeve (upper third) + skin arm
-      const sl = add(s0, dir(ang[0]), L.rolled ? 5 : 8);
-      A.limb(s0[0], s0[1], el[0], el[1], 3.3 * bw, 3.0 * bw, { fill: sk, w: 1 });
-      A.limb(el[0], el[1], hd[0], hd[1], 3.0 * bw, 2.6 * bw, { fill: sk, w: 1 });
-      A.limb(s0[0], s0[1], sl[0], sl[1], 4.4 * bw, 4.2 * bw, { fill: far ? L.shirtSh : shirtCol, w: 1 });
+      const sl = add(s0, dir(ang[0]), L.rolled ? 4.5 : 7), dv = dir(ang[0]), nv = [dv[1], -dv[0]], r0 = 3.2 * bw, r1 = 3.9 * bw;
+      A.limb(s0[0], s0[1], el[0], el[1], 2.7 * bw, 2.4 * bw, { fill: sk, w: 1 });
+      A.limb(el[0], el[1], hd[0], hd[1], 2.4 * bw, 2.1 * bw, { fill: sk, w: 1 });
+      // short sleeve: flared tube from the shoulder (not a ball)
+      A.poly([add(add(s0, dv, -2.2), nv, r0), add(sl, nv, r1), add(sl, nv, -r1), add(add(s0, dv, -2.2), nv, -r0)], { fill: far ? L.shirtSh : shirtCol, w: 1, curv: 0.25 });
       handDraw(hd, ang[0] + ang[1], hand, sk);
     };
     const handDraw = (p, a, kind, sk) => {
@@ -63,11 +73,15 @@ const FT = (() => {
       const [h, k, a] = legPts(hip, ang, side), far = side < 0;
       const pant = far ? A.shadeHex ? A.shadeHex(L.pants, 0.8) : L.pants : L.pants;
       // shin (skin) + sock, thigh covered by shorts to just above the knee
-      A.limb(k[0], k[1], a[0], a[1], 3.3 * bw, 2.6 * bw, { fill: far ? L.skinSh : L.skin, w: 1 });
-      const s1 = [k[0] + (a[0] - k[0]) * 0.62, k[1] + (a[1] - k[1]) * 0.62];
-      A.limb(s1[0], s1[1], a[0], a[1], 2.9 * bw, 2.7 * bw, { fill: L.sock, w: 0.9 });
-      const kk = [h[0] + (k[0] - h[0]) * 0.86, h[1] + (k[1] - h[1]) * 0.86];
-      A.limb(h[0], h[1], kk[0], kk[1], 5.4 * bw, 4.9 * bw, { fill: far ? shadeHex(L.pants, 0.78) : L.pants, w: 1 });
+      const pc = far ? shadeHex(L.pants, 0.78) : L.pants;
+      if (L.longPants) { A.limb(k[0], k[1], a[0], a[1], 3.9 * bw, 3.4 * bw, { fill: pc, w: 1 }); A.limb(h[0], h[1], k[0], k[1], 5.0 * bw, 4.2 * bw, { fill: pc, w: 1 }); }
+      else {
+        A.limb(k[0], k[1], a[0], a[1], 3.0 * bw, 2.4 * bw, { fill: far ? L.skinSh : L.skin, w: 1 });
+        const s1 = [k[0] + (a[0] - k[0]) * 0.62, k[1] + (a[1] - k[1]) * 0.62];
+        A.limb(s1[0], s1[1], a[0], a[1], 2.7 * bw, 2.5 * bw, { fill: L.sock, w: 0.9 });
+        if (L.skirt) A.limb(h[0], h[1], k[0], k[1], 3.6 * bw, 3.0 * bw, { fill: far ? L.skinSh : L.skin, w: 1 });
+        else { const kk = [h[0] + (k[0] - h[0]) * 0.86, h[1] + (k[1] - h[1]) * 0.86]; A.limb(h[0], h[1], kk[0], kk[1], 5.0 * bw, 4.5 * bw, { fill: pc, w: 1 }); }
+      }
       // shoe: perpendicular to shin (ft 0) .. pointed along shin (ft 1)
       const sa = ang[0] + ang[1], fd0 = [cos(sa), -sin(sa)], fd1 = dir(sa), fd = [fd0[0] * (1 - ft) + fd1[0] * ft, fd0[1] * (1 - ft) + fd1[1] * ft];
       const n = [fd[1], -fd[0]], toe = add(a, fd, 7.5), heel = add(a, fd, -3.2);
@@ -76,6 +90,7 @@ const FT = (() => {
     arm(-1, po.armB, po.handB);
     leg(-1, po.legB, po.ftB);
     leg(1, po.legF, po.ftF);
+    if (L.skirt) { const kx = (legPts(hip, po.legF, 1)[1][0] + legPts(hip, po.legB, -1)[1][0]) / 2; A.poly([[hip[0] - 8 * bw, hip[1] - 2], [hip[0] + 8 * bw, hip[1] - 2], [Math.max(hip[0] + 11 * bw, kx + 6), hip[1] + 20], [Math.min(hip[0] - 11 * bw, kx - 6), hip[1] + 20]], { fill: L.pants, w: 1.1, curv: 0.2 }); }
     // torso (shirt) — tucked: ends at belt; untucked: hangs over the hips
     const rotp = (p) => { const s = sin(po.lean), co = cos(po.lean), x = p[0], y = p[1]; return [hip[0] + x * co - y * s, hip[1] + x * s + y * co]; };
     const w = 7.2 * bw, tail = L.untucked ? 6 : 1.5;
@@ -98,18 +113,20 @@ const FT = (() => {
       if (st === 'mop') A.poly([[-9, 4], [-10.2, -4], [-7, -9.5], [0, -11.2], [6, -10], [9.6, -6]], { fill: col, w: 1, curv: 0.4 });
       else if (st === 'side') A.poly([[-9.4, 5], [-10, -4], [-6.5, -9.6], [0, -10.8], [6, -9.6], [9, -6]], { fill: col, w: 1, curv: 0.4 });
       else if (st === 'bowl') A.poly([[-8.8, 2], [-9.6, -4], [-6, -9.4], [0, -10.6], [6, -9.6], [9.2, -5]], { fill: col, w: 1, curv: 0.5 });
+      else if (st === 'girl') A.poly([[-9.4, 9], [-10.6, -4], [-7, -10], [0, -11.4], [6.6, -10], [9.8, -6], [7, 2], [-3, 9]], { fill: col, w: 1, curv: 0.4 });
       else if (st === 'grey') A.poly([[-8.6, 0], [-9.2, -5], [-6, -9.4], [0, -10.2], [6, -9.2], [8.6, -6]], { fill: col, w: 1, curv: 0.4 });
       return;
     }
     if (st === 'mop') { // long bangs covering the eye (meek); L.bangsUp = swept back (awakened)
       if (L.bangsUp) A.poly([[-8.4, -2.4], [-7.8, -8.4], [-2, -11.6], [5, -11.4], [10.2, -8.6], [8.6, -7.2], [4, -8], [-1, -6.6], [-5.6, -2.2]], { fill: col, w: 1, curv: 0.3 });
-      else A.poly([[-8.4, -2.4], [-7.8, -8.4], [-2, -11.2], [5, -10.6], [9.4, -7], [10.6, -1.2], [8.6, -3.8], [7.8, 0.6], [6.2, -3.6], [4.4, -1], [3.2, -5.4], [-2.4, -6.2], [-5.6, -2.2]], { fill: col, w: 1, curv: 0.25 });
+      else A.poly([[-8.4, -2.4], [-7.8, -8.4], [-2, -11.2], [5, -10.6], [9.4, -7], [10.8, 0.4], [9.0, -1.6], [8.2, 2.0], [6.6, -0.6], [5.0, 1.6], [3.4, -2.6], [2.0, -5.2], [-2.4, -6.2], [-5.6, -2.2]], { fill: col, w: 1, curv: 0.25 });
     } else if (st === 'spike') {
       A.poly([[-8.6, -2], [-9, -8], [-6, -10], [-6.5, -14.5], [-2.5, -11.4], [-1, -15.6], [2, -11.6], [4.5, -15.2], [5.6, -11], [9.4, -12.6], [8.6, -8.4], [11.4, -7.6], [8.4, -5.6], [3, -7.2], [-2, -6.2], [-5.4, -1.6]], { fill: col, w: 1, curv: 0.02 });
       A.poly([[-8.4, -3], [-7.8, -7], [-6.4, -6.6], [-6.8, -2.6]], { fill: shadeHex(L.skin, 0.75), w: 0, curv: 0.3 }); // undercut
     } else if (st === 'buzz') A.poly([[-8.2, -3], [-7.6, -8.2], [-2, -10.4], [4.6, -10], [8.6, -7.2], [8.4, -5.8], [3, -7.4], [-2.4, -6.4], [-5.6, -2.8]], { fill: shadeHex(L.skin, 0.55), w: 0.8, curv: 0.4 });
     else if (st === 'side') A.poly([[-8.6, -1.4], [-8.2, -8.4], [-2, -11.4], [5, -11.4], [9.8, -8.4], [9.6, -5.4], [6, -7], [2, -6.4], [-2, -6], [-5.6, -1]], { fill: col, w: 1, curv: 0.35 });
     else if (st === 'bowl') A.poly([[-8.6, -1], [-8.2, -8], [-2, -10.8], [5, -10.4], [9.2, -7.4], [9.4, -4], [-1, -4.6], [-5.6, -0.8]], { fill: col, w: 1, curv: 0.45 });
+    else if (st === 'girl') A.poly([[-8.6, -1], [-8.2, -8.4], [-2, -11.2], [5, -11], [9.8, -7.6], [9.6, -3.6], [6, -6.4], [1, -6.8], [-3, -5.4], [-5.6, -1]], { fill: col, w: 1, curv: 0.4 });
     else if (st === 'grey') A.poly([[-8, -3], [-7.4, -8.2], [-2, -10.2], [4.4, -9.8], [8.2, -7.4], [8.0, -6], [3, -7.4], [-2.4, -6.6], [-5.4, -3]], { fill: '#9a9498', w: 0.8, curv: 0.4 });
   }
   function headSide(L, fc) {
@@ -130,6 +147,7 @@ const FT = (() => {
     if (m > 0.08) { const h = 0.5 + m * 2.8, w = 1.5 + m * 0.6; A.ell(6.9, 4.7, w, h, { fill: PAL.mouth, w: 0.9 }); if (m > 0.4) A.ell(6.9, 4.7 + h * 0.5, w * 0.7, h * 0.35, { fill: PAL.tongue, w: 0 }); }
     else if (mood === 'happy' || mood === 'smirk') A.stroke(mood === 'smirk' ? [[5.6, 5.0], [7.2, 4.8], [8.4, 3.9]] : [[5.4, 4.2], [6.8, 5.2], [8.2, 4.4]], { w: 1.1 });
     else A.stroke(ang > 0.3 || mood === 'sad' ? [[5.6, 5.0], [7.0, 4.5], [8.2, 4.8]] : [[5.6, 4.7], [8.2, 4.6]], { w: 1.1 });
+    if (L.stache) A.poly([[5.6, 2.6], [9.2, 2.2], [8.8, 3.4], [5.8, 3.6]], { fill: '#6e676c', w: 0.6, curv: 0.3 });
     if (fc.sweat) A.poly([[-2.5, -6], [-1.6, -3.6], [-2.5, -2.4], [-3.4, -3.6]], { fill: PAL.sweat, w: 0.6, curv: 0.6 });
     if (fc.bruise) A.ell(4.2, 2.8, 1.6, 1.1, { fill: '#c9879a', alpha: 150, w: 0 });
   }

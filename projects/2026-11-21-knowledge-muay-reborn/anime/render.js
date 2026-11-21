@@ -2,14 +2,14 @@
 // node render.js video <out.mp4> [fps] [t0] [t1]   |   node render.js stills <outdir> t1,t2,...
 const { chromium } = require('playwright'); const path = require('path'); const { spawn } = require('child_process'); const fs = require('fs');
 (async () => {
-  const [mode, out, a, b, c] = process.argv.slice(2);
+  const [mode, out, a, b, c] = process.argv.slice(2); const FMT = process.env.FMT || 'long'; const SCALE = +(process.env.SCALE || 1); const VW = FMT === 'long' ? 1920 : 1080, VH = FMT === 'long' ? 1080 : 1920;
   const root = path.resolve(__dirname, '../../..'); const { server, port } = await require('./serve.js')(root);
-  const br = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-  const p = await br.newPage({ viewport: { width: 1080, height: 1920 } });
+  const br = await chromium.launch({ args: process.env.GPU ? ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--enable-gpu-rasterization'] : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const p = await br.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: SCALE }); p.setDefaultTimeout(900000);
   p.on('pageerror', e => console.log('PAGEERR', e.message.slice(0, 300)));
   p.on('console', m => { const s = m.text(); if (m.type() === 'error' && !/404|TUNNEL|regular/.test(s)) console.log('CONSOLE', s.slice(0, 300)); });
-  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/index.html`);
-  await p.waitForFunction(() => window.ready && window.renderFrame, { timeout: 120000 });
+  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/index.html?fmt=${FMT}`);
+  await p.waitForFunction(() => window.ready && window.renderFrame, null, { timeout: 180000 });
   const dur = await p.evaluate(() => DATA.duration);
   if (mode === 'stills') {
     fs.mkdirSync(out, { recursive: true });

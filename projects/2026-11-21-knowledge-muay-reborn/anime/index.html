@@ -1,45 +1,77 @@
 <!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script>
+// format: ?fmt=long (1920x1080, default) | ?fmt=short (1080x1920)
+window.FMT = new URLSearchParams(location.search).get('fmt') === 'short' ? { name: 'short', W: 1080, H: 1920 } : { name: 'long', W: 1920, H: 1080 };
+document.documentElement.style.setProperty('--W', FMT.W + 'px'); document.documentElement.style.setProperty('--H', FMT.H + 'px');
+document.documentElement.className = FMT.name;
+</script>
 <style>
-html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
-main{position:relative;width:1080px;height:1920px}
+html,body{margin:0;width:var(--W);height:var(--H);overflow:hidden;background:#000}
+main{position:relative;width:var(--W);height:var(--H)}
 canvas{position:absolute;left:0;top:0}
 #ov{position:absolute;inset:0;pointer-events:none;font-family:'Kanit',sans-serif}
-.st{-webkit-text-stroke:14px #1a1218;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.35)}
-#title{position:absolute;left:50%;top:300px;width:900px;text-align:center;font-weight:900;font-size:118px;line-height:1.1;color:#fff;transform-origin:50% 50%}
-#title b{color:#ffd23f;font-weight:900}
-#cap{position:absolute;left:50%;top:1135px;max-width:780px;white-space:nowrap;text-align:center;font-weight:700;font-size:80px;line-height:1.25;transform-origin:50% 60%}
-#tag{position:absolute;left:90px;top:262px;padding:6px 30px 10px;border-radius:40px;font-weight:700;font-size:54px;color:#1a1218;border:6px solid #1a1218;transform-origin:0 50%}
-#beep{position:absolute;left:300px;top:520px;padding:10px 40px 18px;background:#e23b3b;color:#fff;border:8px solid #1a1218;border-radius:30px;font-weight:900;font-size:110px;transform-origin:50% 50%}
-#q{position:absolute;left:50%;top:290px;width:880px;text-align:center;font-weight:900;font-size:96px;line-height:1.15;color:#fff;transform-origin:50% 50%}
-#q b{color:#ffd23f}
-.cm{position:absolute;display:flex;align-items:center;gap:20px;background:#fffaf0;color:#2a1e22;border:5px solid #1a1218;border-radius:28px;padding:12px 30px 16px 16px;font-size:46px;font-weight:700;transform-origin:0 50%;box-shadow:0 8px 0 rgba(0,0,0,.25)}
-.cm i{display:block;width:60px;height:60px;border-radius:50%;border:4px solid #1a1218}
+.st{-webkit-text-stroke:12px #15101a;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.35)}
+/* subtitles (narration + dialogue) */
+#sub{position:absolute;left:50%;bottom:56px;max-width:1500px;text-align:center;font-weight:700;font-size:56px;line-height:1.25;color:#fff;transform:translateX(-50%)}
+.short #sub{bottom:auto;top:1150px;max-width:860px;font-size:64px}
+#sub i{font-style:normal;font-weight:400;font-size:.62em;display:block;opacity:.9;margin-bottom:-6px}
+/* speech bubbles */
+.bub{position:absolute;background:#fffdf6;color:#15101a;border:6px solid #15101a;border-radius:46px;padding:14px 34px 20px;font-weight:700;font-size:48px;line-height:1.2;white-space:nowrap;transform-origin:50% 100%;box-shadow:0 8px 0 rgba(0,0,0,.25)}
+.bub:after{content:'';position:absolute;left:var(--tx,40%);bottom:-34px;border:18px solid transparent;border-top:22px solid #15101a;transform:skewX(var(--sk,-20deg))}
+.bub.think{border-radius:60px;border-style:dashed}
+.bub.think:after{border:none;width:22px;height:22px;border-radius:50%;background:#fffdf6;outline:6px solid #15101a;bottom:-40px}
+.bub.shout{background:#fff3b0;font-weight:900;font-size:58px;border-radius:18px}
+/* tags (name labels, time cards) */
+#tag{position:absolute;left:70px;top:60px;padding:6px 30px 10px;border-radius:14px;font-weight:700;font-size:44px;color:#15101a;background:#ffd23f;border:5px solid #15101a;transform-origin:0 50%}
+.short #tag{top:250px;left:70px}
+#tag small{display:block;font-weight:400;font-size:30px;margin-top:-4px}
+/* move-name card */
+#move{position:absolute;left:0;right:0;top:120px;text-align:center;transform-origin:50% 50%}
+.short #move{top:330px}
+#move .k{display:inline-block;font-weight:700;font-size:40px;color:#ffd23f;background:#15101a;padding:4px 26px 8px;border-radius:10px;letter-spacing:2px}
+#move .n{display:block;font-weight:900;font-size:150px;line-height:1.05;color:#fff;-webkit-text-stroke:16px #b3121f;paint-order:stroke fill;text-shadow:0 10px 0 #15101a}
+.short #move .n{font-size:120px}
+/* onomatopoeia */
+.fx.hand{color:#24305e;-webkit-text-stroke:0;font-family:'Sarabun',sans-serif;font-weight:700;text-align:center;line-height:1.25}
+.fx s{text-decoration-thickness:8px;text-decoration-color:#c8343a;opacity:.8}.fx b{color:#ff5a5a}
+.fx{position:absolute;font-weight:900;font-size:130px;color:#ffe14d;-webkit-text-stroke:14px #15101a;paint-order:stroke fill;transform-origin:50% 50%;white-space:nowrap}
+/* title card */
+#title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#title .a{font-weight:900;font-size:170px;color:#fff;-webkit-text-stroke:18px #15101a;paint-order:stroke fill;text-shadow:0 12px 0 #b3121f}
+#title .b{font-weight:700;font-size:54px;color:#ffd23f;margin-top:10px}
+.short #title .a{font-size:130px;line-height:1.1}
+#hook{position:absolute;left:50%;top:80px;width:1600px;text-align:center;font-weight:900;font-size:96px;color:#fff;transform:translateX(-50%)}
+.short #hook{top:300px;width:900px;font-size:100px}
+#endq{position:absolute;left:50%;top:50%;width:1500px;text-align:center;transform:translate(-50%,-50%)}
+#endq .a{font-weight:700;font-size:54px;color:#ffd23f}
+#endq .b{font-weight:900;font-size:82px;color:#fff;line-height:1.2}
+.short #endq{width:920px}
+#sepia{position:absolute;inset:0;display:none;background:radial-gradient(ellipse at 50% 50%,rgba(240,200,140,0) 40%,rgba(90,60,30,.65) 100%);mix-blend-mode:multiply}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#bars{position:absolute;inset:0;display:none;border-top:90px solid #000;border-bottom:90px solid #000}
 </style></head><body><main>
-<div id="love" style="position:absolute;inset:0;display:none;background:radial-gradient(ellipse at 50% 45%, rgba(255,210,230,0) 45%, rgba(255,150,200,.45) 80%, rgba(255,120,185,.7) 100%);mix-blend-mode:screen"></div>
+<div id="sepia"></div><div id="vig" style="position:absolute;inset:0;display:none;background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(10,6,14,0) 55%,rgba(10,6,14,.85) 100%)"></div><div id="bars"></div>
 <div id="ov">
-  <div id="title" class="st">นึกว่าจะ<b>ต่อยกัน</b>...</div>
+  <div id="hook" class="st"></div>
+  <div id="bubs"></div><div id="fxs"></div>
+  <div id="move"><span class="k">แม่ไม้มวยไทย</span><span class="n"></span></div>
   <div id="tag"></div>
-  <div id="q" class="st">ถ้าเป็นเรา<br><b>จะขอโทษก่อนไหม?</b></div>
-  <div id="comments"></div>
-  <div id="beep" class="st" style="-webkit-text-stroke:10px #1a1218">ตี๊ด!</div>
-  <div id="cap" class="st"></div>
-</div></main>
+  <div id="title"><div class="a">ไอ้ขี้แพ้<br class="sb">เป็นมวย</div><div class="b st" style="-webkit-text-stroke:8px #15101a">ตอนที่ 1</div></div>
+  <div id="endq"><div class="a st" style="-webkit-text-stroke:8px #15101a"></div><div class="b st"></div></div>
+  <div id="sub" class="st"></div>
+</div><div id="flash"></div></main>
 <script src="node_modules/p5/lib/p5.min.js"></script>
 <script src="node_modules/p5.brush/dist/p5.brush.js"></script>
-<script src="engine/lib.js"></script><script src="engine/characters.js"></script><script src="engine/scenery.js"></script>
-<script>
-// p5 global mode: canvas goes into <main>; DATA loaded before episode
-window.DATA = null;
-const _setup = () => {};
-</script>
+<script src="engine/lib.js"></script><script src="engine/characters.js"></script><script src="engine/fighter.js"></script><script src="engine/school.js"></script><script src="engine/stage.js"></script>
 <script>
 const xhr = new XMLHttpRequest(); xhr.open('GET', 'episode-data.json', false); xhr.send(); window.DATA = JSON.parse(xhr.responseText);
 </script>
 <script src="episode.js"></script>
 <script src="engine/player.js"></script>
+<script src="engine/overlay.js"></script>
 <script>
-window.addEventListener('load', async () => { await document.fonts.ready; await document.fonts.load('900 100px Kanit', 'นึก'); await document.fonts.load('700 80px Kanit', 'นึก');
+window.addEventListener('load', async () => { await document.fonts.ready; for (const w of ['400 40px Kanit', '700 80px Kanit', '900 100px Kanit']) await document.fonts.load(w, 'กขค');
   const c = document.querySelector('canvas'); if (c) document.querySelector('main').prepend(c); window.ready = true; });
 </script>
 </body></html>

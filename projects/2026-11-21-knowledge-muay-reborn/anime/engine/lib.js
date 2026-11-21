@@ -3,7 +3,7 @@
 // and layer order = call order (fills via brush.wash, ink via brush.set).
 /* global brush */
 const A = (() => {
-  const W = 1080, H = 1920;
+  const W = (window.FMT || {}).W || 1080, H = (window.FMT || {}).H || 1920;
   let M = [1, 0, 0, 1, 0, 0]; const stack = [];
   let INK = '#2a1e22', INKW = 1.5; // global ink color, ink weight multiplier, boil seed
   let rnd = mulberry(1);

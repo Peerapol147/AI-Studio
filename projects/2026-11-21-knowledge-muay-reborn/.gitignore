@@ -2,3 +2,5 @@ anime/test/
 anime/node_modules/
 anime/out/
 assets/audio/lines/
+assets/audio/*.wav
+anime/test/
