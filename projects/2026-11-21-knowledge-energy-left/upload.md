@@ -1,5 +1,5 @@
 # อัปโหลด: น้ำมันจะหมดโลกปีไหน? (ไทย, short 9:16)
-ไฟล์: `renders/energy-left-th.mp4` (ความยาวจริง: ดูท้ายไฟล์ หลังขั้นตรวจ) · ปก `renders/energy-left-th-thumb.jpg`
+ไฟล์: `renders/energy-left-th.mp4` (40.4 วิ) · ปก `renders/energy-left-th-thumb.jpg`
 ผู้ใช้อัปโหลดเอง (ทีมไม่อัปโหลด/ไม่ตั้งเวลา) · MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม
 
 ## YouTube Shorts
@@ -27,9 +27,10 @@
 - OECD-NEA & IAEA, Uranium 2026 (Red Book) ผ่าน World Nuclear Association https://world-nuclear.org/information-library/nuclear-fuel-cycle/uranium-resources/supply-of-uranium
 - U.S. EIA, Renewable energy explained https://www.eia.gov/energyexplained/renewable-sources/
 
-เครดิตภาพ (Pixabay Content License): lalabell68, GreenCardShow, AHAHase, MattHrusc, adege, Solarselle77, YounStudios, jplenio, RafterJr72, RoyBuri, eyeonicimages, klimkin, generatorpowerproducts, TPMotion, drpepperscott230, alexborodai
+เครดิตภาพ (Pixabay Content License, ครอปและปรับสี): lalabell68, GreenCardShow, AHAHase, MattHrusc, adege, Solarselle77, YounStudios, jplenio, RafterJr72, RoyBuri, eyeonicimages, klimkin, generatorpowerproducts, TPMotion, drpepperscott230, alexborodai
 เพลง: "Finding, curious, taking" by Wobinidan (CC BY 3.0) https://www.jamendo.com/track/209419
-เสียงประกอบ: CC0
+เสียงประกอบ (CC0): florianreichelt, dave.des, Sadiquecat, ethernel0, malle99 (Freesound) · Kenney (kenney.nl)
+ข้อมูลกราฟ: Our World in Data (CC BY) · ไอคอน Lucide (ISC) · ฟอนต์ Kanit (OFL)
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
 #น้ำมัน #พลังงาน #รู้ไหม #shorts
@@ -38,7 +39,7 @@
 ## TikTok
 แคปชัน (≤150 ตัวอักษร):
 ```
-น้ำมันจะหมดโลกอีกกี่ปี? 40 ปีก่อนก็บอก 30 ปี ตอนนี้ยังไม่หมด เพราะอะไร? คิดว่าอะไรจะหมดก่อน? #น้ำมัน #พลังงาน #รู้หรือไม่ #ความรู้
+น้ำมันจะหมดโลกอีกกี่ปี? 40 กว่าปีก่อนก็บอก 30 ปี ตอนนี้ยังไม่หมด เพราะอะไร? คิดว่าอะไรจะหมดก่อน? #น้ำมัน #พลังงาน #รู้หรือไม่ #ความรู้
 ```
 คอมเมนต์แรก (เครดิตเพลง): `เพลง: "Finding, curious, taking" by Wobinidan (CC BY 3.0) jamendo.com/track/209419 · ข้อมูล: Energy Institute 2026, Red Book 2026`
 ติด label "AI-generated content" (เสียงพากย์ AI)

@@ -126,3 +126,5 @@ https://world-nuclear.org/information-library/nuclear-fuel-cycle/uranium-resourc
 ฝั่งความเชื่อ "อีก 30 ปีหมด" พูดเป็น "หลายคนเชื่อว่า" เท่านั้น
 
 **D. ไม่ยืนยัน → ไม่พูด:** "ของถูกหมดก่อน" (ไม่มีแหล่ง) บทจึงจบด้วย "ของที่ขุดขึ้นมาใช้ ยังไงก็มีวันหมด" (ฟอสซิล/ยูเรเนียมมีปริมาณจำกัด = ตรงกับนิยาม R/P ทั้งหมด) + แดดลมน้ำ = EIA "virtually inexhaustible" (ข้อ 5)
+
+**E. เช็กซ้ำยูเรเนียม 85 ปี (ตาม review รอบ 1):** เปิดหน้า WNA "Supply of Uranium" ฉบับ "Updated Tuesday, 29 September 2026" ตรงๆ (ผู้กำกับดึงเอง 2026-11-21) พบครบ 3 ข้อความ: "World total 5,864,500" (≤$130/kgU, 1/1/25, Red Book 2026), "nearly 69,000 tonnes ... each year", "enough to last for about 85 years" → ✅ ตัวเลข "about 90 years" ที่ reviewer เจอเป็นฉบับเก่าในผลค้นหา
