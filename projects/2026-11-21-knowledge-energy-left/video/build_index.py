@@ -133,7 +133,7 @@ XF = 0.12  # outgoing plate stays 0.12 s under the incoming transition (crossfad
 MEDIA = [('believe', 'believe', 'believe', 'believe.mp4', 'vid'), ('hourglass', 'hourglass', 'hourglass', 'hourglass.mp4', 'vid'),
          ('now', 'now', 'now', 'now.mp4', 'vid'), ('coal', 'coal', 'coal', 'coal.mp4', 'vid'),
          ('uranium-bg', 'uranium', 'uranium', 'uranium-bg.mp4', 'vid'), ('uranium-card', 'uranium', 'uranium', 'uranium-card.mp4', 'cvid'),
-         ('sun-a', 'sun', 'sun', 'sun-a.mp4', 'bvid'), ('sun-b', 'sun', 'sun', 'sun-b.mp4', 'bvid'),
+         ('sun-bg', 'sun', 'sun', 'sun-bg.mp4', 'vid'), ('sun-a', 'sun', 'sun', 'sun-a.mp4', 'bvid'), ('sun-b', 'sun', 'sun', 'sun-b.mp4', 'bvid'),
          ('sun-c', 'sun', 'sun', 'sun-c.mp4', 'bvid'),
          ('gas-bg', 'gas', 'gas', 'gas-bg.mp4', 'vid'), ('gas-card', 'gas', 'gas', 'gas-card.mp4', 'cvid'),
          ('refill-bg', 'refill', 'refill', 'refill-bg.mp4', 'vid'), ('refill-card', 'refill', 'refill', 'refill-card.mp4', 'cvid'),

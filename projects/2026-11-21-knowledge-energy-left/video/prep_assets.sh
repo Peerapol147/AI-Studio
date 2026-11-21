@@ -33,10 +33,13 @@ plate coal      pixabay-40030.mp4   1.0  1.8  810:1440:495:0     0.04
 band  sun-a     pixabay-42388.mp4   0.5  2.6  2430:1440:65:0    -0.02
 band  sun-b     pixabay-84625.mp4   0.5  2.6  2430:1440:65:0    -0.02
 band  sun-c     pixabay-172575.mp4  0.5  2.6  1215:720:32:0     -0.02
+# sun backdrop behind the strips (no black screen before a strip lands)
+ffmpeg -v error -y -ss 0.5 -t 2.6 -i $F/pixabay-42388.mp4 -vf "fps=30,$(grade -0.02),$BLUR" $ENC assets/sun-bg.mp4
 # gas: blue flame lit from ~3.0 s (pan arrives ~5 s); refill: dam overflow; finite: b/w hourglass
 card  gas       pixabay-11290.mp4   3.1  1.5  1008:360:166:330 840x300 0.0
-# uranium: card on the cooling-tower steam plume (the bars panel covers the top of the frame)
-card  uranium   pixabay-29413.mp4   0.3  2.6  1204:860:1060:0 840x600 -0.02
+# uranium: card on the steam plume, plume pushed to the card's right (x~690/820) where index.html draws the two
+# hyperboloid cooling towers under it (the source never shows the towers: they are behind the hill)
+card  uranium   pixabay-29413.mp4   0.3  2.6  1204:860:767:0  840x600 -0.02
 card  refill    pixabay-172575.mp4  3.0  1.8  1008:720:136:0  840x600 -0.02
 card  finite    pixabay-26452.mp4   1.0  1.6  576:720:480:0   560x700 0.0
 # save: source = switching the strip ON (press 10.2-10.8, glow from ~10.6). Played BACKWARDS from 11.26 so the
