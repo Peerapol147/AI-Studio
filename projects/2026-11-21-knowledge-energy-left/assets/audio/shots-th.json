@@ -4,13 +4,13 @@
  "duration": 40.367,
  "inputs": {
   "shots.json": "3dfcad8684b587e7418d9d6d48e471562fe2d150acb92c6dc835f8ba239fb4fb",
-  "footage.json": null,
+  "footage.json": "475738fa1d81ea141abbf0493c0b7cf0380da8f9f65f52d82adc6b427693dbf6",
   "assets/audio/words.json": "7bc0b28f2ab2da2518674d1536e9748b1daa67f05604da9b9afbfc22224925de"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-106913.jpg",
    "cue": "น้ำมันจะหมด",
    "word_at": 0.08,
    "start": 0.0,
@@ -19,7 +19,7 @@
   },
   {
    "id": "believe",
-   "src": null,
+   "src": "assets/footage/pixabay-84970.mp4",
    "cue": "หลายคน",
    "word_at": 2.08,
    "start": 2.0,
@@ -28,7 +28,7 @@
   },
   {
    "id": "hourglass",
-   "src": null,
+   "src": "assets/footage/pixabay-326934.mp4",
    "cue": "สามสิบปีก็หมด",
    "word_at": 3.06,
    "start": 2.98,
@@ -37,7 +37,7 @@
   },
   {
    "id": "past",
-   "src": null,
+   "src": "assets/footage/pixabay-848300.jpg",
    "cue": "สี่สิบกว่าปีก่อน",
    "word_at": 4.8,
    "start": 4.72,
@@ -46,7 +46,7 @@
   },
   {
    "id": "past2",
-   "src": null,
+   "src": "assets/footage/pixabay-643836.jpg",
    "cue": "เหลือแค่สามสิบ",
    "word_at": 6.74,
    "start": 6.66,
@@ -102,7 +102,7 @@
   },
   {
    "id": "drill",
-   "src": null,
+   "src": "assets/footage/pixabay-4713386.jpg",
    "cue": "ขุดเก่ง",
    "word_at": 17.3,
    "start": 17.22,
@@ -111,7 +111,7 @@
   },
   {
    "id": "newfield",
-   "src": null,
+   "src": "assets/footage/pixabay-4713386.jpg",
    "cue": "เจอแหล่งใหม่",
    "word_at": 18.14,
    "start": 18.06,
@@ -120,7 +120,7 @@
   },
   {
    "id": "now",
-   "src": null,
+   "src": "assets/footage/pixabay-336755.mp4",
    "cue": "ถ้าใช้",
    "word_at": 20.8,
    "start": 20.72,
@@ -129,7 +129,7 @@
   },
   {
    "id": "oil",
-   "src": null,
+   "src": "assets/footage/pixabay-3629119.jpg",
    "cue": "น้ำมันเหลือ",
    "word_at": 22.2,
    "start": 22.12,
@@ -138,7 +138,7 @@
   },
   {
    "id": "gas",
-   "src": null,
+   "src": "assets/footage/pixabay-11290.mp4",
    "cue": "ก๊าซ",
    "word_at": 24.18,
    "start": 24.1,
@@ -147,7 +147,7 @@
   },
   {
    "id": "coal",
-   "src": null,
+   "src": "assets/footage/pixabay-40030.mp4",
    "cue": "ถ่านหิน",
    "word_at": 25.48,
    "start": 25.4,
@@ -156,7 +156,7 @@
   },
   {
    "id": "uranium",
-   "src": null,
+   "src": "assets/footage/pixabay-29413.mp4",
    "cue": "ยูเรเนียม",
    "word_at": 27.06,
    "start": 26.98,
@@ -165,7 +165,7 @@
   },
   {
    "id": "sun",
-   "src": null,
+   "src": "assets/footage/pixabay-42388.mp4",
    "cue": "แดด",
    "word_at": 29.46,
    "start": 29.38,
@@ -174,7 +174,7 @@
   },
   {
    "id": "refill",
-   "src": null,
+   "src": "assets/footage/pixabay-172575.mp4",
    "cue": "ธรรมชาติ",
    "word_at": 31.86,
    "start": 31.78,
@@ -183,7 +183,7 @@
   },
   {
    "id": "finite",
-   "src": null,
+   "src": "assets/footage/pixabay-26452.mp4",
    "cue": "แต่ของที่ขุด",
    "word_at": 33.46,
    "start": 33.38,
@@ -201,16 +201,17 @@
   },
   {
    "id": "save",
-   "src": null,
+   "src": "assets/footage/pixabay-4975.mp4",
    "cue": "อย่าลืม",
    "word_at": 36.82,
    "start": 36.74,
    "end": 38.74,
-   "dur": 2.0
+   "dur": 2.0,
+   "media_start": 10.12
   },
   {
    "id": "ask",
-   "src": null,
+   "src": "assets/footage/pixabay-106913.jpg",
    "cue": "คิดว่า",
    "word_at": 38.82,
    "start": 38.74,

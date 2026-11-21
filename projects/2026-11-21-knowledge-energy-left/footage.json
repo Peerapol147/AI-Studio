@@ -1,0 +1,19 @@
+{
+  "hook": {"src": "assets/footage/pixabay-106913.jpg"},
+  "believe": {"src": "assets/footage/pixabay-84970.mp4"},
+  "hourglass": {"src": "assets/footage/pixabay-326934.mp4"},
+  "past": {"src": "assets/footage/pixabay-848300.jpg"},
+  "past2": {"src": "assets/footage/pixabay-643836.jpg"},
+  "drill": {"src": "assets/footage/pixabay-4713386.jpg"},
+  "newfield": {"src": "assets/footage/pixabay-4713386.jpg"},
+  "now": {"src": "assets/footage/pixabay-336755.mp4"},
+  "oil": {"src": "assets/footage/pixabay-3629119.jpg"},
+  "gas": {"src": "assets/footage/pixabay-11290.mp4"},
+  "coal": {"src": "assets/footage/pixabay-40030.mp4"},
+  "uranium": {"src": "assets/footage/pixabay-29413.mp4"},
+  "sun": {"src": "assets/footage/pixabay-42388.mp4", "extra": ["assets/footage/pixabay-84625.mp4", "assets/footage/pixabay-172575.mp4"]},
+  "refill": {"src": "assets/footage/pixabay-172575.mp4"},
+  "finite": {"src": "assets/footage/pixabay-26452.mp4"},
+  "save": {"src": "assets/footage/pixabay-4975.mp4", "action_at": 10.2},
+  "ask": {"src": "assets/footage/pixabay-106913.jpg"}
+}
