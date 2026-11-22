@@ -16,6 +16,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #grain{opacity:.075;mix-blend-mode:overlay;background-repeat:repeat}
 #vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.62) 100%)}
 #dim{background:#03040A;opacity:0}
+/* footage plates: full-frame 9:16, graded in prep_footage.py; wrapper carries the push-in */
+#foot{z-index:0}
+.fw{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;transform-origin:50% 45%;opacity:0}
+.fv{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#fshade{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;
+  background:linear-gradient(rgba(2,6,14,.55) 0%,rgba(2,6,14,0) 26%,rgba(2,6,14,0) 52%,rgba(2,6,14,.62) 60%,rgba(2,6,14,.62) 68%,rgba(2,6,14,.1) 78%,rgba(2,6,14,.35) 100%)}
 /* hook title (= spoken words) */
 #title{position:absolute;left:0;top:0;width:1080px;height:760px}
 #title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
@@ -113,6 +119,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
   <div id="paper" class="full"></div>
+  <div id="foot" class="full" data-layout-allow-overflow data-layout-allow-overlap>
+%%FOOT%%
+    <div id="fshade"></div>
+  </div>
   <div id="fogs" class="full" data-layout-allow-overflow data-layout-allow-overlap>
     <div class="fog" id="fog0"></div><div class="fog" id="fog1"></div><div class="fog" id="fog2"></div><div class="fog" id="fog3"></div><div class="fog" id="fog4"></div>
   </div>
@@ -219,6 +229,10 @@ const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=
 const GOLD='#F5C04A',RED='#E5383B',INK='#07060A',WHITE='#FFFFFF',BLUE='#7FB2FF',YEL='#FFE14D';
 const MAPY=830;
 const HAS=id=>!!ST[id];
+// footage: which plate is on at t (hard cuts at shot start), and a 0/1 factor that thins the graphics over it
+const FOOT=D.foot||[]; const FW=FOOT.map(f=>$('fw-'+f.id));
+const footAt=t=>{for(let i=0;i<FOOT.length;i++)if(t>=FOOT[i].start&&t<FOOT[i].end)return i;return -1;};
+let FT=0;
 const RC=window.rough?rough.svg($('scr')):null;
 const roughPath=(gen,parent,attrs)=>{const g=el('g',attrs||{},parent); if(!RC)return g; const n=gen(RC); g.appendChild(n); return g;};
 
@@ -252,14 +266,14 @@ const GRID=el('g',{stroke:'#1C2C4C','stroke-width':1.5,'vector-effect':'non-scal
 for(let i=-30;i<=30;i++){el('line',{x1:i*200,y1:-6000,x2:i*200,y2:6000,'vector-effect':'non-scaling-stroke'},GRID);el('line',{x1:-6000,y1:i*200,x2:6000,y2:i*200,'vector-effect':'non-scaling-stroke'},GRID);}
 // dark continent: everything outside the lake, revealed from the edges inward (mask hole shrinks)
 const CONT=el('g',{mask:'url(#contMask)'},cam);
-el('path',{d:'M-7000 -7000 H7000 V7000 H-7000 Z '+lakeD,'fill-rule':'evenodd',fill:'#140A16',opacity:.94},CONT);
+const CONTF=el('path',{d:'M-7000 -7000 H7000 V7000 H-7000 Z '+lakeD,'fill-rule':'evenodd',fill:'#140A16',opacity:.94},CONT);
 const MTN=el('g',{fill:'none',stroke:'#4A2A48','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'},CONT);
 for(let i=0;i<150;i++){const a=hsh(i,11)*2*Math.PI, r=380+hsh(i,12)*1500, s=14+hsh(i,13)*26, x=r*Math.cos(a), y=r*Math.sin(a);
   el('path',{d:`M${f2(x-s)} ${f2(y)} L${f2(x)} ${f2(y-s*1.1)} L${f2(x+s)} ${f2(y)}`,'vector-effect':'non-scaling-stroke'},MTN);}
 const contRings=[700,1100,1600].map(r=>el('path',{d:ring(r,90),fill:'none',stroke:'#3A1F3A','stroke-width':2,'stroke-dasharray':'10 14','vector-effect':'non-scaling-stroke'},CONT));
 const contHole=$('contHole');
 // lake + ripples + shore
-el('path',{d:lakeD,fill:'#0A1A36'},cam);
+const LAKEF=el('path',{d:lakeD,fill:'#0A1A36'},cam);
 const RIP=[0,1,2,3].map(i=>el('path',{d:ring(1,64),fill:'none',stroke:'#2C5590','stroke-width':1.5,'vector-effect':'non-scaling-stroke',opacity:0},cam));
 const shore=el('path',{d:lakeD,fill:'none',stroke:'#3D6FB0','stroke-width':3,'vector-effect':'non-scaling-stroke',opacity:.55},cam);
 const FL=window.flubber; const growLake=FL?FL.interpolate(ring(14,48),lakeD,{maxSegmentLength:12}):null;
@@ -386,7 +400,9 @@ function mapF(t){
   SHK=[dx+shk*14*(vn(t*14,3)-0.5)*2, dy+shk*12*(vn(t*14,4)-0.5)*2];
   const rot=(vn(t*0.2,5)-0.5)*1.6*drift;
   cam.setAttribute('transform',`translate(${f2(540+SHK[0])} ${f2(MAPY+SHK[1])}) rotate(${f2(rot)}) scale(${CAMZ.toFixed(4)}) translate(${f2(-CAMX)} ${f2(-CAMY)})`);
-  $('dim').style.opacity=f2(clamp(dimT(t),0,0.9));
+  $('dim').style.opacity=f2(clamp(dimT(t),0,0.9)*(1-0.8*FT));
+  // over footage the map is a see-through line drawing: continent fill/lake/grid thinned, mountains + shore kept
+  sa(CONTF,FT?0.22:0.94); sa(LAKEF,FT?0.32:1); GRID.setAttribute('opacity',FT?'0.35':'0.8'); MTN.setAttribute('stroke',FT?'#B48AC0':'#4A2A48');
   // continent reveal from the screen edges inward on "ที่ล้อมรอบ" (and gone again for the loop)
   const rv=t<T.surround?0:clamp(S(t-T.surround,4.2,1)); const back=t>=T.loop?clamp(S(t-T.loop,8,1)):0;
   const rr=rv*(1-back); contHole.setAttribute('r',rr<0.001?'7000':f2(lerp(2600,200,rr)));
@@ -444,7 +460,7 @@ function mapF(t){
   } else { sa(shipTrail,0); sa(qMark,0); }
   // fog drift: thicker over the continent
   const fd=t<T.surround?0.25:(t<T.loop?0.9:0.9*(1-clamp((t-T.loop)/0.6))+0.25*clamp((t-T.loop)/0.6));
-  FOG.forEach((e,i)=>{const x=-200+i*260+120*Math.sin(t*0.21+i*1.7), y=300+i*230+90*Math.cos(t*0.17+i); e.style.opacity=f2(fd*(0.55+0.35*Math.sin(t*0.5+i)));
+  FOG.forEach((e,i)=>{const x=-200+i*260+120*Math.sin(t*0.21+i*1.7), y=300+i*230+90*Math.cos(t*0.17+i); e.style.opacity=f2(fd*(1-0.75*FT)*(0.55+0.35*Math.sin(t*0.5+i)));
     e.style.transform=`translate(${f2(x)}px,${f2(y)}px) scale(${f2(1+0.15*Math.sin(t*0.3+i))})`;});
   $('grain').style.backgroundPosition=`${Math.floor(hsh(Math.floor(t*30),8)*256)}px ${Math.floor(hsh(Math.floor(t*30),9)*256)}px`;
 }
@@ -478,7 +494,7 @@ function counterF(t){
 // ---------- netero + zigg silhouettes (fallback for S3), name tags, circle on Zigg ----------
 function neteroF(t){
   const a=T.netero, b=T.quote+0.6, fb=HAS('S3')?0:1;
-  NZ.forEach((p,i)=>{const v=win(t,a+i*0.12,b,BOUNCE)*fb*(t>=T.quote?0.45+0.55*(1-clamp((t-T.quote)/0.3)):1); if(!sa(p.g,clamp(v*2)))return;
+  NZ.forEach((p,i)=>{const v=win(t,a+i*0.12,b,BOUNCE)*fb*(t>=T.quote?(FT?0:0.45)+(FT?1:0.55)*(1-clamp((t-T.quote)/0.15)):1); if(!sa(p.g,clamp(v*2)))return;
     const x=i?720:370, y=830; p.g.setAttribute('transform',`translate(${f2(x)} ${f2(y+(1-clamp(v))*80+6*Math.sin(t*2+i))}) scale(${f2(Math.max(0.001,0.85+0.15*v))})`);});
   [['nmA',370,T.netero+0.1],['nmB',720,H.netero]].forEach(([id,x,s])=>{const e=$(id), v=win(t,s,T.quote,POP)*fb; if(!show(e,clamp(v*2)))return;
     e.style.transform=`translate(${f2(x-tw(e.textContent)*0.44)}px,${f2(1010)}px) scale(${f2(Math.max(0.001,v))})`;});
@@ -643,8 +659,11 @@ function cardF(t){
   const ang=flipT(t), side=Math.floor((ang+90)/180), r=((ang+90)%180+180)%180-90; const gold=side%2===0;
   const out=t>=CARD1?clamp(S(t-CARD1,FAST[0],FAST[1])):0;
   const tx=lerp(0,820-540,out), ty=lerp(0,1366-666,out);
-  W.style.transform=`translate(${f2(tx)}px,${f2(ty+8*Math.sin(t*1.8))}px) perspective(1800px) rotateY(${f2(r)}deg) rotate(${f2((gold?-1.2:1.2)+0.6*Math.sin(t*1.3))}deg) scale(${(Math.max(0.001,0.25+0.75*v)*(1-0.8*out)*(1+0.04*Math.sin(clamp(Math.abs(r)/90)*Math.PI))).toFixed(4)})`;
+  W.style.transform=`translate(${f2(tx)}px,${f2(ty+8*Math.sin(t*1.8))}px) perspective(1800px) rotateY(${f2(r)}deg) rotate(${f2((gold?-1.2:1.2)+0.6*Math.sin(t*1.3))}deg) scale(${(Math.max(0.001,0.25+0.75*v)*(1-0.8*out)*(1-0.12*FT)*(1+0.04*Math.sin(clamp(Math.abs(r)/90)*Math.PI))).toFixed(4)})`;
   $('fG').style.opacity=gold?'1':'0'; $('fR').style.opacity=gold?'0':'1';
+  const fa=FT?0.6:1; $('fG').style.background=`linear-gradient(160deg,rgba(42,33,8,${fa}) 0%,rgba(21,17,10,${fa}) 60%,rgba(13,11,8,${fa}) 100%)`;
+  $('fR').style.background=`linear-gradient(160deg,rgba(42,10,14,${fa}) 0%,rgba(23,7,9,${fa}) 60%,rgba(12,5,6,${fa}) 100%)`;
+  $('win').style.background=FT?'rgba(7,5,10,.45)':'#07050A';
   const gi=cardIdx(t); let ri=0; for(let i=0;i<5;i++)if(t>=T[CT[i]])ri=i;
   GN.forEach(([gn,gs,rn],i)=>{gn.style.opacity=i===gi?'1':'0'; gs.style.opacity=i===gi?'1':'0'; rn.style.opacity=i===ri?'1':'0';});
   $('gHr').textContent=`ของรางวัล ${gi+1}/5`; $('gv').textContent=GRADES[ri];
@@ -731,7 +750,16 @@ function captions(t){
   capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
 }
 
-function render(t){ mapF(t); title(t); pillF(t); bigF(t); counterF(t); neteroF(t); slotsF(t); cardF(t); stillF(t); survF(t); fx(t); captions(t); }
+function footF(t){
+  const i=footAt(t); FT=i>=0?1:0;
+  FW.forEach((w,k)=>{ if(k!==i){w.style.opacity='0';return;} const f=FOOT[k], u=clamp((t-f.start)/(f.end-f.start));
+    // push-in 10% across the shot + a small punch on hit_at (the word)
+    const hp=f.hit!=null&&t>=f.hit?0.035*Math.exp(-(t-f.hit)*5):0;
+    w.style.opacity='1'; w.style.transform=`scale(${(1.0+0.10*eio(u)*0.6+0.04*u+hp).toFixed(4)})`;});
+  show($('fshade'),FT);
+  $('paper').style.opacity=FT?'0':'1';
+}
+function render(t){ footF(t); mapF(t); title(t); pillF(t); bigF(t); counterF(t); neteroF(t); slotsF(t); cardF(t); stillF(t); survF(t); fx(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
 tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);

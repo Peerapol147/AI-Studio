@@ -143,7 +143,20 @@ for sid in sorted(slots, key=lambda x: int(x[1:])):
     else:
         for old in DST_STILLS.glob(f'{sid}.*') if DST_STILLS.exists() else []:
             old.unlink()
-DATA = {'dur': DUR, 'capt': capt, 'k': K, 'sh': SH, 'stills': STILLS}
+# ---- footage plates (15 shots in shots-th.json with src): proxies from prep_footage.py (video/assets/footage, gitignored) ----
+import prep_footage
+FOOT = []
+for fo in prep_footage.plan():
+    if not (HERE / fo['proxy']).exists():
+        raise SystemExit(f"missing {fo['proxy']}: run python3 prep_footage.py")
+    FOOT.append({'id': fo['id'], 'src': fo['proxy'], 'start': fo['start'], 'end': fo['end'], 'ms': fo['media_start'], 'hit': fo['hit']})
+DATA = {'dur': DUR, 'capt': capt, 'k': K, 'sh': SH, 'stills': STILLS, 'foot': [{k: f[k] for k in ('id', 'start', 'end', 'hit')} for f in FOOT]}
+
+def foot():
+    # the <video> is timed (start/duration/media-start); its wrapper .fw is untimed and only carries the push-in
+    return '\n'.join(f'    <div class="fw" id="fw-{f["id"]}"><video id="v-{f["id"]}" class="clip fv" src="{f["src"]}" muted playsinline '
+                     f'data-start="{f["start"]}" data-duration="{round(f["end"] - f["start"], 3)}" data-media-start="{f["ms"]}" '
+                     f'data-track-index="{2 + i % 2}"></video></div>' for i, f in enumerate(FOOT))
 
 def caps():
     out = []
@@ -178,7 +191,7 @@ def imgs(prefix, ids):
     return ''.join(f'<img id="{prefix}-{s}" class="simg" src="{STILLS[s]}" alt=""/>' for s in ids if s in STILLS)
 
 page = (HERE / 'index.html.tpl').read_text()
-rep = {'%%DUR%%': str(DUR), '%%CAPS%%': caps(), '%%ICONS%%': icons(), '%%DATA%%': json.dumps(DATA, ensure_ascii=False),
+rep = {'%%FOOT%%': foot(), '%%DUR%%': str(DUR), '%%CAPS%%': caps(), '%%ICONS%%': icons(), '%%DATA%%': json.dumps(DATA, ensure_ascii=False),
        '%%CARD_IMGS%%': imgs('si', ['S1', 'S2', 'S3', 'S4', 'S5', 'S10']),
        '%%WIN_IMGS%%': imgs('wi', ['S6', 'S7', 'S8', 'S9', 'S11'])}
 for key, v in rep.items():
@@ -186,4 +199,4 @@ for key, v in rep.items():
 assert '%%' not in page, re.findall(r'%%\w+%%', page)
 ARGS.out.write_text(page)
 if __name__ == '__main__':
-    print('dur', DUR, 'voice', round(_end, 3), 'captions', len(CAPS), 'stills', STILLS or 'none (graphic fallback)')
+    print('dur', DUR, 'footage', len(FOOT), 'voice', round(_end, 3), 'captions', len(CAPS), 'stills', STILLS or 'none (graphic fallback)')

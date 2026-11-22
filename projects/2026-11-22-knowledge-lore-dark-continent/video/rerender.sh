@@ -7,6 +7,7 @@ V="$(cd "$(dirname "$0")" && pwd)"; P="$(dirname "$V")"; R="$(cd "$P/../.." && p
 CLI="$R/.claude/skills/hyperframes/scripts/plugin-cli.mjs"
 cd "$V"
 bash prep_assets.sh
+python3 prep_footage.py   # graded 9:16 footage proxies -> video/assets/footage (gitignored)
 python3 build_index.py
 python3 sound/make_cues.py
 mkdir -p "$P/renders"

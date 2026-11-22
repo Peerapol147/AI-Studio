@@ -16,6 +16,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #grain{opacity:.075;mix-blend-mode:overlay;background-repeat:repeat}
 #vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.62) 100%)}
 #dim{background:#03040A;opacity:0}
+/* footage plates: full-frame 9:16, graded in prep_footage.py; wrapper carries the push-in */
+#foot{z-index:0}
+.fw{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;transform-origin:50% 45%;opacity:0}
+.fv{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#fshade{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;
+  background:linear-gradient(rgba(2,6,14,.55) 0%,rgba(2,6,14,0) 26%,rgba(2,6,14,0) 52%,rgba(2,6,14,.62) 60%,rgba(2,6,14,.62) 68%,rgba(2,6,14,.1) 78%,rgba(2,6,14,.35) 100%)}
 /* hook title (= spoken words) */
 #title{position:absolute;left:0;top:0;width:1080px;height:760px}
 #title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
@@ -131,6 +137,24 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
   <div id="paper" class="full"></div>
+  <div id="foot" class="full" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="fw" id="fw-surround"><video id="v-surround" class="clip fv" src="assets/footage/surround.mp4" muted playsinline data-start="4.82" data-duration="0.92" data-media-start="1.92" data-track-index="2"></video></div>
+    <div class="fw" id="fw-darkcont"><video id="v-darkcont" class="clip fv" src="assets/footage/darkcont.mp4" muted playsinline data-start="5.74" data-duration="1.38" data-media-start="3.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-quote"><video id="v-quote" class="clip fv" src="assets/footage/quote.mp4" muted playsinline data-start="8.72" data-duration="2.0" data-media-start="2.92" data-track-index="2"></video></div>
+    <div class="fw" id="fw-attempts"><video id="v-attempts" class="clip fv" src="assets/footage/attempts.mp4" muted playsinline data-start="10.72" data-duration="2.52" data-media-start="6.86" data-track-index="3"></video></div>
+    <div class="fw" id="fw-five"><video id="v-five" class="clip fv" src="assets/footage/five.mp4" muted playsinline data-start="13.24" data-duration="2.44" data-media-start="7.92" data-track-index="2"></video></div>
+    <div class="fw" id="fw-c1_reward"><video id="v-c1_reward" class="clip fv" src="assets/footage/c1_reward.mp4" muted playsinline data-start="19.92" data-duration="1.34" data-media-start="2.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-c1_count"><video id="v-c1_count" class="clip fv" src="assets/footage/c1_count.mp4" muted playsinline data-start="23.88" data-duration="2.16" data-media-start="1.7" data-track-index="2"></video></div>
+    <div class="fw" id="fw-c2_reward"><video id="v-c2_reward" class="clip fv" src="assets/footage/c2_reward.mp4" muted playsinline data-start="26.04" data-duration="2.0" data-media-start="1.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-c2_weapon"><video id="v-c2_weapon" class="clip fv" src="assets/footage/c2_weapon.mp4" muted playsinline data-start="28.88" data-duration="1.08" data-media-start="1.92" data-track-index="2"></video></div>
+    <div class="fw" id="fw-c3_reward"><video id="v-c3_reward" class="clip fv" src="assets/footage/c3_reward.mp4" muted playsinline data-start="31.12" data-duration="1.459" data-media-start="2.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-c3_count"><video id="v-c3_count" class="clip fv" src="assets/footage/c3_count.mp4" muted playsinline data-start="34.36" data-duration="1.86" data-media-start="2.1" data-track-index="2"></video></div>
+    <div class="fw" id="fw-c4_reward"><video id="v-c4_reward" class="clip fv" src="assets/footage/c4_reward.mp4" muted playsinline data-start="36.22" data-duration="1.26" data-media-start="1.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-c4_gas"><video id="v-c4_gas" class="clip fv" src="assets/footage/c4_gas.mp4" muted playsinline data-start="38.42" data-duration="1.36" data-media-start="1.92" data-track-index="2"></video></div>
+    <div class="fw" id="fw-c5_dead"><video id="v-c5_dead" class="clip fv" src="assets/footage/c5_dead.mp4" muted playsinline data-start="44.1" data-duration="1.68" data-media-start="1.92" data-track-index="3"></video></div>
+    <div class="fw" id="fw-again"><video id="v-again" class="clip fv" src="assets/footage/again.mp4" muted playsinline data-start="52.06" data-duration="1.84" data-media-start="3.92" data-track-index="2"></video></div>
+    <div id="fshade"></div>
+  </div>
   <div id="fogs" class="full" data-layout-allow-overflow data-layout-allow-overlap>
     <div class="fog" id="fog0"></div><div class="fog" id="fog1"></div><div class="fog" id="fog2"></div><div class="fog" id="fog3"></div><div class="fog" id="fog4"></div>
   </div>
@@ -265,7 +289,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    ONE card that keeps flipping gold "ไปเอา" -> red "เจอ" (5 times), ONE row of 5 slots (? -> strip -> CTA cards),
    ONE pill that morphs between labels. Optional user stills (D.stills) show in a tilted card <= 2 s, else fallback graphics. */
 (function(){
-const D={"dur": 57.433, "capt": [3.54, 4.9, 5.68, 6.86, 7.64, 8.28, 8.8, 9.24, 10.8, 11.44, 11.86, 13.32, 14.08, 14.68, 15.76, 16.28, 17.7, 18.16, 18.82, 20.0, 21.34, 22.4, 23.0, 23.96, 25.18, 26.12, 26.86, 28.12, 28.96, 30.04, 31.2, 31.74, 32.659, 33.52, 34.44, 35.26, 36.3, 37.56, 38.5, 39.86, 40.86, 41.46, 42.54, 43.02, 44.18, 44.82, 45.86, 46.48, 46.98, 47.4, 48.62, 49.18, 49.96, 51.02, 52.14, 52.6, 53.98, 54.72, 55.26, 56.24], "k": {"kon": 0.54, "jud": 2.12, "lake": 2.56, "yak": 3.32, "mobius": 3.66, "dark": 5.82, "netero": 7.2, "zigg": 8.28, "yai": 9.36, "n149": 11.86, "five": 13.64, "rod": 14.48, "wiset": 16.56, "jing": 18.46, "pai": 18.96, "hin": 20.26, "papu": 21.58, "pet": 23.18, "pan": 24.18, "jed": 25.38, "herb": 26.4, "raksa": 26.86, "brion": 28.32, "arwut": 28.96, "song": 30.24, "khao": 31.54, "ayu": 31.74, "ngu": 32.88, "hell": 33.52, "n99": 34.76, "pct": 35.26, "nam": 36.56, "ai": 37.82, "gas": 38.5, "cheewit": 39.06, "sam": 40.08, "sati": 41.04, "team": 42.54, "jring": 43.54, "tai": 44.36, "klang": 44.82, "rok": 46.26, "maitai": 46.98, "neung": 48.74, "rod6": 49.34, "beyond": 50.1, "luk": 51.02, "net2": 51.3, "klab": 52.6, "rob": 52.92, "ao": 53.98, "chin": 54.92, "khum": 55.26, "ment": 56.24}, "sh": {"hook": {"start": 0.0, "end": 1.62, "word": 0.08, "hit": 0.54}, "dot": {"start": 1.62, "end": 2.48, "word": 1.7, "hit": null}, "lake": {"start": 2.48, "end": 3.58, "word": 2.56, "hit": null}, "mobius": {"start": 3.58, "end": 4.82, "word": 3.66, "hit": null}, "surround": {"start": 4.82, "end": 5.74, "word": 4.9, "hit": null}, "darkcont": {"start": 5.74, "end": 7.12, "word": 5.82, "hit": null}, "netero": {"start": 7.12, "end": 8.72, "word": 7.2, "hit": 8.28}, "quote": {"start": 8.72, "end": 10.72, "word": 8.8, "hit": null}, "attempts": {"start": 10.72, "end": 13.24, "word": 10.8, "hit": 11.86}, "five": {"start": 13.24, "end": 15.68, "word": 13.32, "hit": null}, "trips": {"start": 15.68, "end": 16.48, "word": 15.76, "hit": null}, "treasure": {"start": 16.48, "end": 17.62, "word": 16.56, "hit": null}, "but": {"start": 17.62, "end": 18.88, "word": 17.7, "hit": null}, "calamity": {"start": 18.88, "end": 19.92, "word": 18.96, "hit": null}, "c1_reward": {"start": 19.92, "end": 21.26, "word": 20.0, "hit": null}, "c1_threat": {"start": 21.26, "end": 22.32, "word": 21.34, "hit": null}, "c1_pet": {"start": 22.32, "end": 23.88, "word": 22.4, "hit": null}, "c1_count": {"start": 23.88, "end": 26.04, "word": 23.96, "hit": 25.18}, "c2_reward": {"start": 26.04, "end": 28.04, "word": 26.12, "hit": null}, "c2_threat": {"start": 28.04, "end": 28.88, "word": 28.12, "hit": null}, "c2_weapon": {"start": 28.88, "end": 29.96, "word": 28.96, "hit": null}, "c2_count": {"start": 29.96, "end": 31.12, "word": 30.04, "hit": null}, "c3_reward": {"start": 31.12, "end": 32.579, "word": 31.2, "hit": null}, "c3_threat": {"start": 32.579, "end": 34.36, "word": 32.659, "hit": null}, "c3_count": {"start": 34.36, "end": 36.22, "word": 34.44, "hit": 35.26}, "c4_reward": {"start": 36.22, "end": 37.48, "word": 36.3, "hit": null}, "c4_threat": {"start": 37.48, "end": 38.42, "word": 37.56, "hit": null}, "c4_gas": {"start": 38.42, "end": 39.78, "word": 38.5, "hit": null}, "c4_count": {"start": 39.78, "end": 40.78, "word": 39.86, "hit": null}, "c4_mind": {"start": 40.78, "end": 42.46, "word": 40.86, "hit": null}, "c5_reward": {"start": 42.46, "end": 44.1, "word": 42.54, "hit": 43.54}, "c5_dead": {"start": 44.1, "end": 45.78, "word": 44.18, "hit": null}, "c5_zobae": {"start": 45.78, "end": 46.78, "word": 45.86, "hit": null}, "c5_immortal": {"start": 46.78, "end": 48.66, "word": 46.86, "hit": null}, "survivor": {"start": 48.66, "end": 50.02, "word": 48.74, "hit": null}, "beyond": {"start": 50.02, "end": 50.94, "word": 50.1, "hit": null}, "son": {"start": 50.94, "end": 52.06, "word": 51.02, "hit": null}, "again": {"start": 52.06, "end": 53.9, "word": 52.14, "hit": null}, "cta": {"start": 53.9, "end": 56.16, "word": 53.98, "hit": null}, "loop": {"start": 56.16, "end": 57.433, "word": 56.24, "hit": null}}, "stills": {}}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh, ST=D.stills||{};
+const D={"dur": 57.433, "capt": [3.54, 4.9, 5.68, 6.86, 7.64, 8.28, 8.8, 9.24, 10.8, 11.44, 11.86, 13.32, 14.08, 14.68, 15.76, 16.28, 17.7, 18.16, 18.82, 20.0, 21.34, 22.4, 23.0, 23.96, 25.18, 26.12, 26.86, 28.12, 28.96, 30.04, 31.2, 31.74, 32.659, 33.52, 34.44, 35.26, 36.3, 37.56, 38.5, 39.86, 40.86, 41.46, 42.54, 43.02, 44.18, 44.82, 45.86, 46.48, 46.98, 47.4, 48.62, 49.18, 49.96, 51.02, 52.14, 52.6, 53.98, 54.72, 55.26, 56.24], "k": {"kon": 0.54, "jud": 2.12, "lake": 2.56, "yak": 3.32, "mobius": 3.66, "dark": 5.82, "netero": 7.2, "zigg": 8.28, "yai": 9.36, "n149": 11.86, "five": 13.64, "rod": 14.48, "wiset": 16.56, "jing": 18.46, "pai": 18.96, "hin": 20.26, "papu": 21.58, "pet": 23.18, "pan": 24.18, "jed": 25.38, "herb": 26.4, "raksa": 26.86, "brion": 28.32, "arwut": 28.96, "song": 30.24, "khao": 31.54, "ayu": 31.74, "ngu": 32.88, "hell": 33.52, "n99": 34.76, "pct": 35.26, "nam": 36.56, "ai": 37.82, "gas": 38.5, "cheewit": 39.06, "sam": 40.08, "sati": 41.04, "team": 42.54, "jring": 43.54, "tai": 44.36, "klang": 44.82, "rok": 46.26, "maitai": 46.98, "neung": 48.74, "rod6": 49.34, "beyond": 50.1, "luk": 51.02, "net2": 51.3, "klab": 52.6, "rob": 52.92, "ao": 53.98, "chin": 54.92, "khum": 55.26, "ment": 56.24}, "sh": {"hook": {"start": 0.0, "end": 1.62, "word": 0.08, "hit": 0.54}, "dot": {"start": 1.62, "end": 2.48, "word": 1.7, "hit": null}, "lake": {"start": 2.48, "end": 3.58, "word": 2.56, "hit": null}, "mobius": {"start": 3.58, "end": 4.82, "word": 3.66, "hit": null}, "surround": {"start": 4.82, "end": 5.74, "word": 4.9, "hit": null}, "darkcont": {"start": 5.74, "end": 7.12, "word": 5.82, "hit": null}, "netero": {"start": 7.12, "end": 8.72, "word": 7.2, "hit": 8.28}, "quote": {"start": 8.72, "end": 10.72, "word": 8.8, "hit": null}, "attempts": {"start": 10.72, "end": 13.24, "word": 10.8, "hit": 11.86}, "five": {"start": 13.24, "end": 15.68, "word": 13.32, "hit": null}, "trips": {"start": 15.68, "end": 16.48, "word": 15.76, "hit": null}, "treasure": {"start": 16.48, "end": 17.62, "word": 16.56, "hit": null}, "but": {"start": 17.62, "end": 18.88, "word": 17.7, "hit": null}, "calamity": {"start": 18.88, "end": 19.92, "word": 18.96, "hit": null}, "c1_reward": {"start": 19.92, "end": 21.26, "word": 20.0, "hit": null}, "c1_threat": {"start": 21.26, "end": 22.32, "word": 21.34, "hit": null}, "c1_pet": {"start": 22.32, "end": 23.88, "word": 22.4, "hit": null}, "c1_count": {"start": 23.88, "end": 26.04, "word": 23.96, "hit": 25.18}, "c2_reward": {"start": 26.04, "end": 28.04, "word": 26.12, "hit": null}, "c2_threat": {"start": 28.04, "end": 28.88, "word": 28.12, "hit": null}, "c2_weapon": {"start": 28.88, "end": 29.96, "word": 28.96, "hit": null}, "c2_count": {"start": 29.96, "end": 31.12, "word": 30.04, "hit": null}, "c3_reward": {"start": 31.12, "end": 32.579, "word": 31.2, "hit": null}, "c3_threat": {"start": 32.579, "end": 34.36, "word": 32.659, "hit": null}, "c3_count": {"start": 34.36, "end": 36.22, "word": 34.44, "hit": 35.26}, "c4_reward": {"start": 36.22, "end": 37.48, "word": 36.3, "hit": null}, "c4_threat": {"start": 37.48, "end": 38.42, "word": 37.56, "hit": null}, "c4_gas": {"start": 38.42, "end": 39.78, "word": 38.5, "hit": null}, "c4_count": {"start": 39.78, "end": 40.78, "word": 39.86, "hit": null}, "c4_mind": {"start": 40.78, "end": 42.46, "word": 40.86, "hit": null}, "c5_reward": {"start": 42.46, "end": 44.1, "word": 42.54, "hit": 43.54}, "c5_dead": {"start": 44.1, "end": 45.78, "word": 44.18, "hit": null}, "c5_zobae": {"start": 45.78, "end": 46.78, "word": 45.86, "hit": null}, "c5_immortal": {"start": 46.78, "end": 48.66, "word": 46.86, "hit": null}, "survivor": {"start": 48.66, "end": 50.02, "word": 48.74, "hit": null}, "beyond": {"start": 50.02, "end": 50.94, "word": 50.1, "hit": null}, "son": {"start": 50.94, "end": 52.06, "word": 51.02, "hit": null}, "again": {"start": 52.06, "end": 53.9, "word": 52.14, "hit": null}, "cta": {"start": 53.9, "end": 56.16, "word": 53.98, "hit": null}, "loop": {"start": 56.16, "end": 57.433, "word": 56.24, "hit": null}}, "stills": {}, "foot": [{"id": "surround", "start": 4.82, "end": 5.74, "hit": null}, {"id": "darkcont", "start": 5.74, "end": 7.12, "hit": null}, {"id": "quote", "start": 8.72, "end": 10.72, "hit": null}, {"id": "attempts", "start": 10.72, "end": 13.24, "hit": 11.86}, {"id": "five", "start": 13.24, "end": 15.68, "hit": null}, {"id": "c1_reward", "start": 19.92, "end": 21.26, "hit": null}, {"id": "c1_count", "start": 23.88, "end": 26.04, "hit": 25.18}, {"id": "c2_reward", "start": 26.04, "end": 28.04, "hit": null}, {"id": "c2_weapon", "start": 28.88, "end": 29.96, "hit": null}, {"id": "c3_reward", "start": 31.12, "end": 32.579, "hit": null}, {"id": "c3_count", "start": 34.36, "end": 36.22, "hit": 35.26}, {"id": "c4_reward", "start": 36.22, "end": 37.48, "hit": null}, {"id": "c4_gas", "start": 38.42, "end": 39.78, "hit": null}, {"id": "c5_dead", "start": 44.1, "end": 45.78, "hit": null}, {"id": "again", "start": 52.06, "end": 53.9, "hit": null}]}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh, ST=D.stills||{};
 const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
 const NS='http://www.w3.org/2000/svg';
 
@@ -296,6 +320,10 @@ const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=
 const GOLD='#F5C04A',RED='#E5383B',INK='#07060A',WHITE='#FFFFFF',BLUE='#7FB2FF',YEL='#FFE14D';
 const MAPY=830;
 const HAS=id=>!!ST[id];
+// footage: which plate is on at t (hard cuts at shot start), and a 0/1 factor that thins the graphics over it
+const FOOT=D.foot||[]; const FW=FOOT.map(f=>$('fw-'+f.id));
+const footAt=t=>{for(let i=0;i<FOOT.length;i++)if(t>=FOOT[i].start&&t<FOOT[i].end)return i;return -1;};
+let FT=0;
 const RC=window.rough?rough.svg($('scr')):null;
 const roughPath=(gen,parent,attrs)=>{const g=el('g',attrs||{},parent); if(!RC)return g; const n=gen(RC); g.appendChild(n); return g;};
 
@@ -329,14 +357,14 @@ const GRID=el('g',{stroke:'#1C2C4C','stroke-width':1.5,'vector-effect':'non-scal
 for(let i=-30;i<=30;i++){el('line',{x1:i*200,y1:-6000,x2:i*200,y2:6000,'vector-effect':'non-scaling-stroke'},GRID);el('line',{x1:-6000,y1:i*200,x2:6000,y2:i*200,'vector-effect':'non-scaling-stroke'},GRID);}
 // dark continent: everything outside the lake, revealed from the edges inward (mask hole shrinks)
 const CONT=el('g',{mask:'url(#contMask)'},cam);
-el('path',{d:'M-7000 -7000 H7000 V7000 H-7000 Z '+lakeD,'fill-rule':'evenodd',fill:'#140A16',opacity:.94},CONT);
+const CONTF=el('path',{d:'M-7000 -7000 H7000 V7000 H-7000 Z '+lakeD,'fill-rule':'evenodd',fill:'#140A16',opacity:.94},CONT);
 const MTN=el('g',{fill:'none',stroke:'#4A2A48','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'},CONT);
 for(let i=0;i<150;i++){const a=hsh(i,11)*2*Math.PI, r=380+hsh(i,12)*1500, s=14+hsh(i,13)*26, x=r*Math.cos(a), y=r*Math.sin(a);
   el('path',{d:`M${f2(x-s)} ${f2(y)} L${f2(x)} ${f2(y-s*1.1)} L${f2(x+s)} ${f2(y)}`,'vector-effect':'non-scaling-stroke'},MTN);}
 const contRings=[700,1100,1600].map(r=>el('path',{d:ring(r,90),fill:'none',stroke:'#3A1F3A','stroke-width':2,'stroke-dasharray':'10 14','vector-effect':'non-scaling-stroke'},CONT));
 const contHole=$('contHole');
 // lake + ripples + shore
-el('path',{d:lakeD,fill:'#0A1A36'},cam);
+const LAKEF=el('path',{d:lakeD,fill:'#0A1A36'},cam);
 const RIP=[0,1,2,3].map(i=>el('path',{d:ring(1,64),fill:'none',stroke:'#2C5590','stroke-width':1.5,'vector-effect':'non-scaling-stroke',opacity:0},cam));
 const shore=el('path',{d:lakeD,fill:'none',stroke:'#3D6FB0','stroke-width':3,'vector-effect':'non-scaling-stroke',opacity:.55},cam);
 const FL=window.flubber; const growLake=FL?FL.interpolate(ring(14,48),lakeD,{maxSegmentLength:12}):null;
@@ -463,7 +491,9 @@ function mapF(t){
   SHK=[dx+shk*14*(vn(t*14,3)-0.5)*2, dy+shk*12*(vn(t*14,4)-0.5)*2];
   const rot=(vn(t*0.2,5)-0.5)*1.6*drift;
   cam.setAttribute('transform',`translate(${f2(540+SHK[0])} ${f2(MAPY+SHK[1])}) rotate(${f2(rot)}) scale(${CAMZ.toFixed(4)}) translate(${f2(-CAMX)} ${f2(-CAMY)})`);
-  $('dim').style.opacity=f2(clamp(dimT(t),0,0.9));
+  $('dim').style.opacity=f2(clamp(dimT(t),0,0.9)*(1-0.8*FT));
+  // over footage the map is a see-through line drawing: continent fill/lake/grid thinned, mountains + shore kept
+  sa(CONTF,FT?0.22:0.94); sa(LAKEF,FT?0.32:1); GRID.setAttribute('opacity',FT?'0.35':'0.8'); MTN.setAttribute('stroke',FT?'#B48AC0':'#4A2A48');
   // continent reveal from the screen edges inward on "ที่ล้อมรอบ" (and gone again for the loop)
   const rv=t<T.surround?0:clamp(S(t-T.surround,4.2,1)); const back=t>=T.loop?clamp(S(t-T.loop,8,1)):0;
   const rr=rv*(1-back); contHole.setAttribute('r',rr<0.001?'7000':f2(lerp(2600,200,rr)));
@@ -521,7 +551,7 @@ function mapF(t){
   } else { sa(shipTrail,0); sa(qMark,0); }
   // fog drift: thicker over the continent
   const fd=t<T.surround?0.25:(t<T.loop?0.9:0.9*(1-clamp((t-T.loop)/0.6))+0.25*clamp((t-T.loop)/0.6));
-  FOG.forEach((e,i)=>{const x=-200+i*260+120*Math.sin(t*0.21+i*1.7), y=300+i*230+90*Math.cos(t*0.17+i); e.style.opacity=f2(fd*(0.55+0.35*Math.sin(t*0.5+i)));
+  FOG.forEach((e,i)=>{const x=-200+i*260+120*Math.sin(t*0.21+i*1.7), y=300+i*230+90*Math.cos(t*0.17+i); e.style.opacity=f2(fd*(1-0.75*FT)*(0.55+0.35*Math.sin(t*0.5+i)));
     e.style.transform=`translate(${f2(x)}px,${f2(y)}px) scale(${f2(1+0.15*Math.sin(t*0.3+i))})`;});
   $('grain').style.backgroundPosition=`${Math.floor(hsh(Math.floor(t*30),8)*256)}px ${Math.floor(hsh(Math.floor(t*30),9)*256)}px`;
 }
@@ -555,7 +585,7 @@ function counterF(t){
 // ---------- netero + zigg silhouettes (fallback for S3), name tags, circle on Zigg ----------
 function neteroF(t){
   const a=T.netero, b=T.quote+0.6, fb=HAS('S3')?0:1;
-  NZ.forEach((p,i)=>{const v=win(t,a+i*0.12,b,BOUNCE)*fb*(t>=T.quote?0.45+0.55*(1-clamp((t-T.quote)/0.3)):1); if(!sa(p.g,clamp(v*2)))return;
+  NZ.forEach((p,i)=>{const v=win(t,a+i*0.12,b,BOUNCE)*fb*(t>=T.quote?(FT?0:0.45)+(FT?1:0.55)*(1-clamp((t-T.quote)/0.15)):1); if(!sa(p.g,clamp(v*2)))return;
     const x=i?720:370, y=830; p.g.setAttribute('transform',`translate(${f2(x)} ${f2(y+(1-clamp(v))*80+6*Math.sin(t*2+i))}) scale(${f2(Math.max(0.001,0.85+0.15*v))})`);});
   [['nmA',370,T.netero+0.1],['nmB',720,H.netero]].forEach(([id,x,s])=>{const e=$(id), v=win(t,s,T.quote,POP)*fb; if(!show(e,clamp(v*2)))return;
     e.style.transform=`translate(${f2(x-tw(e.textContent)*0.44)}px,${f2(1010)}px) scale(${f2(Math.max(0.001,v))})`;});
@@ -720,8 +750,11 @@ function cardF(t){
   const ang=flipT(t), side=Math.floor((ang+90)/180), r=((ang+90)%180+180)%180-90; const gold=side%2===0;
   const out=t>=CARD1?clamp(S(t-CARD1,FAST[0],FAST[1])):0;
   const tx=lerp(0,820-540,out), ty=lerp(0,1366-666,out);
-  W.style.transform=`translate(${f2(tx)}px,${f2(ty+8*Math.sin(t*1.8))}px) perspective(1800px) rotateY(${f2(r)}deg) rotate(${f2((gold?-1.2:1.2)+0.6*Math.sin(t*1.3))}deg) scale(${(Math.max(0.001,0.25+0.75*v)*(1-0.8*out)*(1+0.04*Math.sin(clamp(Math.abs(r)/90)*Math.PI))).toFixed(4)})`;
+  W.style.transform=`translate(${f2(tx)}px,${f2(ty+8*Math.sin(t*1.8))}px) perspective(1800px) rotateY(${f2(r)}deg) rotate(${f2((gold?-1.2:1.2)+0.6*Math.sin(t*1.3))}deg) scale(${(Math.max(0.001,0.25+0.75*v)*(1-0.8*out)*(1-0.12*FT)*(1+0.04*Math.sin(clamp(Math.abs(r)/90)*Math.PI))).toFixed(4)})`;
   $('fG').style.opacity=gold?'1':'0'; $('fR').style.opacity=gold?'0':'1';
+  const fa=FT?0.6:1; $('fG').style.background=`linear-gradient(160deg,rgba(42,33,8,${fa}) 0%,rgba(21,17,10,${fa}) 60%,rgba(13,11,8,${fa}) 100%)`;
+  $('fR').style.background=`linear-gradient(160deg,rgba(42,10,14,${fa}) 0%,rgba(23,7,9,${fa}) 60%,rgba(12,5,6,${fa}) 100%)`;
+  $('win').style.background=FT?'rgba(7,5,10,.45)':'#07050A';
   const gi=cardIdx(t); let ri=0; for(let i=0;i<5;i++)if(t>=T[CT[i]])ri=i;
   GN.forEach(([gn,gs,rn],i)=>{gn.style.opacity=i===gi?'1':'0'; gs.style.opacity=i===gi?'1':'0'; rn.style.opacity=i===ri?'1':'0';});
   $('gHr').textContent=`ของรางวัล ${gi+1}/5`; $('gv').textContent=GRADES[ri];
@@ -808,7 +841,16 @@ function captions(t){
   capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
 }
 
-function render(t){ mapF(t); title(t); pillF(t); bigF(t); counterF(t); neteroF(t); slotsF(t); cardF(t); stillF(t); survF(t); fx(t); captions(t); }
+function footF(t){
+  const i=footAt(t); FT=i>=0?1:0;
+  FW.forEach((w,k)=>{ if(k!==i){w.style.opacity='0';return;} const f=FOOT[k], u=clamp((t-f.start)/(f.end-f.start));
+    // push-in 10% across the shot + a small punch on hit_at (the word)
+    const hp=f.hit!=null&&t>=f.hit?0.035*Math.exp(-(t-f.hit)*5):0;
+    w.style.opacity='1'; w.style.transform=`scale(${(1.0+0.10*eio(u)*0.6+0.04*u+hp).toFixed(4)})`;});
+  show($('fshade'),FT);
+  $('paper').style.opacity=FT?'0':'1';
+}
+function render(t){ footF(t); mapF(t); title(t); pillF(t); bigF(t); counterF(t); neteroF(t); slotsF(t); cardF(t); stillF(t); survF(t); fx(t); captions(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
 tl.to(proxy,{t:57.433,duration:57.433,ease:'none'},0);
