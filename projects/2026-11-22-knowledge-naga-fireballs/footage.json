@@ -1,0 +1,13 @@
+{
+ "h1_fire": {"src": "assets/footage/river_moon_v.mp4", "action_at": 0},
+ "c1_ask": {"src": "assets/footage/river_moon_v.mp4", "action_at": 0},
+ "s2_mekong": {"src": "assets/footage/river_moon_v.mp4", "action_at": 4},
+ "s5_orb": {"src": "assets/footage/river_moon_v.mp4", "action_at": 4},
+ "s1_moon": {"src": "assets/footage/moon_clouds_v.mp4", "action_at": 4},
+ "s4_dark": {"src": "assets/footage/dusk_to_night_v.mp4", "action_at": 6},
+ "s9_villagers": {"src": "assets/footage/candles_water_v.mp4", "action_at": 1},
+ "s12_buddha": {"src": "assets/footage/golden_buddha_v.mp4", "action_at": 1},
+ "s13_heaven": {"src": "assets/footage/sky_rays_v.mp4", "action_at": 2},
+ "s14_respect": {"src": "assets/footage/hands_candle_v.mp4", "action_at": 1},
+ "t3_gas": {"src": "assets/footage/mud_bubbles_v.mp4", "action_at": 2}
+}
