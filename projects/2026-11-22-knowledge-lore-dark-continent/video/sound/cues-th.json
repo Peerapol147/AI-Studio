@@ -1,0 +1,184 @@
+[
+ {
+  "t": 0.3,
+  "type": "movement",
+  "desc": "hook: soft whoosh under the title, map breathing",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -28
+ },
+ {
+  "t": 0.54,
+  "type": "hover_or_small_ui",
+  "desc": "sonar ring on the dot at \"กอน\"",
+  "sfx": "ui-blip/kenney-digital-twotone1.ogg",
+  "gain": -24
+ },
+ {
+  "t": 1.62,
+  "type": "movement",
+  "desc": "camera dives into the dot",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -22
+ },
+ {
+  "t": 2.48,
+  "type": "movement",
+  "desc": "zoom out, the shore grows out of the dot",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 4.82,
+  "type": "movement",
+  "desc": "darkness flows in from the edges (dark riser)",
+  "sfx": "riser/fs-396161-scary-hits-risers-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 5.82,
+  "type": "reveal",
+  "desc": "\"ทวีปมืด\" slam + punch-in",
+  "sfx": "impact/fs-222517-dramatic-hit.ogg",
+  "gain": -20
+ },
+ {
+  "t": 8.28,
+  "type": "appear",
+  "desc": "red circle on Zigg",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 10.8,
+  "type": "typing",
+  "desc": "149 routes + counter running",
+  "sfx": "typing/fs-511418-data-reveal-sound.ogg",
+  "gain": -26
+ },
+ {
+  "t": 11.86,
+  "type": "reveal",
+  "desc": "counter lands on 149 (punch-in)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -22
+ },
+ {
+  "t": 13.64,
+  "type": "success",
+  "desc": "144 routes go grey, 5 glow gold",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 16.48,
+  "type": "appear",
+  "desc": "gold treasure icons pop on the pins",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -24
+ },
+ {
+  "t": 17.62,
+  "type": "error_or_tech",
+  "desc": "glitch cut, gold turns red",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -20
+ },
+ {
+  "t": 18.96,
+  "type": "reveal",
+  "desc": "low hit on \"ภัยพิบัติ\"",
+  "sfx": "impact/kenney-sci-lowfrequency-explosion-000.ogg",
+  "gain": -20
+ },
+ {
+  "t": 21.26,
+  "type": "scene_cut",
+  "desc": "card flip 1 (Pap)",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -22
+ },
+ {
+  "t": 25.18,
+  "type": "reveal",
+  "desc": "1,000 dots -> 7 (punch-in)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 28.04,
+  "type": "scene_cut",
+  "desc": "card flip 2 (Brion)",
+  "sfx": "transition/fs-850347-swipe-various.ogg",
+  "gain": -22
+ },
+ {
+  "t": 32.579,
+  "type": "scene_cut",
+  "desc": "card flip 3 (Hellbell)",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -22
+ },
+ {
+  "t": 35.26,
+  "type": "hover_or_small_ui",
+  "desc": "bar stops at 99%",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -22
+ },
+ {
+  "t": 37.48,
+  "type": "scene_cut",
+  "desc": "card flip 4 (Ai)",
+  "sfx": "transition/fs-850347-swipe-various.ogg",
+  "gain": -22
+ },
+ {
+  "t": 40.78,
+  "type": "error_or_tech",
+  "desc": "glitch on \"สติหลุด\"",
+  "sfx": "glitch/kenney-sci-computernoise-001.ogg",
+  "gain": -26
+ },
+ {
+  "t": 43.54,
+  "type": "success",
+  "desc": "check mark \"ได้มา\"",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -26
+ },
+ {
+  "t": 45.78,
+  "type": "scene_cut",
+  "desc": "card flip 5 (Zobae)",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -22
+ },
+ {
+  "t": 46.98,
+  "type": "reveal",
+  "desc": "\"ไม่ตาย\" slam",
+  "sfx": "impact/fs-177242-cinematic-impact.ogg",
+  "gain": -22
+ },
+ {
+  "t": 52.06,
+  "type": "movement",
+  "desc": "new ship leaves the dot",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 55.26,
+  "type": "appear",
+  "desc": "\"คุ้มเสี่ยงสุด?\" pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -24
+ },
+ {
+  "t": 56.16,
+  "type": "movement",
+  "desc": "camera zooms back into the dot (loop to frame 0)",
+  "sfx": "riser/fs-174363-rewind.ogg",
+  "gain": -24
+ }
+]

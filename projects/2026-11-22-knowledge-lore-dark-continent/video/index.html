@@ -1,0 +1,820 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="vendor/flubber.min.js"></script>
+<script src="vendor/rough.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#05070F}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 43%}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+#paper{background:radial-gradient(ellipse at 50% 43%,#0E1830 0%,#081022 45%,#04060D 100%)}
+.fog{position:absolute;left:0;top:0;width:900px;height:900px;border-radius:450px;opacity:0}
+#grain{opacity:.075;mix-blend-mode:overlay;background-repeat:repeat}
+#vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.62) 100%)}
+#dim{background:#03040A;opacity:0}
+/* hook title (= spoken words) */
+#title{position:absolute;left:0;top:0;width:1080px;height:760px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:24px #07060A;paint-order:stroke fill;transform-origin:50% 60%;text-shadow:0 10px 0 rgba(0,0,0,.5)}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:820px;background:linear-gradient(rgba(3,4,10,.7) 0%,rgba(3,4,10,.45) 60%,rgba(3,4,10,0) 100%)}
+#spoil{position:absolute;left:0;top:244px;width:1080px;display:flex;justify-content:center;opacity:0}
+#spoil div{height:56px;padding:0 24px 0 16px;border-radius:28px;background:rgba(229,56,59,.92);border:4px solid #07060A;display:flex;align-items:center;gap:10px;
+  color:#fff;font-weight:700;font-size:32px;white-space:nowrap}
+#spoil svg{width:34px;height:34px;color:#FFE14D}
+/* pill (one element, morphs between labels) */
+.pill{position:absolute;left:0;top:0;height:96px;border-radius:48px;border:7px solid #07060A;opacity:0;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.35);transform-origin:50% 50%}
+.pill .tx{position:absolute;top:50%;left:96px;transform:translateY(-54%);font-weight:900;font-size:50px;white-space:nowrap;color:#07060A}
+.pill .bd{position:absolute;left:12px;top:9px;width:64px;height:64px;border-radius:32px;background:#07060A}
+.pill .bd svg{width:44px;height:44px;color:#fff;position:absolute;left:10px;top:10px}
+#meas{position:absolute;left:-3000px;top:0;font-weight:900;font-size:50px;white-space:nowrap;visibility:hidden}
+.tag{position:absolute;left:0;top:0;white-space:nowrap;font-weight:700;opacity:0;color:#fff;-webkit-text-stroke:9px #07060A;paint-order:stroke fill}
+#scale{left:130px;top:1342px;font-size:34px;color:#B8C4DC;-webkit-text-stroke:7px #07060A}
+/* big kinetic words */
+.big{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:900;line-height:1.05;white-space:nowrap;opacity:0;color:#fff;
+  -webkit-text-stroke:24px #07060A;paint-order:stroke fill;transform-origin:50% 55%}
+.big small{display:block;margin-top:18px;font-size:42px;font-weight:700;color:#C9D3E8;-webkit-text-stroke:9px #07060A}
+.red{color:#FF5A5D}.gold{color:#F5C04A}
+#cnt{position:absolute;left:0;top:280px;width:1080px;text-align:center;opacity:0;transform-origin:50% 40%}
+#cnt .n{font-weight:900;font-size:190px;line-height:1;color:#fff;-webkit-text-stroke:24px #07060A;paint-order:stroke fill}
+#cnt .l{position:relative;height:60px;margin-top:6px}
+#cnt .l div{position:absolute;left:0;width:1080px;font-weight:700;font-size:48px;color:#E7EDF8;-webkit-text-stroke:10px #07060A;paint-order:stroke fill}
+/* still card (user stills; hidden when the file is missing) */
+#scard{position:absolute;left:0;top:0;width:660px;height:520px;opacity:0;transform-origin:50% 50%}
+#scard .fr{position:absolute;left:0;top:0;width:660px;height:480px;border-radius:18px;background:#EDE3CC;box-shadow:0 0 0 6px #07060A,0 30px 60px rgba(0,0,0,.6);overflow:hidden}
+#scard .im{position:absolute;left:20px;top:20px;width:620px;height:440px;overflow:hidden;background:#111;border-radius:8px}
+.simg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:0;transform-origin:50% 50%}
+#scard .lab{position:absolute;left:24px;top:-34px;padding:4px 22px 10px;border-radius:16px;background:#E5383B;border:6px solid #07060A;color:#fff;font-weight:900;font-size:44px;white-space:nowrap;transform:rotate(-3deg)}
+#scard svg{position:absolute;left:20px;top:20px;width:620px;height:440px;overflow:visible}
+.credit{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:400;font-size:28px;color:rgba(255,255,255,.82);opacity:0;-webkit-text-stroke:5px #07060A;paint-order:stroke fill;white-space:nowrap}
+/* flip card */
+#cardW{position:absolute;left:190px;top:296px;width:700px;height:740px;opacity:0;transform-origin:50% 50%}
+#cardR{position:absolute;left:0;top:0;width:700px;height:740px;transform-origin:50% 50%}
+.face{position:absolute;left:0;top:0;width:700px;height:740px;border-radius:36px;overflow:hidden}
+#fG{background:linear-gradient(160deg,#2A2108 0%,#15110A 60%,#0D0B08 100%);box-shadow:inset 0 0 0 8px #F5C04A,0 0 0 6px #07060A,0 30px 70px rgba(0,0,0,.6)}
+#fR{background:linear-gradient(160deg,#2A0A0E 0%,#170709 60%,#0C0506 100%);box-shadow:inset 0 0 0 8px #E5383B,0 0 0 6px #07060A,0 30px 70px rgba(0,0,0,.6)}
+.hd{position:absolute;left:30px;top:28px;height:64px;padding:0 26px;border-radius:32px;font-weight:900;font-size:42px;line-height:60px;color:#07060A;white-space:nowrap}
+.hr{position:absolute;right:34px;top:40px;font-weight:700;font-size:32px;white-space:nowrap}
+#fG .hd{background:#F5C04A}#fG .hr{color:#F5C04A}
+#fR .hd{background:#E5383B;color:#fff}#fR .hr{color:#FF8A8C}
+#gIc{position:absolute;left:170px;top:104px;width:360px;height:360px;overflow:visible}
+.gn{position:absolute;left:0;top:478px;width:700px;text-align:center;font-weight:900;font-size:92px;line-height:1.1;color:#FFE7A8;white-space:nowrap;opacity:0}
+.gs{position:absolute;left:0;top:612px;width:700px;text-align:center;font-weight:700;font-size:44px;color:#F3E3B5;white-space:nowrap;opacity:0}
+#win{position:absolute;left:30px;top:110px;width:640px;height:380px;border-radius:20px;overflow:hidden;background:#07050A;box-shadow:inset 0 0 0 4px rgba(229,56,59,.5)}
+#winS{position:absolute;left:0;top:0;width:640px;height:380px;overflow:visible}
+.rn{position:absolute;left:40px;top:508px;font-weight:900;font-size:96px;line-height:1.05;color:#fff;white-space:nowrap;opacity:0}
+.rn i{font-style:normal;display:block;font-weight:700;font-size:40px;letter-spacing:8px;color:#FF8A8C}
+#grade{position:absolute;left:500px;top:506px;width:160px;height:160px;border-radius:80px;background:#E5383B;border:7px solid #07060A;text-align:center;color:#fff}
+#grade .gl{position:absolute;left:0;top:14px;width:146px;font-weight:700;font-size:28px}
+#grade .gv{position:absolute;left:0;top:34px;width:146px;font-weight:900;font-size:84px;line-height:1.1}
+#ghint{position:absolute;left:410px;top:676px;width:270px;text-align:right;font-weight:400;font-size:22px;color:#FF9C9E;white-space:nowrap}
+#rst{position:absolute;left:40px;top:664px;font-weight:900;font-size:50px;color:#FFE14D;white-space:nowrap;opacity:0}
+/* slots strip / CTA mini cards */
+.slot{position:absolute;left:0;top:0;width:136px;height:220px;border-radius:22px;background:#0D0B12;border:6px solid #07060A;opacity:0;transform-origin:50% 50%;
+  box-shadow:inset 0 0 0 4px #3A2A40,0 10px 0 rgba(0,0,0,.4);overflow:hidden}
+.slot .q{position:absolute;left:0;top:44px;width:124px;text-align:center;font-weight:900;font-size:110px;line-height:1;color:#E5383B}
+.slot .tp{position:absolute;left:0;top:0;width:124px;height:104px;background:#F5C04A;opacity:0}
+.slot .tp svg{position:absolute;left:30px;top:20px;width:64px;height:64px;color:#07060A}
+.slot .bt{position:absolute;left:0;top:104px;width:124px;height:104px;background:#E5383B;opacity:0;text-align:center;color:#fff;font-weight:900;font-size:64px;line-height:100px}
+.slot .ring{position:absolute;left:-6px;top:-6px;width:136px;height:220px;border-radius:22px;box-shadow:inset 0 0 0 8px #FFF;opacity:0}
+#gbars{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:40;pointer-events:none}
+#gbars div{position:absolute;left:60px;width:840px;opacity:0;mix-blend-mode:screen}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+/* captions: centred on X 510 (safe band X 120-900), text box ~Y 1130-1245 */
+.cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFE14D}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="57.433" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-triangle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-triangle-alert" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol>
+<symbol id="ic-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-landmark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 18v-7" /> <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" /> <path d="M14 18v-7" /> <path d="M18 18v-7" /> <path d="M3 22h18" /> <path d="M6 18v-7" /></symbol>
+<symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-mountain" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m8 3 4 8 5-5 5 15H2L8 3z" /></symbol>
+<symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-flag" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" /></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
+<symbol id="ic-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-user" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></symbol>
+<symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol>
+<symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-leaf" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" /> <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" /></symbol>
+<symbol id="ic-droplets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" /> <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></symbol>
+<symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-hourglass" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 22h14" /> <path d="M5 2h14" /> <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /> <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></symbol>
+<symbol id="ic-infinity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-infinity" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8" /></symbol>
+<symbol id="ic-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-message-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol>
+<symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="ic-flask-conical" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-flask-conical" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" /> <path d="M6.453 15h11.094" /> <path d="M8.5 2h7" /></symbol>
+<symbol id="ic-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-circle-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="m16 9-5.5 5.5L8 12" /></symbol>
+<symbol id="ic-circle-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-circle-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="m15 9-6 6" /> <path d="m9 9 6 6" /></symbol>
+<symbol id="ic-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-map-pin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol>
+<symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><svg class="lucide lucide-compass" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /></symbol>
+<filter id="rgbx" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+  <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+  <feOffset id="rgbR" in="r" dx="0" dy="0" result="ro"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+  <feOffset id="rgbB" in="b" dx="0" dy="0" result="bo"/>
+  <feBlend in="ro" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="bo" mode="screen"/>
+</filter>
+<radialGradient id="gGlow"><stop offset="0" stop-color="#FFD873" stop-opacity=".9"/><stop offset=".35" stop-color="#F5C04A" stop-opacity=".35"/><stop offset="1" stop-color="#F5C04A" stop-opacity="0"/></radialGradient>
+<radialGradient id="rGlow"><stop offset="0" stop-color="#FF5A5D" stop-opacity=".85"/><stop offset="1" stop-color="#E5383B" stop-opacity="0"/></radialGradient>
+<radialGradient id="eyeG"><stop offset="0" stop-color="#FFF2B0"/><stop offset=".4" stop-color="#FF6A3D"/><stop offset="1" stop-color="#FF3B30" stop-opacity="0"/></radialGradient>
+<radialGradient id="fogP"><stop offset="0" stop-color="#4A1838" stop-opacity=".55"/><stop offset="1" stop-color="#4A1838" stop-opacity="0"/></radialGradient>
+<linearGradient id="gemG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".5" stop-color="#F5C04A"/><stop offset="1" stop-color="#9A6A12"/></linearGradient>
+<mask id="contMask" maskUnits="userSpaceOnUse" x="-7000" y="-7000" width="14000" height="14000">
+  <rect x="-7000" y="-7000" width="14000" height="14000" fill="#fff"/><circle id="contHole" cx="0" cy="0" r="7000" fill="#000"/></mask>
+</defs></svg>
+
+<div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="paper" class="full"></div>
+  <div id="fogs" class="full" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="fog" id="fog0"></div><div class="fog" id="fog1"></div><div class="fog" id="fog2"></div><div class="fog" id="fog3"></div><div class="fog" id="fog4"></div>
+  </div>
+  <svg id="world" class="full" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="cam"></g></svg>
+  <svg id="scr" class="full" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
+  <div id="dim" class="full"></div>
+  <svg id="fig" class="full" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
+
+  <div id="over" class="full" data-layout-allow-overflow data-layout-allow-overlap style="z-index:10">
+    <div class="tag" id="scale">ภาพประกอบ · ไม่ใช่สเกลจริง</div>
+    <div class="tag" id="kwlab" style="font-size:42px;color:#FFE7A8">โลกที่รู้จัก</div>
+    <div class="tag" id="nmA" style="font-size:44px">เน็ตโร</div>
+    <div class="tag" id="nmB" style="font-size:44px">ซิกก์ โซลดิ๊ก</div>
+    <div class="tag" id="nmC" style="font-size:40px;color:#FFE7A8">เน็ตโร</div>
+    <div id="cnt"><div class="n" id="cntN">0</div><div class="l"><div id="cntL1">ครั้งที่พยายามข้าม</div><div id="cntL2" style="color:#F5C04A">ครั้งที่มีคนรอดกลับมา</div></div></div>
+    <div class="big red" id="bDark" style="font-size:190px">ทวีปมืด</div>
+    <div class="big" id="bQuote" style="font-size:118px">“ใหญ่เกินไปแล้ว”<small>เน็ตโร · มังงะ ch.344</small></div>
+    <div class="big gold" id="bSon" style="font-size:120px">ลูกชายเน็ตโร</div>
+    <div class="big" id="bCta" style="font-size:120px">คุ้มเสี่ยงสุด?<small>ของรางวัล vs ราคาที่ต้องจ่าย</small></div>
+
+    <!-- 5 slots: "?" (calamity) -> strip at the bottom (cards) -> mini cards (CTA) -->
+    <div class="slot" id="sl0"><div class="q">?</div><div class="tp"><svg><use href="#ic-zap"/></svg></div><div class="bt">A</div><div class="ring"></div></div>
+    <div class="slot" id="sl1"><div class="q">?</div><div class="tp"><svg><use href="#ic-leaf"/></svg></div><div class="bt">B+</div><div class="ring"></div></div>
+    <div class="slot" id="sl2"><div class="q">?</div><div class="tp"><svg><use href="#ic-hourglass"/></svg></div><div class="bt">A</div><div class="ring"></div></div>
+    <div class="slot" id="sl3"><div class="q">?</div><div class="tp"><svg><use href="#ic-droplets"/></svg></div><div class="bt">A</div><div class="ring"></div></div>
+    <div class="slot" id="sl4"><div class="q">?</div><div class="tp"><svg><use href="#ic-flask-conical"/></svg></div><div class="bt">B+</div><div class="ring"></div></div>
+
+    <!-- the flip card: gold "ไปเอา" (reward) <-> red "เจอ" (price) -->
+    <div id="cardW"><div id="cardR">
+      <div class="face" id="fG"><div class="hd">ไปเอา</div><div class="hr" id="gHr">ของรางวัล 1/5</div>
+        <svg id="gIc" viewBox="-180 -180 360 360"></svg>
+        <div class="gn" id="gn0">หินปั่นไฟ</div><div class="gn" id="gn1">สมุนไพร</div><div class="gn" id="gn2">ข้าวไนโตร</div><div class="gn" id="gn3">น้ำวิเศษ</div><div class="gn" id="gn4">เมทาลิออน</div>
+        <div class="gs" id="gs0">1 เม็ด = 20,000 kW ทั้งวัน</div><div class="gs" id="gs1">รักษาได้ทุกโรค</div><div class="gs" id="gs2">ความลับของอายุยืน</div><div class="gs" id="gs3">น้ำสามต้นกำเนิด</div><div class="gs" id="gs4">พืชเล่นแร่แปรธาตุ</div>
+      </div>
+      <div class="face" id="fR"><div class="hd">เจอ</div><div class="hr" id="rHr" style="font-size:30px">เกรดจากตารางสมาคมฮันเตอร์</div>
+        <div id="win"><svg id="winS" viewBox="0 0 640 380"></svg><svg id="winO" viewBox="0 0 640 380" style="position:absolute;left:0;top:0;width:640px;height:380px;overflow:visible"></svg></div>
+        <div class="rn" id="rn0">ปาปุ<i>PAP</i></div><div class="rn" id="rn1">ไบรออน<i>BRION</i></div><div class="rn" id="rn2">เฮลเบล<i>HELLBELL</i></div><div class="rn" id="rn3">ไอ<i>AI</i></div><div class="rn" id="rn4" style="font-size:80px">โรคโซบาเอะ<i>ZOBAE</i></div>
+        <div id="grade"><div class="gl">เกรด</div><div class="gv" id="gv">A</div></div>
+        <div id="rst"></div>
+      </div>
+    </div></div>
+    <div class="big gold" id="bWeapon" style="font-size:150px">อาวุธพืช</div>
+    <div class="big red" id="bMind" style="font-size:150px">สติหลุด</div>
+    <div class="big" id="bImm" style="font-size:170px">ไม่ตาย</div>
+    <div class="credit" id="cardCred">HUNTER×HUNTER © Yoshihiro Togashi / Shueisha</div>
+
+    <div id="scard"><div class="fr"><div class="im"></div><svg id="scO" viewBox="0 0 620 440"></svg></div><div class="lab" id="scLab"></div></div>
+    <div class="credit" id="sCred">HUNTER×HUNTER © Yoshihiro Togashi / Shueisha</div>
+
+    <div class="pill" id="pill"><div class="bd"><svg id="pillIc"><use id="pillUse" href="#ic-map-pin"/></svg></div>
+      <span class="tx" id="pillA"></span><span class="tx" id="pillB"></span></div>
+    <div id="tshade"></div>
+    <div id="spoil"><div><svg><use href="#ic-triangle-alert"/></svg>สปอยล์มังงะ เล่ม 32-34</div></div>
+    <div id="title"><div class="tl" id="tl1">ทุกที่ที่กอนเคยไปมา</div><div class="tl" id="tl2">เป็นแค่จุดเล็กๆ</div><div class="tl" id="tl3">กลางทะเลสาบยักษ์</div></div>
+    <div id="meas"></div>
+  </div>
+  <div id="grain" class="full"></div>
+  <div id="vig" class="full"></div>
+</div>
+<div id="gbars"><div id="gb0"></div><div id="gb1"></div><div id="gb2"></div></div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="3.54" data-duration="1.36" data-track-index="20"><span style="font-size:88px">ชื่อ<em>โมเบียส</em>นะ</span></div>
+  <div id="c1" class="clip cap" data-start="4.9" data-duration="0.78" data-track-index="20"><span style="font-size:96px">ที่ล้อมรอบอยู่</span></div>
+  <div id="c2" class="clip cap" data-start="5.68" data-duration="1.18" data-track-index="20"><span style="font-size:96px">คือ<em>ทวีปมืด</em></span></div>
+  <div id="c3" class="clip cap" data-start="6.86" data-duration="0.78" data-track-index="20"><span style="font-size:88px">ใหญ่จน<em>เน็ตโร</em></span></div>
+  <div id="c4" class="clip cap" data-start="7.64" data-duration="0.64" data-track-index="20"><span style="font-size:96px">ที่เคยไปกับ</span></div>
+  <div id="c5" class="clip cap" data-start="8.28" data-duration="0.52" data-track-index="20"><span style="font-size:96px"><em>ซิกก์ โซลดิ๊ก</em></span></div>
+  <div id="c6" class="clip cap" data-start="8.8" data-duration="0.44" data-track-index="20"><span style="font-size:96px">ยังบอกว่า</span></div>
+  <div id="c7" class="clip cap" data-start="9.24" data-duration="1.56" data-track-index="20"><span style="font-size:80px">มัน<em>ใหญ่เกินไปแล้ว</em></span></div>
+  <div id="c8" class="clip cap" data-start="10.8" data-duration="0.64" data-track-index="20"><span style="font-size:96px">คนพยายาม</span></div>
+  <div id="c9" class="clip cap" data-start="11.44" data-duration="0.42" data-track-index="20"><span style="font-size:96px">ข้ามไป</span></div>
+  <div id="c10" class="clip cap" data-start="11.86" data-duration="1.46" data-track-index="20"><span style="font-size:96px"><em>149</em> ครั้ง</span></div>
+  <div id="c11" class="clip cap" data-start="13.32" data-duration="0.76" data-track-index="20"><span style="font-size:96px">มีแค่<em>ห้า</em>ครั้ง</span></div>
+  <div id="c12" class="clip cap" data-start="14.08" data-duration="0.6" data-track-index="20"><span style="font-size:96px">ที่มีคน<em>รอด</em></span></div>
+  <div id="c13" class="clip cap" data-start="14.68" data-duration="1.08" data-track-index="20"><span style="font-size:96px">กลับมา</span></div>
+  <div id="c14" class="clip cap" data-start="15.76" data-duration="0.52" data-track-index="20"><span style="font-size:96px">ห้าครั้งนั้น</span></div>
+  <div id="c15" class="clip cap" data-start="16.28" data-duration="1.42" data-track-index="20"><span style="font-size:80px">ไปเอา<em>ของวิเศษ</em></span></div>
+  <div id="c16" class="clip cap" data-start="17.7" data-duration="0.46" data-track-index="20"><span style="font-size:96px">แต่ที่ติด</span></div>
+  <div id="c17" class="clip cap" data-start="18.16" data-duration="0.66" data-track-index="20"><span style="font-size:96px">กลับมาจริงๆ</span></div>
+  <div id="c18" class="clip cap" data-start="18.82" data-duration="1.18" data-track-index="20"><span style="font-size:96px">คือ<em>ภัยพิบัติ</em></span></div>
+  <div id="c19" class="clip cap" data-start="20.0" data-duration="1.34" data-track-index="20"><span style="font-size:88px">ไปเอา<em>หินปั่นไฟ</em></span></div>
+  <div id="c20" class="clip cap" data-start="21.34" data-duration="1.06" data-track-index="20"><span style="font-size:96px">เจอ<em>ปาปุ</em></span></div>
+  <div id="c21" class="clip cap" data-start="22.4" data-duration="0.6" data-track-index="20"><span style="font-size:96px">ตัวที่เลี้ยงคน</span></div>
+  <div id="c22" class="clip cap" data-start="23.0" data-duration="0.96" data-track-index="20"><span style="font-size:88px">เป็นสัตว์เลี้ยง</span></div>
+  <div id="c23" class="clip cap" data-start="23.96" data-duration="1.22" data-track-index="20"><span style="font-size:96px">ไป<em>พันคน</em></span></div>
+  <div id="c24" class="clip cap" data-start="25.18" data-duration="0.94" data-track-index="20"><span style="font-size:96px">รอด<em>เจ็ด</em></span></div>
+  <div id="c25" class="clip cap" data-start="26.12" data-duration="0.74" data-track-index="20"><span style="font-size:88px">ไปเอา<em>สมุนไพร</em></span></div>
+  <div id="c26" class="clip cap" data-start="26.86" data-duration="1.26" data-track-index="20"><span style="font-size:96px">รักษาทุกโรค</span></div>
+  <div id="c27" class="clip cap" data-start="28.12" data-duration="0.84" data-track-index="20"><span style="font-size:96px">เจอ<em>ไบรออน</em></span></div>
+  <div id="c28" class="clip cap" data-start="28.96" data-duration="1.08" data-track-index="20"><span style="font-size:96px">อาวุธพืช</span></div>
+  <div id="c29" class="clip cap" data-start="30.04" data-duration="1.16" data-track-index="20"><span style="font-size:96px">รอด<em>สองคน</em></span></div>
+  <div id="c30" class="clip cap" data-start="31.2" data-duration="0.54" data-track-index="20"><span style="font-size:96px">ไปเอา<em>ข้าว</em></span></div>
+  <div id="c31" class="clip cap" data-start="31.74" data-duration="0.919" data-track-index="20"><span style="font-size:96px">อายุยืน</span></div>
+  <div id="c32" class="clip cap" data-start="32.659" data-duration="0.861" data-track-index="20"><span style="font-size:88px">เจองูสองหาง</span></div>
+  <div id="c33" class="clip cap" data-start="33.52" data-duration="0.92" data-track-index="20"><span style="font-size:96px"><em>เฮลเบล</em></span></div>
+  <div id="c34" class="clip cap" data-start="34.44" data-duration="0.82" data-track-index="20"><span style="font-size:96px">โดนไป <em>99</em></span></div>
+  <div id="c35" class="clip cap" data-start="35.26" data-duration="1.04" data-track-index="20"><span style="font-size:96px"><em>เปอร์เซ็นต์</em></span></div>
+  <div id="c36" class="clip cap" data-start="36.3" data-duration="1.26" data-track-index="20"><span style="font-size:88px">ไปเอา<em>น้ำวิเศษ</em></span></div>
+  <div id="c37" class="clip cap" data-start="37.56" data-duration="0.94" data-track-index="20"><span style="font-size:96px">เจอ<em>ไอ</em></span></div>
+  <div id="c38" class="clip cap" data-start="38.5" data-duration="1.36" data-track-index="20"><span style="font-size:96px">ก๊าซที่มีชีวิต</span></div>
+  <div id="c39" class="clip cap" data-start="39.86" data-duration="1.0" data-track-index="20"><span style="font-size:96px">รอด<em>สามคน</em></span></div>
+  <div id="c40" class="clip cap" data-start="40.86" data-duration="0.6" data-track-index="20"><span style="font-size:96px">แต่<em>สติหลุด</em></span></div>
+  <div id="c41" class="clip cap" data-start="41.46" data-duration="1.08" data-track-index="20"><span style="font-size:96px">ไปแล้ว</span></div>
+  <div id="c42" class="clip cap" data-start="42.54" data-duration="0.48" data-track-index="20"><span style="font-size:96px">ทีมสุดท้าย</span></div>
+  <div id="c43" class="clip cap" data-start="43.02" data-duration="1.16" data-track-index="20"><span style="font-size:88px">ได้ของมา<em>จริง</em></span></div>
+  <div id="c44" class="clip cap" data-start="44.18" data-duration="0.64" data-track-index="20"><span style="font-size:96px">แต่<em>ของตาย</em></span></div>
+  <div id="c45" class="clip cap" data-start="44.82" data-duration="1.04" data-track-index="20"><span style="font-size:96px">กลางทาง</span></div>
+  <div id="c46" class="clip cap" data-start="45.86" data-duration="0.62" data-track-index="20"><span style="font-size:96px">แถมพา<em>โรค</em></span></div>
+  <div id="c47" class="clip cap" data-start="46.48" data-duration="0.5" data-track-index="20"><span style="font-size:96px">ที่ทำให้คน</span></div>
+  <div id="c48" class="clip cap" data-start="46.98" data-duration="0.42" data-track-index="20"><span style="font-size:96px"><em>ไม่ตาย</em></span></div>
+  <div id="c49" class="clip cap" data-start="47.4" data-duration="1.22" data-track-index="20"><span style="font-size:96px">กลับมาด้วย</span></div>
+  <div id="c50" class="clip cap" data-start="48.62" data-duration="0.56" data-track-index="20"><span style="font-size:88px">แล้วหนึ่งในคน</span></div>
+  <div id="c51" class="clip cap" data-start="49.18" data-duration="0.78" data-track-index="20"><span style="font-size:96px">ที่<em>รอด</em></span></div>
+  <div id="c52" class="clip cap" data-start="49.96" data-duration="1.06" data-track-index="20"><span style="font-size:96px">คือ<em>บียอนด์</em></span></div>
+  <div id="c53" class="clip cap" data-start="51.02" data-duration="1.12" data-track-index="20"><span style="font-size:88px">ลูกชาย<em>เน็ตโร</em></span></div>
+  <div id="c54" class="clip cap" data-start="52.14" data-duration="0.46" data-track-index="20"><span style="font-size:96px">ที่กำลังจะ</span></div>
+  <div id="c55" class="clip cap" data-start="52.6" data-duration="1.38" data-track-index="20"><span style="font-size:88px">กลับไป<em>อีกรอบ</em></span></div>
+  <div id="c56" class="clip cap" data-start="53.98" data-duration="0.74" data-track-index="20"><span style="font-size:88px">ถ้าต้องไปเอง</span></div>
+  <div id="c57" class="clip cap" data-start="54.72" data-duration="0.54" data-track-index="20"><span style="font-size:96px">ของชิ้นไหน</span></div>
+  <div id="c58" class="clip cap" data-start="55.26" data-duration="0.98" data-track-index="20"><span style="font-size:96px"><em>คุ้มเสี่ยงสุด</em></span></div>
+  <div id="c59" class="clip cap" data-start="56.24" data-duration="1.193" data-track-index="20"><span style="font-size:96px"><em>เมนต์</em>มาเลย</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="57.433" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+</div>
+
+<script>
+/* Motion engine from Brainrot v2 (closed-form springs; every value is a function of t). Shot times = assets/audio/shots-th.json,
+   word anchors = words.json (both injected by build_index.py). Own motion graphics only:
+   ONE map (dot -> Lake Möbius -> Dark Continent -> 149 routes -> 5 pins) that the camera flies over the whole clip,
+   ONE card that keeps flipping gold "ไปเอา" -> red "เจอ" (5 times), ONE row of 5 slots (? -> strip -> CTA cards),
+   ONE pill that morphs between labels. Optional user stills (D.stills) show in a tilted card <= 2 s, else fallback graphics. */
+(function(){
+const D={"dur": 57.433, "capt": [3.54, 4.9, 5.68, 6.86, 7.64, 8.28, 8.8, 9.24, 10.8, 11.44, 11.86, 13.32, 14.08, 14.68, 15.76, 16.28, 17.7, 18.16, 18.82, 20.0, 21.34, 22.4, 23.0, 23.96, 25.18, 26.12, 26.86, 28.12, 28.96, 30.04, 31.2, 31.74, 32.659, 33.52, 34.44, 35.26, 36.3, 37.56, 38.5, 39.86, 40.86, 41.46, 42.54, 43.02, 44.18, 44.82, 45.86, 46.48, 46.98, 47.4, 48.62, 49.18, 49.96, 51.02, 52.14, 52.6, 53.98, 54.72, 55.26, 56.24], "k": {"kon": 0.54, "jud": 2.12, "lake": 2.56, "yak": 3.32, "mobius": 3.66, "dark": 5.82, "netero": 7.2, "zigg": 8.28, "yai": 9.36, "n149": 11.86, "five": 13.64, "rod": 14.48, "wiset": 16.56, "jing": 18.46, "pai": 18.96, "hin": 20.26, "papu": 21.58, "pet": 23.18, "pan": 24.18, "jed": 25.38, "herb": 26.4, "raksa": 26.86, "brion": 28.32, "arwut": 28.96, "song": 30.24, "khao": 31.54, "ayu": 31.74, "ngu": 32.88, "hell": 33.52, "n99": 34.76, "pct": 35.26, "nam": 36.56, "ai": 37.82, "gas": 38.5, "cheewit": 39.06, "sam": 40.08, "sati": 41.04, "team": 42.54, "jring": 43.54, "tai": 44.36, "klang": 44.82, "rok": 46.26, "maitai": 46.98, "neung": 48.74, "rod6": 49.34, "beyond": 50.1, "luk": 51.02, "net2": 51.3, "klab": 52.6, "rob": 52.92, "ao": 53.98, "chin": 54.92, "khum": 55.26, "ment": 56.24}, "sh": {"hook": {"start": 0.0, "end": 1.62, "word": 0.08, "hit": 0.54}, "dot": {"start": 1.62, "end": 2.48, "word": 1.7, "hit": null}, "lake": {"start": 2.48, "end": 3.58, "word": 2.56, "hit": null}, "mobius": {"start": 3.58, "end": 4.82, "word": 3.66, "hit": null}, "surround": {"start": 4.82, "end": 5.74, "word": 4.9, "hit": null}, "darkcont": {"start": 5.74, "end": 7.12, "word": 5.82, "hit": null}, "netero": {"start": 7.12, "end": 8.72, "word": 7.2, "hit": 8.28}, "quote": {"start": 8.72, "end": 10.72, "word": 8.8, "hit": null}, "attempts": {"start": 10.72, "end": 13.24, "word": 10.8, "hit": 11.86}, "five": {"start": 13.24, "end": 15.68, "word": 13.32, "hit": null}, "trips": {"start": 15.68, "end": 16.48, "word": 15.76, "hit": null}, "treasure": {"start": 16.48, "end": 17.62, "word": 16.56, "hit": null}, "but": {"start": 17.62, "end": 18.88, "word": 17.7, "hit": null}, "calamity": {"start": 18.88, "end": 19.92, "word": 18.96, "hit": null}, "c1_reward": {"start": 19.92, "end": 21.26, "word": 20.0, "hit": null}, "c1_threat": {"start": 21.26, "end": 22.32, "word": 21.34, "hit": null}, "c1_pet": {"start": 22.32, "end": 23.88, "word": 22.4, "hit": null}, "c1_count": {"start": 23.88, "end": 26.04, "word": 23.96, "hit": 25.18}, "c2_reward": {"start": 26.04, "end": 28.04, "word": 26.12, "hit": null}, "c2_threat": {"start": 28.04, "end": 28.88, "word": 28.12, "hit": null}, "c2_weapon": {"start": 28.88, "end": 29.96, "word": 28.96, "hit": null}, "c2_count": {"start": 29.96, "end": 31.12, "word": 30.04, "hit": null}, "c3_reward": {"start": 31.12, "end": 32.579, "word": 31.2, "hit": null}, "c3_threat": {"start": 32.579, "end": 34.36, "word": 32.659, "hit": null}, "c3_count": {"start": 34.36, "end": 36.22, "word": 34.44, "hit": 35.26}, "c4_reward": {"start": 36.22, "end": 37.48, "word": 36.3, "hit": null}, "c4_threat": {"start": 37.48, "end": 38.42, "word": 37.56, "hit": null}, "c4_gas": {"start": 38.42, "end": 39.78, "word": 38.5, "hit": null}, "c4_count": {"start": 39.78, "end": 40.78, "word": 39.86, "hit": null}, "c4_mind": {"start": 40.78, "end": 42.46, "word": 40.86, "hit": null}, "c5_reward": {"start": 42.46, "end": 44.1, "word": 42.54, "hit": 43.54}, "c5_dead": {"start": 44.1, "end": 45.78, "word": 44.18, "hit": null}, "c5_zobae": {"start": 45.78, "end": 46.78, "word": 45.86, "hit": null}, "c5_immortal": {"start": 46.78, "end": 48.66, "word": 46.86, "hit": null}, "survivor": {"start": 48.66, "end": 50.02, "word": 48.74, "hit": null}, "beyond": {"start": 50.02, "end": 50.94, "word": 50.1, "hit": null}, "son": {"start": 50.94, "end": 52.06, "word": 51.02, "hit": null}, "again": {"start": 52.06, "end": 53.9, "word": 52.14, "hit": null}, "cta": {"start": 53.9, "end": 56.16, "word": 53.98, "hit": null}, "loop": {"start": 56.16, "end": 57.433, "word": 56.24, "hit": null}}, "stills": {}}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh, ST=D.stills||{};
+const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[6,1],BOUNCE=[18,0.55],POP=[22,0.5],OUT=[30,1],CAM=[9,1],CAMF=[14,1],FLIP=[13,0.8];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const sa=(e,o)=>{e.setAttribute('opacity',o<0.003?'0':o.toFixed(3));return o>=0.003;};
+const f2=v=>v.toFixed(2);
+const win=(t,a,b,sp=POP)=>{if(t<a||t>=b+0.1)return 0; const i=S(t-a,sp[0],sp[1]); const o=t>b?1-clamp((t-b)/0.08):1; return Math.max(0,i)*o;};
+const pinO=(t,a,b)=>(t<a||t>=b+0.1)?0:clamp((t-a)/0.06)*(t>b?1-clamp((t-b)/0.08):1);
+// deterministic value noise (registry camera-shake: csHash / csNoise)
+const hsh=(i,seed)=>{let h=Math.imul(i|0,374761393)+Math.imul(seed|0,668265263);h=(h^(h>>>13))>>>0;h=Math.imul(h,1274126177)>>>0;return((h^(h>>>16))>>>0)/4294967296;};
+const vn=(x,seed)=>{const i=Math.floor(x),f=x-i,u=f*f*f*(f*(f*6-15)+10);return hsh(i,seed)*(1-u)+hsh(i+1,seed)*u;};
+const meas=$('meas'); const wcache={};
+const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=meas.offsetWidth;
+  if(document.fonts&&document.fonts.status==='loaded'&&w>0)wcache[txt]=w; return w||txt.length*28;};
+const GOLD='#F5C04A',RED='#E5383B',INK='#07060A',WHITE='#FFFFFF',BLUE='#7FB2FF',YEL='#FFE14D';
+const MAPY=830;
+const HAS=id=>!!ST[id];
+const RC=window.rough?rough.svg($('scr')):null;
+const roughPath=(gen,parent,attrs)=>{const g=el('g',attrs||{},parent); if(!RC)return g; const n=gen(RC); g.appendChild(n); return g;};
+
+// ---------- shots: card index helpers ----------
+const CR=['c1_reward','c2_reward','c3_reward','c4_reward','c5_reward'], CT=['c1_threat','c2_threat','c3_threat','c4_threat','c5_zobae'];
+const CARD0=T.c1_reward, CARD1=T.survivor;
+const cardIdx=t=>{let k=0;for(let i=0;i<5;i++)if(t>=T[CR[i]])k=i;return k;};
+
+// ---------- camera over the map (log zoom, centre, dim) ----------
+const PINS=[[-40,640],[-95,600],[22,880],[60,560],[100,560]].map(([a,r])=>[r*Math.cos(a*Math.PI/180),r*Math.sin(a*Math.PI/180)]);
+const L=Math.log;
+const camKeys=[[0,L(2.2)+0.1,SLOW],[T.dot,L(8.5),CAMF],[T.lake,L(1.15),CAMF],[T.mobius,L(0.98),SLOW],[T.surround,L(0.44),CAM],[T.darkcont,L(0.36),SLOW],
+  [T.quote,L(0.27),SLOW],[T.attempts,L(0.43),CAM],[T.trips,L(0.46),SLOW],[T.calamity,L(0.4),SLOW]];
+const cxKeys=[[T.netero,0],[T.attempts,40,CAM]], cyKeys=[[T.netero,0],[T.attempts,30,CAM]];
+CR.forEach((id,i)=>{camKeys.push([T[id],L(0.95),CAM]); cxKeys.push([T[id],PINS[i][0],CAM]); cyKeys.push([T[id],PINS[i][1]-120,CAM]);});
+camKeys.push([T.survivor,L(0.5),CAM],[T.again,L(0.42),CAM],[T.cta,L(0.5),SLOW],[T.loop,L(2.2),CAMF]);
+cxKeys.push([T.survivor,0,CAM],[T.again,60,CAM],[T.loop,0,CAMF]); cyKeys.push([T.survivor,0,CAM],[T.again,40,CAM],[T.loop,0,CAMF]);
+camKeys.sort((a,b)=>a[0]-b[0]); cxKeys.sort((a,b)=>a[0]-b[0]); cyKeys.sort((a,b)=>a[0]-b[0]);
+const lzT=track(L(2.2),camKeys,CAM), cxT=track(0,cxKeys,CAM), cyT=track(0,cyKeys,CAM);
+const dimT=track(0,[[T.netero,0.62,FAST],[T.attempts,0,FAST],[T.calamity,0.55,FAST],[T.c1_reward,0.5],[T.survivor,0.7],[T.again,0.05,FAST],[T.cta,0.6,FAST],[T.loop,0,CAMF]]);
+let CAMZ=2.2,CAMX=0,CAMY=0,SHK=[0,0];
+const w2s=(x,y)=>[540+(x-CAMX)*CAMZ+SHK[0], MAPY+(y-CAMY)*CAMZ+SHK[1]];
+
+// ---------- the map (world coordinates; dot = known world at 0,0) ----------
+const cam=$('cam');
+const lakeR=a=>300*(1+0.07*Math.sin(3*a+0.6)+0.05*Math.sin(5*a+1.9)+0.035*Math.sin(9*a+0.3));
+const lakeD=(()=>{let d='';for(let i=0;i<=96;i++){const a=i/96*2*Math.PI,r=lakeR(a);d+=(i?'L':'M')+f2(r*Math.cos(a))+' '+f2(r*Math.sin(a));}return d+'Z';})();
+const ring=(r,n=64)=>{let d='';for(let i=0;i<=n;i++){const a=i/n*2*Math.PI;d+=(i?'L':'M')+f2(r*Math.cos(a))+' '+f2(r*Math.sin(a));}return d+'Z';};
+// grid + latitude rings (paper map)
+const GRID=el('g',{stroke:'#1C2C4C','stroke-width':1.5,'vector-effect':'non-scaling-stroke',opacity:.8},cam);
+for(let i=-30;i<=30;i++){el('line',{x1:i*200,y1:-6000,x2:i*200,y2:6000,'vector-effect':'non-scaling-stroke'},GRID);el('line',{x1:-6000,y1:i*200,x2:6000,y2:i*200,'vector-effect':'non-scaling-stroke'},GRID);}
+// dark continent: everything outside the lake, revealed from the edges inward (mask hole shrinks)
+const CONT=el('g',{mask:'url(#contMask)'},cam);
+el('path',{d:'M-7000 -7000 H7000 V7000 H-7000 Z '+lakeD,'fill-rule':'evenodd',fill:'#140A16',opacity:.94},CONT);
+const MTN=el('g',{fill:'none',stroke:'#4A2A48','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'},CONT);
+for(let i=0;i<150;i++){const a=hsh(i,11)*2*Math.PI, r=380+hsh(i,12)*1500, s=14+hsh(i,13)*26, x=r*Math.cos(a), y=r*Math.sin(a);
+  el('path',{d:`M${f2(x-s)} ${f2(y)} L${f2(x)} ${f2(y-s*1.1)} L${f2(x+s)} ${f2(y)}`,'vector-effect':'non-scaling-stroke'},MTN);}
+const contRings=[700,1100,1600].map(r=>el('path',{d:ring(r,90),fill:'none',stroke:'#3A1F3A','stroke-width':2,'stroke-dasharray':'10 14','vector-effect':'non-scaling-stroke'},CONT));
+const contHole=$('contHole');
+// lake + ripples + shore
+el('path',{d:lakeD,fill:'#0A1A36'},cam);
+const RIP=[0,1,2,3].map(i=>el('path',{d:ring(1,64),fill:'none',stroke:'#2C5590','stroke-width':1.5,'vector-effect':'non-scaling-stroke',opacity:0},cam));
+const shore=el('path',{d:lakeD,fill:'none',stroke:'#3D6FB0','stroke-width':3,'vector-effect':'non-scaling-stroke',opacity:.55},cam);
+const FL=window.flubber; const growLake=FL?FL.interpolate(ring(14,48),lakeD,{maxSegmentLength:12}):null;
+const shoreGlow=el('path',{d:lakeD,fill:'none',stroke:'#9CC8FF','stroke-width':6,'vector-effect':'non-scaling-stroke',opacity:0},cam);
+const mob=el('path',{d:lakeD,fill:'none',stroke:'#F5C04A','stroke-width':5,'stroke-dasharray':'26 30','vector-effect':'non-scaling-stroke',opacity:0},cam);
+const mob2=el('path',{d:lakeD,fill:'none',stroke:'#9CC8FF','stroke-width':5,'stroke-dasharray':'26 30','vector-effect':'non-scaling-stroke',opacity:0,transform:'scale(1.06)'},cam);
+// routes (149 attempts): 5 survivors end at the pins
+const ROUT=el('g',{},cam); const ROUTES=[];
+const SURV=[17,46,83,111,138];
+for(let i=0;i<149;i++){let ex,ey; const si=SURV.indexOf(i);
+  if(si>=0){ex=PINS[si][0];ey=PINS[si][1];} else {const a=hsh(i,21)*2*Math.PI, r=420+hsh(i,22)*560; ex=r*Math.cos(a); ey=r*Math.sin(a);}
+  const a0=Math.atan2(ey,ex), sx=Math.cos(a0)*16, sy=Math.sin(a0)*16;
+  ROUTES.push({e:el('line',{x1:sx,y1:sy,x2:sx,y2:sy,stroke:'#8FB6F0','stroke-width':si>=0?3:1.6,'vector-effect':'non-scaling-stroke','stroke-linecap':'round',opacity:0},ROUT),sx,sy,ex,ey,si,d0:10.8+(i/149)*0.95});}
+// known world: tiny gold cluster + glow
+const KW=el('g',{},cam);
+const kwGlow=el('circle',{r:46,fill:'url(#gGlow)'},KW);
+[[-3,-2,4.6],[4,1,3.4],[-1,5,2.8],[5,-5,2.2],[-6,3,1.8]].forEach(([x,y,r],i)=>el('path',{d:(()=>{let d='';for(let j=0;j<=20;j++){const a=j/20*2*Math.PI,rr=r*(1+0.18*Math.sin(3*a+i));d+=(j?'L':'M')+f2(x+rr*Math.cos(a))+' '+f2(y+rr*Math.sin(a));}return d+'Z';})(),fill:'#F5C04A'},KW));
+const KWIC=['landmark','mountain','flag','star'].map((n,i)=>el('use',{href:'#ic-'+n,x:[-9,1.5,-4,4][i],y:[-8.5,-3,2,-9.5][i],width:3.6,height:3.6,color:'#07060A',opacity:0},KW));
+
+// ---------- screen-space map things (constant size): rough circle, arrow, eyes, pins, ship ----------
+const scr=$('scr');
+const hookCirc=roughPath(r=>r.circle(0,0,150,{stroke:RED,strokeWidth:7,roughness:1.6,seed:7,bowing:1.2}),scr,{opacity:0});
+const hookArr=roughPath(r=>r.curve([[150,152],[118,128],[92,72]],{stroke:'#FFE7A8',strokeWidth:6,roughness:1.1,seed:3}),scr,{opacity:0});
+const hookArrH=roughPath(r=>r.linearPath([[118,62],[88,68],[96,98]],{stroke:'#FFE7A8',strokeWidth:6,roughness:0.8,seed:4}),hookArr);
+const sonar=el('circle',{r:10,fill:'none',stroke:'#FFE7A8','stroke-width':4,opacity:0},scr);
+const EYES=[...Array(9)].map((_,i)=>{const a=hsh(i,31)*2*Math.PI, r=520+hsh(i,32)*900; const g=el('g',{opacity:0},scr);
+  el('circle',{r:34,fill:'url(#rGlow)',opacity:.6},g); const e1=el('ellipse',{cx:-11,cy:0,rx:7,ry:4.5,fill:'url(#eyeG)'},g); const e2=el('ellipse',{cx:11,cy:0,rx:7,ry:4.5,fill:'url(#eyeG)'},g);
+  return {g,e1,e2,x:r*Math.cos(a),y:r*Math.sin(a),i};});
+const PINI=['zap','leaf','hourglass','droplets','flask-conical'];
+const PIN=PINS.map((p,i)=>{const g=el('g',{opacity:0},scr);
+  const gl=el('circle',{r:60,fill:'url(#gGlow)',opacity:0},g);
+  el('use',{href:'#ic-map-pin',x:-26,y:-50,width:52,height:52,color:'#FFE7A8'},g);
+  const b=el('g',{opacity:0},g); const bc=el('circle',{cx:0,cy:-96,r:40,fill:GOLD,stroke:INK,'stroke-width':6},b);
+  el('use',{href:'#ic-'+PINI[i],x:-24,y:-120,width:48,height:48,color:INK},b);
+  return {g,gl,b,bc,p,i};});
+const SHIP=el('g',{opacity:0},scr);
+const shipTrail=el('path',{d:'',fill:'none',stroke:'#FFE7A8','stroke-width':5,'stroke-dasharray':'14 12'},scr);
+el('path',{d:'M-30 6 L30 6 L20 22 L-20 22 Z',fill:GOLD,stroke:INK,'stroke-width':5,'stroke-linejoin':'round'},SHIP);
+el('path',{d:'M-2 4 L-2 -34 L22 2 Z',fill:'#FFF3D0',stroke:INK,'stroke-width':4,'stroke-linejoin':'round'},SHIP);
+const qMark=el('text',{'font-family':'Kanit','font-weight':900,'font-size':120,fill:RED,stroke:INK,'stroke-width':12,'paint-order':'stroke','text-anchor':'middle',opacity:0},scr); qMark.textContent='?';
+const RAYPTS=[[0,0]];
+
+// fog blobs (screen space) + grain tile (deterministic noise, shifted per frame: registry grain-overlay idea, seek-safe)
+const FOG=[0,1,2,3,4].map(i=>{const e=$('fog'+i); e.style.background=`radial-gradient(circle,${['rgba(90,24,60,.5)','rgba(60,20,70,.45)','rgba(110,30,40,.4)','rgba(40,30,80,.45)','rgba(90,24,60,.4)'][i]} 0%,rgba(0,0,0,0) 70%)`; return e;});
+(()=>{const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');const im=x.createImageData(256,256);
+  for(let i=0;i<256*256;i++){const v=Math.floor(hsh(i,5)*255);im.data[i*4]=v;im.data[i*4+1]=v;im.data[i*4+2]=v;im.data[i*4+3]=255;}
+  x.putImageData(im,0,0); $('grain').style.backgroundImage=`url(${c.toDataURL()})`;})();
+
+// ---------- people (silhouettes) ----------
+const fig=$('fig');
+const personD=(s)=>`M${-0.42*s} ${0.5*s} C${-0.42*s} ${0.08*s} ${-0.25*s} ${-0.06*s} 0 ${-0.06*s} C${0.25*s} ${-0.06*s} ${0.42*s} ${0.08*s} ${0.42*s} ${0.5*s} Z`;
+const person=(parent,s,fill,stroke)=>{const g=el('g',{},parent); const body=el('path',{d:personD(s),fill,stroke:stroke||INK,'stroke-width':Math.max(3,s*0.03),'stroke-linejoin':'round'},g);
+  const head=el('circle',{cx:0,cy:-0.27*s,r:0.17*s,fill,stroke:stroke||INK,'stroke-width':Math.max(3,s*0.03)},g); return {g,body,head};};
+// netero + zigg
+const NZ=[0,1].map(i=>{const p=person(fig,320,i?'#2A2E48':'#3A3550','#9AA6CC'); p.g.setAttribute('opacity','0'); return p;});
+const zCirc=roughPath(r=>r.ellipse(0,0,330,420,{stroke:RED,strokeWidth:8,roughness:1.5,seed:9}),fig,{opacity:0});
+// survivors (6) -> beyond -> son
+const SV=[...Array(6)].map((_,i)=>{const p=person(fig,130,'#3A3F5C','#8E9AC0'); p.g.setAttribute('opacity','0'); return p;});
+const netSmall=person(fig,170,'#3A3550','#9AA6CC'); netSmall.g.setAttribute('opacity','0');
+const sonLine=el('path',{d:'',fill:'none',stroke:GOLD,'stroke-width':6,'stroke-dasharray':'16 12'},fig);
+
+// ---------- scene: spoiler + hook title ----------
+const TL=[['tl1',318,102],['tl2',446,124],['tl3',590,112]];
+TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
+const TLON=[0.08,K.jud-0.3,K.lake];
+const TOUT=T.mobius-0.06, TBACK=DUR-0.34;
+function title(t){
+  let o,sc;
+  if(t<TBACK){ const out=eo((t-TOUT)/0.14); o=1-out; sc=1+0.2*out; }
+  else { const a=S(t-TBACK,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
+  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-TBACK)/0.2));
+  const br=1+0.035*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<TBACK?1:0;
+  TL.forEach(([id],i)=>{const e=$(id), on=live&&t>=TLON[i]?clamp((t-TLON[i])/0.12):0;
+    e.style.color=mix('#FFFFFF','#FFE14D',on);
+    e.style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1*live*Math.sin(t*2.4):0)}deg) scale(${((t<TBACK?br:1)*sc*(1+0.05*on*Math.exp(-(t-TLON[i])*5))).toFixed(4)})`;});
+  const sp=$('spoil'); const so=t<3?1:1-clamp((t-3)/0.15); show(sp,so); sp.style.transform=`translateY(${f2(2*Math.sin(t*4))}px)`;
+}
+
+// ---------- pill (one element morphing between labels) ----------
+const PST=[ // [t, text, colour, icon, centre x, centre y, scale]
+  [T.dot+0.12,'ทุกที่ในเรื่อง',GOLD,'map-pin',540,1020,1.0],
+  [T.lake,null],
+  [K.mobius,'ทะเลสาบโมเบียส','#9CC8FF','infinity',540,470,1.25],
+  [T.surround,null],
+  [K.wiset,'ไปเอาของวิเศษ',GOLD,'star',540,330,1.25],
+  [K.jing-0.1,'แต่ได้ภัยพิบัติกลับมา',RED,'triangle-alert',540,330,1.15],
+  [K.pai,'ภัยพิบัติ 5 อย่าง',RED,'triangle-alert',540,350,1.35],
+  [T.c1_reward,null],
+  [K.rod6,'ผู้รอดจากทีมสุดท้าย 6 คน','#C9D3E8','users',540,380,1.05],
+  [T.beyond+0.05,'บียอนด์ เน็ตโร',GOLD,'user',540,1062,1.2],
+  [T.son,'บียอนด์ เน็ตโร',GOLD,'user',680,1050,1.0],
+  [T.again,'กำลังจะกลับไปอีกรอบ',GOLD,'compass',540,380,1.15],
+  [T.cta,null],
+  [K.ment,'เมนต์มาเลย',YEL,'message-circle',540,560,1.15],
+  [TBACK,null],
+];
+const pill=$('pill'),pA=$('pillA'),pB=$('pillB'),pUse=$('pillUse');
+function pillF(t){
+  let i=-1; for(let k=0;k<PST.length;k++) if(t>=PST[k][0]) i=k;
+  if(i<0){pill.style.opacity='0';return;}
+  const cur=PST[i], prv=i>0?PST[i-1]:null, u=t-cur[0];
+  let txt0,txt1,col0,col1,ic0,ic1,x0,x1,y0,y1,k0,k1,s0,s1,p;
+  const sh=st=>st&&st[1]!=null;
+  if(sh(cur)&&sh(prv)){ p=clamp(S(u,15,0.8)); [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); s0=1;s1=1; }
+  else if(sh(cur)){ p=1; [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); txt0=txt1;col0=col1;ic0=ic1;x0=x1;y0=y1;k0=k1; s0=0; s1=1; }
+  else if(sh(prv)){ p=1; [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); txt1=txt0;col1=col0;ic1=ic0;x1=x0;y1=y0;k1=k0; s0=1; s1=0; }
+  else {pill.style.opacity='0';return;}
+  let sc; if(s0===0) sc=S(u,POP[0],POP[1]); else if(s1===0) sc=1-clamp(u/0.1); else sc=1+0.08*Math.sin(clamp(p)*Math.PI);
+  if(sc<0.004){pill.style.opacity='0';return;}
+  const w0=tw(txt0)+136, w1=tw(txt1)+136, w=lerp(w0,w1,p), x=lerp(x0,x1,p), y=lerp(y0,y1,p);
+  pill.style.opacity='1'; pill.style.width=f2(w)+'px'; pill.style.background=mix(col0,col1,p);
+  pill.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) rotate(${f2(-2+1.2*Math.sin(t*2.3))}deg) scale(${(Math.max(0.001,sc)*lerp(k0,k1,p)).toFixed(4)})`;
+  pA.textContent=txt0; pB.textContent=txt1; pA.style.opacity=f2(1-clamp(p*2.5)); pB.style.opacity=f2(clamp(p*2.5-0.3)); if(txt0===txt1){pA.style.opacity='0';pB.style.opacity='1';}
+  pA.style.color=pB.style.color=(p<0.5?col0:col1)===RED?'#fff':INK;
+  pUse.setAttribute('href','#ic-'+(p<0.5?ic0:ic1));
+}
+
+// ---------- map render ----------
+function mapF(t){
+  // camera: smooth springs + slow handheld drift (value noise) + shake on "แต่ที่ติด" / glitch
+  CAMZ=Math.exp(lzT(t)); CAMX=cxT(t); CAMY=cyT(t);
+  const drift=t<TBACK-0.6?1:clamp((DUR-t)/0.6), dx=(vn(t*0.35,1)-0.5)*26*drift, dy=(vn(t*0.3,2)-0.5)*22*drift;
+  const shk=(t>=T.but&&t<T.calamity)?Math.exp(-(t-T.but)*1.5):0;
+  SHK=[dx+shk*14*(vn(t*14,3)-0.5)*2, dy+shk*12*(vn(t*14,4)-0.5)*2];
+  const rot=(vn(t*0.2,5)-0.5)*1.6*drift;
+  cam.setAttribute('transform',`translate(${f2(540+SHK[0])} ${f2(MAPY+SHK[1])}) rotate(${f2(rot)}) scale(${CAMZ.toFixed(4)}) translate(${f2(-CAMX)} ${f2(-CAMY)})`);
+  $('dim').style.opacity=f2(clamp(dimT(t),0,0.9));
+  // continent reveal from the screen edges inward on "ที่ล้อมรอบ" (and gone again for the loop)
+  const rv=t<T.surround?0:clamp(S(t-T.surround,4.2,1)); const back=t>=T.loop?clamp(S(t-T.loop,8,1)):0;
+  const rr=rv*(1-back); contHole.setAttribute('r',rr<0.001?'7000':f2(lerp(2600,200,rr)));
+  contRings.forEach((r,i)=>r.setAttribute('stroke-dashoffset',f2(-t*30*(i+1))));
+  // ripples in the lake
+  RIP.forEach((r,i)=>{const ph=((t*0.22+i/4)%1+1)%1, rr=20+260*ph; r.setAttribute('d',ring(rr,48)); sa(r,0.5*Math.sin(Math.PI*ph));});
+  // shore: grows out of the dot on "กลางทะเลสาบ" (flubber), Möbius strip dashes run along it on "โมเบียส"
+  const g=t>=T.lake&&t<T.surround+0.4?clamp(S(t-T.lake,6,1)):0;
+  if(g>0&&growLake){shoreGlow.setAttribute('d',growLake(g)); sa(shoreGlow,0.9*(t<T.surround?1:1-clamp((t-T.surround)/0.4)));} else sa(shoreGlow,0);
+  const mo=win(t,K.mobius-0.1,T.darkcont,MORPH); sa(mob,mo*0.9); sa(mob2,mo*0.7);
+  mob.setAttribute('stroke-dashoffset',f2(-t*120)); mob2.setAttribute('stroke-dashoffset',f2(t*120));
+  // known world glow + icons on "เป็นแค่จุด"
+  kwGlow.setAttribute('r',f2(30+8*Math.sin(t*4)+(t>=K.kon&&t<K.kon+0.6?20*Math.sin((t-K.kon)/0.6*Math.PI):0)));
+  const ic=win(t,T.dot+0.15,T.lake,POP); KWIC.forEach((u,i)=>{sa(u,clamp(ic*2-i*0.25)); });
+  // routes: 149 drawn one after another, the counter lands on the hit; then 144 go grey, 5 glow; then shrink into pins
+  const rOn=t>=T.attempts&&t<T.treasure+0.3;
+  ROUTES.forEach(r=>{ if(!rOn){r.e.setAttribute('opacity','0');return;}
+    const p=eo((t-r.d0)/0.35); const fade=t>=T.five?clamp((t-T.five)/0.3):0; const sh=t>=T.trips?clamp((t-T.trips)/0.45):0;
+    const x2=lerp(r.sx,r.ex,p), y2=lerp(r.sy,r.ey,p), x1=lerp(r.sx,r.ex,r.si>=0?eio(sh):0), y1=lerp(r.sy,r.ey,r.si>=0?eio(sh):0);
+    r.e.setAttribute('x1',f2(x1)); r.e.setAttribute('y1',f2(y1)); r.e.setAttribute('x2',f2(x2)); r.e.setAttribute('y2',f2(y2));
+    if(r.si>=0){ r.e.setAttribute('stroke',mix('#8FB6F0','#F5C04A',fade)); r.e.setAttribute('stroke-width',f2(3+3*fade)); sa(r.e,p*(1-(t>=T.treasure?clamp((t-T.treasure)/0.3):0))); }
+    else { r.e.setAttribute('stroke',mix('#8FB6F0','#4A5268',fade)); sa(r.e,p*lerp(0.75,0.3,fade)*(1-sh)); }
+  });
+  // pins + treasure icons (gold -> red on "แต่ที่ติด")
+  const red=t>=T.but?clamp((t-T.but-0.25)/0.35):0;
+  PIN.forEach(pn=>{const pv=win(t,T.trips+0.25+pn.i*0.05,CARD1,BOUNCE)*(t>=T.cta?1-clamp((t-T.cta)/0.2):1)*(t>=T.calamity&&t<T.survivor?0.55:1);
+    if(!sa(pn.g,clamp(pv*2)))return; const [x,y]=w2s(pn.p[0],pn.p[1]);
+    pn.g.setAttribute('transform',`translate(${f2(x)} ${f2(y)}) scale(${f2(Math.max(0.001,0.7*pv+0.3))})`);
+    const bv=t>=T.treasure+pn.i*0.08?S(t-T.treasure-pn.i*0.08,POP[0],POP[1]):0; sa(pn.b,clamp(bv));
+    pn.b.setAttribute('transform',`translate(0 ${f2(-4*Math.sin(t*3+pn.i))}) scale(${f2(Math.max(0.001,bv))})`);
+    const flick=t>=T.but&&t<T.but+0.3?(Math.floor((t-T.but)*30)%2):0;
+    pn.bc.setAttribute('fill',mix(GOLD,RED,Math.max(red,flick))); sa(pn.gl,clamp(bv)*(1-red)*(0.6+0.3*Math.sin(t*5+pn.i)));});
+  // eyes in the dark continent (fallback for the S2 still): blink, drift
+  const ev=t>=T.darkcont&&t<T.attempts+0.2?win(t,T.darkcont+0.1,T.attempts):(t>=T.calamity&&t<T.c1_reward?0.6*win(t,T.calamity,T.c1_reward):0);
+  EYES.forEach(e=>{const v=clamp(ev*2-e.i*0.12); if(!sa(e.g,v))return; const [x,y]=w2s(e.x,e.y);
+    const bl=((t*0.9+e.i*0.37)%1)<0.06?0.15:1; e.e1.setAttribute('ry',f2(4.5*bl)); e.e2.setAttribute('ry',f2(4.5*bl));
+    e.g.setAttribute('transform',`translate(${f2(x+6*Math.sin(t*1.3+e.i))} ${f2(y)}) scale(${f2(1.4+0.6*(e.i%3)/2)})`);});
+  // hook: rough red circle + arrow + "โลกที่รู้จัก" (frame 0 and the loop end)
+  const [dx0,dy0]=w2s(0,0);
+  const hv=t<T.dot?1:(t<T.loop?0:clamp(S(t-T.loop-0.3,18,0.9)));
+  const hout=t>=T.dot&&t<T.dot+0.12?1-clamp((t-T.dot)/0.12):0;
+  const ho=Math.max(hv,hout);
+  sa(hookCirc,ho); hookCirc.setAttribute('transform',`translate(${f2(dx0)} ${f2(dy0)}) rotate(${f2(-8+3*Math.sin(t*1.7))}) scale(${f2(1+0.04*Math.sin(t*3))})`);
+  sa(hookArr,ho); hookArr.setAttribute('transform',`translate(${f2(dx0+6*Math.sin(t*2.6))} ${f2(dy0+6*Math.cos(t*2.6))})`);
+  const kl=$('kwlab'); show(kl,ho); kl.style.transform=`translate(${f2(dx0+95)}px,${f2(dy0+150)}px) rotate(-3deg)`;
+  const so=t>=K.kon&&t<K.kon+0.9?1-clamp((t-K.kon)/0.9):0; sa(sonar,so); sonar.setAttribute('cx',f2(dx0)); sonar.setAttribute('cy',f2(dy0)); sonar.setAttribute('r',f2(20+190*(1-so)));
+  // "ไม่ใช่สเกลจริง"
+  show($('scale'),pinO(t,T.surround+0.2,T.c1_reward-0.05)*0.95);
+  // ship: new trip from the dot toward the continent + "?"
+  const sv=win(t,T.again,T.cta,POP); if(sa(SHIP,clamp(sv*2))){ const u=eio(clamp((t-T.again-0.1)/1.5));
+    const P=[[0,0],[260,-160],[620,-420]]; const bx=(1-u)*(1-u)*P[0][0]+2*u*(1-u)*P[1][0]+u*u*P[2][0], by=(1-u)*(1-u)*P[0][1]+2*u*(1-u)*P[1][1]+u*u*P[2][1];
+    const [sx,sy]=w2s(bx,by); SHIP.setAttribute('transform',`translate(${f2(sx)} ${f2(sy+4*Math.sin(t*6))}) rotate(${f2(4*Math.sin(t*5))}) scale(1.6)`);
+    let d=''; for(let j=0;j<=24;j++){const uu=u*j/24; const qx=(1-uu)*(1-uu)*P[0][0]+2*uu*(1-uu)*P[1][0]+uu*uu*P[2][0], qy=(1-uu)*(1-uu)*P[0][1]+2*uu*(1-uu)*P[1][1]+uu*uu*P[2][1]; const [a,b]=w2s(qx,qy); d+=(j?'L':'M')+f2(a)+' '+f2(b);} shipTrail.setAttribute('d',d);
+    sa(shipTrail,clamp(sv*2)*0.9); const [qx,qy]=w2s(700,-470); qMark.setAttribute('x',f2(qx)); qMark.setAttribute('y',f2(qy)); sa(qMark,clamp(win(t,T.again+0.9,T.cta,POP)*2));
+  } else { sa(shipTrail,0); sa(qMark,0); }
+  // fog drift: thicker over the continent
+  const fd=t<T.surround?0.25:(t<T.loop?0.9:0.9*(1-clamp((t-T.loop)/0.6))+0.25*clamp((t-T.loop)/0.6));
+  FOG.forEach((e,i)=>{const x=-200+i*260+120*Math.sin(t*0.21+i*1.7), y=300+i*230+90*Math.cos(t*0.17+i); e.style.opacity=f2(fd*(0.55+0.35*Math.sin(t*0.5+i)));
+    e.style.transform=`translate(${f2(x)}px,${f2(y)}px) scale(${f2(1+0.15*Math.sin(t*0.3+i))})`;});
+  $('grain').style.backgroundPosition=`${Math.floor(hsh(Math.floor(t*30),8)*256)}px ${Math.floor(hsh(Math.floor(t*30),9)*256)}px`;
+}
+
+// ---------- big kinetic words ----------
+const BIG=[ // [id, a, b, y, style]
+  ['bDark',K.dark,T.netero,330,'slam'],['bQuote',K.yai-0.05,T.attempts,360,'shake'],['bWeapon',K.arwut,T.c2_count,520,'slam'],
+  ['bMind',K.sati,T.c5_reward,520,'glitch'],['bImm',K.maitai,T.survivor,480,'slam'],['bSon',K.luk,T.again,300,'slam'],['bCta',K.khum-0.3,T.loop,300,'slam']];
+function bigF(t){
+  BIG.forEach(([id,a,b,y,st])=>{const e=$(id), v=win(t,a,b,BOUNCE); if(!show(e,clamp(v*2)))return;
+    let tx=0,ty=y,r=-2+1.2*Math.sin(t*2), s=Math.max(0.001,0.55+0.45*v);
+    if(st==='shake'){ tx=7*Math.sin(t*47); ty+=5*Math.cos(t*39); r=1.5*Math.sin(t*23); }
+    if(st==='glitch'){ const fi=Math.floor((t-a)*30); if(fi>=0&&fi<6){tx=[18,-14,10,-20,8,-6][fi];} }
+    e.style.transform=`translate(${f2(tx)}px,${f2(ty)}px) rotate(${f2(r)}deg) scale(${(s*(1+0.02*Math.sin(t*5))).toFixed(4)})`;});
+  // "ทวีปมืด" glows red
+  $('bDark').style.textShadow=`0 0 ${f2(30+16*Math.sin(t*5))}px rgba(229,56,59,.8)`;
+}
+
+// ---------- counter: 0 -> 149 (lands on "ร้อยสี่สิบเก้า"), then 5 ----------
+function counterF(t){
+  const c=$('cnt'), v=win(t,T.attempts+0.05,T.treasure,BOUNCE); if(!show(c,clamp(v*2)))return;
+  const five=t>=K.five?1:0, f5=t>=K.five?S(t-K.five,POP[0],POP[1]):0;
+  const n=t<K.five?Math.round(149*eo((t-T.attempts-0.05)/(H.attempts-T.attempts-0.05))):5;
+  $('cntN').textContent=String(t>=H.attempts&&!five?149:n);
+  $('cntN').style.color=five?GOLD:'#FFFFFF';
+  const shr=t>=T.trips?S(t-T.trips,MORPH[0],MORPH[1]):0;
+  c.style.transform=`translateY(${f2(-40*shr+4*Math.sin(t*3))}px) scale(${f2(Math.max(0.001,(0.6+0.4*v)*(five?0.7+0.3*f5:1)*(1-0.35*shr)))})`;
+  $('cntL1').style.opacity=f2(1-five); $('cntL2').style.opacity=f2(clamp(f5));
+}
+
+// ---------- netero + zigg silhouettes (fallback for S3), name tags, circle on Zigg ----------
+function neteroF(t){
+  const a=T.netero, b=T.quote+0.6, fb=HAS('S3')?0:1;
+  NZ.forEach((p,i)=>{const v=win(t,a+i*0.12,b,BOUNCE)*fb*(t>=T.quote?0.45+0.55*(1-clamp((t-T.quote)/0.3)):1); if(!sa(p.g,clamp(v*2)))return;
+    const x=i?720:370, y=830; p.g.setAttribute('transform',`translate(${f2(x)} ${f2(y+(1-clamp(v))*80+6*Math.sin(t*2+i))}) scale(${f2(Math.max(0.001,0.85+0.15*v))})`);});
+  [['nmA',370,T.netero+0.1],['nmB',720,H.netero]].forEach(([id,x,s])=>{const e=$(id), v=win(t,s,T.quote,POP)*fb; if(!show(e,clamp(v*2)))return;
+    e.style.transform=`translate(${f2(x-tw(e.textContent)*0.44)}px,${f2(1010)}px) scale(${f2(Math.max(0.001,v))})`;});
+  const cv=win(t,H.netero,T.quote,POP)*fb; sa(zCirc,clamp(cv*2)); zCirc.setAttribute('transform',`translate(720 870) rotate(${f2(-6+2*Math.sin(t*2))}) scale(${f2(Math.max(0.001,0.8+0.2*cv))})`);
+}
+
+// ---------- the 5 slots: "?" (calamity) -> bottom strip (cards) -> CTA mini cards ----------
+const SL=[0,1,2,3,4].map(i=>{const e=$('sl'+i); return {e,q:e.querySelector('.q'),tp:e.querySelector('.tp'),bt:e.querySelector('.bt'),ring:e.querySelector('.ring'),i};});
+const slY=track(700,[[CARD0,1366,MORPH],[T.cta,700,MORPH]]), slS=track(1,[[CARD0,0.55,MORPH],[T.cta,1,MORPH]]);
+function slotsF(t){
+  const fb=HAS('S5')?0:1;
+  const v0=t<CARD0?win(t,T.calamity,CARD0,BOUNCE)*fb:1;
+  const end=t>=T.loop?1-clamp((t-T.loop)/0.3):1;
+  SL.forEach(s=>{const v=(t<CARD0?clamp(v0*1.4-s.i*0.1):(HAS('S5')&&t<CARD0+0.3?clamp((t-CARD0)/0.3):1))*end*(t<T.calamity?0:1);
+    if(!show(s.e,v))return;
+    const x=220+s.i*150, y=slY(t), sc=slS(t);
+    const cur=t>=CARD0&&t<CARD1&&cardIdx(t)===s.i, bob=cur?-10-4*Math.sin(t*5):0;
+    s.e.style.transform=`translate(${f2(x-68)}px,${f2(y-110+bob+(t<CARD0?6*Math.sin(t*3+s.i):0))}px) rotate(${f2((s.i-2)*2*(t<CARD0||t>=T.cta?1:0)+Math.sin(t*2+s.i))}deg) scale(${f2(Math.max(0.001,sc*(t<CARD0?0.6+0.4*clamp(v0*1.4-s.i*0.1):1)))})`;
+    const gotR=t>=T[CR[s.i]]+0.2, gotT=t>=T[CT[s.i]]+0.2;
+    s.tp.style.opacity=gotR?'1':'0'; s.bt.style.opacity=gotT?'1':'0'; s.q.style.opacity=gotR?'0':'1';
+    // CTA: a white ring hops from card to card while "ของชิ้นไหน" is said
+    let ro=cur?0.9:0; if(t>=K.chin&&t<T.loop){const k=Math.floor((t-K.chin)/0.3)%5; ro=k===s.i?1:0;}
+    s.ring.style.opacity=String(ro);
+  });
+}
+
+// ---------- the flip card ----------
+const flipT=track(0,[...CT.map((id,i)=>[T[id],180*(2*i+1)]),...CR.slice(1).map((id,i)=>[T[id],180*(2*i+2)])].sort((a,b)=>a[0]-b[0]),FLIP);
+const cardIn=t=>t<CARD0?0:(t<CARD1?S(t-CARD0,BOUNCE[0],BOUNCE[1]):1-clamp(S(t-CARD1,FAST[0],FAST[1])));
+const GN=[0,1,2,3,4].map(i=>[$('gn'+i),$('gs'+i),$('rn'+i)]);
+const GRADES=['A','B+','A','A','B+'];
+// gold face icons (own drawings), one group per card
+const gIc=$('gIc'); const GI=[];
+{ // 1 stone in water + lightning
+  const g=el('g',{},gIc); GI.push(g);
+  const wv=el('path',{d:'',fill:'none',stroke:'#7FB2FF','stroke-width':8,'stroke-linecap':'round'},g);
+  const gem=el('path',{d:'M0 -110 L80 -40 L50 70 L-50 70 L-80 -40 Z',fill:'url(#gemG)',stroke:INK,'stroke-width':8,'stroke-linejoin':'round'},g);
+  el('path',{d:'M-80 -40 L80 -40 M0 -110 L-25 -40 L0 70 L25 -40 Z',fill:'none',stroke:'#9A6A12','stroke-width':4},g);
+  const Z=[-1,1,0].map(i=>el('use',{href:'#ic-zap',x:-30,y:-30,width:60,height:60,color:YEL},g));
+  g._f=(t,u)=>{let d='';for(let j=0;j<=40;j++){const x=-170+j*8.5;d+=(j?'L':'M')+f2(x)+' '+f2(110+8*Math.sin(x/22+t*6));}wv.setAttribute('d',d);
+    gem.setAttribute('transform',`translate(0 ${f2(6*Math.sin(t*3))})`);
+    Z.forEach((z,i)=>{const ph=((t*1.6+i*0.33)%1+1)%1; z.setAttribute('transform',`translate(${[-130,130,0][i]} ${[-60,-60,-150][i]}) scale(${f2(0.7+0.5*Math.sin(Math.PI*ph))})`); z.setAttribute('opacity',f2(Math.sin(Math.PI*ph)));});};
+}
+{ // 2 herb leaf + medical cross
+  const g=el('g',{},gIc); GI.push(g);
+  const lf=el('path',{d:'M0 120 C-130 40 -110 -110 0 -140 C110 -110 130 40 0 120 Z',fill:'#5FCB6E',stroke:INK,'stroke-width':8},g);
+  el('path',{d:'M0 120 L0 -120 M0 -40 L-50 -80 M0 10 L55 -35 M0 60 L-45 25',fill:'none',stroke:'#2F7A3A','stroke-width':7,'stroke-linecap':'round'},g);
+  const cr=el('g',{},g); el('circle',{r:46,fill:'#fff',stroke:INK,'stroke-width':7},cr); el('path',{d:'M-12 -30 H12 V-12 H30 V12 H12 V30 H-12 V12 H-30 V-12 H-12 Z',fill:RED},cr);
+  g._f=(t,u)=>{lf.setAttribute('transform',`rotate(${f2(5*Math.sin(t*2))})`); cr.setAttribute('transform',`translate(110 90) scale(${f2(1+0.1*Math.sin(t*5))})`);};
+}
+{ // 3 rice stalk + hourglass
+  const g=el('g',{},gIc); GI.push(g);
+  const st=el('g',{},g); el('path',{d:'M0 150 C10 60 30 -40 90 -120',fill:'none',stroke:'#C9A24A','stroke-width':9,'stroke-linecap':'round'},st);
+  for(let j=0;j<9;j++){const u=j/8, x=10+u*75, y=40-u*150; el('ellipse',{cx:f2(x-24),cy:f2(y),rx:13,ry:24,fill:GOLD,stroke:INK,'stroke-width':4,transform:`rotate(-35 ${f2(x-24)} ${f2(y)})`},st);
+    el('ellipse',{cx:f2(x+18),cy:f2(y-14),rx:13,ry:24,fill:'#FFE09A',stroke:INK,'stroke-width':4,transform:`rotate(35 ${f2(x+18)} ${f2(y-14)})`},st);}
+  const hg=el('g',{},g); el('circle',{r:52,fill:'#fff',stroke:INK,'stroke-width':7},hg); el('use',{href:'#ic-hourglass',x:-34,y:-34,width:68,height:68,color:INK},hg);
+  g._f=(t,u)=>{st.setAttribute('transform',`translate(-40 0) rotate(${f2(4*Math.sin(t*2.2))} 0 150)`); hg.setAttribute('transform',`translate(-100 90) rotate(${f2(-((t*180)%360))})`);};
+}
+{ // 4 three-source water: 3 drops
+  const g=el('g',{},gIc); GI.push(g);
+  const DR='M0 -70 C26 -30 46 0 46 26 A46 46 0 0 1 -46 26 C-46 0 -26 -30 0 -70 Z';
+  const ds=['#7FD3FF',GOLD,'#FF8AD0'].map((c,i)=>el('path',{d:DR,fill:c,stroke:INK,'stroke-width':7},g));
+  g._f=(t,u)=>{ds.forEach((d,i)=>{const a=-Math.PI/2+i*2*Math.PI/3+t*0.8; d.setAttribute('transform',`translate(${f2(80*Math.cos(a))} ${f2(80*Math.sin(a)+10)}) scale(${f2(1+0.06*Math.sin(t*4+i))})`);});};
+}
+{ // 5 metal tree (alchemy plant) + check -> x when it dies
+  const g=el('g',{},gIc); GI.push(g);
+  const tr=el('g',{},g);
+  el('path',{d:'M0 150 L0 0 M0 40 L-70 -40 M0 10 L80 -60 M0 -20 L-20 -110 M-70 -40 L-110 -60 M80 -60 L120 -40',fill:'none',stroke:'#C7CCD8','stroke-width':12,'stroke-linecap':'round'},tr);
+  const LV=[[-110,-60],[-70,-40],[-20,-110],[80,-60],[120,-40],[30,-130],[-60,-100]].map(([x,y],i)=>({e:el('circle',{cx:x,cy:y,r:22,fill:i%2?GOLD:'#E6EAF2',stroke:INK,'stroke-width':5},tr),x,y,i}));
+  const ck=el('path',{d:'',fill:'none',stroke:'#3DDC84','stroke-width':22,'stroke-linecap':'round','stroke-linejoin':'round'},g);
+  g._f=(t,u)=>{const dead=t>=T.c5_dead?clamp(S(t-T.c5_dead,8,0.9)):0;
+    tr.setAttribute('transform',`rotate(${f2(3*Math.sin(t*2)*(1-dead))} 0 150) scale(1 ${f2(1-0.12*dead)})`);
+    LV.forEach(l=>{const fall=t>=T.c5_dead+0.1+l.i*0.06?Math.pow(t-T.c5_dead-0.1-l.i*0.06,2)*260:0; l.e.setAttribute('transform',`translate(${f2(Math.sin(l.i+t)*8*dead)} ${f2(Math.min(fall,260))})`);
+      l.e.setAttribute('fill',mix(l.i%2?GOLD:'#E6EAF2','#555B66',dead)); l.e.setAttribute('opacity',f2(1-clamp((fall-180)/80)));});
+    const cv=t>=H.c5_reward?S(t-H.c5_reward,POP[0],POP[1]):0;
+    const C=[[-60,0],[-20,40],[-20,40],[60,-40]], X=[[-45,-45],[45,45],[45,-45],[-45,45]];
+    const P=C.map((p,i)=>[lerp(p[0],X[i][0],dead),lerp(p[1],X[i][1],dead)]);
+    ck.setAttribute('d',`M${f2(P[0][0])} ${f2(P[0][1])} L${f2(P[1][0])} ${f2(P[1][1])} M${f2(P[2][0])} ${f2(P[2][1])} L${f2(P[3][0])} ${f2(P[3][1])}`);
+    ck.setAttribute('stroke',mix('#3DDC84',RED,dead)); ck.setAttribute('transform',`translate(110 100) scale(${f2(Math.max(0.001,cv)*0.9)})`); ck.setAttribute('opacity',cv>0.01?'1':'0');};
+}
+// red-face window graphics (fallbacks + the shots after each threat)
+const wS=$('winS'), wO=$('winO'); const WG=[];
+const smoke=(parent,n,seed,col)=>[...Array(n)].map((_,i)=>({e:el('circle',{r:10,fill:col},parent),i,a:hsh(i,seed)*6.28,r:hsh(i,seed+1)}));
+{ // 1 Pap: eyes in the dark, tiny person on a leash, then 1,000 dots -> 7
+  const g=el('g',{},wS); WG.push(g);
+  const eyes=[[200,120],[430,100],[320,200]].map(([x,y],i)=>{const e=el('g',{},g); el('circle',{r:46,fill:'url(#rGlow)',opacity:.5},e); el('ellipse',{cx:-14,cy:0,rx:9,ry:6,fill:'url(#eyeG)'},e); el('ellipse',{cx:14,cy:0,rx:9,ry:6,fill:'url(#eyeG)'},e); return {e,x,y,i};});
+  const leash=el('g',{fill:'none',stroke:'#FF8A8C','stroke-width':3,'stroke-dasharray':'6 6'},g);
+  const LS=eyes.map(()=>el('path',{d:''},leash));
+  const doll=person(g,70,'#D9C3A0','#07060A');
+  const dots=el('g',{},g); const DOTS=[];
+  for(let i=0;i<1000;i++){const cx=30+(i%40)*14.6, cy=40+Math.floor(i/40)*12.4; DOTS.push(el('circle',{cx:f2(cx),cy:f2(cy),r:4.2,fill:'#C9D3E8'},dots));}
+  const KEEP=new Set([37,212,388,519,640,803,961]);
+  g._f=(t)=>{const pet=t>=T.c1_pet?clamp(S(t-T.c1_pet,MORPH[0],MORPH[1])):0, cnt=t>=T.c1_count?1:0;
+    eyes.forEach(o=>{const bl=((t*0.8+o.i*0.31)%1)<0.07?0.2:1; o.e.setAttribute('transform',`translate(${f2(o.x+6*Math.sin(t*1.5+o.i))} ${f2(o.y)}) scale(1 ${bl})`); o.e.setAttribute('opacity',f2(1-0.8*cnt));});
+    const dx=320+20*Math.sin(t*2), dy=300-30*pet; doll.g.setAttribute('transform',`translate(${f2(dx)} ${f2(dy)}) scale(${f2(1-0.45*pet)})`); doll.g.setAttribute('opacity',f2(1-cnt));
+    LS.forEach((p,i)=>{const o=eyes[i]; p.setAttribute('d',`M${o.x} ${o.y+12} Q${f2((o.x+dx)/2)} ${f2(Math.max(o.y,dy)+40)} ${f2(dx)} ${f2(dy-10)}`);}); leash.setAttribute('opacity',f2(pet*(1-cnt)));
+    dots.setAttribute('opacity',String(cnt));
+    if(cnt){const k=clamp((t-T.c1_count-0.15)/(H.c1_count-T.c1_count-0.15)); DOTS.forEach((d,i)=>{const keep=KEEP.has(i); const off=keep?0:clamp(k*1.25-hsh(i,41)*0.25);
+      d.setAttribute('fill',keep&&t>=H.c1_count?YEL:'#C9D3E8'); d.setAttribute('opacity',f2(1-0.9*off)); d.setAttribute('r',keep&&t>=H.c1_count?f2(4.2+5*clamp(S(t-H.c1_count,POP[0],POP[1]))):'4.2');});}};
+}
+{ // 2 Brion: big round-headed figure, maze drawing, then 2 people
+  const g=el('g',{},wS); WG.push(g);
+  const br=el('g',{},g); el('path',{d:'M-60 190 C-60 90 -30 60 0 60 C30 60 60 90 60 190 Z',fill:'#1E1A22',stroke:'#7A6A80','stroke-width':4},br);
+  el('circle',{cx:0,cy:-10,r:92,fill:'#24202A',stroke:'#7A6A80','stroke-width':4},br); const be=el('path',{d:'M-30 -10 h20 M10 -10 h20',stroke:'#FF5A5D','stroke-width':8,'stroke-linecap':'round'},br);
+  const maze=el('path',{d:'M40 40 H600 V340 H60 V80 H560 V300 H100 V120 H520 V260 H140 V160 H480 V220 H180',fill:'none',stroke:GOLD,'stroke-width':8,'stroke-linejoin':'round','stroke-dasharray':'4000','stroke-dashoffset':'4000'},g);
+  const two=[0,1].map(i=>person(g,170,'#3A3F5C','#C9D3E8'));
+  g._f=(t)=>{const mz=t>=T.c2_weapon?eio((t-T.c2_weapon)/1.0):0, tw2=t>=T.c2_count?S(t-T.c2_count,BOUNCE[0],BOUNCE[1]):0;
+    br.setAttribute('transform',`translate(320 ${f2(170+6*Math.sin(t*2))}) scale(${f2(1-0.4*mz)})`); br.setAttribute('opacity',f2(1-clamp(tw2)));
+    be.setAttribute('opacity',((t*1.1)%1)<0.08?'0.2':'1');
+    maze.setAttribute('stroke-dashoffset',f2(4000*(1-mz))); maze.setAttribute('opacity',f2(mz>0?0.8*(1-0.6*clamp(tw2)):0));
+    two.forEach((p,i)=>{p.g.setAttribute('transform',`translate(${240+i*160} ${f2(250+4*Math.sin(t*3+i))}) scale(${f2(Math.max(0.001,tw2))})`); p.g.setAttribute('opacity',tw2>0.01?'1':'0');});};
+}
+{ // 3 Hellbell: two-tailed snake, then the 99% bar
+  const g=el('g',{},wS); WG.push(g);
+  const sn=el('g',{},g);
+  const body=el('path',{d:'',fill:'none',stroke:'#B3262A','stroke-width':30,'stroke-linecap':'round'},sn);
+  const t1=el('path',{d:'',fill:'none',stroke:'#B3262A','stroke-width':18,'stroke-linecap':'round'},sn), t2=el('path',{d:'',fill:'none',stroke:'#B3262A','stroke-width':18,'stroke-linecap':'round'},sn);
+  const hd=el('g',{},sn); el('ellipse',{rx:42,ry:30,fill:'#C22F33',stroke:INK,'stroke-width':5},hd); el('circle',{cx:16,cy:-10,r:6,fill:YEL},hd);
+  const bar=el('g',{},g); el('rect',{x:40,y:150,width:560,height:90,rx:20,fill:'#1C1418',stroke:'#5A3A40','stroke-width':4},bar);
+  const fill=el('rect',{x:40,y:150,width:0,height:90,rx:20,fill:RED},bar);
+  const pct=el('text',{x:320,y:120,'text-anchor':'middle','font-family':'Kanit','font-weight':900,'font-size':96,fill:'#fff',stroke:INK,'stroke-width':10,'paint-order':'stroke'},bar);
+  const bl=el('text',{x:320,y:300,'text-anchor':'middle','font-family':'Kanit','font-weight':700,'font-size':38,fill:'#FFB0B2'},bar); bl.textContent='ตกเป็นเหยื่อ';
+  g._f=(t)=>{const b=t>=T.c3_count?1:0;
+    let d=''; for(let j=0;j<=30;j++){const x=120+j*11, y=200+50*Math.sin(j/5-t*4); d+=(j?'L':'M')+f2(x)+' '+f2(y);} body.setAttribute('d',d);
+    const ex=450, ey=200+50*Math.sin(30/5-t*4);
+    t1.setAttribute('d',`M${ex} ${f2(ey)} Q${ex+60} ${f2(ey-70+20*Math.sin(t*5))} ${ex+130} ${f2(ey-90)}`); t2.setAttribute('d',`M${ex} ${f2(ey)} Q${ex+60} ${f2(ey+70-20*Math.sin(t*5))} ${ex+130} ${f2(ey+90)}`);
+    hd.setAttribute('transform',`translate(${f2(110)} ${f2(200+50*Math.sin(-t*4))})`); sn.setAttribute('opacity',f2(1-b)); bar.setAttribute('opacity',String(b));
+    if(b){const k=eo((t-T.c3_count-0.1)/(H.c3_count-T.c3_count-0.1)); const v=t>=H.c3_count?99:Math.round(99*k); fill.setAttribute('width',f2(560*v/100)); pct.textContent=v+'%';}};
+}
+{ // 4 Ai: round gas blob with 4 legs, swallows the window; then 3 people who glitch
+  const g=el('g',{},wS); WG.push(g);
+  const gas=el('g',{},g); const SM=smoke(gas,26,51,'#3B3346');
+  const legs=[0,1,2,3].map(i=>el('path',{d:'',fill:'none',stroke:'#3B3346','stroke-width':16,'stroke-linecap':'round'},gas));
+  const ge=[-22,22].map(x=>el('circle',{cx:x,cy:-10,r:9,fill:'#FF5A5D'},gas));
+  const three=[0,1,2].map(i=>person(g,150,'#3A3F5C','#C9D3E8'));
+  const scrib=[0,1,2].map(i=>el('path',{d:'',fill:'none',stroke:'#FF8A8C','stroke-width':5,'stroke-linecap':'round'},g));
+  g._f=(t)=>{const sw=t>=T.c4_gas?eio((t-T.c4_gas)/1.1):0, th=t>=T.c4_count?S(t-T.c4_count,BOUNCE[0],BOUNCE[1]):0, md=t>=T.c4_mind?1:0;
+    const R=70+260*sw; gas.setAttribute('transform',`translate(${f2(320+10*Math.sin(t*1.7))} ${f2(170+8*Math.cos(t*2))})`); gas.setAttribute('opacity',f2(1-clamp(th)));
+    SM.forEach(s=>{const a=s.a+t*0.6*(s.i%2?1:-1), rr=R*(0.2+0.6*s.r); s.e.setAttribute('cx',f2(rr*Math.cos(a))); s.e.setAttribute('cy',f2(rr*Math.sin(a)*0.8)); s.e.setAttribute('r',f2(R*(0.35+0.25*Math.sin(t*2+s.i))));});
+    legs.forEach((l,i)=>{const x=-60+i*40; l.setAttribute('d',`M${x} ${f2(R*0.5)} q${f2(10*Math.sin(t*6+i))} 40 ${-8+i*5} ${f2(80+R*0.2)}`); l.setAttribute('opacity',f2(1-sw));});
+    ge.forEach(e=>e.setAttribute('opacity',f2(1-sw*0.7)));
+    three.forEach((p,i)=>{const gl=md&&Math.floor((t-T.c4_mind)*30)%7<2?(i%2?14:-14):0;
+      p.g.setAttribute('transform',`translate(${f2(180+i*140+gl)} ${f2(250+4*Math.sin(t*3+i))}) scale(${f2(Math.max(0.001,th))})`); p.g.setAttribute('opacity',th>0.01?'1':'0');
+      p.head.setAttribute('opacity',f2(1-0.85*clamp((t-T.c4_mind)/0.3)*md));
+      let d=''; if(md){for(let j=0;j<16;j++){const a=j*1.9+t*9, r=14+8*hsh(j+i*20,61); d+=(j?'L':'M')+f2(180+i*140+gl+r*Math.cos(a))+' '+f2(250-0.27*150+r*Math.sin(a));}}
+      scrib[i].setAttribute('d',d); scrib[i].setAttribute('opacity',f2(md*clamp((t-T.c4_mind)/0.2)));});};
+}
+{ // 5 Zobae: virus, then the infinity sign turning slowly
+  const g=el('g',{},wS); WG.push(g);
+  const vir=el('g',{},g); el('circle',{r:80,fill:'#5A1E3A',stroke:'#FF8AD0','stroke-width':6},vir);
+  for(let i=0;i<12;i++){const a=i/12*6.283; el('line',{x1:f2(80*Math.cos(a)),y1:f2(80*Math.sin(a)),x2:f2(118*Math.cos(a)),y2:f2(118*Math.sin(a)),stroke:'#FF8AD0','stroke-width':8,'stroke-linecap':'round'},vir);
+    el('circle',{cx:f2(124*Math.cos(a)),cy:f2(124*Math.sin(a)),r:12,fill:'#FF8AD0'},vir);}
+  const inf=el('use',{href:'#ic-infinity',x:-12,y:-12,width:24,height:24,color:'#fff'},g);
+  g._f=(t)=>{const im=t>=T.c5_immortal?clamp(S(t-T.c5_immortal,MORPH[0],MORPH[1])):0;
+    vir.setAttribute('transform',`translate(320 190) rotate(${f2(t*30)}) scale(${f2((1-0.7*im)*(1+0.05*Math.sin(t*5)))})`);
+    inf.setAttribute('transform',`translate(320 190) rotate(${f2(-8+8*Math.sin(t*0.9))}) scale(${f2(Math.max(0.001,12*im))})`); inf.setAttribute('opacity',f2(im));};
+}
+const winCirc=roughPath(r=>r.ellipse(0,0,260,200,{stroke:YEL,strokeWidth:6,roughness:1.4,seed:5}),wO,{opacity:0});
+function cardF(t){
+  const v=cardIn(t), W=$('cardW'), cred=$('cardCred');
+  if(!show(W,clamp(v*1.5))){show(cred,0);return;}
+  const ang=flipT(t), side=Math.floor((ang+90)/180), r=((ang+90)%180+180)%180-90; const gold=side%2===0;
+  const out=t>=CARD1?clamp(S(t-CARD1,FAST[0],FAST[1])):0;
+  const tx=lerp(0,820-540,out), ty=lerp(0,1366-666,out);
+  W.style.transform=`translate(${f2(tx)}px,${f2(ty+8*Math.sin(t*1.8))}px) perspective(1800px) rotateY(${f2(r)}deg) rotate(${f2((gold?-1.2:1.2)+0.6*Math.sin(t*1.3))}deg) scale(${(Math.max(0.001,0.25+0.75*v)*(1-0.8*out)*(1+0.04*Math.sin(clamp(Math.abs(r)/90)*Math.PI))).toFixed(4)})`;
+  $('fG').style.opacity=gold?'1':'0'; $('fR').style.opacity=gold?'0':'1';
+  const gi=cardIdx(t); let ri=0; for(let i=0;i<5;i++)if(t>=T[CT[i]])ri=i;
+  GN.forEach(([gn,gs,rn],i)=>{gn.style.opacity=i===gi?'1':'0'; gs.style.opacity=i===gi?'1':'0'; rn.style.opacity=i===ri?'1':'0';});
+  $('gHr').textContent=`ของรางวัล ${gi+1}/5`; $('gv').textContent=GRADES[ri];
+  GI.forEach((g,i)=>{g.setAttribute('opacity',i===gi?'1':'0'); if(i===gi)g._f(t);});
+  WG.forEach((g,i)=>{g.setAttribute('opacity',i===ri?'1':'0'); if(i===ri)g._f(t);});
+  // grade badge pops just after each flip to red
+  const gp=t>=T[CT[ri]]+0.25?S(t-T[CT[ri]]-0.25,POP[0],POP[1]):0; $('grade').style.transform=`scale(${f2(Math.max(0.001,gp))}) rotate(${f2(-8+4*Math.sin(t*3))}deg)`;
+  // survivors line on the red face
+  const STAT=[[T.c1_count,()=>{const k=clamp((t-T.c1_count-0.15)/(H.c1_count-T.c1_count-0.15)); return t>=H.c1_count?'รอด 7 จาก 1,000 คน':`ไป ${Math.round(1000-993*eo(k)).toLocaleString('en-US')} คน`;}],
+    [T.c2_count,()=>'รอด 2 คน'],[T.c3_count,()=>t>=H.c3_count?'เหลือรอด 11 คน':''],[T.c4_count,()=>t>=T.c4_mind?'รอด 3 คน · สติหลุด':'รอด 3 คน'],[T.c5_immortal,()=>'โรคแห่งความไม่ตาย']];
+  const st=STAT[ri], rs=$('rst'); const sv=t>=st[0]?S(t-st[0],POP[0],POP[1]):0; rs.textContent=st[1](); show(rs,clamp(sv)); rs.style.transform=`scale(${f2(Math.max(0.001,sv))})`; rs.style.transformOrigin='0 50%';
+  // user still inside the window (<= 2 s), push-in + circle + credit
+  const WS=['S6','S7','S8','S9','S11']; let wsOn=0;
+  WS.forEach((sid,i)=>{const im=$('wi-'+sid); if(!im)return; const a=T[CT[i]], b=Math.min(a+2,[T.c1_pet,T.c2_weapon,T.c3_count,T.c4_gas,T.c5_immortal][i]);
+    const o=(!gold&&ri===i)?pinO(t,a,b):0; im.style.opacity=f2(o); if(o>0){wsOn=Math.max(wsOn,o); im.style.transform=`scale(${f2(1.0+0.1*clamp((t-a)/(b-a)))})`;}});
+  if(HAS(WS[ri])){WG[ri].setAttribute('opacity',f2(1-wsOn));}
+  sa(winCirc,wsOn); winCirc.setAttribute('transform',`translate(330 180) rotate(${f2(-6+2*Math.sin(t*2))})`);
+  show(cred,wsOn*(1-out)); cred.style.transform=`translateY(${f2(1052)}px)`;
+}
+
+// ---------- still card (S1-S5, S10): only when the file exists ----------
+const SCFG={
+  S1:{a:K.kon,b:T.dot,x:400,y:1090,sc:0.5,rot:-2,lab:'กอน'},
+  S2:{a:T.darkcont,b:T.netero,x:540,y:790,sc:1,rot:1.5,lab:'แผนที่ทวีปมืด'},
+  S3:{a:T.netero,b:T.quote,x:540,y:790,sc:1,rot:-1.5,lab:'เน็ตโร + ซิกก์',circ:[0.7,0.45],circAt:H.netero},
+  S4:{a:T.attempts,b:T.five,x:400,y:1000,sc:0.45,rot:2,lab:'149 ครั้ง'},
+  S5:{a:T.calamity,b:T.c1_reward,x:540,y:790,sc:1,rot:-1.5,lab:'ภัยพิบัติ 5 อย่าง'},
+  S10:{a:T.beyond,b:T.son,x:540,y:720,sc:1,rot:1.5,lab:'บียอนด์ เน็ตโร',circ:[0.5,0.4],circAt:T.beyond+0.3}};
+const scO=$('scO'); const scCirc=roughPath(r=>r.ellipse(0,0,220,240,{stroke:YEL,strokeWidth:7,roughness:1.5,seed:12}),scO,{opacity:0});
+function stillF(t){
+  const sc=$('scard'), cr=$('sCred'); let on=null;
+  for(const sid in SCFG){ if(!HAS(sid))continue; const c=SCFG[sid], b=Math.min(c.b,c.a+2); if(t>=c.a&&t<b+0.1){on=[sid,c,b];} }
+  document.querySelectorAll('#scard .simg').forEach(im=>{im.style.opacity=on&&im.id==='si-'+on[0]?'1':'0';});
+  if(!on){show(sc,0);show(cr,0);return;}
+  const [sid,c,b]=on, v=win(t,c.a,b,BOUNCE), u=clamp((t-c.a)/(b-c.a));
+  show(sc,clamp(v*2)); $('scLab').textContent=c.lab;
+  sc.style.transform=`translate(${f2(c.x-330)}px,${f2(c.y-260+30*(1-clamp(v)))}px) rotate(${f2(c.rot+0.5*Math.sin(t*1.5))}deg) scale(${f2(Math.max(0.001,c.sc*(0.85+0.15*v)))})`;
+  const im=$('si-'+sid); im.style.transform=`scale(${f2(1.0+0.1*u)}) translate(${f2(-8*u)}px,${f2(-5*u)}px)`;
+  const cv=c.circ&&t>=(c.circAt||c.a)?clamp(S(t-(c.circAt||c.a),POP[0],POP[1])):0; sa(scCirc,cv);
+  if(c.circ)scCirc.setAttribute('transform',`translate(${f2(c.circ[0]*620)} ${f2(c.circ[1]*440)}) scale(${f2(Math.max(0.001,cv))})`);
+  show(cr,clamp(v*2)); cr.style.transform=`translate(${f2(c.x-540)}px,${f2(c.y+c.sc*240+8)}px)`;
+}
+
+// ---------- survivors (6) -> Beyond -> son of Netero ----------
+function survF(t){
+  const a=T.survivor, b=T.again;
+  SV.forEach((p,i)=>{const lit=i===3; const v=win(t,a+i*0.06,b,BOUNCE)*(lit?1:(t>=T.beyond?1-clamp((t-T.beyond)/0.2):1)); if(!sa(p.g,clamp(v*2)))return;
+    const on=lit&&t>=K.rod6?clamp((t-K.rod6)/0.2):0;
+    p.body.setAttribute('fill',mix('#3A3F5C',GOLD,on)); p.head.setAttribute('fill',mix('#3A3F5C',GOLD,on));
+    let x=215+i*130, y=700, s=1;
+    if(lit&&t>=T.beyond){const m=clamp(S(t-T.beyond,MORPH[0],MORPH[1])); x=lerp(x,t>=T.son?650:540,m); y=lerp(y,820,m); s=lerp(1,3.2,m);
+      if(t>=T.son){const m2=clamp(S(t-T.son,MORPH[0],MORPH[1])); x=lerp(540,650,m2); s=lerp(3.2,2.6,m2);}
+      if(HAS('S10')&&t<Math.min(T.son,T.beyond+2)) s*=1-clamp((t-T.beyond)/0.15)*0.999;}
+    p.g.setAttribute('transform',`translate(${f2(x)} ${f2(y+5*Math.sin(t*3+i))}) scale(${f2(Math.max(0.001,s*(0.7+0.3*clamp(v))))})`);});
+  const nv=win(t,K.net2-0.1,b,BOUNCE); if(sa(netSmall.g,clamp(nv*2))){netSmall.g.setAttribute('transform',`translate(300 ${f2(860+5*Math.sin(t*2))}) scale(${f2(Math.max(0.001,nv))})`);
+    sonLine.setAttribute('d',`M360 860 Q480 ${f2(760+10*Math.sin(t*3))} 560 840`); sonLine.setAttribute('stroke-dashoffset',f2(-t*60)); sa(sonLine,clamp(nv*2));} else sa(sonLine,0);
+  const nc=$('nmC'), nco=win(t,K.net2,b,POP); if(show(nc,nco)) nc.style.transform=`translate(${f2(300-tw('เน็ตโร')*0.4)}px,1000px) scale(${f2(Math.max(0.001,nco))})`;
+}
+
+// ---------- zoom punches + glitch (registry zoom-through / rgb-glitch-text, adapted) ----------
+const PUNCH=[H.attempts,H.c1_count,H.c3_count,K.maitai,K.dark];
+const GL=[T.but,T.c4_mind], GLD=0.134;
+const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
+function fx(t){
+  let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.07*Math.exp(-u*7)*Math.cos(u*13);});
+  let gi=-1; GL.forEach(a=>{if(t>=a&&t<a+GLD)gi=Math.floor((t-a)*30);});
+  const st=$('stage');
+  if(gi>=0){const o=GOFF[gi%4]; $('rgbR').setAttribute('dx',o[0]); $('rgbB').setAttribute('dx',o[1]); st.style.filter='url(#rgbx)';
+    st.style.transform=`translateX(${o[2]}px) scale(${(1+p).toFixed(4)})`;}
+  else { st.style.filter='none'; st.style.transform=`scale(${(1+p).toFixed(4)})`; }
+  ['gb0','gb1','gb2'].forEach((id,i)=>{const b=$(id); if(gi<0){b.style.opacity='0';return;}
+    const y=[(300+gi*410)%1100,(820+gi*290)%1100,(560+gi*530)%1100][i]+260, h=[26,60,14][i];
+    b.style.top=y+'px'; b.style.height=h+'px'; b.style.background=['#22d3ee','#ef4444','#FFFFFF'][i]; b.style.opacity=['.55','.45','.6'][i];
+    b.style.transform=`translateX(${(i%2?-1:1)*(20+gi*9)}px)`;});
+}
+
+// ---------- captions: spring in on the word; last chunk clears before the loop seam ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  const fade=i===CAPT.length-1?1-clamp((t-(DUR-0.4))/0.1):1;
+  capEls[i].style.opacity=f2(fade);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+function render(t){ mapF(t); title(t); pillF(t); bigF(t); counterF(t); neteroF(t); slotsF(t); cardF(t); stillF(t); survF(t); fx(t); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:57.433,duration:57.433,ease:'none'},0);
+render(0);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render(proxy._t));
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

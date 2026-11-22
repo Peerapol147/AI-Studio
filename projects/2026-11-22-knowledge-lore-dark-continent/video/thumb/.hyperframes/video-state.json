@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "historyId": "16cd29d3-7c14-4382-88bb-87d8457bbbc4",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "fonts/LICENSE-kanit.txt": {
+      "hash": "0c796c259354fbbc1a5041e468085d219519b3fd93f4e882bcb21ed602dbcca8",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/0c/0c796c259354fbbc1a5041e468085d219519b3fd93f4e882bcb21ed602dbcca8"
+    },
+    "fonts/LICENSE-noto-sans-thai.txt": {
+      "hash": "bd85ada3eef71267263e0fd24a40ae20380015c7cf1afa0c27a4340b03431320",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/bd/bd85ada3eef71267263e0fd24a40ae20380015c7cf1afa0c27a4340b03431320"
+    },
+    "fonts/LICENSE-prompt.txt": {
+      "hash": "d338ae85340b0629296ee6a20a4c873afaafaa7be4fd9a01ce1248231b0daef2",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/d3/d338ae85340b0629296ee6a20a4c873afaafaa7be4fd9a01ce1248231b0daef2"
+    },
+    "fonts/LICENSE-sarabun.txt": {
+      "hash": "2b16d88bda534060561ccc38074ddce01f59e3f26fbabaafa33600934a30dd45",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/2b/2b16d88bda534060561ccc38074ddce01f59e3f26fbabaafa33600934a30dd45"
+    },
+    "fonts/fonts.css": {
+      "hash": "36d2fd7a6887ddd083f436e377186496327610828399545f5e8c81b189256511",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/36/36d2fd7a6887ddd083f436e377186496327610828399545f5e8c81b189256511"
+    },
+    "fonts/kanit-latin-400-normal.woff2": {
+      "hash": "1e856b3a04f93a23ec758ad37750f4dcfbde02334fd30358d02d5d4db3052bf2",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/1e/1e856b3a04f93a23ec758ad37750f4dcfbde02334fd30358d02d5d4db3052bf2"
+    },
+    "fonts/kanit-latin-700-normal.woff2": {
+      "hash": "a44817a3dcd26f5c659cd92c241f7c9e96414a74c0de249407064364573cd6b5",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/a4/a44817a3dcd26f5c659cd92c241f7c9e96414a74c0de249407064364573cd6b5"
+    },
+    "fonts/kanit-latin-900-normal.woff2": {
+      "hash": "f001e4c46c00f65965198ba7547aadd375aa6222feff177c57c943d3bf6794d3",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/f0/f001e4c46c00f65965198ba7547aadd375aa6222feff177c57c943d3bf6794d3"
+    },
+    "fonts/kanit-thai-400-normal.woff2": {
+      "hash": "943218ba72a5e68e3fc58fb6dd43493edeb0c4a05167748b4ee503748a8d8e12",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/94/943218ba72a5e68e3fc58fb6dd43493edeb0c4a05167748b4ee503748a8d8e12"
+    },
+    "fonts/kanit-thai-700-normal.woff2": {
+      "hash": "20ee1ffc0cbccfc9e4b7d660d2937f82b75d0eb41354e71e22752495aa51f68a",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/20/20ee1ffc0cbccfc9e4b7d660d2937f82b75d0eb41354e71e22752495aa51f68a"
+    },
+    "fonts/kanit-thai-900-normal.woff2": {
+      "hash": "dbba1d0492af4079ef818416120351cc325e8a92a852670acc33f1272b584845",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/db/dbba1d0492af4079ef818416120351cc325e8a92a852670acc33f1272b584845"
+    },
+    "fonts/noto-sans-thai-latin-400-normal.woff2": {
+      "hash": "fde3c93cfbfd8c97286fac1cca1c89912eb61857dd3996d26b7c0eaf16715bb6",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/fd/fde3c93cfbfd8c97286fac1cca1c89912eb61857dd3996d26b7c0eaf16715bb6"
+    },
+    "fonts/noto-sans-thai-latin-700-normal.woff2": {
+      "hash": "af79e77ba9fd08231b341621ee55fef64a63e0e1da954734e2766bec60830bd9",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/af/af79e77ba9fd08231b341621ee55fef64a63e0e1da954734e2766bec60830bd9"
+    },
+    "fonts/noto-sans-thai-latin-900-normal.woff2": {
+      "hash": "541afe0067b549c39d02d0458c5292c5a93364daf5ffc9a6a9f52c74bdd4b5c4",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/54/541afe0067b549c39d02d0458c5292c5a93364daf5ffc9a6a9f52c74bdd4b5c4"
+    },
+    "fonts/noto-sans-thai-thai-400-normal.woff2": {
+      "hash": "57776453076ebf0fa935080e63c0ae656f1f1ecd5172112d59d3b259e0dd8796",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/57/57776453076ebf0fa935080e63c0ae656f1f1ecd5172112d59d3b259e0dd8796"
+    },
+    "fonts/noto-sans-thai-thai-700-normal.woff2": {
+      "hash": "fa4acaf9f20aa6d9a4c86c6474fe40e65525dd2ed6dd687f55a4ef1da5a0a57e",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/fa/fa4acaf9f20aa6d9a4c86c6474fe40e65525dd2ed6dd687f55a4ef1da5a0a57e"
+    },
+    "fonts/noto-sans-thai-thai-900-normal.woff2": {
+      "hash": "8f87a659880faa3b56b0f95c554ca1592f1a3740d54d2049ccfcaf8dad1d1ec6",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/8f/8f87a659880faa3b56b0f95c554ca1592f1a3740d54d2049ccfcaf8dad1d1ec6"
+    },
+    "fonts/prompt-latin-400-normal.woff2": {
+      "hash": "76f4b0e556e9bdcdcd9c839d20f5e3420a3ccca3f2d5da2f7beefb0e95a09bcb",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/76/76f4b0e556e9bdcdcd9c839d20f5e3420a3ccca3f2d5da2f7beefb0e95a09bcb"
+    },
+    "fonts/prompt-latin-700-normal.woff2": {
+      "hash": "54eb2e1925b4a3edd3460b8140546fb3e7767666d7ac1c1fcc246d3f1ab8157a",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/54/54eb2e1925b4a3edd3460b8140546fb3e7767666d7ac1c1fcc246d3f1ab8157a"
+    },
+    "fonts/prompt-latin-900-normal.woff2": {
+      "hash": "7f8674567323b17527f10987ec2da954f3f276a12fdd3d6c514e6c02431e0b71",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/7f/7f8674567323b17527f10987ec2da954f3f276a12fdd3d6c514e6c02431e0b71"
+    },
+    "fonts/prompt-thai-400-normal.woff2": {
+      "hash": "d10643e148806b6ec9976370cf78b43b0542b6c457ca14b5fc89a5d2fdd156f1",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/d1/d10643e148806b6ec9976370cf78b43b0542b6c457ca14b5fc89a5d2fdd156f1"
+    },
+    "fonts/prompt-thai-700-normal.woff2": {
+      "hash": "6709b0361745936ff7ec5b75bb63c4d67deb04669fbf40285e39e3421a0ab510",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/67/6709b0361745936ff7ec5b75bb63c4d67deb04669fbf40285e39e3421a0ab510"
+    },
+    "fonts/prompt-thai-900-normal.woff2": {
+      "hash": "54e3037520bef9605ffdc73911dc61c458ba1956819f3ca8e743dbae0a4f511e",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/54/54e3037520bef9605ffdc73911dc61c458ba1956819f3ca8e743dbae0a4f511e"
+    },
+    "fonts/sarabun-latin-400-normal.woff2": {
+      "hash": "04548534510686923239aeda26dd40fa57bf6cc55166204ef52b483bcf9e4228",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/04/04548534510686923239aeda26dd40fa57bf6cc55166204ef52b483bcf9e4228"
+    },
+    "fonts/sarabun-latin-700-normal.woff2": {
+      "hash": "b7e814f0f8a07648c77837917ff896c819d44ed4688a83f49b9cb29fdf7898fb",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/b7/b7e814f0f8a07648c77837917ff896c819d44ed4688a83f49b9cb29fdf7898fb"
+    },
+    "fonts/sarabun-thai-400-normal.woff2": {
+      "hash": "444ccfffc6e9201b86993a233a42481bee7fe485fe5f330d956f22356249b392",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/44/444ccfffc6e9201b86993a233a42481bee7fe485fe5f330d956f22356249b392"
+    },
+    "fonts/sarabun-thai-700-normal.woff2": {
+      "hash": "1ca031c8d598e7435f653e44f592fe0ac64e9e402066719fe061fdfe833cca1e",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/1c/1ca031c8d598e7435f653e44f592fe0ac64e9e402066719fe061fdfe833cca1e"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "index.html": {
+      "hash": "d681b4c2873ac769395dc25ace94c4b8a83700bce234f74c2ea98663ce3a3e19",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/d6/d681b4c2873ac769395dc25ace94c4b8a83700bce234f74c2ea98663ce3a3e19"
+    },
+    "package.json": {
+      "hash": "e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da",
+      "content": "/root/.cache/hyperframes/history/16cd29d3-7c14-4382-88bb-87d8457bbbc4/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "f64345d3-f090-4db8-8e51-b41dca6daaf8-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "f64345d3-f090-4db8-8e51-b41dca6daaf8-0",
+        "image": "/tmp/claude-0/-home-user-AI-Studio/bd73be6b-40ce-51ac-83e5-91ca2aa744cc/scratchpad/th/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795365143892,
+        "contentHash": "0bf0fccde52b44c22dbc5cc3cce9b0844f83c69645a4abeb64bf2ad4692d472d",
+        "revision": null,
+        "inputFingerprint": "7fb9c8087ccc9a698cdae59136b4aebf600628c9978798f3e52f5a7cf2bcbb63",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "910f591d-394b-4d50-a556-666773ecd6c5",
+      "completedAt": 1795366767007,
+      "output": "/home/user/AI-Studio/projects/2026-11-22-knowledge-lore-dark-continent/renders/thumb.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
