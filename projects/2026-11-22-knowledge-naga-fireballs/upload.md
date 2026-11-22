@@ -19,7 +19,7 @@
 - ช่วงเล่าตำนานในคลิปเป็นความเชื่อที่เล่าต่อกันมา ทีมไม่ได้ฟันธงว่าฝ่ายไหนถูก
 
 เครดิต
-เพลง: "Beautiful Mystery" by ccMixter (CC BY 3.0) https://www.jamendo.com/track/1230878 — https://creativecommons.org/licenses/by/3.0/
+เพลง: "The crossroads of change" by zero-project (CC BY 3.0) https://www.jamendo.com/track/1195819 — https://creativecommons.org/licenses/by/3.0/
 วิดีโอ (ครอปและปรับสี): Monk_Vadim, FindingFootage, adege, SayduVibe, Digital_Expert, ChristianBodhi, Mohamed_hassan via Pixabay
 ลูกไฟ เงาพญานาค แผนที่ และกราฟิก: ทำเอง (motion graphic) | เสียงพากย์: ElevenLabs (AI)
 
@@ -27,12 +27,12 @@
 
 ## TikTok
 **แคปชัน (≤150):** บั้งไฟพญานาค ใครจุดกันแน่? 🔥 พญานาค หรือ มีคนทำ เมนต์บอกหน่อย #บั้งไฟพญานาค #พญานาค #ออกพรรษา #ตำนานไทย #fyp
-**คอมเมนต์แรก (เครดิต CC BY):** Music: "Beautiful Mystery" by ccMixter (CC BY 3.0) jamendo.com/track/1230878 | Video: Pixabay | ที่มา: Thai PBS, Skeptoid (ลิงก์ใน YouTube)
+**คอมเมนต์แรก (เครดิต CC BY):** Music: "The crossroads of change" by zero-project (CC BY 3.0) jamendo.com/track/1195819 creativecommons.org/licenses/by/3.0/ | Video: Pixabay | ที่มา: Thai PBS, Skeptoid (ลิงก์ใน YouTube)
 **ติด label "AI-generated content"** (เสียงพากย์ AI)
 
 ## Facebook Reels
 **แคปชัน:** คืนออกพรรษาริมโขง ลูกไฟแดงอมชมพูผุดจากน้ำ 🔥 ชาวบ้านเชื่อว่าพญานาคจุดถวายพระพุทธเจ้า บางคนว่าเป็นก๊าซ บางคนว่ามีคนยิง จนถึงวันนี้ยังไม่มีคำตอบที่ทุกฝ่ายยอมรับ แล้วคิดว่าไง?
-ที่มา: Thai PBS / Skeptoid | เพลง "Beautiful Mystery" by ccMixter (CC BY 3.0) | วิดีโอ Pixabay | เสียงพากย์ AI
+ที่มา: Thai PBS / Skeptoid | เพลง "The crossroads of change" by zero-project (CC BY 3.0) | วิดีโอ Pixabay | เสียงพากย์ AI
 **แฮชแท็ก:** #บั้งไฟพญานาค #พญานาค #ตำนานไทย #reels
 
 ## ตอนอัปโหลด
