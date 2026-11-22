@@ -1,0 +1,113 @@
+"""tools/look.py: pick avoids the channel's last 3 looks; check refuses repeats (local projects/ and ep branches)."""
+import json, pathlib, shutil, subprocess, sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+TOOL = ROOT / 'tools' / 'look.py'
+BASE = {'template': 'brainrot-v3', 'palette': 'sunrise-coral', 'font': 'prompt', 'caption': 'box', 'opening': 'pov',
+        'transition': 'slide', 'music_mood': 'lofi', 'voice': 'liam', 'music_file': 'music-a.mp3'}
+
+
+def repo(tmp_path, git=False):
+    r = tmp_path / 'repo'
+    (r / 'templates' / 'looks').mkdir(parents=True)
+    shutil.copy(ROOT / 'templates' / 'looks' / 'looks.json', r / 'templates' / 'looks' / 'looks.json')
+    (r / 'projects').mkdir()
+    if git:
+        g(r, 'init', '-q', '-b', 'main')
+    return r
+
+
+def g(r, *a):
+    subprocess.run(['git', '-C', str(r), '-c', 'user.email=t@t', '-c', 'user.name=t', *a], check=True, capture_output=True)
+
+
+def ep(r, pid, look=None, html=None):
+    d = r / 'projects' / pid
+    d.mkdir(parents=True)
+    (d / 'brief.md').write_text('x')
+    if look is not None:
+        (d / 'look.json').write_text(json.dumps(look))
+    if html:
+        (d / 'video').mkdir()
+        (d / 'video' / 'index.html').write_text(html)
+    return d
+
+
+def run(*a):
+    return subprocess.run([sys.executable, str(TOOL), *map(str, a)], capture_output=True, text=True)
+
+
+def test_pick_avoids_last_three_and_passes_check(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-20-knowledge-a', {**BASE, 'palette': 'night-violet', 'opening': 'question'})
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'palette': 'sunrise-coral', 'opening': 'pov', 'music_file': 'music-b.mp3'})
+    ep(r, '2026-11-21-knowledge-c', {**BASE, 'palette': 'mint-paper', 'opening': 'number', 'music_file': 'music-c.mp3'})
+    new = r / 'projects' / '2026-11-22-knowledge-new'
+    res = run('pick', new, '--write', '--no-git')
+    assert res.returncode == 0, res.stderr
+    look = json.loads((new / 'look.json').read_text())
+    assert look['palette'] not in ('night-violet', 'sunrise-coral', 'mint-paper')
+    assert look['opening'] == 'midstory'                     # the only opening not used in the last 3
+    assert run('pick', new, '--write', '--no-git').returncode != 0   # never overwrites
+    res = run('check', new, '--no-git')
+    assert res.returncode == 0 and 'look: OK' in res.stdout and 'music_file not set' in res.stdout
+    assert run('check', new, '--final', '--no-git').returncode == 1  # final needs the music track
+    look['music_file'] = 'music-new.mp3'
+    (new / 'look.json').write_text(json.dumps(look))
+    assert run('check', new, '--final', '--no-git').returncode == 0
+
+
+def test_same_palette_or_opening_as_previous_fails(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-21-knowledge-b', BASE)
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'opening': 'number', 'music_file': 'm2.mp3'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and 'palette' in res.stdout and 'ERROR' in res.stdout
+    (new / 'look.json').write_text(json.dumps({**BASE, 'palette': 'ocean-teal', 'music_file': 'm2.mp3'}))
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and "opening 'pov'" in res.stdout
+
+
+def test_legacy_episode_counts_as_v2_look_and_music_from_html(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-21-knowledge-old', None, html='<audio src="assets/music-jamendo-b386828e.mp3"></audio>')
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'palette': 'night-violet', 'music_file': 'music-jamendo-b386828e.mp3'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1
+    assert 'brainrot-v2 look' in res.stdout and "palette 'night-violet'" in res.stdout and 'music_file' in res.stdout
+
+
+def test_identical_visual_look_to_third_last_fails_other_channel_ignored(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-19-knowledge-a', BASE)
+    ep(r, '2026-11-20-knowledge-b', {**BASE, 'palette': 'mono-yellow', 'opening': 'number', 'music_file': 'b.mp3'})
+    ep(r, '2026-11-21-knowledge-c', {**BASE, 'palette': 'ocean-teal', 'opening': 'question', 'music_file': 'c.mp3'})
+    ep(r, '2026-11-21-football-z', {**BASE, 'palette': 'retro-cream', 'opening': 'midstory'})
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'music_file': 'n.mp3'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and 'identical to 2026-11-19-knowledge-a' in res.stdout
+    assert 'football' not in res.stdout
+
+
+def test_episode_only_on_a_git_branch_is_compared(tmp_path):
+    r = repo(tmp_path, git=True)
+    (r / 'README').write_text('x'); g(r, 'add', '.'); g(r, 'commit', '-qm', 'base')
+    g(r, 'checkout', '-qb', 'claude/ep-2026-11-21-b')
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'palette': 'ocean-teal'})
+    g(r, 'add', '.'); g(r, 'commit', '-qm', 'ep b')
+    g(r, 'checkout', '-q', 'main')
+    assert not (r / 'projects' / '2026-11-21-knowledge-b').exists()
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'palette': 'ocean-teal', 'opening': 'number', 'music_file': 'z.mp3'})
+    res = run('check', new)
+    assert res.returncode == 1 and 'claude/ep-2026-11-21-b' in res.stdout and "palette 'ocean-teal'" in res.stdout
+    assert run('check', new, '--no-git').returncode == 0     # without git history there is nothing to repeat
+
+
+def test_unknown_value_fails_voice_id_matches_catalog_name(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'voice': 'george'})
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'palette': 'neon', 'opening': 'number', 'voice': 'id:JBFqnCBsd6RMkjVDRZzb',
+                                              'music_file': 'q.mp3'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and "palette: 'neon' not in" in res.stdout
+    assert 'WARN  voice' in res.stdout                        # id:JBFq... is George = same voice as last time

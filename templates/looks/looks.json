@@ -1,0 +1,56 @@
+{
+  "_doc": "ชุดหน้าตาให้เลือกต่อตอน (editing v3) ผู้กำกับเลือก 1 ค่าต่อด้านแล้วจดใน projects/<id>/look.json ด้วย `python3 tools/look.py pick <project> --write` แล้วแก้ได้ เช็กซ้ำ: `python3 tools/look.py check <project>` แม่แบบ templates/brainrot-v3/ อ่านค่าจากไฟล์นี้",
+  "axes": ["palette", "font", "caption", "opening", "transition", "music_mood", "voice"],
+  "visual_axes": ["palette", "font", "caption", "opening", "transition"],
+  "palette": {
+    "night-violet": {"label": "ม่วงกลางคืน (สีเดิมของ v2)", "bg": "#0B1026", "bg2": "#3A2477", "ink": "#10080A", "text": "#FFFFFF", "accent": "#FFE14D", "accent2": "#FF6FAE", "panel": "#1A1440", "grade": "cool blue purple night"},
+    "sunrise-coral": {"label": "ส้มปะการังยามเช้า", "bg": "#2A0F12", "bg2": "#C2453A", "ink": "#1A0A06", "text": "#FFFFFF", "accent": "#FFD23F", "accent2": "#FF8A5B", "panel": "#3D1714", "grade": "warm golden morning"},
+    "mint-paper": {"label": "กระดาษมิ้นต์ (สว่าง)", "bg": "#E8F5EE", "bg2": "#9ED9C0", "ink": "#0F2A22", "text": "#FFFFFF", "accent": "#00A878", "accent2": "#FF5D73", "panel": "#FFFFFF", "grade": "clean bright natural"},
+    "mono-yellow": {"label": "ขาวดำ + เหลือง", "bg": "#101010", "bg2": "#3A3A3A", "ink": "#000000", "text": "#FFFFFF", "accent": "#FFE600", "accent2": "#FFFFFF", "panel": "#1E1E1E", "grade": "high contrast black and white"},
+    "ocean-teal": {"label": "ฟ้าทะเล", "bg": "#04202B", "bg2": "#0E6E80", "ink": "#03141B", "text": "#FFFFFF", "accent": "#5CF2E3", "accent2": "#FFB547", "panel": "#08323F", "grade": "teal cyan underwater"},
+    "retro-cream": {"label": "ครีมเรโทร + แดง", "bg": "#F3E6CF", "bg2": "#D9B98A", "ink": "#2B1B12", "text": "#FFF8EC", "accent": "#E0412E", "accent2": "#2D6A8F", "panel": "#FFF8EC", "grade": "retro film faded warm"}
+  },
+  "font": {
+    "kanit": {"label": "Kanit (เดิม)", "family": "Kanit", "title_weight": 900, "cap_weight": 700},
+    "prompt": {"label": "Prompt", "family": "Prompt", "title_weight": 900, "cap_weight": 700},
+    "noto": {"label": "Noto Sans Thai", "family": "Noto Sans Thai", "title_weight": 900, "cap_weight": 700},
+    "sarabun": {"label": "Sarabun (ไม่มีตัว 900: หัวข้อใช้ 700)", "family": "Sarabun", "title_weight": 700, "cap_weight": 700}
+  },
+  "caption": {
+    "stroke": {"label": "ขาวขอบดำหนา ไฮไลต์คำสำคัญสี accent (เดิม)"},
+    "box": {"label": "ตัวอักษรในกล่องสีทึบมุมมน คำสำคัญเป็นสี accent"},
+    "pop": {"label": "คำสำคัญเป็นป้ายสี accent เด้งขึ้น ตัวอื่นขาวขอบบาง"},
+    "underline": {"label": "ขาวขอบดำ คำสำคัญมีแถบสี accent ลากใต้คำ"}
+  },
+  "opening": {
+    "question": {"label": "คำถามตัวใหญ่ + ภาพที่ทำให้แปลกใจ (เดิม)"},
+    "midstory": {"label": "เปิดด้วยภาพกลางเรื่อง (ช่วงที่น่าตกใจที่สุด) + คำถามบนจอ"},
+    "pov": {"label": "POV: ป้าย 'POV:' + สถานการณ์ที่คนดูอยู่ในนั้น + คำถาม"},
+    "number": {"label": "ตัวเลขเด่นเต็มจอ (ต้องมีใน research.md) + คำถาม"}
+  },
+  "transition": {
+    "whip": {"label": "whip-pan ซ้าย/ขวา (v2 ใช้ปนกับ zoom)"},
+    "zoom": {"label": "zoom-through"},
+    "match": {"label": "match-cut / crossfade สั้น"},
+    "flash": {"label": "ตัดแข็ง + แฟลชสีขาว 2 เฟรม"},
+    "slide": {"label": "สไลด์ขึ้นแนวตั้ง (เหมือนไถฟีด)"}
+  },
+  "music_mood": {
+    "playful": {"label": "สนุก ขี้เล่น", "query": "playful"},
+    "lofi": {"label": "lofi สบายๆ", "query": "lofi"},
+    "mysterious": {"label": "ลึกลับ (แนวตำนาน/ลี้ลับ)", "query": "mysterious"},
+    "upbeat": {"label": "จังหวะเร็ว สดใส", "query": "upbeat"},
+    "cinematic": {"label": "ภาพยนตร์ ยิ่งใหญ่ (อวกาศ/ธรรมชาติ)", "query": "cinematic"},
+    "quirky": {"label": "แปลกๆ ตลก", "query": "funny"}
+  },
+  "voice": {
+    "george": {"label": "George ชาย นักเล่าเรื่อง (เดิม)", "id": "JBFqnCBsd6RMkjVDRZzb", "fits": "ความรู้ทั่วไป, ตำนาน/ลี้ลับ"},
+    "liam": {"label": "Liam ชาย อายุน้อยกว่า", "id": "TX3LPaxmHKxFdv7VOQHJ", "fits": "เรื่องใกล้ตัว ขำ, POV"},
+    "_other": {"label": "เสียงอื่น: หา voice_id ด้วย `bash tools/voices.sh` แล้วใส่ id ใน look.json (ฟังตัวอย่างไทยก่อน eleven_v3)"}
+  },
+  "legacy_v2": {
+    "_doc": "ตอนเก่าที่ไม่มี look.json ถือว่าใช้หน้าตา brainrot-v2 นี้ (ใช้เทียบการซ้ำเท่านั้น)",
+    "palette": "night-violet", "font": "kanit", "caption": "stroke", "opening": "question", "transition": "whip",
+    "music_mood": null, "voice": "george", "music_file": null
+  }
+}
