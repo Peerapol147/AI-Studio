@@ -1,8 +1,7 @@
 # Upload: Lore อนิเมะ EP1 — ทวีปมืด (Hunter x Hunter)
 ไฟล์: `renders/lore-dark-continent-th.mp4` (ไฟล์เดียวกันทุกแพลตฟอร์ม) | ปก: `renders/lore-dark-continent-th-thumb.jpg`
 ความยาว: 57.4 วิ (≤60 วิ เข้า Shorts) | **ผู้ใช้อัปโหลดเอง ทีมไม่อัปโหลด/ไม่ตั้งเวลา**
-คลิปนี้เป็นคลิปวิจารณ์/เล่าเรื่อง **เวอร์ชันนี้กราฟิกทำใหม่ทั้งหมด ไม่มีภาพนิ่งจากอนิเมะ/มังงะ** — ไม่มีวิดีโอ เพลง หรือเสียงจากอนิเมะ
-(ถ้าใส่ภาพนิ่งภายหลังด้วย `video/rerender.sh` ให้เพิ่มบรรทัด "ใช้ภาพนิ่งบางส่วนประกอบการวิจารณ์" ใน description)
+คลิปนี้เป็นคลิปวิจารณ์/เล่าเรื่อง: ภาพนิ่งจากมังงะ/อนิเมะ 11 ภาพ (ภาพละ ≤2 วิ ในกรอบการ์ด ไม่เต็มจอ ดึงจาก Hunterpedia) + ฟุตเทจ Pixabay 15 ช็อต + กราฟิกของช่อง — ไม่มีวิดีโอ เพลง หรือเสียงจากอนิเมะ
 
 ---
 ## YouTube Shorts
@@ -24,7 +23,24 @@ Lore อนิเมะ #1 — เล่าเรื่องลึกๆ ที
 ข้อมูลอ้างอิง: มังงะ Hunter x Hunter ตอน 340-344, เล่ม 33 หน้าพิเศษ (ตารางเกรดอันตราย) และ Hunterpedia
 คลิปนี้เป็นคลิปวิจารณ์และเล่าเรื่องเพื่อการศึกษา/ความบันเทิง ไม่ใช่เนื้อหาทางการ
 HUNTER×HUNTER © Yoshihiro Togashi (冨樫義博) / Shueisha — อนิเมะ © Nippon Animation / VAP / Madhouse
-ภาพประกอบ แผนที่ และกราฟิกในคลิป ทำขึ้นใหม่โดยช่อง (แผนที่ไม่ใช่สเกลจริง)
+ใช้ภาพนิ่งบางส่วนจากมังงะ/อนิเมะประกอบการวิจารณ์ ลิขสิทธิ์เป็นของเจ้าของเดิม
+แผนที่และกราฟิกทำขึ้นใหม่โดยช่อง (แผนที่ไม่ใช่สเกลจริง)
+ฟุตเทจประกอบ (Pixabay Content License):
+  Life-Of-Vids via Pixabay https://pixabay.com/videos/id-10889/
+  NickyPe via Pixabay https://pixabay.com/videos/id-118878/
+  Teshy via Pixabay https://pixabay.com/videos/id-134765/
+  BlenderTimer via Pixabay https://pixabay.com/videos/id-136778/
+  Macb3t via Pixabay https://pixabay.com/videos/id-16160/
+  Kaffeesüchtig via Pixabay https://pixabay.com/videos/id-199787/
+  haruudu via Pixabay https://pixabay.com/videos/id-210305/
+  Kanenori via Pixabay https://pixabay.com/videos/id-217053/
+  FreeCreativeStuff via Pixabay https://pixabay.com/videos/id-27794/
+  adege via Pixabay https://pixabay.com/videos/id-283426/
+  Vimeo-Free-Videos via Pixabay https://pixabay.com/videos/id-311/
+  JancickaL via Pixabay https://pixabay.com/videos/id-35423/
+  Coverr-Free-Footage via Pixabay https://pixabay.com/videos/id-3627/
+  Ronin_Studio_Munich via Pixabay https://pixabay.com/videos/id-37663/
+  KIMDAEJEUNG via Pixabay https://pixabay.com/videos/id-75034/
 
 เพลง: "Dark Space" by CAIMO1 (CC BY 3.0) https://www.jamendo.com/track/1544453
 เสียงประกอบ: CC0 (Freesound/Kenney)
@@ -59,19 +75,10 @@ HUNTER×HUNTER © Yoshihiro Togashi / Shueisha | คลิปวิจารณ�
 
 ---
 ## ฟังก่อนอัปโหลด (ยังไม่มีใครฟังเสียงจริง — ใส่หูฟัง)
-` ยัง "(เติมจาก review.md)" → คัดรายการด้านล่างไปใส่; บรรทัด "ใช้ภาพนิ่งบางส่วน (ถ้าใส่ภาพนิ่ง)" → เวอร์ชันนี้ไม่มีภาพนิ่ง เขียนให้ชัดว่า "กราฟิกทำใหม่ทั้งหมด"
-3. **assets/CREDITS.md** (sound/editor): มีแต่เพลง ไม่มี sfx 23 ไฟล์ (อยู่ใน `renders/sound-th/CREDITS.txt` ทั้งหมด CC0, ไม่มี Mixkit) → เพิ่มผ่าน `assets/credits/sfx.json` หรืออ้างไฟล์นั้น
-
-## ⚪ ยอมรับได้ (จด lessons.md)
-1. 8.8-10.8 วิ quote: จอใส่อัญประกาศ "ใหญ่เกินไปแล้ว" + "เน็ตโร · มังงะ ch.344" — research ป้ายคำแปล ⚠️ แต่เป็นสาระเดียวกับต้นฉบับ ("ใหญ่เกินไป... เกินขีด") ไม่ถือว่าเกินหลักฐาน
-2. 50.2 / 52.24 วิ (word_at+0.1): ป้าย "บียอนด์ เน็ตโร" / "กำลังจะกลับไปอีกรอบ" ยังเบลอจาก motion ~0.3 วิ แล้วอ่านออก
-3. ข้อความ "ภาพประกอบ · ไม่ใช่สเกลจริง" ตัวเล็ก (~28 px) อ่านยากบนมือถือ แต่มีครบตั้งแต่ 5.7 วิ
-4. ปก: "HUNTER×HUNTER" เป็นข้อความฟอนต์ Kanit ในป้ายแดง ไม่ใช่โลโก้ทางการ ไม่มีตัวละคร ✅ ลิขสิทธิ์; วรรณยุกต์ "นี้" ชิดบรรทัดบนเล็กน้อยแต่ไม่ทับ
-5. 54.08 วิ ช็อต cta: ภาพ 5 การ์ดมาก่อน "คุ้มเสี่ยงสุด?" ตัวใหญ่ (ขึ้นตามคำ ~55 วิ) ถูกต้องตามคำพูด
-
-## ลิขสิทธิ์
-- ไม่มีภาพ/วิดีโอ/เสียง/เพลงจากอนิเมะหรือมังงะ (`assets/stills/` ว่าง, ทุกช็อตเป็นกราฟิก fallback ของเรา; silhouette/ไอคอนวาดเอง) ✅
-- ไม่มีโลโก้; ปกเป็นแผนที่กราฟิกเรา ไม่มีตัวละคร ✅
-- เพลง "Dark Space" by CAIMO1 CC BY 3.0 jamendo 1544453 มีเครดิตใน CREDITS.md, upload.md (YT/TikTok คอมเมนต์ปักหมุด/FB) ✅ (ผู้ตรวจเปิด jamendo.com ไม่ได้จากเครือข่ายนี้ — ยืนยันไลเซนส์จาก `assets/credits/music.json` + SOUND.md)
-- sfx ทั้งหมด CC0 (Freesound/Kenney) ✅
-
+- 0:00.0 — ต้นคลิป: โทน [excited] เข้าทันทีไม่ตะกุกตะกัก และคำว่า "กอน" ที่ 0:00.5 ชัด (scribe ถอดเป็น "กร") + ฟังรอยต่อลูปจากท้ายคลิปกลับมาต้น
+- 0:07.2 — "เน็ตโร" และ 0:08.3 "ซิกก์ โซลดิ๊ก" (ชื่อทับศัพท์ scribe ถอดเป็น "เนดโร"/"ซิกโซดิก") ฟังว่าคนไทยฟังออก
+- 0:11.9 — "ร้อยสี่สิบเก้า" ทับเสียง impact (editor เตือน beat sync 121 ms; จุด 0:05.8 "ทวีปมืด" ก็เตือน 159 ms) ตัวเลขต้องไม่โดนกลบ
+- 0:17.7 — [whispers] "แต่ที่ติดกลับมาจริงๆ" มี glitch -23 dB ที่ 17.62 และ low explosion ที่ 18.96 ("ภัยพิบัติ") เสียงกระซิบเบาอาจถูกกลบ
+- 0:21.3 / 0:28.1 / 0:33.5 / 0:37.6 — "ปาปุ" "ไบรออน" "เฮลเบล" "ไอ" ชื่อทับศัพท์; "ไอ" สั้นมากและตามหลัง swipe 0:37.48 (+ swipe 0:32.58 ก่อน "เจองู") editor เตือน 179-200 ms
+- 0:47.0 — "ไม่ตาย" ทับ cinematic impact (editor เตือน 190 ms) คำต้องชัด
+- 0:50.1 — "บียอนด์" (scribe ถอด "บียอน") และ 0:56.2-0:57.4 "เมนต์มาเลย" ทับ rewind riser ก่อนวนลูป
