@@ -24,3 +24,8 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - **ภาพตรงคำพากย์**: เวลาช็อต footage มาจาก `assets/audio/shots-<lang>.json` เท่านั้น (start/end/media_start/hit_at)
   ห้ามตั้งเวลาเอง ตัดแบบ hard cut หรือ crossfade ≤ 0.12 วิ ที่ `start`; punch-in/zoom accent ลงที่ `hit_at`
   วิดีโอใช้ `data-media-start` = `media_start` เพื่อให้ action ลงตรงคำ ซับและ SFX ก็อ้างคำเดียวกันจาก words.json
+- **ตัดต่อ v3 (ตั้งแต่ 2026-11-22, ชนะข้ออื่นในไฟล์นี้เมื่อขัดกัน):** short ช่องความรู้เริ่มจาก `templates/brainrot-v3/` (อ่าน `TEMPLATE.md` ในนั้น และ `docs/editing-v3.md`)
+  หน้าตาทั้งหมด (สี ฟอนต์ สไตล์ซับ โครงเปิด ทรานซิชัน) มาจาก `<project>/look.json` ห้ามเปลี่ยนเอง ถ้าคิดว่าไม่เข้ากับเรื่อง แจ้งผู้กำกับให้แก้ look.json แล้วรัน `tools/look.py check`
+  กราฟิกเฉพาะตอนใช้ตัวแปรสี `var(--accent)` `var(--accent2)` `var(--panel)` `var(--ink)` ห้ามฝังสีของตอนเก่า; เกรด footage ตาม `grade` ของ palette
+  จังหวะ: ตัดเร็วเฉพาะช็อต beat hook/twist; ช่วง explain ค้างภาพ 2-3 วิ (แม่แบบทำ push ช้าให้); ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
+  ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = เฟรม 0 (`npx hyperframes snapshot --at 0`)

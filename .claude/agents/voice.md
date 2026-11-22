@@ -15,6 +15,9 @@ tools: Bash, Read, Write, Glob, Skill
 - เสียงพากย์: `tools/tts.sh <voice_id> <text-file> <out.mp3> [model]` ภาษาไทยต้องใช้ `eleven_v3` ขึ้นไป
   ทำทีละฉาก บันทึก `assets/audio/vo-<ภาษา>-<ฉาก>.mp3` แล้ววัดความยาวจริงด้วย ffprobe
   เขียน `assets/audio/timing.md` (ฉาก, ไฟล์, วินาที) เพราะ editor ใช้ตั้งจังหวะภาพ
+- **ตัดต่อ v3:** ถ้าโปรเจกต์มี `look.json` ใช้เสียงตาม `voice` (ชื่อใน `templates/looks/looks.json` = voice_id ในนั้น หรือ `id:<voice_id>`) แทน channel.md
+  และค้นเพลงด้วย `query` ของ `music_mood` ใน looks.json; เลือกแล้วเขียนชื่อไฟล์ลง `look.json` `"music_file"` (แก้แค่ช่องนั้น)
+  แล้วรัน `python3 tools/look.py check <project> --final` ถ้า ERROR ว่าเพลงซ้ำตอนก่อน ให้เลือกตัวเลือกอื่น
 - ถ้า channel.md ยังไม่มี voice_id: ใช้ `tools/voices.sh` เลือกเสียงที่เหมาะ แล้วแจ้งผู้กำกับให้จดลง channel.md
 - เพลงประกอบ: `tools/music.sh music "<อารมณ์/แนว ภาษาอังกฤษ>" <project-dir> [จำนวน] [ความยาวขั้นต่ำ วินาที]`
   ได้เฉพาะ CC0 / CC BY จาก Jamendo และ Wikimedia พร้อมเครดิตใน `assets/CREDITS.md` อัตโนมัติ
