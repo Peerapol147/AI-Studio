@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "c2721174-8302-4f60-b06d-952de7a3d068",
-  "currentRevision": "8680cab2-06a1-4efc-9548-7c0d4fd21277",
+  "currentRevision": "b65c2c7f-01d3-4d67-b228-cfec1bb6c45a",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -157,12 +157,12 @@
       "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/9e/9e210d213432128f77fbf41745979de4345a6a2c6b591be5039436a765c37256"
     },
     "index.html": {
-      "hash": "04873398f212a64b5f09e0e557641957f5cdc01695ed79edc3f27667e79d1e5d",
-      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/04/04873398f212a64b5f09e0e557641957f5cdc01695ed79edc3f27667e79d1e5d"
+      "hash": "1dd0f1f06c6e111b643d93edca4f40de04753c03010db60fccdcff650e2ec029",
+      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/1d/1dd0f1f06c6e111b643d93edca4f40de04753c03010db60fccdcff650e2ec029"
     },
     "index.html.tpl": {
-      "hash": "c8ca80790c742998431c8a73b17e57fe4810967e4d7dc794dbabf2374200680a",
-      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/c8/c8ca80790c742998431c8a73b17e57fe4810967e4d7dc794dbabf2374200680a"
+      "hash": "f64ca2c6b96544b63b339dc7ae28c1d6574cec9ab81895b2944dc70b9c2d9a95",
+      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/f6/f64ca2c6b96544b63b339dc7ae28c1d6574cec9ab81895b2944dc70b9c2d9a95"
     },
     "meta.json": {
       "hash": "dcae9d3f4572bef6a6db1e8f79c5421fc424aa46ccd238ca472210d53cd8c32c",
@@ -460,6 +460,14 @@
       "hash": "b53b0127d2fbc746c51d86fea080c9035b14d34f03ee48fefc50af5239486d4e",
       "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/b5/b53b0127d2fbc746c51d86fea080c9035b14d34f03ee48fefc50af5239486d4e"
     },
+    "assets/stills/S10.png": {
+      "hash": "79dc397f1731a78fe70ad2e0bf84257f321aeb0c22c4d1c47b8c9187b16ddced",
+      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/79/79dc397f1731a78fe70ad2e0bf84257f321aeb0c22c4d1c47b8c9187b16ddced"
+    },
+    "assets/stills/S11.png": {
+      "hash": "e9e8580aa3606714503a4f4456d3887542dd5a9c397409dea63c33f3c069ff6e",
+      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/e9/e9e8580aa3606714503a4f4456d3887542dd5a9c397409dea63c33f3c069ff6e"
+    },
     "assets/stills/S2.png": {
       "hash": "ca1d404394711468852531f15beed5de38d13d4693c752b5101aa1ec6099328f",
       "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/ca/ca1d404394711468852531f15beed5de38d13d4693c752b5101aa1ec6099328f"
@@ -491,14 +499,6 @@
     "assets/stills/S9.png": {
       "hash": "8fc09ef9bede7d2d381193a2fbaf012f58b74d8dbb42aeb6c024e56ab5af0bc5",
       "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/8f/8fc09ef9bede7d2d381193a2fbaf012f58b74d8dbb42aeb6c024e56ab5af0bc5"
-    },
-    "assets/stills/S10.png": {
-      "hash": "79dc397f1731a78fe70ad2e0bf84257f321aeb0c22c4d1c47b8c9187b16ddced",
-      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/79/79dc397f1731a78fe70ad2e0bf84257f321aeb0c22c4d1c47b8c9187b16ddced"
-    },
-    "assets/stills/S11.png": {
-      "hash": "e9e8580aa3606714503a4f4456d3887542dd5a9c397409dea63c33f3c069ff6e",
-      "content": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/e9/e9e8580aa3606714503a4f4456d3887542dd5a9c397409dea63c33f3c069ff6e"
     }
   },
   "revisions": {
@@ -902,6 +902,25 @@
         "index.html": {
           "before": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/d9/d9db4caa55f9d5b93d1c609c97f3899d3e72dd79f9c29c6bc9d94e126b572097",
           "after": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/04/04873398f212a64b5f09e0e557641957f5cdc01695ed79edc3f27667e79d1e5d"
+        }
+      }
+    },
+    "b65c2c7f-01d3-4d67-b228-cfec1bb6c45a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795375997004,
+      "endedAt": 1795375997059,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/04/04873398f212a64b5f09e0e557641957f5cdc01695ed79edc3f27667e79d1e5d",
+          "after": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/1d/1dd0f1f06c6e111b643d93edca4f40de04753c03010db60fccdcff650e2ec029"
+        },
+        "index.html.tpl": {
+          "before": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/c8/c8ca80790c742998431c8a73b17e57fe4810967e4d7dc794dbabf2374200680a",
+          "after": "/root/.cache/hyperframes/history/c2721174-8302-4f60-b06d-952de7a3d068/blobs/f6/f64ca2c6b96544b63b339dc7ae28c1d6574cec9ab81895b2944dc70b9c2d9a95"
         }
       }
     }
@@ -2407,15 +2426,15 @@
   },
   "renders": {
     "latest": {
-      "id": "791fea72-bae6-459b-b191-c6cca6629270",
-      "completedAt": 1795371601145,
+      "id": "89908a3f-5cf6-4560-8599-df9dfeabb5dc",
+      "completedAt": 1795375895604,
       "output": "/home/user/AI-Studio/projects/2026-11-22-knowledge-lore-dark-continent/renders/lore-dark-continent-th-silent.mp4",
       "status": "completed",
-      "revision": "92b97a9a-c9e7-4a48-838d-7ae47ec1bb4d"
+      "revision": "8680cab2-06a1-4efc-9548-7c0d4fd21277"
     },
     "retainedRevisions": [
-      "92b97a9a-c9e7-4a48-838d-7ae47ec1bb4d",
-      "e13aaad1-b58d-409b-83f8-39d90b2cfaae"
+      "8680cab2-06a1-4efc-9548-7c0d4fd21277",
+      "92b97a9a-c9e7-4a48-838d-7ae47ec1bb4d"
     ]
   },
   "pendingArtifactCleanup": []

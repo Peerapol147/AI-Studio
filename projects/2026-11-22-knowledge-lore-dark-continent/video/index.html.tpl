@@ -54,6 +54,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #scard .fr{position:absolute;left:0;top:0;width:660px;height:480px;border-radius:18px;background:#EDE3CC;box-shadow:0 0 0 6px #07060A,0 30px 60px rgba(0,0,0,.6);overflow:hidden}
 #scard .im{position:absolute;left:20px;top:20px;width:620px;height:440px;overflow:hidden;background:#111;border-radius:8px}
 .simg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:0;transform-origin:50% 50%}
+#wi-S7{object-position:50% 12%;transform-origin:50% 20%}
 #scard .lab{position:absolute;left:24px;top:-34px;padding:4px 22px 10px;border-radius:16px;background:#E5383B;border:6px solid #07060A;color:#fff;font-weight:900;font-size:44px;white-space:nowrap;transform:rotate(-3deg)}
 #scard svg{position:absolute;left:20px;top:20px;width:620px;height:440px;overflow:visible}
 .credit{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:400;font-size:28px;color:rgba(255,255,255,.82);opacity:0;-webkit-text-stroke:5px #07060A;paint-order:stroke fill;white-space:nowrap}
