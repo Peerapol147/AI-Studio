@@ -8,4 +8,4 @@
 <!-- auto-credits:end -->
 
 ## เสียงประกอบ (sfx)
-ทั้งหมด CC0 จากคลังของ skill sound-effects (Freesound/Kenney) — รายการเต็ม: `renders/sound-th/CREDITS.txt`
+ทั้งหมด CC0 จากคลังของ skill sound-effects (Freesound/Kenney) — รายการเต็ม: `assets/credits/sfx-th.txt`
