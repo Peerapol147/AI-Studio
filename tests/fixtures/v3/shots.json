@@ -1,0 +1,69 @@
+{
+ "lead": 0.08,
+ "topic": {
+  "th": "ตัวอย่างหน้าตาใหม่"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "cue": {
+    "th": "ตัวอย่าง"
+   },
+   "beat": "hook",
+   "media_start": 1.0
+  },
+  {
+   "id": "setup",
+   "cue": {
+    "th": "คลิป"
+   },
+   "beat": "setup"
+  },
+  {
+   "id": "explain",
+   "cue": {
+    "th": "ช่วง"
+   },
+   "beat": "explain"
+  },
+  {
+   "id": "reveal",
+   "cue": {
+    "th": "เฉลย"
+   },
+   "beat": "reveal",
+   "long_ok": true
+  },
+  {
+   "id": "twist",
+   "cue": {
+    "th": "หักมุม"
+   },
+   "beat": "twist"
+  },
+  {
+   "id": "share",
+   "cue": {
+    "th": "ส่งให้"
+   },
+   "beat": "share",
+   "long_ok": true
+  },
+  {
+   "id": "cta",
+   "cue": {
+    "th": "เมนต์"
+   },
+   "beat": "cta",
+   "long_ok": true
+  },
+  {
+   "id": "loop",
+   "cue": {
+    "th": "วนกลับ"
+   },
+   "beat": "loop",
+   "long_ok": true
+  }
+ ]
+}

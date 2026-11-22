@@ -1,0 +1,31 @@
+{
+ "title": [
+  "ตัวอย่าง",
+  "หน้าตา*ใหม่*?"
+ ],
+ "kicker": "POV: ทดสอบแม่แบบ",
+ "caps": [
+  "ตัวอย่าง",
+  "หน้าตาใหม่",
+  "ของคลิปสั้น",
+  "ช่วงอธิบาย",
+  "*ค้างภาพ*",
+  "นานกว่า",
+  "*เฉลย*ตรงนี้",
+  "*หักมุม*เร็ว",
+  "ส่งให้เพื่อน",
+  "เมนต์บอกหน่อย",
+  "วนกลับ"
+ ],
+ "plates": {
+  "hook": "assets/hook-v.mp4",
+  "setup": "assets/b-v.mp4",
+  "explain": "assets/still.jpg",
+  "reveal": "assets/c-v.mp4",
+  "twist": "assets/b-v.mp4",
+  "share": "graphic",
+  "cta": "assets/c-v.mp4",
+  "loop": "assets/hook-v.mp4"
+ },
+ "vo": "assets/vo-th.mp3"
+}
