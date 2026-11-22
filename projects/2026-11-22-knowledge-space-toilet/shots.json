@@ -1,0 +1,198 @@
+{
+ "lead": 0.08,
+ "end": "auto",
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/hook.jpg",
+   "cue": {
+    "th": "ปวดอึ"
+   },
+   "note": "FRAME 0 = NASA photo: astronaut (face clearly visible) next to/inside ISS toilet compartment (Waste and Hygiene Compartment, e.g. iss041e080672) or floating in ISS; on-screen hook 'ปวดอึในอวกาศ ทำไงดี?' from frame 0, Y 240-700"
+  },
+  {
+   "id": "what",
+   "src": "graphic:blob-q",
+   "cue": {
+    "th": "ทำไงดี"
+   },
+   "note": "the ONE morphing shape: cute cartoon droplet blob with worried face + big '?' beside astronaut cut-out"
+  },
+  {
+   "id": "fart",
+   "src": "graphic:fart-callback",
+   "cue": {
+    "th": "ตดในอวกาศ"
+   },
+   "note": "callback to previous ep: green cartoon fart cloud (same look as space-fart ep) with small chip 'ตอนที่แล้ว'"
+  },
+  {
+   "id": "worse",
+   "src": "graphic:worse",
+   "cue": {
+    "th": "อึนี่"
+   },
+   "note": "green cloud morphs into the droplet blob; kinetic 'หนักกว่าอีก!' punch"
+  },
+  {
+   "id": "gravity",
+   "src": "assets/footage/gravity.jpg",
+   "cue": {
+    "th": "แรงโน้มถ่วง"
+   },
+   "note": "NASA photo: astronaut / objects floating freely inside ISS (zero-g), chip 'ไม่มีแรงโน้มถ่วง'"
+  },
+  {
+   "id": "float",
+   "src": "graphic:float",
+   "cue": {
+    "th": "ไม่ตกลง"
+   },
+   "note": "split: บนโลก blob falls down (arrow) vs ในอวกาศ blob floats up and drifts (no arrow)"
+  },
+  {
+   "id": "toilet",
+   "src": "assets/footage/toilet.jpg",
+   "cue": {
+    "th": "ห้องน้ำ"
+   },
+   "note": "NASA photo of ISS toilet (WHC or UWMS) clearly visible, push-in"
+  },
+  {
+   "id": "suction",
+   "src": "graphic:suction",
+   "cue": {
+    "th": "ลมดูด"
+   },
+   "note": "lucide fan spins up, swirl/wind streaks; blob gets pulled into a spiral (spring)"
+  },
+  {
+   "id": "funnel",
+   "src": "assets/footage/funnel.jpg",
+   "cue": {
+    "th": "ฉี่ก็"
+   },
+   "note": "NASA photo of UWMS showing urine funnel/hose (e.g. jsc2020e026648), arrow label 'กรวย'"
+  },
+  {
+   "id": "bag",
+   "src": "graphic:bag",
+   "cue": {
+    "th": "อึก็"
+   },
+   "note": "cartoon bag icon; blob sucked into bag, bag zips shut (clean, cute, no waste depicted)"
+  },
+  {
+   "id": "shock",
+   "src": "graphic:shock",
+   "cue": {
+    "th": "ช็อก"
+   },
+   "note": "kinetic 'ช็อกกว่า...' with glitch/punch zoom"
+  },
+  {
+   "id": "notrash",
+   "src": "graphic:notrash",
+   "cue": {
+    "th": "ไม่ได้ทิ้ง"
+   },
+   "note": "lucide trash-2 icon with ❌; blob bounces out of the trash"
+  },
+  {
+   "id": "filter",
+   "src": "assets/footage/filter.jpg",
+   "cue": {
+    "th": "กรอง"
+   },
+   "note": "NASA photo of water recovery hardware (Urine Processor Assembly / water recovery rack, e.g. iss029e021648 or iss063e087568)"
+  },
+  {
+   "id": "drink",
+   "src": "graphic:drink",
+   "cue": {
+    "th": "น้ำดื่ม"
+   },
+   "note": "blob morphs color pale yellow → clear blue drinking-water droplet with sparkle (✅)"
+  },
+  {
+   "id": "year",
+   "src": "graphic:year",
+   "cue": {
+    "th": "2023"
+   },
+   "note": "chip 'NASA · 2023' text (not logo); droplet orbits"
+  },
+  {
+   "id": "station",
+   "src": "assets/footage/station.jpg",
+   "cue": {
+    "th": "น้ำบนสถานี"
+   },
+   "note": "NASA photo ISS exterior over Earth, push-in"
+  },
+  {
+   "id": "pct",
+   "src": "graphic:pct98",
+   "cue": {
+    "th": "98"
+   },
+   "note": "donut/ring fills to 98% (d3) with counter 0→98, droplet in center; label 'น้ำวนกลับมาใช้'"
+  },
+  {
+   "id": "pettit",
+   "src": "assets/footage/pettit.jpg",
+   "cue": {
+    "th": "ดอน"
+   },
+   "note": "NASA photo of Don Pettit aboard ISS (face visible), label 'Don Pettit · นักบินอวกาศ NASA'"
+  },
+  {
+   "id": "quote",
+   "src": "graphic:quote",
+   "cue": {
+    "th": "แซว"
+   },
+   "note": "quote card over blurred Pettit photo: \"It makes yesterday's coffee into today's coffee.\" + Thai 'เปลี่ยนกาแฟเมื่อวาน ให้เป็นกาแฟวันนี้', small 'Don Pettit, NASA blog'"
+  },
+  {
+   "id": "yesterday",
+   "src": "graphic:coffee",
+   "cue": {
+    "th": "กาแฟเมื่อวาน"
+   },
+   "note": "droplet morphs into a coffee cup (lucide coffee shape via flubber); chip 'เมื่อวาน' → 'วันนี้'"
+  },
+  {
+   "id": "today",
+   "src": "assets/footage/coffee.jpg",
+   "cue": {
+    "th": "กาแฟวันนี้"
+   },
+   "note": "NASA photo of astronaut drinking from pouch / zero-g coffee cup aboard ISS"
+  },
+  {
+   "id": "dare",
+   "src": "graphic:dare",
+   "cue": {
+    "th": "กล้าดื่ม"
+   },
+   "note": "coffee cup + big '?' (same shape)"
+  },
+  {
+   "id": "comment",
+   "src": "graphic:comment",
+   "cue": {
+    "th": "เมนต์"
+   },
+   "note": "cup morphs into comment bubble 'เมนต์บอกหน่อย 💬'"
+  },
+  {
+   "id": "loop",
+   "src": "assets/footage/hook.jpg",
+   "cue": {
+    "th": "หน่อย"
+   },
+   "note": "LOOP: same photo as frame 0, Ken Burns so last frame ≈ frame 0; hook title springs back in last 0.3 s"
+  }
+ ]
+}
