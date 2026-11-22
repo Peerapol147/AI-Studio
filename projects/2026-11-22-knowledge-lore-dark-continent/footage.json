@@ -1,0 +1,62 @@
+{
+ "surround": {
+  "src": "assets/footage/pixabay-199787.mp4",
+  "action_at": 2
+ },
+ "darkcont": {
+  "src": "assets/footage/pixabay-210305.mp4",
+  "action_at": 4
+ },
+ "quote": {
+  "src": "assets/footage/pixabay-134765.mp4",
+  "action_at": 3
+ },
+ "attempts": {
+  "src": "assets/footage/pixabay-311.mp4",
+  "action_at": 8
+ },
+ "five": {
+  "src": "assets/footage/pixabay-16160.mp4",
+  "action_at": 8
+ },
+ "c1_reward": {
+  "src": "assets/footage/pixabay-283426.mp4",
+  "action_at": 3
+ },
+ "c1_count": {
+  "src": "assets/footage/pixabay-3627.mp4",
+  "action_at": 3
+ },
+ "c2_reward": {
+  "src": "assets/footage/pixabay-118878.mp4",
+  "action_at": 2
+ },
+ "c2_weapon": {
+  "src": "assets/footage/pixabay-35423.mp4",
+  "action_at": 2
+ },
+ "c3_reward": {
+  "src": "assets/footage/pixabay-37663.mp4",
+  "action_at": 3
+ },
+ "c3_count": {
+  "src": "assets/footage/pixabay-75034.mp4",
+  "action_at": 3
+ },
+ "c4_reward": {
+  "src": "assets/footage/pixabay-27794.mp4",
+  "action_at": 2
+ },
+ "c4_gas": {
+  "src": "assets/footage/pixabay-10889.mp4",
+  "action_at": 2
+ },
+ "c5_dead": {
+  "src": "assets/footage/pixabay-136778.mp4",
+  "action_at": 2
+ },
+ "again": {
+  "src": "assets/footage/pixabay-217053.mp4",
+  "action_at": 4
+ }
+}

@@ -4,7 +4,7 @@
  "duration": 56.927,
  "inputs": {
   "shots.json": "3e13537a2e1e3d1a3daf3ac41f2253884988370a76f451dd0735da3115f41ddd",
-  "footage.json": null,
+  "footage.json": "6789248f2f88d81853c58cab29eeb1612a6718a06d1f09d52569953b87d783fb",
   "assets/audio/words.json": "1f17f6998e3b024d66ef52fa537ff20fbb4218fe8744658284c3a9242de2d417"
  },
  "shots": [
@@ -48,21 +48,23 @@
   },
   {
    "id": "surround",
-   "src": null,
+   "src": "assets/footage/pixabay-199787.mp4",
    "cue": "ที่ล้อมรอบ",
    "word_at": 4.9,
    "start": 4.82,
    "end": 5.74,
-   "dur": 0.92
+   "dur": 0.92,
+   "media_start": 1.92
   },
   {
    "id": "darkcont",
-   "src": null,
+   "src": "assets/footage/pixabay-210305.mp4",
    "cue": "ทวีปมืด",
    "word_at": 5.82,
    "start": 5.74,
    "end": 7.12,
-   "dur": 1.38
+   "dur": 1.38,
+   "media_start": 3.92
   },
   {
    "id": "netero",
@@ -77,32 +79,35 @@
   },
   {
    "id": "quote",
-   "src": null,
+   "src": "assets/footage/pixabay-134765.mp4",
    "cue": "ยังบอกว่า",
    "word_at": 8.8,
    "start": 8.72,
    "end": 10.72,
-   "dur": 2.0
+   "dur": 2.0,
+   "media_start": 2.92
   },
   {
    "id": "attempts",
-   "src": null,
+   "src": "assets/footage/pixabay-311.mp4",
    "cue": "คนพยายาม",
    "word_at": 10.8,
    "start": 10.72,
    "hit": "ร้อยสี่สิบเก้า",
    "hit_at": 11.86,
    "end": 13.24,
-   "dur": 2.52
+   "dur": 2.52,
+   "media_start": 6.86
   },
   {
    "id": "five",
-   "src": null,
+   "src": "assets/footage/pixabay-16160.mp4",
    "cue": "มีแค่ห้า",
    "word_at": 13.32,
    "start": 13.24,
    "end": 15.68,
-   "dur": 2.44
+   "dur": 2.44,
+   "media_start": 7.92
   },
   {
    "id": "trips",
@@ -142,12 +147,13 @@
   },
   {
    "id": "c1_reward",
-   "src": null,
+   "src": "assets/footage/pixabay-283426.mp4",
    "cue": "ไปเอาหิน",
    "word_at": 20.0,
    "start": 19.92,
    "end": 21.26,
-   "dur": 1.34
+   "dur": 1.34,
+   "media_start": 2.92
   },
   {
    "id": "c1_threat",
@@ -169,23 +175,25 @@
   },
   {
    "id": "c1_count",
-   "src": null,
+   "src": "assets/footage/pixabay-3627.mp4",
    "cue": "ไปพันคน",
    "word_at": 23.96,
    "start": 23.88,
    "hit": "รอดเจ็ด",
    "hit_at": 25.18,
    "end": 26.04,
-   "dur": 2.16
+   "dur": 2.16,
+   "media_start": 1.7
   },
   {
    "id": "c2_reward",
-   "src": null,
+   "src": "assets/footage/pixabay-118878.mp4",
    "cue": "ไปเอาสมุนไพร",
    "word_at": 26.12,
    "start": 26.04,
    "end": 28.04,
-   "dur": 2.0
+   "dur": 2.0,
+   "media_start": 1.92
   },
   {
    "id": "c2_threat",
@@ -198,12 +206,13 @@
   },
   {
    "id": "c2_weapon",
-   "src": null,
+   "src": "assets/footage/pixabay-35423.mp4",
    "cue": "อาวุธพืช",
    "word_at": 28.96,
    "start": 28.88,
    "end": 29.96,
-   "dur": 1.08
+   "dur": 1.08,
+   "media_start": 1.92
   },
   {
    "id": "c2_count",
@@ -216,12 +225,13 @@
   },
   {
    "id": "c3_reward",
-   "src": null,
+   "src": "assets/footage/pixabay-37663.mp4",
    "cue": "ไปเอาข้าว",
    "word_at": 31.2,
    "start": 31.12,
    "end": 32.579,
-   "dur": 1.459
+   "dur": 1.459,
+   "media_start": 2.92
   },
   {
    "id": "c3_threat",
@@ -234,23 +244,25 @@
   },
   {
    "id": "c3_count",
-   "src": null,
+   "src": "assets/footage/pixabay-75034.mp4",
    "cue": "โดนไป",
    "word_at": 34.44,
    "start": 34.36,
    "hit": "เปอร์เซ็นต์",
    "hit_at": 35.26,
    "end": 36.22,
-   "dur": 1.86
+   "dur": 1.86,
+   "media_start": 2.1
   },
   {
    "id": "c4_reward",
-   "src": null,
+   "src": "assets/footage/pixabay-27794.mp4",
    "cue": "ไปเอาน้ำ",
    "word_at": 36.3,
    "start": 36.22,
    "end": 37.48,
-   "dur": 1.26
+   "dur": 1.26,
+   "media_start": 1.92
   },
   {
    "id": "c4_threat",
@@ -263,12 +275,13 @@
   },
   {
    "id": "c4_gas",
-   "src": null,
+   "src": "assets/footage/pixabay-10889.mp4",
    "cue": "ก๊าซ",
    "word_at": 38.5,
    "start": 38.42,
    "end": 39.78,
-   "dur": 1.36
+   "dur": 1.36,
+   "media_start": 1.92
   },
   {
    "id": "c4_count",
@@ -301,12 +314,13 @@
   },
   {
    "id": "c5_dead",
-   "src": null,
+   "src": "assets/footage/pixabay-136778.mp4",
    "cue": "แต่ของตาย",
    "word_at": 44.18,
    "start": 44.1,
    "end": 45.78,
-   "dur": 1.68
+   "dur": 1.68,
+   "media_start": 1.92
   },
   {
    "id": "c5_zobae",
@@ -355,12 +369,13 @@
   },
   {
    "id": "again",
-   "src": null,
+   "src": "assets/footage/pixabay-217053.mp4",
    "cue": "ที่กำลังจะ",
    "word_at": 52.14,
    "start": 52.06,
    "end": 53.9,
-   "dur": 1.84
+   "dur": 1.84,
+   "media_start": 3.92
   },
   {
    "id": "cta",
