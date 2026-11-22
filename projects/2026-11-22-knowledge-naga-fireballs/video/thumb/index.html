@@ -26,9 +26,8 @@
     <radialGradient id="gCore"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#ffd0dc"/><stop offset="1" stop-color="#ffd0dc" stop-opacity="0"/></radialGradient>
     <linearGradient id="gRefl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6f92" stop-opacity=".5"/><stop offset="1" stop-color="#ff4f7a" stop-opacity="0"/></linearGradient>
   </defs>
-  <!-- faint naga shadow under the water -->
-  <path d="M120 1640 C260 1560 360 1700 520 1620 C660 1550 760 1690 940 1600 C1000 1570 1040 1590 1100 1560 L1100 1610 C1040 1640 1000 1625 945 1650 C760 1740 650 1600 525 1672 C370 1750 260 1615 128 1690 Z" fill="#010208" opacity=".55"/>
-  <path d="M60 1650 C80 1630 110 1620 140 1640 L128 1690 C100 1700 70 1690 60 1650 Z" fill="#010208" opacity=".55"/>
+  <!-- faint naga shadow under the water (same silhouette as s10/s11, naga.js), drawn by the script below -->
+  <g id="nagaT" opacity=".62"></g>
   <g style="mix-blend-mode:screen">
     <ellipse cx="520" cy="1610" rx="30" ry="200" fill="url(#gRefl)"/>
     <ellipse cx="530" cy="1428" rx="62" ry="3.5" fill="#ff8aa6" opacity=".7"/><ellipse cx="512" cy="1470" rx="48" ry="3" fill="#ff8aa6" opacity=".55"/><ellipse cx="526" cy="1515" rx="36" ry="3" fill="#ff8aa6" opacity=".45"/>
@@ -45,5 +44,9 @@
 <div class="shade"></div>
 <div class="t" id="t1">ลูกไฟนี้</div>
 <div class="t" id="t2">ใครจุด?</div>
-</div><script>
+</div><script src="naga.js"></script><script>
+(function(){ // static spine: head left (facing left) under the water, S-body trailing right and fading into the depth
+  const pts=[[330,1600]]; let x=330,y=1600; for(let i=1;i<=40;i++){const s=i*22, th=0.10+0.5*s/880+0.5*(1-Math.exp(-s/180))*Math.sin(0.0048*s-1.0); x+=Math.cos(th)*22; y+=Math.sin(th)*22; pts.push([x,y]);}
+  NagaRig(document.getElementById('nagaT')).set(pts,0.95,0.5,0.7);
+})();
 const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>

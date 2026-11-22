@@ -9,7 +9,7 @@
 # loop-v.mp4 = the same crop, source 0..3.2 REVERSED: the clip's last frame is source ~0 = the frame-0 image.
 set -e
 cd "$(dirname "$0")"; mkdir -p assets
-cp ../assets/audio/{vo-th.mp3,music-jamendo-d3803fc4.mp3} assets/
+cp ../assets/audio/{vo-th.mp3,music-jamendo-1195819.mp3} assets/
 F=../assets/footage; LUT=.media/luts/grade_001.cube
 ENC="-an -c:v libx264 -preset medium -crf 19 -pix_fmt yuv420p -r 30 -g 6"
 # night: painterly river -> real night: saturation down, brightness down, indigo push, heavy vignette (grain = overlay in index.html)

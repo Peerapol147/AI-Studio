@@ -32,6 +32,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #meas{position:absolute;left:-3000px;top:0;font-weight:900;font-size:50px;white-space:nowrap;visibility:hidden}
 .tag{position:absolute;left:0;top:0;padding:0 26px;height:64px;line-height:60px;border-radius:32px;background:#FFE14D;border:6px solid #10080A;
   color:#10080A;font-weight:900;font-size:38px;white-space:nowrap;opacity:0;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+/* s7 story type (registry soft-blur-in / focus-blur-resolve pattern, closed-form): words condense out of mist, no pill, no icon */
+#mist7{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none}
+#mist7 div{position:absolute;left:0;width:1080px;text-align:center;white-space:nowrap;opacity:0;will-change:filter,transform}
+#mist7 .mk{top:300px;font-weight:700;font-size:52px;color:#E9D9A8;letter-spacing:.12em;text-shadow:0 0 18px rgba(233,217,168,.55),0 3px 10px rgba(0,0,0,.8)}
+#mist7 .mw{font-weight:700;font-size:124px;line-height:1.1;color:#E4EAFF;text-shadow:0 0 28px rgba(170,190,255,.75),0 0 70px rgba(140,160,255,.35),0 4px 14px rgba(0,0,0,.7)}
+#mist7 #mw7a{top:386px} #mist7 #mw7b{top:536px}
 /* t1 big "?" */
 #qmark{position:absolute;left:0;top:520px;width:1080px;text-align:center;font-weight:900;font-size:520px;line-height:1;opacity:0;color:#FFE14D;
   -webkit-text-stroke:34px #10080A;paint-order:stroke fill;transform-origin:50% 55%}
@@ -117,7 +123,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <div class="sc" id="sh-dusk"><div class="kb" id="kb-dusk">%%V_DUSK%%<svg class="ov" id="g-dusk" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
   <div class="sc" id="sh-orb"><div class="kb" id="kb-orb">%%V_ORB%%<svg class="ov" id="g-orb" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
   <div class="sc" id="sh-count"><div class="kb" id="kb-count">%%V_COUNT%%<svg class="ov" id="g-count" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
-  <div class="sc" id="sh-silent"><div class="kb" id="kb-silent">%%V_SILENT%%<svg class="ov" id="g-silent" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
+  <div class="sc" id="sh-silent"><div class="kb" id="kb-silent">%%V_SILENT%%<svg class="ov" id="g-silent" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div>
+    <div id="mist7" data-layout-allow-overlap><div class="mk" id="mk7">เล่ากันว่า</div><div class="mw" id="mw7a">ไม่มีเสียง</div><div class="mw" id="mw7b">ไม่มีควัน</div></div></div>
   <div class="sc" id="sh-vanish"><div class="kb" id="kb-vanish">%%V_VANISH%%<svg class="ov" id="g-vanish" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
   <div class="sc" id="sh-candles"><div class="kb" id="kb-candles">%%V_CANDLES%%<svg class="ov" id="g-candles" viewBox="0 0 1080 1920"></svg></div><div class="vig"></div></div>
   <div class="sc" id="sh-naga"><svg class="ov" id="g-naga" viewBox="0 0 1080 1920"></svg><div class="vig"></div></div>
@@ -162,14 +169,17 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 </div>
 
 <audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
-<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-d3803fc4.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-1195819.mp3"></audio>
 </div>
 
+<script>
+%%NAGA%%
+</script>
 <script>
 /* Motion engine from templates/brainrot-v2 (closed-form springs, everything a function of t). Shot times = assets/audio/shots-th.json,
    word anchors = words.json (both injected by build_index.py). ONE hero: the red-pink fireball (#ff4f7a, core #ffd0dc), the same
    object in every scene (hook, s5, s6, s7, s8, s11, t4, t6b tracer head, c1); it rises with a fast ease-out and dies in 2 frames on "ดับ".
-   One pill morphs: 600 balls -> no sound -> no smoke -> hypothesis 1 -> 2545 -> hypothesis 2. */
+   One pill morphs: 600 balls -> (s7: mist type, no pill) -> hypothesis 1 -> 2545 -> hypothesis 2. */
 (function(){
 const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
 const T={},H={}; for(const k in SH){const n=k.split('_')[0]; T[n]=SH[k].start; if(SH[k].hit!=null)H[n]=SH[k].hit;}
@@ -409,7 +419,16 @@ function countF(t){ if(t<T.s6-0.05||t>T.s7+0.2)return;
 // ---------- s7: one ball hangs in silence ----------
 const R7={orb:Orb(G('silent')),refl:Refl(G('silent')),mist:Mist(G('silent'),3,'gMist',1200,1700)};
 function silentF(t){ if(t<T.s7-0.05||t>T.s8+0.2)return; const u=t-T.s7;
-  const y=820+16*Math.sin(u*1.6), x=540+10*Math.sin(u*1.1); R7.orb.set(x,y,0.95,1,t,7); R7.refl.set(x,1420,1.1,0.55,t); R7.mist.set(t);}
+  const y=820+16*Math.sin(u*1.6), x=540+10*Math.sin(u*1.1); R7.orb.set(x,y,0.95,1,t,7); R7.refl.set(x,1420,1.1,0.55,t); R7.mist.set(t);
+  // "เล่ากันว่า" + the two told-of details, each resolving from blur and wide spacing, drifting, then rising away as mist before the cut
+  const out=clamp((t-(T.s8-0.45))/0.45);
+  [[MK7,T.s7+0.04,0.5],[MW7a,K.siang+0.02,0.55],[MW7b,K.khwan+0.02,0.55]].forEach(([e,a,dur],i)=>{
+    const v=eo((t-a)/dur); if(t<a){e.style.opacity='0';return;}
+    const o=v*(0.86+0.14*Math.sin(t*2.2+i*1.7))*(1-out), bl=14*(1-v)+12*out, dy=26*(1-v)-40*eio(out), dx=8*Math.sin(t*0.9+i*2);
+    e.style.opacity=f2(o); e.style.filter=`blur(${f2(bl)}px)`; e.style.letterSpacing=`${(0.04+0.22*(1-v)+0.1*out+(i?0:0.08)).toFixed(3)}em`;
+    e.style.transform=`translate(${f2(dx)}px,${f2(dy)}px)`;});
+}
+const MK7=$('mk7'),MW7a=$('mw7a'),MW7b=$('mw7b');
 // ---------- s8: shoots up (camera tilts with it) and dies in 2 frames on "ดับ" (hit) ----------
 const R8={orb:Orb(G('vanish')),refl:Refl(G('vanish')),rip:Ripple(G('vanish'),3),pop:el('circle',{r:60,fill:'none',stroke:CORE,'stroke-width':5,opacity:0},G('vanish'))};
 const V0=T.s8, VH=H.s8;
@@ -429,20 +448,14 @@ const nWater=el('rect',{x:0,y:400,width:1080,height:1700,fill:'url(#gDeep)'},NG)
 const nBeams=[...Array(6)].map((_,i)=>el('polygon',{fill:'url(#gBeam)',opacity:.6},NG));
 const nSpecks=Motes(NG,40,'#9fb8ff',400,1900,-14);
 const NB=el('g',{},NG);
-const nGlow=el('path',{fill:'none',stroke:'#6f8fe0','stroke-width':26,'stroke-opacity':.12,'stroke-linejoin':'round'},NB);
-const nBody=el('path',{fill:'#020309',stroke:'#6f8fe0','stroke-width':4,'stroke-opacity':.45,opacity:.94},NB);
-const nScales=[...Array(30)].map(()=>el('ellipse',{rx:10,ry:5,fill:'#a8c0ff',opacity:0},NB));
-const nHead=el('g',{},NB);
-el('path',{d:'M-30 -50 L-6 -118 L14 -58 L40 -132 L58 -56 L84 -112 L96 -48 Z',fill:'#020309',stroke:'#4d6fc4','stroke-width':3,'stroke-opacity':.35},nHead);
-el('path',{d:'M-110 -44 C-40 -60 40 -66 120 -46 C150 -36 172 -20 178 -6 C182 4 176 12 168 16 C120 46 30 62 -110 44 Z',fill:'#020309',stroke:'#4d6fc4','stroke-width':3,'stroke-opacity':.35},nHead);
-el('path',{d:'M150 20 C170 40 150 70 120 80',fill:'none',stroke:'#4d6fc4','stroke-width':4,'stroke-opacity':.4,'stroke-linecap':'round'},nHead);
-const nEye=el('ellipse',{cx:108,cy:-10,rx:9,ry:5,fill:'#f2c46a',opacity:.55},nHead);
+const NAGA=NagaRig(NB);
 const nMurk=el('rect',{x:0,y:400,width:1080,height:1600,fill:'#0d2152',opacity:.22},NG);
 const nSurf=el('path',{fill:'none',stroke:'#b7c9ff','stroke-width':4,opacity:.55},NG);
 const nGlints=[...Array(10)].map((_,i)=>el('ellipse',{rx:30,ry:3,fill:'#dbe6ff',opacity:0},NG));
-const nRip=Ripple(NG,3), nOrb=Orb(NG), nSub=el('ellipse',{rx:140,ry:40,fill:'url(#gHalo)',opacity:0,style:'mix-blend-mode:screen'},NG);
-function spine(hx,hy,a0,A,kk,w,t,L,n){const pts=[[hx,hy]]; let x=hx,y=hy; const ds=L/n;
-  for(let i=1;i<=n;i++){const s=i*ds, th=a0+A*Math.sin(kk*s-w*t)-A*Math.sin(-w*t)*Math.exp(-s/120); x+=Math.cos(th)*ds; y+=Math.sin(th)*ds; pts.push([x,y]);} return pts;}
+const nRip=Ripple(NG,3), nNeckRip=Ripple(NG,2), nOrb=Orb(NG), nSub=el('ellipse',{rx:140,ry:40,fill:'url(#gHalo)',opacity:0,style:'mix-blend-mode:screen'},NG);
+// spine: head first; heading a0 (head -> body) bends to a1 over the first `bend` px, then a travelling S-wave grows in
+function spine(hx,hy,a0,a1,bend,A,kk,w,t,L,n){const pts=[[hx,hy]]; let x=hx,y=hy; const ds=L/n;
+  for(let i=1;i<=n;i++){const s=i*ds, r=1-Math.exp(-s/180), th=lerp(a0,a1,eio(s/bend))+A*r*Math.sin(kk*s-w*t); x+=Math.cos(th)*ds; y+=Math.sin(th)*ds; pts.push([x,y]);} return pts;}
 function nagaF(t){ if(t<T.s10-0.05||t>T.s12+0.2)return;
   const s11=t>=T.s11, u=t-(s11?T.s11:T.s10);
   const surf=s11?780:420;
@@ -451,30 +464,29 @@ function nagaF(t){ if(t<T.s10-0.05||t>T.s12+0.2)return;
   nGlints.forEach((g,i)=>{g.setAttribute('cx',f2((hash(i+300)*1080+t*30*(i%2?1:-1)+1080)%1080)); g.setAttribute('cy',f2(surf+4+i%3*3)); sa(g,0.6*Math.pow(0.5+0.5*Math.sin(t*5+i*2),3));});
   nBeams.forEach((b,i)=>{const x0=80+i*180+30*Math.sin(t*0.8+i), sk=140+40*Math.sin(t*0.5+i); b.setAttribute('points',`${f2(x0)},${surf} ${f2(x0+70)},${surf} ${f2(x0+sk+160)},1920 ${f2(x0+sk)},1920`); sa(b,0.35+0.25*Math.sin(t*1.7+i*2));});
   nSpecks.set(t,0.7);
-  let pts, hx, hy;
-  if(!s11){ hx=980-480*eo(u/1.8)-40*u; hy=1060+40*Math.sin(u*2.2); pts=spine(hx,hy,0.05,0.55,0.0045,3.0,t,2100,70); }
-  else { const r=eo(u/0.7); hx=560-20*r; hy=lerp(1330,surf+150,r); pts=spine(hx,hy,Math.PI/2+0.1,0.4,0.006,3.4,t,1700,64); }
-  const n=pts.length-1, L=[],R=[];
-  for(let i=0;i<=n;i++){const p=pts[i], q=pts[Math.min(n,i+1)], o=pts[Math.max(0,i-1)]; let dx=q[0]-o[0], dy=q[1]-o[1]; const m=Math.hypot(dx,dy)||1; dx/=m; dy/=m;
-    const uu=i/n, wd=uu<0.06?52+420*uu:(95*Math.pow(1-uu,0.8)+4)*(1+0.06*Math.sin(i*0.9)); L.push([p[0]-dy*wd,p[1]+dx*wd]); R.push([p[0]+dy*wd,p[1]-dx*wd]);}
-  const bd='M'+L.map(p=>f2(p[0])+' '+f2(p[1])).join(' L')+' L'+R.reverse().map(p=>f2(p[0])+' '+f2(p[1])).join(' L')+' Z'; nBody.setAttribute('d',bd); nGlow.setAttribute('d',bd);
-  nScales.forEach((sc,i)=>{const k=3+i*2; if(k>=n){sa(sc,0);return;} const p=pts[k]; sc.setAttribute('cx',f2(p[0])); sc.setAttribute('cy',f2(p[1]-10*Math.sin(i))); sa(sc,0.08+0.7*Math.pow(Math.max(0,Math.sin(t*4-i*0.55)),8));});
-  const hd=Math.atan2(pts[0][1]-pts[2][1],pts[0][0]-pts[2][0])*180/Math.PI;
-  nHead.setAttribute('transform',`translate(${f2(pts[0][0])} ${f2(pts[0][1])}) rotate(${f2(hd)}) scale(1.35 ${Math.cos(hd*Math.PI/180)<0?-1.35:1.35})`); sa(nEye,0.35+0.3*Math.sin(t*2));
+  let pts, hs, rimO;
+  if(!s11){ // swims right -> left under the water, long S-body trailing to the right
+    const hx=1000-470*eo(u/1.8)-40*u, hy=1040+36*Math.sin(u*2.0), ha=0.08*Math.sin(u*2.0+0.6);
+    pts=spine(hx,hy,ha,0.05,400,0.62,0.0042,2.6,t,2300,80); hs=1.3; rimO=0.35;
+  } else { // lifts its head just above the surface, neck in a snake's curve, body under the water to the left
+    const r=eo(u/0.75), ang=lerp(-0.05,-0.30,r);           // head heading (rad, up-right)
+    const hx=lerp(420,380,r), hy=lerp(surf+240,surf+22,r);
+    pts=spine(hx,hy,ang+Math.PI,Math.PI*0.97,420,0.42,0.0055,2.8,t,1900,72); hs=1.25; rimO=0.55+0.4*clamp((t-K.chut)/0.4);
+    nNeckRip.set(hx+40,surf,u-0.35,0.7);
+  }
+  NAGA.set(pts,hs,rimO,t);
   NB.setAttribute('transform',`translate(0 ${f2(6*Math.sin(t*1.4))})`);
-  // s11: the ball rises from the surface above the head ("จุดลูกไฟ")
-  if(s11){ const e=K.chut+0.12, uu=t-e; sa(nSub,uu<0?0.8*clamp((t-T.s11)/0.3):0.8*Math.exp(-uu*3)); nSub.setAttribute('cx',540); nSub.setAttribute('cy',f2(surf+30));
-    if(uu>=0){nOrb.set(540+3*Math.sin(t*2),surf-330*(1-Math.exp(-3*uu))-40*uu,0.8,1,t,11); nRip.set(540,surf,uu,1);} else {nOrb.set(0,0,0,0,t); nRip.set(0,0,-1);} }
-  else { sa(nSub,0); nOrb.set(0,0,0,0,t); nRip.set(0,0,-1); }
+  // s11: the ball leaves the water just in front of the head ("จุดลูกไฟ")
+  if(s11){ const e=K.chut+0.12, uu=t-e, bx=760; sa(nSub,uu<0?0.8*clamp((t-T.s11)/0.3):0.8*Math.exp(-uu*3)); nSub.setAttribute('cx',bx); nSub.setAttribute('cy',f2(surf+30));
+    if(uu>=0){nOrb.set(bx+3*Math.sin(t*2),surf-330*(1-Math.exp(-3*uu))-40*uu,0.8,1,t,11); nRip.set(bx,surf,uu,1);} else {nOrb.set(0,0,0,0,t); nRip.set(0,0,-1);} }
+  else { sa(nSub,0); nOrb.set(0,0,0,0,t); nRip.set(0,0,-1); nNeckRip.set(0,0,-1); }
   NG.setAttribute('transform',`translate(540 960) scale(${f2(1+0.04*u)}) translate(-540 -960)`);
 }
 
 // ---------- the pill (one element morphing) ----------
 const PST=[ // [t, text, colour, icon, centre x, centre y, scale]
   [T.s6+0.12,'ปี 2564 นับได้กว่า 600 ลูก',CORE,'calendar',540,320,1.0],
-  [K.siang,'ไม่มีเสียง','#C9D4FF','volume-x',540,430,1.5],
-  [K.khwan,'ไม่มีควัน','#C9D4FF','cloud-off',540,430,1.5],
-  [T.s8,null],
+  [T.s7,null],
   [T.t3,'สมมติฐาน 1: ก๊าซ',YEL,'circle-help',540,300,1.1],
   [T.t5,'พ.ศ. 2545',CORE,'calendar',540,300,1.35],
   [T.t6,'สมมติฐาน 2: กระสุน',ORG,'circle-help',540,300,1.1],

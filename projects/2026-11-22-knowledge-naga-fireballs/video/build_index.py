@@ -158,7 +158,7 @@ def videos():
     return out
 
 page = (HERE / 'index.html.tpl').read_text()
-rep = {'%%DUR%%': str(DUR), '%%CAPS%%': caps(), '%%ICONS%%': icons(), '%%DATA%%': json.dumps(DATA, ensure_ascii=False)}
+rep = {'%%NAGA%%': (HERE / 'naga.js').read_text(), '%%DUR%%': str(DUR), '%%CAPS%%': caps(), '%%ICONS%%': icons(), '%%DATA%%': json.dumps(DATA, ensure_ascii=False)}
 for sid, tag in videos().items():
     rep[f'%%V_{sid.upper()}%%'] = tag
 for key, v in rep.items():

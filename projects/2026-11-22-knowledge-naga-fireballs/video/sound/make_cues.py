@@ -39,8 +39,15 @@ for row in c:
     if len(row) > 5: cue['dur'] = row[5]
     out.append(cue)
 (HERE / 'cues-th.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
-a, b = T['t1'], T['t8']
+# music: "The crossroads of change" (zero-project, CC BY 3.0). The track fades in from silence over its first ~3.5 s,
+# so the bed starts at 3.5 s into the track (already audible at -30 dB RMS, builds to full by ~8 s).
+# sound_pass_vo.py then shifts the bed start by its beat search (prints "Music starts X s"): pass that X as env MUSIC_OFF
+# so the twist dip lands at video time t1 -> t8.
+TRACK_IN = 3.5
+import os
+off = float(os.environ.get("MUSIC_OFF", "0"))
+a, b = T['t1'] + off, T['t8'] + off
 vol = f"volume='if(between(t,{a-0.4:.2f},{b+0.4:.2f}),pow(10,-5/20*min(1,min(t-{a-0.4:.2f},{b+0.4:.2f}-t)/0.4)),1)':eval=frame"
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(HERE.parent / 'assets' / 'music-jamendo-d3803fc4.mp3'), '-af', vol,
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(TRACK_IN), '-i', str(HERE.parent / 'assets' / 'music-jamendo-1195819.mp3'), '-af', vol,
                 str(HERE.parent / 'assets' / 'music-bed-th.wav')], check=True)
 print('th', len(out), 'cues; music bed -5 dB', a, '->', b)
