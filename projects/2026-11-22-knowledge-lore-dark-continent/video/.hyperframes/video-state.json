@@ -2426,15 +2426,15 @@
   },
   "renders": {
     "latest": {
-      "id": "89908a3f-5cf6-4560-8599-df9dfeabb5dc",
-      "completedAt": 1795375895604,
+      "id": "f4746d92-9c6e-4d20-be7d-779a230e27c0",
+      "completedAt": 1795377112818,
       "output": "/home/user/AI-Studio/projects/2026-11-22-knowledge-lore-dark-continent/renders/lore-dark-continent-th-silent.mp4",
       "status": "completed",
-      "revision": "8680cab2-06a1-4efc-9548-7c0d4fd21277"
+      "revision": "b65c2c7f-01d3-4d67-b228-cfec1bb6c45a"
     },
     "retainedRevisions": [
-      "8680cab2-06a1-4efc-9548-7c0d4fd21277",
-      "92b97a9a-c9e7-4a48-838d-7ae47ec1bb4d"
+      "b65c2c7f-01d3-4d67-b228-cfec1bb6c45a",
+      "8680cab2-06a1-4efc-9548-7c0d4fd21277"
     ]
   },
   "pendingArtifactCleanup": []
