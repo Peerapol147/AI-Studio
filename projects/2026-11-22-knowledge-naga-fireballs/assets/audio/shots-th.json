@@ -1,0 +1,282 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 53.262,
+ "inputs": {
+  "shots.json": "70d710e899a7923e0f5ec0d41f9e12491ee9cc89534e2314ae4c3e23f053134c",
+  "footage.json": null,
+  "assets/audio/words.json": "61ac800df9a45ceb1d3c56279a22def338e732bca962953d009d218cef8b9ff1"
+ },
+ "shots": [
+  {
+   "id": "h1_fire",
+   "src": null,
+   "cue": "ลูกไฟนี้",
+   "word_at": 0.12,
+   "start": 0.0,
+   "end": 1.16,
+   "dur": 1.16,
+   "media_start": 0.0
+  },
+  {
+   "id": "h2_who",
+   "src": null,
+   "cue": "ใคร",
+   "word_at": 1.24,
+   "start": 1.16,
+   "end": 2.28,
+   "dur": 1.12
+  },
+  {
+   "id": "s1_moon",
+   "src": null,
+   "cue": "เล่ากันว่า",
+   "word_at": 2.36,
+   "start": 2.28,
+   "end": 4.82,
+   "dur": 2.54
+  },
+  {
+   "id": "s2_mekong",
+   "src": null,
+   "cue": "ริมแม่น้ำโขง",
+   "word_at": 4.9,
+   "start": 4.82,
+   "end": 5.66,
+   "dur": 0.84
+  },
+  {
+   "id": "s3_map",
+   "src": null,
+   "cue": "หนองคาย",
+   "word_at": 5.74,
+   "start": 5.66,
+   "end": 6.84,
+   "dur": 1.18
+  },
+  {
+   "id": "s4_dark",
+   "src": null,
+   "cue": "ฟ้ามืด",
+   "word_at": 6.92,
+   "start": 6.84,
+   "end": 8.72,
+   "dur": 1.88
+  },
+  {
+   "id": "s5_orb",
+   "src": null,
+   "cue": "อมชมพู",
+   "word_at": 8.8,
+   "start": 8.72,
+   "hit": "ผุด",
+   "hit_at": 9.9,
+   "end": 11.42,
+   "dur": 2.7
+  },
+  {
+   "id": "s6_count",
+   "src": null,
+   "cue": "บางปี",
+   "word_at": 11.5,
+   "start": 11.42,
+   "end": 13.52,
+   "dur": 2.1
+  },
+  {
+   "id": "s7_silent",
+   "src": null,
+   "cue": "ไม่มีเสียง",
+   "word_at": 13.6,
+   "start": 13.52,
+   "end": 15.999,
+   "dur": 2.479
+  },
+  {
+   "id": "s8_vanish",
+   "src": null,
+   "cue": "ฟ้า",
+   "word_at": 16.079,
+   "start": 15.999,
+   "hit": "ดับ",
+   "hit_at": 17.08,
+   "end": 18.46,
+   "dur": 2.461
+  },
+  {
+   "id": "s9_villagers",
+   "src": null,
+   "cue": "ชาวบ้าน",
+   "word_at": 18.54,
+   "start": 18.46,
+   "end": 20.6,
+   "dur": 2.14
+  },
+  {
+   "id": "s10_naga",
+   "src": null,
+   "cue": "พญานาค",
+   "word_at": 20.68,
+   "start": 20.6,
+   "end": 22.66,
+   "dur": 2.06
+  },
+  {
+   "id": "s11_light",
+   "src": null,
+   "cue": "จุดลูกไฟ",
+   "word_at": 22.74,
+   "start": 22.66,
+   "end": 24.0,
+   "dur": 1.34
+  },
+  {
+   "id": "s12_buddha",
+   "src": null,
+   "cue": "พระพุทธเจ้า",
+   "word_at": 24.08,
+   "start": 24.0,
+   "end": 25.9,
+   "dur": 1.9
+  },
+  {
+   "id": "s13_heaven",
+   "src": null,
+   "cue": "สวรรค์",
+   "word_at": 25.98,
+   "start": 25.9,
+   "end": 27.26,
+   "dur": 1.36
+  },
+  {
+   "id": "s14_respect",
+   "src": null,
+   "cue": "ไม่เชื่อ",
+   "word_at": 27.34,
+   "start": 27.26,
+   "end": 29.54,
+   "dur": 2.28
+  },
+  {
+   "id": "t1_flip",
+   "src": null,
+   "cue": "บางคน",
+   "word_at": 29.62,
+   "start": 29.54,
+   "end": 30.94,
+   "dur": 1.4
+  },
+  {
+   "id": "t2_doctor",
+   "src": null,
+   "cue": "หมอ",
+   "word_at": 31.02,
+   "start": 30.94,
+   "end": 32.48,
+   "dur": 1.54
+  },
+  {
+   "id": "t3_gas",
+   "src": null,
+   "cue": "ก๊าซ",
+   "word_at": 32.56,
+   "start": 32.48,
+   "end": 34.16,
+   "dur": 1.68
+  },
+  {
+   "id": "t4_ignite",
+   "src": null,
+   "cue": "ลอยขึ้นมา",
+   "word_at": 34.24,
+   "start": 34.16,
+   "hit": "ติดไฟ",
+   "hit_at": 34.86,
+   "end": 36.1,
+   "dur": 1.94
+  },
+  {
+   "id": "t5_tv",
+   "src": null,
+   "cue": "รายการทีวี",
+   "word_at": 36.18,
+   "start": 36.1,
+   "end": 38.76,
+   "dur": 2.66
+  },
+  {
+   "id": "t6_tracer",
+   "src": null,
+   "cue": "ทหาร",
+   "word_at": 38.84,
+   "start": 38.76,
+   "end": 40.26,
+   "dur": 1.5
+  },
+  {
+   "id": "t6b_shot",
+   "src": null,
+   "cue": "กระสุน",
+   "word_at": 40.34,
+   "start": 40.26,
+   "hit": "ขึ้นฟ้า",
+   "hit_at": 41.08,
+   "end": 42.08,
+   "dur": 1.82
+  },
+  {
+   "id": "t7_angry",
+   "src": null,
+   "cue": "ในพื้นที่",
+   "word_at": 42.16,
+   "start": 42.08,
+   "end": 44.32,
+   "dur": 2.24
+  },
+  {
+   "id": "t7b_sue",
+   "src": null,
+   "cue": "ขู่",
+   "word_at": 44.4,
+   "start": 44.32,
+   "end": 45.46,
+   "dur": 1.14
+  },
+  {
+   "id": "t8_open",
+   "src": null,
+   "cue": "จนถึงวันนี้",
+   "word_at": 45.54,
+   "start": 45.46,
+   "end": 48.08,
+   "dur": 2.62
+  },
+  {
+   "id": "t9_none",
+   "src": null,
+   "cue": "ทุกฝ่าย",
+   "word_at": 48.16,
+   "start": 48.08,
+   "end": 50.28,
+   "dur": 2.2
+  },
+  {
+   "id": "c1_ask",
+   "src": null,
+   "cue": "พญานาค",
+   "word_at": 50.36,
+   "start": 50.28,
+   "end": 52.5,
+   "dur": 2.22
+  },
+  {
+   "id": "c2_comment",
+   "src": null,
+   "cue": "เม้น",
+   "word_at": 52.58,
+   "start": 52.5,
+   "end": 53.262,
+   "dur": 0.762
+  }
+ ]
+}
