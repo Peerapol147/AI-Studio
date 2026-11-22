@@ -134,7 +134,7 @@
    "id": "pct",
    "src": "graphic:pct98",
    "cue": {
-    "th": "98"
+    "th": "เก้าสิบแปด"
    },
    "note": "donut/ring fills to 98% (d3) with counter 0→98, droplet in center; label 'น้ำวนกลับมาใช้'"
   },
@@ -142,7 +142,7 @@
    "id": "pettit",
    "src": "assets/footage/pettit.jpg",
    "cue": {
-    "th": "ดอน"
+    "th": "Don"
    },
    "note": "NASA photo of Don Pettit aboard ISS (face visible), label 'Don Pettit · นักบินอวกาศ NASA'"
   },
@@ -163,7 +163,7 @@
    "note": "droplet morphs into a coffee cup (lucide coffee shape via flubber); chip 'เมื่อวาน' → 'วันนี้'"
   },
   {
-   "id": "today",
+   "id": "coffee",
    "src": "assets/footage/coffee.jpg",
    "cue": {
     "th": "กาแฟวันนี้"
@@ -174,7 +174,7 @@
    "id": "dare",
    "src": "graphic:dare",
    "cue": {
-    "th": "กล้าดื่ม"
+    "th": "ถ้าได้ไป"
    },
    "note": "coffee cup + big '?' (same shape)"
   },
@@ -182,7 +182,7 @@
    "id": "comment",
    "src": "graphic:comment",
    "cue": {
-    "th": "เมนต์"
+    "th": "ไหม"
    },
    "note": "cup morphs into comment bubble 'เมนต์บอกหน่อย 💬'"
   },
@@ -190,7 +190,7 @@
    "id": "loop",
    "src": "assets/footage/hook.jpg",
    "cue": {
-    "th": "หน่อย"
+    "th": "เม้น"
    },
    "note": "LOOP: same photo as frame 0, Ken Burns so last frame ≈ frame 0; hook title springs back in last 0.3 s"
   }
