@@ -1,0 +1,123 @@
+[
+ {
+  "t": 0.05,
+  "type": "movement",
+  "desc": "hook: soft rise of the ball out of the river",
+  "sfx": "whoosh/fs830856.ogg",
+  "gain": -30
+ },
+ {
+  "t": 9.9,
+  "type": "appear",
+  "desc": "ball breaks the water on \"ผุด\" (plop, water)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -16
+ },
+ {
+  "t": 11.67,
+  "type": "appear",
+  "desc": "more balls surface along the river",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -24
+ },
+ {
+  "t": 16.049,
+  "type": "movement",
+  "desc": "ball shoots up after the silent shot (soft whoosh)",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 20.6,
+  "type": "build_up",
+  "desc": "naga shadow under the water (low eerie swell)",
+  "sfx": "riser/fs-396161-scary-hits-risers-001.ogg",
+  "gain": -24,
+  "dur": 2.0
+ },
+ {
+  "t": 22.86,
+  "type": "appear",
+  "desc": "ball leaves the surface above the naga (water)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -18
+ },
+ {
+  "t": 24.0,
+  "type": "success",
+  "desc": "Buddha: soft bell",
+  "sfx": "ding/fs-349504-triangle-open-04.ogg",
+  "gain": -20
+ },
+ {
+  "t": 29.54,
+  "type": "reveal",
+  "desc": "twist: lights-on flash",
+  "sfx": "impact/fs-177242-cinematic-impact.ogg",
+  "gain": -16
+ },
+ {
+  "t": 30.94,
+  "type": "appear",
+  "desc": "hypothesis card pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -18
+ },
+ {
+  "t": 34.86,
+  "type": "reveal",
+  "desc": "bubble catches fire on \"ติดไฟ\"",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -18
+ },
+ {
+  "t": 36.1,
+  "type": "build_up",
+  "desc": "old TV static",
+  "sfx": "glitch/kenney-sci-computernoise-000.ogg",
+  "gain": -30,
+  "dur": 2.4
+ },
+ {
+  "t": 40.26,
+  "type": "movement",
+  "desc": "tracer rounds go up",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 44.4,
+  "type": "error_or_tech",
+  "desc": "\"ขู่ฟ้อง!\" glitch",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -14
+ },
+ {
+  "t": 45.51,
+  "type": "appear",
+  "desc": "three cards fly in",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 48.16,
+  "type": "hover_or_small_ui",
+  "desc": "empty tick circles (nobody wins)",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -20
+ },
+ {
+  "t": 51.54,
+  "type": "appear",
+  "desc": "\"มีคนทำ?\" pops",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 52.5,
+  "type": "appear",
+  "desc": "comment bubble pops",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -20
+ }
+]

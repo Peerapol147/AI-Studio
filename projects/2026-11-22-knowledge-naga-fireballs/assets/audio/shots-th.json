@@ -3,14 +3,14 @@
  "lead": 0.08,
  "duration": 53.262,
  "inputs": {
-  "shots.json": "70d710e899a7923e0f5ec0d41f9e12491ee9cc89534e2314ae4c3e23f053134c",
-  "footage.json": null,
+  "shots.json": "d4cbddba9f87e9312e2fbe76d4bb54fa8f65a627b8a22f01ea428e3c5b19a5f4",
+  "footage.json": "e09821e5f4f0587a8a315cf3a01ad839033b3f888691b1a93f8ca67f344d9493",
   "assets/audio/words.json": "61ac800df9a45ceb1d3c56279a22def338e732bca962953d009d218cef8b9ff1"
  },
  "shots": [
   {
    "id": "h1_fire",
-   "src": null,
+   "src": "assets/footage/river_moon_v.mp4",
    "cue": "ลูกไฟนี้",
    "word_at": 0.12,
    "start": 0.0,
@@ -29,21 +29,23 @@
   },
   {
    "id": "s1_moon",
-   "src": null,
+   "src": "assets/footage/moon_clouds_v.mp4",
    "cue": "เล่ากันว่า",
    "word_at": 2.36,
    "start": 2.28,
    "end": 4.82,
-   "dur": 2.54
+   "dur": 2.54,
+   "media_start": 3.92
   },
   {
    "id": "s2_mekong",
-   "src": null,
+   "src": "assets/footage/river_moon_v.mp4",
    "cue": "ริมแม่น้ำโขง",
    "word_at": 4.9,
    "start": 4.82,
    "end": 5.66,
-   "dur": 0.84
+   "dur": 0.84,
+   "media_start": 3.92
   },
   {
    "id": "s3_map",
@@ -56,23 +58,25 @@
   },
   {
    "id": "s4_dark",
-   "src": null,
+   "src": "assets/footage/dusk_to_night_v.mp4",
    "cue": "ฟ้ามืด",
    "word_at": 6.92,
    "start": 6.84,
    "end": 8.72,
-   "dur": 1.88
+   "dur": 1.88,
+   "media_start": 5.92
   },
   {
    "id": "s5_orb",
-   "src": null,
+   "src": "assets/footage/river_moon_v.mp4",
    "cue": "อมชมพู",
    "word_at": 8.8,
    "start": 8.72,
    "hit": "ผุด",
    "hit_at": 9.9,
    "end": 11.42,
-   "dur": 2.7
+   "dur": 2.7,
+   "media_start": 2.82
   },
   {
    "id": "s6_count",
@@ -105,12 +109,13 @@
   },
   {
    "id": "s9_villagers",
-   "src": null,
+   "src": "assets/footage/candles_water_v.mp4",
    "cue": "ชาวบ้าน",
    "word_at": 18.54,
    "start": 18.46,
    "end": 20.6,
-   "dur": 2.14
+   "dur": 2.14,
+   "media_start": 0.92
   },
   {
    "id": "s10_naga",
@@ -132,30 +137,33 @@
   },
   {
    "id": "s12_buddha",
-   "src": null,
+   "src": "assets/footage/golden_buddha_v.mp4",
    "cue": "พระพุทธเจ้า",
    "word_at": 24.08,
    "start": 24.0,
    "end": 25.9,
-   "dur": 1.9
+   "dur": 1.9,
+   "media_start": 0.92
   },
   {
    "id": "s13_heaven",
-   "src": null,
+   "src": "assets/footage/sky_rays_v.mp4",
    "cue": "สวรรค์",
    "word_at": 25.98,
    "start": 25.9,
    "end": 27.26,
-   "dur": 1.36
+   "dur": 1.36,
+   "media_start": 1.92
   },
   {
    "id": "s14_respect",
-   "src": null,
+   "src": "assets/footage/hands_candle_v.mp4",
    "cue": "ไม่เชื่อ",
    "word_at": 27.34,
    "start": 27.26,
    "end": 29.54,
-   "dur": 2.28
+   "dur": 2.28,
+   "media_start": 0.92
   },
   {
    "id": "t1_flip",
@@ -177,12 +185,13 @@
   },
   {
    "id": "t3_gas",
-   "src": null,
+   "src": "assets/footage/mud_bubbles_v.mp4",
    "cue": "ก๊าซ",
    "word_at": 32.56,
    "start": 32.48,
    "end": 34.16,
-   "dur": 1.68
+   "dur": 1.68,
+   "media_start": 1.92
   },
   {
    "id": "t4_ignite",
@@ -262,12 +271,13 @@
   },
   {
    "id": "c1_ask",
-   "src": null,
+   "src": "assets/footage/river_moon_v.mp4",
    "cue": "พญานาค",
    "word_at": 50.36,
    "start": 50.28,
    "end": 52.5,
-   "dur": 2.22
+   "dur": 2.22,
+   "media_start": 0.0
   },
   {
    "id": "c2_comment",
