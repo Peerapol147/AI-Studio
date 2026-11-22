@@ -7,3 +7,4 @@ projects/*/assets/footage/
 projects/*/assets/audio/*.mp3
 projects/*/video/assets/
 __pycache__/
+projects/*/assets/stills/
