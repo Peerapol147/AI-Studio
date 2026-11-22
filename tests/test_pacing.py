@@ -1,0 +1,93 @@
+"""tools/pacing.py (editing v3 story beats) on a synthetic 20 s voice, through tools/shot_times.py."""
+import json, pathlib, subprocess, sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+WORDS = {'audio_duration_secs': 20.0,
+         'words': [{'type': 'word', 'text': f'w{i}x', 'start': float(i), 'end': i + 0.5} for i in range(20)]}
+# cue word index -> beat; lead 0 so a shot starts on its word
+GOOD = [(0, 'hook'), (1, 'hook'), (2, 'setup'), (4, 'explain'), (6, 'explain'), (8, 'explain'), (10, 'reveal'),
+        (12, 'twist'), (13, 'twist'), (14, 'share'), (16, 'cta'), (18, 'loop')]
+
+
+def run(tmp_path, beats=GOOD, topic='w0xw1x', genre=None, src_loop='a.mp4'):
+    (tmp_path / 'assets' / 'audio').mkdir(parents=True, exist_ok=True)
+    (tmp_path / 'assets' / 'audio' / 'words.json').write_text(json.dumps(WORDS))
+    shots = [{'id': f's{i}', 'cue': {'th': f'w{i}x'}, **({'beat': b} if b else {}), 'long_ok': True,
+              'src': 'a.mp4' if n == 0 else (src_loop if n == len(beats) - 1 else f'{i}.mp4')}
+             for n, (i, b) in enumerate(beats)]
+    plan = {'lead': 0, 'shots': shots, **({'topic': {'th': topic}} if topic else {}), **({'genre': genre} if genre else {})}
+    (tmp_path / 'shots.json').write_text(json.dumps(plan))
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'shot_times.py'), str(tmp_path), 'th'], capture_output=True, text=True)
+    if r.returncode:
+        return r
+    return subprocess.run([sys.executable, str(ROOT / 'tools' / 'pacing.py'), str(tmp_path)], capture_output=True, text=True)
+
+
+def test_good_structure(tmp_path):
+    r = run(tmp_path)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert 'pacing: OK' in r.stdout and 'WARN' not in r.stdout
+    assert "said by 1.50 s" in r.stdout
+
+
+def test_topic_after_1_5_s_fails(tmp_path):
+    r = run(tmp_path, topic='w0xw1xw2x')
+    assert r.returncode == 1 and 'ends at 2.50 s' in r.stdout
+    r = run(tmp_path, topic=None)
+    assert r.returncode == 1 and 'no "topic"' in r.stdout
+
+
+def test_missing_share_cta_twist_and_beats_fail(tmp_path):
+    beats = [b if b[1] != 'share' else (b[0], 'explain') for b in GOOD]
+    r = run(tmp_path, beats)
+    assert r.returncode == 1 and 'no "share"' in r.stdout
+    beats = [b if b[1] != 'twist' else (b[0], 'explain') for b in GOOD]
+    r = run(tmp_path, beats)
+    assert r.returncode == 1 and 'no "twist" shot after the reveal' in r.stdout
+    beats = GOOD[:-1] + [(18, None)]
+    r = run(tmp_path, beats)
+    assert r.returncode == 1 and 'without "beat"' in r.stdout and 'must be beat "loop"' in r.stdout
+
+
+def test_late_reveal_short_explain_slow_hook_warn(tmp_path):
+    beats = [(0, 'hook'), (4, 'setup'), (5, 'explain'), (8, 'explain'), (13, 'explain'), (14, 'reveal'),
+             (15, 'twist'), (17, 'share'), (18, 'cta'), (19, 'loop')]
+    r = run(tmp_path, beats, topic='w0x')
+    assert r.returncode == 0, r.stdout
+    assert 'reveal starts at 70%' in r.stdout
+    assert 'explain shot s13 is 1.00 s' in r.stdout and 'explain shot s8 is 5.00 s' in r.stdout
+    assert 'explain shot s5' not in r.stdout
+    assert 'not faster than the rest' in r.stdout
+
+
+def test_loop_source_differs_warns(tmp_path):
+    r = run(tmp_path, src_loop='other.mp4')
+    assert r.returncode == 0 and 'check the loop by eye' in r.stdout
+
+
+def test_legend_needs_twist_not_reveal(tmp_path):
+    beats = [b if b[1] != 'reveal' else (b[0], 'explain') for b in GOOD]
+    r = run(tmp_path, beats, genre='legend')
+    assert r.returncode == 0, r.stdout
+    assert 'legend: twist starts at 60%' in r.stdout
+
+
+def test_unknown_beat_is_a_shot_times_error_and_stale_refused(tmp_path):
+    r = run(tmp_path, GOOD[:-1] + [(18, 'outro')])
+    assert r.returncode == 1 and "beat 'outro' must be one of" in r.stderr
+    r = run(tmp_path)
+    assert r.returncode == 0
+    (tmp_path / 'shots.json').write_text((tmp_path / 'shots.json').read_text().replace('"lead": 0', '"lead": 0.08'))
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'pacing.py'), str(tmp_path)], capture_output=True, text=True)
+    assert r.returncode == 1 and 'stale' in r.stdout
+
+
+def test_explain_up_to_3_s_needs_no_long_ok(tmp_path):
+    (tmp_path / 'assets' / 'audio').mkdir(parents=True)
+    (tmp_path / 'assets' / 'audio' / 'words.json').write_text(json.dumps(WORDS))
+    shots = [{'id': 'a', 'cue': {'th': 'w0x'}, 'beat': 'hook'}, {'id': 'b', 'cue': {'th': 'w1x'}, 'beat': 'explain'},
+             {'id': 'c', 'cue': {'th': 'w4x'}, 'beat': 'setup'}, {'id': 'd', 'cue': {'th': 'w5x'}, 'long_ok': True}]
+    (tmp_path / 'shots.json').write_text(json.dumps({'lead': 0, 'shots': shots}))
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'shot_times.py'), str(tmp_path), 'th'], capture_output=True, text=True)
+    assert r.returncode == 0 and 'WARN b:' not in r.stdout
+    assert json.loads((tmp_path / 'assets' / 'audio' / 'shots-th.json').read_text())['shots'][1]['beat'] == 'explain'

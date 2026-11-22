@@ -39,13 +39,17 @@ right occurrence. Spaces and punctuation are ignored when matching (Thai timesta
 Errors (exit 1; an old shots-<lang>.json is DELETED so nothing downstream can use a stale timeline):
   no shots, duplicate or missing id, cue missing/empty/not found, hit empty/not found/outside its shot,
   lead/media_start/action_at not a finite number, media_start < 0.
-Warning only (exit 0): shot length outside 0.6-2.7 s (style.md) without "long_ok"; footage.json ids not in shots.json.
+  unknown "beat" (allowed: hook setup explain reveal twist share cta loop; see tools/pacing.py).
+Warning only (exit 0): shot length outside 0.6-2.7 s (style.md; 0.6-3.0 s for beat "explain") without "long_ok";
+  footage.json ids not in shots.json.
+Optional "beat" per shot (editing v3) is copied to shots-<lang>.json for tools/pacing.py.
 
 shots-<lang>.json carries "inputs" (sha256 of shots.json, footage.json and the words file). build_index.py
 refuses a timeline whose inputs changed since it was written: rerun this tool after editing any of them.
 """
 import hashlib, json, math, pathlib, re, sys
 
+BEATS = ("hook", "setup", "explain", "reveal", "twist", "share", "cta", "loop")
 STRIP = re.compile(r"[\s.,!?…'\"“”‘’\-–—:;()]+")
 
 
@@ -149,6 +153,10 @@ def main(proj, lang):
             continue
         row = {"id": sid, "src": src.get("src"), "cue": cue, "word_at": round(t, 3),
                "start": round(max(0.0, t - lead), 3) if out else 0.0}
+        if sh.get("beat") is not None:                  # editing v3 story beat, read by tools/pacing.py
+            if sh["beat"] not in BEATS:
+                errs.append(f"{sid}: beat {sh['beat']!r} must be one of {', '.join(BEATS)}")
+            row["beat"] = sh["beat"]
         hit = text_for(sh.get("hit"), lang)
         if hit is not None and hit != "":
             if not isinstance(hit, str) or not norm(hit):
@@ -181,8 +189,9 @@ def main(proj, lang):
             r["media_start"] = round(src["action_at"] - (anchor - r["start"]), 3) + 0.0
             if r["media_start"] < 0:
                 errs.append(f"{r['id']}: action_at {src['action_at']} too early in the source (media_start {r['media_start']})")
-        if not 0.6 <= r["dur"] <= 2.7 and not src.get("long_ok"):
-            warns.append(f"{r['id']}: {r['dur']}s (style.md wants 0.6-2.7 s; set long_ok for a diagram/end shot)")
+        top = 3.0 if src.get("beat") == "explain" else 2.7   # explain shots hold 2-3 s (editing v3)
+        if not 0.6 <= r["dur"] <= top and not src.get("long_ok"):
+            warns.append(f"{r['id']}: {r['dur']}s (style.md wants 0.6-{top} s; set long_ok for a diagram/end shot)")
     rows = [r for r, _ in out]
     print(f"{'id':<14}{'cue':<22}{'word':>7}{'start':>8}{'dur':>7}{'hit@':>8}{'media':>7}")
     for r in rows:
