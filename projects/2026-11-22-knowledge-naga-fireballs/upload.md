@@ -1,6 +1,6 @@
 # อัปโหลด: บั้งไฟพญานาค ลูกไฟนี้ใครจุด? (ไทย)
 
-ไฟล์: `renders/naga-fireballs-th.mp4` (ความยาว: ดูท้ายไฟล์, 9:16 ไฟล์เดียวใช้ได้ทุกแพลตฟอร์ม) | ปก: `renders/naga-fireballs-th-thumb.jpg`
+ไฟล์: `renders/naga-fireballs-th.mp4` (53.2 วิ, 9:16 ไฟล์เดียวใช้ได้ทุกแพลตฟอร์ม) | ปก: `renders/naga-fireballs-th-thumb.jpg`
 **ห้ามอัปโหลด/ตั้งเวลาโดยทีม ผู้ใช้อัปโหลดเอง**
 
 ## YouTube Shorts
