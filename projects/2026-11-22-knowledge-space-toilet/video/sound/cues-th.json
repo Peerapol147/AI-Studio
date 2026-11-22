@@ -1,0 +1,128 @@
+[
+ {
+  "t": 0.3,
+  "type": "movement",
+  "desc": "hook: soft whoosh under the title (Cassidy card push-in)",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -28
+ },
+ {
+  "t": 1.02,
+  "type": "appear",
+  "desc": "worried drop pops in beside the astronaut",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -21
+ },
+ {
+  "t": 2.28,
+  "type": "appear",
+  "desc": "drop puffs into the green cloud (callback, soft plop, not a fart sound)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -19
+ },
+ {
+  "t": 4.04,
+  "type": "reveal",
+  "desc": "cloud turns back into a HEAVY drop, squash + zoom punch",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -24
+ },
+ {
+  "t": 5.54,
+  "type": "scene_cut",
+  "desc": "whip to Pettit floating + \"ไม่มีแรงโน้มถ่วง\" pill",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -25
+ },
+ {
+  "t": 10.04,
+  "type": "movement",
+  "desc": "fan spins up, blob sucked in a spiral (reversed swoosh = suck)",
+  "sfx": "riser/fs-174363-rewind.ogg",
+  "gain": -20
+ },
+ {
+  "t": 11.95,
+  "type": "hover_or_small_ui",
+  "desc": "\"กรวย\" label + arrow on the funnel photo",
+  "sfx": "click/kenney-interface-toggle-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 13.56,
+  "type": "appear",
+  "desc": "blob drops into the bag, neck ties shut",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -21
+ },
+ {
+  "t": 14.6,
+  "type": "error_or_tech",
+  "desc": "glitch + shocked blob \"!\"",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 16.14,
+  "type": "appear",
+  "desc": "blob bounces out of the bin (red X)",
+  "sfx": "pop/fs-258269-mouth-pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 17.22,
+  "type": "movement",
+  "desc": "water-recovery rack, bubbles rise (bubble plop)",
+  "sfx": "pop/fs527522.ogg",
+  "gain": -22
+ },
+ {
+  "t": 18.1,
+  "type": "success",
+  "desc": "drop turns clear blue, sparkle + \"น้ำดื่ม\" check pill",
+  "sfx": "ding/fs-634690-lil-pip.ogg",
+  "gain": -22
+ },
+ {
+  "t": 19.46,
+  "type": "hover_or_small_ui",
+  "desc": "pill morphs to \"NASA · 2023\"",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -22
+ },
+ {
+  "t": 24.45,
+  "type": "success",
+  "desc": "98% ring completes (turns green)",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 25.7,
+  "type": "scene_cut",
+  "desc": "whip to Don Pettit + name label",
+  "sfx": "transition/fs-702773-swipe-wav.ogg",
+  "gain": -26
+ },
+ {
+  "t": 28.18,
+  "type": "appear",
+  "desc": "drop morphs into a coffee cup (cup clink)",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 29.47,
+  "type": "hover_or_small_ui",
+  "desc": "Lindgren sips from the capillary cup (glass tap)",
+  "sfx": "ding/kenney-interface-glass-002.ogg",
+  "gain": -26
+ },
+ {
+  "t": 33.0,
+  "type": "appear",
+  "desc": "cup becomes the comment bubble",
+  "sfx": "kit/pop.ogg",
+  "gain": -22
+ }
+]

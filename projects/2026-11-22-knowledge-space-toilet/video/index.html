@@ -1,0 +1,667 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl, then run `python3 build_index.py` -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="vendor/flubber.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif;background:#071027}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 40%}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0}
+.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.bgp{position:absolute;left:-40px;top:-70px;width:1160px;height:2060px;object-fit:cover}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(5,10,30,0) 55%,rgba(5,10,30,.55) 100%)}
+.dim{position:absolute;left:0;top:0;width:1080px;height:1920px;background:rgba(4,10,30,.35)}
+.dbg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.stars{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+/* photo card (rounded, white edge + ink outline) */
+.card{position:absolute;overflow:hidden;border-radius:44px;background:#0B1530;
+  box-shadow:0 0 0 9px #F4F8FF,0 0 0 17px #0A0E1C,0 34px 70px rgba(0,0,0,.6)}
+.card img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+#tshade{position:absolute;left:0;top:0;width:1080px;height:760px;background:linear-gradient(rgba(4,8,26,.8) 0%,rgba(4,8,26,.55) 60%,rgba(4,8,26,0) 100%)}
+#title{position:absolute;left:0;top:0;width:1080px;height:720px}
+#title .tl{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:26px #0A0E1C;paint-order:stroke fill;transform-origin:50% 60%;text-shadow:0 12px 0 rgba(0,0,0,.45)}
+.pill{position:absolute;left:0;top:0;height:96px;border-radius:48px;border:7px solid #0A0E1C;opacity:0;white-space:nowrap;
+  box-shadow:0 10px 0 rgba(0,0,0,.35);transform-origin:50% 50%}
+.pill .tx{position:absolute;top:50%;left:96px;transform:translateY(-54%);font-weight:900;font-size:50px;white-space:nowrap;color:#0A0E1C}
+.pill .bd{position:absolute;left:12px;top:9px;width:64px;height:64px;border-radius:32px;background:#0A0E1C}
+.pill .bd svg{width:44px;height:44px;color:#fff;position:absolute;left:10px;top:10px}
+.ic{overflow:visible}
+#meas{position:absolute;left:-3000px;top:0;font-weight:900;font-size:50px;white-space:nowrap;visibility:hidden}
+#qm{position:absolute;left:0;top:0;width:200px;height:220px;text-align:center;font-weight:900;font-size:230px;line-height:1;color:#FFE14D;opacity:0;
+  -webkit-text-stroke:22px #0A0E1C;paint-order:stroke fill;transform-origin:50% 80%}
+/* labels on photo cards */
+.lab{position:absolute;left:0;top:0;height:92px;padding:0 30px 0 22px;border-radius:26px;background:#0E1D47;opacity:0;
+  box-shadow:0 0 0 7px #0A0E1C,0 10px 0 rgba(0,0,0,.4);display:flex;align-items:center;gap:14px;
+  font-weight:900;font-size:46px;color:#fff;white-space:nowrap;transform-origin:50% 50%}
+.lab svg{width:52px;height:52px;color:#FFE14D}
+.lab small{font-weight:700;font-size:40px;color:#A9C6FF}
+#kruai{background:#FFE14D;color:#0A0E1C;font-size:56px;height:96px;padding:0 30px}
+/* Pettit name label */
+#hname{position:absolute;left:250px;top:262px;width:580px;height:124px;border-radius:30px;background:#0E1D47;opacity:0;
+  box-shadow:0 0 0 7px #0A0E1C,0 12px 0 rgba(0,0,0,.4);overflow:hidden}
+#hname .bar{position:absolute;left:0;top:0;width:22px;height:124px;background:#FFE14D}
+#hname .n1{position:absolute;left:0;top:14px;width:580px;text-align:center;font-weight:900;font-size:80px;line-height:1.1;color:#fff;white-space:nowrap}
+/* quote card */
+#qcard{position:absolute;left:130px;top:380px;width:740px;height:680px;border-radius:40px;background:#FFF8EE;opacity:0;
+  box-shadow:0 0 0 8px #0A0E1C,0 30px 70px rgba(0,0,0,.55);transform-origin:50% 50%}
+#qen{position:absolute;left:50px;top:40px;width:650px;font-weight:900;font-size:68px;line-height:1.16;color:#0A0E1C;white-space:normal}
+#qen span{display:inline-block;margin-right:16px;transform-origin:50% 80%}
+#qth{position:absolute;left:40px;top:372px;width:660px;padding:4px 22px 10px;border-radius:20px;background:#FFE14D;font-weight:900;font-size:56px;line-height:1.2;color:#0A0E1C;white-space:normal;transform-origin:0 50%}
+#qsrc{position:absolute;left:56px;top:600px;font-weight:700;font-size:34px;color:#5B6B8C;white-space:nowrap}
+/* float compare panels (icons only, no words) */
+#cmp{position:absolute;left:120px;top:300px;width:760px;height:780px;opacity:0;transform-origin:50% 50%}
+#cmp .half{position:absolute;left:0;width:760px;height:375px;border-radius:36px;box-shadow:0 0 0 7px #0A0E1C,0 18px 40px rgba(0,0,0,.45);overflow:hidden}
+#cmp .h1{top:0;background:linear-gradient(#2A4E8C,#1B3466)}
+#cmp .h2{top:405px;background:linear-gradient(#0C1638,#050A1E)}
+#cmp .lb{position:absolute;left:26px;top:22px;width:84px;height:84px;border-radius:42px;background:#0A0E1C;display:flex;align-items:center;justify-content:center}
+#cmp .lb svg{width:56px;height:56px}
+#btext{position:absolute;left:0;top:0;width:1080px;display:flex;justify-content:center;align-items:center;gap:16px;opacity:0;
+  font-weight:900;font-size:86px;line-height:1.1;color:#0A0E1C;white-space:nowrap;transform-origin:50% 50%}
+#btext svg{width:80px;height:80px;color:#0A0E1C}
+#pct{position:absolute;left:0;top:0;width:1080px;text-align:center;font-weight:900;font-size:190px;line-height:1;color:#fff;opacity:0;
+  -webkit-text-stroke:22px #0A0E1C;paint-order:stroke fill;transform-origin:50% 50%}
+#gbars{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:40;pointer-events:none}
+#gbars div{position:absolute;left:60px;width:840px;opacity:0;mix-blend-mode:screen}
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+/* captions: centred on X 510 (safe band X 120-900), text box ~Y 1130-1245 */
+.cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;color:#fff;font-weight:700;line-height:1.18;white-space:nowrap;
+  -webkit-text-stroke:17px #000;paint-order:stroke fill;transform-origin:50% 80%}
+.cap em{font-style:normal;color:#FFE14D}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="35.0" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m16 9-5.5 5.5L8 12" /></symbol>
+<symbol id="ic-circle-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m15 9-6 6" /> <path d="m9 9 6 6" /></symbol>
+<symbol id="ic-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol>
+<symbol id="ic-fan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z" /> <path d="M12 12v.01" /></symbol>
+<symbol id="ic-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2" /> <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" /> <path d="M9.8 4.4A2 2 0 1 1 11 8H2" /></symbol>
+<symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></symbol>
+<symbol id="ic-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14" /> <path d="m19 12-7 7-7-7" /></symbol>
+<symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
+<filter id="rgbx" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+  <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+  <feOffset id="rgbR" in="r" dx="0" dy="0" result="ro"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+  <feOffset id="rgbB" in="b" dx="0" dy="0" result="bo"/>
+  <feBlend in="ro" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="bo" mode="screen"/>
+</filter></defs></svg>
+
+<div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+  <!-- frame 0: Cassidy card (rounded, tilted) on the blurred dark plate of the same photo; face at screen ~(502,972) -->
+  <div class="sc" id="sh-hook"><div class="kb" id="kb-hook"><img class="bgp" src="assets/hook-bg.jpg" alt=""/>
+    <div class="card" style="left:140px;top:700px;width:760px;height:720px;transform:rotate(-2deg)"><img src="assets/hook-card.jpg" alt=""/></div></div><div class="vig"></div></div>
+  <div class="sc gsc" id="sh-what"><div class="dbg" style="background:radial-gradient(ellipse at 50% 55%,#21458C 0%,#11265A 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-fart"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#2C5A4E 0%,#143A42 45%,#04101C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-worse"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#4A2D6E 0%,#22205A 45%,#070A22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-gravity"><img class="bgp" id="bg-gravity" src="assets/gravity-bg.jpg" alt=""/>
+    <div class="card" id="cd-gravity" style="left:150px;top:420px;width:740px;height:800px"><img id="ci-gravity" style="transform-origin:44% 48%" src="assets/gravity-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-float"><div class="dbg" style="background:radial-gradient(ellipse at 50% 50%,#1E3A7A 0%,#10224F 45%,#050A1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-toilet"><img class="bgp" id="bg-toilet" src="assets/toilet-bg.jpg" alt=""/>
+    <div class="card" id="cd-toilet" style="left:150px;top:400px;width:740px;height:816px"><img id="ci-toilet" style="transform-origin:50% 35%" src="assets/toilet-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-suction"><div class="dbg" style="background:radial-gradient(ellipse at 50% 30%,#1C5A78 0%,#0F2F55 45%,#040B1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-funnel"><img class="bgp" id="bg-funnel" src="assets/funnel-bg.jpg" alt=""/>
+    <div class="card" id="cd-funnel" style="left:150px;top:420px;width:740px;height:740px"><img id="ci-funnel" style="transform-origin:32% 48%" src="assets/funnel-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-bag"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#24488E 0%,#12285E 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-shock"><div class="dbg" style="background:radial-gradient(ellipse at 50% 40%,#5A2E6E 0%,#2A1E5A 45%,#080A22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-notrash"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#2A3556 0%,#16203F 45%,#050916 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-filter"><div class="kb" id="kb-filter"><img class="full" src="assets/filter-full.jpg" alt=""/></div><div class="vig"></div></div>
+  <div class="sc gsc" id="sh-drink"><div class="dbg" style="background:radial-gradient(ellipse at 50% 40%,#1C5A88 0%,#0F2F5E 45%,#040B1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-year"><div class="dbg" style="background:radial-gradient(ellipse at 50% 42%,#21458C 0%,#11265A 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-station"><img class="bgp" id="bg-station" src="assets/station-bg.jpg" alt=""/>
+    <div class="card" id="cd-station" style="left:150px;top:540px;width:740px;height:528px"><img id="ci-station" style="transform-origin:50% 45%" src="assets/station-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-pct"><div class="dbg" style="background:radial-gradient(ellipse at 50% 38%,#1C4C7A 0%,#10284F 45%,#040A1C 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-pettit"><img class="bgp" id="bg-pettit" src="assets/pettit-bg.jpg" alt=""/>
+    <div class="card" id="cd-pettit" style="left:150px;top:420px;width:740px;height:800px"><img id="ci-pettit" style="transform-origin:49% 25%" src="assets/pettit-card.jpg" alt=""/></div></div>
+  <div class="sc" id="sh-quote"><img class="bgp" id="bg-qbg" src="assets/pettit-bg.jpg" alt=""/><div class="dim"></div></div>
+  <div class="sc gsc" id="sh-yesterday"><div class="dbg" style="background:radial-gradient(ellipse at 50% 45%,#4A3A6E 0%,#24205A 45%,#070A22 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc" id="sh-coffee"><img class="bgp" id="bg-coffee" src="assets/coffee-bg.jpg" alt=""/>
+    <div class="card" id="cd-coffee" style="left:150px;top:420px;width:740px;height:740px"><img id="ci-coffee" style="transform-origin:55% 45%" src="assets/coffee-card.jpg" alt=""/></div></div>
+  <div class="sc gsc" id="sh-dare"><div class="dbg" style="background:radial-gradient(ellipse at 40% 50%,#24488E 0%,#12285E 45%,#050B1F 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <div class="sc gsc" id="sh-comment"><div class="dbg" style="background:radial-gradient(ellipse at 50% 34%,#2D4C9A 0%,#162E6A 45%,#060C24 100%)"></div><svg class="stars" viewBox="0 0 1080 1920"></svg></div>
+  <!-- loop: identical to frame 0 (same plate + card), Ken Burns 1.05 -> 1.00 -->
+  <div class="sc" id="sh-loop"><div class="kb" id="kb-loop"><img class="bgp" src="assets/hook-bg.jpg" alt=""/>
+    <div class="card" style="left:140px;top:700px;width:760px;height:720px;transform:rotate(-2deg)"><img src="assets/hook-card.jpg" alt=""/></div></div><div class="vig"></div></div>
+</div>
+
+<div id="over" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:10">
+  <div id="cmp"><div class="half h1"><div class="lb"><svg class="ic" style="color:#7FD3FF"><use href="#ic-globe"/></svg></div></div>
+    <div class="half h2"><div class="lb"><svg class="ic" style="color:#FFE14D"><use href="#ic-star"/></svg></div></div></div>
+  <div class="lab" id="flab"><svg class="ic"><use href="#ic-globe"/></svg>ห้องน้ำรุ่นใหม่ <small>(ทดสอบบนโลก)</small></div>
+  <div class="lab" id="kruai">กรวย</div>
+  <div id="hname"><div class="bar"></div><div class="n1">Don Pettit</div></div>
+  <div id="qcard">
+    <div id="qen"><span>“It</span><span>makes</span><span>yesterday’s</span><span>coffee</span><span>into</span><span>today’s</span><span>coffee.”</span></div>
+    <div id="qth">เปลี่ยนกาแฟเมื่อวาน<br>ให้เป็นกาแฟวันนี้</div>
+    <div id="qsrc">Don Pettit, NASA blog</div></div>
+  <svg class="ov" id="gsvg" viewBox="0 0 1080 1920" width="1080" height="1920"><g id="glayer"></g></svg>
+  <div id="pct">98%</div>
+  <div id="btext"><svg class="ic"><use href="#ic-message-circle"/></svg>เมนต์บอกหน่อย</div>
+  <div id="qm">?</div>
+  <div class="pill" id="pill"><div class="bd" id="pillBd"><svg class="ic" id="pillIc"><use id="pillUse" href="#ic-circle-x"/></svg></div>
+    <span class="tx" id="pillA"></span><span class="tx" id="pillB"></span></div>
+  <div id="tshade"></div>
+  <div id="title"><div class="tl" id="tl1">ปวดอึในอวกาศ</div><div class="tl" id="tl2" style="color:#FFE14D">ทำไงดี?</div></div>
+  <div id="meas"></div>
+</div>
+</div>
+<div id="gbars"><div id="gb0"></div><div id="gb1"></div><div id="gb2"></div></div>
+
+<div id="caps" data-track-kind="captions">
+  <div id="c0" class="clip cap" data-start="2.28" data-duration="0.7" data-track-index="20"><span style="font-size:96px">ตดในอวกาศ</span></div>
+  <div id="c1" class="clip cap" data-start="2.98" data-duration="1.06" data-track-index="20"><span style="font-size:96px">ว่า<em>แย่</em>แล้วนะ</span></div>
+  <div id="c2" class="clip cap" data-start="4.04" data-duration="1.18" data-track-index="20"><span style="font-size:88px">อึนี่<em>หนักกว่าอีก</em></span></div>
+  <div id="c3" class="clip cap" data-start="5.22" data-duration="0.4" data-track-index="20"><span style="font-size:96px">เพราะไม่มี</span></div>
+  <div id="c4" class="clip cap" data-start="5.62" data-duration="1.02" data-track-index="20"><span style="font-size:96px"><em>แรงโน้มถ่วง</em></span></div>
+  <div id="c5" class="clip cap" data-start="6.64" data-duration="0.48" data-track-index="20"><span style="font-size:96px">มัน<em>ไม่ตกลง</em></span></div>
+  <div id="c6" class="clip cap" data-start="7.12" data-duration="1.18" data-track-index="20"><span style="font-size:96px">ไปเองไง</span></div>
+  <div id="c7" class="clip cap" data-start="8.3" data-duration="0.84" data-track-index="20"><span style="font-size:88px">ห้องน้ำบนสถานี</span></div>
+  <div id="c8" class="clip cap" data-start="9.14" data-duration="0.54" data-track-index="20"><span style="font-size:96px">อวกาศ</span></div>
+  <div id="c9" class="clip cap" data-start="9.68" data-duration="1.72" data-track-index="20"><span style="font-size:80px">เลยใช้<em>ลมดูด</em>แทน</span></div>
+  <div id="c10" class="clip cap" data-start="11.4" data-duration="0.44" data-track-index="20"><span style="font-size:96px"><em>ฉี่</em>ก็ดูด</span></div>
+  <div id="c11" class="clip cap" data-start="11.84" data-duration="0.92" data-track-index="20"><span style="font-size:96px">ลง<em>กรวย</em></span></div>
+  <div id="c12" class="clip cap" data-start="12.76" data-duration="0.5" data-track-index="20"><span style="font-size:96px"><em>อึ</em>ก็ดูด</span></div>
+  <div id="c13" class="clip cap" data-start="13.26" data-duration="1.04" data-track-index="20"><span style="font-size:96px">ลง<em>ถุง</em></span></div>
+  <div id="c14" class="clip cap" data-start="14.3" data-duration="1.42" data-track-index="20"><span style="font-size:88px">แต่ที่<em>ช็อกกว่า</em>คือ</span></div>
+  <div id="c15" class="clip cap" data-start="15.72" data-duration="1.18" data-track-index="20"><span style="font-size:96px">ฉี่<em>ไม่ได้ทิ้ง</em>นะ</span></div>
+  <div id="c16" class="clip cap" data-start="16.9" data-duration="0.76" data-track-index="20"><span style="font-size:80px">เขาเอาไป<em>กรอง</em></span></div>
+  <div id="c17" class="clip cap" data-start="17.66" data-duration="0.44" data-track-index="20"><span style="font-size:96px">จนกลายเป็น</span></div>
+  <div id="c18" class="clip cap" data-start="18.1" data-duration="1.08" data-track-index="20"><span style="font-size:96px"><em>น้ำดื่ม</em></span></div>
+  <div id="c19" class="clip cap" data-start="19.18" data-duration="1.42" data-track-index="20"><span style="font-size:96px">ปี <em>2023</em></span></div>
+  <div id="c20" class="clip cap" data-start="20.6" data-duration="1.24" data-track-index="20"><span style="font-size:96px"><em>NASA</em> บอกว่า</span></div>
+  <div id="c21" class="clip cap" data-start="21.84" data-duration="0.8" data-track-index="20"><span style="font-size:96px">น้ำบนสถานี</span></div>
+  <div id="c22" class="clip cap" data-start="22.64" data-duration="0.86" data-track-index="20"><span style="font-size:80px">วนกลับมาใช้ได้ถึง</span></div>
+  <div id="c23" class="clip cap" data-start="23.5" data-duration="1.58" data-track-index="20"><span style="font-size:88px"><em>98 เปอร์เซ็นต์</em></span></div>
+  <div id="c24" class="clip cap" data-start="25.08" data-duration="0.7" data-track-index="20"><span style="font-size:96px">นักบินอวกาศ</span></div>
+  <div id="c25" class="clip cap" data-start="25.78" data-duration="0.58" data-track-index="20"><span style="font-size:96px"><em>Don Pettit</em></span></div>
+  <div id="c26" class="clip cap" data-start="26.36" data-duration="1.42" data-track-index="20"><span style="font-size:88px">เคยแซวไว้ว่า...</span></div>
+  <div id="c27" class="clip cap" data-start="27.78" data-duration="0.66" data-track-index="20"><span style="font-size:88px">มันเปลี่ยน<em>กาแฟ</em></span></div>
+  <div id="c28" class="clip cap" data-start="28.44" data-duration="0.58" data-track-index="20"><span style="font-size:96px"><em>เมื่อวาน</em></span></div>
+  <div id="c29" class="clip cap" data-start="29.02" data-duration="0.48" data-track-index="20"><span style="font-size:96px">ให้กลายเป็น</span></div>
+  <div id="c30" class="clip cap" data-start="29.5" data-duration="1.36" data-track-index="20"><span style="font-size:96px"><em>กาแฟวันนี้</em></span></div>
+  <div id="c31" class="clip cap" data-start="30.86" data-duration="1.24" data-track-index="20"><span style="font-size:88px">ถ้าได้ไปอวกาศ</span></div>
+  <div id="c32" class="clip cap" data-start="32.1" data-duration="0.64" data-track-index="20"><span style="font-size:96px">กล้าดื่ม<em>กาแฟ</em></span></div>
+  <div id="c33" class="clip cap" data-start="32.74" data-duration="1.02" data-track-index="20"><span style="font-size:96px">แก้วนี้<em>ไหม?</em></span></div>
+  <div id="c34" class="clip cap" data-start="33.76" data-duration="1.24" data-track-index="20"><span style="font-size:88px"><em>เมนต์</em>บอกหน่อย</span></div>
+</div>
+
+<audio id="vo" class="clip" data-start="0" data-duration="35.0" data-track-index="30" data-volume="1" src="assets/vo-th.mp3"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="35.0" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-34a821bb.mp3"></audio>
+</div>
+
+<script>
+/* Motion: closed-form springs (motion-broll engine, brainrot v2 template + space-fart NASA cards). Shot times =
+   assets/audio/shots-th.json, word anchors = words.json (both injected by build_index.py). ONE character: a cute cartoon
+   blob (own SVG, never waste) morphs with flubber: pale-yellow drop (worried) -> green fart cloud (callback to the last
+   episode) -> heavy drop -> floats -> sucked in a spiral into the fan -> into a clean cartoon bag -> pops out shocked ->
+   bounces out of the bin -> turns clear blue (drinking water) -> orbits "NASA · 2023" -> rides the 98% ring -> becomes
+   a coffee cup -> "?" -> comment bubble -> gone before the frame-0 title returns (loop). One pill morphs
+   ไม่มีแรงโน้มถ่วง -> ลมดูด -> น้ำดื่ม -> NASA · 2023. Everything is a function of t. */
+(function(){
+const D={"dur": 35.0, "capt": [2.28, 2.98, 4.04, 5.22, 5.62, 6.64, 7.12, 8.3, 9.14, 9.68, 11.4, 11.84, 12.76, 13.26, 14.3, 15.72, 16.9, 17.66, 18.1, 19.18, 20.6, 21.84, 22.64, 23.5, 25.08, 25.78, 26.36, 27.78, 28.44, 29.02, 29.5, 30.86, 32.1, 32.74, 33.76], "k": {"puat": 0.06, "thamngai": 1.02, "tod": 2.28, "yae": 3.1, "ue": 4.04, "nak": 4.36, "raeng": 5.62, "maitok": 6.74, "hongnam": 8.3, "lomdut": 10.04, "chi": 11.4, "kruai": 12.0, "ue2": 12.76, "thung": 13.44, "chok": 14.6, "maidai": 15.9, "thing": 16.18, "krong": 17.3, "namduem": 18.1, "y2023": 19.46, "nasa": 20.6, "sathani": 22.22, "kao": 23.5, "percent": 24.02, "don": 25.78, "saew": 26.56, "man": 27.78, "kafae": 28.18, "muewan": 28.44, "kafae2": 29.5, "thaidai": 30.86, "kladuem": 32.1, "mai": 33.08, "ment": 33.76, "noi": 34.22}, "sh": {"hook": {"start": 0.0, "end": 0.94, "word": 0.06, "hit": null, "ms": null}, "what": {"start": 0.94, "end": 2.2, "word": 1.02, "hit": null, "ms": null}, "fart": {"start": 2.2, "end": 3.96, "word": 2.28, "hit": null, "ms": null}, "worse": {"start": 3.96, "end": 5.54, "word": 4.04, "hit": null, "ms": null}, "gravity": {"start": 5.54, "end": 6.66, "word": 5.62, "hit": null, "ms": null}, "float": {"start": 6.66, "end": 8.22, "word": 6.74, "hit": null, "ms": null}, "toilet": {"start": 8.22, "end": 9.96, "word": 8.3, "hit": null, "ms": null}, "suction": {"start": 9.96, "end": 11.32, "word": 10.04, "hit": null, "ms": null}, "funnel": {"start": 11.32, "end": 12.68, "word": 11.4, "hit": null, "ms": null}, "bag": {"start": 12.68, "end": 14.52, "word": 12.76, "hit": null, "ms": null}, "shock": {"start": 14.52, "end": 15.82, "word": 14.6, "hit": null, "ms": null}, "notrash": {"start": 15.82, "end": 17.22, "word": 15.9, "hit": null, "ms": null}, "filter": {"start": 17.22, "end": 18.02, "word": 17.3, "hit": null, "ms": null}, "drink": {"start": 18.02, "end": 19.38, "word": 18.1, "hit": null, "ms": null}, "year": {"start": 19.38, "end": 21.76, "word": 19.46, "hit": null, "ms": null}, "station": {"start": 21.76, "end": 23.42, "word": 21.84, "hit": null, "ms": null}, "pct": {"start": 23.42, "end": 25.7, "word": 23.5, "hit": null, "ms": null}, "pettit": {"start": 25.7, "end": 26.48, "word": 25.78, "hit": null, "ms": null}, "quote": {"start": 26.48, "end": 28.1, "word": 26.56, "hit": null, "ms": null}, "yesterday": {"start": 28.1, "end": 29.42, "word": 28.18, "hit": null, "ms": null}, "coffee": {"start": 29.42, "end": 30.78, "word": 29.5, "hit": null, "ms": null}, "dare": {"start": 30.78, "end": 33.0, "word": 30.86, "hit": null, "ms": null}, "comment": {"start": 33.0, "end": 33.68, "word": 33.08, "hit": null, "ms": null}, "loop": {"start": 33.68, "end": 35.0, "word": 33.76, "hit": null, "ms": null}}}, DUR=D.dur, CAPT=D.capt, K=D.k, SH=D.sh;
+const T={},H={}; for(const k in SH){T[k]=SH[k].start; if(SH[k].hit!=null)H[k]=SH[k].hit;}
+const NS='http://www.w3.org/2000/svg';
+
+// ---------- spring kit ----------
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)}, ei=x=>{x=clamp(x);return x*x*x};
+const S=(tau,w,z)=>{if(tau<=0)return 0;
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);};
+const MORPH=[15,0.84],FAST=[26,0.8],SLOW=[8,0.95],BOUNCE=[18,0.55],POP=[22,0.5],OUT=[30,1];
+const track=(v0,keys,def=MORPH)=>{let p=v0;const ks=[];for(const k of keys){const d=k[1]-p;p=k[1];const sp=k[2]||def;if(d!==0)ks.push([k[0],d,sp[0],sp[1]]);}
+  return t=>{let v=v0;for(const k of ks)v+=k[1]*S(t-k[0],k[2],k[3]);return v;};};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,u)=>{const x=hex(a),y=hex(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],clamp(u)))).join(',')})`;};
+const $=id=>document.getElementById(id);
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;};
+const show=(e,o)=>{e.style.opacity=o<0.003?'0':o.toFixed(4);return o>=0.003;};
+const f2=v=>v.toFixed(2);
+const win=(t,a,b,sp=POP)=>{if(t<a||t>=b+0.1)return 0; const i=S(t-a,sp[0],sp[1]); const o=t>b?1-clamp((t-b)/0.08):1; return Math.max(0,i)*o;};
+const meas=$('meas'); const wcache={};
+const tw=txt=>{if(wcache[txt])return wcache[txt]; meas.textContent=txt; const w=meas.offsetWidth;
+  if(document.fonts&&document.fonts.status==='loaded'&&w>0)wcache[txt]=w; return w||txt.length*28;};
+const YEL='#FFE14D',GRN='#3DDC84',ORG='#FFA53D',RED='#FF4D5E',INK='#0A0E1C',SUIT='#F1F5FC',SUIT2='#B9C6DD';
+const CY_='#FFE7A0',CG='#B8E04A',CBL='#8FDCFF',CUPW='#F7F1E8',CW='#F7FAFF'; // blob: pale yellow, fart green, water blue, cup, bubble
+const G=$('glayer');
+
+// ---------- scenes ----------
+// entries: cut (hard) | whip (0.12 s push) | zoom (zoom punch-in, 0.1 s fade) | match (0.1 s crossfade)
+const SC=[
+ {id:'sh-hook',a:0,kind:'still',kb:'kb-hook',s0:1.0,s1:1.06,org:'50% 52%',in:'none'},
+ {id:'sh-what',a:T.what,in:'zoom'},
+ {id:'sh-fart',a:T.fart,in:'whip'},
+ {id:'sh-worse',a:T.worse,in:'match'},
+ {id:'sh-gravity',a:T.gravity,kind:'card',n:'gravity',cs0:1.0,cs1:1.12,r0:1.4,r1:-0.8,in:'whip'},
+ {id:'sh-float',a:T.float,in:'zoom'},
+ {id:'sh-toilet',a:T.toilet,kind:'card',n:'toilet',cs0:1.0,cs1:1.14,r0:-1.2,r1:0.8,in:'whip'},
+ {id:'sh-suction',a:T.suction,in:'zoom'},
+ {id:'sh-funnel',a:T.funnel,kind:'card',n:'funnel',cs0:1.0,cs1:1.12,r0:1.0,r1:-0.8,in:'cut'},
+ {id:'sh-bag',a:T.bag,in:'match'},
+ {id:'sh-shock',a:T.shock,in:'zoom'},
+ {id:'sh-notrash',a:T.notrash,in:'whip'},
+ {id:'sh-filter',a:T.filter,kind:'full',kb:'kb-filter',s0:1.02,s1:1.12,r0:-0.8,r1:0.8,org:'45% 45%',in:'cut'},
+ {id:'sh-drink',a:T.drink,in:'zoom'},
+ {id:'sh-year',a:T.year,in:'match'},
+ {id:'sh-station',a:T.station,kind:'card',n:'station',cs0:1.0,cs1:1.14,r0:-1.0,r1:1.0,in:'whip'},
+ {id:'sh-pct',a:T.pct,in:'zoom'},
+ {id:'sh-pettit',a:T.pettit,kind:'card',n:'pettit',cs0:1.0,cs1:1.1,r0:1.2,r1:-0.6,in:'whip'},
+ {id:'sh-quote',a:T.quote,kind:'gbg',n:'qbg',in:'match'},
+ {id:'sh-yesterday',a:T.yesterday,in:'zoom'},
+ {id:'sh-coffee',a:T.coffee,kind:'card',n:'coffee',cs0:1.0,cs1:1.12,r0:-1.2,r1:0.8,in:'whip'},
+ {id:'sh-dare',a:T.dare,in:'match'},
+ {id:'sh-comment',a:T.comment,in:'match'},
+ {id:'sh-loop',a:T.loop,kind:'still',kb:'kb-loop',s0:1.05,s1:1.0,org:'50% 52%',in:'match'},
+];
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.b=s.next?s.next.a:DUR; $(s.id).style.zIndex=String(i+1); if(s.kb)$(s.kb).style.transformOrigin=s.org;});
+const XF=0.12;
+function sceneState(s,t){
+  if(t<s.a)return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,sc=1;
+  if(s.in==='whip'){ tx=1080*(1-eo(u/XF)); }
+  else if(s.in==='zoom'){ o=eio(u/0.1); sc=1+0.3*(1-S(u,18,0.9)); }
+  else if(s.in==='match'){ o=eio(u/0.1); }
+  if(nx){
+    if(nx.in==='whip'){ if(t>=end+XF)return null; if(t>=end) tx=-1080*eo((t-end)/XF); }
+    else if(nx.in==='cut'){ if(t>=end)return null; }
+    else { if(t>=end+XF)return null; if(nx.in==='zoom'&&t>end-0.1) sc*=1+0.5*ei((t-end+0.1)/0.22); }
+  }
+  return {o,tx,sc};
+}
+function scenes(t){
+  SC.forEach(s=>{const r=sceneState(s,t), e=$(s.id);
+    if(!r){e.style.opacity='0';return;}
+    e.style.opacity=r.o.toFixed(4); e.style.transform=`translateX(${f2(r.tx)}px) scale(${r.sc.toFixed(4)})`;
+    const uu=clamp((t-s.a)/Math.max(0.3,(s.b-s.a)));
+    if(s.kind==='still'){ $(s.kb).style.transform=`scale(${lerp(s.s0,s.s1,uu).toFixed(5)})`; return; } // hook / loop: pure push (frame 0 = last frame)
+    const dx=10*Math.sin(t*1.7+s.a), dy=8*Math.cos(t*1.3+s.a);
+    if(s.kind==='full'){
+      const k=lerp(s.s0,s.s1,eio(0.1+0.9*uu)), rr=lerp(s.r0,s.r1,uu);
+      $(s.kb).style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; return; }
+    if(s.kind==='card'||s.kind==='gbg'){ // blurred plate drifts slowly (back layer), card pushes in + tilts (front layer)
+      const bg=$('bg-'+s.n); bg.style.transform=`translate(${f2(-0.6*dx)}px,${f2(-0.6*dy)}px) scale(${lerp(1.0,1.06,uu).toFixed(5)})`;
+      if(s.kind==='gbg')return;
+      const rr=lerp(s.r0,s.r1,eio(uu)), k=lerp(s.cs0,s.cs1,eio(0.1+0.9*uu));
+      $('cd-'+s.n).style.transform=`translate(${f2(0.8*dx)}px,${f2(0.8*dy)}px) rotate(${rr.toFixed(3)}deg)`;
+      $('ci-'+s.n).style.transform=`scale(${k.toFixed(5)})`;
+    }
+  });
+}
+// stars in the graphic backdrops (deterministic), drifting + twinkling
+const STARS=[]; document.querySelectorAll('.stars').forEach((sv,j)=>{for(let i=0;i<40;i++){const x=(i*233+j*97)%1080, y=(i*421+j*151)%1920, r=2+(i%4);
+  STARS.push({e:el('circle',{cx:x,cy:y,r,fill:i%9?'#D6E2FF':'#FFE7A0',opacity:.5},sv),x,y,i,j});}});
+function stars(t){STARS.forEach(s=>{s.e.setAttribute('cy',f2(((s.y-t*(30+s.i%5*12))%1920+1920)%1920)); s.e.setAttribute('opacity',f2(0.25+0.45*(0.5+0.5*Math.sin(t*3+s.i))));});}
+
+// ---------- zoom punches + glitch (registry zoom-through / rgb-glitch-text, adapted) + camera kick on graphic matches ----------
+const PUNCH=[K.ue,K.thing,K.kao+0.95], HOOKP=K.thamngai;
+const GL=[K.chok], GLD=0.134; // 4 frames
+const GOFF=[[10,-8,-14],[-8,10,-6],[12,-6,-16],[-6,6,-8]];
+const KICK=SC.filter(s=>s.in==='match'&&!s.kind).map(s=>s.a);
+function fx(t){
+  let p=0; PUNCH.forEach(a=>{const u=t-a; if(u>=0&&u<0.8)p+=0.085*Math.exp(-u*7)*Math.cos(u*13);});
+  {const u=t-HOOKP; if(u>=0&&u<0.8)p+=0.04*Math.exp(-u*6)*Math.sin(u*9);}
+  KICK.forEach(a=>{const u=t-a; if(u>=0&&u<0.5)p+=0.035*Math.exp(-u*9);});
+  let gi=-1; GL.forEach(a=>{if(t>=a&&t<a+GLD)gi=Math.floor((t-a)*30);});
+  const st=$('stage');
+  if(gi>=0){const o=GOFF[gi%4]; $('rgbR').setAttribute('dx',o[0]); $('rgbB').setAttribute('dx',o[1]); st.style.filter='url(#rgbx)';
+    st.style.transform=`translateX(${o[2]}px) scale(${(1+p).toFixed(4)})`;}
+  else { st.style.filter='none'; st.style.transform=`scale(${(1+p).toFixed(4)})`; }
+  ['gb0','gb1','gb2'].forEach((id,i)=>{const b=$(id); if(gi<0){b.style.opacity='0';return;}
+    const y=[(300+gi*410)%1500,(820+gi*290)%1500,(560+gi*530)%1500][i]+120, h=[26,60,14][i];
+    b.style.top=y+'px'; b.style.height=h+'px'; b.style.background=['#22d3ee','#ef4444','#FFFFFF'][i]; b.style.opacity=['.55','.45','.6'][i];
+    b.style.transform=`translateX(${(i%2?-1:1)*(20+gi*9)}px)`;});
+}
+
+// ---------- hook title: complete at frame 0 (no fade-in), breathes 1.0<->1.04, back in the last ~0.3 s (loop) ----------
+const TL=[['tl1',262,138],['tl2',436,176]];
+TL.forEach(([id,y,s])=>{$(id).style.top=y+'px'; $(id).style.fontSize=s+'px';});
+const TBACK=DUR-0.3;
+function title(t){
+  let o,sc;
+  if(t<TBACK){ const out=eo((t-(T.fart-0.04))/0.12); o=1-out; sc=1+0.25*out; }
+  else { const a=S(t-TBACK,26,0.8); o=clamp(a*1.4); sc=1+0.12*(1-a); }
+  show($('title'),o); show($('tshade'),t<TBACK?o:clamp((t-TBACK)/0.2));
+  const br=1+0.04*(0.5-0.5*Math.cos(t*2*Math.PI/0.9)), live=t<TBACK?1:0;
+  // "ทำไงดี?" gets a kick on the word
+  const kk=(t>=K.thamngai&&t<T.fart)?0.07*Math.exp(-(t-K.thamngai)*6)*Math.cos((t-K.thamngai)*14):0;
+  TL.forEach(([id],i)=>{const e=$(id);
+    e.style.transform=`translateY(${f2(live*3*Math.sin(t*3+i))}px) rotate(${f2(i===1?-1.5*live*Math.sin(t*2.4):0)}deg) scale(${((t<TBACK?br:1)*sc*(1+(i===1?kk:0))).toFixed(4)})`;});
+}
+
+// ---------- helpers drawn behind the blob ----------
+// float: Earth panel (top) a ghost drop falls (arrow down), space panel (bottom) the blob just floats
+const GHOST=el('g',{opacity:0},G);
+el('path',{d:'M0 -190 C40 -120 150 -40 150 50 C150 140 85 190 0 190 C-85 190 -150 140 -150 50 C-150 -40 -40 -120 0 -190 Z',fill:'rgba(255,231,160,.35)',stroke:'#FFE7A0','stroke-width':10,'stroke-dasharray':'26 18'},GHOST);
+const GARW=el('use',{href:'#ic-arrow-down',x:-60,y:-60,width:120,height:120,color:'#fff',opacity:0},G);
+function floatF(t){
+  const v=win(t,T.float,T.toilet,BOUNCE), c=$('cmp');
+  if(show(c,clamp(v*1.6))) c.style.transform=`translateY(${f2(50*(1-clamp(v))+5*Math.sin(t*1.9))}px) scale(${f2(Math.max(0.001,0.88+0.12*v))})`;
+  const o=clamp(v*2); if(o<0.01){GHOST.setAttribute('opacity','0');GARW.setAttribute('opacity','0');return;}
+  const ph=(((t-T.float)*1.1)%1+1)%1, y=lerp(400,620,ph*ph);
+  GHOST.setAttribute('opacity',f2(o*clamp(ph*6)*(1-clamp((ph-0.8)/0.2)))); GHOST.setAttribute('transform',`translate(470 ${f2(y)}) scale(0.4)`);
+  GARW.setAttribute('opacity',f2(o)); GARW.setAttribute('transform',`translate(${f2(680)} ${f2(500+14*Math.sin(t*8))})`);
+}
+// suction: fan spins up on "ลมดูด", spiral wind arcs, air particles pulled in
+const FAN=el('g',{opacity:0},G);
+const fanGlow=el('circle',{r:200,fill:'#7FD3FF',opacity:0},FAN);
+el('circle',{r:160,fill:'#0E1A3C',stroke:INK,'stroke-width':12},FAN);
+const fanRing=el('circle',{r:140,fill:'none',stroke:'#7C879E','stroke-width':8},FAN);
+const fanRot=el('g',{},FAN); const fanIc=el('use',{href:'#ic-fan',x:-115,y:-115,width:230,height:230,color:'#7C879E'},fanRot);
+const ARCS=[0,1,2].map(i=>el('path',{d:`M${200+i*70} 0 A${200+i*70} ${200+i*70} 0 0 1 ${-(200+i*70)*0.5} ${(200+i*70)*0.866}`,fill:'none',stroke:'#BFEAFF','stroke-width':12-i*3,'stroke-linecap':'round','stroke-dasharray':'60 40',opacity:0},G));
+const fanS=track(0,[[T.suction,1,BOUNCE],[T.funnel,0,OUT]]);
+const FANY=560;
+function fanF(t){
+  const s=fanS(t); if(s<0.01){FAN.setAttribute('opacity','0');ARCS.forEach(a=>a.setAttribute('opacity','0'));return;} FAN.setAttribute('opacity','1');
+  const on=t>=K.lomdut?clamp(S(t-K.lomdut,10,1)):0;
+  FAN.setAttribute('transform',`translate(540 ${f2(FANY+6*Math.sin(t*2.2))}) scale(${f2(s)})`);
+  const u=Math.max(0,t-K.lomdut), ang=t<K.lomdut?8*Math.sin(t*3):1500*(u-(1-Math.exp(-3*u))/3);
+  fanRot.setAttribute('transform',`rotate(${f2(ang)})`);
+  fanIc.setAttribute('color',mix('#7C879E','#F4F8FF',on)); fanRing.setAttribute('stroke',mix('#7C879E','#7FD3FF',on));
+  fanGlow.setAttribute('opacity',f2(0.22*on*(0.8+0.2*Math.sin(t*12))));
+  ARCS.forEach((a,i)=>{a.setAttribute('opacity',f2(0.7*on*s)); a.setAttribute('transform',`translate(540 ${FANY}) rotate(${f2(-ang*0.35-i*120)})`);});
+}
+// 98% ring (counter stops on 98, the sourced number)
+const RING=el('g',{opacity:0},G);
+el('circle',{r:250,fill:'none',stroke:'rgba(255,255,255,.14)','stroke-width':46},RING);
+const RC=2*Math.PI*250;
+const ringArc=el('circle',{r:250,fill:'none',stroke:CBL,'stroke-width':46,'stroke-linecap':'round','stroke-dasharray':`${RC} ${RC}`,'stroke-dashoffset':RC,transform:'rotate(-90)'},RING);
+const RINGY=700;
+const ringP=t=>t<K.kao?0:0.98*eio((t-K.kao)/0.95);
+function ringF(t){
+  const v=win(t,T.pct,T.pettit,BOUNCE); if(v<0.003){RING.setAttribute('opacity','0');show($('pct'),0);return;}
+  RING.setAttribute('opacity',f2(clamp(v*2))); RING.setAttribute('transform',`translate(540 ${f2(RINGY+5*Math.sin(t*2))}) scale(${f2(Math.max(0.001,0.7+0.3*v))})`);
+  const p=ringP(t), done=t>=K.kao+0.95?clamp(S(t-K.kao-0.95,POP[0],POP[1])):0;
+  ringArc.setAttribute('stroke-dashoffset',f2(RC*(1-p))); ringArc.setAttribute('stroke',mix(CBL,GRN,done));
+  const e=$('pct'); show(e,clamp(v*2)); e.textContent=Math.round(p*100)+'%';
+  e.style.transform=`translateY(${f2(RINGY-100)}px) scale(${f2(Math.max(0.001,(0.7+0.3*v)*(1+0.12*Math.sin(Math.PI*clamp(done*1.0)))))})`;
+  e.style.color=t>=K.kao+0.95?YEL:'#fff';
+}
+
+// ---------- the blob (one character) ----------
+const DROP='M0 -190 C40 -120 150 -40 150 50 C150 140 85 190 0 190 C-85 190 -150 140 -150 50 C-150 -40 -40 -120 0 -190 Z';
+const CLOUD='M-170 100 C-245 100 -260 10 -200 -20 C-240 -95 -150 -150 -95 -110 C-80 -175 20 -190 55 -125 C100 -185 205 -150 195 -70 C260 -55 265 50 200 80 C205 140 115 160 70 120 C40 165 -50 165 -85 125 C-120 155 -185 140 -170 100 Z';
+const CUP='M-150 -130 L150 -130 L148 -80 C215 -85 245 -30 230 20 C215 70 175 85 135 75 C118 140 70 175 0 175 C-70 175 -125 140 -140 70 C-150 20 -152 -60 -150 -130 Z';
+const BUB='M-340 -160 Q-380 -160 -380 -120 L-380 120 Q-380 160 -340 160 L-150 160 L-230 250 L-60 160 L340 160 Q380 160 380 120 L380 -120 Q380 -160 340 -160 Z';
+const FL=window.flubber, OPT={maxSegmentLength:6};
+const D2C=FL.interpolate(DROP,CLOUD,OPT), C2D=FL.interpolate(CLOUD,DROP,OPT), D2U=FL.interpolate(DROP,CUP,OPT), U2B=FL.interpolate(CUP,BUB,OPT);
+const BACK=DUR-0.5; // bubble text fades, bubble shrinks away before the hook title returns
+const CLG=el('g',{},G);
+const cShadow=el('ellipse',{cx:0,cy:215,rx:140,ry:18,fill:'#000',opacity:.25},CLG);
+const cBody=el('path',{d:DROP,fill:CY_,stroke:INK,'stroke-width':9,'stroke-linejoin':'round','vector-effect':'non-scaling-stroke'},CLG);
+const cHi=el('path',{d:'M-95 -10 q10 -60 55 -95',fill:'none',stroke:'#fff','stroke-width':18,'stroke-linecap':'round',opacity:.7},CLG);
+// cup details (fade in with the morph): coffee surface, handle hole, steam
+const CUPD=el('g',{opacity:0},CLG);
+el('ellipse',{cx:0,cy:-122,rx:138,ry:20,fill:'#7A4A2A',stroke:INK,'stroke-width':6},CUPD);
+el('ellipse',{cx:178,cy:-5,rx:24,ry:40,fill:'#1A2558',stroke:INK,'stroke-width':6},CUPD);
+const STEAM=[-60,0,60].map(x=>el('path',{d:`M${x} -170 q-18 -24 0 -48 t0 -48`,fill:'none',stroke:'#fff','stroke-width':12,'stroke-linecap':'round',opacity:0},CLG));
+// face
+const FACE=el('g',{},CLG);
+const eyes=[-48,48].map(x=>{const g=el('g',{},FACE); const e=el('ellipse',{cx:x,cy:40,rx:15,ry:20,fill:INK},g); const h=el('circle',{cx:x+5,cy:32,r:5,fill:'#fff'},g); return {g,e,h,x};});
+const brows=[-48,48].map((x,i)=>el('path',{d:i?`M${x-20} 2 L${x+18} -8`:`M${x+20} 2 L${x-18} -8`,fill:'none',stroke:INK,'stroke-width':8,'stroke-linecap':'round',opacity:0},FACE));
+const mSmile=el('path',{d:'M-30 86 Q0 114 30 86',fill:'none',stroke:INK,'stroke-width':8,'stroke-linecap':'round'},FACE);
+const mWavy=el('path',{d:'M-34 96 q8.5 -12 17 0 t17 0 t17 0 t17 0',fill:'none',stroke:INK,'stroke-width':7,'stroke-linecap':'round',opacity:0},FACE);
+const mO=el('ellipse',{cx:0,cy:96,rx:18,ry:24,fill:INK,opacity:0},FACE);
+const blush=[-88,88].map(x=>el('ellipse',{cx:x,cy:78,rx:22,ry:11,fill:'#FF7FA8',opacity:.5},FACE));
+// stink lines (fart callback), sparkles (drinking water)
+const STL=[-70,10,90].map(()=>el('path',{d:'M0 0 q-16 -22 0 -44 t0 -44 t0 -44',fill:'none',stroke:CG,'stroke-width':12,'stroke-linecap':'round',opacity:0},G));
+const SPARK=[...Array(4)].map(()=>el('path',{d:'M0 -30 L8 -8 L30 0 L8 8 L0 30 L-8 8 L-30 0 L-8 -8 Z',fill:'#fff',stroke:INK,'stroke-width':4,opacity:0},G));
+const AIR=[...Array(12)].map(()=>el('circle',{r:12,fill:'#BFEAFF',stroke:INK,'stroke-width':3,opacity:0},G));
+// orbit path (year)
+const ORB=el('ellipse',{cx:540,cy:820,rx:250,ry:90,fill:'none',stroke:'rgba(255,255,255,.45)','stroke-width':6,'stroke-dasharray':'18 16',opacity:0},G);
+G.insertBefore(ORB,CLG);
+
+const cX=track(720,[[T.fart,540,OUT],[T.float,540,OUT],[T.suction,540,OUT],[T.bag,540,OUT],[T.yesterday,540,OUT]]);
+const cY=track(1000,[[T.fart,830,MORPH],[K.ue,880,BOUNCE],[T.float,900,OUT],[T.suction,1010,OUT],[K.lomdut+0.15,FANY,SLOW],
+  [T.bag,470,OUT],[K.ue2,600,MORPH],[K.thung,800,FAST],[T.shock,800,OUT],[T.notrash,930,OUT],[K.thing-0.04,520,BOUNCE],
+  [T.drink,800,OUT],[T.year,820,OUT],[T.yesterday,820,OUT],[T.dare,860,OUT],[T.comment,640,MORPH]]);
+const cS=track(0,[[T.what+0.08,0.6,BOUNCE],[T.fart,0.95,BOUNCE],[K.ue,1.3,BOUNCE],[T.gravity,0,OUT],[T.float,0.5,BOUNCE],[T.toilet,0,OUT],
+  [T.suction,0.75,BOUNCE],[K.lomdut+0.15,0.14,SLOW],[T.funnel,0,OUT],[T.bag,0.55,POP],[K.ue2,0.42,MORPH],[K.thung,0,FAST],
+  [T.shock,0.95,BOUNCE],[T.notrash,0,OUT],[T.notrash+0.25,0.5,FAST],[T.filter,0,OUT],[T.drink,0.85,BOUNCE],[T.year,0.42,MORPH],[T.station,0,OUT],
+  [T.pct,0.22,POP],[T.pettit,0,OUT],[T.yesterday,0.85,BOUNCE],[T.coffee,0,OUT],[T.dare,0.95,BOUNCE],[T.comment,1.0,BOUNCE],[BACK,0,FAST]]);
+const cSt=track(1,[[K.lomdut,1.3,MORPH],[T.funnel,1,OUT]]); // stretched toward the fan
+function blobShape(t){
+  if(t<K.tod) return [DROP,0];
+  if(t<K.ue){const p=clamp(S(t-K.tod,12,0.8)); return [D2C(p),p];}
+  if(t<K.kafae){const p=clamp(S(t-K.ue,15,0.7)); return [C2D(p),1-p];}
+  if(t<T.comment){return [D2U(clamp(S(t-K.kafae,15,0.75))),0];}
+  return [U2B(clamp(S(t-T.comment,18,0.85))),0];
+}
+function blobCol(t){
+  if(t<K.tod) return CY_;
+  if(t<K.ue) return mix(CY_,CG,S(t-K.tod,12,0.9));
+  if(t<K.namduem) return mix(CG,CY_,S(t-K.ue,12,0.9));
+  if(t<K.kafae) return mix(CY_,CBL,S(t-K.namduem,10,0.95));
+  if(t<T.comment) return mix(CBL,CUPW,S(t-K.kafae,15,0.85));
+  return mix(CUPW,CW,S(t-T.comment,18,0.85));
+}
+// expression per shot: 0 smile, 1 worried, 2 shocked "O"
+function expr(t){
+  if(t<T.fart) return 1; if(t<T.float) return 1; if(t<T.suction) return 0; if(t<T.bag) return 2;
+  if(t<T.shock) return 0; if(t<T.notrash) return 2; return 0;
+}
+function blobPos(t){
+  let x=cX(t), y=cY(t), rot=0;
+  if(t>=T.what&&t<T.fart){ x+=6*Math.sin(t*3); }
+  if(t>=T.float&&t<T.toilet){ const u=t-T.float; y-=60*eo(u/1.2)+14*Math.sin(t*2.6); x+=40*Math.sin(u*1.8); rot=12*Math.sin(u*1.6); }
+  if(t>=K.lomdut&&t<T.funnel){ const u=t-K.lomdut, R=170*Math.exp(-1.4*u), a=7*u; x+=R*Math.cos(a); y+=R*0.55*Math.sin(a); rot=u*540; }
+  if(t>=T.year&&t<T.station){ const u=t-T.year, a=Math.PI/2+u*2.6; x=540+250*Math.cos(a); y=820+90*Math.sin(a); }
+  if(t>=T.pct&&t<T.pettit){ const a=-Math.PI/2+2*Math.PI*ringP(t); x=540+250*Math.cos(a); y=RINGY+5*Math.sin(t*2)+250*Math.sin(a); }
+  if(t>=T.notrash&&t<K.thing-0.04){ x+=4*Math.sin(t*40)*(t>K.maidai?1:0); }
+  return [x,y,rot];
+}
+function blob(t){
+  const s=cS(t); STL.forEach(p=>p.setAttribute('opacity','0'));
+  if(s<0.02){CLG.setAttribute('opacity','0');[...AIR,...SPARK,ORB].forEach(e=>e.setAttribute('opacity','0'));return [0,0,0];} CLG.setAttribute('opacity','1');
+  const [d,cloud]=blobShape(t); const st=cSt(t);
+  const cup=t>=K.kafae&&t<T.comment?clamp(S(t-K.kafae,15,0.85)):(t>=T.comment?1-clamp(S(t-T.comment,18,0.85)*2):0), bub=t>=T.comment?clamp(S(t-T.comment,18,0.85)):0;
+  const amb=1-bub;
+  const [x0,y0,rot]=blobPos(t);
+  const x=x0+5*Math.sin(t*2.1)*amb, y=y0+8*Math.sin(t*1.7+1)*amb, r=rot+3*Math.sin(t*1.2)*amb;
+  const land=(t>=K.ue&&t<T.gravity)?0.12*Math.exp(-(t-K.ue-0.1)*6)*Math.sin(Math.max(0,t-K.ue-0.1)*16):0; // heavy squash
+  const breathe=1+0.035*Math.sin(t*4.2)*amb+land;
+  CLG.setAttribute('transform',`translate(${f2(x)} ${f2(y)}) rotate(${f2(r)}) scale(${f2(s*breathe/Math.sqrt(st))} ${f2(s*st/breathe)})`);
+  cBody.setAttribute('d',d); cBody.setAttribute('fill',blobCol(t));
+  const water=t>=K.namduem&&t<K.kafae?clamp(S(t-K.namduem,10,0.95)):0;
+  cHi.setAttribute('opacity',f2((0.55+0.4*water)*(1-cloud)*(1-cup)*(1-bub))); cShadow.setAttribute('opacity',f2(0.25*(1-bub)));
+  CUPD.setAttribute('opacity',f2(clamp(cup*1.5-0.5)));
+  STEAM.forEach((p,i)=>{const ph=(((t-K.kafae)*0.9+i*0.33)%1+1)%1; p.setAttribute('opacity',f2(clamp(cup*1.5-0.5)*clamp(ph*5)*(1-clamp((ph-0.7)/0.3))));
+    p.setAttribute('transform',`translate(0 ${f2(-40*ph)})`);});
+  const ex=expr(t), fo=t>=T.comment?0:(t>=K.kafae?1-clamp(cup*2.5):(1-cloud));
+  FACE.setAttribute('opacity',f2(fo));
+  brows.forEach(b=>b.setAttribute('opacity',ex===1?'1':'0'));
+  mSmile.setAttribute('opacity',ex===0?'1':'0'); mWavy.setAttribute('opacity',ex===1?'1':'0'); mO.setAttribute('opacity',ex===2?'1':'0');
+  const blink=((t*0.7)%1)>0.96?0.15:1;
+  eyes.forEach(o=>{o.e.setAttribute('ry',f2((ex===2?26:20)*blink)); o.e.setAttribute('rx',ex===2?'18':'15');});
+  // stink lines while the blob is the green cloud (fart shot)
+  if(cloud>0.3&&t<T.worse+0.2) STL.forEach((p,i)=>{const ph=(((t-K.tod)*0.9+i*0.33)%1+1)%1;
+    p.setAttribute('opacity',f2(cloud*clamp(ph*5)*(1-clamp((ph-0.7)/0.3))));
+    p.setAttribute('transform',`translate(${f2(x+[-70,10,90][i]*s)} ${f2(y-150*s-60*ph)}) scale(${f2(Math.max(0.3,s*0.8))})`);});
+  // air particles: pulled from below into the fan (suction)
+  AIR.forEach((a,i)=>{let o=0,ax=0,ay=0;
+    if(t>=K.lomdut&&t<T.funnel){const ph=(((t-K.lomdut)*1.6+i/12)%1+1)%1, ang=i*0.52+ph*5, R=lerp(380,40,ph); ax=540+R*Math.cos(ang); ay=FANY+R*0.7*Math.sin(ang)+lerp(200,0,ph); o=clamp(ph*6)*(1-clamp((ph-0.8)/0.2));}
+    a.setAttribute('opacity',f2(o)); if(o>0){a.setAttribute('cx',f2(ax)); a.setAttribute('cy',f2(ay));}});
+  // sparkles: drinking water
+  SPARK.forEach((p,i)=>{const a=K.namduem+0.1+i*0.12, u=t-a, on=u>0&&t<T.year; const sc=on?S(u,16,0.5)*(1-clamp((u-0.9)/0.3)):0;
+    const ang=-150+i*100; p.setAttribute('transform',`translate(${f2(x+250*s*Math.cos(ang*Math.PI/180)+40)} ${f2(y-40+230*s*Math.sin(ang*Math.PI/180))}) rotate(${f2(t*120)}) scale(${f2(Math.max(0,sc))})`); p.setAttribute('opacity',on?'1':'0');});
+  ORB.setAttribute('opacity',f2(0.8*win(t,T.year,T.station,POP)));
+  return [x,y,s];
+}
+
+// ---------- helpers drawn in front of the blob: astronaut, bag, bin, "!" ----------
+// the astronaut (flat drawing, same as the space-fart episode) next to the worried drop (what shot)
+const AS=el('g',{opacity:0},G);
+const limb=(d,w=46)=>{el('path',{d,fill:'none',stroke:INK,'stroke-width':w+16,'stroke-linecap':'round'},AS);el('path',{d,fill:'none',stroke:SUIT,'stroke-width':w,'stroke-linecap':'round'},AS);};
+el('rect',{x:-100,y:-235,width:200,height:190,rx:34,fill:SUIT2,stroke:INK,'stroke-width':8},AS);
+limb('M-38 -10 Q-62 80 -36 160'); limb('M38 -10 Q92 70 128 128');
+el('ellipse',{cx:-36,cy:172,rx:42,ry:26,fill:SUIT2,stroke:INK,'stroke-width':8},AS);
+el('ellipse',{cx:136,cy:142,rx:40,ry:26,fill:SUIT2,stroke:INK,'stroke-width':8,transform:'rotate(38 136 142)'},AS);
+el('rect',{x:-82,y:-190,width:164,height:205,rx:48,fill:SUIT,stroke:INK,'stroke-width':8},AS);
+limb('M-66 -150 Q-150 -120 -168 -40',42); limb('M66 -150 Q130 -120 150 -60',42);
+el('circle',{cx:-170,cy:-32,r:27,fill:SUIT2,stroke:INK,'stroke-width':7},AS); el('circle',{cx:152,cy:-50,r:27,fill:SUIT2,stroke:INK,'stroke-width':7},AS);
+el('rect',{x:-44,y:-132,width:88,height:52,rx:10,fill:'#2A4A8C',stroke:INK,'stroke-width':6},AS);
+el('circle',{cx:-20,cy:-106,r:8,fill:YEL},AS); el('circle',{cx:4,cy:-106,r:8,fill:RED},AS); el('circle',{cx:26,cy:-106,r:8,fill:GRN},AS);
+el('path',{d:'M-80 -18 H80',stroke:INK,'stroke-width':7,'stroke-linecap':'round'},AS);
+el('circle',{cx:0,cy:-262,r:88,fill:SUIT,stroke:INK,'stroke-width':9},AS);
+el('ellipse',{cx:8,cy:-258,rx:62,ry:50,fill:'#16306E',stroke:INK,'stroke-width':7},AS);
+el('path',{d:'M-26 -286 q20 -20 50 -14',fill:'none',stroke:'#fff','stroke-width':9,'stroke-linecap':'round',opacity:.85},AS);
+const SWEAT=el('path',{d:'M0 -26 C10 -10 18 0 18 10 A18 18 0 0 1 -18 10 C-18 0 -10 -10 0 -26 Z',fill:'#BFEAFF',stroke:INK,'stroke-width':5},AS);
+const aS=track(0,[[T.what+0.04,0.78,BOUNCE],[T.fart,0,OUT]]);
+function astro(t){
+  const s=aS(t); if(s<0.02){AS.setAttribute('opacity','0');return;} AS.setAttribute('opacity','1');
+  const wig=(t>=K.thamngai&&t<K.thamngai+0.5)?5*Math.sin(t*60):0;
+  AS.setAttribute('transform',`translate(${f2(330+7*Math.sin(t*1.9)+wig)} ${f2(1040+10*Math.sin(t*1.4))}) rotate(${f2(-6+3*Math.sin(t*1.1))}) scale(${f2(s)})`);
+  const ph=((t*1.4)%1+1)%1; SWEAT.setAttribute('transform',`translate(110 ${f2(-330+40*ph)})`); SWEAT.setAttribute('opacity',f2(clamp(ph*5)*(1-clamp((ph-0.7)/0.3))));
+}
+// bag: clean cartoon bag, the blob is pulled in on "ถุง" and the neck ties shut
+const BAG=el('g',{opacity:0},G);
+el('path',{d:'M-120 -100 C-175 -20 -185 120 -120 170 L120 170 C185 120 175 -20 120 -100 Z',fill:'#DCE6F5',stroke:INK,'stroke-width':10,'stroke-linejoin':'round'},BAG);
+el('path',{d:'M-60 40 q20 30 0 70',fill:'none',stroke:'#fff','stroke-width':14,'stroke-linecap':'round',opacity:.7},BAG);
+const NECK=el('g',{},BAG);
+el('path',{d:'M-120 -100 L-150 -170 L150 -170 L120 -100 Z',fill:'#C9D6EC',stroke:INK,'stroke-width':10,'stroke-linejoin':'round'},NECK);
+const TIE=el('rect',{x:-70,y:-128,width:140,height:34,rx:17,fill:YEL,stroke:INK,'stroke-width':7,opacity:0},BAG);
+const bagS=track(0,[[T.bag,0.95,BOUNCE],[T.shock,0,OUT]]);
+function bagF(t){
+  const s=bagS(t); if(s<0.01){BAG.setAttribute('opacity','0');return;} BAG.setAttribute('opacity','1');
+  const shut=t>=K.thung+0.12?clamp(S(t-K.thung-0.12,20,0.6)):0;
+  const jig=t>=K.thung?8*Math.exp(-(t-K.thung)*5)*Math.sin((t-K.thung)*30):0;
+  BAG.setAttribute('transform',`translate(540 ${f2(890+5*Math.sin(t*2))}) rotate(${f2(jig*0.5)}) scale(${f2(s*(1+0.01*jig))} ${f2(s*(1-0.01*jig))})`);
+  NECK.setAttribute('transform',`translate(0 -100) scale(${f2(1-0.55*shut)} 1) translate(0 100)`);
+  TIE.setAttribute('opacity',f2(shut)); TIE.setAttribute('transform',`translate(0 -4) scale(${f2(Math.max(0.001,shut))} 1)`);
+}
+// bin: own drawing (no icon), the blob bounces out on "ทิ้ง", red X badge on "ไม่ได้ทิ้ง"
+const BIN=el('g',{opacity:0},G);
+el('path',{d:'M-140 -110 L140 -110 L112 170 L-112 170 Z',fill:'#5B6B8C',stroke:INK,'stroke-width':10,'stroke-linejoin':'round'},BIN);
+[-60,0,60].forEach(x=>el('path',{d:`M${x} -60 L${x*0.85} 120`,stroke:'#3B4866','stroke-width':14,'stroke-linecap':'round'},BIN));
+const LID=el('g',{},BIN);
+el('rect',{x:-160,y:-150,width:320,height:40,rx:14,fill:'#7C8BAA',stroke:INK,'stroke-width':10},LID);
+el('rect',{x:-40,y:-178,width:80,height:30,rx:10,fill:'#7C8BAA',stroke:INK,'stroke-width':8},LID);
+const XB=el('g',{opacity:0},G);
+el('circle',{r:66,fill:RED,stroke:INK,'stroke-width':9},XB);
+el('use',{href:'#ic-circle-x',x:-50,y:-50,width:100,height:100,color:'#fff'},XB);
+const binS=track(0,[[T.notrash,1,BOUNCE],[T.filter,0,OUT]]);
+function binF(t){
+  const s=binS(t); if(s<0.01){BIN.setAttribute('opacity','0');XB.setAttribute('opacity','0');return;} BIN.setAttribute('opacity','1');
+  BIN.setAttribute('transform',`translate(540 ${f2(930+4*Math.sin(t*2.4))}) scale(${f2(s)})`);
+  const open=t>=K.thing-0.08?clamp(S(t-K.thing+0.08,16,0.45)):0;
+  LID.setAttribute('transform',`translate(-160 -110) rotate(${f2(-70*open)}) translate(160 110)`);
+  const xv=t>=K.maidai?clamp(S(t-K.maidai,POP[0],POP[1])):0; XB.setAttribute('opacity',f2(clamp(xv*2)*s));
+  XB.setAttribute('transform',`translate(${f2(700)} ${f2(1000)}) rotate(${f2(-12+6*Math.sin(t*4))}) scale(${f2(Math.max(0.001,xv))})`);
+}
+// "!" (drawn, not text) next to the shocked blob
+const EXC=el('g',{opacity:0},G);
+el('path',{d:'M-26 -150 L26 -150 L16 30 L-16 30 Z',fill:YEL,stroke:INK,'stroke-width':10,'stroke-linejoin':'round'},EXC);
+el('circle',{cx:0,cy:80,r:28,fill:YEL,stroke:INK,'stroke-width':10},EXC);
+function excF(t){const v=win(t,K.chok,T.notrash,BOUNCE); EXC.setAttribute('opacity',f2(clamp(v*2)));
+  EXC.setAttribute('transform',`translate(${f2(810+4*Math.sin(t*37))} ${f2(640)}) rotate(${f2(12+4*Math.sin(t*5))}) scale(${f2(Math.max(0.001,v))})`);}
+// filter: bubbles rising over the water-recovery rack
+const BUBS=[...Array(12)].map((_,i)=>el('circle',{r:10+(i*7)%22,fill:'rgba(191,234,255,.25)',stroke:'#E8F7FF','stroke-width':5,opacity:0},G));
+function bubblesF(t){const on=t>=T.filter-0.05&&t<T.drink+0.1;
+  BUBS.forEach((b,i)=>{if(!on){b.setAttribute('opacity','0');return;}
+    const ph=(((t-T.filter)*0.9+i*0.083)%1+1)%1; b.setAttribute('cx',f2(200+((i*157)%680)+18*Math.sin(t*4+i))); b.setAttribute('cy',f2(1400-900*ph));
+    b.setAttribute('opacity',f2(clamp(ph*6)*(1-clamp((ph-0.8)/0.2))));});}
+// cup: recycle loop arrows around it (yesterday shot)
+const LOOPA=el('g',{opacity:0},G);
+el('path',{d:'M-260 -60 A270 270 0 0 1 200 -170',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round'},LOOPA);
+el('path',{d:'M168 -210 L210 -168 L156 -146',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round','stroke-linejoin':'round'},LOOPA);
+el('path',{d:'M260 60 A270 270 0 0 1 -200 170',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round'},LOOPA);
+el('path',{d:'M-168 210 L-210 168 L-156 146',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round','stroke-linejoin':'round'},LOOPA);
+function loopA(t){const v=win(t,K.muewan,T.coffee,POP); LOOPA.setAttribute('opacity',f2(clamp(v*2)));
+  LOOPA.setAttribute('transform',`translate(540 820) rotate(${f2((t-K.muewan)*160)}) scale(${f2(Math.max(0.001,v))})`);}
+
+// ---------- the pill (one element morphing) ----------
+const PST=[ // [t, text, colour, icon, centre x, centre y, scale]
+  [T.gravity+0.08,'ไม่มีแรงโน้มถ่วง','#A9C6FF','arrow-down',540,320,1.25],
+  [T.float,null],
+  [K.lomdut,'ลมดูด','#7FD3FF','wind',540,300,1.45],
+  [T.funnel,null],
+  [K.namduem,'น้ำดื่ม',GRN,'circle-check',540,330,1.45],
+  [K.y2023,'NASA · 2023',YEL,'calendar',540,330,1.35],
+  [T.station,null],
+];
+const pill=$('pill'),pA=$('pillA'),pB=$('pillB'),pUse=$('pillUse');
+function pillF(t){
+  let i=-1; for(let k=0;k<PST.length;k++) if(t>=PST[k][0]) i=k;
+  if(i<0){pill.style.opacity='0';return;}
+  const cur=PST[i], prv=i>0?PST[i-1]:null, u=t-cur[0];
+  let txt0,txt1,col0,col1,ic0,ic1,x0,x1,y0,y1,k0,k1,s0,s1,p;
+  const sh=st=>st&&st[1]!=null;
+  if(sh(cur)&&sh(prv)){ p=clamp(S(u,15,0.8)); [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); s0=1;s1=1; }
+  else if(sh(cur)){ p=1; [txt1,col1,ic1,x1,y1,k1]=cur.slice(1); txt0=txt1;col0=col1;ic0=ic1;x0=x1;y0=y1;k0=k1; s0=0; s1=1; }
+  else if(sh(prv)){ p=1; [txt0,col0,ic0,x0,y0,k0]=prv.slice(1); txt1=txt0;col1=col0;ic1=ic0;x1=x0;y1=y0;k1=k0; s0=1; s1=0; }
+  else {pill.style.opacity='0';return;}
+  let sc; if(s0===0) sc=S(u,POP[0],POP[1]); else if(s1===0) sc=1-clamp(u/0.08); else sc=1+0.08*Math.sin(clamp(p)*Math.PI);
+  if(sc<0.004){pill.style.opacity='0';return;}
+  const w0=tw(txt0)+136, w1=tw(txt1)+136, w=lerp(w0,w1,p), x=lerp(x0,x1,p), y=lerp(y0,y1,p);
+  pill.style.opacity='1'; pill.style.width=f2(w)+'px'; pill.style.background=mix(col0,col1,p);
+  pill.style.transform=`translate(${f2(x-w/2)}px,${f2(y-48)}px) rotate(${f2(-2+1.2*Math.sin(t*2.3))}deg) scale(${(Math.max(0.001,sc)*lerp(k0,k1,p)).toFixed(4)})`;
+  pA.textContent=txt0; pB.textContent=txt1; pA.style.opacity=f2(1-clamp(p*2.5)); pB.style.opacity=f2(clamp(p*2.5-0.3)); if(txt0===txt1){pA.style.opacity='0';pB.style.opacity='1';}
+  pUse.setAttribute('href','#ic-'+(p<0.5?ic0:ic1));
+}
+
+// ---------- "?" on the blob (what, dare) ----------
+function qmark(t,bx,by,bs){
+  const e=$('qm'); const v=Math.max(win(t,K.thamngai,T.fart,BOUNCE),win(t,T.dare+0.1,T.comment,BOUNCE)); if(!show(e,clamp(v*2)))return;
+  const x=bx+170*bs+40, y=by-200*bs-200;
+  e.style.transform=`translate(${f2(x-100)}px,${f2(y)}px) rotate(${f2(10*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;
+}
+// ---------- photo labels: funnel (ground test) + Pettit name + quote card ----------
+const QW=[...$('qen').children];
+function labels(t){
+  let e=$('flab'), v=win(t,T.funnel+0.04,T.bag,BOUNCE);
+  if(show(e,clamp(v*2))){const w=e.offsetWidth||700; e.style.transform=`translate(${f2(540-w/2)}px,${f2(290)}px) rotate(${f2(-1+0.6*Math.sin(t*2))}deg) scale(${f2(Math.max(0.001,0.8+0.2*v))})`;}
+  e=$('kruai'); v=win(t,K.kruai-0.05,T.bag,BOUNCE);
+  if(show(e,clamp(v*2))) e.style.transform=`translate(${f2(560)}px,${f2(560+6*Math.sin(t*4))}px) rotate(${f2(-4+3*Math.sin(t*3))}deg) scale(${f2(Math.max(0.001,v))})`;
+  KARW.setAttribute('opacity',f2(clamp(v*2))); KARW.setAttribute('transform',`translate(0 ${f2(6*Math.sin(t*4))})`);
+  KARP.setAttribute('stroke-dashoffset',f2(400*(1-clamp(v))));
+  e=$('hname'); v=win(t,T.pettit+0.04,T.quote,BOUNCE);
+  if(show(e,clamp(v*2))) e.style.transform=`translateX(${f2(-80*(1-clamp(v)))}px) rotate(${f2(-1+0.6*Math.sin(t*2))}deg)`;
+  const q=$('qcard'); v=win(t,T.quote,T.yesterday,BOUNCE);
+  if(show(q,clamp(v*1.6))) q.style.transform=`translateY(${f2(60*(1-clamp(v))+7*Math.sin(t*1.8))}px) rotate(${f2(-1.5*(1-clamp(v))+0.7*Math.sin(t*1.2))}deg) scale(${f2(Math.max(0.001,0.85+0.15*v))})`;
+  QW.forEach((w,i)=>{const a=T.quote+0.08+i*0.07, p=t>=a?S(t-a,POP[0],POP[1]):0; w.style.opacity=f2(clamp(p*2)); w.style.transform=`translateY(${f2(20*(1-clamp(p)))}px) scale(${f2(Math.max(0.001,p))})`;});
+  const th=$('qth'), a=T.quote+0.6, p=t>=a?S(t-a,16,0.6):0; th.style.opacity=f2(clamp(p*2)); th.style.transform=`scaleX(${f2(Math.max(0.001,0.6+0.4*p))}) rotate(-1.5deg)`;
+  $('qsrc').style.opacity=f2(clamp((t-T.quote-0.5)/0.2));
+}
+// arrow from the "กรวย" chip to the funnel end in the card (card 150,420 740x740; funnel at card 32%,48% = screen ~387,775)
+const KARW=el('g',{opacity:0},G);
+const KARP=el('path',{d:'M600 660 Q520 700 440 750',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round','stroke-dasharray':'400','stroke-dashoffset':'400'},KARW);
+el('path',{d:'M470 712 L432 756 L490 760',fill:'none',stroke:YEL,'stroke-width':14,'stroke-linecap':'round','stroke-linejoin':'round'},KARW);
+// ---------- comment bubble text (holds into the loop shot, fades before the hook title returns) ----------
+function bubbleText(t,by){
+  const e=$('btext'), v=win(t,T.comment+0.12,BACK-0.06,POP); if(!show(e,clamp(v*2)))return;
+  e.style.transform=`translateY(${f2(by-46)}px) scale(${f2(Math.max(0.001,0.7+0.3*v))}) rotate(${f2(-1.5*Math.sin(t*3))}deg)`;
+}
+
+// ---------- captions: spring in on the word; last chunk clears before the loop seam ----------
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const tau=t-CAPT[i]; const a=S(tau,30,0.6);
+  const fade=i===CAPT.length-1?1-clamp((t-(TBACK-0.1))/0.1):1;
+  capEls[i].style.opacity=f2(fade);
+  capEls[i].style.transform=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)}) rotate(${f2(0.6*Math.sin(t*3))}deg)`;
+}
+
+// draw order: back helpers, blob, front helpers
+[AS,BAG,BIN,XB,EXC,KARW,LOOPA].forEach(g=>G.appendChild(g)); STL.forEach(p=>G.appendChild(p)); SPARK.forEach(p=>G.appendChild(p));
+function render(t){ scenes(t); stars(t); fx(t); title(t); floatF(t); fanF(t); ringF(t); const [bx,by,bs]=blob(t); astro(t); bagF(t); binF(t);
+  excF(t); bubblesF(t); loopA(t); pillF(t); qmark(t,bx,by,bs); labels(t); bubbleText(t,by); captions(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:35.0,duration:35.0,ease:'none'},0);
+render(0);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render(proxy._t));
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>

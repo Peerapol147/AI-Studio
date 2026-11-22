@@ -1,0 +1,43 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"/><link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<!-- Thumbnail (1 frame, 1080x1920) = thumbnail.md concept A, built like frame 0: Chris Cassidy (face visible, smiling)
+     in the station as the same rounded tilted card on its own blurred plate, same space grade (video/assets/hook-*.jpg);
+     title zone Y 240-700: "ปวดอึ" / "ในอวกาศ?" Kanit 900 white, dark outline; the episode's ONE shape (cute pale-yellow
+     drop, worried face, own drawing, never waste) peeks over the card corner with a yellow "?".
+     Nothing in Y 0-240 / 1440-1920, nothing important right of X 900 below Y 840. No NASA logo. -->
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden}
+#root{position:relative;width:1080px;height:1920px;font-family:'Kanit';overflow:hidden;background:#071027}
+#bg{position:absolute;left:-40px;top:-70px;width:1160px;height:2060px;object-fit:cover}
+.card{position:absolute;left:140px;top:700px;width:760px;height:720px;overflow:hidden;border-radius:46px;transform:rotate(-2deg);
+  box-shadow:0 0 0 10px #F4F8FF,0 0 0 19px #0A0E1C,0 36px 80px rgba(0,0,0,.65)}
+.card img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;left:0;top:0;width:1080px;height:800px;background:linear-gradient(rgba(4,8,26,.85) 0%,rgba(4,8,26,.6) 60%,rgba(4,8,26,0) 100%)}
+.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:900;line-height:1;white-space:nowrap;color:#fff;
+  -webkit-text-stroke:32px #0A0E1C;paint-order:stroke fill;text-shadow:0 16px 0 rgba(0,0,0,.5)}
+#t1{top:236px;font-size:270px}
+#t2{top:500px;font-size:170px}
+#fx{position:absolute;left:0;top:0;width:1080px;height:1920px}
+</style></head><body>
+<div id="root" data-composition-id="thumb" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<img class="clip" id="bg" data-start="0" data-duration="1" data-track-index="0" src="assets/hook-bg.jpg" alt=""/>
+<div class="card"><img src="assets/hook-card.jpg" alt=""/></div>
+<div class="shade"></div>
+<svg id="fx" viewBox="0 0 1080 1920">
+  <g transform="translate(745 1255) rotate(10) scale(0.6)">
+    <ellipse cx="0" cy="215" rx="140" ry="18" fill="#000" opacity=".3"/>
+    <path d="M0 -190 C40 -120 150 -40 150 50 C150 140 85 190 0 190 C-85 190 -150 140 -150 50 C-150 -40 -40 -120 0 -190 Z"
+      fill="#FFE7A0" stroke="#0A0E1C" stroke-width="15" stroke-linejoin="round"/>
+    <path d="M-95 -10 q10 -60 55 -95" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" opacity=".7"/>
+    <path d="M-28 2 L-66 -8 M28 2 L66 -8" fill="none" stroke="#0A0E1C" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="-48" cy="40" rx="16" ry="21" fill="#0A0E1C"/><ellipse cx="48" cy="40" rx="16" ry="21" fill="#0A0E1C"/>
+    <circle cx="-43" cy="32" r="5" fill="#fff"/><circle cx="53" cy="32" r="5" fill="#fff"/>
+    <path d="M-34 96 q8.5 -12 17 0 t17 0 t17 0 t17 0" fill="none" stroke="#0A0E1C" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="-88" cy="78" rx="22" ry="11" fill="#FF7FA8" opacity=".55"/><ellipse cx="88" cy="78" rx="22" ry="11" fill="#FF7FA8" opacity=".55"/>
+  </g>
+  <text x="815" y="1150" text-anchor="middle" font-family="Kanit" font-weight="900" font-size="170" fill="#FFE14D" stroke="#0A0E1C"
+    stroke-width="22" paint-order="stroke" transform="rotate(12 815 1100)">?</text>
+</svg>
+<div class="t" id="t1">ปวดอึ</div>
+<div class="t" id="t2">ในอวกาศ?</div>
+</div><script>
+const tl=gsap.timeline({paused:true});window.__timelines=window.__timelines||{};window.__timelines["thumb"]=tl;</script></body></html>
