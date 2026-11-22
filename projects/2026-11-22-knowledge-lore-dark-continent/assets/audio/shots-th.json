@@ -1,0 +1,384 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 56.927,
+ "inputs": {
+  "shots.json": "3e13537a2e1e3d1a3daf3ac41f2253884988370a76f451dd0735da3115f41ddd",
+  "footage.json": null,
+  "assets/audio/words.json": "1f17f6998e3b024d66ef52fa537ff20fbb4218fe8744658284c3a9242de2d417"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ทุกที่ที่กร",
+   "word_at": 0.08,
+   "start": 0.0,
+   "hit": "กร",
+   "hit_at": 0.54,
+   "end": 1.62,
+   "dur": 1.62
+  },
+  {
+   "id": "dot",
+   "src": null,
+   "cue": "เป็นแค่จุด",
+   "word_at": 1.7,
+   "start": 1.62,
+   "end": 2.48,
+   "dur": 0.86
+  },
+  {
+   "id": "lake",
+   "src": null,
+   "cue": "กลางทะเลสาบ",
+   "word_at": 2.56,
+   "start": 2.48,
+   "end": 3.58,
+   "dur": 1.1
+  },
+  {
+   "id": "mobius",
+   "src": null,
+   "cue": "โมเบียส",
+   "word_at": 3.66,
+   "start": 3.58,
+   "end": 4.82,
+   "dur": 1.24
+  },
+  {
+   "id": "surround",
+   "src": null,
+   "cue": "ที่ล้อมรอบ",
+   "word_at": 4.9,
+   "start": 4.82,
+   "end": 5.74,
+   "dur": 0.92
+  },
+  {
+   "id": "darkcont",
+   "src": null,
+   "cue": "ทวีปมืด",
+   "word_at": 5.82,
+   "start": 5.74,
+   "end": 7.12,
+   "dur": 1.38
+  },
+  {
+   "id": "netero",
+   "src": null,
+   "cue": "เนดโร",
+   "word_at": 7.2,
+   "start": 7.12,
+   "hit": "ซิกโซดิก",
+   "hit_at": 8.28,
+   "end": 8.72,
+   "dur": 1.6
+  },
+  {
+   "id": "quote",
+   "src": null,
+   "cue": "ยังบอกว่า",
+   "word_at": 8.8,
+   "start": 8.72,
+   "end": 10.72,
+   "dur": 2.0
+  },
+  {
+   "id": "attempts",
+   "src": null,
+   "cue": "คนพยายาม",
+   "word_at": 10.8,
+   "start": 10.72,
+   "hit": "ร้อยสี่สิบเก้า",
+   "hit_at": 11.86,
+   "end": 13.24,
+   "dur": 2.52
+  },
+  {
+   "id": "five",
+   "src": null,
+   "cue": "มีแค่ห้า",
+   "word_at": 13.32,
+   "start": 13.24,
+   "end": 15.68,
+   "dur": 2.44
+  },
+  {
+   "id": "trips",
+   "src": null,
+   "cue": "ห้าครั้งนั้น",
+   "word_at": 15.76,
+   "start": 15.68,
+   "end": 16.48,
+   "dur": 0.8
+  },
+  {
+   "id": "treasure",
+   "src": null,
+   "cue": "ของวิเศษ",
+   "word_at": 16.56,
+   "start": 16.48,
+   "end": 17.62,
+   "dur": 1.14
+  },
+  {
+   "id": "but",
+   "src": null,
+   "cue": "แต่ที่ติด",
+   "word_at": 17.7,
+   "start": 17.62,
+   "end": 18.88,
+   "dur": 1.26
+  },
+  {
+   "id": "calamity",
+   "src": null,
+   "cue": "ภัยพิบัติ",
+   "word_at": 18.96,
+   "start": 18.88,
+   "end": 19.92,
+   "dur": 1.04
+  },
+  {
+   "id": "c1_reward",
+   "src": null,
+   "cue": "ไปเอาหิน",
+   "word_at": 20.0,
+   "start": 19.92,
+   "end": 21.26,
+   "dur": 1.34
+  },
+  {
+   "id": "c1_threat",
+   "src": null,
+   "cue": "เจอปาปุ",
+   "word_at": 21.34,
+   "start": 21.26,
+   "end": 22.32,
+   "dur": 1.06
+  },
+  {
+   "id": "c1_pet",
+   "src": null,
+   "cue": "ตัวที่เลี้ยง",
+   "word_at": 22.4,
+   "start": 22.32,
+   "end": 23.88,
+   "dur": 1.56
+  },
+  {
+   "id": "c1_count",
+   "src": null,
+   "cue": "ไปพันคน",
+   "word_at": 23.96,
+   "start": 23.88,
+   "hit": "รอดเจ็ด",
+   "hit_at": 25.18,
+   "end": 26.04,
+   "dur": 2.16
+  },
+  {
+   "id": "c2_reward",
+   "src": null,
+   "cue": "ไปเอาสมุนไพร",
+   "word_at": 26.12,
+   "start": 26.04,
+   "end": 28.04,
+   "dur": 2.0
+  },
+  {
+   "id": "c2_threat",
+   "src": null,
+   "cue": "เจอไบรออน",
+   "word_at": 28.12,
+   "start": 28.04,
+   "end": 28.88,
+   "dur": 0.84
+  },
+  {
+   "id": "c2_weapon",
+   "src": null,
+   "cue": "อาวุธพืช",
+   "word_at": 28.96,
+   "start": 28.88,
+   "end": 29.96,
+   "dur": 1.08
+  },
+  {
+   "id": "c2_count",
+   "src": null,
+   "cue": "รอดสองคน",
+   "word_at": 30.04,
+   "start": 29.96,
+   "end": 31.12,
+   "dur": 1.16
+  },
+  {
+   "id": "c3_reward",
+   "src": null,
+   "cue": "ไปเอาข้าว",
+   "word_at": 31.2,
+   "start": 31.12,
+   "end": 32.579,
+   "dur": 1.459
+  },
+  {
+   "id": "c3_threat",
+   "src": null,
+   "cue": "เจองู",
+   "word_at": 32.659,
+   "start": 32.579,
+   "end": 34.36,
+   "dur": 1.781
+  },
+  {
+   "id": "c3_count",
+   "src": null,
+   "cue": "โดนไป",
+   "word_at": 34.44,
+   "start": 34.36,
+   "hit": "เปอร์เซ็นต์",
+   "hit_at": 35.26,
+   "end": 36.22,
+   "dur": 1.86
+  },
+  {
+   "id": "c4_reward",
+   "src": null,
+   "cue": "ไปเอาน้ำ",
+   "word_at": 36.3,
+   "start": 36.22,
+   "end": 37.48,
+   "dur": 1.26
+  },
+  {
+   "id": "c4_threat",
+   "src": null,
+   "cue": "เจอไอ",
+   "word_at": 37.56,
+   "start": 37.48,
+   "end": 38.42,
+   "dur": 0.94
+  },
+  {
+   "id": "c4_gas",
+   "src": null,
+   "cue": "ก๊าซ",
+   "word_at": 38.5,
+   "start": 38.42,
+   "end": 39.78,
+   "dur": 1.36
+  },
+  {
+   "id": "c4_count",
+   "src": null,
+   "cue": "รอดสามคน",
+   "word_at": 39.86,
+   "start": 39.78,
+   "end": 40.78,
+   "dur": 1.0
+  },
+  {
+   "id": "c4_mind",
+   "src": null,
+   "cue": "แต่สติ",
+   "word_at": 40.86,
+   "start": 40.78,
+   "end": 42.46,
+   "dur": 1.68
+  },
+  {
+   "id": "c5_reward",
+   "src": null,
+   "cue": "ทีมสุดท้าย",
+   "word_at": 42.54,
+   "start": 42.46,
+   "hit": "จริง",
+   "hit_at": 43.54,
+   "end": 44.1,
+   "dur": 1.64
+  },
+  {
+   "id": "c5_dead",
+   "src": null,
+   "cue": "แต่ของตาย",
+   "word_at": 44.18,
+   "start": 44.1,
+   "end": 45.78,
+   "dur": 1.68
+  },
+  {
+   "id": "c5_zobae",
+   "src": null,
+   "cue": "แถมพาโรค",
+   "word_at": 45.86,
+   "start": 45.78,
+   "end": 46.78,
+   "dur": 1.0
+  },
+  {
+   "id": "c5_immortal",
+   "src": null,
+   "cue": "คนไม่ตาย",
+   "word_at": 46.86,
+   "start": 46.78,
+   "end": 48.66,
+   "dur": 1.88
+  },
+  {
+   "id": "survivor",
+   "src": null,
+   "cue": "หนึ่งในคน",
+   "word_at": 48.74,
+   "start": 48.66,
+   "end": 50.02,
+   "dur": 1.36
+  },
+  {
+   "id": "beyond",
+   "src": null,
+   "cue": "บียอน",
+   "word_at": 50.1,
+   "start": 50.02,
+   "end": 50.94,
+   "dur": 0.92
+  },
+  {
+   "id": "son",
+   "src": null,
+   "cue": "ลูกชาย",
+   "word_at": 51.02,
+   "start": 50.94,
+   "end": 52.06,
+   "dur": 1.12
+  },
+  {
+   "id": "again",
+   "src": null,
+   "cue": "ที่กำลังจะ",
+   "word_at": 52.14,
+   "start": 52.06,
+   "end": 53.9,
+   "dur": 1.84
+  },
+  {
+   "id": "cta",
+   "src": null,
+   "cue": "ถ้าต้องไปเอง",
+   "word_at": 53.98,
+   "start": 53.9,
+   "end": 56.16,
+   "dur": 2.26
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "เม้นต์",
+   "word_at": 56.24,
+   "start": 56.16,
+   "end": 56.927,
+   "dur": 0.767
+  }
+ ]
+}
