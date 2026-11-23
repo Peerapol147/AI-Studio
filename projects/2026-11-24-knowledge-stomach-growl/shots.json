@@ -1,0 +1,18 @@
+{"lead": 0.08, "topic": {"th": "ท้องร้อง"},
+ "shots": [
+  {"id": "hook", "cue": {"th": "ท้องร้อง"}, "beat": "hook", "want": "คนกุมท้อง/ท้องร้อง หลังกินข้าว (stomachache, holding belly)"},
+  {"id": "plate", "cue": {"th": "เพิ่งกิน"}, "beat": "hook", "want": "จานข้าวกินหมด/คนเพิ่งกินเสร็จ (empty plate, finished meal)"},
+  {"id": "think", "cue": {"th": "หลายคน"}, "beat": "setup", "want": "คนหิว จับท้อง มองอาหาร (hungry)"},
+  {"id": "notalways", "cue": {"th": "ไม่ใช่"}, "beat": "setup", "want": "graphic: ป้าย หิว? ขีดเครื่องหมายคำถาม"},
+  {"id": "anatomy", "cue": {"th": "เสียงนี้"}, "beat": "explain", "want": "ภาพกายวิภาคกระเพาะ+ลำไส้ 3D (digestive system anatomy)"},
+  {"id": "squeeze", "cue": {"th": "บีบตัว"}, "beat": "explain", "want": "graphic: ท่อลำไส้บีบเป็นคลื่น ดันฟองลม+ของเหลว"},
+  {"id": "growl", "cue": {"th": "เสียงเลย"}, "beat": "explain", "want": "graphic: คลื่นเสียง โครกคราก ออกจากท้อง"},
+  {"id": "full", "cue": {"th": "ตอนอิ่ม"}, "beat": "reveal", "want": "คนกินข้าวอิ่ม ลูบท้อง (eating meal, full)"},
+  {"id": "muffle", "cue": {"th": "ซับเสียง"}, "beat": "reveal", "want": "graphic: อาหารในท่อซับคลื่นเสียงให้เบา"},
+  {"id": "empty", "cue": {"th": "ท้องว่าง"}, "beat": "twist", "want": "จานเปล่า/ตู้เย็นว่าง (empty plate)"},
+  {"id": "loud", "cue": {"th": "ดังลั่น"}, "beat": "twist", "want": "ห้องประชุม/ห้องเงียบ คนหันมามอง (quiet office meeting)"},
+  {"id": "assume", "cue": {"th": "เหมา"}, "beat": "twist", "want": "คนมองท้องตัวเองแบบงง/อาย (embarrassed)"},
+  {"id": "name", "cue": {"th": "ชื่อจริง"}, "beat": "share", "want": "graphic: การ์ดคำ Borborygmus + บอร์บอริกมัส (กรีก)"},
+  {"id": "ask", "cue": {"th": "ท้องใคร"}, "beat": "cta", "want": "กลุ่มเพื่อนหัวเราะ (friends laughing)"},
+  {"id": "loop", "cue": {"th": "รอบหน้า"}, "beat": "loop", "want": "plate เดียวกับ hook (แม่แบบเล่นจบที่เฟรม 0)"}
+ ]}
