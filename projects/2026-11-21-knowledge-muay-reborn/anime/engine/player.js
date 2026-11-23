@@ -16,7 +16,7 @@ function getBg(shot) {
     A.reset(); A.translate(fw / 2, fh / 2); A.scale(shot.cam0.zoom); A.translate(-shot.cam0.cx, -shot.cam0.cy);
     shot.bg(); if (shot._sig) staticPass(shot, 'bg'); pop();
     // cinematic depth of field: close-up backgrounds are blurred once here (cached, no per-frame cost)
-    const dof = shot.dof !== undefined ? shot.dof : (shot.cam0.zoom >= 1.8 ? 5 : shot.cam0.zoom >= 1.35 ? 2 : 0);
+    const crisp = new URLSearchParams(location.search).get('crisp'); const dof = shot.dof !== undefined ? shot.dof : (shot.cam0.zoom >= 1.8 ? (crisp ? 2 : 5) : shot.cam0.zoom >= 1.35 && !crisp ? 2 : 0);
     if (dof) filter(BLUR, dof);
   });
   brush.load(); fbCache[key] = fb; return fb;

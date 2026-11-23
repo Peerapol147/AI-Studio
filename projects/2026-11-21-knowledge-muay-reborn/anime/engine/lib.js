@@ -5,7 +5,8 @@
 const A = (() => {
   const W = (window.FMT || {}).W || 1080, H = (window.FMT || {}).H || 1920;
   let M = [1, 0, 0, 1, 0, 0]; const stack = [];
-  let INK = '#2a1e22', INKW = 1.5; // global ink color, ink weight multiplier, boil seed
+  let INK = '#2a1e22', INKW = 1.5;
+  const QP = new URLSearchParams(location.search), INKBRUSH = QP.get('ink') || 'pen'; // ?ink=rotring = crisp technical-pen line // global ink color, ink weight multiplier, boil seed
   let rnd = mulberry(1);
   function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   const seed = s => { rnd = mulberry(s); };
@@ -24,7 +25,7 @@ const A = (() => {
   function style(o) {
     if (o.fill) brush.wash(o.fill, o.alpha === undefined ? 255 : o.alpha); else brush.noWash();
     brush.noFill(); brush.noHatch && brush.noHatch();
-    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || 'pen', o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2));
+    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || INKBRUSH, o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2));
   }
   let mute = false; // static/background passes silence dynamic drawing
   function poly(pts, o = {}) { // closed shape

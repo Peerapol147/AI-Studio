@@ -8,7 +8,7 @@ const { chromium } = require('playwright'); const path = require('path'); const 
   const p = await br.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: SCALE }); p.setDefaultTimeout(900000);
   p.on('pageerror', e => console.log('PAGEERR', e.message.slice(0, 300)));
   p.on('console', m => { const s = m.text(); if (m.type() === 'error' && !/404|TUNNEL|regular/.test(s)) console.log('CONSOLE', s.slice(0, 300)); });
-  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/index.html?fmt=${FMT}${process.env.THUMB ? "&thumb=1" : ""}`);
+  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/index.html?fmt=${FMT}${process.env.THUMB ? "&thumb=1" : ""}${process.env.CRISP ? "&crisp=1&ink=" + process.env.CRISP : ""}`);
   await p.waitForFunction(() => window.ready && window.renderFrame, null, { timeout: 1200000 });
   const dur = await p.evaluate(() => DATA.duration);
   if (mode === 'stills') {

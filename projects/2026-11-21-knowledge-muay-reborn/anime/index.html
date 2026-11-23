@@ -4,7 +4,7 @@
 // format: ?fmt=long (1920x1080, default) | ?fmt=short (1080x1920)
 window.FMT = new URLSearchParams(location.search).get('fmt') === 'short' ? { name: 'short', W: 1080, H: 1920 } : { name: 'long', W: 1920, H: 1080 };
 document.documentElement.style.setProperty('--W', FMT.W + 'px'); document.documentElement.style.setProperty('--H', FMT.H + 'px');
-document.documentElement.className = FMT.name;
+document.documentElement.className = FMT.name + (new URLSearchParams(location.search).get('crisp') ? ' crisp' : '');
 </script>
 <style>
 html,body{margin:0;width:var(--W);height:var(--H);overflow:hidden;background:#000}
@@ -12,6 +12,7 @@ main{position:relative;width:var(--W);height:var(--H)}
 canvas{position:absolute;left:0;top:0}
 #art{filter:contrast(1.07) saturate(1.1)}
 #grade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(40,90,110,.16),rgba(0,0,0,0) 45%,rgba(255,150,60,.10));mix-blend-mode:soft-light}
+html.crisp #grain{display:none}
 #grain{position:absolute;inset:0;width:100%;height:100%;opacity:.07;mix-blend-mode:overlay;pointer-events:none;image-rendering:pixelated}
 .bars #sub{bottom:8px;font-size:44px}.short.bars #sub{bottom:auto}
 #ov{position:absolute;inset:0;pointer-events:none;font-family:'Kanit',sans-serif}
