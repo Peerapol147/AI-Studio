@@ -1,0 +1,14 @@
+{
+  "template": "brainrot-v3",
+  "palette": "retro-cream",
+  "font": "prompt",
+  "caption": "underline",
+  "opening": "pov",
+  "cover": "card",
+  "transition": "zoom",
+  "music_mood": "quirky",
+  "voice": "liam",
+  "music_file": null,
+  "cover_text": "ท้องร้อง ทั้งที่เพิ่งกินข้าว?",
+  "why": "look.py pick แล้วแก้: opening number→pov (ไม่มีตัวเลข ✅ สำหรับจอ; POV ท้องร้องตอนห้องเงียบ ตรงคนดู), music_mood mysterious→quirky (เรื่องร่างกายขำๆ), voice liam (เรื่องใกล้ตัว ขำ ไม่ซ้ำ George ตอนก่อน)"
+}
