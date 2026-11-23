@@ -91,7 +91,7 @@ def finder():
         p = norm(phrase)
         i = flat.find(p, pos)
         if i < 0:
-            raise SystemExit(f'caption {phrase!r} not found in words.json after char {pos} (write it as the voice says it)')
+            raise SystemExit(f'caption {phrase!r} not found in words.json after char {pos} (write it as the voice says it, or "shown|as transcribed" when words.json spells it differently)')
         pos = i + len(p)
         return round(ch[i][1], 3)
     return find
@@ -125,7 +125,11 @@ if missing:
 
 find = finder()
 CAPS = EP['caps']
-capt = [find(c) for c in CAPS]
+# caption "shown|heard": show the script spelling, find its time with the words.json spelling
+# (stomach-growl: scribe wrote "Borborygmus" for บอร์บอริกมัส and "คร่ำคร่าก" for โครกคราก)
+CAPS_MATCH = [c.partition('|')[2] or c for c in CAPS]
+CAPS = [c.partition('|')[0] for c in CAPS]
+capt = [find(c) for c in CAPS_MATCH]
 HOOK_END = next((s['start'] for s in SHOTS if s['beat'] != 'hook'), DUR)
 hook_plate = PLATES[SHOTS[0]['id']]
 hook_ms = SHOTS[0].get('media_start') or 0.0
@@ -179,6 +183,40 @@ def caps():
     return '\n'.join(out)
 
 
+# width of a title line in em of its font size (measured in Chromium at weight 900/700: Thai letters ~0.57-0.60 em
+# for Kanit / Prompt / Noto Sans Thai / Sarabun, Latin capitals ~0.82): marks above/below the line take no width.
+# The old rule 880/n*1.9 overflowed: "ทั้งที่เพิ่งกินข้าว?" (stomach-growl) ran past the card and past the 960 px title box.
+def line_ems(ln):
+    t = re.sub(r'\*', '', ln)
+    w = 0.0
+    for ch in t:
+        if re.match(r'[\u0e31\u0e34-\u0e3a\u0e47-\u0e4e]', ch):
+            continue                       # combining Thai vowel / tone mark
+        if ch == ' ':
+            w += 0.28
+        elif 'A' <= ch <= 'Z' or ch in 'MW@%&':
+            w += 0.84
+        else:
+            w += 0.62
+    return w
+
+
+TITLE_BAND = 450                           # title starts at Y 250, must end by ~Y 700
+
+
+def title_room(ln):
+    """px a title line may use: 960 title box minus the stroke / card padding / plate padding of this look."""
+    room = 960 - 30                        # 22 px text stroke + margin
+    if LOOK['cover'] == 'card':
+        room = 960 - 80 - 20               # card padding 40+40
+    if LOOK['opening'] == 'midstory':
+        room -= 52                         # accent plate padding 26+26
+    if LOOK['cover'] == 'tilt':
+        room -= 40                         # rotated lines
+    room -= 34 * ln.count('*') // 2        # padding of each highlighted word on a plate
+    return room
+
+
 def title():
     lines = EP['title']
     big = 150 if LOOK['opening'] in ('question', 'pov') else 118
@@ -190,9 +228,19 @@ def title():
         if not kick:
             raise SystemExit('opening "number" needs episode.json kicker = the number (from research.md)')
         rows.append(f'<div class="kick num">{html.escape(kick)}</div>')
-    for ln in lines:
-        n = len(re.sub(r'[ัิ-ฺ็-๎*\s]', '', ln))
-        size = min(big, int(880 / max(1, n) * 1.9))
+    sizes = [min(big, int(title_room(ln) / max(0.5, line_ems(ln)))) for ln in lines]
+    # keep the whole title inside the Y 240-700 band (style.md): taller Thai line-height (1.42) needs a height cap
+    per = 1.42 + (0.16 if LOOK['opening'] == 'midstory' else 0)
+    gap = {'tilt': 44}.get(LOOK['cover'], 14 if LOOK['opening'] == 'midstory' else 6)
+    fixed = gap * (len(rows) + len(lines) - 1) + {'pov': 104, 'number': 270}.get(LOOK['opening'], 0) \
+        + (74 if LOOK['cover'] == 'card' else 0)
+    room = TITLE_BAND - fixed
+    # a line with a highlight plate grows: the plate is an inline-block 1.12 em + .38 em top padding
+    pers = [max(per, 1.56 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln else per for ln in lines]
+    if sum(sz * pp for sz, pp in zip(sizes, pers)) > room:
+        k = room / sum(sz * pp for sz, pp in zip(sizes, pers))
+        sizes = [int(sz * k) for sz in sizes]
+    for ln, size in zip(lines, sizes):
         body = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html.escape(ln))
         rows.append(f'<div class="tl" style="font-size:{size}px">{body}</div>')
     return '\n'.join(rows)

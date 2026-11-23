@@ -148,3 +148,29 @@ def test_cover_text_must_match_frame0_title(tmp_path):
     assert r.returncode != 0 and 'cover_text' in r.stderr
     proj, video = project(tmp_path / 'b', {**LOOK_A, 'cover_text': 'ตัวอย่าง หน้าตาใหม่?'})
     assert build(video).returncode == 0
+
+
+def test_caption_shown_vs_transcribed_alias(tmp_path):
+    """stomach-growl: scribe spelled โครกคราก as คร่ำคร่าก -> caption "shown|heard" shows the script word, times it by the transcript."""
+    ep = json.loads((FIX / 'episode.json').read_text())
+    caps = list(ep['caps'])
+    caps[1] = 'สะกดตามบท|หน้าตาใหม่'
+    proj, video = project(tmp_path / 'a', LOOK_A, episode={'caps': caps})
+    r = build(video)
+    assert r.returncode == 0, r.stderr
+    page = (video / 'index.html').read_text()
+    assert 'สะกดตามบท' in page and 'หน้าตาใหม่</span>' not in page and '|' not in re.findall(r'class="clip cap"[^>]*><span[^>]*>([^<]*)', page)[1]
+    caps[1] = 'สะกดตามบท'                                   # without the alias it is not in words.json -> refused, hint shown
+    proj, video = project(tmp_path / 'b', LOOK_A, episode={'caps': caps})
+    r = build(video)
+    assert r.returncode != 0 and 'shown|as transcribed' in r.stderr
+
+
+def test_title_size_from_width_not_letter_count():
+    """1.9 x 880/n overflowed (stomach-growl). Template CSS keeps Thai stacked marks clear of the line above."""
+    tpl = (V3 / 'index.html.tpl').read_text()
+    lh = float(re.search(r'#title \.tl\{[^}]*line-height:([\d.]+)', tpl).group(1))
+    assert lh >= 1.35
+    assert '#title .tl em{display:inline-block;line-height:1.12}' in tpl
+    src = (V3 / 'build_index.py').read_text()
+    assert '880 / max(1, n) * 1.9' not in src and 'def line_ems' in src
