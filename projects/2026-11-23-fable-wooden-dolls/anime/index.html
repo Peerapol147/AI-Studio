@@ -10,7 +10,7 @@
   const q = new URLSearchParams(location.search), sheet = q.get('sheet');
   const c = document.getElementById('c'), ctx = c.getContext('2d');
   await Promise.all(['700 40px Kanit', '400 40px Kanit'].map(f => document.fonts.load(f, 'กA')));
-  if (sheet) { c.width = SHEET.W; c.height = SHEET.H; SHEET.draw(ctx, +sheet); window.ready = true; return; }
+  if (sheet) { c.width = SHEET.W; c.height = SHEET.H; (+sheet === 2 ? SHEET.cave : SHEET.draw)(ctx); window.ready = true; return; }
   c.width = W; c.height = H;
   window.renderFrame = t => { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); return EP.draw(ctx, t); };
   window.ready = true;

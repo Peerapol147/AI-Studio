@@ -198,15 +198,17 @@ E.fireGlow = (ctx, x, y, size, t, reach = 1) => {
 };
 E.fire = (ctx, x, y, size, t, o = {}) => {
   ctx.save(); ctx.translate(x, y);
-  // pit: stones + charred sticks
+  // pit: stones + charred sticks (skipped for a hand torch)
   const R = E.rng(3);
+  const emb = o.embers ?? Math.min(1, size * 3);
+  if (!o.torch) {
   for (let i = 0; i < 9; i++) { const a = Math.PI * (0.05 + i / 8 * 0.9); ellipse(ctx, Math.cos(a) * 88, -Math.sin(a) * 10 + 8, 18, 11, E.lit('#545a6b', 0.3 + size * 0.7)); }
   ellipse(ctx, 0, 4, 76, 16, '#17110e');
   ctx.strokeStyle = '#2a1d16'; ctx.lineWidth = 14; ctx.lineCap = 'round';
   ctx.beginPath(); ctx.moveTo(-50, 6); ctx.lineTo(34, -14); ctx.moveTo(50, 6); ctx.lineTo(-30, -12); ctx.stroke();
   // embers glowing in the ash
-  const emb = o.embers ?? Math.min(1, size * 3);
-  if (emb > 0) for (let i = 0; i < 14; i++) { const ex = (R() - 0.5) * 110, ey = R() * 12 - 4, fl = 0.5 + 0.5 * Math.sin(t * (3 + R() * 4) + i); circle(ctx, ex, ey, 3 + R() * 3, `rgba(255,${90 + fl * 80 | 0},30,${emb * (0.35 + 0.6 * fl)})`); }
+  }
+  if (emb > 0 && !o.torch) for (let i = 0; i < 14; i++) { const ex = (R() - 0.5) * 110, ey = R() * 12 - 4, fl = 0.5 + 0.5 * Math.sin(t * (3 + R() * 4) + i); circle(ctx, ex, ey, 3 + R() * 3, `rgba(255,${90 + fl * 80 | 0},30,${emb * (0.35 + 0.6 * fl)})`); }
   if (size > 0.02) {
     const tongues = [[-34, 0.62, 1.7], [-14, 0.9, 2.3], [6, 1.0, 1.9], [26, 0.78, 2.7], [42, 0.5, 2.1]];
     const layers = [['#c8400c', 1.0, 1.0], ['#ff7a1a', 0.78, 0.82], ['#ffb347', 0.55, 0.62], ['#fff1c2', 0.3, 0.38]];
