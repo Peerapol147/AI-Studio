@@ -8,7 +8,7 @@
 | `projects/<x>/look.json` | ผู้กำกับ ขั้น 3 (`python3 tools/look.py pick <project> --write` แล้วแก้) | palette / font / caption / opening / cover / transition (+ music_mood, voice, music_file สำหรับขั้นเสียง, cover_text = ข้อความเฟรม 0) ค่าจาก `templates/looks/looks.json` |
 | `projects/<x>/shots.json` | ผู้กำกับ | เหมือนเดิม + `"topic"` + `"beat"` ทุกช็อต (hook setup explain reveal twist share cta loop) |
 | `assets/audio/shots-th.json` | `tools/shot_times.py` | เวลาช็อต (ห้ามแก้มือ) |
-| `video/episode.json` | editor | `title` (= คำพูด hook คำต่อคำ, `*คำ*` = สี accent), `kicker` (POV: … หรือ ตัวเลขจาก research.md), `caps` (1-3 คำ; ถ้า words.json สะกดต่างจากบท เขียน `"คำในบท|คำที่ถอดได้"` เช่น `"*โครกคราก*|คร่ำคร่าก"`: จอแสดงซ้าย หาเวลาด้วยขวา), `plates` (ช็อต → `assets/x.mp4` / `.jpg` / `"graphic"`), `vo`, `icons` (lucide ไม่บังคับ) |
+| `video/episode.json` | editor | `title` (= คำพูด hook คำต่อคำ, `*คำ*` = สี accent; สั้น ~≤12 ตัวไทยต่อบรรทัด 1-3 บรรทัด ยาวกว่านี้ build อาจหยุดเพราะตัวจะเล็กกว่า 72/60 px), `kicker` (POV: … หรือ ตัวเลขจาก research.md), `caps` (1-3 คำ; ถ้า words.json สะกดต่างจากบท เขียน `"คำในบท|คำที่ถอดได้"` เช่น `"*โครกคราก*|คร่ำคร่าก"`: จอแสดงซ้าย หาเวลาด้วยขวา), `plates` (ช็อต → `assets/x.mp4` / `.jpg` / `"graphic"`), `vo`, `icons` (lucide ไม่บังคับ) |
 
 ## ขั้นตอน (editor)
 1. `cp -r templates/brainrot-v3 projects/<x>/video`

@@ -59,6 +59,8 @@ const { chromium } = require('playwright');
           const m = ctx.measureText(e.textContent);
           const top = box.top + (m.fontBoundingBoxAscent - m.actualBoundingBoxAscent);
           if (top < er.top - 1) probs.push(`highlight "${e.textContent}" marks at ${top.toFixed(0)} stick out above its plate (${er.top.toFixed(0)})`);
+          const bot = box.top + m.fontBoundingBoxAscent + m.actualBoundingBoxDescent;
+          if (bot > er.bottom + 1) probs.push(`highlight "${e.textContent}" lower vowels at ${bot.toFixed(0)} stick out below its plate (${er.bottom.toFixed(0)})`);
         }
         return { text, inkTop, inkBottom, l, r: rr, plateBottom };
       });

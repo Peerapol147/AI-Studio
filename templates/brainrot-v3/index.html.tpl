@@ -21,11 +21,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   background:linear-gradient(rgba(0,0,0,.62) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,0) 100%)}
 #title{position:absolute;left:60px;top:250px;width:960px;z-index:50;display:flex;flex-direction:column;align-items:center;gap:14px;transform-origin:50% 40%}
 #title .tl{font-weight:var(--tw);line-height:1.42;white-space:nowrap;color:var(--text);text-align:center;
-  -webkit-text-stroke:22px var(--ink);paint-order:stroke fill;text-shadow:0 10px 0 rgba(0,0,0,.4)}
+  -webkit-text-stroke:.15em var(--ink);paint-order:stroke fill;stroke-linejoin:round;text-shadow:0 10px 0 rgba(0,0,0,.4)}
 #title em{font-style:normal;color:var(--accent)}
 /* Thai: upper vowel + tone mark stack ~1.07-1.25 em above the baseline (ทั้ง, เพิ่ง). A highlight plate is an
    inline-block of line-height 1.12 so it does not hang into the next line (stomach-growl frame 0 bug) */
-#title .tl em{display:inline-block;line-height:1.12;padding-top:.38em}
+#title .tl em{display:inline-block;line-height:1.12;padding-top:.38em;padding-bottom:.24em}
 .op-midstory #title{top:250px}
 .op-midstory #title{gap:14px}
 .op-midstory #title .tl{-webkit-text-stroke:0;color:var(--ink);background:var(--accent);padding:.16em 26px 0;border-radius:18px;text-shadow:none}
@@ -37,11 +37,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 /* cover layouts (frame 0 = the thumbnail) */
 .cv-card #title{background:var(--panel);border-radius:44px;box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5);padding:34px 40px 40px}
 .cv-card #title .tl{-webkit-text-stroke:0;color:var(--paneltext);text-shadow:none}
-.cv-card #title em{color:var(--ink);background:var(--accent);padding:.38em 16px 0;border-radius:16px}
+.cv-card #title em{color:var(--ink);background:var(--accent);padding:.38em 16px .24em;border-radius:16px}
 /* midstory + card: the line already sits on an accent plate -> ink text, highlighted word inverted (accent on ink), no stroke */
 .op-midstory.cv-card #title .tl{color:var(--ink)}
-.op-midstory.cv-card #title em{-webkit-text-stroke:0;color:var(--accent);background:var(--ink);padding:.38em 16px 0;border-radius:16px}
-.cv-tilt #title{gap:44px;padding:0 16px}
+.op-midstory.cv-card #title em{-webkit-text-stroke:0;color:var(--accent);background:var(--ink);padding:.38em 16px .24em;border-radius:16px}
+.cv-tilt #title{gap:30px;padding:0 16px}
 .cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
 .cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
 .cv-tilt #title .tl em{padding:0 0 4px;background:none;border-bottom:16px solid var(--accent);color:var(--text)}

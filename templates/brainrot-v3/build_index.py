@@ -240,12 +240,12 @@ def title():
     sizes = [min(big, int(title_room(ln) / max(0.5, line_ems(ln)))) for ln in lines]
     # keep the whole title inside the Y 240-700 band (style.md): taller Thai line-height (1.42) needs a height cap
     per = 1.42 + (0.16 if LOOK['opening'] == 'midstory' else 0)
-    gap = {'tilt': 44}.get(LOOK['cover'], 14)
+    gap = {'tilt': 30}.get(LOOK['cover'], 14)
     kick_h = {'pov': 104, 'number': NUM_SIZE(len(lines)) + 12}.get(LOOK['opening'], 0)
     fixed = gap * (len(rows) + len(lines) - 1) + kick_h + (74 if LOOK['cover'] == 'card' else 0)
     room = BAND.get(LOOK['opening'], TITLE_BAND) - fixed
-    # a line with a highlight plate grows: the plate is an inline-block 1.12 em + .38 em top padding
-    pers = [max(per, 1.56 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln else per for ln in lines]
+    # a line with a highlight plate grows: the plate is an inline-block 1.12 em + .38 em top + .24 em bottom padding
+    pers = [max(per, 1.74 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln else per for ln in lines]
     if sum(sz * pp for sz, pp in zip(sizes, pers)) > room:
         k = room / sum(sz * pp for sz, pp in zip(sizes, pers))
         sizes = [int(sz * k) for sz in sizes]
