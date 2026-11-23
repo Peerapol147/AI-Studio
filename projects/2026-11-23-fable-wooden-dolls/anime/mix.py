@@ -4,7 +4,9 @@ python3 anime/mix.py  (run from the project folder) -> renders/wooden-dolls.mp4 
 import subprocess, json, re, os, sys
 P = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 A = lambda f: os.path.join(P, 'assets/audio', f)
-SILENT, OUT, DUR = os.path.join(P, 'renders/wooden-dolls-silent.mp4'), os.path.join(P, 'renders/wooden-dolls.mp4'), 55.0
+EN = '--lang' in sys.argv and sys.argv[sys.argv.index('--lang') + 1] == 'en'
+SILENT = os.path.join(P, 'renders/wooden-dolls-silent' + ('-en' if EN else '') + '.mp4')
+OUT, DUR = os.path.join(P, 'renders/wooden-dolls' + ('-en' if EN else '') + '.mp4'), 55.0
 # measured integrated loudness of each raw file (assets/audio/AUDIO.md); gain = target - measured
 LUFS = {'music-jamendo-5193aa1b.mp3': -16.4, 'sfx-fire-loop.mp3': -42.3, 'sfx-fire-big.mp3': -20.3, 'sfx-fire-die.mp3': -42.9,
         'sfx-wind-loop.mp3': -14.9, 'sfx-blizzard.mp3': -15.3, 'sfx-log-drop.mp3': -14.2, 'sfx-twig-weave.mp3': -37.1,
@@ -32,6 +34,14 @@ EV = [
     ('sfx-morning-birds.mp3', 47.6, 4.2, -31, 0.8, 0.8, 0),
     ('sfx-footsteps-snow.mp3', 52.0, 1.2, -29, 0.05, 0.3, 0), ('sfx-sled-drag.mp3', 52.0, 1.1, -31, 0.05, 0.3, 0),
 ]
+if EN:  # narration (ElevenLabs "George", per line, timed in script-en.json); music and beds sit lower under the voice
+    EV = [(f, st, d, tgt - (4 if f.startswith('music') else 3), fi, fo, off) for f, st, d, tgt, fi, fo, off in EV]
+    for lid, st, txt in json.load(open(os.path.join(P, 'script-en.json'))):
+        f = f'vo-en/{lid}.mp3'
+        r = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', A(f), '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True)
+        LUFS[f] = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r.stderr)[-1])
+        d = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', A(f)], capture_output=True, text=True).stdout)
+        EV.append((f, st, d, -17, 0.0, 0.05, 0))
 
 def run(cmd): return subprocess.run(cmd, capture_output=True, text=True)
 def build(master_db):
@@ -42,7 +52,7 @@ def build(master_db):
         fl.append(f'[{i+1}:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim={off}:{off+d},asetpts=PTS-STARTPTS,'
                   f'afade=t=in:d={fi},afade=t=out:st={max(0,d-fo)}:d={fo},volume={g}dB,adelay={int(st*1000)}|{int(st*1000)},apad=whole_dur={DUR}[a{i}]')
         labs.append(f'[a{i}]')
-    fl.append(''.join(labs) + f'amix=inputs={len(labs)}:normalize=0,volume={master_db}dB,alimiter=limit=0.56:level=false,atrim=0:{DUR}[mix]')
+    fl.append(''.join(labs) + f'amix=inputs={len(labs)}:normalize=0,volume={master_db}dB,alimiter=limit=0.45:level=false,atrim=0:{DUR}[mix]')
     return inp, ';'.join(fl)
 def measure(path):
     r = run(['ffmpeg', '-hide_banner', '-nostats', '-i', path, '-af', 'ebur128=peak=true', '-f', 'null', '-'])
@@ -56,4 +66,4 @@ for it in range(3):
     I, tp = measure(OUT); print(f'pass {it}: master {master:+.1f} dB -> {I} LUFS, true peak {tp} dBFS')
     if abs(I + 16) < 0.6 and tp <= -4: break
     master += -16 - I
-json.dump({'lufs': I, 'true_peak': tp, 'master_db': master, 'events': EV}, open(os.path.join(P, 'renders/mix-report.json'), 'w'), ensure_ascii=False, indent=1)
+json.dump({'lufs': I, 'true_peak': tp, 'master_db': master, 'events': EV}, open(os.path.join(P, 'renders/mix-report' + ('-en' if EN else '') + '.json'), 'w'), ensure_ascii=False, indent=1)

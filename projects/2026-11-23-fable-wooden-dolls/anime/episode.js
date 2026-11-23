@@ -265,6 +265,17 @@ const TEXT = [
   [33.75, 36, 'คืนที่ 30', 380, 84],
   [48.2, 52, 'ไม้ที่พาเขาไปถึงได้..\nอยู่ข้างตัวเขามาตลอด', 420, 76],
 ];
+// English version (?lang=en): same shots, English on-screen text (narration is in the audio mix)
+const TEXT_EN = [
+  [0, 3, 'Burn it to survive..\nor keep it?', 400, 88, true],
+  [6.15, 9, 'Night 1', 380, 84],
+  [29.1, 31.33, 'Night 7', 380, 84],
+  [31.4, 33.67, 'Night 15', 380, 84],
+  [33.75, 36, 'Night 30', 380, 84],
+  [48.2, 52, 'The wood that could have\ncarried him there..\nwas beside him all along', 440, 68],
+];
+EP.lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'th';
+if (EP.lang === 'en') { TEXT.length = 0; TEXT.push(...TEXT_EN); }
 EP.shots = S;
 EP.text = TEXT;
 EP.draw = (ctx, t) => {
