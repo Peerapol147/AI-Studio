@@ -8,4 +8,7 @@
 ## sfx
 - sfx-*.mp3: generated with ElevenLabs Sound Effects
 
+## voice
+- vo-en/L01-L15.mp3: English narration generated with ElevenLabs (voice "George")
+
 <!-- auto-credits:end -->
