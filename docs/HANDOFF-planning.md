@@ -97,5 +97,6 @@ r1+r2: get.sh (temp+mv, 403/429/5xx/timeout=75, 4xx อื่น=1, quota_exceed
 | แม่แบบ `templates/brainrot-v2/` | ตัดต่อหลักที่ผู้ใช้ชอบ |
 | tools/: tts.sh words.sh trim_silence.sh footage.sh music.sh get.sh shot_times.py sound_pass_vo.py | เครื่องมือสายพาน |
 
+**ห้องลูกส่ง send_message หาห้องนี้ไม่ได้ (2026-11-23):** ห้องนี้ถูกยกระดับเป็น "อุปกรณ์ที่เชื่อถือได้" ถาวร (ตอนขอสิทธิ์ส่งงานเข้าเครื่องผู้ใช้) → ข้อความเข้าต้องมาจากห้องที่ยืนยันอุปกรณ์แล้วเท่านั้น ห้องคลาวด์ลูกยืนยันไม่ได้ (error elevated_session_untrusted_device) → วิธีใช้: สั่งห้องลูก push รายงานขึ้น branch + ห้องนี้ตั้ง send_later มาเช็กเอง (get_session/list_events/git fetch) ห้องวางแผนห้องถัดไปถ้าไม่ยกระดับ ห้องลูกจะส่งตรงได้ตามปกติ (ยังต้องกดอนุมัติในห้องลูกครั้งแรก)
 **ส่ง skills ทุกครั้ง (ผู้ใช้สั่ง 2026-11-21):** หลังเปิดห้อง ส่งรายชื่อ skill ต่อขั้น + superpowers ให้ดึงด้วย `git checkout origin/claude/content-strategy -- .claude/skills/<ชื่อ>` (ห้าม commit)
 **brief ที่ดี (สั้นแต่ครบ):** หัวข้อ + ผลค้นเกณฑ์ (ยอดวิว+ช่อง) + มุมความเชื่อ vs ความจริง + เฟรม 0 + ข้อห้ามลิขสิทธิ์ + โควตาเสียง (ล็อกบท อัดเทคเดียว) + ทำจบเองหรือรอผู้ใช้ — ดูตัวอย่าง brief ตอนตดในอวกาศใน strategy-notes / ห้อง `session_016zMkaTBbFRWL5XF9dqCANQ`
