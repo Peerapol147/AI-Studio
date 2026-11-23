@@ -1,0 +1,181 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 32.293,
+ "inputs": {
+  "shots.json": "76a4aa55891d2bdf9e2cc5ce9f56461ef3edd8e8fdbd89861b8f7475276fdcbf",
+  "footage.json": "a9a2a8950bf2c507bb9083e3d9c343b77e10ac9648d36b4d49f3cd67e3388faa",
+  "assets/audio/words.json": "9998fc9ab6b7308b54f28abe1b762f369951b88c2bf4fc3082cda89d26c28f7e"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/pixabay-168342.mp4",
+   "cue": "ท้องร้อง",
+   "word_at": 0.14,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.32,
+   "dur": 1.32,
+   "media_start": 8.0
+  },
+  {
+   "id": "plate",
+   "src": "assets/footage/pixabay-2339.mp4",
+   "cue": "เพิ่งกิน",
+   "word_at": 1.4,
+   "start": 1.32,
+   "beat": "hook",
+   "end": 2.78,
+   "dur": 1.46,
+   "media_start": 1.92
+  },
+  {
+   "id": "think",
+   "src": "assets/footage/pixabay-25033.mp4",
+   "cue": "หลายคน",
+   "word_at": 2.86,
+   "start": 2.78,
+   "beat": "setup",
+   "end": 4.96,
+   "dur": 2.18,
+   "media_start": 1.92
+  },
+  {
+   "id": "notalways",
+   "src": null,
+   "cue": "ไม่ใช่",
+   "word_at": 5.04,
+   "start": 4.96,
+   "beat": "setup",
+   "end": 6.48,
+   "dur": 1.52
+  },
+  {
+   "id": "anatomy",
+   "src": "assets/footage/pixabay-84372.mp4",
+   "cue": "เสียงนี้",
+   "word_at": 6.56,
+   "start": 6.48,
+   "beat": "explain",
+   "end": 8.52,
+   "dur": 2.04,
+   "media_start": 0.92
+  },
+  {
+   "id": "squeeze",
+   "src": null,
+   "cue": "บีบตัว",
+   "word_at": 8.6,
+   "start": 8.52,
+   "beat": "explain",
+   "end": 11.22,
+   "dur": 2.7
+  },
+  {
+   "id": "growl",
+   "src": null,
+   "cue": "เสียงเลย",
+   "word_at": 11.3,
+   "start": 11.22,
+   "beat": "explain",
+   "end": 13.02,
+   "dur": 1.8
+  },
+  {
+   "id": "full",
+   "src": "assets/footage/pixabay-129236.mp4",
+   "cue": "ตอนอิ่ม",
+   "word_at": 13.1,
+   "start": 13.02,
+   "beat": "reveal",
+   "end": 15.06,
+   "dur": 2.04,
+   "media_start": 2.92
+  },
+  {
+   "id": "muffle",
+   "src": null,
+   "cue": "ซับเสียง",
+   "word_at": 15.14,
+   "start": 15.06,
+   "beat": "reveal",
+   "end": 17.86,
+   "dur": 2.8
+  },
+  {
+   "id": "empty",
+   "src": "assets/footage/pixabay-199841.mp4",
+   "cue": "ท้องว่าง",
+   "word_at": 17.94,
+   "start": 17.86,
+   "beat": "twist",
+   "end": 19.94,
+   "dur": 2.08,
+   "media_start": 1.42
+  },
+  {
+   "id": "loud",
+   "src": "assets/footage/pixabay-2340.mp4",
+   "cue": "ดังลั่น",
+   "word_at": 20.02,
+   "start": 19.94,
+   "beat": "twist",
+   "end": 20.9,
+   "dur": 0.96,
+   "media_start": 1.92
+  },
+  {
+   "id": "assume",
+   "src": "assets/footage/pixabay-356888.mp4",
+   "cue": "เหมา",
+   "word_at": 20.98,
+   "start": 20.9,
+   "beat": "twist",
+   "end": 23.24,
+   "dur": 2.34,
+   "media_start": 1.42
+  },
+  {
+   "id": "name",
+   "src": null,
+   "cue": "ชื่อจริง",
+   "word_at": 23.32,
+   "start": 23.24,
+   "beat": "share",
+   "end": 25.26,
+   "dur": 2.02
+  },
+  {
+   "id": "term",
+   "src": null,
+   "cue": "Borborygmus",
+   "word_at": 25.34,
+   "start": 25.26,
+   "beat": "share",
+   "end": 27.76,
+   "dur": 2.5
+  },
+  {
+   "id": "ask",
+   "src": "assets/footage/pixabay-40.mp4",
+   "cue": "ท้องใคร",
+   "word_at": 27.84,
+   "start": 27.76,
+   "beat": "cta",
+   "end": 30.26,
+   "dur": 2.5,
+   "media_start": 0.42
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "รอบหน้า",
+   "word_at": 30.34,
+   "start": 30.26,
+   "beat": "loop",
+   "end": 32.293,
+   "dur": 2.033
+  }
+ ]
+}
