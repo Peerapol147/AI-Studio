@@ -25,7 +25,7 @@ const A = (() => {
   function style(o) {
     if (o.fill) brush.wash(o.fill, o.alpha === undefined ? 255 : o.alpha); else brush.noWash();
     brush.noFill(); brush.noHatch && brush.noHatch();
-    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || INKBRUSH, o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2));
+    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || INKBRUSH, o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2 * (INKBRUSH === 'rotring' && !o.brush ? 1.35 : 1))); // rotring draws thinner than pen
   }
   let mute = false; // static/background passes silence dynamic drawing
   function poly(pts, o = {}) { // closed shape
