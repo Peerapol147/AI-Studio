@@ -8,7 +8,7 @@ const { chromium } = require('playwright'); const path = require('path'); const 
   const sheet = mode === 'sheet';
   const p = await br.newPage({ viewport: sheet ? { width: 1600, height: 2000 } : { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   p.on('pageerror', e => console.log('PAGEERR', e.message.slice(0, 300)));
-  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/index.html${sheet ? '?sheet=' + (a || 1) : (process.env.LANG_EN ? '?lang=en' : '')}`);
+  await p.goto(`http://localhost:${port}/${path.relative(root, __dirname)}/${process.env.PAGE || 'index'}.html${sheet ? '?sheet=' + (a || 1) : (process.env.LANG_EN ? '?lang=en' : '')}`);
   await p.waitForFunction(() => window.ready, null, { timeout: 60000 });
   if (sheet) { await p.screenshot({ path: out, type: out.endsWith('.png') ? 'png' : 'jpeg', ...(out.endsWith('.png') ? {} : { quality: 90 }) }); }
   else if (mode === 'stills') {

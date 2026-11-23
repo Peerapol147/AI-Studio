@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+</head><body><canvas id="c"></canvas>
+<script src="engine.js"></script>
+<script src="sheet.js"></script>
+<script src="timeline-th.js"></script><script src="subs-th.js"></script><script src="episode-cave.js"></script>
+<script>
+(async () => {
+  const q = new URLSearchParams(location.search), sheet = q.get('sheet');
+  const c = document.getElementById('c'), ctx = c.getContext('2d');
+  await Promise.all(['700 40px Kanit', '400 40px Kanit', '900 40px Kanit'].map(f => document.fonts.load(f, 'กA')));
+  if (sheet) { c.width = SHEET.W; c.height = SHEET.H; (+sheet === 2 ? SHEET.cave : SHEET.draw)(ctx); window.ready = true; return; }
+  c.width = W; c.height = H;
+  window.renderFrame = t => { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); return EP.draw(ctx, t); };
+  window.ready = true;
+})();
+</script></body></html>

@@ -1,3 +1,4 @@
 {
- "audio/sfx-*.mp3": "- sfx-*.mp3: generated with ElevenLabs Sound Effects"
+ "audio/sfx-*.mp3": "- sfx-*.mp3: generated with ElevenLabs Sound Effects",
+ "audio/sfx-cave": "- sfx-cave-drips/water-steps/crate/torch-whoosh.mp3: generated with ElevenLabs Sound Effects"
 }
