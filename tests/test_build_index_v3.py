@@ -171,6 +171,6 @@ def test_title_size_from_width_not_letter_count():
     tpl = (V3 / 'index.html.tpl').read_text()
     lh = float(re.search(r'#title \.tl\{[^}]*line-height:([\d.]+)', tpl).group(1))
     assert lh >= 1.35
-    assert '#title .tl em{display:inline-block;line-height:1.12}' in tpl
+    assert '#title .tl em{display:inline-block;line-height:1.12;padding-top:.38em}' in tpl
     src = (V3 / 'build_index.py').read_text()
     assert '880 / max(1, n) * 1.9' not in src and 'def line_ems' in src
