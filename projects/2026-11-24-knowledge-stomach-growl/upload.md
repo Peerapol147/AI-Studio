@@ -1,6 +1,6 @@
 # อัปโหลด: ท้องร้อง ทั้งที่เพิ่งกินข้าว? (ไทย)
 
-ไฟล์: `renders/stomach-growl-th.mp4` (~32 วิ, 9:16) | ปก: `renders/stomach-growl-th-thumb.jpg` (= เฟรมแรก)
+ไฟล์: `renders/stomach-growl-th.mp4` (32.3 วิ, 9:16) | ปก: `renders/stomach-growl-th-thumb.jpg` (= เฟรมแรก)
 MP4 ไฟล์เดียวกันใช้ได้ทุกแพลตฟอร์ม (ผู้ใช้อัปโหลดเอง)
 
 ## YouTube Shorts
@@ -16,11 +16,12 @@ MP4 ไฟล์เดียวกันใช้ได้ทุกแพลต�
 ท้องใครร้องดังสุดในแก๊ง เมนต์มาเลย 👇
 
 ที่มา: Harvard Health Publishing "Stomach growling and other digestive noise", Merriam-Webster "borborygmus"
+ถ้าท้องร้องพร้อมปวดท้องมาก อาเจียน มีไข้ หรือถ่ายเป็นเลือด ควรปรึกษาแพทย์
 (คลิปนี้ให้ความรู้ทั่วไป ไม่ใช่คำแนะนำทางการแพทย์)
 
 เครดิต
 เพลง: "FUNNY FACE" by TOM ALLANE (CC BY 2.0) https://www.jamendo.com/track/174856 — https://creativecommons.org/licenses/by/2.0/
-ภาพ/วิดีโอ: Amorn_mimi, Life-Of-Vids, StefWithAnF, NickiAnimations, ManishKapoor, conte_public, stephansigg, DistillVideos via Pixabay
+ภาพ/วิดีโอ: Amorn_mimi, Life-Of-Vids, StefWithAnF, NickiAnimations, ManishKapoor, conte_public, DistillVideos via Pixabay
 เสียงพากย์: ElevenLabs
 
 #ท้องร้อง #ร่างกายมนุษย์ #รู้ไหมว่า #ความรู้รอบตัว #shorts
