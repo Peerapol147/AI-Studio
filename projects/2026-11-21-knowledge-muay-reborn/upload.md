@@ -1,6 +1,7 @@
 # ข้อความอัปโหลด: "ไอ้ขี้แพ้เป็นมวย" ตอนที่ 1  (ผู้ใช้อัปโหลดเอง — ไม่ตั้งเวลา/ไม่อัปอัตโนมัติ)
 
-ไฟล์: `muay-reborn-long.mp4` (16:9, 4:05) · `muay-reborn-short.mp4` (9:16, 0:52) · ปก `muay-reborn-thumb.jpg` (1280x720)
+ไฟล์ (เวอร์ชัน Fable, อยู่ใน Downloads\muay-reborn-fable\): `muay-reborn-fable-long.mp4` (16:9, 4:05) · `muay-reborn-fable-short.mp4` (9:16, 0:52) · ปก `muay-reborn-fable-thumb.jpg` (1280x720)
+เวอร์ชันแรก (ไว้เทียบ): `muay-reborn-long.mp4` · `muay-reborn-short.mp4` · `muay-reborn-thumb.jpg` ใน Downloads\muay-reborn\ — เนื้อเรื่อง เสียงพากย์ ความยาวเท่ากัน อัปโหลดแค่เวอร์ชันเดียว
 
 ## YouTube คลิปยาว
 **ชื่อ (เลือก 1, แนะนำข้อ 1 สำหรับ Test & Compare):**

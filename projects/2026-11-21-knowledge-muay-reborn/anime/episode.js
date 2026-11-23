@@ -39,8 +39,8 @@ const PO = {
   // Muay Thai (see research.md): teep = มอญยันหลัก, catch+twist = นาคาบิดหาง, spinning back heel = จระเข้ฟาดหาง
   teepChamber: { legF: [1.8, -2.0], legB: [-0.12, -0.08], armF: [1.0, 2.0], armB: [0.72, 2.3], lean: -0.12, groundF: false },
   teep: { legF: [1.52, -0.04], legB: [-0.1, -0.05], ftF: 0, armF: [1.0, 2.0], armB: [-0.3, 0.6], lean: -0.34, groundF: false },
-  kickHigh: { legF: [1.58, 0.02], ftF: 1, legB: [-0.12, -0.06], armF: [0.6, 2.2], armB: [-0.9, 0.3], lean: -0.42, groundF: false },
-  catch: { armF: [1.55, 0.35], armB: [1.4, 0.55], handF: 'open', handB: 'open', lean: 0.06, legF: [0.36, -0.2], legB: [-0.32, -0.06] },
+  kickHigh: { legF: [1.86, 0.0], ftF: 1, legB: [-0.12, -0.06], armF: [0.6, 2.2], armB: [-0.9, 0.3], lean: -0.5, groundF: false },
+  catch: { armF: [1.3, 0.2], armB: [1.18, 0.38], handF: 'open', handB: 'open', lean: 0.1, legF: [0.36, -0.2], legB: [-0.32, -0.06] },
   twist: { armF: [1.95, 0.6], armB: [1.1, 0.2], handF: 'open', handB: 'open', lean: -0.2, legF: [0.4, -0.2], legB: [-0.42, -0.06] },
   spinTurn: { legF: [0.1, -0.1], legB: [-0.2, -0.1], armF: [1.0, 2.0], armB: [0.72, 2.3], lean: 0.25, head: 0.6 },
   spinKick: { legB: [-1.58, 0.02], ftB: 0, legF: [0.12, -0.08], armF: [1.3, 1.6], armB: [0.9, 1.9], lean: 0.75, head: 1.0, groundB: false },
@@ -85,7 +85,7 @@ function hookScene(t, phase = 'hook') {
   if (phase === 'end') { P('boss', 1450, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); FT.stars(1450, 780, 70, t + 2); }
   else { P('jo', 560, 1, PO.punchWind, { anger: 0.8, blink: blink(t, 0.5) }); P('te', 1300, -1, PO.stand, { anger: 0.6, mood: 'smirk' }); P('boss', 1130, -1, phase === 'shout' ? PO.point : PO.slam, { anger: 1, mouth: phase === 'shout' ? mouth('B', t) : 0.1 }); }
   P('kla', phase === 'end' ? 820 : 860, 1, PO.guard, { eyes: 'fierce', anger: 0.3 }, { lookOver: { bangsUp: true } });
-  if (phase === 'end') { P('jo', 1700, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); P('te', 1200, -1, Object.assign({}, PO.down, { lieDir: -1 }), { eyes: 'dazed' }, { y: G + NEAR }); FT.stars(1700, 790 + NEAR, 60, t); FT.stars(1210, 800 + NEAR, 55, t + 1); }
+  if (phase === 'end') { P('jo', 1850, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); P('te', 470, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); FT.stars(1850, 790 + NEAR, 60, t); FT.stars(480, 800 + NEAR, 55, t + 1); }
 }
 // ============================================================ shots
 const S = [];
@@ -124,8 +124,8 @@ add(at('kidgate', 0), { id: 'p2_kidDoor', cam0: CU(1470, 640, 1.7), bg: () => ST
 add(at('K01'), { id: 'p2_kidCU', cam0: CU(960, 470, 2.4), bg: () => STAGE.gym(), bgKey: 'gym_cu2', sepia: true,
   cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('kidK', 960, 505, 140, { mood: 'sad', mouth: mouth('K', t), blink: blink(t, 0.6), look: 1 }); } });
 add(at('S02'), { id: 'p2_headpat', cam0: CU(1500, 600, 1.6), bg: () => STAGE.gym(), bgKey: 'gym_kid2', sepia: true,
-  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { P('kidK', 1585, -1, Object.assign({}, PO.meek, { head: -0.05 }), { blink: blink(t, 0.7), look: -1 });
-    P('saeng', 1460, 1, { armF: [1.6 + 0.04 * Math.sin(tq(lt) * 6), 0.35], handF: 'open', lean: 0.16, head: 0.15 }, { mood: 'happy', mouth: mouth('S', t) }); } });
+  cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { P('kidK', 1580, -1, Object.assign({}, PO.meek, { head: -0.12 }), { blink: blink(t, 0.7), look: -1 });
+    P('saeng', 1460, 1, { armF: [1.33 + 0.03 * Math.sin(tq(lt) * 6), -0.08], handF: 'open', lean: 0.14, head: 0.18 }, { mood: 'happy', eyes: mouth('S', t) > 0.2 ? 'normal' : 'shut', mouth: mouth('S', t) }); } });
 add(at('N07', 0.1), { id: 'p2_kidLeaves', cam0: CU(1470, 640, 1.7), bg: () => STAGE.gym(), bgKey: 'gym_kid', sepia: true,
   draw: (lt, t) => { P('saeng', 1300, 1, PO.stand, { blink: blink(t, 0.2) }); P('kidK', 1620 + lt * 120, 1, walk(lt), {}); } });
 add(at('S03', 0.3), { id: 'p2_alone', cam0: CU(960, 470, 2.2), bg: () => STAGE.gymNight(), bgKey: 'gym_night_cu',
@@ -193,14 +193,14 @@ add(at('flick', 0), { id: 'p5_flick', cam0: CU(820, 560, 1.7), bg: () => STAGE.c
 add(at('J01'), { id: 'p5_joLaugh', cam0: WIDE, bg: () => STAGE.classroom(), bgKey: 'cls',
   cam: (lt, t, sh) => aim(sh, 680, 600, 1.15), draw: (lt, t) => { backCrowd(t, 'laugh', [1240, 1480, 1700, 1880]); P('te', 240, 1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.5 }); P('jo', 400, 1, PO.laugh, { mood: 'happy', mouth: mouth('J', t) }); P('boss', 590, 1, PO.laugh, { mood: 'happy', eyes: 'shut', mouth: 0.4 }); klaDesk(t); } });
 add(at('S13'), { id: 'p5_smile', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroom(), bgKey: 'cls_cu', draw: (lt, t) => FACE('kla', 960, 505, 145, KF(t, { mood: 'happy' })) });
-add(at('B04'), { id: 'p5_threat', cam0: CU(810, 470, 1.9), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
+add(at('B04'), { id: 'p5_threat', cam0: CU(810, 515, 1.9), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
   cam: (lt) => ({ p: 1 + 0.06 * lt, rot: -0.04 }), draw: (lt, t) => { klaDesk(t, { look: -1 }); P('boss', 640, 1, Object.assign({}, PO.slam, { lean: 0.4, head: 0.2 }), { anger: 1, mouth: mouth('B', t) }); } });
 // ---------------- PART 6: bully #2 + night training
 add(at('N15', 0.1), { id: 'p6_back', cam0: CU(1150, 640, 1.3), bg: () => STAGE.backyard(), bgKey: 'back_b',
   draw: (lt, t) => { P('kla', 900, 1, PO.meek, {}); P('boss', 1200, -1, PO.stand, { mood: 'smirk' }); P('te', 1420, -1, PO.laugh, { mood: 'happy' }); } });
 add(at('dump', 0), { id: 'p6_dump', cam0: CU(1000, 600, 1.3), bg: () => STAGE.backyard(), bgKey: 'back_130',
-  draw: (lt, t) => { P('kla', 900, 1, PO.meek, { eyes: 'shut' }); P('jo', 1120, -1, { armF: [2.8, 0.3], armB: [2.7, 0.4], handF: 'open', handB: 'open' }, { mood: 'happy', mouth: 0.4 });
-    A.rect(960, 360, 120, 90, { fill: '#2a3a5e', w: 1.2 }); for (let i = 0; i < 5; i++) { const k = clamp01(lt * 1.5 - i * 0.15); A.rect(980 + i * 22 - k * 60 * (i % 2 ? 1 : -1), 460 + k * 420, 60, 44, { fill: ['#e8d8b8', '#8ecae6', '#f4a3a8', '#b8e0a8', '#3c5a8a'][i], w: 1 }); } },
+  draw: (lt, t) => { P('kla', 900, 1, PO.meek, { eyes: 'shut' }); P('jo', 1060, -1, { armF: [0.5, 1.5], armB: [2.5, 0.2], handB: 'open', lean: 0.06 }, { mood: 'happy', mouth: 0.4 });
+    A.rect(900, 350, 120, 90, { fill: '#2a3a5e', w: 1.2 }); for (let i = 0; i < 5; i++) { const k = clamp01(lt * 1.5 - i * 0.15); A.rect(920 + i * 18 - k * 60 * (i % 2 ? 1 : -1), 450 + k * 430, 60, 44, { fill: ['#e8d8b8', '#8ecae6', '#f4a3a8', '#b8e0a8', '#3c5a8a'][i], w: 1 }); } },
   fxs: [{ d: 0.3, text: 'ตุบ ตับ!', x: 760, y: 360, size: 110, len: 0.8 }] });
 add(at('T01'), { id: 'p6_teMock', cam0: CU(960, 470, 2.4), bg: () => STAGE.backyard(), bgKey: 'back_cu', draw: (lt, t) => FACE('te', 960, 505, 145, { mood: 'happy', mouth: mouth('T', t), eyes: Math.sin(tq(lt) * 6) > 0 ? 'shut' : 'normal' }) });
 add(at('N16', 0.1), { id: 'p6_pickup', cam0: CU(900, 640, 1.3), bg: () => STAGE.backyard(), bgKey: 'back_130',
@@ -252,29 +252,29 @@ const F0 = at('J02', 0.05);
 const tm = n => (DATA.lines[n] || DATA.marks[n]).start - F0, te_ = n => (DATA.lines[n] || DATA.marks[n]).end - F0;
 const FX = { kla: 820 };
 // hit-stop: on each contact the action freezes for a few frames, then catches up (the cut/sfx times stay where the voice put them)
-const STOPS = () => [[tm('teep') + 0.62, 0.11, 0.22], [tm('naka') + 0.32, 0.09, 0.2], [tm('naka') + 1.3, 0.07, 0.16]];
+const STOPS = () => [[tm('teep') + 0.62, 0.11, 0.22], [tm('naka') + 0.32, 0.2, 0.26], [tm('naka') + 1.3, 0.07, 0.16]];
 function warp(lt) { for (const [ti, h, r] of STOPS()) { if (lt >= ti && lt < ti + h) return ti + 0.004; if (lt >= ti + h && lt < ti + h + r) return ti + (lt - ti - h) / r * (h + r); } return lt; }
 const stopAt = lt => STOPS().find(([ti, h]) => lt >= ti && lt < ti + h);
 function fightState(lt0) { // returns positions/poses for everyone at fight-local time lt
   const lt = warp(lt0);
-  const st = { kla: { x: 820, f: 1, pose: PO.guard }, jo: { x: 1250, f: -1, pose: PO.stand, air: 0 }, te: { x: 1480, f: -1, pose: PO.stand }, boss: { x: 1680, f: -1, pose: PO.stand }, impact: null };
+  const st = { kla: { x: 820, f: 1, pose: PO.guard }, jo: { x: 1250, f: -1, pose: PO.stand, air: 0 }, te: { x: 1400, f: -1, pose: PO.stand }, boss: { x: 1570, f: -1, pose: PO.stand }, impact: null };
   const T1 = tm('teep'), T2 = te_('teep'); // teep beat
   // Jo: walks in, winds, punches; Kla: chamber -> teep (impact at T1+0.62) ; Jo flies back into the far desks
   const jHit = T1 + 0.62;
   if (lt < T1) { const k = ease(lt / T1); st.jo.x = lerp(1250, 1080, k); st.jo.pose = mix(walk(lt, 9), PO.punchWind, k); }
   else if (lt < jHit) { const k = ease((lt - T1) / 0.62); st.jo.x = lerp(1080, 1010, k); st.jo.pose = mix(PO.punchWind, PO.punch, k); st.kla.pose = k < 0.45 ? mix(PO.guard, PO.teepChamber, k / 0.45) : mix(PO.teepChamber, PO.teep, (k - 0.45) / 0.55); }
-  else { const k = clamp01((lt - jHit) / 0.75); st.jo.x = lerp(1010, 1700, ease(k)); st.jo.air = 55 * Math.sin(Math.PI * Math.min(1, k)); st.jo.pose = k < 1 ? Object.assign({}, PO.hitBack, { air: st.jo.air }) : PO.down; st.jo.face = { eyes: k < 1 ? 'wide' : 'dazed' };
+  else { const k = clamp01((lt - jHit) / 0.75); st.jo.x = lerp(1010, 1850, ease(k)); st.jo.air = 55 * Math.sin(Math.PI * Math.min(1, k)); st.jo.pose = k < 1 ? Object.assign({}, PO.hitBack, { air: st.jo.air }) : PO.down; st.jo.face = { eyes: k < 1 ? 'wide' : 'dazed' };
     st.kla.pose = lt < jHit + 0.35 ? PO.teep : mix(PO.teep, PO.guard, ease((lt - jHit - 0.35) / 0.4)); if (lt < jHit + 0.25) st.impact = { x: 1000, y: 690, t: lt - jHit }; }
   // Te: steps in (te mark), roundhouse (naka beat start), caught at +0.35, twisted and spun, lands at +1.25
   const N1 = tm('naka'), cK = N1 + 0.32, land = N1 + 1.3;
-  if (lt >= tm('te') && lt < N1) { const k = ease((lt - tm('te')) / (N1 - tm('te'))); st.te.x = lerp(1480, 1090, k); st.te.pose = walk(lt, 10); }
+  if (lt >= tm('te') && lt < N1) { const k = ease((lt - tm('te')) / (N1 - tm('te'))); st.te.x = lerp(1400, 1090, k); st.te.pose = walk(lt, 10); }
   else if (lt >= N1 && lt < cK) { st.te.x = 1090; st.te.pose = mix(PO.guard, PO.kickHigh, ease((lt - N1) / 0.32)); st.kla.pose = mix(PO.guard, PO.catch, ease((lt - N1) / 0.32)); }
-  else if (lt >= cK && lt < land) { const k = (lt - cK) / (land - cK); st.te.x = lerp(1090, 1180, k); st.te.pose = Object.assign({}, PO.kickHigh, { spin: -k * 3.6, air: 10 + 30 * Math.sin(Math.PI * k) }); st.kla.pose = mix(PO.catch, PO.twist, ease(k * 1.6)); st.te.face = { eyes: 'wide', mouth: 0.6 };
-    if (k < 0.15) st.impact = { x: 930, y: 640, t: lt - cK, small: true }; }
-  else if (lt >= land) { st.te.x = 1200; st.te.pose = Object.assign({}, PO.down, { lieDir: -1 }); st.te.face = { eyes: 'dazed' }; st.kla.pose = lt < land + 0.5 ? mix(PO.twist, PO.guard, ease((lt - land) / 0.5)) : st.kla.pose; }
+  else if (lt >= cK && lt < land) { const k = (lt - cK) / (land - cK); st.te.x = lerp(1090, 470, ease(k)); st.te.pose = Object.assign({}, PO.kickHigh, { spin: k * 3.6, air: 10 + 52 * Math.sin(Math.PI * k) }); st.kla.f = k > 0.55 ? -1 : 1; // twisted off his feet and thrown over to Kla's other side st.kla.pose = mix(PO.catch, PO.twist, ease(k * 1.6)); st.te.face = { eyes: 'wide', mouth: 0.6 };
+    if (k < 0.15) st.impact = { x: 930, y: 640, t: lt - cK, small: true, grip: true }; }
+  else if (lt >= land) { st.te.x = 470; st.te.pose = PO.down; st.te.face = { eyes: 'dazed' }; st.kla.pose = lt < land + 0.5 ? mix(PO.twist, PO.guard, ease((lt - land) / 0.5)) : st.kla.pose; st.kla.f = lt < land + 0.3 ? -1 : 1; }
   // Boss: roars (B08), charges, punch; Kla spins (spin mark) and lands the back heel (spinhit) — slow motion on contact
   const B0 = tm('B08'), SP = tm('spin'), HIT = tm('spinhit'), HIT1 = te_('spinhit');
-  if (lt >= B0 && lt < HIT) { const k = clamp01((lt - B0) / (HIT - B0)); st.boss.x = lerp(1680, 1080, ease(k)); st.boss.pose = k < 0.75 ? mix(PO.run, Object.assign({}, PO.run, { legF: [-0.6, -1.0], legB: [0.9, -1.1] }), 0.5 + 0.5 * Math.sin(tq(lt) * 18)) : mix(PO.punchWind, PO.punch, (k - 0.75) / 0.25); st.boss.face = { anger: 1, mouth: 0.8 }; }
+  if (lt >= B0 && lt < HIT) { const k = clamp01((lt - B0) / (HIT - B0)); st.boss.x = lerp(1570, 1080, ease(k)); st.boss.pose = k < 0.75 ? mix(PO.run, Object.assign({}, PO.run, { legF: [-0.6, -1.0], legB: [0.9, -1.1] }), 0.5 + 0.5 * Math.sin(tq(lt) * 18)) : mix(PO.punchWind, PO.punch, (k - 0.75) / 0.25); st.boss.face = { anger: 1, mouth: 0.8 }; }
   if (lt >= SP && lt < HIT) { const k = (lt - SP) / (HIT - SP); st.kla.f = k < 0.45 ? 1 : -1; st.kla.pose = k < 0.45 ? mix(PO.guard, PO.spinTurn, k / 0.45) : mix(PO.spinTurn, PO.spinKick, ease((k - 0.45) / 0.55)); }
   if (lt >= HIT) { const k = clamp01((lt - HIT) / (HIT1 - HIT)); // slow-mo contact
     st.kla.f = -1; st.kla.pose = PO.spinKick; st.boss.x = 1080 + 40 * k; st.boss.pose = mix(PO.punch, PO.hitBack, ease(k)); st.boss.face = { eyes: 'wide', mouth: 0.9 }; st.impact = { x: 990, y: 640, t: (lt - HIT) * 0.25, big: true };
@@ -292,7 +292,7 @@ function fightDraw(lt, t) {
   const s = fightState(lt);
   const SP_ = tm('spin'), HIT_ = tm('spinhit'), HIT1_ = te_('spinhit'), T1_ = tm('teep'), hs = stopAt(lt);
   const slow = lt >= HIT_ && lt < HIT1_;
-  if (hs && s.impact) impactBg(t, s.impact.x, s.impact.y, 205, 26);
+  if (hs && s.impact) impactBg(t, s.impact.x, s.impact.y, s.impact.grip ? 170 : 205, s.impact.grip ? 14 : 26);
   if (slow) impactBg(t, 990, 640, 225 - 60 * clamp01((lt - HIT_ - 0.6) / 0.4), 34);
   backCrowd(t, lt > tm('teepland') ? 'wow' : 'calm', [180, 420, 1500, 1780]); frontDesks([20, 1760]);
   const dn = c => !!c.pose.lie; // lying = foreground layer
@@ -305,15 +305,15 @@ function fightDraw(lt, t) {
   if (fast || slow) for (const [d, a] of [[0.17, 60], [0.085, 110]]) { const g = fightState(Math.min(lt, HIT_ + 0.01) - d * (slow ? 1.6 : 1)).kla; A.ghost({ col: '#8fdcff', a }, () => klaBody(g)); }
   klaBody(s.kla);
   if (dn(s.jo)) drawJo(); if (dn(s.te)) drawTe();
-  if (s.impact) { const k = clamp01(s.impact.t / 0.25); FT.burst(s.impact.x, s.impact.y, (s.impact.big ? 150 : s.impact.small ? 70 : 110) * (0.6 + 0.6 * k), t * 3, '#fff6d8', 9); }
+  if (s.impact && !s.impact.grip) { const k = clamp01(s.impact.t / 0.25); FT.burst(s.impact.x, s.impact.y, (s.impact.big ? 150 : s.impact.small ? 70 : 110) * (0.6 + 0.6 * k), t * 3, '#fff6d8', 9); }
   if (lt > tm('spin') && lt < tm('spinhit')) { FT.arc(820, 620, 150, -0.4, 3.6, 34, '#ffffff', 150); const k = (lt - tm('spin')) / (tm('spinhit') - tm('spin')); if (k > 0.4) FT.bolt(760, 560, 830 + 180 * k, 660, t, 30); }
   // lightning on the fast strikes (teep extension, the catch, the spinning heel) + crackle at every impact
   { const T1 = tm('teep'); if (lt > T1 + 0.3 && lt < T1 + 0.75) FT.bolt(840, 600, 1010, 690, t, 22); }
-  { const N1 = tm('naka'); if (lt > N1 + 0.05 && lt < N1 + 0.4) FT.bolt(1080, 560, 935, 640, t, 20); if (lt > N1 + 0.32 && lt < N1 + 1.0) FT.bolt(870, 600, 1000, 470 + 200 * ((lt - N1) % 0.3), t, 26, 7, 0.8); }
+  { const N1 = tm('naka'); if (lt > N1 + 0.05 && lt < N1 + 0.28) FT.bolt(760, 520, 850, 600, t, 16, 6, 0.7); /* the hands shoot out */ if (lt > N1 + 0.56 && lt < N1 + 1.2) { FT.arc(820, 600, 250, -0.5, -2.7, 30, '#ffffff', 120); FT.bolt(840, 560, s.te.x, 470 - (s.te.pose.air || 0), t, 26, 7, 0.8); } } // lightning follows the throw, never covers the grip
   if (lt > tm('spinhit') && lt < te_('spinhit')) { FT.bolt(700, 640, 1000, 640, t, 36, 11, 1.3); }
-  if (s.impact) FT.sparks(s.impact.x, s.impact.y, s.impact.big ? 260 : 170, t, s.impact.big ? 8 : 6);
+  if (s.impact && !s.impact.grip) FT.sparks(s.impact.x, s.impact.y, s.impact.big ? 260 : 170, t, s.impact.big ? 8 : 6);
   if (lt > tm('teep') + 0.4 && lt < tm('teep') + 0.7) FT.arc(900, 700, 90, -1.2, 0.4, 22, '#ffffff', 170);
-  if (s.jo.pose === PO.down) FT.stars(1700, 790 + NEAR, 60, t); if (lt > tm('naka') + 1.4) FT.stars(1210, 800 + NEAR, 55, t + 1);
+  if (s.jo.pose === PO.down) FT.stars(1850, 790 + NEAR, 60, t); if (lt > tm('naka') + 1.4) FT.stars(480, 800 + NEAR, 55, t + 1);
   if (lt > tm('crash') + 0.3) FT.stars(1450, 780, 70, t + 2);
 }
 // C1 (velocity-continuous) interpolation over [t, ...values] keys: the camera never stops dead at a key, it flows through it
@@ -323,32 +323,34 @@ function flow(keys, lt) { let i = 0; while (i < keys.length - 2 && lt > keys[i +
   return k0.slice(1).map((_, d) => h00 * k0[d + 1] + h10 * h * tan(i, d + 1) + h01 * k1[d + 1] + h11 * h * tan(i + 1, d + 1)); }
 function fightCam(lt, t, sh) { // one flowing camera: [time, look-at X, Y, zoom, tilt]. drifts in on Kla, crashes in on each contact, whips after whoever flies, tilts on the strikes
   const T1 = tm('teep'), N1 = tm('naka'), HIT = tm('spinhit'), HIT1 = te_('spinhit');
-  const keys = [[0, 1010, 620, 1.22, 0], [T1 - 0.1, 985, 622, 1.3, -0.012], [T1 + 0.55, 950, 640, 1.5, -0.04], [T1 + 0.98, 1230, 612, 1.28, 0.02], [te_('teepland'), 1185, 640, 1.2, 0],
-    [tm('te'), 1150, 622, 1.22, 0.008], [N1, 1035, 602, 1.32, 0.02], [N1 + 0.32, 990, 610, 1.48, 0.05], [N1 + 0.9, 1060, 592, 1.4, -0.03], [N1 + 1.36, 1130, 650, 1.3, -0.012], [te_('nakaland'), 1100, 640, 1.24, 0],
-    [tm('boss'), 1390, 600, 1.25, 0], [tm('B08') + 0.5, 1340, 602, 1.36, 0.02], [tm('spin'), 1040, 620, 1.42, -0.02], [HIT, 965, 580, 1.8, -0.06], [HIT1, 980, 572, 1.92, -0.072], [HIT1 + 0.55, 1210, 622, 1.34, 0.02], [tm('crash'), 1260, 640, 1.2, 0], [tm('crash') + 9, 1260, 640, 1.17, 0]];
+  const keys = [[0, 1010, 620, 1.22, 0], [T1 - 0.1, 985, 622, 1.3, -0.012], [T1 + 0.55, 950, 640, 1.5, -0.04], [T1 + 0.98, 1300, 612, 1.26, 0.02], [te_('teepland'), 1250, 640, 1.2, 0],
+    [tm('te'), 1120, 622, 1.22, 0.008], [N1, 1035, 602, 1.32, 0.02], [N1 + 0.32, 990, 610, 1.48, 0.05], [N1 + 0.56, 985, 600, 1.5, 0.045], [N1 + 0.95, 860, 585, 1.36, -0.03], [N1 + 1.36, 690, 650, 1.28, -0.012], [te_('nakaland'), 720, 640, 1.22, 0],
+    [tm('boss'), 1330, 600, 1.25, 0], [tm('B08') + 0.5, 1290, 602, 1.36, 0.02], [tm('spin'), 1040, 620, 1.42, -0.02], [HIT, 965, 580, 1.8, -0.06], [HIT1, 980, 572, 1.92, -0.072], [HIT1 + 0.55, 1210, 622, 1.34, 0.02], [tm('crash'), 1260, 640, 1.2, 0], [tm('crash') + 9, 1260, 640, 1.17, 0]];
   let [x, y, pz, rot] = flow(keys, lt);
   for (const [ti] of STOPS()) if (lt >= ti) pz *= 1 + 0.07 * Math.exp(-(lt - ti) / 0.14); // crash-in on contact, settles back
   const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
   const hand = { dx: 3.2 * Math.sin(lt * 1.9) + 2 * Math.sin(lt * 3.1 + 1), dy: 2.4 * Math.sin(lt * 2.3 + 2) }; // handheld breathing
-  const pp = pz * (FMT.name === 'short' ? 0.7 : 1); const sv = FMT.name === 'short'; const c = aim(sh, x + (sv ? 60 : 0), y, Math.max(sv ? 1.07 : 1.02, pp), { rot: (rot + 0.006 * Math.sin(lt * 0.9)) * (sv ? 0.35 : 1) }); // 9:16 has little side headroom: almost no tilt c.dx += shk.dx + hand.dx; c.dy += shk.dy + hand.dy; return c;
+  const pp = pz * (FMT.name === 'short' ? 0.7 : 1); const sv = FMT.name === 'short'; const svx = !sv ? 0 : (lt > N1 + 0.56 && lt < tm('boss')) ? -130 : 60; /* 9:16: keep the thrown man in the narrow frame */ const c = aim(sh, x + svx, y, Math.max(sv ? 1.07 : 1.02, pp), { rot: (rot + 0.006 * Math.sin(lt * 0.9)) * (sv ? 0.35 : 1) }); /* 9:16 has little side headroom: almost no tilt */ c.dx += shk.dx + hand.dx; c.dy += shk.dy + hand.dy; return c;
 }
 const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.55, cx: 1000, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
-add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('mew', 960, 505, 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18), blink: 0 }) });
+add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', cam: (lt, t) => Object.assign({ p: 1 + 0.07 * lt, rot: 0.02 }, shake(t, 7 * Math.max(0, 1 - lt / 0.35))),
+  draw: (lt, t) => FACE('mew', 960, 505 - 14 * spr(lt, 16) + 3 * Math.sin(tq(lt) * 9), 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18) + 0.12 * Math.sin(tq(lt) * 7), blink: lt > 1.0 && lt < 1.12 ? 1 : 0, look: lt > 1.15 ? 1 : 0, sweat: 1 }) });
 add(at('te', 0.05), fightShot('p8_fightB'));
-add(at('F01', 0.05), { id: 'p8_fern', cam0: CU(860, 470, 2.2), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu2', draw: (lt, t) => { FACE('nut', 760, 520, 118, { eyes: 'wide', mouthO: 0.5 }); FACE('fern', 975, 505, 130, { eyes: 'wide', mouthO: 0.3 + 0.4 * spr(lt, 16) }); } });
+add(at('F01', 0.05), { id: 'p8_fern', cam0: CU(860, 470, 2.2), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu2', cam: (lt, t) => Object.assign({ p: 1 + 0.06 * lt, rot: -0.02 }, shake(t, 7 * Math.max(0, 1 - lt / 0.35))),
+  draw: (lt, t) => { FACE('nut', 760, 520 + 3 * Math.sin(tq(lt) * 8 + 1), 118, { eyes: 'wide', mouthO: 0.5 + 0.1 * Math.sin(tq(lt) * 6), blink: lt > 0.8 && lt < 0.92 ? 1 : 0, look: lt > 0.95 ? -1 : 0 }); FACE('fern', 975, 505 - 12 * spr(lt, 16) + 3 * Math.sin(tq(lt) * 9), 130, { eyes: 'wide', mouthO: 0.3 + 0.4 * spr(lt, 16), blink: lt > 1.2 && lt < 1.32 ? 1 : 0, look: lt > 0.95 ? -1 : 0 }); } });
 add(at('boss', 0.05), fightShot('p8_fightC'));
 // ---------------- PART 9: why?
-add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
-  cam: (lt, t, sh) => aim(sh, 1150, 640, 1.25 - 0.1 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('boss', 1450, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } });
-    P('jo', 1700, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); P('te', 1200, -1, Object.assign({}, PO.down, { lieDir: -1 }), { eyes: 'dazed' }, { y: G + NEAR }); FT.stars(1700, 790 + NEAR, 60, t); FT.stars(1210, 800 + NEAR, 55, t + 1); FT.stars(1450, 780, 70, t + 2); },
+add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, shortCam0: { zoom: 1.42, cx: 1150, cy: 690 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
+  cam: (lt, t, sh) => aim(sh, 1120, 640, 1.2 - 0.08 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('boss', 1450, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } });
+    P('jo', 1850, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); P('te', 470, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); FT.stars(1850, 790 + NEAR, 60, t); FT.stars(480, 800 + NEAR, 55, t + 1); FT.stars(1450, 780, 70, t + 2); },
   fxs: [{ d: 0.1, text: 'ตุ้บ!', x: 1400, y: 560, size: 130, len: 0.7 }] });
-add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), shortCam0: { zoom: 1.45, cx: 960, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
+add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), shortCam0: { zoom: 1.75, cx: 960, cy: 613 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
   cam: (lt) => ({ p: 1 + 0.03 * lt }), draw: (lt, t) => { FACE('mew', 740, 520, 112, { eyes: 'wide', mouthO: 0.6 }); FACE('nut', 960, 505, 122, { eyes: 'wide', mouth: Math.max(0.3, mouth('X', t)) }); FACE('fern', 1180, 520, 112, { eyes: 'wide', mouthO: 0.7 }); } });
 add(at('S17'), { id: 'p9_tired', cam0: CU(860, 620, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_140',
   draw: (lt, t) => { const wob = 0.06 * Math.sin(tq(lt) * 20); P('kla', 860, 1, Object.assign({}, PO.pant, { legF: [0.2 + wob, -0.4], legB: [-0.18 - wob, -0.35] }), KF(t, { sweat: 1 }), { lookOver: { bangsUp: true } }); sweatDrops(900, 440, t); } });
-add(at('S18'), { id: 'p9_hand', cam0: CU(760, 680, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_hand',
-  draw: (lt, t) => { P('pond', 560, 1, PO.down, { eyes: 'normal', look: 1 }); glassesProp(380, G - 10, 30, 0.3); P('kla', 800, -1, { lean: 0.8, head: -0.25, armF: [0.75, 0.15], armB: [0.2, 0.5], handF: 'open', legF: [0.55, -0.75], legB: [-0.35, -0.45] }, KF(t, { mood: 'happy' }), { lookOver: { bangsUp: true } }); } });
+add(at('S18'), { id: 'p9_hand', cam0: CU(600, 680, 1.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_hand',
+  draw: (lt, t) => { P('pond', 400, 1, PO.down, { eyes: 'normal', look: 1 }); glassesProp(220, G - 10, 30, 0.3); P('kla', 640, -1, { lean: 0.8, head: -0.25, armF: [0.75, 0.15], armB: [0.2, 0.5], handF: 'open', legF: [0.55, -0.75], legB: [-0.35, -0.45] }, KF(t, { mood: 'happy' }), { lookOver: { bangsUp: true } }); } });
 add(at('P05'), { id: 'p9_pondAsk', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', draw: (lt, t) => FACE('pond', 960, 505, 145, { eyes: 'wide', mouth: mouth('P', t), look: 1 }) });
 add(at('S19'), { id: 'p9_book', cam0: CU(960, 470, 2.2), bg: () => STAGE.classroom(), bgKey: 'cls_cu3',
   draw: (lt, t) => { FACE('kla', 960, 490, 135, KF(t, { mood: 'happy', bangsUp: true, eyes: 'normal' })); bookProp(1130, 800, 200, -0.12, false); } });
@@ -357,7 +359,7 @@ add(at('N24', 0.1), { id: 'p9_corridor', bars: true, cam0: WIDE, bg: () => STAGE
 add(at('window', 0), { id: 'p9_mystery', bars: true, cam0: CU(960, 470, 2.4), bg: () => STAGE.flat('#1a1622', '#0c0a10', true), bgKey: 'dark',
   draw: (lt, t) => { FACE('shadow', 960, 505, 150, { mood: 'smirk', eyes: 'fierce', mouth: mouth('M', t) }); } });
 add(at('N25', 0.1), { id: 'p9_next', cam0: WIDE, bg: () => STAGE.burst('#1a1a2e', '#06060c'), bgKey: 'burst_night', endq: ['ตอนต่อไป', 'แล้ว<b>กล้าตัวจริง</b><br>หายไปไหน?'], noSub: true, draw: () => {} });
-add(at('N26', 0.1), { id: 'p9_question', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', endq: ['เมนต์บอกหน่อย', 'สู้ตั้งแต่ครั้งแรก<br>หรือ <b>ทนแบบมานพ?</b>'], noSub: true, vig: 0.8,
+add(at('N26', 0.1), { id: 'p9_question', cam0: WIDE, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', endq: ['เมนต์บอกหน่อย', 'สู้ตั้งแต่ครั้งแรก<br>หรือ <b>ทนแบบมานพ?</b>'], endqTop: FMT.name === 'short' ? '30%' : '26%', noSub: true, vig: 0.8,
   cam: (lt, t, sh) => aim(sh, 1000, 600, 1.05), draw: (lt, t) => { hookScene(t, 'end'); vignette(170); } });
 // ---- finalize: t1 = next t0; bubbles/fx from shot.fxs; move cards
 S.sort((a, b) => a.t0 - b.t0); S.forEach((s, i) => { s.t1 = i + 1 < S.length ? S[i + 1].t0 : DATA.duration + 1; });
@@ -367,7 +369,7 @@ const EP = { shots: S, fx: FXS, bubbles: [],
   NAMES: { S: 'มานพ (ในร่างกล้า)', B: 'บอส', P: 'ปอนด์', J: 'โจ้', T: 'เต้', G: 'หมิว', F: 'เฟิร์น', X: 'นัท', C: 'ครู', M: '???', K: 'เด็กคนนั้น' },
   COL: { N: '#ffffff', S: '#ffd23f', B: '#ff8a80', P: '#9fe3ff', J: '#ffb36b', T: '#ffb36b', G: '#f7b2d9', F: '#f7b2d9', X: '#c8f7a8', C: '#e0c8ff', M: '#b0a8c8', K: '#ffe7a0' } };
 // 2-frame white flash on every contact in the fight
-EP.overlayExtra = (t, shot) => { if (!/^p8_fight/.test(shot.id)) return; const lt = t - F0; let f = 0; for (const ti of [...STOPS().map(x => x[0]), tm('spinhit')]) if (lt >= ti && lt < ti + 0.09) f = Math.max(f, 0.85 * (1 - (lt - ti) / 0.09)); document.getElementById('flash').style.opacity = f; };
+EP.overlayExtra = (t, shot) => { if (!/^p8_fight/.test(shot.id)) return; const lt = t - F0; let f = 0; for (const ti of [STOPS()[0][0], tm('spinhit')]) if (lt >= ti && lt < ti + 0.09) f = Math.max(f, 0.85 * (1 - (lt - ti) / 0.09)); document.getElementById('flash').style.opacity = f; };
 // before the switch into Kla's body, Saengchai's lines are his own (no "in Kla's body" label)
 EP.NAMES_AT = (v, t) => (v === 'S' && t < DATA.lines.S04.start - 0.2 ? 'มานพ' : EP.NAMES[v]);
 

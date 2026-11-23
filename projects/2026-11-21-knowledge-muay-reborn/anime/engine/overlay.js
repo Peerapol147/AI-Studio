@@ -8,7 +8,7 @@ window.overlay = (t) => {
   const s = (DATA.subs || []).find(c => t >= c.t0 && t < c.t1), sub = $('sub');
   if (s && !shot.noSub) { sub.style.display = 'block'; const who = EP.NAMES_AT ? EP.NAMES_AT(s.v, t) : (EP.NAMES || {})[s.v]; sub.innerHTML = (who ? `<i style="color:${EP.COL[s.v] || '#fff'}">${who}</i>` : '') + s.text; sub.style.color = EP.COL[s.v] || '#fff';
     // one line, never broken mid-word: shrink long lines to fit (Thai marks above/below don't take width)
-    const n = s.text.replace(/[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/g, '').length, base = FMT.name === 'short' ? 64 : (shot.bars ? 44 : 56), room = FMT.name === 'short' ? 960 : 1760;
+    const n = s.text.replace(/[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/g, '').length, base = FMT.name === 'short' ? 64 : (shot.bars ? 52 : 56), room = FMT.name === 'short' ? 960 : 1760;
     sub.style.fontSize = Math.min(base, Math.floor(room / (n * 0.56))) + 'px'; }
   else sub.style.display = 'none';
   // tag
@@ -29,7 +29,7 @@ window.overlay = (t) => {
   const ti = $('title'); ti.style.display = shot.title ? 'flex' : 'none'; if (shot.title) ti.style.transform = `scale(${0.9 + 0.1 * sp(lt, 12, 0.5) + 0.01 * lt})`;
   const hk = $('hook'); hk.style.display = shot.hook ? 'block' : 'none'; if (shot.hook) { hk.textContent = shot.hook; if (shot.thumb) { hk.style.fontSize = '170px'; hk.style.color = '#ffe24a'; hk.style.top = '40px'; } hk.style.transform = `translateX(-50%) scale(${1 + 0.03 * Math.sin(t * 5)})`; }
   const eq = $('endq'); eq.style.display = shot.endq ? 'block' : 'none';
-  if (shot.endq) { eq.querySelector('.a').textContent = shot.endq[0]; eq.querySelector('.b').innerHTML = shot.endq[1]; eq.style.transform = `translate(-50%,-50%) scale(${0.85 + 0.15 * sp(lt, 14)})`; }
+  if (shot.endq) { eq.style.top = shot.endqTop || '50%'; eq.querySelector('.a').textContent = shot.endq[0]; eq.querySelector('.b').innerHTML = shot.endq[1]; eq.style.transform = `translate(-50%,-50%) scale(${0.85 + 0.15 * sp(lt, 14)})`; }
   const vg = $('vig'); vg.style.display = shot.vig ? 'block' : 'none'; if (shot.vig) vg.style.opacity = shot.vig;
   $('sepia').style.display = shot.sepia ? 'block' : 'none'; $('bars').style.display = shot.bars ? 'block' : 'none'; document.querySelector('main').classList.toggle('bars', !!shot.bars);
   { const g = $('grain'), x = g.getContext('2d'), im = x.createImageData(480, 270); let r = (Math.floor(t * 24) * 2654435761) >>> 0; for (let i = 0; i < im.data.length; i += 4) { r ^= r << 13; r ^= r >>> 17; r ^= r << 5; const v = (r >>> 0) & 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; } x.putImageData(im, 0, 0); }

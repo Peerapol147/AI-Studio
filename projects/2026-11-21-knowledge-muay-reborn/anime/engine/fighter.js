@@ -8,9 +8,9 @@
 const LOOK = {
   // Thai school uniform: white short-sleeve shirt, navy shorts, white socks, black shoes (generic, no school name)
   kla:   { skin: '#f1c9a5', skinSh: '#d9a07e', shirt: '#fbfaf5', shirtSh: '#dfe3ea', pants: '#26335a', sock: '#f4f4f0', shoe: '#1d1b22', hair: '#1b1820', build: 0.86, hairStyle: 'mop', mark: '#3a5ccc' },
-  boss:  { tall: 1.1, skin: '#d9a67c', skinSh: '#b9825e', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#231a18', build: 1.18, hairStyle: 'spike', untucked: true, rolled: true, tank: '#c8443a' },
-  jo:    { tall: 1.03, skin: '#e8b48c', skinSh: '#c98d68', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#2a2224', build: 1.32, hairStyle: 'buzz', untucked: true },
-  te:    { skin: '#ecc09a', skinSh: '#cf9a74', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#3b2a22', build: 0.95, hairStyle: 'side', untucked: true },
+  boss:  { tall: 1.13, skin: '#d9a67c', skinSh: '#b9825e', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#231a18', build: 1.24, hairStyle: 'spike', untucked: true, rolled: true, tank: '#c8443a' },
+  jo:    { tall: 0.99, belly: 1, skin: '#e8b48c', skinSh: '#c98d68', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#2a2224', build: 1.5, hairStyle: 'buzz', untucked: true },
+  te:    { tall: 1.1, skin: '#ecc09a', skinSh: '#cf9a74', shirt: '#f6f4ec', shirtSh: '#d6d8de', pants: '#232c4c', sock: '#f0efe8', shoe: '#1d1b22', hair: '#3b2a22', build: 0.8, hairStyle: 'side', untucked: true },
   saeng: { faceAs: 'legend', skin: '#cf9a72', skinSh: '#b07e5a', shirt: '#5a6470', shirtSh: '#4a525c', pants: '#2a2a34', longPants: true, sock: '#2a2a34', shoe: '#3a3030', hair: '#8f8a8e', build: 1.25, hairStyle: 'grey', untucked: true, stache: true },
   kidK:  { skin: '#f1c9a5', skinSh: '#d9a07e', shirt: '#7aa0c8', shirtSh: '#6a8eb2', pants: '#3a3a44', sock: '#f1c9a5', shoe: '#5a4a3a', hair: '#1b1820', build: 0.8, hairStyle: 'mop', short: 0.74, untucked: true, casual: true },
   teacher: { skin: '#f0c8a4', skinSh: '#d8a884', shirt: '#f2b8c6', shirtSh: '#d99aa8', pants: '#3a4660', skirt: true, sock: '#e8c0a0', shoe: '#5a3a3a', hair: '#2a2024', build: 0.92, hairStyle: 'girl', tall: 1.02 },
@@ -97,7 +97,7 @@ const FT = (() => {
     // torso (shirt) — tucked: ends at belt; untucked: hangs over the hips
     const rotp = (p) => { const s = sin(po.lean), co = cos(po.lean), x = p[0], y = p[1]; return [hip[0] + x * co - y * s, hip[1] + x * s + y * co]; };
     const w = 8.4 * bw, tail = L.untucked ? 6 : 1.5;
-    A.poly([[-w * 0.78, -30], [w * 0.7, -30], [w * 1.04, -25], [w * 1.08, -14], [w * 0.98, 2], [w * 1.04, tail], [-w * 1.0, tail], [-w * 0.98, 2], [-w * 1.06, -14], [-w * 1.04, -25]].map(rotp), { fill: shirtCol, w: 1.1, curv: 0.3 });
+    A.poly([[-w * 0.78, -30], [w * 0.7, -30], [w * 1.04, -25], [w * (L.belly ? 1.2 : 1.08), -12], [w * (L.belly ? 1.22 : 0.98), 0], [w * 1.04, tail], [-w * 1.0, tail], [-w * 0.98, 2], [-w * 1.06, -14], [-w * 1.04, -25]].map(rotp), { fill: shirtCol, w: 1.1, curv: 0.3 });
     if (!L.untucked) A.poly([[-w * 1.05, 0], [w * 1.0, 0], [w * 1.0, 2.4], [-w * 1.05, 2.4]].map(rotp), { fill: '#1e1a20', w: 0, curv: 0 }); // belt
     A.poly([[w * 0.0, -30.5], [w * 0.75, -30], [w * 0.42, -24.5]].map(rotp), { fill: L.shirtSh, w: 0.6, curv: 0 }); A.poly([[-w * 0.5, -30.5], [w * 0.0, -30.5], [-w * 0.1, -25.5]].map(rotp), { fill: L.shirtSh, w: 0.6, curv: 0 }); // collar (both wings)
     if (L.mark) A.stroke([[w * 0.35, -22], [w * 0.75, -22.3]].map(rotp), { ink: L.mark, w: 0.6 }); // embroidered initials (abstract)
@@ -200,10 +200,10 @@ const FT = (() => {
     if (!c.noBody) A.limb(0, 40, 0, 76, 16 * nk, 18 * nk, { fill: shadeHex(F.skin, 0.86), w: 1 });
     // body / uniform
     if (c.noBody) {} else if (F.shirt === 'boy' || F.shirt === 'girl') {
-      A.poly([[-128, 380], [-118, 100 + sh], [-58, 70], [58, 70], [118, 100 + sh], [128, 380]], { fill: '#fbfaf5', w: 1.4, curv: 0.18 });
-      if (F.shirt === 'boy') { A.poly([[-34, 62], [-1, 98], [-6, 106], [-44, 78]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.poly([[34, 62], [1, 98], [6, 106], [44, 78]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.stroke([[0, 104], [0, 380]], { w: 0.8 }); if (F.mark) A.stroke([[40, 150], [64, 148]], { ink: F.mark, w: 1.4 }); if (F.tank) A.poly([[-20, 76], [0, 98], [20, 76]], { fill: F.tank, w: 0, curv: 0 }); }
+      A.poly([[-130, 700], [-118, 100 + sh], [-58, 70], [58, 70], [118, 100 + sh], [130, 700]], { fill: '#fbfaf5', w: 1.4, curv: 0.18 });
+      if (F.shirt === 'boy') { A.poly([[-34, 62], [-1, 98], [-6, 106], [-44, 78]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.poly([[34, 62], [1, 98], [6, 106], [44, 78]], { fill: '#e6e9ef', w: 1, curv: 0.1 }); A.stroke([[0, 104], [0, 700]], { w: 0.8 }); if (F.mark) A.stroke([[40, 150], [64, 148]], { ink: F.mark, w: 1.4 }); if (F.tank) A.poly([[-20, 76], [0, 98], [20, 76]], { fill: F.tank, w: 0, curv: 0 }); }
       else { A.poly([[-30, 64], [0, 92], [30, 64], [22, 60], [0, 80], [-22, 60]], { fill: '#eef0f4', w: 1, curv: 0.1 }); A.poly([[-4, 92], [-26, 130], [-10, 140], [0, 104], [10, 140], [26, 130], [4, 92]], { fill: F.tie, w: 1, curv: 0.2 }); A.ell(0, 96, 9, 7, { fill: F.tie, w: 1 }); }
-    } else A.poly([[-132, 380], [-122, 100 + sh], [-60, 70], [60, 70], [122, 100 + sh], [132, 380]], { fill: F.shirt, w: 1.4, curv: 0.18 });
+    } else A.poly([[-134, 700], [-122, 100 + sh], [-60, 70], [60, 70], [122, 100 + sh], [134, 700]], { fill: F.shirt, w: 1.4, curv: 0.18 });
     head(F, c, c.turn || 0);
     A.pop(); A.setInk(ink0, 1.5);
   }
