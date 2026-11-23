@@ -62,8 +62,10 @@ const { chromium } = require('playwright');
         }
         return { text, inkTop, inkBottom, l, r: rr, plateBottom };
       });
+      lines.forEach((tl, i) => { const fs = parseFloat(getComputedStyle(tl).fontSize); const min = lines.length <= 2 ? 72 : 60; if (fs < min) probs.push(`line ${i + 1} font ${fs}px < ${min}px (unreadable on a phone)`); });
       const tb = title.getBoundingClientRect().bottom;
-      if (tb > 720) probs.push(`title ends at Y ${tb.toFixed(0)}: below the 240-700 band`);
+      const lim = document.getElementById('root').classList.contains('op-number') ? 840 : document.getElementById('root').classList.contains('op-pov') ? 770 : 720;
+      if (tb > lim) probs.push(`title ends at Y ${tb.toFixed(0)}: below ${lim}`);
       geo.forEach((g, i) => {
         if (g.l < left - 1 || g.r > right + 1) probs.push(`line ${i + 1} "${g.text}" overflows the title box (${g.l.toFixed(0)}-${g.r.toFixed(0)} vs ${left.toFixed(0)}-${right.toFixed(0)})`);
         if (i > 0) {

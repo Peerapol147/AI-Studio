@@ -19,7 +19,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 /* ---- hook title (Y 240-700 band); opening variants ---- */
 #tshade{position:absolute;left:0;top:0;width:1080px;height:880px;opacity:0;z-index:45;
   background:linear-gradient(rgba(0,0,0,.62) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,0) 100%)}
-#title{position:absolute;left:60px;top:250px;width:960px;z-index:50;display:flex;flex-direction:column;align-items:center;gap:6px;transform-origin:50% 40%}
+#title{position:absolute;left:60px;top:250px;width:960px;z-index:50;display:flex;flex-direction:column;align-items:center;gap:14px;transform-origin:50% 40%}
 #title .tl{font-weight:var(--tw);line-height:1.42;white-space:nowrap;color:var(--text);text-align:center;
   -webkit-text-stroke:22px var(--ink);paint-order:stroke fill;text-shadow:0 10px 0 rgba(0,0,0,.4)}
 #title em{font-style:normal;color:var(--accent)}
@@ -45,7 +45,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
 .cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
 .cv-tilt #title .tl em{padding:0 0 4px;background:none;border-bottom:16px solid var(--accent);color:var(--text)}
-.kick.num{font-size:260px;color:var(--accent);-webkit-text-stroke:24px var(--ink);paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.4)}
+.kick.num{font-size:170px;color:var(--accent);-webkit-text-stroke:24px var(--ink);paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.4)}
 /* ---- captions: centred X 510, Y ~1130-1250 (safe X 120-900 / Y 1100-1300) ---- */
 #caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
 .cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}

@@ -46,7 +46,7 @@ def test_two_looks_differ(tmp_path):
         assert '%%' not in p and p.count('class="clip cap"') == 11 and p.count('<video ') == 6
     assert 'cap-box op-pov' in a and "--accent:#FFD23F" in a and "--font:'Prompt'" in a and 'music-a.mp3' in a
     assert 'cap-pop op-number' in b and "--accent:#5CF2E3" in b and "--font:'Noto Sans Thai'" in b
-    assert 'class="kick num">86%<' in b and 'no music_file' in b
+    assert re.search(r'class="kick num" style="font-size:\d+px">86%<', b) and 'no music_file' in b
     assert '"transition": "slide"' in a and '"transition": "flash"' in b
     # loop shot replays the hook plate and ends on the hook in-point (1.0 s) = frame 0
     loop = re.search(r'<video id="v-loop"[^>]*data-start="([\d.]+)"[^>]*data-media-start="([-\d.]+)"', a)
@@ -174,3 +174,33 @@ def test_title_size_from_width_not_letter_count():
     assert '#title .tl em{display:inline-block;line-height:1.12;padding-top:.38em}' in tpl
     src = (V3 / 'build_index.py').read_text()
     assert '880 / max(1, n) * 1.9' not in src and 'def line_ems' in src
+
+
+def test_title_min_size_every_look_and_refuse_too_long(tmp_path):
+    """review v3.3: number + card squeezed the question to 31 px. Two-line Thai titles must stay >= 72 px in every
+    opening x cover; a title that cannot fit is refused with advice, never shrunk silently."""
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    opts = lambda ax: [k for k in cat[ax] if not k.startswith('_')]
+    i = 0
+    for op in opts('opening'):
+        for cv in opts('cover'):
+            i += 1
+            proj, video = project(tmp_path / f'p{i}', {**LOOK_A, 'opening': op, 'cover': cv},
+                                  episode={'title': ['*ท้องร้อง*', 'ทั้งที่เพิ่งกินข้าว?'], 'kicker': '70%' if op == 'number' else 'POV: x'})
+            r = build(video)
+            assert r.returncode == 0, (op, cv, r.stderr)
+            sizes = [int(x) for x in re.findall(r'class="tl" style="font-size:(\d+)px"', (video / 'index.html').read_text())]
+            assert min(sizes) >= 72, (op, cv, sizes)
+    proj, video = project(tmp_path / 'long', {**LOOK_A, 'opening': 'number', 'cover': 'card'},
+                          episode={'title': ['ทั้งที่เพิ่งกินข้าวเสร็จไปเมื่อกี้', 'ทำไมท้องยังร้องโครกครากดังลั่น', 'ทั้งห้องประชุมได้ยินหมด?'], 'kicker': '70%'})
+    r = build(video)
+    assert r.returncode != 0 and 'min 60 px' in r.stderr and 'shorten' in r.stderr
+
+
+def test_caption_alias_malformed_refused(tmp_path):
+    for bad in ('หน้าตาใหม่|', '|หน้าตาใหม่', 'a|b|c'):
+        ep = json.loads((FIX / 'episode.json').read_text())
+        caps = list(ep['caps']); caps[1] = bad
+        proj, video = project(tmp_path / str(abs(hash(bad))), LOOK_A, episode={'caps': caps})
+        r = build(video)
+        assert r.returncode != 0 and 'exactly "shown|as transcribed"' in r.stderr, (bad, r.stderr)

@@ -127,6 +127,9 @@ find = finder()
 CAPS = EP['caps']
 # caption "shown|heard": show the script spelling, find its time with the words.json spelling
 # (stomach-growl: scribe wrote "Borborygmus" for บอร์บอริกมัส and "คร่ำคร่าก" for โครกคราก)
+for c in CAPS:
+    if '|' in c and (c.count('|') > 1 or not c.partition('|')[0].strip() or not c.partition('|')[2].strip()):
+        raise SystemExit(f'caption {c!r}: write exactly "shown|as transcribed" (one |, text on both sides)')
 CAPS_MATCH = [c.partition('|')[2] or c for c in CAPS]
 CAPS = [c.partition('|')[0] for c in CAPS]
 capt = [find(c) for c in CAPS_MATCH]
@@ -201,7 +204,12 @@ def line_ems(ln):
     return w
 
 
-TITLE_BAND = 450                           # title starts at Y 250, must end by ~Y 700
+TITLE_BAND = 450                           # title starts at Y 250, must end by ~Y 700 (style.md)
+# pov / number put a kicker above the question: let those titles run lower (captions start at Y 1100);
+# review v3.3: a 270 px number inside the 450 px band shrank the question to 10-59 px
+BAND = {'pov': 500, 'number': 570}
+NUM_SIZE = lambda n: 220 if n <= 1 else 170 if n == 2 else 140   # the big number above the question
+MIN_TITLE = (72, 60)                       # px for <= 2 / 3+ lines; smaller is unreadable on a phone -> refuse, never shrink silently
 
 
 def title_room(ln):
@@ -227,19 +235,25 @@ def title():
     if LOOK['opening'] == 'number':
         if not kick:
             raise SystemExit('opening "number" needs episode.json kicker = the number (from research.md)')
-        rows.append(f'<div class="kick num">{html.escape(kick)}</div>')
+        num = NUM_SIZE(len(lines))
+        rows.append(f'<div class="kick num" style="font-size:{num}px">{html.escape(kick)}</div>')
     sizes = [min(big, int(title_room(ln) / max(0.5, line_ems(ln)))) for ln in lines]
     # keep the whole title inside the Y 240-700 band (style.md): taller Thai line-height (1.42) needs a height cap
     per = 1.42 + (0.16 if LOOK['opening'] == 'midstory' else 0)
-    gap = {'tilt': 44}.get(LOOK['cover'], 14 if LOOK['opening'] == 'midstory' else 6)
-    fixed = gap * (len(rows) + len(lines) - 1) + {'pov': 104, 'number': 270}.get(LOOK['opening'], 0) \
-        + (74 if LOOK['cover'] == 'card' else 0)
-    room = TITLE_BAND - fixed
+    gap = {'tilt': 44}.get(LOOK['cover'], 14)
+    kick_h = {'pov': 104, 'number': NUM_SIZE(len(lines)) + 12}.get(LOOK['opening'], 0)
+    fixed = gap * (len(rows) + len(lines) - 1) + kick_h + (74 if LOOK['cover'] == 'card' else 0)
+    room = BAND.get(LOOK['opening'], TITLE_BAND) - fixed
     # a line with a highlight plate grows: the plate is an inline-block 1.12 em + .38 em top padding
     pers = [max(per, 1.56 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln else per for ln in lines]
     if sum(sz * pp for sz, pp in zip(sizes, pers)) > room:
         k = room / sum(sz * pp for sz, pp in zip(sizes, pers))
         sizes = [int(sz * k) for sz in sizes]
+    floor = MIN_TITLE[0] if len(lines) <= 2 else MIN_TITLE[1]
+    if min(sizes) < floor:
+        raise SystemExit(f'title {lines!r} would be {min(sizes)} px with opening {LOOK["opening"]!r} / cover '
+                         f'{LOOK["cover"]!r} (min {floor} px, unreadable on a phone): shorten the lines, use fewer '
+                         'lines, or pick another opening/cover in look.json')
     for ln, size in zip(lines, sizes):
         body = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html.escape(ln))
         rows.append(f'<div class="tl" style="font-size:{size}px">{body}</div>')
