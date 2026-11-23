@@ -18,15 +18,15 @@ EV = [
     seg('sfx-cave-drips.mp3', 0, DUR, -36, 0.05, 1.5),
     # torch flutter on the walks
     seg('sfx-torch-whoosh.mp3', B['B2']['t0'], C['three'] - 0.3, -36), seg('sfx-torch-whoosh.mp3', B['B5']['t0'], C['tiny'] - 0.6, -36),
-    seg('sfx-torch-whoosh.mp3', C['lucky'] - 0.5, B['B5']['t1'], -36), seg('sfx-torch-whoosh.mp3', C['slow'] - 0.2, B['B6']['t1'], -36),
+    seg('sfx-torch-whoosh.mp3', C['lucky'] - 0.5, B['B5']['t1'], -36), seg('sfx-torch-whoosh.mp3', C['heavy'] - 0.35, B['B6']['t1'], -36),
     # campfire crackle at rest
     seg('sfx-fire-loop.mp3', 0, B['B1']['t1'], -33, 0.02), seg('sfx-fire-loop.mp3', C['three'] - 0.3, B['B4']['t1'], -31),
-    seg('sfx-fire-loop.mp3', C['tiny'] - 0.6, C['lucky'] - 0.5, -37), seg('sfx-fire-loop.mp3', B['B6']['t0'], C['slow'] - 0.2, -33),
+    seg('sfx-fire-loop.mp3', C['tiny'] - 0.6, C['lucky'] - 0.5, -37), seg('sfx-fire-loop.mp3', B['B6']['t0'], C['heavy'] - 0.35, -33),
     seg('sfx-fire-loop.mp3', B['B7']['t0'], C['out'] + 0.4, -35, 0.2, 1.0),
     seg('sfx-fire-die.mp3', C['out'] - 0.3, C['out'] + 2.7, -33, 0.05, 1.2, 0.5),
     seg('sfx-footsteps-snow.mp3', B['B2']['t0'] + 0.3, B['B2']['t0'] + 4.5, -33), seg('sfx-sled-drag.mp3', B['B2']['t0'] + 0.3, B['B2']['t0'] + 5, -35),
     seg('sfx-water-steps.mp3', B['B5']['t0'] + 0.5, B['B5']['t0'] + 5.5, -31),
-    seg('sfx-sled-drag.mp3', C['slow'] - 0.2, B['B6']['t1'], -30, 0.2, 0.4, 1),
+    seg('sfx-sled-drag.mp3', C['heavy'] - 0.35, B['B6']['t1'], -30, 0.2, 0.4, 1),
     seg('sfx-crate.mp3', C['crate'] + 0.8, C['crate'] + 3.6, -30, 0.05),
     seg('sfx-twig-weave.mp3', C['weave'], C['weave'] + 1.6, -31, 0.05),
     seg('sfx-shiver-breath.mp3', C['tiny'] - 0.4, C['tiny'] + 2.2, -31, 0.1),

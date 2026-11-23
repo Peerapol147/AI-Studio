@@ -11,5 +11,6 @@
 
 ## voice
 - vo-en/L01-L15.mp3: English narration generated with ElevenLabs (voice "George")
+- vo-th.mp3: Thai narration generated with ElevenLabs (voice "George", eleven_v3)
 
 <!-- auto-credits:end -->

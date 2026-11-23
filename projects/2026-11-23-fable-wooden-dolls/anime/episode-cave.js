@@ -93,24 +93,24 @@ function walk(ctx, t, o) {
   fireGlow(ctx, tp[0], tp[1] + 40, tf, t, 0.6);
   eyes(ctx, t, 0.8);
 }
-const heldDoll = (hx, hy, L, face = -0.6) => c => doll(c, { x: hx + 4, y: hy + 6, s: 0.95, face, L: Math.max(0.4, L), shadow: false });
+const heldDoll = (hx, hy, L, face = -0.6) => c => doll(c, { x: hx + 6, y: hy + 10, s: 1.35, face, L: 1, shadow: false });
 // the hook / last night moment: reach the doll to the fire, hesitate, hug it back
 function hook(ctx, t, reach, back = 0, fireSize = 0.24, o = {}) {
   cam(ctx, 520, 1180, 1.9);
   const k = reach * (1 - back), hug = back > 0 ? seg(back, 0.3, 1) : 0;
-  const hand = [lerp(64, 138, k), lerp(-92, -66, k)];
+  const hand = [lerp(60, 180, k), lerp(-110, -52, k)];
   const hR = [lerp(hand[0], 22, hug), lerp(hand[1], -84, hug)], hL = [lerp(-10, -24, hug), lerp(-70, -86, hug)];
-  rest(ctx, t, Object.assign({ fire: fireSize + Math.sin(t * 3) * 0.02, dolls: 30, pile: 0, eyesNear: 0.5, trav: { mood: hug > 0.6 ? 'shut' : 'worry', face: lerp(0.6, 0.15, hug), hands: { l: hL, r: hR }, shiver: 0.4, over: hug > 0.6 ? null : heldDoll(hR[0], hR[1], 0.6), front: hug > 0.6 ? c => doll(c, { x: 0, y: -64, s: 1, face: 0, L: 0.5, shadow: false }) : null } }, o));
+  rest(ctx, t, Object.assign({ fire: fireSize + Math.sin(t * 3) * 0.02, dolls: 30, pile: 0, eyesNear: 0.5, lights: [[TX + hR[0] * TS, TY + hR[1] * TS - 30, 260, 0.9]], trav: { mood: hug > 0.6 ? 'shut' : 'worry', face: lerp(0.6, 0.15, hug), hands: { l: hL, r: hR }, shiver: 0.4, over: hug > 0.6 ? null : heldDoll(hR[0], hR[1], 0.6), front: hug > 0.6 ? c => doll(c, { x: 0, y: -64, s: 1, face: 0, L: 0.5, shadow: false }) : null } }, o));
 }
 
 // ---------- HUD: sticks saved + dolls (top of the frame) ----------
 const savedAt = t => (t >= C.two && t < C.weave + 1.6) ? 2 : 0;
-const dollsAt = t => t < C.weave + 1.6 ? 0 : t < B.B6.t0 ? 1 : t < C.dolls_each ? 7 : t < C.heavy ? 15 : 30;
+const dollsAt = t => t < C.weave + 1.6 ? 0 : t < B.B6.t0 ? 1 : t < B.B6.t0 + 1.5 ? 7 : t < B.B6.t0 + 3.0 ? 15 : 30;
 function hud(ctx, t) {
   if (t < C.two - 0.2 || t >= B.B8.t0) return;
   const a = Math.min(1, (t - C.two + 0.2) / 0.3, (B.B8.t0 - t) / 0.3);
   ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = a;
-  const items = [['ไม้ที่เก็บไว้', savedAt(t), 'log', [C.two, C.weave + 1.6]], ['ตุ๊กตา', dollsAt(t), 'doll', [C.weave + 1.6, B.B6.t0, C.dolls_each, C.heavy]]];
+  const items = [['ไม้ที่เก็บไว้', savedAt(t), 'log', [C.two, C.weave + 1.6]], ['ตุ๊กตา', dollsAt(t), 'doll', [C.weave + 1.6, B.B6.t0, B.B6.t0 + 1.5, B.B6.t0 + 3.0]]];
   items.forEach(([label, n, icon, changes], i) => {
     const x = 70 + i * 490, y = 150, w = 450, h = 96;
     const pop = Math.max(0, ...changes.map(c => (t >= c && t < c + 0.4) ? 1 - (t - c) / 0.4 : 0));
@@ -128,7 +128,7 @@ const S = [];
 const shot = (id, t0, t1, fn) => S.push({ id, t0, t1, fn });
 
 // B1 hook: last-night moment, doll held toward the dying fire
-shot('B1', 0, B.B1.t1, (ctx, t, lt) => hook(ctx, t, 0.35 + 0.65 * (seg(lt, 0.2, 2.0) - 0.3 * seg(lt, 3.2, 4.6))));
+shot('B1', 0, B.B1.t1, (ctx, t, lt) => hook(ctx, t, 0.15 + 0.85 * (seg(lt, 1.2, 2.8) - 0.45 * seg(lt, 4.4, 5.6))));
 
 // B2 goal: a little traveler in a very dark cave walks toward the far light of the exit
 shot('B2', B.B2.t0, B.B2.t1, (ctx, t, lt) => {
@@ -197,15 +197,16 @@ shot('B5c', C.lucky - 0.5, B.B5.t1, (ctx, t, lt) => {
 });
 
 // B6 day after day: same camera, more dolls, (HUD counts) -> heavy sled, slow, exit still far
-const NIGHTS = [[B.B6.t0, C.dolls_each, 7, 0.55], [C.dolls_each, C.heavy, 15, 0.5], [C.heavy, C.slow - 0.2, 30, 0.45]];
+const N1 = B.B6.t0 + 1.5, N2 = B.B6.t0 + 3.0, WALK6 = C.heavy - 0.35;
+const NIGHTS = [[B.B6.t0, N1, 7, 0.55], [N1, N2, 15, 0.5], [N2, WALK6, 30, 0.45]];
 NIGHTS.forEach(([a, b, n, f], i) => shot('B6' + 'abc'[i], a, b, (ctx, t, lt) => { cam(ctx, 620, 1200, 1.4); rest(ctx, t, { fire: f, dolls: n, pile: 0, trav: { face: 0.6, mood: i === 2 ? 'worry' : 'neutral', hands: { l: [-20, -54], r: [44, -46] } } }); }));
-shot('B6d', C.slow - 0.2, B.B6.t1, (ctx, t, lt) => {
+shot('B6d', WALK6, B.B6.t1, (ctx, t, lt) => {
   cam(ctx, 560, 1370, 1.2);
   walk(ctx, t, { x: 640, scroll: 3000 + lt * 8, lean: 0.38, mood: 'worry', exit: [930, 1150, 0.5], cargo: c => dollPile(c, 30, 0.8, 7, 0.5) });
 });
 
 // B7 last night: wood runs out, reaches the doll to the fire, can't do it, hugs it, the fire dies, darkness (no body)
-shot('B7a', B.B7.t0, C.couldnt - 0.1, (ctx, t, lt) => hook(ctx, t, 0.3 + 0.7 * seg(t, C.burn - 0.2, C.burn + 1.2), 0, 0.22));
+shot('B7a', B.B7.t0, C.couldnt - 0.1, (ctx, t, lt) => hook(ctx, t, 0.1 + 0.9 * seg(t, C.burn - 0.1, C.burn + 1.0), 0, 0.22));
 shot('B7b', C.couldnt - 0.1, B.B7.t1, (ctx, t, lt) => {
   const f = 0.2 * (1 - seg(t, C.out - 0.3, C.out + 0.6));
   hook(ctx, t, 1, seg(t, C.couldnt, C.couldnt + 0.9), f, { embers: 0.8 * (1 - seg(t, C.out, C.out + 1.8)), eyesNear: lerp(0.5, 1, seg(t, C.out, C.out + 2)), eyesA: 1 });
@@ -223,7 +224,6 @@ shot('B8a', B.B8.t0, C.exit - 0.4, (ctx, t, lt) => {
   }
   text(ctx, 'ตุ๊กตา 30 ตัว', 430, 92, a);
   text(ctx, '= ไม้ 60 ท่อน', 560, 92, seg(t, C.sixty - 0.2, C.sixty + 0.2));
-  text(ctx, 'มากพอจะออกจากถ้ำ', 1650, 64, seg(t, C.enough - 0.1, C.enough + 0.3));
 });
 shot('B8b', C.exit - 0.4, B.B8.t1, (ctx, t, lt) => {
   // the camp at dawn-less dark (ash + dolls), camera pans right around the rock: daylight pours in from the exit
@@ -271,7 +271,7 @@ const TEXT = [
   [C.weave + 0.6, B.B4.t1, 'ไม้ 2 ท่อน = ตุ๊กตา 1 ตัว', 400, 76],
   [C.none - 0.1, C.tiny - 0.6, 'ไม่มีไม้สำรองเลย', 400, 80],
   [C.fine - 0.1, B.B5.t1, '"ไม่เป็นไรหรอก"', 400, 80],
-  [B.B6.t0 + 0.1, C.dolls_each, 'คืนที่ 7', 400, 80], [C.dolls_each, C.heavy, 'คืนที่ 15', 400, 80], [C.heavy, C.slow - 0.2, 'คืนที่ 30', 400, 80],
+  [B.B6.t0 + 0.1, B.B6.t0 + 1.5, 'คืนที่ 7', 400, 80], [B.B6.t0 + 1.5, B.B6.t0 + 3.0, 'คืนที่ 15', 400, 80], [B.B6.t0 + 3.0, C.heavy - 0.35, 'คืนที่ 30', 400, 80],
   [C.save - 0.1, EP.duration, 'เก็บก่อน\nแล้วค่อยสนุก', 430, 96],
 ];
 EP.shots = S; EP.text = TEXT;
