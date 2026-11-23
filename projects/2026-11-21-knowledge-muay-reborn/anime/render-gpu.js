@@ -27,5 +27,5 @@ const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0'
 if (r.status !== 0) process.exit(1); console.log('DONE ->', final);
 // deliver: copy the clip + thumbnail + titles/description into the user's Downloads folder
 const dl = path.join(require('os').homedir(), 'Downloads', 'muay-reborn-fable'); fs.mkdirSync(dl, { recursive: true });
-for (const f of [final, path.join(proj, 'renders', 'muay-reborn-thumb.jpg'), path.join(proj, 'upload.md')]) if (fs.existsSync(f)) fs.copyFileSync(f, path.join(dl, path.basename(f)));
+for (const f of [final, path.join(proj, 'renders', 'muay-reborn-fable-thumb.jpg'), path.join(proj, 'upload.md')]) if (fs.existsSync(f)) fs.copyFileSync(f, path.join(dl, path.basename(f)));
 console.log('COPIED to', dl);
