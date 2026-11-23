@@ -5,7 +5,7 @@
 const A = (() => {
   const W = (window.FMT || {}).W || 1080, H = (window.FMT || {}).H || 1920;
   let M = [1, 0, 0, 1, 0, 0]; const stack = [];
-  let INK = '#2a1e22', INKW = 1.5; // global ink color, ink weight multiplier, boil seed
+  let INK = '#2a1e22', INKW = 1.5, INKBRUSH = window.INKNAME || 'pen'; const CRISP = !!window.CRISP; // global ink color, ink weight multiplier, boil seed
   let rnd = mulberry(1);
   function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   const seed = s => { rnd = mulberry(s); };
@@ -21,14 +21,20 @@ const A = (() => {
   const k = () => Math.sqrt(Math.abs(M[0] * M[3] - M[1] * M[2]));
   const reset = () => { M = [1, 0, 0, 1, 0, 0]; };
   // ---- primitives (local coords)
+  let GH = null; // afterimage mode: every shape becomes a flat translucent silhouette (no ink)
   function style(o) {
+    if (GH) { brush.wash(GH.col, GH.a); brush.noFill(); brush.noStroke(); return; }
     if (o.fill) brush.wash(o.fill, o.alpha === undefined ? 255 : o.alpha); else brush.noWash();
     brush.noFill(); brush.noHatch && brush.noHatch();
-    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || 'pen', o.ink || INK, Math.max(0.15, (o.w || 1) * INKW * k() / 2.2));
+    if (o.ink === false || o.w === 0) brush.noStroke(); else brush.set(o.brush || INKBRUSH, o.ink || INK, lineW(o.w || 1));
   }
+  // line weight. Old look: grows linearly with zoom (close-ups got lines 2-3x heavier than wide shots).
+  // Crisp look: ONE weight scale for every shot — only a gentle growth with size (k^0.3), close-up faces no longer get their own multiplier.
+  const LW = { base: 3.0, pow: 0.3 };
+  const lineW = w => CRISP ? Math.max(0.5, w * LW.base * Math.pow(k(), LW.pow)) : Math.max(0.15, w * INKW * k() / 2.2);
   let mute = false; // static/background passes silence dynamic drawing
   function poly(pts, o = {}) { // closed shape
-    if (mute || pts.length < 2) return; style(o);
+    if (mute || pts.length < 2 || (GH && (!o.fill || o.alpha < 200))) return; style(o);
     brush.beginShape(o.curv === undefined ? 0.35 : o.curv);
     for (const p of pts) { const q = pt(p[0], p[1]); brush.vertex(q[0], q[1]); }
     brush.endShape(o.open ? false : true);
@@ -66,7 +72,7 @@ const A = (() => {
   // spring 0->1 with overshoot
   const spring = (t, w = 14, z = 0.45) => t <= 0 ? 0 : 1 - Math.exp(-z * w * t) * Math.cos(w * Math.sqrt(1 - z * z) * t);
   return { W, H, seed, R, push, pop, translate, scale, rotate, pt, k, reset, poly, stroke, ell, ellPts, capsule, limb, rect, wc, grad, camera, ease, lerp, clamp, spring,
-    setInk: (c, w) => { INK = c; INKW = w; }, get INK() { return INK; }, get mute() { return mute; }, set mute(v) { mute = v; } };
+    setInk: (c, w) => { INK = c; INKW = w; }, setBrush: b => { INKBRUSH = b; }, ghost: (g, fn) => { const p = GH; GH = g; try { fn(); } finally { GH = p; } }, LW, get INK() { return INK; }, get mute() { return mute; }, set mute(v) { mute = v; } };
 })();
 
 // static-layer helpers (used by episode.js, consumed by player.js)

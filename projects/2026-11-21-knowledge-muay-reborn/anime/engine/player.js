@@ -10,20 +10,25 @@ function getBg(shot) {
   if (shot._sig === undefined) { window.SIG = []; staticPass(shot, 'sig'); shot._sig = window.SIG.join('|'); }
   const key = (shot.bgKey || shot.id) + (shot._sig ? '#' + shot._sig : ''); if (fbCache[key]) return fbCache[key];
   const fw = Math.round(A.W * FBM), fh = Math.round(A.H * FBM);
-  const fb = createFramebuffer({ width: fw, height: fh, density: 1 });
+  const fb = createFramebuffer({ width: fw, height: fh, density: window.PD || 1 });
   fb.draw(() => {
     background('#000'); push(); translate(-fw / 2, -fh / 2); brush.load(fb); randomSeed(shot.seed || 7);
     A.reset(); A.translate(fw / 2, fh / 2); A.scale(shot.cam0.zoom); A.translate(-shot.cam0.cx, -shot.cam0.cy);
     shot.bg(); if (shot._sig) staticPass(shot, 'bg'); pop();
     // cinematic depth of field: close-up backgrounds are blurred once here (cached, no per-frame cost)
-    const dof = shot.dof !== undefined ? shot.dof : (shot.cam0.zoom >= 1.8 ? 5 : shot.cam0.zoom >= 1.35 ? 2 : 0);
+    const dof = shot.dof !== undefined ? shot.dof : (window.CRISP ? (shot.cam0.zoom >= 1.8 ? 2.5 : 0) : shot.cam0.zoom >= 1.8 ? 5 : shot.cam0.zoom >= 1.35 ? 2 : 0);
     if (dof) filter(BLUR, dof);
   });
   brush.load(); fbCache[key] = fb; return fb;
 }
 function shotAt(t) { return EP.shots.find(s => t >= s.t0 && t < s.t1) || EP.shots[EP.shots.length - 1]; }
-function setup() { createCanvas(A.W, A.H, WEBGL); pixelDensity(1); noLoop(); brush.scaleBrushes(1.6); }
+function setup() { createCanvas(A.W, A.H, WEBGL); pixelDensity(window.PD || 1); noLoop();
+  // 'ink': clean technical-pen line for the crisp look (solid, almost no scatter, slight pressure taper)
+  brush.add('ink', { weight: 0.3, scatter: 0.03, sharpness: 0.95, grain: 1, opacity: 245, spacing: 0.08, pressure: { curve: [0.3, 0.2], min_max: [1.25, 0.95] } });
+  brush.scaleBrushes(1.6); }
+let ARMED = false; // p5 calls draw() once on load: skip it (it painted the first scene's background for nothing, minutes on CPU)
 function draw() {
+  if (!ARMED) return;
   const t = T, fr = Math.round(t * DATA.fps), shot = shotAt(t), lt = t - shot.t0;
   // shots without their own camera get a slow push + gentle drift (never a dead-still frame)
   const c = Object.assign({ p: 1, dx: 0, dy: 0, rot: 0 }, shot.cam ? shot.cam(lt, t, shot) : { p: 1.01 + 0.012 * lt, dx: 6 * Math.sin(lt * 0.55), dy: 3 * Math.sin(lt * 0.41) });
@@ -35,5 +40,5 @@ function draw() {
   if (shot.draw) shot.draw(lt, t, fr);
   pop();
 }
-window.renderFrame = async (t) => { T = t; await redraw(); if (window.overlay) window.overlay(t); return shotAt(t).id; };
-window.preload_all = async () => { for (const s of EP.shots) { T = s.t0; await redraw(); } return Object.keys(fbCache).length; };
+window.renderFrame = async (t) => { ARMED = true; T = t; await redraw(); if (window.overlay) window.overlay(t); return shotAt(t).id; };
+window.preload_all = async () => { ARMED = true; for (const s of EP.shots) { T = s.t0; await redraw(); } return Object.keys(fbCache).length; };

@@ -50,7 +50,9 @@ const mix = (a, b, k) => { const pa = FT.P(a), pb = FT.P(b), o = {}; for (const 
 const walk = (t, sp = 7) => mix(PO.walkA, PO.walkB, 0.5 + 0.5 * Math.sin(tq(t) * sp));
 const P = (look, x, f, pose, face = {}, extra = {}) => FT.body(Object.assign({ look, x, y: G, s: H, f, pose, face }, extra));
 const Pb = (look, x, f, pose, face = {}) => FT.body({ look, x, y: BACK, s: H * 0.6, f, pose, face, noShadow: false }); // back-row extras
-const FACE = (who, x, y, s, o = {}) => FT.face(Object.assign({ who, x, y, s }, o));
+// close-ups: head sits in the upper-middle of the 16:9 frame (eyes near the top third), shoulders clear of the subtitle line
+const FACEUP = FMT.name === 'short' ? 0 : 48;
+const FACE = (who, x, y, s, o = {}) => FT.face(Object.assign({ who, x, y: y - FACEUP, s }, o));
 // Kla (Saengchai inside) face params
 const KF = (t, o = {}) => Object.assign({ mouth: mouth('S', t), blink: blink(t, 0.2) }, o);
 // ---- camera helpers: aim the camera at world (X,Y) with scale p (clamped to framebuffer headroom)
@@ -61,7 +63,7 @@ function aim(shot, X, Y, p, extra = {}) { const z = shot.cam0.zoom, W = A.W, Hh 
 function bookProp(x, y, s, rot = 0, open = false) { A.push(); A.translate(x, y); A.rotate(rot); A.scale(s / 100); if (open) SCH.sketchbook(0, 0, 100, 0); else { A.rect(-40, -30, 80, 60, { fill: '#3c5a8a', w: 1.1 }); A.rect(-34, -24, 68, 48, { fill: '#5a7ab0', w: 0.5 }); } A.pop(); }
 function glassesProp(x, y, s, rot = 0) { A.push(); A.translate(x, y); A.rotate(rot); A.scale(s / 10); A.ell(-6, 0, 4.4, 3.6, { ink: '#2a2428', w: 1 }); A.ell(6, 0, 4.4, 3.6, { ink: '#2a2428', w: 1 }); A.stroke([[-1.6, 0], [1.6, 0]], { w: 0.8 }); A.pop(); }
 function frontDesks(xs) { for (const x of xs) DESK(x, G, DK); }
-const backCrowd = STATIC((t, mood = 'calm', xs = [260, 520, 1380, 1640]) => { const looks = ['mewS', 'nutS', 'fernS', 'extra'];
+const backCrowd = STATIC((t, mood = 'calm', xs = [130, 370, 1570, 1810]) => { const looks = ['mewS', 'nutS', 'fernS', 'extra'];
   xs.forEach((x, i) => Pb(looks[i % 4], x, x < 960 ? 1 : -1, mood === 'wow' ? PO.raise : mood === 'laugh' ? PO.laugh : PO.stand, { eyes: mood === 'wow' ? 'wide' : 'normal', mouth: mood === 'wow' ? 0.7 : mood === 'laugh' ? 0.5 : 0, blink: 0 })); });
 const seated = STATIC(() => { // students sitting in class (side), facing the board (-x)
   [[420, 'mewS'], [1000, 'nutS'], [1560, 'fernS']].forEach(([x, k], i) => { SCH.desk(x - 150, G, DK); P(k, x, -1, PO.sit, {}); }); });
@@ -243,7 +245,12 @@ add(at('stance', 0), { id: 'p7_stance', bars: true, cam0: WIDE, bg: () => STAGE.
 const F0 = at('J02', 0.05);
 const tm = n => (DATA.lines[n] || DATA.marks[n]).start - F0, te_ = n => (DATA.lines[n] || DATA.marks[n]).end - F0;
 const FX = { kla: 820 };
-function fightState(lt) { // returns positions/poses for everyone at fight-local time lt
+// hit-stop: on each contact the action freezes for a few frames, then catches up (the cut/sfx times stay where the voice put them)
+const STOPS = () => [[tm('teep') + 0.62, 0.11, 0.22], [tm('naka') + 0.32, 0.09, 0.2], [tm('naka') + 1.3, 0.07, 0.16]];
+function warp(lt) { for (const [ti, h, r] of STOPS()) { if (lt >= ti && lt < ti + h) return ti + 0.004; if (lt >= ti + h && lt < ti + h + r) return ti + (lt - ti - h) / r * (h + r); } return lt; }
+const stopAt = lt => STOPS().find(([ti, h]) => lt >= ti && lt < ti + h);
+function fightState(lt0) { // returns positions/poses for everyone at fight-local time lt
+  const lt = warp(lt0);
   const st = { kla: { x: 820, f: 1, pose: PO.guard }, jo: { x: 1250, f: -1, pose: PO.stand, air: 0 }, te: { x: 1480, f: -1, pose: PO.stand }, boss: { x: 1680, f: -1, pose: PO.stand }, impact: null };
   const T1 = tm('teep'), T2 = te_('teep'); // teep beat
   // Jo: walks in, winds, punches; Kla: chamber -> teep (impact at T1+0.62) ; Jo flies back into the far desks
@@ -270,13 +277,25 @@ function fightState(lt) { // returns positions/poses for everyone at fight-local
   if (lt > tm('crash') + 0.3) { st.boss.x = 1470; st.boss.pose = Object.assign({}, PO.down, { air: -10 }); st.boss.face = { eyes: 'dazed' }; }
   return st;
 }
+// anime impact frame: the room drops to dark blue with white-cyan streaks bursting from the contact point (screen space)
+function impactBg(t, wx, wy, alpha = 215, n = 30) { const [cx, cy] = A.pt(wx, wy); A.push(); A.reset(); A.rect(-30, -30, A.W + 60, A.H + 60, { fill: '#0a0f24', alpha, w: 0 });
+  A.seed(Math.floor(t * 12) * 13 + 5); for (let i = 0; i < n; i++) { const a = A.R(0, Math.PI * 2), r0 = A.R(240, 560), r1 = r0 + A.R(380, 1200), wv = A.R(0.008, 0.026);
+    A.poly([[cx + Math.cos(a - wv) * r0, cy + Math.sin(a - wv) * r0], [cx + Math.cos(a) * r1, cy + Math.sin(a) * r1], [cx + Math.cos(a + wv) * r0, cy + Math.sin(a + wv) * r0]], { fill: i % 3 ? '#eaf6ff' : '#7fd4ff', alpha: A.R(110, 230), w: 0, curv: 0 }); } A.pop(); }
+const klaBody = (k) => P('kla', k.x, k.f, k.pose, { eyes: 'fierce', anger: 0.3 }, { lookOver: { bangsUp: true } });
 function fightDraw(lt, t) {
   const s = fightState(lt);
+  const SP_ = tm('spin'), HIT_ = tm('spinhit'), HIT1_ = te_('spinhit'), T1_ = tm('teep'), hs = stopAt(lt);
+  const slow = lt >= HIT_ && lt < HIT1_;
+  if (hs && s.impact) impactBg(t, s.impact.x, s.impact.y, 205, 26);
+  if (slow) impactBg(t, 990, 640, 225 - 60 * clamp01((lt - HIT_ - 0.6) / 0.4), 34);
   backCrowd(t, lt > tm('teepland') ? 'wow' : 'calm', [180, 420, 1500, 1780]); frontDesks([20, 1760]);
   P('jo', s.jo.x, -1, s.jo.pose, Object.assign({ anger: 0.8 }, s.jo.face || {}));
   P('te', s.te.x, -1, s.te.pose, Object.assign({ anger: 0.9 }, s.te.face || {}));
   P('boss', s.boss.x, -1, s.boss.pose, Object.assign({ anger: 0.9 }, s.boss.face || {}));
-  P('kla', s.kla.x, s.kla.f, s.kla.pose, { eyes: 'fierce', anger: 0.3 }, { lookOver: { bangsUp: true } });
+  // afterimages on the fast strikes: where Kla was 2 and 4 frames ago, as cyan silhouettes
+  const fast = (lt > T1_ + 0.3 && lt < T1_ + 0.74) || (lt > SP_ + 0.3 * (HIT_ - SP_) && lt < HIT_ + 0.02);
+  if (fast || slow) for (const [d, a] of [[0.17, 60], [0.085, 110]]) { const g = fightState(Math.min(lt, HIT_ + 0.01) - d * (slow ? 1.6 : 1)).kla; A.ghost({ col: '#8fdcff', a }, () => klaBody(g)); }
+  klaBody(s.kla);
   if (s.impact) { const k = clamp01(s.impact.t / 0.25); FT.burst(s.impact.x, s.impact.y, (s.impact.big ? 150 : s.impact.small ? 70 : 110) * (0.6 + 0.6 * k), t * 3, '#fff6d8', 9); }
   if (lt > tm('spin') && lt < tm('spinhit')) { FT.arc(820, 620, 150, -0.4, 3.6, 34, '#ffffff', 150); const k = (lt - tm('spin')) / (tm('spinhit') - tm('spin')); if (k > 0.4) FT.bolt(760, 560, 830 + 180 * k, 660, t, 30); }
   // lightning on the fast strikes (teep extension, the catch, the spinning heel) + crackle at every impact
@@ -288,12 +307,21 @@ function fightDraw(lt, t) {
   if (s.jo.pose === PO.down) FT.stars(1560, 790, 60, t); if (lt > tm('naka') + 1.4) FT.stars(1230, 800, 55, t + 1);
   if (lt > tm('crash') + 0.3) FT.stars(1470, 780, 70, t + 2);
 }
-function fightCam(lt, t, sh) { // continuous camera: medium -> push on the teep -> follow Jo -> reframe on Te -> low push on the catch -> pan with Boss -> slow push on the spin
-  const keys = [[0, 1000, 620, 1.25], [tm('teep') + 0.5, 960, 620, 1.45], [tm('teep') + 0.9, 1200, 600, 1.25], [te_('teepland'), 1150, 640, 1.2], [tm('naka'), 1020, 600, 1.3], [tm('naka') + 0.6, 1060, 600, 1.4], [te_('nakaland'), 1100, 640, 1.25],
-    [tm('B08'), 1300, 600, 1.2], [tm('spin'), 1000, 620, 1.45], [tm('spinhit') + 0.1, 960, 600, 1.85], [te_('spinhit'), 980, 600, 1.9], [tm('crash'), 1250, 640, 1.2], [99, 1250, 640, 1.18]];
-  let i = 0; while (i < keys.length - 2 && lt > keys[i + 1][0]) i++; const [a0, x0, y0, p0] = keys[i], [a1, x1, y1, p1] = keys[i + 1], k = ease(clamp01((lt - a0) / (a1 - a0)));
+// C1 (velocity-continuous) interpolation over [t, ...values] keys: the camera never stops dead at a key, it flows through it
+function flow(keys, lt) { let i = 0; while (i < keys.length - 2 && lt > keys[i + 1][0]) i++; const k0 = keys[i], k1 = keys[i + 1], h = (k1[0] - k0[0]) || 1, u = clamp01((lt - k0[0]) / h);
+  const tan = (j, d) => { const a = keys[Math.max(0, j - 1)], b = keys[Math.min(keys.length - 1, j + 1)]; return (b[d] - a[d]) / ((b[0] - a[0]) || 1); };
+  const u2 = u * u, u3 = u2 * u, h00 = 2 * u3 - 3 * u2 + 1, h10 = u3 - 2 * u2 + u, h01 = -2 * u3 + 3 * u2, h11 = u3 - u2;
+  return k0.slice(1).map((_, d) => h00 * k0[d + 1] + h10 * h * tan(i, d + 1) + h01 * k1[d + 1] + h11 * h * tan(i + 1, d + 1)); }
+function fightCam(lt, t, sh) { // one flowing camera: [time, look-at X, Y, zoom, tilt]. drifts in on Kla, crashes in on each contact, whips after whoever flies, tilts on the strikes
+  const T1 = tm('teep'), N1 = tm('naka'), HIT = tm('spinhit'), HIT1 = te_('spinhit');
+  const keys = [[0, 1010, 620, 1.22, 0], [T1 - 0.1, 985, 622, 1.3, -0.012], [T1 + 0.55, 950, 640, 1.5, -0.04], [T1 + 0.98, 1230, 612, 1.28, 0.02], [te_('teepland'), 1185, 640, 1.2, 0],
+    [tm('te'), 1150, 622, 1.22, 0.008], [N1, 1035, 602, 1.32, 0.02], [N1 + 0.32, 990, 610, 1.48, 0.05], [N1 + 0.9, 1060, 592, 1.4, -0.03], [N1 + 1.36, 1130, 650, 1.3, -0.012], [te_('nakaland'), 1100, 640, 1.24, 0],
+    [tm('boss'), 1390, 600, 1.25, 0], [tm('B08') + 0.5, 1340, 602, 1.36, 0.02], [tm('spin'), 1040, 620, 1.42, -0.02], [HIT, 965, 610, 1.8, -0.06], [HIT1, 980, 605, 1.92, -0.072], [HIT1 + 0.55, 1210, 622, 1.34, 0.02], [tm('crash'), 1260, 640, 1.2, 0], [tm('crash') + 9, 1260, 640, 1.17, 0]];
+  let [x, y, pz, rot] = flow(keys, lt);
+  for (const [ti] of STOPS()) if (lt >= ti) pz *= 1 + 0.07 * Math.exp(-(lt - ti) / 0.14); // crash-in on contact, settles back
   const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
-  const pp = lerp(p0, p1, k) * (FMT.name === 'short' ? 0.7 : 1); const c = aim(sh, lerp(x0, x1, k) + (FMT.name === 'short' ? 60 : 0), lerp(y0, y1, k), Math.max(1, pp), { rot: 0.025 * Math.sin(lt * 0.7) }); c.dx += shk.dx; c.dy += shk.dy; return c;
+  const hand = { dx: 3.2 * Math.sin(lt * 1.9) + 2 * Math.sin(lt * 3.1 + 1), dy: 2.4 * Math.sin(lt * 2.3 + 2) }; // handheld breathing
+  const pp = pz * (FMT.name === 'short' ? 0.7 : 1); const c = aim(sh, x + (FMT.name === 'short' ? 60 : 0), y, Math.max(1.02, pp), { rot: rot + 0.006 * Math.sin(lt * 0.9) }); c.dx += shk.dx + hand.dx; c.dy += shk.dy + hand.dy; return c;
 }
 const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.55, cx: 1000, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
@@ -329,6 +357,8 @@ const EP = { shots: S, fx: FXS, bubbles: [],
   moves: [{ name: 'มอญยันหลัก', t0: DATA.marks.teep.start + 0.55, t1: DATA.marks.teepland.end }, { name: 'นาคาบิดหาง', t0: DATA.marks.naka.start + 0.4, t1: DATA.marks.nakaland.end }, { name: 'จระเข้ฟาดหาง', t0: DATA.marks.spinhit.start, t1: DATA.marks.crash.end }],
   NAMES: { S: 'มานพ (ในร่างกล้า)', B: 'บอส', P: 'ปอนด์', J: 'โจ้', T: 'เต้', G: 'หมิว', F: 'เฟิร์น', X: 'นัท', C: 'ครู', M: '???', K: 'เด็กคนนั้น' },
   COL: { N: '#ffffff', S: '#ffd23f', B: '#ff8a80', P: '#9fe3ff', J: '#ffb36b', T: '#ffb36b', G: '#f7b2d9', F: '#f7b2d9', X: '#c8f7a8', C: '#e0c8ff', M: '#b0a8c8', K: '#ffe7a0' } };
+// 2-frame white flash on every contact in the fight
+EP.overlayExtra = (t, shot) => { if (!/^p8_fight/.test(shot.id)) return; const lt = t - F0; let f = 0; for (const ti of [...STOPS().map(x => x[0]), tm('spinhit')]) if (lt >= ti && lt < ti + 0.09) f = Math.max(f, 0.85 * (1 - (lt - ti) / 0.09)); document.getElementById('flash').style.opacity = f; };
 // before the switch into Kla's body, Saengchai's lines are his own (no "in Kla's body" label)
 EP.NAMES_AT = (v, t) => (v === 'S' && t < DATA.lines.S04.start - 0.2 ? 'มานพ' : EP.NAMES[v]);
 
