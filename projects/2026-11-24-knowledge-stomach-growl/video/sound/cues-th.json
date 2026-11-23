@@ -1,0 +1,18 @@
+[
+ {"t": 0.14, "type": "appear", "desc": "frame 0/hook: soft low rumble under \"ท้องร้อง\" (belly rings)", "sfx": "impact/kenney-sci-lowfrequency-explosion-001.ogg", "gain": -24},
+ {"t": 1.32, "type": "scene_cut", "desc": "hook cut to the lunch table (\"เพิ่งกิน\")", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -26},
+ {"t": 5.06, "type": "appear", "desc": "\"?\" on the หิว card pops and tilts on \"ไม่ใช่\"", "sfx": "pop/fs-258269-mouth-pop.ogg", "gain": -16},
+ {"t": 6.48, "type": "scene_cut", "desc": "zoom into the anatomy shot (\"เสียงนี้\")", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -26},
+ {"t": 9.30, "type": "appear", "desc": "air bubbles appear in the squeezing tube (\"ดันลม\")", "sfx": "pop/kenney-interface-drop-001.ogg", "gain": -20},
+ {"t": 11.96, "type": "appear", "desc": "tube growls: low rumble on \"โครกคราก\" (no stomach-growl file in the library; low-frequency rumble stands in)", "sfx": "impact/kenney-sci-lowfrequency-explosion-000.ogg", "gain": -14},
+ {"t": 13.02, "type": "scene_cut", "desc": "zoom to the man eating (\"ตอนอิ่ม\")", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -26},
+ {"t": 15.14, "type": "appear", "desc": "food blobs fill the tube (\"ซับเสียง\")", "sfx": "pop/kenney-interface-drop-002.ogg", "gain": -20},
+ {"t": 17.86, "type": "scene_cut", "desc": "twist: zoom to the near-empty fridge (\"ท้องว่าง\")", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -24},
+ {"t": 20.02, "type": "appear", "desc": "\"โครก!\" goes off in the meeting (\"ดังลั่น\")", "sfx": "impact/kenney-sci-lowfrequency-explosion-001.ogg", "gain": -12},
+ {"t": 20.92, "type": "appear", "desc": "puzzled face pops (\"เหมา\")", "sfx": "kit/pop.ogg", "gain": -20},
+ {"t": 23.24, "type": "scene_cut", "desc": "share: \"ชื่อจริง?\" card", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -26},
+ {"t": 25.34, "type": "appear", "desc": "card morphs to Borborygmus", "sfx": "ding/fs-349504-triangle-open-04.ogg", "gain": -20},
+ {"t": 26.60, "type": "appear", "desc": "\"ภาษากรีก\" pill pops", "sfx": "pop/kenney-interface-pluck-001.ogg", "gain": -20},
+ {"t": 27.76, "type": "scene_cut", "desc": "cta: friends laughing", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -26},
+ {"t": 29.46, "type": "appear", "desc": "comment bubble on \"เมนต์\"", "sfx": "pop/fs-824189-pop-in-sfx.ogg", "gain": -18}
+]
