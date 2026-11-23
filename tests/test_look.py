@@ -148,3 +148,42 @@ def test_no_ep_branches_warns_and_final_fails(tmp_path):
     assert res.returncode == 0 and 'WARN  git knows no claude/ep-* branch' in res.stdout
     res = run('check', new, '--final')
     assert res.returncode == 1 and 'ERROR git knows no claude/ep-* branch' in res.stdout
+
+
+def _thumb(d, line):
+    (d / 'thumbnail.md').write_text(f'# ปก\n{line}\n')
+
+
+def test_cover_repeat_caught_across_all_episodes_and_quoted_format(tmp_path):
+    """The real case: knee-crack (11-20) reused the knuckle-crack (11-18) cover ~10 episodes later, and the
+    knuckle-crack thumbnail.md writes the text in plain quotes (TH "...") not **bold**."""
+    r = repo(tmp_path)
+    old = ep(r, '2026-11-18-knowledge-knuckle-crack')
+    _thumb(old, '- ข้อความ ≤4 คำ: TH "กร๊อบ = ข้อเสื่อม?" | EN "CRACK = ARTHRITIS?"')
+    pals = ['night-violet', 'mint-paper', 'mono-yellow', 'ocean-teal']
+    for i in range(4):                                   # 4 newer episodes push the knuckle one out of the last 3
+        ep(r, f'2026-11-19-knowledge-filler{i}', {**BASE, 'palette': pals[i], 'cover_text': f'เรื่องที่ {i} ไม่ซ้ำกันเลย',
+                                                   'music_file': f'f{i}.mp3'})
+    new = ep(r, '2026-11-20-knowledge-knee-crack', {**BASE, 'palette': 'sunrise-coral', 'opening': 'number',
+                                                    'cover_text': 'กร๊อบ = ข้อเสื่อม?', 'music_file': 'n.mp3'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and '2026-11-18-knowledge-knuckle-crack' in res.stdout and 'cover_text' in res.stdout
+
+
+def test_cover_text_reader_formats():
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import look
+    assert look._cover_from_thumb('- ข้อความ ≤4 คำ: TH "หาว = ขาดออกซิเจน?" | EN "YAWN"') == 'หาว = ขาดออกซิเจน?'
+    assert look._cover_from_thumb('- ข้อความ (≤4 คำ): **แมวกลัวน้ำ?** ตัวใหญ่ + ป้าย "รู้ไหม?"') == 'แมวกลัวน้ำ?'
+    assert look._cover_from_thumb('- ข้อความ ≤4 คำ: **"ผีอำ = ผีจริง?"** (ตัวใหญ่)') == 'ผีอำ = ผีจริง?'
+    assert look._cover_from_thumb('ข้อยกเว้นจาก skill: skill ห้ามข้อความปกซ้ำชื่อคลิป') is None
+
+
+def test_music_reused_within_last_three_warns(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-20-knowledge-a', {**BASE, 'palette': 'mint-paper', 'opening': 'question', 'music_file': 'same.mp3'})
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'palette': 'ocean-teal', 'opening': 'number', 'music_file': 'other.mp3'})
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'palette': 'night-violet', 'opening': 'pov',
+                                             'music_file': 'same.mp3', 'cover_text': 'ใหม่หมด'})
+    res = run('check', new, '--no-git')
+    assert 'WARN  music_file same.mp3 also used in 2026-11-20-knowledge-a' in res.stdout

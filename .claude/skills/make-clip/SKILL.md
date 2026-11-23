@@ -31,7 +31,7 @@ curl -s "https://www.youtube.com/results?search_query=why+do+we+<คำ>&sp=EgIY
 **(แทนที่แล้ว 2026-11-22 ด้วย Brainrot v3 + look.json — ข้อความในย่อหน้านี้เป็นประวัติ: ใช้เอาจังหวะ/motion มาเป็นแนว ไม่ใช้เป็นแม่แบบตอนใหม่)** แม่แบบเดิม (ผู้ใช้อนุมัติ 2026-11-19 "ตัดต่อดีมาก โคตรชอบ"): Brainrot v2 = branch `claude/ep-2026-11-19-brainrot` commit `7b088c8`
 คัดลอก **`templates/brainrot-v2/`** (อยู่ใน branch หลักแล้ว ไม่ต้อง fetch) ไปเป็น `<project>/video/` แล้วแก้ (ต้นฉบับ: commit `7b088c8` ใน branch ตอน brainrot)
 v3 คงไว้: kinetic type, กราฟิก vendor, spring motion, เสียงพากย์พาวนกลับ hook; เปลี่ยน: ตัดเร็วเฉพาะ hook/หักมุม (ไม่ใช่ ~1.4 วิทั้งคลิป), สี/ฟอนต์/ซับ/โครงเปิด/ทรานซิชัน/เพลง/เสียงตาม look.json
-ห้ามใช้ v3 (`4044191`) เป็นแม่แบบตัดต่อ (บท v3 ดี แต่ตัดต่อ v2 ดีกว่า)
+ประวัติ (ไม่เกี่ยวกับแม่แบบ `brainrot-v3`): ดราฟต์รอบที่ 3 ของตอน brainrot (commit `4044191`) อย่าเอามาเป็นแม่แบบ (บทดี แต่ตัดต่อ v2 ดีกว่า) — แม่แบบหลักตอนนี้คือ `templates/brainrot-v3/`
 แม่แบบเก่า (ใช้เมื่อหัวข้อเป็นแผนภาพกลไก 2D): `projects/2026-11-18-knowledge-knuckle-crack/` (branch `claude/ep-2026-11-18-knuckle-crack`)
 `git fetch origin <branch> && git archive FETCH_HEAD <path> | tar -x`
 

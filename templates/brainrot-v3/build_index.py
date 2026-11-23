@@ -25,7 +25,7 @@ episode.json:
 The loop shot plays the hook plate so the clip's LAST frame is the frame-0 picture (video: media_start is set so it
 ends on the hook's media_start; still: the push runs backwards to the frame-0 scale).
 Repo root (templates/looks, assets/vendor/lucide) is found by walking up; AI_STUDIO_ROOT overrides."""
-import argparse, hashlib, html, json, math, os, pathlib, re
+import argparse, hashlib, html, json, math, os, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 BEATS = ('hook', 'setup', 'explain', 'reveal', 'twist', 'share', 'cta', 'loop')
@@ -60,6 +60,20 @@ for axis in ('palette', 'font', 'caption', 'opening', 'cover', 'transition'):
         raise SystemExit(f'look.json {axis}={LOOK.get(axis)!r} not in templates/looks/looks.json')
 PAL, FONT = CAT['palette'][LOOK['palette']], CAT['font'][LOOK['font']]
 EP = json.loads(A.episode.read_text())
+
+
+def _plain(s):
+    return re.sub(r"[\s*?!.,:;'\"“”‘’=\-–—()…]+", '', (s or '').lower())
+
+
+# frame 0 = the cover: the on-screen title must be the cover_text that tools/look.py checked for repeats
+_ct = LOOK.get('cover_text')
+_shown = ' '.join(EP.get('title', []))
+if _ct and _plain(_ct) != _plain(_shown):
+    raise SystemExit(f'look.json cover_text {_ct!r} != episode.json title {_shown!r} (frame 0 = cover): '
+                     'make them the same text, then rerun tools/look.py check')
+if not _ct:
+    print('WARN look.json cover_text not set: write the frame-0 title there and run tools/look.py check', file=sys.stderr)
 
 
 def norm(s):

@@ -106,3 +106,45 @@ def test_cover_layout_class(tmp_path):
     assert build(video).returncode == 0
     page = (video / 'index.html').read_text()
     assert 'op-pov cv-tilt' in page and '--paneltext:' in page
+
+
+def _effective_title_colours(p, opening, cover):
+    """(fg, bg) pairs a viewer sees for the frame-0 title in index.html.tpl, per opening x cover.
+    Lines stroked with ink (stroke cover/default) are readable on any plate, so only flat-colour pairs are listed."""
+    pairs = []
+    if opening == 'midstory':
+        pairs.append(('title line ink on accent plate', p['ink'], p['accent']))
+        if cover == 'card':
+            pairs.append(('highlight accent on ink', p['accent'], p['ink']))
+    elif cover == 'card':
+        pairs.append(('title line panel_text on panel', p['panel_text'], p['panel']))
+        pairs.append(('highlight ink on accent', p['ink'], p['accent']))
+    return pairs
+
+
+def test_every_opening_cover_palette_title_readable():
+    """Caught (review v3.1): midstory + card drew white panel_text on the yellow accent plate (1.3-1.4:1)."""
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    opts = lambda ax: [k for k in cat[ax] if not k.startswith('_')]
+    bad = []
+    for pal in opts('palette'):
+        p = cat['palette'][pal]
+        for op in opts('opening'):
+            for cv in opts('cover'):
+                for what, fg, bg in _effective_title_colours(p, op, cv):
+                    if contrast(fg, bg) < 4.5:
+                        bad.append(f'{pal}/{op}/{cv}: {what} = {contrast(fg, bg):.2f}')
+    assert not bad, bad
+    tpl = (V3 / 'index.html.tpl').read_text()
+    # the template really applies those colours for midstory + card (rule after .cv-card, so it wins)
+    assert '.op-midstory.cv-card #title .tl{color:var(--ink)}' in tpl
+    assert tpl.index('.op-midstory.cv-card #title em') > tpl.index('.cv-card #title em')
+    assert 'color:var(--accent);background:var(--ink)' in tpl.split('.op-midstory.cv-card #title em')[1].split('}')[0]
+
+
+def test_cover_text_must_match_frame0_title(tmp_path):
+    proj, video = project(tmp_path / 'a', {**LOOK_A, 'cover_text': 'ข้อความอื่น'})
+    r = build(video)
+    assert r.returncode != 0 and 'cover_text' in r.stderr
+    proj, video = project(tmp_path / 'b', {**LOOK_A, 'cover_text': 'ตัวอย่าง หน้าตาใหม่?'})
+    assert build(video).returncode == 0

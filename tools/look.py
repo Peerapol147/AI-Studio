@@ -13,8 +13,8 @@ History = the other projects of the same channel, from projects/ in this checkou
 episode branch git knows (refs/remotes/origin/claude/ep-*, refs/heads/claude/ep-*; run
 `git fetch origin 'refs/heads/claude/ep-*:refs/remotes/origin/claude/ep-*'` first). Episodes without
 look.json count as the brainrot-v2 look (looks.json "legacy_v2"); their music file is read from
-video/index.html, else assets/credits/music.json; their cover text from thumbnail.md (the bold text on the
-"ข้อความ" line). Order = date in the id, then the last commit that touched it; episodes dated after <project>
+video/index.html, else assets/credits/music.json; their cover text from thumbnail.md (on the line that starts
+with "ข้อความ": the **bold** text, else the first "quoted" text). Order = date in the id, then the last commit that touched it; episodes dated after <project>
 are ignored.
 
 check, exit 1 (ERROR) when:
@@ -22,9 +22,11 @@ check, exit 1 (ERROR) when:
   - palette or opening is the same as the previous episode
   - all visual axes (palette, font, caption, opening, cover, transition) equal one of the last 3 episodes
   - music_file is the same file as the previous episode (no same background music back to back)
-  - cover_text equal or similar (character-pair overlap >= 0.6) to the cover text of one of the last 3 episodes
+  - cover_text equal or similar (character-pair overlap >= 0.6) to the cover text of ANY earlier episode of the
+    channel (not only the last 3: the knee-crack cover repeated the knuckle-crack cover ~10 episodes later)
   - --final and music_file or cover_text is empty, or no claude/ep-* branch is known to git (history not fetched)
-WARN (exit 0): any other axis equal to the previous episode; music_file / cover_text not set yet; no ep branches.
+WARN (exit 0): any other axis equal to the previous episode; music_file used in one of the last 3 episodes;
+music_file / cover_text not set yet; no ep branches.
 These thresholds are tool settings (dev brief: "differs from the last 3"; planning room 2026-11-23: cover text
 must not repeat), not research numbers.
 """
@@ -34,6 +36,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 ID_RE = re.compile(r'^(\d{4}-\d{2}-\d{2})-([a-z]+)-(.+)$')
 MUSIC_RE = re.compile(r'assets/(music[^"\'/\s]*\.mp3)')
 COVER_RE = re.compile(r'ข้อความ[^\n]*?\*\*"?([^*"]+)"?\*\*')
+COVER_LINE_RE = re.compile(r'^\s*(?:[-*>]\s*)?ข้อความ[^\n]*$', re.M)
+BOLD_RE = re.compile(r'\*\*"?([^*"\n]+)"?\*\*')
+QUOTE_RE = re.compile(r'"([^"\n]+)"')
 RECENT = 3
 SIMILAR = 0.6
 
@@ -75,6 +80,12 @@ def _music_from_credits(text):
 
 
 def _cover_from_thumb(text):
+    """thumbnail.md cover text. Lines like '- ข้อความ ≤4 คำ: **"ผีอำ = ผีจริง?"**' or
+    '- ข้อความ ≤4 คำ: TH "กร๊อบ = ข้อเสื่อม?" | EN "..."' (bold first, else the first quoted text)."""
+    for line in COVER_LINE_RE.findall(text or ''):
+        m = BOLD_RE.search(line) or QUOTE_RE.search(line)
+        if m and m.group(1).strip():
+            return m.group(1).strip()
     m = COVER_RE.search(text or '')
     return m.group(1).strip() if m else None
 
@@ -162,6 +173,8 @@ def recent(root, project, use_git=True):
     h = history(root, m.group(2), pid, use_git, until=m.group(1))
     refs = h.pop('_refs', None)
     order = sorted(h, key=lambda p: (ID_RE.match(p).group(1), h[p]['ts'], p))
+    covers = [(p, (h[p]['look'] or {}).get('cover_text') or h[p]['cover_text']) for p in order[::-1]]
+    covers = [(p, c) for p, c in covers if c]
     out = []
     for p in order[-RECENT:][::-1]:                       # newest first
         e = h[p]
@@ -169,7 +182,7 @@ def recent(root, project, use_git=True):
         look['music_file'] = look.get('music_file') or e['music_file']
         look['cover_text'] = look.get('cover_text') or e['cover_text']
         out.append({'id': p, 'src': e['src'], 'legacy': e['look'] is None, 'look': look})
-    return cat, out, refs
+    return cat, out, refs, covers
 
 
 def validate(cat, look):
@@ -200,7 +213,7 @@ def check(root, project, final=False, use_git=True):
         look = json.loads(f.read_text())
     except ValueError as e:
         return [f'{f}: not JSON ({e})'], [], []
-    cat, rec, refs = recent(root, project, use_git)
+    cat, rec, refs, covers = recent(root, project, use_git)
     errs += validate(cat, look)
     if refs == 0:
         (errs if final else warns).append(
@@ -217,14 +230,18 @@ def check(root, project, final=False, use_git=True):
         mf = look.get('music_file')
         if mf and prev['look'].get('music_file') and pathlib.Path(mf).name == pathlib.Path(prev['look']['music_file']).name:
             errs.append(f'music_file {mf} = previous episode {prev["id"]}: pick another track')
+        for r in rec[1:]:
+            old = r['look'].get('music_file')
+            if mf and old and pathlib.Path(mf).name == pathlib.Path(old).name:
+                warns.append(f'music_file {mf} also used in {r["id"]} (one of the last {RECENT}): '
+                             'YouTube spam policy cites the same background music across many videos')
     for r in rec:
         if all(same(cat, a, look.get(a), r['look'].get(a)) for a in cat['visual_axes']):
-            errs.append(f'visual look (palette/font/caption/opening/transition) identical to {r["id"]}')
+            errs.append(f'visual look (palette/font/caption/opening/cover/transition) identical to {r["id"]}')
     ct = look.get('cover_text')
-    for r in rec:
-        old = r['look'].get('cover_text')
-        if ct and old and similarity(ct, old) >= SIMILAR:
-            errs.append(f'cover_text {ct!r} too close to {r["id"]} cover {old!r} '
+    for pid, old in covers:                               # every earlier episode, not only the last 3
+        if ct and similarity(ct, old) >= SIMILAR:
+            errs.append(f'cover_text {ct!r} too close to {pid} cover {old!r} '
                         f'(similarity {similarity(ct, old):.2f} >= {SIMILAR}): write a new frame-0/cover line')
     if not look.get('music_file'):
         (errs if final else warns).append('music_file not set (voice step writes the chosen track into look.json)')
@@ -234,7 +251,7 @@ def check(root, project, final=False, use_git=True):
 
 
 def pick(root, project, pins, use_git=True):
-    cat, rec, refs = recent(root, project, use_git)
+    cat, rec, refs, _ = recent(root, project, use_git)
     look = {'template': 'brainrot-v3'}
     for axis in cat['axes']:
         if axis in pins:

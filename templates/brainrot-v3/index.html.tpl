@@ -34,6 +34,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cv-card #title{background:var(--panel);border-radius:44px;box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5);padding:34px 40px 40px}
 .cv-card #title .tl{-webkit-text-stroke:0;color:var(--paneltext);text-shadow:none}
 .cv-card #title em{color:var(--ink);background:var(--accent);padding:0 16px;border-radius:16px}
+/* midstory + card: the line already sits on an accent plate -> ink text, highlighted word inverted (accent on ink), no stroke */
+.op-midstory.cv-card #title .tl{color:var(--ink)}
+.op-midstory.cv-card #title em{-webkit-text-stroke:0;color:var(--accent);background:var(--ink);padding:0 16px;border-radius:16px}
 .cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
 .cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
 .cv-tilt #title em{background:linear-gradient(transparent 68%,var(--accent) 68%,var(--accent) 90%,transparent 90%);color:var(--text)}
@@ -50,7 +53,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cap-pop .cap span{-webkit-text-stroke:10px #000;paint-order:stroke fill}
 .cap-pop .cap em{display:inline-block;color:var(--ink);-webkit-text-stroke:0;background:var(--accent);padding:0 18px;border-radius:16px;transform:rotate(-2deg)}
 .cap-underline .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
-.cap-underline .cap em{background:linear-gradient(transparent 70%,var(--accent) 70%,var(--accent) 92%,transparent 92%);-webkit-text-stroke:17px #000}
+.cap-underline .cap em{display:inline-block;line-height:1.05;padding-bottom:8px;border-bottom:18px solid var(--accent);border-radius:4px}
 /* ---- EPISODE CSS (editor adds the episode's own graphics styles here) ---- */
 </style></head><body>
 <div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"

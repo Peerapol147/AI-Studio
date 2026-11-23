@@ -10,7 +10,7 @@
 | 2. หาข้อมูล | `researcher` | `research.md`: ข้อเท็จจริงพร้อมลิงก์แหล่งที่มา |
 | 3. บท + สตอรีบอร์ด + จังหวะ + หน้าตา | ผู้กำกับ + skill `yt-hook-scripter` (hook 3 วิ short / 30 วิ long) | `script.md` (บทพากย์แยกฉาก), `storyboard.md` (ฉาก, ภาพ, **คำที่ตัดเข้า**, motion, เสียง), `shots.json` (ช็อตละ 1 แถว: คำที่ตัดเข้า + คำที่ action ลง ทั้ง th/en + `beat`; `topic`), `look.json` (`tools/look.py pick`/`check`, ดู `docs/editing-v3.md`) |
 | 4. footage และเสียง (พร้อมกัน) | `footage` + `voice` | `assets/footage/` + `footage.json` (`src`/`action_at` ต่อ id ช็อต), `assets/CREDITS.md` (สร้างจาก `assets/credits/*.json`), `assets/audio/` (vo + `words*.json` จาก `tools/words.sh`) |
-| 5. motion + ตัดต่อ + ซับ + ภาพปก | `editor` (short ช่องความรู้: `templates/brainrot-v3/` ตาม look.json) (ภาพปกตาม `thumbnail.md` ที่ผู้กำกับเขียนด้วย skill `yt-thumbnail-brief` ตอนขั้น 3) | โปรเจกต์ HyperFrames ใน `video/`, ไฟล์ `renders/*.mp4` |
+| 5. motion + ตัดต่อ + ซับ + ภาพปก | `editor` (short ช่องความรู้: `templates/brainrot-v3/` ตาม look.json) (ภาพปก = เฟรม 0 ของคลิป: ข้อความ = `look.json` cover_text = `episode.json` title; `thumbnail.md` จากขั้น 3 ใช้เป็นแนวทาง) | โปรเจกต์ HyperFrames ใน `video/`, ไฟล์ `renders/*.mp4` |
 | 6. ตรวจ | `reviewer` | `review.md` (รวมเช็กลิสต์ตัดต่อ v3: `tools/look.py check --final`, `tools/pacing.py`, เล่นท้ายต่อหัว): ผ่าน หรือรายการที่ต้องแก้ (วนกลับไปขั้นที่เกี่ยวข้อง สูงสุด 2 รอบ) |
 | 7. ส่งมอบ | ผู้กำกับ + skills `yt-title-optimizer`, `yt-description-writer` | `upload.md` (ไทย) + `upload-en.md` (อังกฤษ) แต่ละไฟล์แยก YouTube / TikTok: ชื่อคลิป 3 ตัวเลือก (แนะนำ 1), คำอธิบายพร้อม chapter (long) และเครดิต, แฮชแท็ก; TikTok: แคปชันสั้น ≤150 ตัวอักษร + แฮชแท็ก 3-5 |
 
