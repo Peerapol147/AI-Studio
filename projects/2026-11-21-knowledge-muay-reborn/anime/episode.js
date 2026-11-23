@@ -330,19 +330,20 @@ function fightCam(lt, t, sh) { // one flowing camera: [time, look-at X, Y, zoom,
   for (const [ti] of STOPS()) if (lt >= ti) pz *= 1 + 0.07 * Math.exp(-(lt - ti) / 0.14); // crash-in on contact, settles back
   const s = fightState(lt); let shk = { dx: 0, dy: 0 }; if (s.impact) shk = shake(t, (s.impact.big ? 22 : 14) * (1 - clamp01(s.impact.t / 0.3)), 31);
   const hand = { dx: 3.2 * Math.sin(lt * 1.9) + 2 * Math.sin(lt * 3.1 + 1), dy: 2.4 * Math.sin(lt * 2.3 + 2) }; // handheld breathing
-  const pp = pz * (FMT.name === 'short' ? 0.7 : 1); const sv = FMT.name === 'short'; const svx = !sv ? 0 : (lt > N1 + 0.56 && lt < tm('boss')) ? -130 : 60; /* 9:16: keep the thrown man in the narrow frame */ const c = aim(sh, x + svx, y, Math.max(sv ? 1.07 : 1.02, pp), { rot: (rot + 0.006 * Math.sin(lt * 0.9)) * (sv ? 0.35 : 1) }); /* 9:16 has little side headroom: almost no tilt */ c.dx += shk.dx + hand.dx; c.dy += shk.dy + hand.dy; return c;
+  const pp = pz * (FMT.name === 'short' ? 0.7 : 1); const sv = FMT.name === 'short'; const svx = !sv || sh.id === 'p8_fightB' ? 0 : 60; const c = aim(sh, x + svx, y, Math.max(sv ? 1.07 : 1.02, pp), { rot: (rot + 0.006 * Math.sin(lt * 0.9)) * (sv ? 0.35 : 1) }); /* 9:16 has little side headroom: almost no tilt */ c.dx += shk.dx + hand.dx; c.dy += shk.dy + hand.dy; return c;
 }
-const fightShot = (id, t0) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.55, cx: 1000, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
+// 9:16 can pan very little, so the Short frames each beat around where its action happens (scx)
+const fightShot = (id, scx) => ({ id, bars: true, dof: 0, cam0: WIDE, shortCam0: { zoom: 1.55, cx: scx || 1000, cy: 560 }, bg: () => STAGE.classroomTense(), bgKey: FMT.name === 'short' && scx ? 'cls_tense_' + scx : 'cls_tense', cam: (lt, t, sh) => fightCam(t - F0, t, sh), draw: (lt, t) => fightDraw(t - F0, t), noSub: false });
 add(F0, fightShot('p8_fightA'));
 add(at('G01', 0.05), { id: 'p8_mew', cam0: CU(960, 470, 2.4), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu', cam: (lt, t) => Object.assign({ p: 1 + 0.07 * lt, rot: 0.02 }, shake(t, 7 * Math.max(0, 1 - lt / 0.35))),
   draw: (lt, t) => FACE('mew', 960, 505 - 14 * spr(lt, 16) + 3 * Math.sin(tq(lt) * 9), 145, { eyes: 'wide', mouthO: 0.4 + 0.3 * spr(lt, 18) + 0.12 * Math.sin(tq(lt) * 7), blink: lt > 1.0 && lt < 1.12 ? 1 : 0, look: lt > 1.15 ? 1 : 0, sweat: 1 }) });
-add(at('te', 0.05), fightShot('p8_fightB'));
+add(at('te', 0.05), fightShot('p8_fightB', 780));
 add(at('F01', 0.05), { id: 'p8_fern', cam0: CU(860, 470, 2.2), bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_cu2', cam: (lt, t) => Object.assign({ p: 1 + 0.06 * lt, rot: -0.02 }, shake(t, 7 * Math.max(0, 1 - lt / 0.35))),
   draw: (lt, t) => { FACE('nut', 760, 520 + 3 * Math.sin(tq(lt) * 8 + 1), 118, { eyes: 'wide', mouthO: 0.5 + 0.1 * Math.sin(tq(lt) * 6), blink: lt > 0.8 && lt < 0.92 ? 1 : 0, look: lt > 0.95 ? -1 : 0 }); FACE('fern', 975, 505 - 12 * spr(lt, 16) + 3 * Math.sin(tq(lt) * 9), 130, { eyes: 'wide', mouthO: 0.3 + 0.4 * spr(lt, 16), blink: lt > 1.2 && lt < 1.32 ? 1 : 0, look: lt > 0.95 ? -1 : 0 }); } });
 add(at('boss', 0.05), fightShot('p8_fightC'));
 // ---------------- PART 9: why?
-add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, shortCam0: { zoom: 1.42, cx: 1150, cy: 690 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
-  cam: (lt, t, sh) => aim(sh, 1120, 640, 1.2 - 0.08 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('boss', 1450, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } });
+add(at('pile', 0), { id: 'p9_pile', cam0: WIDE, shortCam0: { zoom: 1.42, cx: 1400, cy: 690 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense',
+  cam: (lt, t, sh) => aim(sh, FMT.name === 'short' ? 1400 : 1120, 640, 1.2 - 0.08 * ease(lt / 1.4)), draw: (lt, t) => { backCrowd(t, 'wow', [180, 420, 1500, 1780]); frontDesks([20, 1760]); P('boss', 1450, -1, Object.assign({}, PO.down, { air: -10 }), { eyes: 'dazed' }); P('kla', 820, 1, PO.guard, { eyes: 'fierce' }, { lookOver: { bangsUp: true } });
     P('jo', 1850, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); P('te', 470, -1, PO.down, { eyes: 'dazed' }, { y: G + NEAR }); FT.stars(1850, 790 + NEAR, 60, t); FT.stars(480, 800 + NEAR, 55, t + 1); FT.stars(1450, 780, 70, t + 2); },
   fxs: [{ d: 0.1, text: 'ตุ้บ!', x: 1400, y: 560, size: 130, len: 0.7 }] });
 add(at('X01'), { id: 'p9_class', cam0: CU(960, 470, 1.9), shortCam0: { zoom: 1.75, cx: 960, cy: 613 }, bg: () => STAGE.classroomTense(), bgKey: 'cls_tense_190',
