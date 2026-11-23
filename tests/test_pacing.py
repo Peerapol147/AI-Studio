@@ -69,7 +69,7 @@ def test_legend_needs_twist_not_reveal(tmp_path):
     beats = [b if b[1] != 'reveal' else (b[0], 'explain') for b in GOOD]
     r = run(tmp_path, beats, genre='legend')
     assert r.returncode == 0, r.stdout
-    assert 'legend: twist starts at 60%' in r.stdout
+    assert 'legend: twist starts at 60%' in r.stdout and 'before 70%' in r.stdout
 
 
 def test_unknown_beat_is_a_shot_times_error_and_stale_refused(tmp_path):
@@ -91,3 +91,40 @@ def test_explain_up_to_3_s_needs_no_long_ok(tmp_path):
     r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'shot_times.py'), str(tmp_path), 'th'], capture_output=True, text=True)
     assert r.returncode == 0 and 'WARN b:' not in r.stdout
     assert json.loads((tmp_path / 'assets' / 'audio' / 'shots-th.json').read_text())['shots'][1]['beat'] == 'explain'
+
+
+def _long(tmp_path, n, reason=None):
+    """n-second voice, shots spread over it with the GOOD beat order."""
+    words = {'audio_duration_secs': float(n),
+             'words': [{'type': 'word', 'text': f'w{i}x', 'start': float(i), 'end': i + 0.5} for i in range(n)]}
+    (tmp_path / 'assets' / 'audio').mkdir(parents=True, exist_ok=True)
+    (tmp_path / 'assets' / 'audio' / 'words.json').write_text(json.dumps(words))
+    at = [0, 1, 3, 6, 9, int(n * .55), int(n * .6), int(n * .7), int(n * .8), n - 2]
+    beats = ['hook', 'hook', 'setup', 'explain', 'explain', 'reveal', 'twist', 'share', 'cta', 'loop']
+    shots = [{'id': f's{i}', 'cue': {'th': f'w{i}x'}, 'beat': b, 'long_ok': True, 'src': 'a.mp4'} for i, b in zip(at, beats)]
+    plan = {'lead': 0, 'topic': {'th': 'w0x'}, 'shots': shots, **({'long_reason': reason} if reason else {})}
+    (tmp_path / 'shots.json').write_text(json.dumps(plan))
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'shot_times.py'), str(tmp_path), 'th'], capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    return subprocess.run([sys.executable, str(ROOT / 'tools' / 'pacing.py'), str(tmp_path)], capture_output=True, text=True)
+
+
+def test_length_default_20_to_40_s(tmp_path):
+    r = _long(tmp_path / 'a', 45)
+    assert r.returncode == 1 and 'default is 20-40 s' in r.stdout
+    r = _long(tmp_path / 'b', 45, reason='two-layer twist needs the extra step')
+    assert r.returncode == 0, r.stdout
+    r = _long(tmp_path / 'c', 62, reason='x')
+    assert r.returncode == 1 and 'over the 59 s ceiling' in r.stdout
+    r = _long(tmp_path / 'd', 19)
+    assert r.returncode == 0 and 'clip is 19.0 s (default 20-40 s)' in r.stdout
+
+
+def test_share_before_twist_warns_and_v3_loop_not_flagged(tmp_path):
+    beats = [(0, 'hook'), (1, 'hook'), (2, 'setup'), (4, 'explain'), (6, 'explain'), (8, 'explain'), (10, 'reveal'),
+             (12, 'share'), (14, 'twist'), (16, 'cta'), (18, 'loop')]
+    (tmp_path / 'video').mkdir()
+    (tmp_path / 'video' / 'episode.json').write_text('{}')
+    r = run(tmp_path, beats, src_loop='other.mp4')
+    assert r.returncode == 0 and '"share" comes before the twist' in r.stdout
+    assert 'check the loop by eye' not in r.stdout

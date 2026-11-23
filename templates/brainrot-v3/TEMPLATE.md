@@ -5,7 +5,7 @@
 ## ไฟล์ที่ต้องมีก่อน build
 | ไฟล์ | ใครเขียน | คืออะไร |
 |---|---|---|
-| `projects/<x>/look.json` | ผู้กำกับ ขั้น 3 (`python3 tools/look.py pick <project> --write` แล้วแก้) | palette / font / caption / opening / transition (+ music_mood, voice, music_file สำหรับขั้นเสียง) ค่าจาก `templates/looks/looks.json` |
+| `projects/<x>/look.json` | ผู้กำกับ ขั้น 3 (`python3 tools/look.py pick <project> --write` แล้วแก้) | palette / font / caption / opening / cover / transition (+ music_mood, voice, music_file สำหรับขั้นเสียง, cover_text = ข้อความเฟรม 0) ค่าจาก `templates/looks/looks.json` |
 | `projects/<x>/shots.json` | ผู้กำกับ | เหมือนเดิม + `"topic"` + `"beat"` ทุกช็อต (hook setup explain reveal twist share cta loop) |
 | `assets/audio/shots-th.json` | `tools/shot_times.py` | เวลาช็อต (ห้ามแก้มือ) |
 | `video/episode.json` | editor | `title` (= คำพูด hook คำต่อคำ, `*คำ*` = สี accent), `kicker` (POV: … หรือ ตัวเลขจาก research.md), `caps` (1-3 คำ), `plates` (ช็อต → `assets/x.mp4` / `.jpg` / `"graphic"`), `vo`, `icons` (lucide ไม่บังคับ) |
@@ -22,9 +22,9 @@
 6. ปก = เฟรม 0 (`npx hyperframes snapshot --at 0`) เพราะเฟรม 0 ทำให้เหมือนปกอยู่แล้ว
 
 ## สิ่งที่แม่แบบทำให้เอง
-- จังหวะ: ช็อต beat `hook`/`twist` = กล้องเร็ว (push 1.04→1.12 + ส่าย + ทรานซิชันของ look); ช็อตอื่น = ค้างภาพ (push ช้า 1.00→1.05 ไม่ส่าย, ครอสเฟด 0.1 วิ ยกเว้น look ใช้ flash/match)
+- จังหวะ: ช็อต beat `hook`/`twist` = กล้องเร็ว (push 1.04→1.12 + ส่าย); ช็อตอื่น = ค้างภาพ (push ช้า 8% + หมุน 1° ไม่ตัด); ทรานซิชันของ look เล่นทุกครั้งที่เปลี่ยนช่วงเรื่อง และใน hook/หักมุม ช็อตอื่นในช่วงเดียวกัน = ครอสเฟด 0.1 วิ
 - เฟรม 0: หัวข้อ hook เต็มตั้งแต่เฟรมแรก (ไม่มี fade) หายใจ 1.0↔1.04 หายตอนจบช่วง hook แล้วเด้งกลับ 0.3 วิสุดท้าย
 - ลูป: ช็อตสุดท้าย (beat `loop`) เล่น plate ของ hook ให้จบที่ `media_start` ของ hook = เฟรม 0 (ต้องตั้ง `media_start` ของ hook ≥ ความยาวช็อต loop)
-- ซับ 4 แบบ (`stroke` `box` `pop` `underline`) ก้อนละ ≥0.4 วิ ไฮไลต์ `*คำสำคัญ*`, เปิด 4 แบบ (`question` `midstory` `pov` `number`), ทรานซิชัน 5 แบบ (`whip` `zoom` `match` `flash` `slide`)
+- ซับ 4 แบบ (`stroke` `box` `pop` `underline`) ก้อนละ ≥0.4 วิ ไฮไลต์ `*คำสำคัญ*`, เปิด 4 แบบ (`question` `midstory` `pov` `number`) × จัดวางเฟรม 0 3 แบบ (`stack` `card` `tilt`), ทรานซิชัน 5 แบบ (`whip` `zoom` `match` `flash` `slide`)
 
 ทดสอบ: `tests/test_build_index_v3.py` (fixture `tests/fixtures/v3/`)

@@ -8,10 +8,11 @@ Generates index.html from index.html.tpl + episode.json (this folder) + ../look.
     --episode  episode.json (default ./episode.json)
     --out      default ./index.html
 
-look.json picks palette / font / caption / opening / transition from templates/looks/looks.json (music_mood and
+look.json picks palette / font / caption / opening / cover / transition from templates/looks/looks.json (music_mood and
 voice are for the voice step; music_file becomes the music track). Shot times come from shots-th.json only
 (tools/shot_times.py, refused if stale). Every shot needs a "beat" (hook ... loop): hook + twist shots get the
-fast camera, the rest hold the picture (slow push), see docs/editing-v3.md.
+fast camera, the rest hold the picture (slow 8 % push + 1 deg drift, no cut); the look's transition plays wherever the
+beat changes and inside hook/twist, other cuts inside one beat are a 0.1 s match. See docs/editing-v3.md.
 
 episode.json:
 {
@@ -53,7 +54,8 @@ CAT = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
 if not A.look.exists():
     raise SystemExit(f'{A.look} missing: run python3 tools/look.py pick <project> --write (then tools/look.py check)')
 LOOK = json.loads(A.look.read_text())
-for axis in ('palette', 'font', 'caption', 'opening', 'transition'):
+LOOK.setdefault('cover', 'stack')          # look.json written before the cover axis existed
+for axis in ('palette', 'font', 'caption', 'opening', 'cover', 'transition'):
     if LOOK.get(axis) not in CAT[axis] or str(LOOK.get(axis)).startswith('_'):
         raise SystemExit(f'look.json {axis}={LOOK.get(axis)!r} not in templates/looks/looks.json')
 PAL, FONT = CAT['palette'][LOOK['palette']], CAT['font'][LOOK['font']]
@@ -155,6 +157,8 @@ def caps():
             raise SystemExit(f'caption {txt!r} is on screen {d} s (< 0.4 s): merge it with the next chunk')
         n = len(re.sub(r'[ัิ-ฺ็-๎*\s]', '', txt))
         size = 96 if n <= 9 else (88 if n <= 11 else 80)
+        if n > 12:
+            print(f'WARN caption {txt!r} has {n} letters: style wants 1-3 words per beat, split it')
         body = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html.escape(txt))
         out.append(f'  <div id="c{i}" class="clip cap" data-start="{s}" data-duration="{d}" data-track-index="20">'
                    f'<span style="font-size:{size}px">{body}</span></div>')
@@ -195,19 +199,19 @@ def icons():
 
 SCENES, SC = scenes()
 VARS = {'--bg': PAL['bg'], '--bg2': PAL['bg2'], '--ink': PAL['ink'], '--text': PAL['text'], '--accent': PAL['accent'],
-        '--accent2': PAL['accent2'], '--panel': PAL['panel'], '--font': f"'{FONT['family']}'",
+        '--accent2': PAL['accent2'], '--panel': PAL['panel'], '--paneltext': PAL['panel_text'], '--font': f"'{FONT['family']}'",
         '--tw': str(FONT['title_weight']), '--cw': str(FONT['cap_weight'])}
 music = LOOK.get('music_file')
 MUSIC = (f'<audio id="music" class="clip" data-start="0" data-duration="{DUR}" data-track-index="31" data-volume="0.1" '
          f'src="assets/{html.escape(pathlib.Path(music).name)}"></audio>') if music else '<!-- no music_file in look.json yet -->'
 DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'look': {k: LOOK[k] for k in
-        ('palette', 'font', 'caption', 'opening', 'transition')}}
+        ('palette', 'font', 'caption', 'opening', 'cover', 'transition')}}
 rep = {'%%DUR%%': str(DUR), '%%VARS%%': ';'.join(f'{k}:{v}' for k, v in VARS.items()),
        '%%SCENES%%': SCENES, '%%CAPS%%': caps(), '%%TITLE%%': title(), '%%ICONS%%': icons(),
-       '%%CAPSTYLE%%': 'cap-' + LOOK['caption'], '%%OPENING%%': 'op-' + LOOK['opening'],
+       '%%CAPSTYLE%%': 'cap-' + LOOK['caption'], '%%OPENING%%': f"op-{LOOK['opening']} cv-{LOOK['cover']}",
        '%%VO%%': html.escape(EP.get('vo', 'assets/vo-th.mp3')), '%%MUSIC%%': MUSIC,
        '%%DATA%%': json.dumps(DATA, ensure_ascii=False), '%%LOOKNAME%%': html.escape(
-           f"{LOOK['palette']} / {LOOK['font']} / {LOOK['caption']} / {LOOK['opening']} / {LOOK['transition']}")}
+           f"{LOOK['palette']} / {LOOK['font']} / {LOOK['caption']} / {LOOK['opening']} / {LOOK['cover']} / {LOOK['transition']}")}
 page = (HERE / 'index.html.tpl').read_text()
 for k, v in rep.items():
     page = page.replace(k, v)

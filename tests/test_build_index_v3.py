@@ -72,3 +72,37 @@ def test_shot_without_beat_and_number_without_kicker_refused(tmp_path):
     proj, video = project(tmp_path / 'b', LOOK_B, episode={'kicker': None})
     r = build(video)
     assert r.returncode != 0 and 'kicker' in r.stderr
+
+
+def _lum(h):
+    c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
+def contrast(a, b):
+    la, lb = sorted((_lum(a), _lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def test_every_palette_keeps_text_readable():
+    """Text drawn on a flat colour in the template (box/card captions and titles, accent chips) >= 4.5:1 (WCAG AA).
+    Caught: mint-paper / retro-cream + box caption was white on white."""
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    bad = []
+    for name, p in cat['palette'].items():
+        pairs = {'box/card text on panel': (p['panel_text'], p['panel']),
+                 'chip text (ink) on accent': (p['ink'], p['accent'])}
+        for what, (fg, bg) in pairs.items():
+            if contrast(fg, bg) < 4.5:
+                bad.append(f'{name}: {what} {fg} on {bg} = {contrast(fg, bg):.2f}')
+    assert not bad, bad
+    tpl = (V3 / 'index.html.tpl').read_text()
+    assert 'color:var(--paneltext)' in tpl and 'color:var(--text)}' not in tpl.split('.cap-box .cap span{')[1].split('\n')[0]
+
+
+def test_cover_layout_class(tmp_path):
+    proj, video = project(tmp_path, {**LOOK_A, 'cover': 'tilt'})
+    assert build(video).returncode == 0
+    page = (video / 'index.html').read_text()
+    assert 'op-pov cv-tilt' in page and '--paneltext:' in page

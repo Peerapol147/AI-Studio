@@ -4,7 +4,7 @@ import json, pathlib, shutil, subprocess, sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TOOL = ROOT / 'tools' / 'look.py'
 BASE = {'template': 'brainrot-v3', 'palette': 'sunrise-coral', 'font': 'prompt', 'caption': 'box', 'opening': 'pov',
-        'transition': 'slide', 'music_mood': 'lofi', 'voice': 'liam', 'music_file': 'music-a.mp3'}
+        'cover': 'card', 'transition': 'slide', 'music_mood': 'lofi', 'voice': 'liam', 'music_file': 'music-a.mp3'}
 
 
 def repo(tmp_path, git=False):
@@ -53,6 +53,7 @@ def test_pick_avoids_last_three_and_passes_check(tmp_path):
     assert res.returncode == 0 and 'look: OK' in res.stdout and 'music_file not set' in res.stdout
     assert run('check', new, '--final', '--no-git').returncode == 1  # final needs the music track
     look['music_file'] = 'music-new.mp3'
+    look['cover_text'] = 'แมวกลัวน้ำจริงไหม?'
     (new / 'look.json').write_text(json.dumps(look))
     assert run('check', new, '--final', '--no-git').returncode == 0
 
@@ -111,3 +112,39 @@ def test_unknown_value_fails_voice_id_matches_catalog_name(tmp_path):
     res = run('check', new, '--no-git')
     assert res.returncode == 1 and "palette: 'neon' not in" in res.stdout
     assert 'WARN  voice' in res.stdout                        # id:JBFq... is George = same voice as last time
+
+
+def test_cover_text_repeat_or_similar_fails(tmp_path):
+    r = repo(tmp_path)
+    old = ep(r, '2026-11-20-knowledge-knuckle', None)
+    (old / 'thumbnail.md').write_text('# ปก\n- ข้อความ (≤4 คำ): **"กร๊อบ = ข้อเสื่อม?"** ตัวใหญ่\n')
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'palette': 'ocean-teal', 'opening': 'number', 'cover_text': 'ตดในอวกาศ'})
+    look = {**BASE, 'palette': 'mono-yellow', 'opening': 'question', 'music_file': 'n.mp3'}
+    new = ep(r, '2026-11-22-knowledge-knee', {**look, 'cover_text': 'กร๊อบ = ข้อเสื่อม?'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and 'too close to 2026-11-20-knowledge-knuckle' in res.stdout and 'similarity 1.00' in res.stdout
+    (new / 'look.json').write_text(json.dumps({**look, 'cover_text': 'เข่ากร๊อบ = ข้อเสื่อม?'}))
+    assert run('check', new, '--no-git').returncode == 1         # one word added is still the same cover
+    (new / 'look.json').write_text(json.dumps({**look, 'cover_text': 'เข่าลั่นตอนลุก อันตรายไหม?'}))
+    assert run('check', new, '--no-git').returncode == 0
+
+
+def test_music_from_credits_json_and_future_episodes_ignored(tmp_path):
+    r = repo(tmp_path)
+    old = ep(r, '2026-11-21-knowledge-lore', None)
+    (old / 'assets' / 'credits').mkdir(parents=True)
+    (old / 'assets' / 'credits' / 'music.json').write_text('{"audio/music-jamendo-a573d9da.mp3": "Dark Space"}')
+    ep(r, '2026-11-25-knowledge-future', {**BASE, 'palette': 'ocean-teal'})
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'music_file': 'music-jamendo-a573d9da.mp3', 'cover_text': 'x'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and 'music_file music-jamendo-a573d9da.mp3 = previous episode 2026-11-21-knowledge-lore' in res.stdout
+    assert 'future' not in res.stdout
+
+
+def test_no_ep_branches_warns_and_final_fails(tmp_path):
+    r = repo(tmp_path, git=True)
+    new = ep(r, '2026-11-22-knowledge-new', {**BASE, 'cover_text': 'x'})
+    res = run('check', new)
+    assert res.returncode == 0 and 'WARN  git knows no claude/ep-* branch' in res.stdout
+    res = run('check', new, '--final')
+    assert res.returncode == 1 and 'ERROR git knows no claude/ep-* branch' in res.stdout

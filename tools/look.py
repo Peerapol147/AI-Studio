@@ -5,31 +5,37 @@
   python3 tools/look.py check <project> [--final] [--no-git]
 
 <project> = projects/<YYYY-MM-DD>-<channel>-<slug>. Catalog: templates/looks/looks.json.
-look.json = {"template": "brainrot-v3", "palette": .., "font": .., "caption": .., "opening": ..,
+look.json = {"template": "brainrot-v3", "palette": .., "font": .., "caption": .., "opening": .., "cover": ..,
              "transition": .., "music_mood": .., "voice": "<catalog key>|id:<elevenlabs voice_id>",
-             "music_file": "<file in assets/audio>|null", "why": ".."}
+             "music_file": "<file in assets/audio>|null", "cover_text": "<frame-0 / cover text>", "why": ".."}
 
 History = the other projects of the same channel, from projects/ in this checkout AND from every
 episode branch git knows (refs/remotes/origin/claude/ep-*, refs/heads/claude/ep-*; run
 `git fetch origin 'refs/heads/claude/ep-*:refs/remotes/origin/claude/ep-*'` first). Episodes without
 look.json count as the brainrot-v2 look (looks.json "legacy_v2"); their music file is read from
-video/index.html when it is there. Order = date in the id, then the last commit that touched it.
+video/index.html, else assets/credits/music.json; their cover text from thumbnail.md (the bold text on the
+"ข้อความ" line). Order = date in the id, then the last commit that touched it; episodes dated after <project>
+are ignored.
 
 check, exit 1 (ERROR) when:
   - look.json missing / not JSON / an axis missing or not in the catalog
   - palette or opening is the same as the previous episode
-  - all visual axes (palette, font, caption, opening, transition) equal one of the last 3 episodes
+  - all visual axes (palette, font, caption, opening, cover, transition) equal one of the last 3 episodes
   - music_file is the same file as the previous episode (no same background music back to back)
-  - --final and music_file is empty (the voice step fills it)
-WARN (exit 0): any other axis equal to the previous episode; music_file not set yet.
-These thresholds are tool settings (from the dev brief: "differs from the last 3"), not research numbers.
+  - cover_text equal or similar (character-pair overlap >= 0.6) to the cover text of one of the last 3 episodes
+  - --final and music_file or cover_text is empty, or no claude/ep-* branch is known to git (history not fetched)
+WARN (exit 0): any other axis equal to the previous episode; music_file / cover_text not set yet; no ep branches.
+These thresholds are tool settings (dev brief: "differs from the last 3"; planning room 2026-11-23: cover text
+must not repeat), not research numbers.
 """
 import argparse, hashlib, json, pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ID_RE = re.compile(r'^(\d{4}-\d{2}-\d{2})-([a-z]+)-(.+)$')
 MUSIC_RE = re.compile(r'assets/(music[^"\'/\s]*\.mp3)')
+COVER_RE = re.compile(r'ข้อความ[^\n]*?\*\*"?([^*"]+)"?\*\*')
 RECENT = 3
+SIMILAR = 0.6
 
 
 def catalog(root):
@@ -59,19 +65,54 @@ def _music_from_html(text):
     return m.group(1) if m else None
 
 
-def history(root, channel, exclude, use_git=True):
+def _music_from_credits(text):
+    """assets/credits/music.json (tools/music.sh): {"audio/music-x.mp3": "credit line"} -> first music file."""
+    try:
+        keys = [k for k in json.loads(text or '{}') if 'music' in pathlib.Path(k).name]
+    except ValueError:
+        return None
+    return pathlib.Path(sorted(keys)[0]).name if keys else None
+
+
+def _cover_from_thumb(text):
+    m = COVER_RE.search(text or '')
+    return m.group(1).strip() if m else None
+
+
+def _norm(s):
+    return re.sub(r'[\s*?!.,:;"\'“”‘’=\-–—()]+', '', (s or '').lower())
+
+
+def similarity(a, b):
+    """Dice overlap of character pairs after removing spaces/punctuation (1.0 = same text)."""
+    a, b = _norm(a), _norm(b)
+    if not a or not b:
+        return 0.0
+    if a == b:
+        return 1.0
+    pa = [a[i:i + 2] for i in range(len(a) - 1)] or [a]
+    pb = [b[i:i + 2] for i in range(len(b) - 1)] or [b]
+    common, rest = 0, list(pb)
+    for x in pa:
+        if x in rest:
+            rest.remove(x)
+            common += 1
+    return 2 * common / (len(pa) + len(pb))
+
+
+def history(root, channel, exclude, use_git=True, until='9999-99-99'):
     """{project id: {"look": dict|None, "music_file": str|None, "ts": int, "src": str}} for one channel."""
     found = {}
 
-    def add(pid, look, music, ts, src):
+    def add(pid, look, music, ts, src, cover=None):
         old = found.get(pid)
         if old is None or (old['look'] is None and look is not None) or (
                 (old['look'] is None) == (look is None) and ts > old['ts']):
-            found[pid] = {'look': look, 'music_file': music, 'ts': ts, 'src': src}
+            found[pid] = {'look': look, 'music_file': music, 'ts': ts, 'src': src, 'cover_text': cover}
 
     def keep(pid):
         m = ID_RE.match(pid)
-        return m and m.group(2) == channel and pid != exclude
+        return m and m.group(2) == channel and pid != exclude and m.group(1) <= until
 
     for d in sorted((root / 'projects').glob('*/')):
         pid = d.name
@@ -83,10 +124,12 @@ def history(root, channel, exclude, use_git=True):
                 look = json.loads((d / 'look.json').read_text())
             except ValueError:
                 look = None
-        html = (d / 'video' / 'index.html')
-        music = (look or {}).get('music_file') or (_music_from_html(html.read_text()) if html.exists() else None)
+        rd = lambda rel: (d / rel).read_text() if (d / rel).exists() else None
+        music = ((look or {}).get('music_file') or _music_from_html(rd('video/index.html'))
+                 or _music_from_credits(rd('assets/credits/music.json')))
+        cover = (look or {}).get('cover_text') or _cover_from_thumb(rd('thumbnail.md'))
         ts = int((_git(root, 'log', '-1', '--format=%ct', '--', f'projects/{pid}') or '0').strip() or 0)
-        add(pid, look, music, ts, 'projects/')
+        add(pid, look, music, ts, 'projects/', cover)
     if use_git:
         refs = _git(root, 'for-each-ref', '--format=%(refname)', 'refs/remotes/origin/claude/ep-*',
                     'refs/heads/claude/ep-*') or ''
@@ -100,10 +143,13 @@ def history(root, channel, exclude, use_git=True):
                     look = json.loads(raw) if raw else None
                 except ValueError:
                     look = None
-                music = (look or {}).get('music_file') or _music_from_html(
-                    _git(root, 'show', f'{ref}:projects/{pid}/video/index.html'))
+                show = lambda rel: _git(root, 'show', f'{ref}:projects/{pid}/{rel}')
+                music = ((look or {}).get('music_file') or _music_from_html(show('video/index.html'))
+                         or _music_from_credits(show('assets/credits/music.json')))
+                cover = (look or {}).get('cover_text') or _cover_from_thumb(show('thumbnail.md'))
                 ts = int((_git(root, 'log', '-1', '--format=%ct', ref, '--', f'projects/{pid}') or '0').strip() or 0)
-                add(pid, look, music, ts, ref.replace('refs/remotes/', '').replace('refs/heads/', ''))
+                add(pid, look, music, ts, ref.replace('refs/remotes/', '').replace('refs/heads/', ''), cover)
+    found['_refs'] = len(refs.split()) if use_git else None
     return found
 
 
@@ -113,15 +159,17 @@ def recent(root, project, use_git=True):
     if not m:
         raise SystemExit(f'{pid}: project folder must be <YYYY-MM-DD>-<channel>-<slug>')
     cat = catalog(root)
-    h = history(root, m.group(2), pid, use_git)
+    h = history(root, m.group(2), pid, use_git, until=m.group(1))
+    refs = h.pop('_refs', None)
     order = sorted(h, key=lambda p: (ID_RE.match(p).group(1), h[p]['ts'], p))
     out = []
     for p in order[-RECENT:][::-1]:                       # newest first
         e = h[p]
         look = dict(e['look']) if e['look'] else {k: v for k, v in cat['legacy_v2'].items() if not k.startswith('_')}
         look['music_file'] = look.get('music_file') or e['music_file']
+        look['cover_text'] = look.get('cover_text') or e['cover_text']
         out.append({'id': p, 'src': e['src'], 'legacy': e['look'] is None, 'look': look})
-    return cat, out
+    return cat, out, refs
 
 
 def validate(cat, look):
@@ -152,8 +200,12 @@ def check(root, project, final=False, use_git=True):
         look = json.loads(f.read_text())
     except ValueError as e:
         return [f'{f}: not JSON ({e})'], [], []
-    cat, rec = recent(root, project, use_git)
+    cat, rec, refs = recent(root, project, use_git)
     errs += validate(cat, look)
+    if refs == 0:
+        (errs if final else warns).append(
+            "git knows no claude/ep-* branch: run git fetch origin 'refs/heads/claude/ep-*:refs/remotes/origin/claude/ep-*' "
+            "so the latest episodes are compared")
     if rec:
         prev = rec[0]
         for axis in ('palette', 'opening'):
@@ -168,13 +220,21 @@ def check(root, project, final=False, use_git=True):
     for r in rec:
         if all(same(cat, a, look.get(a), r['look'].get(a)) for a in cat['visual_axes']):
             errs.append(f'visual look (palette/font/caption/opening/transition) identical to {r["id"]}')
+    ct = look.get('cover_text')
+    for r in rec:
+        old = r['look'].get('cover_text')
+        if ct and old and similarity(ct, old) >= SIMILAR:
+            errs.append(f'cover_text {ct!r} too close to {r["id"]} cover {old!r} '
+                        f'(similarity {similarity(ct, old):.2f} >= {SIMILAR}): write a new frame-0/cover line')
     if not look.get('music_file'):
         (errs if final else warns).append('music_file not set (voice step writes the chosen track into look.json)')
+    if not ct:
+        (errs if final else warns).append('cover_text not set (the frame-0 / cover text, = episode.json title)')
     return errs, warns, rec
 
 
 def pick(root, project, pins, use_git=True):
-    cat, rec = recent(root, project, use_git)
+    cat, rec, refs = recent(root, project, use_git)
     look = {'template': 'brainrot-v3'}
     for axis in cat['axes']:
         if axis in pins:
@@ -190,8 +250,9 @@ def pick(root, project, pins, use_git=True):
             return ids.index(key) if key in ids else RECENT + 1
         look[axis] = sorted(opts, key=lambda o: (-age(o), h(o)))[0]
     look['music_file'] = None
+    look['cover_text'] = None
     look['why'] = 'เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: เสียงพากย์/อารมณ์เพลงให้เลือกตามแนวเรื่อง'
-    return look, rec
+    return look, rec, refs
 
 
 def _print_recent(rec):
@@ -201,7 +262,8 @@ def _print_recent(rec):
         lk = r['look']
         tag = ' (no look.json = brainrot-v2 look)' if r['legacy'] else ''
         print(f'  {r["id"]} [{r["src"]}]{tag}: ' + ', '.join(f'{a}={lk.get(a)}' for a in
-              ('palette', 'font', 'caption', 'opening', 'transition', 'music_mood', 'voice', 'music_file')))
+              ('palette', 'font', 'caption', 'opening', 'cover', 'transition', 'music_mood', 'voice', 'music_file',
+               'cover_text')))
 
 
 def main(argv=None):
@@ -217,7 +279,9 @@ def main(argv=None):
     root = project.parents[1] if project.parent.name == 'projects' else ROOT
     if a.cmd == 'pick':
         pins = dict(s.split('=', 1) for s in a.set)
-        look, rec = pick(root, project, pins, not a.no_git)
+        look, rec, refs = pick(root, project, pins, not a.no_git)
+        if refs == 0:
+            print("WARN git knows no claude/ep-* branch: fetch them first or the newest episodes are missing")
         print('last episodes (newest first):'); _print_recent(rec)
         print(json.dumps(look, ensure_ascii=False, indent=2))
         if a.write:

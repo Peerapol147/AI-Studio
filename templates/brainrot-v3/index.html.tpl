@@ -30,6 +30,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .op-pov #title .tl{text-align:left}
 .kick{font-weight:var(--tw);white-space:nowrap;line-height:1}
 .kick.pov{font-size:64px;color:var(--ink);background:var(--accent);padding:10px 28px;border-radius:999px;margin-bottom:10px}
+/* cover layouts (frame 0 = the thumbnail) */
+.cv-card #title{background:var(--panel);border-radius:44px;box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5);padding:34px 40px 40px}
+.cv-card #title .tl{-webkit-text-stroke:0;color:var(--paneltext);text-shadow:none}
+.cv-card #title em{color:var(--ink);background:var(--accent);padding:0 16px;border-radius:16px}
+.cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
+.cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
+.cv-tilt #title em{background:linear-gradient(transparent 68%,var(--accent) 68%,var(--accent) 90%,transparent 90%);color:var(--text)}
 .kick.num{font-size:260px;color:var(--accent);-webkit-text-stroke:24px var(--ink);paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.4)}
 /* ---- captions: centred X 510, Y ~1130-1250 (safe X 120-900 / Y 1100-1300) ---- */
 #caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
@@ -38,8 +45,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cap em{font-style:normal}
 .cap-stroke .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
 .cap-stroke .cap em{color:var(--accent)}
-.cap-box .cap span{left:50%;width:auto;transform-origin:50% 80%;padding:6px 30px 12px;border-radius:26px;background:var(--panel);box-shadow:0 0 0 6px var(--ink);color:var(--text)}
-.cap-box .cap em{color:var(--accent)}
+.cap-box .cap span{left:50%;width:auto;transform-origin:50% 80%;padding:6px 30px 12px;border-radius:26px;background:var(--panel);box-shadow:0 0 0 6px var(--ink);color:var(--paneltext)}
+.cap-box .cap em{color:var(--ink);background:var(--accent);padding:0 12px;border-radius:12px}
 .cap-pop .cap span{-webkit-text-stroke:10px #000;paint-order:stroke fill}
 .cap-pop .cap em{display:inline-block;color:var(--ink);-webkit-text-stroke:0;background:var(--accent);padding:0 18px;border-radius:16px;transform:rotate(-2deg)}
 .cap-underline .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
@@ -83,8 +90,9 @@ const $=id=>document.getElementById(id), f2=v=>v.toFixed(2);
 const FASTB={hook:1,twist:1};
 const XF=0.12;
 // entry of shot s (the look's transition; fast beats always get it, hold beats get a soft 0.1 s match)
-const kind=s=>(s.beat==='loop')?'match':(FASTB[s.beat]||TR==='flash'||TR==='match')?TR:'match';
-SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1); s.k=i?kind(s):'none';});
+// the look's transition: inside hook/twist and wherever the beat changes; other cuts inside one beat = soft match
+const kind=(s,prev)=>(s.beat==='loop')?'match':(FASTB[s.beat]||s.beat!==prev.beat)?TR:'match';
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1); s.k=i?kind(s,SC[i-1]):'none';});
 function sceneState(s,t){
   if(t<s.a) return null;
   const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,ty=0,sc=1;
@@ -106,8 +114,8 @@ function scenes(t){
     if(s.beat==='loop'){ s.kb.style.transform=`scale(${lerp(1.06,1.0,uu).toFixed(5)})`; return; } // ends on the frame-0 scale
     if(FASTB[s.beat]){ const k=lerp(1.04,1.12,eio(uu)), rr=lerp(0.8,-0.8,uu), dx=12*Math.sin(t*1.9+s.a), dy=9*Math.cos(t*1.4+s.a);
       s.kb.style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
-    else { const k=lerp(1.0,1.05,uu), dy=-14*uu;          // hold: slow push, no drift (picture reads for 2-3 s)
-      s.kb.style.transform=`translateY(${f2(dy)}px) scale(${k.toFixed(5)})`; }
+    else { const k=lerp(1.0,1.08,eio(uu)), dy=-18*uu, rr=lerp(-0.5,0.5,uu);  // hold: 8 % push + 1 deg drift, no cut
+      s.kb.style.transform=`translateY(${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
   });
   $('flash').style.opacity=f2(clamp(fl));
 }
