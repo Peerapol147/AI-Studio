@@ -4,10 +4,16 @@
 
 ## footage
 - nasa-sdo-arching-eruption.mp4: NASA/SDO (NASA Goddard Space Flight Center), 'Arching Eruption' 2015-06-30 (public domain, NASA media) http://images-assets.nasa.gov/video/GSFC_20150630_SDO_m11908_ArchingEruption/
+- nasa-sdo-phoenix-eruption.mp4: NASA/SDO (NASA Goddard Space Flight Center), 'Phoenix Prominence Eruption' 2015-05-01 (NASA media, public domain) http://images-assets.nasa.gov/video/GSFC_20150501_SDO_m11864_Phoenix/
+- nasa-sdo-phoenix-limb-flare.mp4: NASA/SDO (NASA Goddard Space Flight Center), 'Phoenix Prominence Eruption' 2015-05-01 (NASA media, public domain) http://images-assets.nasa.gov/video/GSFC_20150501_SDO_m11864_Phoenix/
 - nasa-soho-cme-2013.mp4: SOHO (ESA/NASA) via NASA Goddard, 'First X-Class Solar Flares of 2013' 2013-05-13 (NASA media, no copyright claimed; ESA/NASA SOHO) http://images-assets.nasa.gov/video/GSFC_20130513_SDO_m11285_X_Flares/
-- pixabay-205625.mp4: Kaffeesüchtig (Pixabay Content License) https://pixabay.com/videos/id-205625/
+- pixabay-169445.mp4: magicmore (Pixabay Content License) https://pixabay.com/videos/id-169445/
 - pixabay-2151.mp4: FindingFootage (Pixabay Content License) https://pixabay.com/videos/id-2151/
+- pixabay-218646.mp4: BlenderTimer (Pixabay Content License) https://pixabay.com/videos/id-218646/
+- pixabay-377885.mp4: mignic (Pixabay Content License) https://pixabay.com/videos/id-377885/
+- pixabay-5069.mp4: tommyvideo (Pixabay Content License) https://pixabay.com/videos/id-5069/
 - pixabay-53110.mp4: caelan (Pixabay Content License) https://pixabay.com/videos/id-53110/
+- pixabay-90875.mp4: 6696758 (Pixabay Content License) https://pixabay.com/videos/id-90875/
 
 ## music
 - music-jamendo-34466c22.mp3: "Metamorphosis" by zero-project (CC BY 3.0) https://www.jamendo.com/track/1195826

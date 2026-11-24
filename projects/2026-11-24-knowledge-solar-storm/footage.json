@@ -1,0 +1,54 @@
+{
+ "hook": {
+  "src": "assets/footage/nasa-sdo-arching-eruption.mp4",
+  "action_at": 6.5
+ },
+ "loop": {
+  "src": "assets/footage/nasa-sdo-arching-eruption.mp4",
+  "action_at": 6.5
+ },
+ "sun": {
+  "src": "assets/footage/pixabay-53110.mp4",
+  "action_at": 14
+ },
+ "wires": {
+  "src": "assets/footage/pixabay-2151.mp4",
+  "action_at": 2
+ },
+ "storm": {
+  "src": "assets/footage/nasa-sdo-phoenix-eruption.mp4",
+  "action_at": 3.0
+ },
+ "cme": {
+  "src": "assets/footage/nasa-sdo-phoenix-limb-flare.mp4",
+  "action_at": 4.0
+ },
+ "y2012": {
+  "src": "assets/footage/nasa-soho-cme-2013.mp4",
+  "action_at": 7
+ },
+ "worse": {
+  "src": "assets/footage/pixabay-377885.mp4",
+  "action_at": 5
+ },
+ "miss": {
+  "src": "assets/footage/pixabay-5069.mp4",
+  "action_at": 3
+ },
+ "aurora": {
+  "src": "assets/footage/pixabay-90875.mp4",
+  "action_at": 8
+ },
+ "aurora2": {
+  "src": "assets/footage/pixabay-218646.mp4",
+  "action_at": 2
+ },
+ "count": {
+  "src": "assets/footage/pixabay-90875.mp4",
+  "action_at": 20
+ },
+ "ask": {
+  "src": "assets/footage/pixabay-169445.mp4",
+  "action_at": 4
+ }
+}

@@ -4,13 +4,13 @@
  "duration": 34.522,
  "inputs": {
   "shots.json": "544c620b1bab9546fc1311cf8d00e2b9c69f6e75459729347cf62250525775c1",
-  "footage.json": null,
+  "footage.json": "6242a53dc140a0cb7a892235cd9754676babeb8fbd95258522eaaef60f4a16b4",
   "assets/audio/words.json": "bb008b36db4673cf6af6a9e3357f96a1f2a56814f130fe74648cff2c1507c62c"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/nasa-sdo-arching-eruption.mp4",
    "cue": "เน็ต",
    "word_at": 0.04,
    "start": 0.0,
@@ -21,23 +21,25 @@
   },
   {
    "id": "sun",
-   "src": null,
+   "src": "assets/footage/pixabay-53110.mp4",
    "cue": "ดวงอาทิตย์",
    "word_at": 1.26,
    "start": 1.18,
    "beat": "hook",
    "end": 2.4,
-   "dur": 1.22
+   "dur": 1.22,
+   "media_start": 13.92
   },
   {
    "id": "wires",
-   "src": null,
+   "src": "assets/footage/pixabay-2151.mp4",
    "cue": "เคย",
    "word_at": 2.48,
    "start": 2.4,
    "beat": "setup",
    "end": 4.32,
-   "dur": 1.92
+   "dur": 1.92,
+   "media_start": 1.92
   },
   {
    "id": "y1859",
@@ -51,13 +53,14 @@
   },
   {
    "id": "storm",
-   "src": null,
+   "src": "assets/footage/nasa-sdo-phoenix-eruption.mp4",
    "cue": "พายุสุริยะ",
    "word_at": 5.7,
    "start": 5.62,
    "beat": "explain",
    "end": 7.88,
-   "dur": 2.26
+   "dur": 2.26,
+   "media_start": 2.92
   },
   {
    "id": "spark",
@@ -101,33 +104,36 @@
   },
   {
    "id": "worse",
-   "src": null,
+   "src": "assets/footage/pixabay-377885.mp4",
    "cue": "ถ้าเจอ",
    "word_at": 18.26,
    "start": 18.18,
    "beat": "reveal",
    "end": 20.14,
-   "dur": 1.96
+   "dur": 1.96,
+   "media_start": 4.92
   },
   {
    "id": "y2012",
-   "src": null,
+   "src": "assets/footage/nasa-soho-cme-2013.mp4",
    "cue": "แถม",
    "word_at": 20.22,
    "start": 20.14,
    "beat": "twist",
    "end": 21.74,
-   "dur": 1.6
+   "dur": 1.6,
+   "media_start": 6.92
   },
   {
    "id": "cme",
-   "src": null,
+   "src": "assets/footage/nasa-sdo-phoenix-limb-flare.mp4",
    "cue": "ขนาด",
    "word_at": 21.82,
    "start": 21.74,
    "beat": "twist",
    "end": 22.9,
-   "dur": 1.16
+   "dur": 1.16,
+   "media_start": 3.92
   },
   {
    "id": "orbit",
@@ -141,63 +147,69 @@
   },
   {
    "id": "miss",
-   "src": null,
+   "src": "assets/footage/pixabay-5069.mp4",
    "cue": "พลาด",
    "word_at": 24.16,
    "start": 24.08,
    "beat": "twist",
    "end": 25.8,
-   "dur": 1.72
+   "dur": 1.72,
+   "media_start": 2.92
   },
   {
    "id": "aurora",
-   "src": null,
+   "src": "assets/footage/pixabay-90875.mp4",
    "cue": "ส่วนปี",
    "word_at": 25.88,
    "start": 25.8,
    "beat": "share",
    "end": 28.58,
-   "dur": 2.78
+   "dur": 2.78,
+   "media_start": 7.92
   },
   {
    "id": "aurora2",
-   "src": null,
+   "src": "assets/footage/pixabay-218646.mp4",
    "cue": "เห็นแสง",
    "word_at": 28.66,
    "start": 28.58,
    "beat": "share",
    "end": 30.24,
-   "dur": 1.66
+   "dur": 1.66,
+   "media_start": 1.92
   },
   {
    "id": "count",
-   "src": null,
+   "src": "assets/footage/pixabay-90875.mp4",
    "cue": "ห้าสิบห้า",
    "word_at": 30.32,
    "start": 30.24,
    "beat": "share",
    "end": 31.54,
-   "dur": 1.3
+   "dur": 1.3,
+   "media_start": 19.92
   },
   {
    "id": "ask",
-   "src": null,
+   "src": "assets/footage/pixabay-169445.mp4",
    "cue": "ถ้าเน็ต",
    "word_at": 31.62,
    "start": 31.54,
    "beat": "cta",
    "end": 33.72,
-   "dur": 2.18
+   "dur": 2.18,
+   "media_start": 3.92
   },
   {
    "id": "loop",
-   "src": null,
+   "src": "assets/footage/nasa-sdo-arching-eruption.mp4",
    "cue": "เม้น",
    "word_at": 33.8,
    "start": 33.72,
    "beat": "loop",
    "end": 34.522,
-   "dur": 0.802
+   "dur": 0.802,
+   "media_start": 6.42
   }
  ]
 }
