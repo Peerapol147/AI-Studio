@@ -1,0 +1,222 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 30.573,
+ "inputs": {
+  "shots.json": "77c3cfca7c23bcac75d74ecc9939fc67fbe570b2377031a6a60487fc6c978ff1",
+  "footage.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "assets/audio/words.json": "ab4ead223bb4f3c9830e8810153294c2b97b93f7bcb81fbdc2fe9d96e1336d43"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "กิน",
+   "word_at": 0.08,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.08,
+   "dur": 1.08
+  },
+  {
+   "id": "ouch1",
+   "src": null,
+   "cue": "หัว",
+   "word_at": 1.16,
+   "start": 1.08,
+   "beat": "hook",
+   "end": 1.94,
+   "dur": 0.86
+  },
+  {
+   "id": "why",
+   "src": null,
+   "cue": "เพราะ",
+   "word_at": 2.02,
+   "start": 1.94,
+   "beat": "hook",
+   "end": 3.04,
+   "dur": 1.1
+  },
+  {
+   "id": "belief",
+   "src": null,
+   "cue": "หลายคน",
+   "word_at": 3.12,
+   "start": 3.04,
+   "beat": "setup",
+   "end": 4.32,
+   "dur": 1.28
+  },
+  {
+   "id": "run",
+   "src": null,
+   "cue": "วิ่ง",
+   "word_at": 4.4,
+   "start": 4.32,
+   "beat": "setup",
+   "end": 6.04,
+   "dur": 1.72
+  },
+  {
+   "id": "truth",
+   "src": null,
+   "cue": "ความจริง",
+   "word_at": 6.12,
+   "start": 6.04,
+   "beat": "reveal",
+   "end": 7.78,
+   "dur": 1.74
+  },
+  {
+   "id": "nopain",
+   "src": null,
+   "cue": "ไม่มี",
+   "word_at": 7.86,
+   "start": 7.78,
+   "beat": "reveal",
+   "end": 9.68,
+   "dur": 1.9
+  },
+  {
+   "id": "culprit",
+   "src": null,
+   "cue": "ตัวการ",
+   "word_at": 9.76,
+   "start": 9.68,
+   "beat": "explain",
+   "end": 11.4,
+   "dur": 1.72
+  },
+  {
+   "id": "palate",
+   "src": null,
+   "cue": "พอโดน",
+   "word_at": 11.48,
+   "start": 11.4,
+   "beat": "explain",
+   "end": 12.54,
+   "dur": 1.14
+  },
+  {
+   "id": "nerve",
+   "src": null,
+   "cue": "เส้นประสาท",
+   "word_at": 12.62,
+   "start": 12.54,
+   "beat": "explain",
+   "end": 15.04,
+   "dur": 2.5
+  },
+  {
+   "id": "confused",
+   "src": null,
+   "cue": "สมอง",
+   "word_at": 15.12,
+   "start": 15.04,
+   "beat": "explain",
+   "end": 16.12,
+   "dur": 1.08
+  },
+  {
+   "id": "forehead",
+   "src": null,
+   "cue": "นึกว่า",
+   "word_at": 16.2,
+   "start": 16.12,
+   "beat": "explain",
+   "end": 17.92,
+   "dur": 1.8
+  },
+  {
+   "id": "rush1",
+   "src": null,
+   "cue": "แถม",
+   "word_at": 18.0,
+   "start": 17.92,
+   "beat": "twist",
+   "end": 19.16,
+   "dur": 1.24
+  },
+  {
+   "id": "rush2",
+   "src": null,
+   "cue": "ก็ยิ่ง",
+   "word_at": 19.24,
+   "start": 19.16,
+   "beat": "twist",
+   "end": 20.8,
+   "dur": 1.64
+  },
+  {
+   "id": "trick",
+   "src": null,
+   "cue": "ทริค",
+   "word_at": 20.88,
+   "start": 20.8,
+   "beat": "share",
+   "end": 22.0,
+   "dur": 1.2
+  },
+  {
+   "id": "tongue",
+   "src": null,
+   "cue": "ลิ้น",
+   "word_at": 22.08,
+   "start": 22.0,
+   "beat": "share",
+   "end": 23.64,
+   "dur": 1.64
+  },
+  {
+   "id": "warm",
+   "src": null,
+   "cue": "ให้มัน",
+   "word_at": 23.72,
+   "start": 23.64,
+   "beat": "share",
+   "end": 25.2,
+   "dur": 1.56
+  },
+  {
+   "id": "warn",
+   "src": null,
+   "cue": "ถ้าปวด",
+   "word_at": 25.28,
+   "start": 25.2,
+   "beat": "share",
+   "end": 26.88,
+   "dur": 1.68
+  },
+  {
+   "id": "doctor",
+   "src": null,
+   "cue": "หาหมอ",
+   "word_at": 26.96,
+   "start": 26.88,
+   "beat": "share",
+   "end": 28.02,
+   "dur": 1.14
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "ปกติ",
+   "word_at": 28.1,
+   "start": 28.02,
+   "beat": "cta",
+   "end": 29.64,
+   "dur": 1.62
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "เม้น",
+   "word_at": 29.72,
+   "start": 29.64,
+   "beat": "loop",
+   "end": 30.573,
+   "dur": 0.933
+  }
+ ]
+}
