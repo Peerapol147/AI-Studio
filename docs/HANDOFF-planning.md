@@ -1,7 +1,7 @@
-# Handoff: ห้องวางแผน Creative (ศูนย์รวม — อัปเดต 2026-11-24 โดยห้อง Creative #3 ก่อนปิดห้อง; ห้อง #4 แก้ข้อ 5-6 วันเดียวกัน)
+# Handoff: ห้องวางแผน Creative (ศูนย์รวม — อัปเดต 2026-11-24 โดยห้อง Creative #3 ก่อนปิดห้อง; ห้อง #4 แก้ข้อ 5-6, 8 วันเดียวกัน)
 
 อ่านไฟล์นี้ไฟล์เดียวพอเริ่มงาน ตัวเลขทุกตัวเช็กกับไฟล์ต้นทางก่อนพูดกับผู้ใช้ (ผู้ใช้เคยบอกว่าข้อมูลห้องก่อน "เพี้ยน")
-ไฟล์ต้นทาง: สถิติ `channels/knowledge/results.md` · สรุปโปรเจกต์ (ส่งให้ AI อื่นได้) `docs/PROJECT-SUMMARY.md` · วิจัยตัดต่อ `docs/editing-research-2026-11-22.md` · ระบบตัดต่อ `docs/editing-v3.md` (บน stoic-cray) · บันทึกเก่า `docs/strategy-notes.md`
+ไฟล์ต้นทาง: สถิติ `channels/knowledge/results.md` · สรุปโปรเจกต์ (ส่งให้ AI อื่นได้) `docs/PROJECT-SUMMARY.md` · วิจัยตัดต่อ `docs/editing-research-2026-11-22.md` · ระบบตัดต่อ `docs/editing-v3.md` (บน stoic-cray) · บันทึกเก่า `docs/strategy-notes.md` · แนวทางห้อง Content (ไม่ใช่กฎ) `docs/strategy-content-2026-11-24.md` บน branch `claude/quirky-davinci-lih1l9`
 สายห้องวางแผน: Content `session_016zMkaNsKYFpyNCmuargtH6` → Creative #1 `session_016zMkaQgYTDMQ6GkBLuLqSX` → #2 (ปิด) → #3 `session_016zMkaQZ2mFG1JvcQgmgnZP` (ผู้ใช้จะลบ) → #4 `session_016zMkaSyNJ1q5w5ZvoFEJXS`
 branch ของห้องวางแผน: `claude/content-strategy` (`git pull origin claude/content-strategy` ก่อนเริ่ม; push ด้วย `git push origin HEAD:claude/content-strategy`)
 
@@ -16,6 +16,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 
 ## 3. สถานะช่อง knowledge (ภาพ Analytics ล่าสุด 2026-11-23, results.md "ชุดที่ 5")
 - 28 วัน: วิว 89K · ชม.ดู 424.7 · ผู้ติดตาม 142 · ผู้ชมรายเดือน 44K · ผู้ชมใหม่ 99% · ชาย 25-34 · ไม่มีป้ายเตือน/จำกัดทุกคลิป
+- ข้อมูลสาธารณะ 2026-11-24 (ห้อง Content ดึงผ่าน Apify): ผู้ติดตาม 159 · 22 คลิป · วิวรวม 95,352; คอมเมนต์ หักนิ้ว 24 / หาว 16 / ตด 2 / วอมแบต 1
 - ปัง: หักนิ้ว 25K (20 วิ, ดูต่อ 75.4%), ตดในอวกาศ 25.1K (35 วิ) · ตามมา: อึวอมแบต 9.2K, หาว 8.6K, ผีอำ 3.4K
 - **คลิปใหม่แพ้รอบทดสอบ:** ได้ฟีดทดลอง 600-1,200 แล้วหยุด, ดูต่อ vs ปัดทิ้ง 46-58%; คอมเมนต์ ~0 ทุกคลิป; บั้งไฟพญานาคได้ 13 วิว (~26 ชม., ฟีดส่งแค่ 4) ห้ามลบอัปใหม่
 - บทเรียน (n เล็ก): เรื่องร่างกายที่ทุกคนเจอเอง 20-35 วิ ชนะ; นามธรรม/อนาคต/ตำนาน แพ้; **ภาคต่อ 0/2 → พักกฎ ">5K = ภาคต่อ"** (2026-11-23); คลิป 54-59 วิไม่ดีกว่า
@@ -58,6 +59,10 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 - หัวข้อผ่าน: Shorts ไทย ≥100K หรือต่างประเทศ ≥1M ×2 ช่อง (ผู้ใช้สั่งนอกเกณฑ์ → "ทดลอง")
 - ความยาวค่าเริ่มต้น 20-40 วิ เพดาน 59; หัวข้อเฟรม 0 ~≤12 ตัวไทย/บรรทัด
 - เช็กลิสต์บทในทุก brief: ห้าม "พวกเขา/และ/ซึ่ง/โดย", คำลงท้ายพูดจริง, ไม่เรียก "คุณ", "ผู้ชาย 28 พูดกับเพื่อนแบบนี้จริงไหม"; ตำนาน เล่า 70 / หักมุม 30
+- **รับจากห้อง Content (2026-11-24, ห้อง #4 ตัดสิน):**
+  - คำถามปิดท้ายแบบ "ทำได้ทันที/นับได้" (หักนิ้ววันละกี่ที / หาวไปกี่ทีแล้ว ได้คอมเมนต์ 24/16 vs คำถามสมมติ 1-2) → ใส่ใน brief ทุกคลิปตั้งแต่คลิปถัดไป (คอมเมนต์ช่องเกือบ 0 ต้นทุนแทบไม่มี)
+  - เฉลยเร็ว (~25% ของความยาว เหมือน 4 คลิปปัง ซึ่งทำก่อน v3) vs เฉลย 50-60% ตาม v3 → ทดสอบ: คลิปแนวร่างกาย 2 คลิปถัดไป เปลี่ยนแค่จุดเฉลย เทียบ "ดูต่อ vs ปัดทิ้ง" + ดูเฉลี่ย÷ความยาว
+  - วัดซ้ำที่ 7 วัน เพิ่มจาก 48 ชม. (วอมแบต 2,964 ที่ 48 ชม. → 9.4K ภายหลัง) — หมายเหตุ: หักนิ้ว 1,337 / หาว 678 ที่ห้อง Content อ้างเป็นยอด "ก่อนครบ 48 ชม." (หักนิ้วครบ 48 ชม. = 21,058) และกฎ <1,500 ใน results.md เป็น "จุดทบทวน" ไม่ใช่ทิ้งแนว
 - ลิขสิทธิ์: ห้ามภาพหนัง/ละคร/ข่าว/ไฮไลต์บอล/โลโก้/เพลงติดลิขสิทธิ์; หวย = ห้าม; ข้อเท็จจริงจาก research.md เท่านั้น ห้ามอัปโหลด/ตั้งเวลาโพสต์
 - ห้าม merge superpowers 4 ตัว (brainstorming, writing-plans, verification-before-completion, dispatching-parallel-agents) เข้า stoic-cray; ห้องลูกดึงด้วย `git fetch origin claude/content-strategy && git checkout origin/claude/content-strategy -- .claude/skills/<ชื่อ>` (ห้าม commit)
 
@@ -69,7 +74,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 
 ## 10. เงิน/เครื่องมือ
 - เป้า ≤$10-15/คลิป; ElevenLabs key อยู่ใน network secret (ห้ามรับในแชต → `request_credential` host api.elevenlabs.io header xi-api-key) ผู้ใช้เปลี่ยนคีย์ใหม่อีกครั้งระหว่างห้องการ์ตูนมวย (โควตาไม่ทราบ → ห้องลูกเช็กเองก่อนอัด)
-- Apify ผ่าน proxy (`tools/apify_mcp.sh`); ค้นยอดวิว: `python3 -I tools/yt_views.py "คำค้นไทย"`; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`
+- Apify ผ่าน proxy (`tools/apify_mcp.sh`); ค้นยอดวิว: `python3 -I tools/yt_views.py "คำค้นไทย"`; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`; ดึงสถิติช่องตัวเอง (วิว/ไลก์/คอมเมนต์/ซับ ไม่มี retention): Actor `streamers/youtube-scraper` startUrls `https://www.youtube.com/@vision6498` (ไม่ต่อ /videos, ห้ามตั้ง maxResultsShorts=0) ~$0.004/คลิป — วิธีเต็มในไฟล์ห้อง Content ข้อ 6
 - skills วางแผน: reality-check (ทุกการอ่านสถิติ), yt-content-planner, yt-hook-scripter, yt-title/thumbnail/description (ข้าม publish), caveman (แชตเท่านั้น), superpowers
 - สายพานทำคลิป (ห้องลูกใช้): make-clip (ขั้น 0-7), agents researcher/footage/voice/editor/reviewer, hyperframes(+cli, registry), media-use, sound-effects, tools/look.py, tools/pacing.py, tools/shot_times.py
-- **brief ที่ดี:** หัวข้อ + ผลค้นเกณฑ์ + มุมความเชื่อ vs ความจริง + เฟรม 0 + กฎ v3 + เช็กลิสต์บท + ลิขสิทธิ์ + เสียง (ล็อกบท อัดเทคเดียว) + skills ต่อขั้น + "เขียนรายงานลง DELIVERY.md แล้ว push" — ตัวอย่าง: brief ห้องพายุสุริยะ/ท้องร้อง (ดูข้อความแรกของห้องด้วย list_events)
+- **brief ที่ดี:** หัวข้อ + ผลค้นเกณฑ์ + มุมความเชื่อ vs ความจริง + เฟรม 0 + กฎ v3 + เช็กลิสต์บท + ลิขสิทธิ์ + เสียง (ล็อกบท อัดเทคเดียว) + skills ต่อขั้น + **คำถามปิดท้ายแบบทำได้ทันที** + "เขียนรายงานลง DELIVERY.md แล้ว push" — ตัวอย่าง: brief ห้องพายุสุริยะ/ท้องร้อง (ดูข้อความแรกของห้องด้วย list_events)
