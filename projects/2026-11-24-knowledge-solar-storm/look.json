@@ -9,6 +9,6 @@
   "music_mood": "cinematic",
   "voice": "george",
   "music_file": null,
-  "cover_text": null,
+  "cover_text": "เน็ตดับทั้งโลก เพราะดวงอาทิตย์?",
   "why": "look.py pick แล้วเปลี่ยน opening number→question: hook เป็นคำถามใกล้ตัว 'เน็ตดับทั้งโลก' ตัวเลขปีใหญ่บนเฟรม 0 ไม่ช่วยให้เข้าใจใน 1 วิ; เพลง cinematic + George เข้ากับเรื่องอวกาศ"
 }

@@ -1,0 +1,21 @@
+{
+ "lead": 0.08,
+ "topic": {"th": "เน็ตดับ"},
+ "shots": [
+  {"id": "hook", "cue": {"th": "เน็ต"}, "beat": "hook", "want": "ดวงอาทิตย์ปะทุระยะใกล้ เปลวสุริยะพวยพุ่ง (NASA SDO solar flare video) — ภาพแปลกตา เฟรม 0", "media_start": 6.0},
+  {"id": "sun", "cue": {"th": "ดวงอาทิตย์"}, "beat": "hook", "want": "โลกจากอวกาศตอนกลางคืน แสงไฟเมือง (earth at night from space) + กราฟิกไอคอนไวไฟดับ"},
+  {"id": "wires", "cue": {"th": "เคย"}, "beat": "setup", "want": "สายไฟฟ้าแรงสูง/เสาไฟ ตอนเย็น (power lines)"},
+  {"id": "y1859", "cue": {"th": "พันแปดร้อย"}, "beat": "explain", "want": "ภาพวาดจุดมืดดวงอาทิตย์ของ Carrington 1859 (public domain, Wikimedia) หรือกล้องโทรทรรศน์โบราณ + กราฟิกปี 1859"},
+  {"id": "spark", "cue": {"th": "สายโทรเลข"}, "beat": "explain", "want": "เครื่องโทรเลขโบราณ (telegraph key, public domain) + กราฟิกประกายไฟวิ่งบนสาย"},
+  {"id": "battery", "cue": {"th": "มีบันทึก"}, "beat": "explain", "want": "graphic: แบตเตอรี่ถูกถอดออก แต่สัญญาณยังวิ่งบนสาย (lucide battery + จุดพัลส์)"},
+  {"id": "then", "cue": {"th": "สมัยนั้น"}, "beat": "explain", "want": "graphic: ไอคอนโทรเลข 1 อัน → แตกเป็น wifi, GPS, ปลั๊กไฟ, มือถือ หลายอัน (morph)"},
+  {"id": "worse", "cue": {"th": "ถ้าเจอ"}, "beat": "reveal", "want": "ห้องเซิร์ฟเวอร์/ดาต้าเซ็นเตอร์ ไฟกะพริบ (server room)"},
+  {"id": "y2012", "cue": {"th": "สองพัน"}, "beat": "twist", "want": "CME ก้อนพลาสมาพุ่งออกจากดวงอาทิตย์ (NASA SOHO/STEREO coronagraph CME) ภาพ 2012 ถ้ามี"},
+  {"id": "orbit", "cue": {"th": "วงโคจร"}, "beat": "twist", "want": "graphic: วงโคจรโลก ก้อนพายุพุ่งผ่านจุดที่โลกจะอยู่อีก ~1 สัปดาห์ ป้าย '~1 สัปดาห์'"},
+  {"id": "miss", "cue": {"th": "พลาด"}, "beat": "twist", "want": "โลกหมุนในอวกาศ (earth rotating space)"},
+  {"id": "aurora", "cue": {"th": "ส่วนปี"}, "beat": "share", "want": "ออโรราไทม์แลปส์ฟ้าเขียว-ชมพู (aurora borealis timelapse) ไม่ใช่ภาพ AI"},
+  {"id": "count", "cue": {"th": "ห้าสิบห้า"}, "beat": "share", "want": "ออโรราอีกช็อต + กราฟิกตัวเลข 55+ ประเทศ"},
+  {"id": "ask", "cue": {"th": "ถ้าเน็ต"}, "beat": "cta", "want": "คนถือมือถือในห้องมืด ไม่มีสัญญาณ (phone dark room)"},
+  {"id": "loop", "cue": {"th": "เมนต์"}, "beat": "loop", "want": "plate เดียวกับ hook (แม่แบบเล่นจบที่เฟรม 0)"}
+ ]
+}
