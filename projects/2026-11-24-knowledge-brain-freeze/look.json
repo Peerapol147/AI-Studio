@@ -1,14 +1,14 @@
 {
   "template": "brainrot-v3",
-  "palette": "sunrise-coral",
-  "font": "sarabun",
-  "caption": "pop",
+  "palette": "night-violet",
+  "font": "kanit",
+  "caption": "stroke",
   "opening": "midstory",
-  "cover": "stack",
-  "transition": "slide",
+  "cover": "card",
+  "transition": "whip",
   "music_mood": "playful",
-  "voice": "liam",
+  "voice": "george",
   "music_file": "music-jamendo-b6fb4ded.mp3",
-  "cover_text": "ไอติมทำ สมองแข็ง จริงหรอ?",
-  "why": "look.py pick (ต่างจาก 3 ตอนล่าสุด); music_mood เปลี่ยนเป็น playful (เรื่องร่างกายขำๆ ใกล้ตัว), voice liam (เรื่องใกล้ตัว ขำ); opening เปลี่ยน number→midstory (ไม่มีตัวเลข ✅ ที่เหมาะเปิด; ตอนก่อนใช้ question/pov)"
+  "cover_text": "กินไอติมแล้ว จี๊ดขึ้นหัว?",
+  "why": "รอบทำใหม่ (ผู้ใช้: จังหวะ/สี/ฟุต/เสียงมัว → 'ผสมผสานให้ดี'): ดึงจุดแข็ง v2 ที่ผู้ใช้ชอบ (ม่วงกลางคืน=โทนเย็นเข้าเรื่อง, Kanit, ซับขอบดำ, whip, เสียง George) แต่ต่างจาก 3 ตอนล่าสุดด้วย opening midstory + cover card; รอบแรกเก็บไว้ที่ look-v1.json"
 }
