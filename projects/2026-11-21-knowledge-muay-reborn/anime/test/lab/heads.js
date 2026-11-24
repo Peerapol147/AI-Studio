@@ -1,0 +1,4 @@
+{ cam0: { zoom: 1, cx: 960, cy: 540 }, bgKey: 'lab', dof: 0, bg: () => STAGE.flat('#e6c7ad', '#d8b7a0', true), cam: () => ({ p: 1 }),
+  draw: (lt, t) => { const who = ['kla', 'boss', 'jo', 'te', 'pond', 'saeng', 'mewS', 'teacher'], fw = ['kla', 'boss', 'jo', 'te', 'pond', 'legend', 'mew', 'teacher'];
+    who.forEach((w, i) => { const x = 130 + i * 236; FT.face({ who: fw[i], x, y: 150, s: 105, eyes: i === 0 ? 'fierce' : 'normal', bangsUp: i === 0, anger: i === 1 ? 0.8 : 0, mouth: i === 2 ? 0.5 : 0 });
+      FT.body({ look: w, x: x + 10, y: 1040, s: 430, f: i % 2 ? -1 : 1, pose: i === 0 ? { legF: [0.3, -0.14], legB: [-0.3, -0.06], armF: [1.0, 2.0], armB: [0.72, 2.3], lean: -0.04, head: 0.06 } : {}, face: { eyes: i === 0 ? 'fierce' : 'normal', anger: i === 1 ? 0.8 : 0, mouth: i === 2 ? 0.5 : 0 }, lookOver: i === 0 ? { bangsUp: true } : {} }); }); } }
