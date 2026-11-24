@@ -1,8 +1,8 @@
-# Handoff: ห้องวางแผน Creative (ศูนย์รวม — อัปเดต 2026-11-24 โดยห้อง Creative #3 ก่อนปิดห้อง)
+# Handoff: ห้องวางแผน Creative (ศูนย์รวม — อัปเดต 2026-11-24 โดยห้อง Creative #3 ก่อนปิดห้อง; ห้อง #4 แก้ข้อ 5-6 วันเดียวกัน)
 
 อ่านไฟล์นี้ไฟล์เดียวพอเริ่มงาน ตัวเลขทุกตัวเช็กกับไฟล์ต้นทางก่อนพูดกับผู้ใช้ (ผู้ใช้เคยบอกว่าข้อมูลห้องก่อน "เพี้ยน")
 ไฟล์ต้นทาง: สถิติ `channels/knowledge/results.md` · สรุปโปรเจกต์ (ส่งให้ AI อื่นได้) `docs/PROJECT-SUMMARY.md` · วิจัยตัดต่อ `docs/editing-research-2026-11-22.md` · ระบบตัดต่อ `docs/editing-v3.md` (บน stoic-cray) · บันทึกเก่า `docs/strategy-notes.md`
-สายห้องวางแผน: Content `session_016zMkaNsKYFpyNCmuargtH6` → Creative #1 `session_016zMkaQgYTDMQ6GkBLuLqSX` → #2 (ปิด) → #3 `session_016zMkaQZ2mFG1JvcQgmgnZP` (ผู้ใช้จะลบ) → #4 (ห้องถัดไป)
+สายห้องวางแผน: Content `session_016zMkaNsKYFpyNCmuargtH6` → Creative #1 `session_016zMkaQgYTDMQ6GkBLuLqSX` → #2 (ปิด) → #3 `session_016zMkaQZ2mFG1JvcQgmgnZP` (ผู้ใช้จะลบ) → #4 `session_016zMkaSyNJ1q5w5ZvoFEJXS`
 branch ของห้องวางแผน: `claude/content-strategy` (`git pull origin claude/content-strategy` ก่อนเริ่ม; push ด้วย `git push origin HEAD:claude/content-strategy`)
 
 ## 1. บทบาท + วิธีคุยกับผู้ใช้
@@ -38,16 +38,15 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 | บั้งไฟพญานาค | ลงแล้ว 13 วิว ผิดปกติ รอดูอีกรอบ | claude/ep-2026-11-22-naga-fireballs · `session_016zMkaPGoRJCr9KKSG1VocU` |
 | ปวดอึในอวกาศ (ภาคต่อตด) / เข่ากร๊อบ (ภาคต่อหักนิ้ว) | ลงแล้ว ~1.3K ทั้งคู่ | ep-2026-11-22-space-toilet / ep-2026-11-20-knee-crack |
 | น้ำมันจะหมดโลกปีไหน / Gen Z แก่ตัว / แม่นาค / ย้อนปี 2000 | ลงแล้ว 1.2K / 472 / 2.1K / 1.8K | ep-2026-11-21-energy-left / ep-2026-11-20-genz-old / -mae-nak / -back-to-2000 |
-| การ์ตูน "ไอ้ขี้แพ้เป็นมวย" EP.1 (พระเอก มานพ) ยาว 4:05 + Short 52 วิ | เรนเดอร์บน RTX 3070 เสร็จ (`C:\Users\PC\Downloads\muay-reborn\`) ยังไม่มีใครฟังเสียง; ไม่รู้ว่าอัปแล้วหรือยัง | claude/ep-2026-11-21-muay-reborn · `session_016zMkaNrSxPV6ZHkPBJpbr8` |
+| การ์ตูน "ไอ้ขี้แพ้เป็นมวย" EP.1 | **ปิดจากห้องวางแผน** (ผู้ใช้ 2026-11-24: ให้ห้องอื่นทำแล้ว) ไม่ต้องตามต่อ | claude/ep-2026-11-21-muay-reborn |
 | Lore อนิเมะ #1 ทวีปมืด (ซีรีส์ใหม่ ผู้ใช้สั่ง 2026-11-22 ผ่านห้อง #1) | ผู้ใช้ยอมรับความเสี่ยงภาพนิ่งอนิเมะ (≤2 วิ/ภาพ มีกราฟิกทับ ผู้ใช้แคปเอง ห้าม commit ภาพ); รอผู้ใช้ตอบลงช่องไหน+นับเป้าไหม | claude/ep-2026-11-22-lore-dark-continent · `session_016zMkaQCWyXZxaABjx2pR2Z` |
-| การ์ตูนอวกาศ "เคาะสามที" 5 นาที | บท+เสียงพากย์ 65 บรรทัดเสร็จ ยังไม่ผลิตภาพ; รอตัดสิน: คล้าย Project Hail Mary, ให้คนอ่านบทอีกรอบไหม | claude/story-2026-11-21-space-knock |
+| การ์ตูนอวกาศ "เคาะสามที" 5 นาที | **ปิด** (ผู้ใช้ 2026-11-24 สั่งปิดเรื่องที่ค้างตัดสิน) ไม่ต้องตามต่อ | claude/story-2026-11-21-space-knock |
 | เมสซี่ vs โรนัลโด้ (ช่องฟุตบอล) | เสร็จ; รอผู้ใช้ตอบลงช่องไหน | claude/ep-2026-11-20-messi-ronaldo |
 
 ## 6. เรื่องที่รอผู้ใช้ตัดสิน
 1. คลิปฟุตบอล + Lore อนิเมะ ลงช่องไหน และวิวนับเข้าเป้า 10M ไหม
-2. การ์ตูนอวกาศ: รับความคล้าย Project Hail Mary ไหม
-3. ฟังเสียงการ์ตูนมวยก่อนอัป
-4. อัปเกรด ElevenLabs ก่อนเปิดรายได้ (free tier ใช้เชิงพาณิชย์ไม่ได้)
+2. อัปเกรด ElevenLabs ก่อนเปิดรายได้ (free tier ใช้เชิงพาณิชย์ไม่ได้)
+(ปิดแล้ว 2026-11-24: การ์ตูนอวกาศ, ฟังเสียงการ์ตูนมวย)
 
 ## 7. คิวไอเดีย (ห้องวางแผนเลือกเองได้)
 - **แนวร่างกาย (ข้อมูลชี้ว่าดีสุด):** เหน็บชา (ไทย 21K), มองแดดแล้วจาม (7.2K), กระดูกลั่น (35K) — หัวข้อไทยวิวต่ำแต่หักนิ้วก็เคยต่ำ (3.7K) แล้วได้ 25K
