@@ -1,22 +1,149 @@
 {
  "lead": 0.08,
- "topic": {"th": "สมองแข็ง"},
+ "topic": {
+  "th": "สมองแข็ง"
+ },
  "experiment": "เฉลยเร็ว ~20-30% (brief ห้องวางแผน) — pacing WARN เรื่องจุดเฉลยเป็นการทดลองที่ตั้งใจ",
  "shots": [
-  {"id": "hook", "cue": {"th": "ไอติม"}, "beat": "hook", "want": "คนกัด/กินไอติมแล้วหน้าเหยเก กุมหน้าผาก (brain freeze moment, ice cream bite wince)"},
-  {"id": "freeze", "cue": {"th": "แข็ง"}, "beat": "hook", "want": "graphic: สมองกลายเป็นก้อนน้ำแข็ง/เกล็ดน้ำแข็งเกาะ"},
-  {"id": "eatfast", "cue": {"th": "กินเร็ว"}, "beat": "setup", "want": "กินไอติมคำโต/เร็ว close-up (eating ice cream fast)"},
-  {"id": "ouch", "cue": {"th": "จี๊ด"}, "beat": "setup", "want": "คนกุมหน้าผาก/ขมับ หน้าเหยเก (man holding forehead headache)"},
-  {"id": "truth", "cue": {"th": "ความจริง"}, "beat": "reveal", "want": "graphic: สมอง ไอคอนน้ำแข็งโดนขีด/สลาย ป้าย 'ไม่ได้แข็ง'"},
-  {"id": "nopain", "cue": {"th": "ตัวสมอง"}, "beat": "reveal", "want": "graphic: สมอง + ป้าย 'ไม่มีตัวรับความเจ็บ'"},
-  {"id": "palate", "cue": {"th": "เพดานปาก"}, "beat": "explain", "want": "graphic: หัวด้านข้าง เพดานปากเรืองฟ้า (เย็น)"},
-  {"id": "nerve", "cue": {"th": "เส้นประสาท"}, "beat": "explain", "want": "graphic: เส้นประสาทพัลส์จากเพดานปากขึ้นหน้าผาก"},
-  {"id": "confused", "cue": {"th": "งง"}, "beat": "explain", "want": "graphic: หน้าผากแดงจี๊ด + ? ที่สมอง"},
-  {"id": "study", "cue": {"th": "งานวิจัย"}, "beat": "twist", "want": "graphic: ไอคอนเร็ว (ไอติม+เส้นความเร็ว) vs ช้า (เต่า) ไม่มีตัวเลข"},
-  {"id": "gulp", "cue": {"th": "เสี่ยง"}, "beat": "twist", "want": "กินไอติม/เครื่องดื่มเย็นเร็วๆ (กลืนรวด, slurp)"},
-  {"id": "tongue", "cue": {"th": "ลิ้น"}, "beat": "share", "want": "graphic: ลิ้นดันเพดานปาก เพดานปากเปลี่ยนฟ้า→ส้ม (อุ่น)"},
-  {"id": "doctor", "cue": {"th": "หาหมอ"}, "beat": "share", "want": "graphic: การ์ด 'ปวดบ่อย/แรง → หาหมอ' ไอคอนหูฟังแพทย์"},
-  {"id": "ask", "cue": {"th": "กี่วิ"}, "beat": "cta", "want": "graphic: นาฬิกาจับเวลานับ + ไอคอนคอมเมนต์"},
-  {"id": "loop", "cue": {"th": "เม้น"}, "beat": "loop", "want": "ภาพ hook จบที่เฟรม 0"}
+  {
+   "id": "hook",
+   "cue": {
+    "th": "ไอติม"
+   },
+   "beat": "hook",
+   "want": "คนกัด/กินไอติมแล้วหน้าเหยเก กุมหน้าผาก (brain freeze moment, ice cream bite wince)"
+  },
+  {
+   "id": "freeze",
+   "cue": {
+    "th": "แข็ง"
+   },
+   "beat": "hook",
+   "want": "graphic: สมองกลายเป็นก้อนน้ำแข็ง/เกล็ดน้ำแข็งเกาะ"
+  },
+  {
+   "id": "eatfast",
+   "cue": {
+    "th": "กินเร็ว"
+   },
+   "beat": "setup",
+   "want": "กินไอติมคำโต/เร็ว close-up (eating ice cream fast)"
+  },
+  {
+   "id": "ouch",
+   "cue": {
+    "th": "จี๊ด"
+   },
+   "beat": "setup",
+   "want": "คนกุมหน้าผาก/ขมับ หน้าเหยเก (man holding forehead headache)"
+  },
+  {
+   "id": "iced",
+   "cue": {
+    "th": "เหมือนสมอง"
+   },
+   "beat": "setup",
+   "want": "graphic: สมองตัวเดิม เกล็ดน้ำแข็งเกาะอีกรอบ (ความเชื่อ)"
+  },
+  {
+   "id": "truth",
+   "cue": {
+    "th": "ความจริง"
+   },
+   "beat": "reveal",
+   "want": "graphic: สมอง ไอคอนน้ำแข็งโดนขีด/สลาย ป้าย 'ไม่ได้แข็ง'"
+  },
+  {
+   "id": "nopain",
+   "cue": {
+    "th": "ตัวสมอง"
+   },
+   "beat": "reveal",
+   "want": "graphic: สมอง + ป้าย 'ไม่มีตัวรับความเจ็บ'"
+  },
+  {
+   "id": "palate",
+   "cue": {
+    "th": "ตัวการ"
+   },
+   "beat": "explain",
+   "want": "graphic: หัวด้านข้าง เพดานปากเรืองฟ้า (เย็น)"
+  },
+  {
+   "id": "nerve",
+   "cue": {
+    "th": "เส้นประสาท"
+   },
+   "beat": "explain",
+   "want": "graphic: เส้นประสาทพัลส์จากเพดานปากขึ้นหน้าผาก"
+  },
+  {
+   "id": "confused",
+   "cue": {
+    "th": "งง"
+   },
+   "beat": "explain",
+   "want": "graphic: หน้าผากแดงจี๊ด + ? ที่สมอง"
+  },
+  {
+   "id": "study",
+   "cue": {
+    "th": "งานวิจัย"
+   },
+   "beat": "twist",
+   "want": "graphic: ป้าย 'งานวิจัย' เอกสาร/แว่นขยาย (ไม่มีชื่อวารสาร/ตัวเลข)"
+  },
+  {
+   "id": "gulp",
+   "cue": {
+    "th": "กินเร็ว"
+   },
+   "beat": "twist",
+   "want": "กินไอติม/เครื่องดื่มเย็นเร็วๆ (กลืนรวด, slurp)"
+  },
+  {
+   "id": "slow",
+   "cue": {
+    "th": "กินช้า"
+   },
+   "beat": "twist",
+   "want": "graphic: กินเร็ว (ไอติม+เส้นความเร็ว) จี๊ดใหญ่ vs กินช้า (เต่า) จี๊ดเล็ก ไม่มีตัวเลข"
+  },
+  {
+   "id": "tongue",
+   "cue": {
+    "th": "ทริค"
+   },
+   "beat": "share",
+   "want": "graphic: ลิ้นดันเพดานปาก เพดานปากเปลี่ยนฟ้า→ส้ม (อุ่น) (หัวโผล่ที่ \"ทริก\" ลิ้นยกตรง \"ลิ้น\")",
+   "hit": {
+    "th": "ลิ้น"
+   },
+   "long_ok": true
+  },
+  {
+   "id": "doctor",
+   "cue": {
+    "th": "ถ้าปวด"
+   },
+   "beat": "share",
+   "want": "graphic: การ์ด 'ปวดบ่อย/แรง → หาหมอ' ไอคอนหูฟังแพทย์"
+  },
+  {
+   "id": "ask",
+   "cue": {
+    "th": "ปกติ"
+   },
+   "beat": "cta",
+   "want": "graphic: นาฬิกาจับเวลานับ + ไอคอนคอมเมนต์"
+  },
+  {
+   "id": "loop",
+   "cue": {
+    "th": "เมนต์"
+   },
+   "beat": "loop",
+   "want": "ภาพ hook จบที่เฟรม 0"
+  }
  ]
 }

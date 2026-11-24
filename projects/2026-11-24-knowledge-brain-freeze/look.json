@@ -8,7 +8,7 @@
   "transition": "slide",
   "music_mood": "playful",
   "voice": "liam",
-  "music_file": null,
+  "music_file": "music-jamendo-b6fb4ded.mp3",
   "cover_text": "ไอติมทำ สมองแข็ง จริงหรอ?",
   "why": "look.py pick (ต่างจาก 3 ตอนล่าสุด); music_mood เปลี่ยนเป็น playful (เรื่องร่างกายขำๆ ใกล้ตัว), voice liam (เรื่องใกล้ตัว ขำ); opening เปลี่ยน number→midstory (ไม่มีตัวเลข ✅ ที่เหมาะเปิด; ตอนก่อนใช้ question/pov)"
 }

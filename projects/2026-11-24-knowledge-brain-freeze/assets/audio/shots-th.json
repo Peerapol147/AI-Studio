@@ -1,0 +1,184 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 30.4,
+ "inputs": {
+  "shots.json": "9d850339cedcf7b7f44e2a53ebf5bb3bf1a85daff786346fcb986ee6316af2d9",
+  "footage.json": null,
+  "assets/audio/words.json": "f4c51edae94767260251ef3f2a85ef4a5c8d51748d19d6796613b888790a5248"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ไอติม",
+   "word_at": 0.08,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 0.88,
+   "dur": 0.88
+  },
+  {
+   "id": "freeze",
+   "src": null,
+   "cue": "แข็ง",
+   "word_at": 0.96,
+   "start": 0.88,
+   "beat": "hook",
+   "end": 2.08,
+   "dur": 1.2
+  },
+  {
+   "id": "eatfast",
+   "src": null,
+   "cue": "กินเร็ว",
+   "word_at": 2.16,
+   "start": 2.08,
+   "beat": "setup",
+   "end": 3.18,
+   "dur": 1.1
+  },
+  {
+   "id": "ouch",
+   "src": null,
+   "cue": "จี๊ด",
+   "word_at": 3.26,
+   "start": 3.18,
+   "beat": "setup",
+   "end": 4.26,
+   "dur": 1.08
+  },
+  {
+   "id": "iced",
+   "src": null,
+   "cue": "เหมือนสมอง",
+   "word_at": 4.34,
+   "start": 4.26,
+   "beat": "setup",
+   "end": 6.06,
+   "dur": 1.8
+  },
+  {
+   "id": "truth",
+   "src": null,
+   "cue": "ความจริง",
+   "word_at": 6.14,
+   "start": 6.06,
+   "beat": "reveal",
+   "end": 8.6,
+   "dur": 2.54
+  },
+  {
+   "id": "nopain",
+   "src": null,
+   "cue": "ตัวสมอง",
+   "word_at": 8.68,
+   "start": 8.6,
+   "beat": "reveal",
+   "end": 10.74,
+   "dur": 2.14
+  },
+  {
+   "id": "palate",
+   "src": null,
+   "cue": "ตัวการ",
+   "word_at": 10.82,
+   "start": 10.74,
+   "beat": "explain",
+   "end": 13.58,
+   "dur": 2.84
+  },
+  {
+   "id": "nerve",
+   "src": null,
+   "cue": "เส้นประสาท",
+   "word_at": 13.66,
+   "start": 13.58,
+   "beat": "explain",
+   "end": 15.58,
+   "dur": 2.0
+  },
+  {
+   "id": "confused",
+   "src": null,
+   "cue": "งง",
+   "word_at": 15.66,
+   "start": 15.58,
+   "beat": "explain",
+   "end": 18.18,
+   "dur": 2.6
+  },
+  {
+   "id": "study",
+   "src": null,
+   "cue": "งานวิจัย",
+   "word_at": 18.26,
+   "start": 18.18,
+   "beat": "twist",
+   "end": 19.4,
+   "dur": 1.22
+  },
+  {
+   "id": "gulp",
+   "src": null,
+   "cue": "กินเร็ว",
+   "word_at": 19.48,
+   "start": 19.4,
+   "beat": "twist",
+   "end": 20.72,
+   "dur": 1.32
+  },
+  {
+   "id": "slow",
+   "src": null,
+   "cue": "กินช้า",
+   "word_at": 20.8,
+   "start": 20.72,
+   "beat": "twist",
+   "end": 22.46,
+   "dur": 1.74
+  },
+  {
+   "id": "tongue",
+   "src": null,
+   "cue": "ทริค",
+   "word_at": 22.54,
+   "start": 22.46,
+   "beat": "share",
+   "hit": "ลิ้น",
+   "hit_at": 23.7,
+   "end": 25.56,
+   "dur": 3.1
+  },
+  {
+   "id": "doctor",
+   "src": null,
+   "cue": "ถ้าปวด",
+   "word_at": 25.64,
+   "start": 25.56,
+   "beat": "share",
+   "end": 28.12,
+   "dur": 2.56
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "ปกติ",
+   "word_at": 28.2,
+   "start": 28.12,
+   "beat": "cta",
+   "end": 29.74,
+   "dur": 1.62
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "เมนต์",
+   "word_at": 29.82,
+   "start": 29.74,
+   "beat": "loop",
+   "end": 30.4,
+   "dur": 0.66
+  }
+ ]
+}
