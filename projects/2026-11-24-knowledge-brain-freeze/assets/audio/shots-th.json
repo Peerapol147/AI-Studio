@@ -4,13 +4,13 @@
  "duration": 30.4,
  "inputs": {
   "shots.json": "9d850339cedcf7b7f44e2a53ebf5bb3bf1a85daff786346fcb986ee6316af2d9",
-  "footage.json": null,
+  "footage.json": "37610a8e9e5904b140667c8ebc3a914a174ff9cd9d416e4d4148fa65f86d0617",
   "assets/audio/words.json": "f4c51edae94767260251ef3f2a85ef4a5c8d51748d19d6796613b888790a5248"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-481425.jpg",
    "cue": "ไอติม",
    "word_at": 0.08,
    "start": 0.0,
@@ -30,23 +30,25 @@
   },
   {
    "id": "eatfast",
-   "src": null,
+   "src": "assets/footage/pixabay-334213.mp4",
    "cue": "กินเร็ว",
    "word_at": 2.16,
    "start": 2.08,
    "beat": "setup",
    "end": 3.18,
-   "dur": 1.1
+   "dur": 1.1,
+   "media_start": 2.92
   },
   {
    "id": "ouch",
-   "src": null,
+   "src": "assets/footage/pixabay-44637.mp4",
    "cue": "จี๊ด",
    "word_at": 3.26,
    "start": 3.18,
    "beat": "setup",
    "end": 4.26,
-   "dur": 1.08
+   "dur": 1.08,
+   "media_start": 3.42
   },
   {
    "id": "iced",
@@ -120,7 +122,7 @@
   },
   {
    "id": "gulp",
-   "src": null,
+   "src": "assets/footage/pixabay-2588541.jpg",
    "cue": "กินเร็ว",
    "word_at": 19.48,
    "start": 19.4,
