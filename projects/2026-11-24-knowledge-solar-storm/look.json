@@ -8,7 +8,7 @@
   "transition": "flash",
   "music_mood": "cinematic",
   "voice": "george",
-  "music_file": null,
+  "music_file": "music-jamendo-34466c22.mp3",
   "cover_text": "เน็ตดับทั้งโลก เพราะดวงอาทิตย์?",
   "why": "look.py pick แล้วเปลี่ยน opening number→question: hook เป็นคำถามใกล้ตัว 'เน็ตดับทั้งโลก' ตัวเลขปีใหญ่บนเฟรม 0 ไม่ช่วยให้เข้าใจใน 1 วิ; เพลง cinematic + George เข้ากับเรื่องอวกาศ"
 }
