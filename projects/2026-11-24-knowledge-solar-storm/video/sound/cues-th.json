@@ -1,0 +1,13 @@
+[
+ {"t": 1.18, "type": "scene_cut", "desc": "hook -> sun/wifi (fast hook cut)", "sfx": "kit/whoosh.ogg", "gain": -8},
+ {"t": 2.40, "type": "scene_cut", "desc": "flash to wires (setup)", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -8},
+ {"t": 4.32, "type": "scene_cut", "desc": "flash to 1859 (explain)", "sfx": "whoosh/fs-169867-swoosh.ogg", "gain": -9},
+ {"t": 8.68, "type": "error_or_tech", "desc": "sparks on the telegraph wire on ประกายไฟ", "sfx": "glitch/kenney-interface-glitch-002.ogg", "gain": -12},
+ {"t": 10.90, "type": "click", "desc": "battery pulled out on ถอดแบต", "sfx": "kit/click.ogg", "gain": -8},
+ {"t": 18.18, "type": "scene_cut", "desc": "flash to server room (reveal)", "sfx": "whoosh/fs-264777-swoosh.ogg", "gain": -8},
+ {"t": 20.14, "type": "scene_cut", "desc": "flash to SOHO CME (twist)", "sfx": "transition/fs-786514-swoosh-v2.ogg", "gain": -9},
+ {"t": 24.16, "type": "reveal", "desc": "impact on พลาด", "sfx": "kit/impact.ogg", "gain": -7},
+ {"t": 25.80, "type": "scene_cut", "desc": "flash to aurora (share)", "sfx": "whoosh/fs810485.ogg", "gain": -10},
+ {"t": 30.32, "type": "appear", "desc": "55+ ประเทศ springs in", "sfx": "kit/pop.ogg", "gain": -6},
+ {"t": 31.54, "type": "scene_cut", "desc": "flash to phone (cta)", "sfx": "whoosh/fs830856.ogg", "gain": -10}
+]
