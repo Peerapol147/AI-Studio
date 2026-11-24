@@ -11,3 +11,4 @@ GSAP อยู่ใน HyperFrames อยู่แล้ว ไม่ต้อ�
 ข้อความไลเซนส์เต็ม: `LICENSES.md` (rough, flubber, d3) และ `lucide/LICENSE`
 ต้องการไอคอนอื่น: `npm pack lucide-static@1.75.0` ในโฟลเดอร์ชั่วคราว แตกไฟล์ แล้วคัดลอก `package/icons/<ชื่อ>.svg` มาเพิ่ม (raw.githubusercontent มัก 403 ในเครื่องคลาวด์)
 `smartphone`, `bed`, `message-circle` เพิ่มทีหลังสำหรับแม่แบบ `templates/brainrot-v2/` (lucide-static 1.75.0 เวอร์ชันเดียวกัน ไลเซนส์ ISC ตาม `lucide/LICENSE`)
+`stethoscope`, `turtle`, `snowflake`, `ice-cream-cone`, `file-text` เพิ่ม 2026-11-24 สำหรับตอน brain-freeze (lucide-static 1.75.0 เวอร์ชันเดียวกัน ISC)
