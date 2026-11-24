@@ -75,8 +75,9 @@ def card(name, src, box, top, width=960, blur_dark=0.55):
     print(name, 'card', box, '->', width, 'x', h, 'at Y', top, '-', top + h)
 
 
-# hook: face + spoon. crop x 190-1090, y 40-960 -> 960x981 card at Y 560: eyes ~Y 760, mouth + spoon ~Y 1020-1150
-card('hook', 'pixabay-481425.jpg', (190, 40, 1090, 960), 560)
+# hook (review round 2): card starts BELOW the title (Y 720 > title end ~700) so the plate never covers his forehead.
+# crop x 190-1090, y 110-960 -> 860x812 card at Y 720-1532: forehead ~Y 760-830, eyes ~Y 835, mouth + spoon ~Y 1080-1200
+card('hook', 'pixabay-481425.jpg', (190, 110, 1090, 960), 720, width=860)
 # gulp: cone at the mouth (right half of the picture)
 card('gulp', 'pixabay-2588541.jpg', (470, 0, 1280, 852), 330)
 print('ok', sorted(p.name for p in OUT.iterdir()))

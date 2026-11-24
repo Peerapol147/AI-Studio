@@ -80,6 +80,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .gtx{position:absolute;color:var(--text);font-weight:700;text-align:center;white-space:nowrap;line-height:1.35;-webkit-text-stroke:10px var(--ink);paint-order:stroke fill}
 .gtx em{font-style:normal;color:var(--accent)}
 .gic{position:absolute;color:var(--accent);overflow:visible}
+/* review round 2: "สมองแข็ง" = the loudest word of the frame-0 title (ink plate, accent letters) */
+.op-midstory #title .tl em{color:var(--accent);background:var(--ink);-webkit-text-stroke:0;border-radius:16px;padding-left:16px;padding-right:18px;margin:0 -16px 0 6px}
+/* frame-0 cold cues (cloned into the hook + loop pictures so they follow the push) and the ouch forehead hit */
+.hkfx,.okfx{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible;pointer-events:none}
+#xp-chip{position:absolute;left:80px;top:250px;max-width:800px;z-index:55;height:84px;padding:0 30px;border-radius:44px;background:var(--panel);
+  color:var(--text);font-weight:700;font-size:44px;line-height:84px;white-space:nowrap;box-shadow:0 0 0 6px var(--accent),0 14px 34px rgba(0,0,0,.45);opacity:0;transform-origin:0 50%}
 </style></head><body>
 <div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
  data-motion-blur="on" data-motion-blur-events="on">
@@ -140,7 +146,36 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 </div>
 </div>
 <!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <filter id="hk-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="9"/></filter></defs></svg>
 <div id="gx-store" style="display:none">
+ <svg class="hkfx" id="hk-src" viewBox="0 0 1080 1920">
+  <rect class="hk-glow" x="102" y="712" width="876" height="828" rx="52" fill="none" stroke="var(--text)" stroke-width="30" filter="url(#hk-soft)" opacity=".55"/>
+  <rect x="104" y="714" width="872" height="824" rx="50" fill="none" stroke="var(--text)" stroke-width="5" opacity=".85"/>
+  <path d="M150,712L164,750L178,712M194,712L208,734L222,712M238,712L252,766L266,712M282,712L296,742L310,712M326,712L340,730L354,712M370,712L384,758L398,712M414,712L428,738L442,712M458,712L472,772L486,712M502,712L516,746L530,712M546,712L560,732L574,712M590,712L604,762L618,712M634,712L648,740L662,712M678,712L692,752L706,712M722,712L736,736L750,712M766,712L780,768L794,712M810,712L824,744L838,712M854,712L868,732L882,712M898,712L912,756L926,712Z" fill="var(--text)" opacity=".92" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+  <g style="color:var(--text)">
+   <use class="hk-fl" href="#ic-snowflake" x="-40" y="-40" width="80" height="80" data-x="60" data-y="820" data-r="1"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-34" y="-34" width="68" height="68" data-x="1020" data-y="900" data-r="-1"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-28" y="-28" width="56" height="56" data-x="52" data-y="1250" data-r="-2"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-44" y="-44" width="88" height="88" data-x="1022" data-y="1330" data-r="2"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-36" y="-36" width="72" height="72" data-x="170" data-y="1640" data-r="1"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-30" y="-30" width="60" height="60" data-x="930" data-y="1660" data-r="-1"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-26" y="-26" width="52" height="52" data-x="140" data-y="760" data-r="2"/>
+   <use class="hk-fl" href="#ic-snowflake" x="-26" y="-26" width="52" height="52" data-x="940" data-y="762" data-r="-2"/>
+  </g>
+  <g class="hk-cone" transform="translate(905,1452)">
+   <circle r="66" fill="var(--text)" stroke="var(--ink)" stroke-width="8"/>
+   <use href="#ic-ice-cream-cone" x="-44" y="-44" width="88" height="88" style="color:var(--ink)"/>
+  </g>
+ </svg>
+ <svg class="okfx" id="ok-src" viewBox="0 0 1080 1920">
+  <g class="ok-burst" transform="translate(470,380)">
+   <circle r="95" fill="var(--accent)" opacity=".42"/>
+   <g stroke="var(--accent)" stroke-width="14" stroke-linecap="round">
+    <path d="M0,-115 L0,-170"/><path d="M82,-82 L122,-122"/><path d="M115,0 L170,0"/><path d="M-82,-82 L-122,-122"/><path d="M-115,0 L-170,0"/></g>
+  </g>
+  <g class="ok-arrow" transform="translate(470,150)"><use href="#ic-arrow-down" x="-70" y="-70" width="140" height="140" style="color:var(--accent)"/></g>
+ </svg>
  <div class="gx" id="gx-study">
   <div class="gcard" id="st-card" style="left:190px;top:430px;width:700px;height:640px"></div>
   <svg class="gic" id="st-doc" style="left:330px;top:470px;width:420px;height:420px"><use href="#ic-file-text"/></svg>
@@ -188,6 +223,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="title">
 %%TITLE%%
 </div>
+<div id="xp-chip">การทดลองหนึ่ง · นักเรียนแคนาดา</div>
 <div id="caps">
 %%CAPS%%
 </div>
@@ -389,7 +425,33 @@ function slots(t){
   const kt=clamp(pop(t,28.84,18,0.5),0,1.2); $('ak-t').style.opacity=f2(clamp(kt*3)); $('ak-t').style.transform=`scale(${kt.toFixed(3)})`;
   const km=clamp(pop(t,29.36,16,0.45),0,1.2); $('ak-msg').style.opacity=f2(clamp(km*3)); $('ak-msg').style.transform=`scale(${km.toFixed(3)}) rotate(${f2(-8+8*km)}deg)`;
 }
-function episode(t){ brain(t); slots(t); }
+// review round 2: frame-0 cold cues. Cloned into the hook AND loop pictures (follow their push / transitions);
+// every motion is periodic in DUR so the last frame = frame 0.
+const HK=[], OK=[];
+['hook','loop'].forEach(id=>{const kb=$('kb-'+id); if(!kb) return; const c=$('hk-src').cloneNode(true); c.removeAttribute('id'); kb.appendChild(c); HK.push(c);});
+(()=>{const kb=$('kb-ouch'); if(!kb) return; const c=$('ok-src').cloneNode(true); c.removeAttribute('id'); kb.appendChild(c); OK.push(c);})();
+function hookFx(t){
+  const w=P2*t/DUR;
+  HK.forEach(c=>{
+    c.querySelectorAll('.hk-fl').forEach((el,k)=>{const x=+el.dataset.x, y=+el.dataset.y+12*Math.sin(3*w+k*1.3), r=360*(+el.dataset.r)*t/DUR;
+      el.setAttribute('transform',`translate(${f2(x)},${f2(y)}) rotate(${f2(r)})`);});
+    c.querySelector('.hk-glow').setAttribute('opacity',f2(0.5+0.12*Math.sin(8*w)));
+    c.querySelector('.hk-cone').setAttribute('transform',`translate(905,1452) rotate(${f2(-12+6*Math.sin(4*w))})`);
+  });
+}
+// ouch: "จี๊ด" 3.26 -> forehead hit + arrow (the picture shows hands on cheeks, the voice says forehead)
+function ouchFx(t){
+  OK.forEach(c=>{const v=t<3.26?0:clamp(pop(t,3.26,18,0.45),0,1.2), fl=0.8+0.2*Math.cos((t-3.26)*18);
+    const b=c.querySelector('.ok-burst'); b.setAttribute('opacity',f2(clamp(v*3)*fl)); b.setAttribute('transform',`translate(470,380) scale(${(v*(0.9+0.1*fl)).toFixed(3)})`);
+    const a=c.querySelector('.ok-arrow'), av=t<3.30?0:clamp(pop(t,3.30,16,0.5),0,1.2);
+    a.setAttribute('opacity',f2(clamp(av*3))); a.setAttribute('transform',`translate(470,${f2(150+14*Math.sin((t-3.3)*10))}) scale(${av.toFixed(3)})`);});
+}
+// twist (18.3-21.8): where the "งานวิจัย" comes from, no numbers (research.md 6a)
+function xpChip(t){
+  const v=win(t,18.30,21.95)?clamp(pop(t,18.30,16,0.6),0,1.15):0, out=1-clamp((t-21.80)/0.15);
+  $('xp-chip').style.opacity=f2(clamp(v*3)*out); $('xp-chip').style.transform=`scale(${(0.6+0.4*v).toFixed(3)})`;
+}
+function episode(t){ brain(t); slots(t); hookFx(t); ouchFx(t); xpChip(t); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
