@@ -24,7 +24,7 @@ MP4 ไฟล์เดียวกันทุกแพลตฟอร์ม ผ
 
 แหล่งข้อมูล: NASA (Near Miss: The Solar Superstorm of July 2012), NOAA Research, NOAA SWPC/NESDIS (DSCOVR), Hong Kong Observatory (G5 พ.ค. 2024)
 
-เครดิตภาพ: NASA/SDO, SOHO (ESA & NASA) ผ่าน NASA Goddard Space Flight Center (ภาพ CME ในช่วงปี 2012 เป็นภาพตัวอย่างจากปี 2013); ภาพประกอบอื่นจาก Pixabay (magicmore, FindingFootage, BlenderTimer, mignic, tommyvideo, caelan, 6696758) ครอปและปรับสี
+เครดิตภาพ: NASA/SDO, SOHO (ESA & NASA) ผ่าน NASA Goddard Space Flight Center (ภาพ CME ในช่วงปี 2012 เป็นภาพตัวอย่างจากปี 2013; ภาพออโรราเป็นภาพประกอบ ไม่ใช่ภาพคืน พ.ค. 2024); ภาพประกอบอื่นจาก Pixabay (magicmore, FindingFootage, BlenderTimer, mignic, tommyvideo, caelan, 6696758) ครอปและปรับสี
 เพลง: "Metamorphosis" by zero-project (CC BY 3.0) https://www.jamendo.com/track/1195826
 เสียงพากย์สร้างด้วย AI
 
