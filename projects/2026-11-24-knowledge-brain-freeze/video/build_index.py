@@ -265,6 +265,8 @@ def icons():
     out = []
     for n in EP.get('icons', []):
         f = luc / f'{n}.svg'
+        if not f.exists():  # ตอนนี้: ไอคอนเพิ่มเติมอยู่ใน video/icons/ (ไม่แตะ assets/vendor ร่วม)
+            f = pathlib.Path(__file__).resolve().parent / 'icons' / f'{n}.svg'
         if not f.exists():
             raise SystemExit(f'missing icon {f}')
         inner = re.sub(r'\s+', ' ', re.search(r'>\s*(.*)</svg>', f.read_text(), re.S).group(1).strip())

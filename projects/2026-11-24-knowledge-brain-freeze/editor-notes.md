@@ -33,3 +33,4 @@
 - เสียง: `video/sound/cues-th.json` 33 cue, รายงาน `renders/sound-th/SOUND.md`; ตัดภาพไม่ตรงจังหวะเพลง >140 ms ที่ 19.40/20.72/22.46/28.12 วิ (เวลาช็อตล็อกจากเสียงพากย์ ไม่ขยับ)
 - render log มี 404 non-blocking 2 ครั้ง (ไม่กระทบภาพ ตรวจเฟรมแล้ว)
 - ไม่ติด rate limit/บล็อก
+- ไอคอน lucide 5 ตัว (file-text ice-cream-cone snowflake stethoscope turtle) อยู่ใน `video/icons/` ของตอนนี้ (ผู้กำกับย้ายออกจาก `assets/vendor/` ร่วม ตามกฎไฟล์ร่วม); build_index สำเนานี้หา icons/ เป็นที่สำรอง — แม่แบบควรมีช่องไอคอนต่อตอน
