@@ -10,7 +10,7 @@
            "ก็ยัง*จับของ*", "*บีบมือ*ได้", "*ปกติ*นะ",
            "นักเบสบอล", "บางคนที่เจ็บ", "*ข้อศอก*", "หมอก็เอา*เส้นนี้*", "ไป*ซ่อม*ให้",
            "มีกี่*ข้าง*?", "*ศูนย์*", "*หนึ่ง*", "หรือ*สอง*", "พิมพ์ตัวเลขมา"],
-  "plates": {"hook": "assets/palm-v.mp4", "pinch": "graphic", "tip": "graphic", "flex": "graphic",
+  "plates": {"hook": "graphic", "pinch": "graphic", "tip": "graphic", "flex": "graphic",
              "count": "graphic", "count2": "graphic", "count1": "graphic",
              "see": "assets/palm-v.mp4", "spare": "assets/palm-v.mp4",
              "muscle": "assets/xray-v.mp4", "weak": "assets/xray-v.mp4", "graft": "assets/graft-v.mp4", "fix": "assets/fix-v.mp4",

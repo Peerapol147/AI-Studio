@@ -61,16 +61,7 @@ const UPH={wrist:P(540,1340),tTop:P(540,1150),tBot:P(545,1470)};
 const UPIDS={ask:1,none:1};
 const UTEND=`M${UPH.tTop.x},${UPH.tTop.y} C${UPH.tTop.x+2},${UPH.tTop.y+110} ${UPH.tBot.x-2},${UPH.tBot.y-110} ${UPH.tBot.x},${UPH.tBot.y}`;
 
-/* ---------- hook 0-1.78 + loop 27.42-28.3: whole palm, tendon lit, ring on the wrist = frame 0 / cover ----------
-   loop runs the same functions on tt = t - DUR (<= 0) so the last frame = frame 0; only periodic motion before tt = 0 */
-const HOOKCAM=[540,960,540,960,1.0];
-function hookLike(id,phase){const k=fr(id); if(!k) return; const T=tendon(k.svg,TEND,22), R=ovalEl(k.svg,120,250,14);
-  UP.push(t=>{const tt=phase(t), b=0.5+0.5*Math.cos(tt*Math.PI*2/1.6), w=Math.sin(tt*Math.PI*2/3.2);
-    const hit=tt>0?bump(tt,0.78,4):0;                      // "อะไหล่สำรอง" 0.74: ring kicks once (hook only)
-    k.cam(HOOKCAM[0],HOOKCAM[1]+20*(1-Math.cos(tt*Math.PI*2/3.2)),HOOKCAM[2],HOOKCAM[3],HOOKCAM[4],0.8*w);
-    T.set(1,tt+3,0.6+0.4*b); R.set(PALM.wrist.x,PALM.wrist.y-30,1,1+0.04*b+0.12*hit);});}
-hookLike('hook',t=>t);
-hookLike('loop',t=>t-window.__DUR);
+
 
 /* ---------- pinch / tip / flex / count / count2 / count1 (1.78-8.86): one jointed hand rig (episode/hand.js) ----------
    The pose is ONE function of global t shared by the six shots, so a cut never changes the hand, only the camera.
@@ -108,6 +99,25 @@ RIGIDS.forEach(id=>{const k=fr(id); if(!k||k.media) return; const kb=$('kb-'+id)
     if(labs.th){labs.th.style.left=f1(r.thumbTip.x-150)+'px'; labs.th.style.top=f1(r.thumbTip.y+120)+'px'; popIn(labs.th,t,3.30);
       labs.pk.style.left=f1(Math.min(880,r.pinkyTip.x+170))+'px'; labs.pk.style.top=f1(r.pinkyTip.y-130)+'px'; popIn(labs.pk,t,3.70);}
     if(labs.fl){popIn(labs.fl,t,4.46,1,99,-3);}});});
+
+/* ---------- hook 0-1.78 + loop 27.42-28.3: the same jointed hand rig (episode/hand.js) in the finished test pose
+   (thumb pad on pinky pad, wrist flexed, palmaris ridge raised) big in frame, ring on the tendon = frame 0 / cover.
+   loop runs the same function on tt = t - DUR (<= 0) so the last frame = frame 0; all motion is periodic with zero
+   slope at tt = 0 (1 - cos), the one-off ring kick is hook only (tt > 0). Defined after handPose/HandRig below. */
+const HOOKCAM={X:360,Y:1010,S:1.25,yaw:-6,pitch:8,roll:58};
+function hookRig(id,phase){const k=fr(id); if(!k||k.media) return; const kb=$('kb-'+id);
+  kb.insertBefore(div(kb,'rigbg','',''),kb.firstChild);
+  const R=window.HandRig(k.svg), O=ovalEl(k.svg,92,190,13);
+  UP.push(t=>{kb.style.transform='none';
+    const tt=phase(t), c1=1-Math.cos(tt*Math.PI*2/1.6), c2=1-Math.cos(tt*Math.PI*2/3.2);   // 0 at tt = 0
+    const hit=tt>0?bump(tt,0.78,4):0;                       // "อะไหล่สำรอง" 0.74: ring kicks once (hook only)
+    const P={o:1,op:1,press:0,wig:[0,0,0,0],spread:0,flex:41+1.2*c1,tendon:1,pulse:0,ring:0};
+    const C={...HOOKCAM,Y:HOOKCAM.Y-7*c1,S:HOOKCAM.S*(1+0.012*c2),roll:HOOKCAM.roll+0.6*Math.sin(tt*Math.PI*2/3.2)*Math.sin(tt*Math.PI*2/3.2)};
+    const r=R.draw({...P,...C}); const w=r.wrist, d=r.tendon;
+    const ox=lerp(w.x,d.x,0.55), oy=lerp(w.y,d.y,0.55), ang=Math.atan2(d.y-w.y,d.x-w.x)*180/Math.PI-90;
+    O.set(ox,oy,1,1); O.g.setAttribute('transform',`translate(${f1(ox)} ${f1(oy)}) rotate(${f1(ang)}) scale(${f3((1+0.035*c1+0.14*hit)*C.S/HOOKCAM.S)})`);});}
+hookRig('hook',t=>t);
+hookRig('loop',t=>t-window.__DUR);
 
 /* see 8.86-10.48: push into the wrist, "เส้นนูน" 9.12 the tendon draws, "ข้อมือ" 9.70 the ring draws, label */
 (function(){const k=fr('see'); if(!k) return; const T=tendon(k.svg,TEND,20), R=ovalEl(k.svg,100,220,11);
@@ -252,6 +262,7 @@ const cs=el(cnt,'svg',{viewBox:'0 0 400 400'});
 const cr=el(cs,'circle',{cx:200,cy:200,r:178,pathLength:1,transform:'rotate(-90 200 200)'},ACC+';stroke-width:16;stroke-dasharray:1 1');
 const nums=['3','2','1'].map(n=>div(cnt,'n',n));
 const badge=$('badge');
+const HARD=[['count',5.84],['count2',6.88],['count1',7.84]];
 const CNT=[5.92,6.96,7.92], CNTPOS=[[660,190],[30,620],[640,300]];   // the disc changes place with each framing
 window.EPI=function(t,h){ if(h) window.__DUR=h.DUR; const DD=window.__DUR||99;
   bed.style.opacity=f3(clamp((t-0.08)/0.06)*(1-clamp((t-(DD-0.2))/0.1)));   // frame 0 / last frame = clean cover
@@ -263,5 +274,10 @@ window.EPI=function(t,h){ if(h) window.__DUR=h.DUR; const DD=window.__DUR||99;
   CNT.forEach((at,i)=>{const nx=[6.96,7.92,8.86][i], on=t>=at-0.03&&t<nx-0.03, a=sp(t,at-0.03,22,0.45);
     nums[i].style.opacity=on?f3(clamp(a*4)):'0'; nums[i].style.transform=`translateY(${f1(-14*Math.abs(Math.sin((t-at)*5))*Math.exp(-(t-at)*1.5))}px) scale(${f3(0.5+0.5*a)})`;});
   for(const u of UP) u(t);
+  // count / count2 / count1: hard cut (the template's 0.1 s match fade between two rig drawings read as a ghost hand)
+  HARD.forEach(([id,a])=>{const e=$('sh-'+id); if(e&&t>=a&&t<a+0.12) e.style.opacity='1';});
+  // loop seam: the title's breathing runs on t - DUR after it springs back, so the last frame = frame 0 exactly
+  if(t>=DD-0.3){const ti=$('title'), m=/scale\(([\d.]+)\)/.exec(ti.style.transform||''), br=1+0.02*(1-Math.cos(t*Math.PI*2/1.6)), br2=1+0.02*(1-Math.cos((t-DD)*Math.PI*2/1.6));
+    if(m) ti.style.transform=`scale(${(parseFloat(m[1])/br*br2).toFixed(4)})`;}
 };
 })();
