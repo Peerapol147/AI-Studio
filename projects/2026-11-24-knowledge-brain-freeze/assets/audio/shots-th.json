@@ -4,7 +4,7 @@
  "duration": 30.573,
  "inputs": {
   "shots.json": "15d733bbb6c7dc44046cffb0b22bc063dc8f669a40366b8f3973d0685264e446",
-  "footage.json": "8e8dad813415aee7294b08cc9ec21c1af3de5c58e2a534d321d465016454c912",
+  "footage.json": "8aa52906c766b8c2f6526e602087337359469083569d3a4dc89c40f9063b9853",
   "assets/audio/words.json": "ab4ead223bb4f3c9830e8810153294c2b97b93f7bcb81fbdc2fe9d96e1336d43"
  },
  "shots": [
@@ -114,7 +114,7 @@
   },
   {
    "id": "warm",
-   "src": "assets/footage/pixabay-204420.mp4",
+   "src": null,
    "cue": "ให้มัน",
    "word_at": 23.72,
    "start": 23.64,
