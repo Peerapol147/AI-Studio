@@ -105,6 +105,13 @@
 "gain": -19
 },
 {
+"t": 24.04,
+"type": "appear",
+"desc": "palate warms + brain smiles on \"อุ่น\"",
+"sfx": "ding/kenney-interface-confirmation-001.ogg",
+"gain": -22
+},
+{
 "t": 25.66,
 "type": "appear",
 "desc": "chip \"ปวดบ่อย\"",

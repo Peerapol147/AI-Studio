@@ -52,7 +52,6 @@ video('why', 'pixabay-307248.mp4', 3.0, '810:1440:875:0')                # vanil
 video('belief', 'pixabay-149479.mp4', 4.7, "608:1080:'min(520,300+(t-3.0)*150)':0")   # woman licks the bar; crop drifts right with her
 video('forehead', 'pixabay-345611.mp4', 7.4, '1215:2160:1762:0', 360)    # hands over face; forehead ~Y 620
 video('rush1', 'pixabay-334213.mp4', 6.3, "810:1440:'min(1460,max(790,790+(t-3.0)*520))':0")  # boy spoons it in, crop pans right with him
-video('warm', 'pixabay-204420.mp4', 4.0, '1215:2160:770:0')              # man laughing (relief)
 video('doctor', 'pixabay-49808.mp4', 3.8, "608:1080:'min(1010,700+(t-0.5)*110)':0", 200)   # doctor + stethoscope, pans right with her
 
 

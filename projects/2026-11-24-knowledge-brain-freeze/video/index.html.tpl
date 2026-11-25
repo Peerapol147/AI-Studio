@@ -123,6 +123,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
     <path d="M55,45 C105,0 150,90 220,70"/><path d="M-80,135 C-15,95 50,150 120,118"/>
     <path d="M-5,-60 C40,-20 -30,20 20,60"/></g>
    <path id="eg-fac" fill="none" stroke="var(--text)" stroke-width="7" stroke-linecap="round" opacity="0"/>
+   <g id="eg-smile" opacity="0" fill="var(--ink)" stroke="var(--ink)" stroke-width="12" stroke-linecap="round"><circle cx="-70" cy="-5" r="16" stroke="none"/><circle cx="70" cy="-5" r="16" stroke="none"/><path d="M-70,45 Q0,105 70,45" fill="none"/></g>
   </g>
   <g id="eg-cone" opacity="0"><circle r="92" fill="var(--panel)" stroke="var(--text)" stroke-width="8"/>
    <use href="#ic-ice-cream-cone" x="-66" y="-66" width="132" height="132" style="color:var(--text)"/></g>
@@ -289,7 +290,7 @@ function captions(t){
 // upward and the camera pans with them; warm = slow cold->warm colour; chips/labels = soft spring.
 // Every change lands on a word (words.json times in comments).
 const SH={}; SC.forEach((s,i)=>{s.i=i; SH[s.id]=s;});
-const G={run:1,truth:1,palate:1,tongue:1};
+const G={run:1,truth:1,palate:1,tongue:1,warm:1};   // warm (2026-11-25): graphic, continues the tongue shot
 const win=(t,a,b)=>t>=a&&t<b, pop=(t,a,w=16,z=0.55)=>t<a?0:S(t-a,w,z), soft=(t,a)=>clamp(pop(t,a,10,0.8),0,1.08);
 const bounce=(t,a)=>t<a?0:Math.exp(-(t-a)*9)*Math.sin((t-a)*26);      // short "จี๊ด" kick, dies in ~0.35 s
 const N=96, P2=Math.PI*2;
@@ -354,9 +355,12 @@ function brain(t){
   $('eg-zap').setAttribute('opacity',f2(zOn?lerp(1,0.3,zOff):0));
   $('eg-zap').setAttribute('transform',`translate(${f2(cx+250*s)},${f2(cy-230*s)}) scale(${(zOn*lerp(1,0.55,zOff)).toFixed(3)})`);
   $('eg-face').setAttribute('opacity',f2(clamp((h-0.6)/0.4)));
+  // warm: the brain relaxes into a soft smile on "อุ่น" 24.04 (fades in, no pop); head fill picks up a little warmth
+  const sm=t<20?0:eio((t-24.10)/0.6); $('eg-smile').setAttribute('opacity',f2(sm)); $('eg-gyri').setAttribute('opacity',f2((1-0.75*f)*(1-0.7*sm)));
   // palate: cold spreads on "เย็นจัด" 11.72 (slow); tongue shot: warms slowly from "เพดานปาก" 22.50 to "ไว้" 23.14
-  const cold=t<20?eio((t-11.72)/0.7):1, warm=t<20?0:eio((t-22.50)/1.1);
+  const cold=t<20?eio((t-11.72)/0.7):1, warm=t<20?0:0.3*eio((t-22.50)/1.0)+0.7*eio((t-24.04)/1.0);   // slow cold->warm, mostly on "อุ่น" 24.04
   const palC=warm>0.01?mix(warm,'--accent2','--text'):mix(cold,'--text','--accent');
+  $('eg-back').style.fill=t<20?'':mix(0.22*warm,'--accent2','--panel');   // head picks up a little warmth
   $('eg-pal').style.stroke=palC; $('eg-palglow').style.stroke=palC;
   $('eg-palglow').setAttribute('opacity',f2(clamp(Math.max(cold*(t<20?1:1),warm))*(0.38+0.1*Math.sin(t*3))));
   // cone meets the mouth on "พอโดน" 11.48, slides out with the nerve 12.62
@@ -376,12 +380,12 @@ function brain(t){
   $('eg-burst').setAttribute('opacity',f2(Math.max(bo,glow))); $('eg-burst').setAttribute('transform',`translate(800,588) scale(${(0.6+0.45*bs).toFixed(3)})`);
   $('eg-jeed').setAttribute('opacity',f2(clamp(bs*3))); $('eg-jeed').setAttribute('transform',`translate(${f2(870+10*bounce(t,ha))},460) rotate(-8) scale(${bs.toFixed(3)})`);
   // camera: slow push to the mouth on "เย็นจัด" 11.72, then pans UP with the pulses from "เส้นประสาท" 12.62; tongue: gentle push
-  let z=0, py=0; if(t<20){ z=0.14*eio((t-11.72)/0.8)-0.06*eio((t-12.62)/1.6); py=120*eio((t-12.62)/2.0); } else z=0.10*eio((t-21.9)/0.9);
+  let z=0, py=0; if(t<20){ z=0.14*eio((t-11.72)/0.8)-0.06*eio((t-12.62)/1.6); py=120*eio((t-12.62)/2.0); } else z=0.10*eio((t-21.9)/0.9)-0.10*eio((t-23.64)/1.3);   // warm: camera eases back out
   $('eg-cam').setAttribute('transform',`translate(0,${f2(py)}) translate(760,920) scale(${(1+z).toFixed(4)}) translate(-760,-920)`);
   // top label: truth "สมองไม่มีตัวรับความเจ็บ" on "ไม่มี" 7.86; tongue "ทริก!" on "ทริค" 20.88
-  let lab='', la=0; if(win(t,7.86,10)){lab='สมอง<em>ไม่มี</em><br>ตัวรับความเจ็บ'; la=7.86;} else if(win(t,20.88,24)){lab='<em>ทริก!</em>'; la=20.88;}
+  let lab='', la=0; if(win(t,7.86,10)){lab='สมอง<em>ไม่มี</em><br>ตัวรับความเจ็บ'; la=7.86;} else if(win(t,20.88,24.2)){lab='<em>ทริก!</em>'; la=20.88;}
   if(lab!==lastLab){$('eg-lab').innerHTML=lab; lastLab=lab;}
-  const lp=lab?soft(t,la):0; $('eg-lab').style.opacity=f2(clamp(lp*2)); $('eg-lab').style.transform=`translateY(${f2(30*(1-lp))}px) scale(${(0.8+0.2*lp).toFixed(3)})`;
+  const lp=lab?soft(t,la):0; $('eg-lab').style.opacity=f2(clamp(lp*2)*(t>=20?1-clamp((t-23.70)/0.4):1)); $('eg-lab').style.transform=`translateY(${f2(30*(1-lp))}px) scale(${(0.8+0.2*lp).toFixed(3)})`;
   // bottom chip: "ความเชื่อ" on "วิ่ง" 4.40 -> "ความจริง" 6.12
   let chip='', ca=0; if(win(t,4.40,6.12)){chip='ความเชื่อ'; ca=4.40;} else if(win(t,6.12,10)){chip='ความจริง'; ca=6.12;}
   if(chip!==lastChip){$('eg-chip').textContent=chip; lastChip=chip;}
@@ -389,7 +393,7 @@ function brain(t){
   $('eg-chip').style.transform=`translateY(${f2(40*(1-cp))}px) scale(${(0.8+0.2*cp).toFixed(3)})`;
   // bottom strip: where the pain travels (palate) / the fix (tongue)
   const tg=t>=20, items=tg?['ลิ้นดัน','เพดานปาก','อุ่นขึ้น']:['เพดานปาก','เส้นประสาท','หน้าผาก'];
-  const on=tg?[22.08,22.50,23.14]:[11.72,12.62,14.72], sa=tg?21.90:11.50;
+  const on=tg?[22.08,22.50,24.04]:[11.72,12.62,14.72], sa=tg?21.90:11.50;
   if(items.join()!==lastStrip){items.forEach((x,k)=>$('eg-s'+k).textContent=x); lastStrip=items.join();}
   const stp=t>=sa?soft(t,sa):0; $('eg-strip').style.opacity=f2(clamp(stp*2*(t<11.4?0:1)));
   $('eg-strip').style.transform=`translateY(${f2(50*(1-clamp(stp)))}px)`;
