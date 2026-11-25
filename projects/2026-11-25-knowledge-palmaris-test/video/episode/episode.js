@@ -86,7 +86,7 @@ hookLike('loop',t=>t-window.__DUR);
   const rT=ringEl(v,92,12), rP=ringEl(v,80,12), spark=ringEl(v,60,10);
   const Lt=label(k.s,'นิ้วโป้ง','acc',A.x+190,A.y+120,60), Lp=label(k.s,'นิ้วก้อย','acc',B.x-90,B.y-170,60);
   UP.push(t=>{const u=eio((t-2.9)/1.2);
-    k.cam(lerp(500,530,u),lerp(620,650,u),540,700,lerp(1.0,1.06,u),lerp(-2,2,u));
+    k.cam(lerp(500,530,u),lerp(620,650,u),590,700,lerp(1.0,1.06,u),lerp(-2,2,u));
     const au=eo((t-2.82)/1.0); arr.set(au); [head,headI].forEach(e=>e.style.opacity=f3(clamp((au-0.92)*12)));
     arr.a.style.strokeDasharray=au>=1?'.05 .03':'1 1'; if(au>=1) arr.a.style.strokeDashoffset=f3(-(t-3.82)*0.25);
     rT.set(A.x,A.y,eo((t-3.24)/0.25),1+0.06*Math.sin(t*8)); rP.set(B.x,B.y,eo((t-3.66)/0.25),1+0.06*Math.sin(t*8+1));
@@ -135,7 +135,7 @@ const XTEND=`M${XR.top.x},${XR.top.y} C${XR.top.x-4},${XR.top.y+100} ${XR.bot.x+
 const MUSD=`M${XR.bot.x},${XR.bot.y-20} C${XR.bot.x+52},${XR.bot.y+40} ${XR.bot.x+58},${XR.bot.y+150} ${XR.bot.x-4},${XR.bot.y+235} C${XR.bot.x-64},${XR.bot.y+150} ${XR.bot.x-52},${XR.bot.y+40} ${XR.bot.x},${XR.bot.y-20}Z`;
 function xfade(k){div(k.s,'xfade','','');}
 (function(){const k=fr('muscle'); if(!k) return; xfade(k); const scan=div(k.s,'scan','',''); const T=tendon(k.svg,XTEND,16);
-  const L=label(k.s,'เส้นเอ็น','acc',XR.top.x+200,XR.top.y+140,72);
+  const L=label(k.s,'เส้นเอ็น','acc',XR.top.x+190,XR.top.y-170,72);
   UP.push(t=>{const u=eio((t-11.48)/0.74); k.cam(560,1000,540,960,lerp(1.0,1.06,u));
     const sc=clamp((t-11.48)/0.5); scan.style.transform=`translateY(${f1(lerp(-120,1500,sc))}px)`; scan.style.opacity=f3(sc>0&&sc<1?1:0);
     T.set(eio((t-11.82)/0.3),t); popIn(L,t,11.86);});})();
