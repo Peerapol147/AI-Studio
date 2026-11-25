@@ -147,17 +147,18 @@ def main(proj, lang='th'):
         if cta_len > CTA_MAX:
             warns.append(f'cta lasts {cta_len:.1f} s (style.md: <= {CTA_MAX:.0f} s)')
 
-    # cut speed
+    # cut speed: INFO only (style.md ข้อ 4, ผู้ใช้ 2026-11-25: จังหวะตัดแล้วแต่คลิป)
+    infos = []
     for s in shots:
         if s.get('beat') == 'explain' and not HOLD[0] <= s['dur'] <= HOLD[1]:
-            warns.append(f'explain shot {s["id"]} is {s["dur"]:.2f} s (hold the picture {HOLD[0]:.0f}-{HOLD[1]:.0f} s)')
+            infos.append(f'explain shot {s["id"]} is {s["dur"]:.2f} s (hold the picture {HOLD[0]:.0f}-{HOLD[1]:.0f} s)')
     by = {}
     for s in shots:
         by.setdefault(s.get('beat'), []).append(s['dur'])
     fast = [d for b in ('hook', 'twist') for d in by.get(b, [])]
     rest = [d for b, ds in by.items() if b not in ('hook', 'twist', 'loop', 'cta', None) for d in ds]
     if fast and rest and sum(fast) / len(fast) >= sum(rest) / len(rest):
-        warns.append(f'hook+twist shots avg {sum(fast) / len(fast):.2f} s are not faster than the rest '
+        infos.append(f'hook+twist shots avg {sum(fast) / len(fast):.2f} s are not faster than the rest '
                      f'({sum(rest) / len(rest):.2f} s): cut fast only in the hook and the twist')
     v3 = (proj / 'video' / 'episode.json').exists()
     if shots and not v3 and shots[0].get('src') != shots[-1].get('src'):
@@ -168,6 +169,8 @@ def main(proj, lang='th'):
     for b in ('hook', 'setup', 'explain', 'reveal', 'twist', 'share', 'cta', 'loop'):
         if b in by:
             print(f'  {b:<9}{pos.get(b, 0):>8.0%}{len(by[b]):>8}{sum(by[b]) / len(by[b]):>7.2f}')
+    for i in infos:
+        print('INFO', i, '(pace is per clip: style.md 4)')
     for w in warns:
         print('WARN', w)
     for f in fails:
