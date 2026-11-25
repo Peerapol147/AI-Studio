@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- GENERATED: edit index.html.tpl / episode.json / ../look.json, then run `python3 build_index.py` -->
-<!-- look: sunrise-coral / sarabun / pop / question / stack / slide -->
+<!-- look: sunrise-coral / sarabun / pop / question / card / slide -->
 <html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
 <link rel="stylesheet" href="episode/episode.css"/>
@@ -62,7 +62,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cap-underline .cap em{display:inline-block;line-height:1.05;padding-bottom:8px;border-bottom:18px solid var(--accent);border-radius:4px}
 /* ---- EPISODE CSS (editor adds the episode's own graphics styles here) ---- */
 </style></head><body>
-<div id="root" class="cap-pop op-question cv-stack" data-composition-id="main" data-start="0" data-duration="28.3" data-width="1080" data-height="1920"
+<div id="root" class="cap-pop op-question cv-card" data-composition-id="main" data-start="0" data-duration="28.3" data-width="1080" data-height="1920"
  data-motion-blur="on" data-motion-blur-events="on">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 
@@ -97,9 +97,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 </div>
 <div id="tshade"></div>
 <div id="title">
-<div class="tl" style="font-size:93px">ร่างกายเรามี</div>
-<div class="tl" style="font-size:89px"><em>อะไหล่สำรอง</em></div>
-<div class="tl" style="font-size:93px">ด้วยนะ</div>
+<div class="tl" style="font-size:128px">ร่างกายมี</div>
+<div class="tl" style="font-size:103px"><em>อะไหล่สำรอง</em>!</div>
 </div>
 <div id="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span>ลองทำตาม #1</span></div>
 <div id="caps">
@@ -153,7 +152,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
    push + drift + the look's transition); setup/explain/reveal/share/cta = hold the picture (slow push only). */
 (function(){
-const D={"dur": 28.3, "capt": [0.14, 0.74, 1.3, 1.86, 2.8, 3.24, 3.66, 4.32, 4.96, 5.92, 6.96, 7.92, 8.94, 9.5, 10.56, 11.56, 12.3, 12.78, 13.74, 14.5, 15.24, 15.98, 16.58, 17.4, 18.0, 18.92, 19.84, 20.26, 21.32, 21.86, 22.46, 22.96, 23.66, 24.74, 25.76, 26.3, 26.7, 27.5], "sc": [{"id": "hook", "a": 0.0, "b": 1.78, "beat": "hook", "still": true}, {"id": "pinch", "a": 1.78, "b": 2.72, "beat": "setup", "still": false}, {"id": "tip", "a": 2.72, "b": 4.24, "beat": "setup", "still": false}, {"id": "flex", "a": 4.24, "b": 5.84, "beat": "setup", "still": false}, {"id": "count", "a": 5.84, "b": 6.88, "beat": "setup", "still": false}, {"id": "count2", "a": 6.88, "b": 7.84, "beat": "setup", "still": false}, {"id": "count1", "a": 7.84, "b": 8.86, "beat": "setup", "still": false}, {"id": "see", "a": 8.86, "b": 10.48, "beat": "reveal", "still": false}, {"id": "spare", "a": 10.48, "b": 11.48, "beat": "reveal", "still": false}, {"id": "muscle", "a": 11.48, "b": 12.22, "beat": "explain", "still": false}, {"id": "weak", "a": 12.22, "b": 13.66, "beat": "explain", "still": false}, {"id": "graft", "a": 13.66, "b": 14.42, "beat": "explain", "still": false}, {"id": "fix", "a": 14.42, "b": 15.9, "beat": "explain", "still": false}, {"id": "none", "a": 15.9, "b": 17.32, "beat": "twist", "still": false}, {"id": "one", "a": 17.32, "b": 18.84, "beat": "twist", "still": false}, {"id": "grip", "a": 18.84, "b": 19.76, "beat": "twist", "still": false}, {"id": "squeeze", "a": 19.76, "b": 21.24, "beat": "twist", "still": false}, {"id": "ball", "a": 21.24, "b": 22.38, "beat": "share", "still": false}, {"id": "elbow", "a": 22.38, "b": 24.66, "beat": "share", "still": false}, {"id": "ask", "a": 24.66, "b": 27.42, "beat": "cta", "still": false}, {"id": "loop", "a": 27.42, "b": 28.3, "beat": "loop", "still": true}], "hookEnd": 1.78, "look": {"palette": "sunrise-coral", "font": "sarabun", "caption": "pop", "opening": "question", "cover": "stack", "transition": "slide"}}, DUR=D.dur, CAPT=D.capt, SC=D.sc, TR=D.look.transition;
+const D={"dur": 28.3, "capt": [0.14, 0.74, 1.3, 1.86, 2.8, 3.24, 3.66, 4.32, 4.96, 5.92, 6.96, 7.92, 8.94, 9.5, 10.56, 11.56, 12.3, 12.78, 13.74, 14.5, 15.24, 15.98, 16.58, 17.4, 18.0, 18.92, 19.84, 20.26, 21.32, 21.86, 22.46, 22.96, 23.66, 24.74, 25.76, 26.3, 26.7, 27.5], "sc": [{"id": "hook", "a": 0.0, "b": 1.78, "beat": "hook", "still": true}, {"id": "pinch", "a": 1.78, "b": 2.72, "beat": "setup", "still": false}, {"id": "tip", "a": 2.72, "b": 4.24, "beat": "setup", "still": false}, {"id": "flex", "a": 4.24, "b": 5.84, "beat": "setup", "still": false}, {"id": "count", "a": 5.84, "b": 6.88, "beat": "setup", "still": false}, {"id": "count2", "a": 6.88, "b": 7.84, "beat": "setup", "still": false}, {"id": "count1", "a": 7.84, "b": 8.86, "beat": "setup", "still": false}, {"id": "see", "a": 8.86, "b": 10.48, "beat": "reveal", "still": false}, {"id": "spare", "a": 10.48, "b": 11.48, "beat": "reveal", "still": false}, {"id": "muscle", "a": 11.48, "b": 12.22, "beat": "explain", "still": false}, {"id": "weak", "a": 12.22, "b": 13.66, "beat": "explain", "still": false}, {"id": "graft", "a": 13.66, "b": 14.42, "beat": "explain", "still": false}, {"id": "fix", "a": 14.42, "b": 15.9, "beat": "explain", "still": false}, {"id": "none", "a": 15.9, "b": 17.32, "beat": "twist", "still": false}, {"id": "one", "a": 17.32, "b": 18.84, "beat": "twist", "still": false}, {"id": "grip", "a": 18.84, "b": 19.76, "beat": "twist", "still": false}, {"id": "squeeze", "a": 19.76, "b": 21.24, "beat": "twist", "still": false}, {"id": "ball", "a": 21.24, "b": 22.38, "beat": "share", "still": false}, {"id": "elbow", "a": 22.38, "b": 24.66, "beat": "share", "still": false}, {"id": "ask", "a": 24.66, "b": 27.42, "beat": "cta", "still": false}, {"id": "loop", "a": 27.42, "b": 28.3, "beat": "loop", "still": true}], "hookEnd": 1.78, "look": {"palette": "sunrise-coral", "font": "sarabun", "caption": "pop", "opening": "question", "cover": "card", "transition": "slide"}}, DUR=D.dur, CAPT=D.capt, SC=D.sc, TR=D.look.transition;
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
 const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)};
 const S=(tau,w,z)=>{if(tau<=0)return 0; if(z<1){const wd=w*Math.sqrt(1-z*z);
