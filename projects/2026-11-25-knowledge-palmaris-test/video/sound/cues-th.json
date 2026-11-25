@@ -1,153 +1,223 @@
 [
  {
-  "t": 1.5,
+  "t": 1.78,
   "type": "scene_cut",
-  "desc": "slide: hook -> try it (ลองเลย)",
+  "desc": "slide: hook -> try it",
   "sfx": "kit/whoosh.ogg",
   "gain": -22
  },
  {
-  "t": 3.64,
+  "t": 3.24,
   "type": "hover_or_small_ui",
-  "desc": "thumb tip meets little-finger tip (spark ring)",
+  "desc": "ring on thumb tip (นิ้วโป้ง)",
   "sfx": "kit/tick.ogg",
   "gain": -20
  },
  {
-  "t": 5.98,
+  "t": 3.66,
+  "type": "hover_or_small_ui",
+  "desc": "ring on little-finger tip (นิ้วก้อย)",
+  "sfx": "kit/tick.ogg",
+  "gain": -20
+ },
+ {
+  "t": 3.9,
   "type": "appear",
-  "desc": "count 3 on สาม",
+  "desc": "arrow lands on the little finger, spark",
+  "sfx": "kit/click.ogg",
+  "gain": -20
+ },
+ {
+  "t": 4.46,
+  "type": "movement",
+  "desc": "bend arrow (งอ)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -27
+ },
+ {
+  "t": 5.92,
+  "type": "appear",
+  "desc": "3 on สาม",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -14
  },
  {
-  "t": 6.84,
+  "t": 6.96,
   "type": "appear",
-  "desc": "count 2 on สอง",
+  "desc": "2 on สอง",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -14
  },
  {
-  "t": 7.62,
+  "t": 7.92,
   "type": "appear",
-  "desc": "count 1 on หนึ่ง",
+  "desc": "1 on หนึ่ง",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -13
  },
  {
-  "t": 8.24,
+  "t": 8.86,
   "type": "scene_cut",
-  "desc": "slide: count -> see",
+  "desc": "slide: reveal",
   "sfx": "kit/whoosh.ogg",
   "gain": -22
  },
  {
-  "t": 8.8,
+  "t": 9.14,
   "type": "reveal",
   "desc": "tendon lights up on นูน",
   "sfx": "impact/fs524817.ogg",
   "gain": -20
  },
  {
-  "t": 10.32,
+  "t": 10.58,
+  "type": "appear",
+  "desc": "tag อะไหล่ drops on its string",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -16
+ },
+ {
+  "t": 10.86,
+  "type": "success",
+  "desc": "tag pops + sparkles on อะไหล่",
+  "sfx": "kit/pop.ogg",
+  "gain": -18
+ },
+ {
+  "t": 11.48,
   "type": "scene_cut",
-  "desc": "slide: reveal -> explain (x-ray, scan line)",
+  "desc": "slide: explain (x-ray, scan line)",
   "sfx": "kit/whoosh.ogg",
   "gain": -23
  },
  {
-  "t": 12.96,
+  "t": 11.84,
+  "type": "hover_or_small_ui",
+  "desc": "tendon draws on เส้นเอ็น",
+  "sfx": "kit/tick.ogg",
+  "gain": -21
+ },
+ {
+  "t": 12.8,
   "type": "appear",
-  "desc": "meter card หน้าที่น้อยมาก pops",
+  "desc": "meter ใช้งานน้อยมาก",
   "sfx": "kit/pop.ogg",
   "gain": -20
  },
  {
-  "t": 17.42,
-  "type": "success",
-  "desc": "pill ปกติ on grip footage",
-  "sfx": "kit/pop.ogg",
-  "gain": -19
- },
- {
-  "t": 18.4,
-  "type": "scene_cut",
-  "desc": "slide: twist (บางคนมีข้างเดียว)",
-  "sfx": "kit/whoosh.ogg",
-  "gain": -21
- },
- {
-  "t": 19.34,
-  "type": "appear",
-  "desc": "pill คนเดียวกัน (ข้างเดียว)",
-  "sfx": "pop/kenney-interface-drop-002.ogg",
-  "gain": -18
- },
- {
-  "t": 20.56,
-  "type": "scene_cut",
-  "desc": "slide: share (graft)",
-  "sfx": "kit/whoosh.ogg",
-  "gain": -22
- },
- {
-  "t": 21.6,
+  "t": 14.0,
   "type": "movement",
-  "desc": "spare tendon lifts out",
+  "desc": "spare tendon floats up",
   "sfx": "kit/whoosh.ogg",
   "gain": -26
  },
  {
-  "t": 23.42,
+  "t": 14.62,
   "type": "hover_or_small_ui",
   "desc": "spare lands in the gap",
   "sfx": "kit/click.ogg",
   "gain": -19
  },
  {
-  "t": 24.0,
+  "t": 15.26,
   "type": "success",
-  "desc": "pill ต่อแล้ว",
+  "desc": "ต่อแล้ว pill",
   "sfx": "kit/pop.ogg",
   "gain": -20
  },
  {
-  "t": 25.22,
+  "t": 15.9,
+  "type": "scene_cut",
+  "desc": "slide: twist",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -21
+ },
+ {
+  "t": 16.34,
+  "type": "hover_or_small_ui",
+  "desc": "ไม่มี cross",
+  "sfx": "kit/tick.ogg",
+  "gain": -20
+ },
+ {
+  "t": 18.1,
   "type": "appear",
-  "desc": "elbow ring pops on ข้อศอก",
+  "desc": "pill ข้างเดียว",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 19.84,
+  "type": "hover_or_small_ui",
+  "desc": "squeeze pulse",
+  "sfx": "kit/tick.ogg",
+  "gain": -21
+ },
+ {
+  "t": 20.28,
+  "type": "success",
+  "desc": "pill ปกติ",
+  "sfx": "kit/pop.ogg",
+  "gain": -19
+ },
+ {
+  "t": 21.24,
+  "type": "scene_cut",
+  "desc": "slide: share",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 21.36,
+  "type": "movement",
+  "desc": "ball flies",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -25
+ },
+ {
+  "t": 22.48,
+  "type": "appear",
+  "desc": "elbow ring on ข้อศอก",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -16
  },
  {
-  "t": 25.74,
+  "t": 23.0,
   "type": "movement",
-  "desc": "throw arc + ball fly (นักเบสบอล)",
+  "desc": "spare flies to the elbow",
   "sfx": "kit/whoosh.ogg",
-  "gain": -24
+  "gain": -26
  },
  {
-  "t": 27.44,
+  "t": 24.1,
+  "type": "success",
+  "desc": "ซ่อม pill",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 24.66,
   "type": "scene_cut",
   "desc": "slide: cta 0/1/2",
   "sfx": "kit/whoosh.ogg",
   "gain": -22
  },
  {
-  "t": 28.56,
+  "t": 25.76,
   "type": "appear",
   "desc": "card 0 on ศูนย์",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -14
  },
  {
-  "t": 29.16,
+  "t": 26.3,
   "type": "appear",
   "desc": "card 1 on หนึ่ง",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -14
  },
  {
-  "t": 29.82,
+  "t": 26.92,
   "type": "appear",
   "desc": "card 2 on สอง",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
