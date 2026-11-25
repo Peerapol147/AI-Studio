@@ -70,6 +70,8 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 - ลิขสิทธิ์: ห้ามภาพหนัง/ละคร/ข่าว/ไฮไลต์บอล/โลโก้/เพลงติดลิขสิทธิ์; หวย = ห้าม; ข้อเท็จจริงจาก research.md เท่านั้น ห้ามอัปโหลด/ตั้งเวลาโพสต์
 - ห้าม merge superpowers 4 ตัว (brainstorming, writing-plans, verification-before-completion, dispatching-parallel-agents) เข้า stoic-cray; ห้องลูกดึงด้วย `git fetch origin claude/content-strategy && git checkout origin/claude/content-strategy -- .claude/skills/<ชื่อ>` (ห้าม commit)
 
+- **ผู้ใช้ 2026-11-25 (ผ่านห้อง palmaris):** จังหวะตัด "แล้วแต่คลิป ให้ผู้กำกับ/editor ตัดสินใจเอง" (ไม่บังคับค้างภาพ explain 2-3 วิ; ผู้ใช้ชอบ motion เร็วแบบ brainrot เดิม เฉลี่ย ~1.4 วิ/ช็อต) → แก้อยู่บน branch palmaris ยังไม่รวม; ห้อง #4 จะแยก commit กฎ → ห้องตรวจอิสระ → ff stoic-cray. ผู้ใช้บ่น "ปกดูเป็น AI" และ "footage หาไม่ได้" (footage agent ค้นน้อย + Wikimedia 429)
+
 ## 9. ข้อจำกัดระบบที่เจอ (สำคัญ)
 - **ห้อง #3 ถูกยกระดับ "อุปกรณ์ที่เชื่อถือได้" ถาวร** (ตอนขอสิทธิ์ส่งงานเข้าคอมผู้ใช้) → ห้องลูกบนคลาวด์ส่ง send_message หาไม่ได้ (elevated_session_untrusted_device) และ send_later ของห้อง #3 ล้ม (ACCESS_DENIED) → ห้องลูกเขียนรายงานลงไฟล์บน branch (DELIVERY.md / docs/review-*.md) ห้องวางแผนไปอ่านเอง; ผู้ใช้แปะ path มาให้
 - ห้อง #4: ถ้าไม่ยกระดับ ห้องลูกส่งตรงได้ (ห้องลูกต้องกดอนุมัติครั้งแรก) แต่ส่งงานเข้าคอมผู้ใช้ไม่ได้ — ถ้าต้องเรนเดอร์บนคอม ให้ผู้ใช้สั่งห้อง STUDIO ANIME 2d เอง หรือยกระดับแล้วรับข้อจำกัดนี้
