@@ -70,12 +70,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
   <div class="sc" id="sh-hook"><div class="kb" id="kb-hook"><video id="v-hook" class="clip vid" data-start="0.0" data-duration="1.9" data-media-start="3.06" data-track-index="1" muted playsinline src="assets/palm-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-pinch"><div class="kb" id="kb-pinch"><video id="v-pinch" class="clip vid" data-start="1.78" data-duration="1.06" data-media-start="0.37" data-track-index="2" muted playsinline src="assets/up-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-tip"><div class="kb" id="kb-tip"><video id="v-tip" class="clip vid" data-start="2.72" data-duration="1.64" data-media-start="7.92" data-track-index="1" muted playsinline src="assets/palm-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-flex"><div class="kb" id="kb-flex"><video id="v-flex" class="clip vid" data-start="4.24" data-duration="1.72" data-media-start="17.42" data-track-index="2" muted playsinline src="assets/up-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-count"><div class="kb" id="kb-count"><video id="v-count" class="clip vid" data-start="5.84" data-duration="1.16" data-media-start="5.92" data-track-index="1" muted playsinline src="assets/up-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-count2"><div class="kb" id="kb-count2"><video id="v-count2" class="clip vid" data-start="6.88" data-duration="1.08" data-media-start="10.92" data-track-index="2" muted playsinline src="assets/palm-v.mp4"></video></div><div class="vig"></div></div>
-  <div class="sc" id="sh-count1"><div class="kb" id="kb-count1"><video id="v-count1" class="clip vid" data-start="7.84" data-duration="1.14" data-media-start="11.92" data-track-index="1" muted playsinline src="assets/up-v.mp4"></video></div><div class="vig"></div></div>
+  <div class="sc" id="sh-pinch"><div class="kb" id="kb-pinch"><div class="gslot" id="g-pinch"></div></div><div class="vig"></div></div>
+  <div class="sc" id="sh-tip"><div class="kb" id="kb-tip"><div class="gslot" id="g-tip"></div></div><div class="vig"></div></div>
+  <div class="sc" id="sh-flex"><div class="kb" id="kb-flex"><div class="gslot" id="g-flex"></div></div><div class="vig"></div></div>
+  <div class="sc" id="sh-count"><div class="kb" id="kb-count"><div class="gslot" id="g-count"></div></div><div class="vig"></div></div>
+  <div class="sc" id="sh-count2"><div class="kb" id="kb-count2"><div class="gslot" id="g-count2"></div></div><div class="vig"></div></div>
+  <div class="sc" id="sh-count1"><div class="kb" id="kb-count1"><div class="gslot" id="g-count1"></div></div><div class="vig"></div></div>
   <div class="sc" id="sh-see"><div class="kb" id="kb-see"><video id="v-see" class="clip vid" data-start="8.86" data-duration="1.74" data-media-start="12.92" data-track-index="2" muted playsinline src="assets/palm-v.mp4"></video></div><div class="vig"></div></div>
   <div class="sc" id="sh-spare"><div class="kb" id="kb-spare"><video id="v-spare" class="clip vid" data-start="10.48" data-duration="1.12" data-media-start="14.92" data-track-index="1" muted playsinline src="assets/palm-v.mp4"></video></div><div class="vig"></div></div>
   <div class="sc" id="sh-muscle"><div class="kb" id="kb-muscle"><video id="v-muscle" class="clip vid" data-start="11.48" data-duration="0.86" data-media-start="0.92" data-track-index="2" muted playsinline src="assets/xray-v.mp4"></video></div><div class="vig"></div></div>
@@ -146,6 +146,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <audio id="music" class="clip" data-start="0" data-duration="28.3" data-track-index="31" data-volume="0.1" src="assets/music-jamendo-fb1328d9.mp3"></audio>
 </div>
 
+<script src="episode/hand.js"></script>
 <script src="episode/episode.js"></script>
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/

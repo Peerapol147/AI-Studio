@@ -47,3 +47,6 @@
 .dimall{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;background:rgba(0,0,0,.5);z-index:1}
 .ov .numcard{z-index:3}
 .topfade{position:absolute;left:-300px;top:-400px;width:1680px;height:840px;z-index:1;background:linear-gradient(var(--bg) 0%,var(--bg) 52%,rgba(0,0,0,0) 100%)}
+/* v4: jointed hand rig (episode/hand.js) on the warm backdrop; skin mixed from the look's --accent2 */
+#root{--sk:color-mix(in srgb,#f4cfb2 80%,var(--accent2));--skd:color-mix(in srgb,var(--sk) 55%,var(--ink));--skc:color-mix(in srgb,var(--sk) 62%,var(--ink))}
+.rigbg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:url(../assets/bg-warm.png) center/cover}

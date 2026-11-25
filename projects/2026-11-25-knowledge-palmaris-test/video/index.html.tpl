@@ -87,6 +87,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%MUSIC%%
 </div>
 
+<script src="episode/hand.js"></script>
 <script src="episode/episode.js"></script>
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/

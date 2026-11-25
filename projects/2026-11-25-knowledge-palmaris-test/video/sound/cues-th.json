@@ -7,30 +7,30 @@
   "gain": -22
  },
  {
-  "t": 3.24,
+  "t": 3.3,
   "type": "hover_or_small_ui",
-  "desc": "ring on thumb tip (นิ้วโป้ง)",
+  "desc": "thumb label pops (นิ้วโป้ง)",
   "sfx": "kit/tick.ogg",
   "gain": -20
  },
  {
-  "t": 3.66,
+  "t": 3.7,
   "type": "hover_or_small_ui",
-  "desc": "ring on little-finger tip (นิ้วก้อย)",
+  "desc": "little-finger label pops (นิ้วก้อย)",
   "sfx": "kit/tick.ogg",
   "gain": -20
  },
  {
-  "t": 3.9,
+  "t": 3.92,
   "type": "appear",
-  "desc": "arrow lands on the little finger, spark",
+  "desc": "thumb pad touches little-finger pad, pulse",
   "sfx": "kit/click.ogg",
   "gain": -20
  },
  {
-  "t": 4.46,
+  "t": 4.34,
   "type": "movement",
-  "desc": "bend arrow (งอ)",
+  "desc": "wrist flexes toward the body (งอ)",
   "sfx": "kit/whoosh.ogg",
   "gain": -27
  },

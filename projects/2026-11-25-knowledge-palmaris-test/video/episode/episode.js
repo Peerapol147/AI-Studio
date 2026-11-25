@@ -58,7 +58,7 @@ const TEND=`M${PALM.tTop.x},${PALM.tTop.y} C${PALM.tTop.x+4},${PALM.tTop.y+110} 
 // up-v.mp4 (32185 upright, thumb on the right)
 const UPH={wrist:P(540,1340),tTop:P(540,1150),tBot:P(545,1470)};
 // 32185 fingertips key badly (ragged): shots on up-v fade the plate top (Y < ~420) into the backdrop
-const UPIDS={pinch:1,flex:1,count:1,count1:1,ask:1,none:1};
+const UPIDS={ask:1,none:1};
 const UTEND=`M${UPH.tTop.x},${UPH.tTop.y} C${UPH.tTop.x+2},${UPH.tTop.y+110} ${UPH.tBot.x-2},${UPH.tBot.y-110} ${UPH.tBot.x},${UPH.tBot.y}`;
 
 /* ---------- hook 0-1.78 + loop 27.42-28.3: whole palm, tendon lit, ring on the wrist = frame 0 / cover ----------
@@ -72,43 +72,42 @@ function hookLike(id,phase){const k=fr(id); if(!k) return; const T=tendon(k.svg,
 hookLike('hook',t=>t);
 hookLike('loop',t=>t-window.__DUR);
 
-/* pinch 1.78-2.72 (32185 flies in): "ลองเช็กดู" pill */
-(function(){const k=fr('pinch'); if(!k) return; const L=label(k.s,'ลองเลย!','acc',540,520,78);
-  UP.push(t=>{k.cam(540,900,540,900,1.0+0.06*eio((t-1.78)/0.94)); popIn(L,t,1.86,1,99,-4);
-    if(t>2.1) L.style.transform+=` translateY(${f1(8*Math.sin((t-2.1)*9))}px)`;});})();
-
-/* tip 2.72-4.24 (palm close-up): "ประกบ" 2.8 arrow thumb -> pinky draws; "นิ้วโป้ง" 3.24 ring + label; "นิ้วก้อย" 3.66
-   ring + label; arrow head lands on the pinky tip 3.9 with a spark; camera travels thumb -> pinky */
-(function(){const k=fr('tip'); if(!k) return; const v=k.svg;
-  const A=PALM.thumb, B=PALM.pinky, d=`M${A.x+40},${A.y+90} C${A.x+120},${A.y+430} ${B.x-260},${B.y+330} ${B.x-30},${B.y+70}`;
-  const arr=lineEl(v,d,20); const head=el(v,'path',{d:`M${B.x-92},${B.y+92} L${B.x-30},${B.y+70} L${B.x-46},${B.y+6}`},ACC+';stroke-width:20;opacity:0');
-  const headI=el(v,'path',{d:head.getAttribute('d')},INK+';stroke-width:36;opacity:0'); v.insertBefore(headI,head);
-  const rT=ringEl(v,92,12), rP=ringEl(v,80,12), spark=ringEl(v,60,10);
-  const Lt=label(k.s,'นิ้วโป้ง','acc',A.x+190,A.y+120,60), Lp=label(k.s,'นิ้วก้อย','acc',B.x-90,B.y-170,60);
-  UP.push(t=>{const u=eio((t-2.9)/1.2);
-    k.cam(lerp(500,530,u),lerp(620,650,u),590,700,lerp(1.0,1.06,u),lerp(-2,2,u));
-    const au=eo((t-2.82)/1.0); arr.set(au); [head,headI].forEach(e=>e.style.opacity=f3(clamp((au-0.92)*12)));
-    arr.a.style.strokeDasharray=au>=1?'.05 .03':'1 1'; if(au>=1) arr.a.style.strokeDashoffset=f3(-(t-3.82)*0.25);
-    rT.set(A.x,A.y,eo((t-3.24)/0.25),1+0.06*Math.sin(t*8)); rP.set(B.x,B.y,eo((t-3.66)/0.25),1+0.06*Math.sin(t*8+1));
-    const sk=clamp((t-3.86)/0.35); spark.set(B.x,B.y,sk>0&&sk<1?1:0,1+1.2*sk); spark.g.style.opacity=f3(sk>0&&sk<1?1-sk:0);
-    popIn(Lt,t,3.24,1.03); popIn(Lp,t,3.66,1.03);});})();
-
-/* flex 4.24-5.84 (32185 slowed: the hand tips back): bend arrow + "งอเข้าหาตัว"; camera follows the hand as it leans */
-(function(){const k=fr('flex'); if(!k) return; const v=k.svg;
-  const d='M880,560 C1010,700 1010,920 900,1060'; const arr=lineEl(v,d,20);
-  const head=el(v,'path',{d:'M850,1010 L900,1060 L930,994'},ACC+';stroke-width:20;opacity:0'); const headI=el(v,'path',{d:'M850,1010 L900,1060 L930,994'},INK+';stroke-width:36;opacity:0'); v.insertBefore(headI,head);
-  const L=label(k.s,'งอเข้าหาตัว','acc',560,560,64);
-  UP.push(t=>{const u=eio((t-4.24)/1.6); k.cam(560,900,540,lerp(900,960,u),lerp(1.0,1.18,u),lerp(0,-3,u));
-    const au=eo((t-4.46)/0.45)+0.0; arr.set(au); [head,headI].forEach(e=>e.style.opacity=f3(clamp((au-0.9)*10)));
-    const nudge=bump(t,4.96,5)*Math.sin((t-4.96)*14)*10; arr.g.setAttribute('transform',`translate(${f1(nudge)} 0)`);
-    popIn(L,t,4.5,1);});})();
-
-/* count 5.84-6.88 / count2 6.88-7.84 / count1 7.84-8.86: three framings (whole hand, tilted palm, wrist close-up);
-   the 3-2-1 disc lives in #epi; the wrist tendon shadow starts to show on 1 */
-(function(){const k=fr('count'); if(!k) return; UP.push(t=>{const u=eio((t-5.84)/1.04); k.cam(560,900,540,940,lerp(0.94,1.02,u),lerp(3,0,u));});})();
-(function(){const k=fr('count2'); if(!k) return; UP.push(t=>{const u=eio((t-6.88)/0.96); k.cam(540,1000,560,1000,lerp(1.14,1.22,u),lerp(-9,-6,u));});})();
-(function(){const k=fr('count1'); if(!k) return;
-  UP.push(t=>{const u=eio((t-7.84)/1.02); k.cam(UPH.wrist.x,UPH.wrist.y-60,540,1180,lerp(1.5,1.68,u),lerp(2,0,u));});})();
+/* ---------- pinch / tip / flex / count / count2 / count1 (1.78-8.86): one jointed hand rig (episode/hand.js) ----------
+   The pose is ONE function of global t shared by the six shots, so a cut never changes the hand, only the camera.
+   "ประกบ" 2.80 thumb sweeps across the palm + pinky curls in; pads meet at 3.92 ("นิ้วก้อย" 3.84-4.10) with a spring
+   press + accent pulse; "แล้วงอ" 4.32 wrist flexes toward the body, "นิดนึง" 4.96 a little more; the palmaris ridge
+   rises in steps (4.45 / 4.96 / สาม 5.92 / สอง 6.96 / หนึ่ง 7.92); the held pose breathes + trembles. */
+const TOUCH=3.92;
+function handPose(t){
+  const o=eio((t-2.80)/(TOUCH-2.80)), op=eio((t-2.90)/(TOUCH-2.90));
+  const dt=t-TOUCH, press=dt>0?9*Math.exp(-dt*6)*Math.sin(dt*19):0;
+  const env=clamp((t-1.9)/0.2)*(1-clamp((t-2.7)/0.2)), wig=[0,1,2,3].map(i=>3.2*env*Math.sin(t*10+i*1.4));
+  const br=t>5.4?Math.sin((t-5.4)*Math.PI*2/1.5):0, trem=t>4.9?0.35*Math.sin(t*23.1)+0.25*Math.sin(t*31.7+1):0;
+  const flex=34*eio((t-4.32)/0.6)+7*sp(t,4.96,12,0.5)+1.6*br+trem;
+  const tendon=0.45*eo((t-4.45)/0.5)+0.16*sp(t,4.96,12,0.6)+0.13*sp(t,5.92,14,0.5)+0.13*sp(t,6.96,14,0.5)+0.13*sp(t,7.92,14,0.5);
+  return {o,op,press,wig,spread:0.25*env,flex,tendon,pulse:dt>0?Math.exp(-dt*3.2):0,ring:dt>0?S(dt,13,0.42):0,br,trem};}
+// camera per shot: wrist lands on screen (X,Y), scale S, view yaw / pitch / roll (deg)
+const CAMS={
+  pinch:t=>{const u=sp(t,1.80,9,0.78); return {X:540,Y:lerp(2050,1290,u),S:1.06,yaw:lerp(-14,4,u),pitch:0,roll:lerp(-8,0,u)};},
+  tip:t=>{const u=eio((t-2.72)/1.5); return {X:lerp(540,470,u),Y:lerp(1290,1420,u),S:lerp(1.06,1.34,u),yaw:lerp(4,-6,u),pitch:lerp(0,-6,u),roll:0};},
+  flex:t=>{const u=eio((t-4.3)/1.3); return {X:lerp(470,530,u),Y:lerp(1420,900,u),S:lerp(1.34,1.08,u),yaw:lerp(-6,-12,u),pitch:lerp(-6,8,u),roll:lerp(0,-3,u)};},
+  count:t=>{const u=eio((t-5.84)/1.04); return {X:450,Y:lerp(800,770,u),S:lerp(0.98,1.04,u),yaw:lerp(10,4,u),pitch:6,roll:lerp(4,2,u)};},
+  count2:t=>{const u=eio((t-6.88)/0.96); return {X:lerp(600,620,u),Y:720,S:lerp(1.32,1.42,u),yaw:lerp(-20,-16,u),pitch:4,roll:lerp(9,7,u)};},
+  count1:t=>{const u=eio((t-7.84)/1.02); return {X:560,Y:lerp(470,440,u),S:lerp(2.0,2.15,u),yaw:lerp(-14,-10,u),pitch:12,roll:2};},
+};
+const RIGIDS=Object.keys(CAMS);
+RIGIDS.forEach(id=>{const k=fr(id); if(!k||k.media) return; const kb=$('kb-'+id);
+  kb.insertBefore(div(kb,'rigbg','',''),kb.firstChild);
+  const R=window.HandRig(k.svg), labs={};
+  if(id==='pinch') labs.go=label(k.s,'ลองเลย!','acc',540,470,78);
+  if(id==='tip'){labs.th=label(k.s,'นิ้วโป้ง','acc',0,0,56); labs.pk=label(k.s,'นิ้วก้อย','acc',0,0,56);}
+  if(id==='flex') labs.fl=label(k.s,'งอเข้าหาตัว','acc',540,470,64);
+  UP.push(t=>{kb.style.transform='none';                      // the rig owns the camera (no template push = no jump at cuts)
+    const P=handPose(t), C=CAMS[id](t); C.Y+=6*P.br+1.5*P.trem; const r=R.draw({...P,...C});
+    if(labs.go){popIn(labs.go,t,1.86,1,99,-4); if(t>2.1) labs.go.style.transform+=` translateY(${f1(8*Math.sin((t-2.1)*9))}px)`;}
+    if(labs.th){labs.th.style.left=f1(r.thumbTip.x-150)+'px'; labs.th.style.top=f1(r.thumbTip.y+120)+'px'; popIn(labs.th,t,3.30);
+      labs.pk.style.left=f1(Math.min(880,r.pinkyTip.x+170))+'px'; labs.pk.style.top=f1(r.pinkyTip.y-130)+'px'; popIn(labs.pk,t,3.70);}
+    if(labs.fl){popIn(labs.fl,t,4.46,1,99,-3);}});});
 
 /* see 8.86-10.48: push into the wrist, "เส้นนูน" 9.12 the tendon draws, "ข้อมือ" 9.70 the ring draws, label */
 (function(){const k=fr('see'); if(!k) return; const T=tendon(k.svg,TEND,20), R=ovalEl(k.svg,100,220,11);
@@ -253,7 +252,7 @@ const cs=el(cnt,'svg',{viewBox:'0 0 400 400'});
 const cr=el(cs,'circle',{cx:200,cy:200,r:178,pathLength:1,transform:'rotate(-90 200 200)'},ACC+';stroke-width:16;stroke-dasharray:1 1');
 const nums=['3','2','1'].map(n=>div(cnt,'n',n));
 const badge=$('badge');
-const CNT=[5.92,6.96,7.92], CNTPOS=[[640,330],[110,360],[640,300]];   // the disc changes place with each framing
+const CNT=[5.92,6.96,7.92], CNTPOS=[[660,190],[30,620],[640,300]];   // the disc changes place with each framing
 window.EPI=function(t,h){ if(h) window.__DUR=h.DUR; const DD=window.__DUR||99;
   bed.style.opacity=f3(clamp((t-0.08)/0.06)*(1-clamp((t-(DD-0.2))/0.1)));   // frame 0 / last frame = clean cover
   badge.style.transform=`scale(${f3(1+0.015*(1-Math.cos(t*Math.PI*2/1.6)))})`;
