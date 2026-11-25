@@ -53,7 +53,7 @@
 /* cover v2: light card holding the upright hand (hook + loop), lighter than the backdrop so the hand stands out */
 .hcard{position:absolute;border-radius:40px;z-index:0;
   background:radial-gradient(ellipse 75% 85% at 40% 45%,color-mix(in srgb,var(--bg2) 62%,#fff) 0%,color-mix(in srgb,var(--bg2) 88%,#fff) 100%);
-  box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5)}
+  box-shadow:0 0 0 7px #fff6ea,0 0 0 15px var(--ink),0 0 46px 10px color-mix(in srgb,var(--accent2) 45%,transparent),0 26px 60px rgba(0,0,0,.5)}
 .lab.hk{z-index:3;box-shadow:0 0 0 8px var(--ink),0 12px 28px rgba(0,0,0,.35)}
 /* hook / loop captions sit below the hand card (still above the bottom 20 %) */
 #root #c0,#root #c1,#root #c2,#root #c36,#root #c37{top:1470px}
