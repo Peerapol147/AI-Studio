@@ -1,0 +1,149 @@
+[
+{
+"t": 2.0,
+"type": "scene_cut",
+"desc": "whip: hook still -> ice cream",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 2.02,
+"type": "appear",
+"desc": "? springs in on \"เพราะ\"",
+"sfx": "pop/kenney-interface-pluck-001.ogg",
+"gain": -22
+},
+{
+"t": 3.1,
+"type": "scene_cut",
+"desc": "whip: -> belief (woman eating)",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 4.4,
+"type": "appear",
+"desc": "chip \"ความเชื่อ\" on \"วิ่ง\"",
+"sfx": "pop/fs-824189-pop-in-sfx.ogg",
+"gain": -21
+},
+{
+"t": 4.98,
+"type": "appear",
+"desc": "frost spreads over the brain on \"สมอง\"",
+"sfx": "ding/kenney-interface-glass-001.ogg",
+"gain": -20
+},
+{
+"t": 6.1,
+"type": "scene_cut",
+"desc": "whip: -> reveal graphic",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 6.12,
+"type": "appear",
+"desc": "ice shatters on \"ความจริง\"",
+"sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+"gain": -17
+},
+{
+"t": 7.86,
+"type": "appear",
+"desc": "label \"สมองไม่มีตัวรับความเจ็บ\" on \"ไม่มี\"",
+"sfx": "pop/fs-824189-pop-in-sfx.ogg",
+"gain": -21
+},
+{
+"t": 9.74,
+"type": "scene_cut",
+"desc": "whip: -> culprit cone at the mouth",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 14.72,
+"type": "appear",
+"desc": "pulse reaches the forehead: จี๊ด!",
+"sfx": "glitch/kenney-interface-glitch-002.ogg",
+"gain": -18
+},
+{
+"t": 16.74,
+"type": "appear",
+"desc": "\"หน้าผาก\": จี๊ด burst at his forehead",
+"sfx": "glitch/kenney-interface-glitch-002.ogg",
+"gain": -17
+},
+{
+"t": 17.98,
+"type": "scene_cut",
+"desc": "whip: -> twist (boy eating fast)",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 20.86,
+"type": "scene_cut",
+"desc": "whip: -> trick graphic",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 20.88,
+"type": "appear",
+"desc": "label \"ทริก!\"",
+"sfx": "pop/kenney-interface-pluck-002.ogg",
+"gain": -20
+},
+{
+"t": 22.36,
+"type": "appear",
+"desc": "tongue presses the palate on \"ดัน\"",
+"sfx": "pop/fs-447910-plop.ogg",
+"gain": -19
+},
+{
+"t": 25.66,
+"type": "appear",
+"desc": "chip \"ปวดบ่อย\"",
+"sfx": "pop/kenney-interface-drop-002.ogg",
+"gain": -21
+},
+{
+"t": 26.2,
+"type": "appear",
+"desc": "chip \"ปวดแรง\"",
+"sfx": "pop/kenney-interface-drop-003.ogg",
+"gain": -21
+},
+{
+"t": 26.96,
+"type": "appear",
+"desc": "chip \"หาหมอ\"",
+"sfx": "ding/fs-571513-soft-notifications-bell-ding-d.ogg",
+"gain": -21
+},
+{
+"t": 28.08,
+"type": "scene_cut",
+"desc": "whip: -> stopwatch",
+"sfx": "whoosh/fs-683101-quick-woosh.ogg",
+"gain": -27
+},
+{
+"t": 28.1,
+"type": "appear",
+"desc": "stopwatch starts on \"ปกติ\"",
+"sfx": "tick/fs528561.ogg",
+"gain": -21
+},
+{
+"t": 28.98,
+"type": "appear",
+"desc": "\"จี๊ดนานกี่วิ?\" on \"กี่วิ\"",
+"sfx": "pop/fs-824189-pop-in-sfx.ogg",
+"gain": -20
+}
+]

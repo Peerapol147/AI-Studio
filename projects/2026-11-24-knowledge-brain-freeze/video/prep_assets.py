@@ -48,15 +48,12 @@ def video(name, src, t, crop, shift=0):
 
 
 # t = media_start + shot length + 0.4 (transition overlap); x chosen from contact sheets (face / hands / ice cream centred)
-video('ouch1', 'pixabay-129427.mp4', 3.8, '608:1080:790:0')              # fingers on both temples, face Y ~750
-video('why', 'pixabay-307248.mp4', 3.0, '810:1440:875:0')                # vanilla scoops + chocolate pour
-video('belief', 'pixabay-149479.mp4', 4.7, "608:1080:'min(520,300+(t-3.0)*150)':0")   # woman licks the bar, drifts right
-video('forehead', 'pixabay-345611.mp4', 6.3, '1215:2160:1762:0', 360)    # hands over face; forehead ~Y 620
-video('rush1', 'pixabay-334213.mp4', 4.7, "810:1440:'min(1460,max(790,790+(t-3.0)*520))':0")  # boy spoons it in, pan with him
-video('trick', 'pixabay-331934.mp4', 2.6, '608:1080:1136:0')             # scoop in pink ice cream
+video('why', 'pixabay-307248.mp4', 3.0, '810:1440:875:0')                # vanilla scoops + chocolate pour (centre)
+video('belief', 'pixabay-149479.mp4', 4.7, "608:1080:'min(520,300+(t-3.0)*150)':0")   # woman licks the bar; crop drifts right with her
+video('forehead', 'pixabay-345611.mp4', 7.4, '1215:2160:1762:0', 360)    # hands over face; forehead ~Y 620
+video('rush1', 'pixabay-334213.mp4', 6.3, "810:1440:'min(1460,max(790,790+(t-3.0)*520))':0")  # boy spoons it in, crop pans right with him
 video('warm', 'pixabay-204420.mp4', 4.0, '1215:2160:770:0')              # man laughing (relief)
-video('warn', 'pixabay-44637.mp4', 5.4, '810:1440:795:0', 360)           # hands on face; forehead ~Y 620
-video('doctor', 'pixabay-49808.mp4', 2.1, '608:1080:640:0', 200)         # doctor + stethoscope, child seen from behind
+video('doctor', 'pixabay-49808.mp4', 3.8, "608:1080:'min(1010,700+(t-0.5)*110)':0", 200)   # doctor + stethoscope, pans right with her
 
 
 def card(name, src, box, top, width=960, blur_dark=0.55):
@@ -91,6 +88,4 @@ def card(name, src, box, top, width=960, blur_dark=0.55):
 card('hook', 'pixabay-481425.jpg', (190, 110, 1090, 960), 720, width=860)
 # culprit: the cone at the mouth (tongue on the ice cream) = where the cold hits
 card('culprit', 'pixabay-2588541.jpg', (470, 0, 1280, 852), 360)
-# rush2: young man biting a cone (portrait still 853x1280; card 1.29x, not full screen)
-card('rush2', 'pixabay-7519000.jpg', (170, 380, 853, 1280), 380, width=880)
 print('ok', sorted(p.name for p in OUT.iterdir()))

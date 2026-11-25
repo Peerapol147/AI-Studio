@@ -136,7 +136,7 @@ capt = [find(c) for c in CAPS_MATCH]
 HOOK_END = next((s['start'] for s in SHOTS if s['beat'] != 'hook'), DUR)
 hook_plate = PLATES[SHOTS[0]['id']]
 hook_ms = SHOTS[0].get('media_start') or 0.0
-XF = 0.12
+XF = 0.32   # this episode: soft eased whip 0.3 s (user 2026-11-25 'ไหลลื่น'), video must outlive its cut
 
 
 def is_video(p):
