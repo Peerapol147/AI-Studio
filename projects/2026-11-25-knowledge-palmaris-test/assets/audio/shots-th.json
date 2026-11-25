@@ -1,0 +1,142 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 31.195,
+ "inputs": {
+  "shots.json": "f383b0ebacb730252c4be5f4e9dc7f2eea9e3aae3c3a3167115ef73c4114f6c6",
+  "footage.json": null,
+  "assets/audio/words.json": "724d810a3752c5e0d8ddc4f399f11de9f282d65bbe46144c89bf2e9e1cd2c249"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ข้อมือ",
+   "word_at": 0.12,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.52,
+   "dur": 1.52
+  },
+  {
+   "id": "pinch",
+   "src": null,
+   "cue": "ลอง",
+   "word_at": 1.6,
+   "start": 1.52,
+   "beat": "setup",
+   "end": 4.26,
+   "dur": 2.74
+  },
+  {
+   "id": "flex",
+   "src": null,
+   "cue": "งอ",
+   "word_at": 4.34,
+   "start": 4.26,
+   "beat": "setup",
+   "end": 5.9,
+   "dur": 1.64
+  },
+  {
+   "id": "count",
+   "src": null,
+   "cue": "สาม",
+   "word_at": 5.98,
+   "start": 5.9,
+   "beat": "setup",
+   "end": 8.26,
+   "dur": 2.36
+  },
+  {
+   "id": "see",
+   "src": null,
+   "cue": "เห็น",
+   "word_at": 8.34,
+   "start": 8.26,
+   "beat": "reveal",
+   "end": 10.34,
+   "dur": 2.08
+  },
+  {
+   "id": "muscle",
+   "src": null,
+   "cue": "มันคือ",
+   "word_at": 10.42,
+   "start": 10.34,
+   "beat": "explain",
+   "end": 14.32,
+   "dur": 3.98
+  },
+  {
+   "id": "none",
+   "src": null,
+   "cue": "บางคน",
+   "word_at": 14.4,
+   "start": 14.32,
+   "beat": "explain",
+   "end": 16.08,
+   "dur": 1.76
+  },
+  {
+   "id": "grip",
+   "src": null,
+   "cue": "จับ",
+   "word_at": 16.16,
+   "start": 16.08,
+   "beat": "explain",
+   "end": 18.42,
+   "dur": 2.34
+  },
+  {
+   "id": "one",
+   "src": null,
+   "cue": "แถม",
+   "word_at": 18.5,
+   "start": 18.42,
+   "beat": "twist",
+   "end": 20.58,
+   "dur": 2.16
+  },
+  {
+   "id": "graft",
+   "src": null,
+   "cue": "ส่วน",
+   "word_at": 20.66,
+   "start": 20.58,
+   "beat": "share",
+   "end": 24.82,
+   "dur": 4.24
+  },
+  {
+   "id": "ball",
+   "src": null,
+   "cue": "รวมถึง",
+   "word_at": 24.9,
+   "start": 24.82,
+   "beat": "share",
+   "end": 27.46,
+   "dur": 2.64
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "มีกี่",
+   "word_at": 27.54,
+   "start": 27.46,
+   "beat": "cta",
+   "end": 30.3,
+   "dur": 2.84
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "พิมพ์",
+   "word_at": 30.38,
+   "start": 30.3,
+   "beat": "loop",
+   "end": 31.195,
+   "dur": 0.895
+  }
+ ]
+}
