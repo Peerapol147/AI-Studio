@@ -107,8 +107,8 @@ RIGIDS.forEach(id=>{const k=fr(id); if(!k||k.media) return; const kb=$('kb-'+id)
 /* cover v2 (cover = card, after the channel's best covers): the hand sits UPRIGHT (no roll) palm-side in its own light
    card under the title card, whole hand inside the card, wrist + raised palmaris ridge above the caption band; accent
    ring on the ridge + "อะไหล่" tag with an arrow (like the knee-crack cover). Captions of the hook/loop move below the card. */
-const HCARD={x:70,y:560,w:940,h:840};
-const HOOKCAM={X:440,Y:1226,S:0.62,yaw:-4,pitch:2,roll:0};
+const HCARD={x:60,y:721,w:960,h:685};
+const HOOKCAM={X:581,Y:1212,S:0.5,yaw:-4,pitch:2,roll:0};
 function hookRig(id,phase){const k=fr(id); if(!k||k.media) return; const kb=$('kb-'+id);
   kb.insertBefore(div(kb,'rigbg','',''),kb.firstChild);
   const card=div(k.s,'hcard','',`left:${HCARD.x}px;top:${HCARD.y}px;width:${HCARD.w}px;height:${HCARD.h}px`); k.s.insertBefore(card,k.svg);
@@ -118,24 +118,24 @@ function hookRig(id,phase){const k=fr(id); if(!k||k.media) return; const kb=$('k
   const fd=el(k.svg,'defs',{}), fb=el(fd,'filter',{id:'hkb'+id,x:'-100%',y:'-20%',width:'300%',height:'140%'}); el(fb,'feGaussianBlur',{stdDeviation:5});
   const rSh=el(k.svg,'path',{},`fill:none;stroke:var(--ink);stroke-linecap:round;stroke-width:20;opacity:.32;filter:url(#hkb${id})`),
     rHi=el(k.svg,'path',{},`fill:none;stroke:#fff6ea;stroke-linecap:round;stroke-width:14;opacity:.9;filter:url(#hkb${id})`);
-  const O=ovalEl(k.svg,62,96,15);
-  const AR=lineEl(k.svg,'M0,0',20), head=lineEl(k.svg,'M0,0',20);
-  const L=label(k.s,'อะไหล่','acc hk',0,0,124);
+  const O=ovalEl(k.svg,56,84,13);
+  const AR=lineEl(k.svg,'M0,0',12), head=lineEl(k.svg,'M0,0',12);
+  const L=label(k.s,'เส้นนี้','acc hk',0,0,36);
   UP.push(t=>{kb.style.transform='none';
     const tt=phase(t), c1=1-Math.cos(tt*Math.PI*2/1.6), c2=1-Math.cos(tt*Math.PI*2/3.2);   // 0 at tt = 0
     const hit=tt>0?bump(tt,0.78,4):0;                       // "อะไหล่สำรอง" 0.74: ring + tag kick once (hook only)
     const P={o:1,op:1,press:0,wig:[0,0,0,0],spread:0,flex:40+1.5*c1,tendon:1,pulse:0,ring:0};
     const C={...HOOKCAM,Y:HOOKCAM.Y-3*c1,S:HOOKCAM.S*(1+0.01*c2),roll:0.8*Math.sin(tt*Math.PI*2/3.2)*Math.sin(tt*Math.PI*2/3.2)};
     const r=R.draw({...P,...C}); const w=r.wrist, d=r.tendon;
-    const ox=lerp(w.x,d.x,0.62), oy=lerp(w.y,d.y,0.62), rx=(u,dx)=>`${f1(lerp(w.x,d.x,u)+dx)},${f1(lerp(w.y,d.y,u))}`;
+    const ox=lerp(w.x,d.x,0.5), oy=lerp(w.y,d.y,0.5), rx=(u,dx)=>`${f1(lerp(w.x,d.x,u)+dx)},${f1(lerp(w.y,d.y,u))}`;
     rSh.setAttribute('d',`M${rx(0.05,9)} Q${rx(0.6,13)} ${rx(1.6,9)}`); rHi.setAttribute('d',`M${rx(0.05,-2)} Q${rx(0.6,1)} ${rx(1.6,-2)}`);
     O.set(ox,oy,1,1); O.g.setAttribute('transform',`translate(${f1(ox)} ${f1(oy)}) scale(${f3(1+0.04*c1+0.16*hit)})`);
-    // tag top right of the hand, arrow curves down-left onto the ring's right edge
-    const lx=790, ly=930+4*c1-10*hit; L.style.opacity='1'; L.style.left=lx+'px'; L.style.top=ly+'px';
-    L.style.transform=`translate(-50%,-50%) rotate(-5deg) scale(${f3(1+0.08*hit)})`;
-    const ax=lx-50, ay=ly+88, ex=ox+74, ey=oy-6;
-    AR.d(`M${f1(ax)},${f1(ay)} C${f1(ax-10)},${f1(ay+90)} ${f1(ex+110)},${f1(ey-10)} ${f1(ex)},${f1(ey)}`); AR.set(1);
-    head.d(`M${f1(ex+38)},${f1(ey-30)} L${f1(ex)},${f1(ey)} L${f1(ex+40)},${f1(ey+26)}`); head.set(1);});}
+    // small "เส้นนี้" pill right of the ring (<= 1/3 of the title size), short arrow onto the ring's right edge
+    const lx=ox+230, ly=oy-60+3*c1-6*hit; L.style.opacity='1'; L.style.left=f1(lx)+'px'; L.style.top=f1(ly)+'px';
+    L.style.transform=`translate(-50%,-50%) rotate(-4deg) scale(${f3(1+0.08*hit)})`;
+    const ax=lx-80, ay=ly+20, ex=ox+72, ey=oy-4;
+    AR.d(`M${f1(ax)},${f1(ay)} Q${f1(ex+40)},${f1(ay+6)} ${f1(ex)},${f1(ey)}`); AR.set(1);
+    head.d(`M${f1(ex+34)},${f1(ey-24)} L${f1(ex)},${f1(ey)} L${f1(ex+38)},${f1(ey+20)}`); head.set(1);});}
 hookRig('hook',t=>t);
 hookRig('loop',t=>t-window.__DUR);
 
@@ -287,7 +287,7 @@ const HARD=[['count',5.84],['count2',6.88],['count1',7.84]];
 const CNT=[5.92,6.96,7.92], CNTPOS=[[660,190],[30,620],[640,300]];   // the disc changes place with each framing
 window.EPI=function(t,h){ if(h) window.__DUR=h.DUR; const DD=window.__DUR||99;
   bed.style.opacity=f3(clamp((t-0.08)/0.06)*(1-clamp((t-(DD-0.2))/0.1)));   // frame 0 / last frame = clean cover
-  bed.style.top=(t<1.86||t>=26.7)?'1356px':'';                              // hook / loop captions sit below the hand card
+  bed.style.top=(t<1.86||t>=26.7)?'1400px':'';                              // hook / loop captions sit below the hand card
   const bp=DD/Math.max(1,Math.round(DD/1.6));                              // whole cycles in the clip: last frame = frame 0
   badge.style.transform=`scale(${f3(1+0.015*(1-Math.cos(t*Math.PI*2/bp)))})`;
   const ci=clamp((t-5.84)/0.12)*(1-clamp((t-8.8)/0.06));

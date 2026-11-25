@@ -1,11 +1,14 @@
 /* palmaris test: hand / wrist graphics (colours only from the look's variables) */
 #root{--skin:var(--accent2);--skin2:color-mix(in srgb,var(--accent2) 80%,var(--bg2));--crease:color-mix(in srgb,var(--accent2) 52%,var(--bg2))}
-#root #title{top:262px}
+#root #title{top:256px}
+/* cover v3: title sized so the accent bar keeps wide side margins in the card; group spans Y ~220-1405 */
+#root #title .tl:nth-child(1){font-size:110px!important}
+#root #title .tl:nth-child(2){font-size:96px!important}
 .gsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
 .lab{position:absolute;white-space:nowrap;font-weight:700;line-height:1;transform-origin:50% 50%;opacity:0}
 .lab.acc{color:var(--ink);background:var(--accent);padding:16px 30px 20px;border-radius:999px;box-shadow:0 0 0 6px var(--ink)}
 .lab.neu{color:var(--paneltext);background:var(--panel);padding:16px 30px 20px;border-radius:999px;box-shadow:0 0 0 5px var(--accent2)}
-#badge{position:absolute;left:70px;top:226px;z-index:56;display:flex;align-items:center;gap:12px;font-weight:700;font-size:46px;line-height:1;
+#badge{position:absolute;left:70px;top:220px;z-index:56;display:flex;align-items:center;gap:12px;font-weight:700;font-size:46px;line-height:1;
   color:var(--ink);background:var(--accent);padding:12px 26px 16px 20px;border-radius:999px;box-shadow:0 0 0 5px var(--ink),0 10px 24px rgba(0,0,0,.45);transform-origin:0 50%}
 #badge svg{width:44px;height:44px;color:var(--ink)}
 #epi{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:30;pointer-events:none}
@@ -54,6 +57,7 @@
 .hcard{position:absolute;border-radius:40px;z-index:0;
   background:radial-gradient(ellipse 75% 85% at 40% 45%,color-mix(in srgb,var(--bg2) 62%,#fff) 0%,color-mix(in srgb,var(--bg2) 88%,#fff) 100%);
   box-shadow:0 0 0 7px #fff6ea,0 0 0 15px var(--ink),0 0 46px 10px color-mix(in srgb,var(--accent2) 45%,transparent),0 26px 60px rgba(0,0,0,.5)}
-.lab.hk{z-index:3;box-shadow:0 0 0 8px var(--ink),0 12px 28px rgba(0,0,0,.35)}
+.lab.hk{z-index:3;padding:18px 20px 12px;line-height:1.1;box-shadow:0 0 0 5px var(--ink),0 8px 18px rgba(0,0,0,.3)}
 /* hook / loop captions sit below the hand card (still above the bottom 20 %) */
-#root #c0,#root #c1,#root #c2,#root #c36,#root #c37{top:1470px}
+#root #c0,#root #c1,#root #c2,#root #c36,#root #c37{top:1486px}
+#root #c0 span,#root #c1 span,#root #c2 span,#root #c36 span,#root #c37 span{font-size:72px!important}
