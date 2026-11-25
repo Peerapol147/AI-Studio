@@ -60,6 +60,16 @@ def test_late_reveal_short_explain_slow_hook_warn(tmp_path):
     assert 'not faster than the rest' in r.stdout
 
 
+def test_cut_pace_is_info_not_warn(tmp_path):
+    # style.md 4 (user 2026-11-25): cut pace depends on the clip -> never WARN/FAIL
+    beats = [(0, 'hook'), (1, 'hook'), (2, 'setup'), (4, 'explain'), (5, 'explain'), (6, 'explain'), (7, 'explain'),
+             (8, 'explain'), (10, 'reveal'), (12, 'twist'), (14, 'share'), (16, 'cta'), (18, 'loop')]
+    r = run(tmp_path, beats)
+    assert r.returncode == 0, r.stdout
+    assert 'INFO explain shot s4 is 1.00 s' in r.stdout
+    assert not any(l.startswith('WARN') and ('explain shot' in l or 'not faster' in l) for l in r.stdout.splitlines())
+
+
 def test_loop_source_differs_warns(tmp_path):
     r = run(tmp_path, src_loop='other.mp4')
     assert r.returncode == 0 and 'check the loop by eye' in r.stdout

@@ -21,10 +21,11 @@ WARN (exit 0, reviewer decides):
   - voice starts after 0.3 s; reveal starts outside 50-60 % of the clip; clip shorter than 20 s
   - legend: the first twist starts before 70 % of the clip (story 70 / twist 30)
   - the "share" shot comes before the twist
-  - an "explain" shot shorter than 2 s or longer than 3 s (explain holds the picture 2-3 s)
-  - hook+twist shots are not cut faster (shorter average) than the other shots
   - cta longer than 4 s; last shot plays a different source than the first (check the loop by eye; skipped for
     brainrot-v3 projects, whose loop shot always replays the hook plate)
+INFO (information only, never a warning: style.md 4, user 2026-11-25 "cut pace depends on the clip"):
+  - an "explain" shot shorter than 2 s or longer than 3 s
+  - hook+twist shots are not shorter on average than the other shots
 Printed for the reviewer: % position of reveal/twist/share/cta and average shot length per beat.
 Numbers come from docs/editing-research-2026-11-22.md and docs/story-craft.md (70/30) on branch claude/content-strategy,
 channels/knowledge/style.md, and the planning room's length rule (2026-11-23: 20-40 s default, the two hits were 20 and
@@ -151,7 +152,7 @@ def main(proj, lang='th'):
     infos = []
     for s in shots:
         if s.get('beat') == 'explain' and not HOLD[0] <= s['dur'] <= HOLD[1]:
-            infos.append(f'explain shot {s["id"]} is {s["dur"]:.2f} s (hold the picture {HOLD[0]:.0f}-{HOLD[1]:.0f} s)')
+            infos.append(f'explain shot {s["id"]} is {s["dur"]:.2f} s (outside {HOLD[0]:.0f}-{HOLD[1]:.0f} s; fine if the clip is cut fast on purpose)')
     by = {}
     for s in shots:
         by.setdefault(s.get('beat'), []).append(s['dur'])
@@ -159,7 +160,7 @@ def main(proj, lang='th'):
     rest = [d for b, ds in by.items() if b not in ('hook', 'twist', 'loop', 'cta', None) for d in ds]
     if fast and rest and sum(fast) / len(fast) >= sum(rest) / len(rest):
         infos.append(f'hook+twist shots avg {sum(fast) / len(fast):.2f} s are not faster than the rest '
-                     f'({sum(rest) / len(rest):.2f} s): cut fast only in the hook and the twist')
+                     f'({sum(rest) / len(rest):.2f} s)')
     v3 = (proj / 'video' / 'episode.json').exists()
     if shots and not v3 and shots[0].get('src') != shots[-1].get('src'):
         warns.append('last shot plays another source than the first: play end -> start and check the loop by eye')
