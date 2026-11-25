@@ -27,5 +27,5 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - **ตัดต่อ v3 (ตั้งแต่ 2026-11-22, ชนะข้ออื่นในไฟล์นี้เมื่อขัดกัน):** short ช่องความรู้เริ่มจาก `templates/brainrot-v3/` (อ่าน `TEMPLATE.md` ในนั้น และ `docs/editing-v3.md`)
   หน้าตาทั้งหมด (สี ฟอนต์ สไตล์ซับ โครงเปิด ทรานซิชัน) มาจาก `<project>/look.json` ห้ามเปลี่ยนเอง ถ้าคิดว่าไม่เข้ากับเรื่อง แจ้งผู้กำกับให้แก้ look.json แล้วรัน `tools/look.py check`
   กราฟิกเฉพาะตอนใช้ตัวแปรสี `var(--accent)` `var(--accent2)` `var(--panel)` `var(--ink)` ห้ามฝังสีของตอนเก่า; เกรด footage ตาม `grade` ของ palette
-  จังหวะ: ตัดเร็วเฉพาะช็อต beat hook/twist; ช่วง explain ค้างภาพ 2-3 วิ (แม่แบบทำ push ช้าให้); ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
+  จังหวะ: แล้วแต่คลิป (style.md ข้อ 4, ผู้ใช้ 2026-11-25) เวลาช็อตมาจาก shots.json ของผู้กำกับ; ทุกช็อตต้องมีของขยับ ห้ามค้างนิ่ง >0.5 วิ; ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
   ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = เฟรม 0 (`npx hyperframes snapshot --at 0`)
