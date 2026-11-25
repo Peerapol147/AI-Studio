@@ -1,0 +1,158 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 28.314,
+ "inputs": {
+  "shots.json": "491f83886af91ec1df9c965c50075e5efb3467327ebecbb4db56d6b9a87b7e81",
+  "footage.json": "61ba20aa6666cd15e04df0b9093a8d82975ef1ebb0474c9297c2b5c63b2e2c8f",
+  "assets/audio/words.json": "3fa0ba75030dab8f76ef21b92424e4e588d26b846998b6d2a628e4f68a8e8296"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ร่างกาย",
+   "word_at": 0.14,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.78,
+   "dur": 1.78
+  },
+  {
+   "id": "pinch",
+   "src": null,
+   "cue": "ลองเช็ค",
+   "word_at": 1.86,
+   "start": 1.78,
+   "beat": "setup",
+   "end": 4.38,
+   "dur": 2.6
+  },
+  {
+   "id": "flex",
+   "src": null,
+   "cue": "งอ",
+   "word_at": 4.46,
+   "start": 4.38,
+   "beat": "setup",
+   "end": 5.84,
+   "dur": 1.46
+  },
+  {
+   "id": "count",
+   "src": null,
+   "cue": "สาม",
+   "word_at": 5.92,
+   "start": 5.84,
+   "beat": "setup",
+   "end": 8.86,
+   "dur": 3.02
+  },
+  {
+   "id": "see",
+   "src": null,
+   "cue": "เห็น",
+   "word_at": 8.94,
+   "start": 8.86,
+   "beat": "reveal",
+   "end": 10.48,
+   "dur": 1.62
+  },
+  {
+   "id": "spare",
+   "src": null,
+   "cue": "นี่แหละ",
+   "word_at": 10.56,
+   "start": 10.48,
+   "beat": "reveal",
+   "end": 11.48,
+   "dur": 1.0
+  },
+  {
+   "id": "muscle",
+   "src": "assets/footage/pixabay-177206.mp4",
+   "cue": "มันคือ",
+   "word_at": 11.56,
+   "start": 11.48,
+   "beat": "explain",
+   "end": 13.66,
+   "dur": 2.18,
+   "media_start": 0.92
+  },
+  {
+   "id": "graft",
+   "src": "assets/footage/pixabay-238889.mp4",
+   "cue": "หมอเลย",
+   "word_at": 13.74,
+   "start": 13.66,
+   "beat": "explain",
+   "end": 15.9,
+   "dur": 2.24,
+   "media_start": 1.92
+  },
+  {
+   "id": "none",
+   "src": "assets/footage/pixabay-32185.mp4",
+   "cue": "แต่บางคน",
+   "word_at": 15.98,
+   "start": 15.9,
+   "beat": "twist",
+   "end": 17.62,
+   "dur": 1.72,
+   "media_start": 3.92
+  },
+  {
+   "id": "one",
+   "src": "assets/footage/pixabay-32187.mp4",
+   "cue": "มีแค่",
+   "word_at": 17.7,
+   "start": 17.62,
+   "beat": "twist",
+   "end": 19.1,
+   "dur": 1.48,
+   "media_start": 5.92
+  },
+  {
+   "id": "grip",
+   "src": "assets/footage/pixabay-9830.mp4",
+   "cue": "จับ",
+   "word_at": 19.18,
+   "start": 19.1,
+   "beat": "twist",
+   "end": 21.24,
+   "dur": 2.14,
+   "media_start": 14.32
+  },
+  {
+   "id": "ball",
+   "src": "assets/footage/pixabay-7295619.jpg",
+   "cue": "นักเบส",
+   "word_at": 21.32,
+   "start": 21.24,
+   "beat": "share",
+   "end": 24.66,
+   "dur": 3.42,
+   "media_start": 0.0
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "มีกี่",
+   "word_at": 24.74,
+   "start": 24.66,
+   "beat": "cta",
+   "end": 27.42,
+   "dur": 2.76
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "พิมพ์",
+   "word_at": 27.5,
+   "start": 27.42,
+   "beat": "loop",
+   "end": 28.314,
+   "dur": 0.894
+  }
+ ]
+}
