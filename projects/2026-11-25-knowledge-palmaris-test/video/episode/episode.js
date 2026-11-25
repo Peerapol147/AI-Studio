@@ -146,9 +146,9 @@ const UP=[];
 // finger (period 0.8 s), ring + glow breathe (1.6 s); the loop uses t-DUR so its last frame = frame 0.
 const HOOKCAM=[540,RING.y,540,1040,0.86];
 function hookLike(id,phase){const k=slot(id); if(!k) return; const A=Hand(k.svg);
-  UP.push(t=>{const tt=phase(t), b=0.5+0.5*Math.cos(tt*Math.PI*2/1.6), tap=0.5-0.5*Math.cos(tt*Math.PI*2/0.8);
+  UP.push(t=>{const tt=phase(t), b=0.5+0.5*Math.cos(tt*Math.PI*2/1.6), tap=0.5-0.5*Math.cos(tt*Math.PI*2/0.8);   // thumb lifts off and taps back
     cam(A.g,...HOOKCAM, 1.2*Math.sin(tt*Math.PI*2/1.6));
-    A.update({pinch:1-0.16*tap,flex:0.55,pop:1,hl:1,ring:1,tint:1,glow:0.55+0.45*b,ringPulse:b});});}
+    A.update({pinch:1-0.3*tap,flex:0.55,pop:1,hl:1,ring:1,tint:1,glow:0.55+0.45*b,ringPulse:b});});}
 hookLike('hook',t=>t);
 hookLike('loop',t=>t-window.__DUR);
 
@@ -156,10 +156,10 @@ hookLike('loop',t=>t-window.__DUR);
 // (one spring, settles on "นิ้วก้อย" 3.5-3.9); tips ringed as they are named; contact spark; tint marks the pair
 (function(){const k=slot('pinch'); if(!k) return; const A=Hand(k.svg);
   const Lt=label(k.s,'นิ้วโป้ง','acc',230,560,54), Lp=label(k.s,'นิ้วก้อย','acc',870,470,54);
-  UP.push(t=>{const ent=sp(t,1.52,9,0.7), p=sp(t,2.55,5.2,0.72), wig=Math.sin((t-1.52)*11)*(1-clamp((t-2.4)/0.3))*clamp((t-1.6)/0.2);
+  UP.push(t=>{const ent=sp(t,1.52,9,0.7), p=sp(t,2.55,5.2,0.72), wig=Math.sin((t-1.52)*12)*(1-clamp((t-2.45)/0.15))*clamp((t-1.6)/0.15);
     const z=eio((t-3.6)/0.66);
     cam(A.g,560,800,540,lerp(1000,640,ent)+lerp(0,-20,z),lerp(1.22,1.3,z),lerp(-10,0,ent)+0.8*Math.sin(t*3));
-    A.update({pinch:p,flex:0,pop:0.2,spread:[-5*wig,-2*wig,2*wig,6*wig],tint:clamp((p-0.5)*2),
+    A.update({pinch:p,flex:0,pop:0.2,spread:[-11*wig,-4*wig,5*wig,13*wig],tint:clamp((p-0.5)*2),
       spark:t>=3.62?clamp((t-3.62)/0.3)*(1-clamp((t-3.92)/0.18)):0});
     popIn(Lt,t,3.0,1,4.1); popIn(Lp,t,3.5,1,4.1);});})();
 // flex 4.26-5.9: "งอ" 4.34 the wrist bends toward the viewer (hand foreshortens), arrow shows the bend, the tendon
@@ -169,7 +169,7 @@ hookLike('loop',t=>t-window.__DUR);
   const aI=el(arr,'path',{d:aPath,pathLength:1},INK+';stroke-width:34;stroke-dasharray:1 1'), aA=el(arr,'path',{d:aPath,pathLength:1},ACC+';stroke-width:18;stroke-dasharray:1 1');
   const head=el(arr,'path',{d:'M836,900 L884,930 L900,872'},ACC+';stroke-width:18'); const headI=el(arr,'path',{d:'M836,900 L884,930 L900,872'},INK+';stroke-width:34'); arr.insertBefore(headI,head);
   const L=label(k.s,'งอเข้าหาตัว','acc',640,1010,52);
-  UP.push(t=>{const f=sp(t,4.36,8,0.72)+0.12*Math.sin(clamp((t-4.9)/0.45)*Math.PI), z=eio((t-4.3)/1.2);
+  UP.push(t=>{const f=sp(t,4.36,8,0.72)+0.28*Math.sin(clamp((t-4.9)/0.5)*Math.PI)+0.12*Math.sin(clamp((t-5.4)/0.5)*Math.PI), z=eio((t-4.3)/1.6);
     cam(A.g,lerp(560,545,z),lerp(800,1000,z),540,lerp(620,780,z),lerp(1.3,1.0,z),0.6*Math.sin(t*3.2));
     A.update({pinch:1,flex:f,pop:clamp((t-4.5)/0.9),tint:1,hl:0});
     const u=eo((t-4.36)/0.45); [aI,aA].forEach(e=>e.style.strokeDashoffset=f3(1-u)); arr.style.opacity=f3((u>0?1:0)*(1-clamp((t-5.6)/0.25)));
@@ -179,14 +179,14 @@ hookLike('loop',t=>t-window.__DUR);
 (function(){const k=slot('count'); if(!k) return; const A=Hand(k.svg);
   UP.push(t=>{const beat=[5.98,6.84,7.62].reduce((m,a)=>Math.max(m,bump(t,a,5)),0), u=eio((t-5.9)/2.36);
     const tr=1.1*Math.sin(t*17)+0.6*Math.sin(t*23.3), br=Math.sin(t*2.6);
-    cam(A.g,545,1060,540+3*Math.sin(t*13),lerp(1000,1030,u)+5*br,lerp(0.92,1.0,u)+0.035*beat,tr*0.5+1.5*br);
+    cam(A.g,545,1060,540+4*Math.sin(t*13),lerp(1000,1040,u)+9*br,lerp(0.92,1.04,u)+0.06*beat+0.015*br,tr*0.6+2.2*br);
     A.update({pinch:1-0.03*Math.abs(Math.sin(t*9)),flex:1+0.05*beat,pop:0.85+0.15*beat,tint:1,hl:0});});})();
 // see 8.26-10.34: push into the wrist, the raised line lights up on "นูน" 8.8, ring draws on "ข้อมือ" 9.24
 (function(){const k=slot('see'); if(!k) return; const A=Hand(k.svg);
   const L=label(k.s,'เส้นนี้!','acc',800,700,64);
-  UP.push(t=>{const z=eio((t-8.26)/1.0); cam(A.g,540,lerp(1060,1180,z),540,lerp(1030,860,z),lerp(1.0,1.85,z),0.8*Math.sin(t*2.5));
+  UP.push(t=>{const z=eio((t-8.26)/1.0), z2=eio((t-9.3)/1.04); cam(A.g,540,lerp(1060,1180,z),540,lerp(1030,860,z)-30*z2,lerp(1.0,1.85,z)+0.2*z2,0.8*Math.sin(t*2.5)-2*z2);
     const h=clamp(sp(t,8.8,14,0.7)); A.update({pinch:1,flex:1,pop:1,hl:h,draw:h,tint:0.6,glow:0.6+0.4*Math.sin(t*6),ring:eo((t-9.24)/0.35),ringPulse:0.5+0.5*Math.sin(t*6)});
-    popIn(L,t,8.86);});})();
+    popIn(L,t,8.86); if(t>9.3) L.style.transform+=` translateY(${f1(8*Math.sin(t*7))}px)`;});})();
 
 // muscle 10.34-12.44 (x-ray footage): scan line sweeps the x-ray; "เส้นเอ็น" 10.66 the tendon draws from the wrist down
 // the forearm; "กล้ามเนื้อ" 11.24 the small muscle belly fills in; "เล็กๆ" 11.56 squeezes
@@ -242,9 +242,9 @@ const SPARE={y:560,x0:330,x1:750};
     // tendon ends on screen (local 1092..1430 through the same camera)
     const a0=P(X+(540-fx)*s,Y+(1092-fy)*s), b0=P(X+(535-fx)*s,Y+(1430-fy)*s), lift=Math.sin(Math.PI*u)*140;
     const a=P(lerp(a0.x,SPARE.x1,u)+lift*0.4,lerp(a0.y,SPARE.y,u)-lift), b=P(lerp(b0.x,SPARE.x0,u)-lift*0.4,lerp(b0.y,SPARE.y,u)-lift);
-    const bob=lifted?8*Math.sin((t-21.6)*5):0;
+    const bob=lifted?18*Math.sin((t-21.6)*4.5):0;
     sd.d(`M${f1(a.x)},${f1(a.y+bob)} L${f1(b.x)},${f1(b.y+bob)}`); sd.set(1,lifted?1:0);
-    popIn(L,t,22.2);});})();
+    popIn(L,t,22.2); if(t>22.5) L.style.transform+=` translateY(${f1(18*Math.sin((t-21.6)*4.5))}px)`;});})();
 // fix 23.12-24.82 (surgeon footage + diagram): a torn ligament; "ซ่อม" 23.2 the spare drops into the gap, stitches,
 // one pulse runs along the joined line, "ต่อแล้ว ✓"
 (function(){const k=over('fix'); if(!k) return; const v=k.svg;
@@ -265,32 +265,32 @@ const SPARE={y:560,x0:330,x1:750};
     sd.d(`M${f1(a.x)},${f1(a.y)} L${f1(b.x)},${f1(b.y)}`); sd.set(1,clamp((t-23.14)/0.08));
     fray.style.opacity=f3(1-clamp((u-0.85)*6)); Lb.style.opacity=f3(1-clamp((t-23.55)/0.15)); Lb.style.transform='translate(-50%,-50%)';
     st.style.opacity=f3(clamp((t-23.62)/0.1));
-    const pu=clamp((t-23.9)/0.55); pulse.style.opacity=pu>0&&pu<1?'1':'0'; pulse.style.strokeDashoffset=f3(1.1-1.2*pu);
+    const pu=t<24.45?clamp((t-23.9)/0.55):clamp((t-24.45)/0.4); pulse.style.opacity=pu>0&&pu<1?'1':'0'; pulse.style.strokeDashoffset=f3(1.1-1.2*pu);
     popIn(Lk,t,24.0);});})();
 // ball 24.82-27.46 (photo card): push toward the elbow, ring pops on "ข้อศอก" 25.22, throw arc on "นักเบสบอล" 25.74
-const ELB=P(266,616), BALLP=P(176,648);
+const ELB=P(280,606), BALLP=P(176,648);
 (function(){const k=over('ball'); if(!k) return; const img=$('kb-ball').querySelector('img');
   const r=ringEl(k.svg,70); const L=label(k.s,'ข้อศอก','acc',470,500,64);
   const lead=lineEl(k.svg,`M${ELB.x+60},${ELB.y-40} L400,520`,8);
   const arc=el(k.svg,'path',{d:`M${BALLP.x},${BALLP.y} C120,380 420,180 900,260`,pathLength:1},ACC+';stroke-width:12;stroke-dasharray:.06 .04;opacity:0');
   const ball=el(k.svg,'circle',{r:26},'fill:var(--accent2);stroke:var(--ink);stroke-width:8;opacity:0');
-  UP.push(t=>{const z=eio((t-25.1)/0.6)*0.22+0.04*eio((t-24.82)/2.6);
+  UP.push(t=>{const z=eio((t-25.1)/0.6)*0.22+0.1*eio((t-25.8)/1.66);
     const tf=`translate(${f1(ELB.x)}px,${f1(ELB.y)}px) scale(${f3(1+z)}) translate(${f1(-ELB.x)}px,${f1(-ELB.y)}px)`;
     img.style.transformOrigin='0 0'; img.style.transform=tf; k.s.style.transformOrigin='0 0'; k.s.style.transform=tf;
-    const ro=clamp(sp(t,25.2,16,0.55)); r.set(ELB.x,ELB.y,ro,0.7+0.3*ro+0.06*Math.sin(t*8));
+    const ro=clamp(sp(t,25.2,16,0.55)); r.set(ELB.x,ELB.y,ro,0.7+0.3*ro+0.1*Math.sin(t*8));
     lead.set(eo((t-25.3)/0.2)); popIn(L,t,25.3);
-    const au=clamp((t-25.74)/0.55); arc.style.opacity=f3(au>0?1-clamp((t-26.9)/0.3):0); arc.style.strokeDashoffset=f3(1-au);
+    const au=clamp((t-25.74)/0.55); arc.style.opacity=f3(au>0?1-clamp((t-26.9)/0.3):0); arc.style.strokeDashoffset=f3(1-au-(t>26.3?(t-26.3)*0.25:0));
     const pt=au>0?arc.getPointAtLength(arc.getTotalLength()*eo(au)):null;
     ball.style.opacity=pt&&t<26.9?'1':'0'; if(pt){ball.setAttribute('cx',f1(pt.x));ball.setAttribute('cy',f1(pt.y));}});})();
 // ask 27.46-30.3: 0 / 1 / 2 cards pop on the words, both hands (test pose) faint behind, swaying
 (function(){const k=slot('ask'); if(!k) return; const A=Hand(k.svg), B=Hand(k.svg);
   const cards=['0','1','2'].map((n,i)=>div(k.s,'numcard',n,`left:${190+i*240}px`));
-  UP.push(t=>{cam(A.g,540,1060,290,1180+10*Math.sin(t*2.2),0.55,-6+3*Math.sin(t*1.7)); cam(B.g,540,1060,790,1180+10*Math.sin(t*2.2+1),0.55,6-3*Math.sin(t*1.7+1),-1);
+  UP.push(t=>{cam(A.g,540,1060,290,1180+22*Math.sin(t*3),0.55,-6+7*Math.sin(t*2.4)); cam(B.g,540,1060,790,1180+22*Math.sin(t*3+1.2),0.55,6-7*Math.sin(t*2.4+1.2),-1);
     A.update({pinch:1,flex:0.5,pop:1,tint:0.5}); B.update({pinch:1,flex:0.5,pop:1,tint:0.5});
     k.svg.style.opacity='.5';
     [28.56,29.16,29.82].forEach((at,i)=>{const c=cards[i], a=sp(t,at-0.04,18,0.55), q=clamp((t-27.6-i*0.08)/0.25);
       c.style.opacity=f3(Math.max(q*0.9,clamp(a*3))); const nxt=[29.16,29.82,99][i]-0.04; c.classList.toggle('on',t>=at-0.04&&(t<nxt||i===2));
-      c.style.transform=`translateY(${f1(t<at-0.04?8*Math.sin(t*4+i):0)}px) scale(${f3(t>=at-0.04?0.85+0.15*a+0.06*Math.exp(-(t-at)*5):0.85+0.1*eo(q))})`;});});})();
+      c.style.transform=`translateY(${f1(t<at-0.04?16*Math.sin(t*5+i*1.3):0)}px) scale(${f3(t>=at-0.04?0.85+0.15*a+0.06*Math.exp(-(t-at)*5):0.85+0.1*eo(q))})`;});});})();
 
 /* ---------- overlay layer (stays when slots become user footage) ---------- */
 const epi=$('epi');

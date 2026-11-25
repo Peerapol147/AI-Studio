@@ -4,7 +4,7 @@
  "duration": 31.195,
  "inputs": {
   "shots.json": "6f9fbbe6b4f3b90090996db0087cb95a8beb7101b3f620e07e6a10d31fc30495",
-  "footage.json": "b03e4202d642ae7f88df94a327b955161165048a76fd08893176a3150175f447",
+  "footage.json": "61ba20aa6666cd15e04df0b9093a8d82975ef1ebb0474c9297c2b5c63b2e2c8f",
   "assets/audio/words.json": "724d810a3752c5e0d8ddc4f399f11de9f282d65bbe46144c89bf2e9e1cd2c249"
  },
  "shots": [
@@ -100,7 +100,7 @@
    "beat": "explain",
    "end": 18.42,
    "dur": 2.34,
-   "media_start": 15.37
+   "media_start": 14.32
   },
   {
    "id": "one",

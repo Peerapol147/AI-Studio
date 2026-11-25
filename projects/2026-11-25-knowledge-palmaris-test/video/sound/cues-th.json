@@ -7,9 +7,9 @@
   "gain": -22
  },
  {
-  "t": 3.9,
+  "t": 3.64,
   "type": "hover_or_small_ui",
-  "desc": "thumb meets little finger (spark)",
+  "desc": "thumb tip meets little-finger tip (spark ring)",
   "sfx": "kit/tick.ogg",
   "gain": -20
  },
@@ -51,14 +51,14 @@
  {
   "t": 10.32,
   "type": "scene_cut",
-  "desc": "slide: reveal -> explain (arm turns sideways)",
+  "desc": "slide: reveal -> explain (x-ray, scan line)",
   "sfx": "kit/whoosh.ogg",
   "gain": -23
  },
  {
-  "t": 13.04,
+  "t": 12.96,
   "type": "appear",
-  "desc": "pill หน้าที่น้อยมาก",
+  "desc": "meter card หน้าที่น้อยมาก pops",
   "sfx": "kit/pop.ogg",
   "gain": -20
  },
@@ -79,7 +79,7 @@
  {
   "t": 19.34,
   "type": "appear",
-  "desc": "ring on the one wrist (ข้างเดียว)",
+  "desc": "pill คนเดียวกัน (ข้างเดียว)",
   "sfx": "pop/kenney-interface-drop-002.ogg",
   "gain": -18
  },
@@ -98,9 +98,9 @@
   "gain": -26
  },
  {
-  "t": 23.5,
+  "t": 23.42,
   "type": "hover_or_small_ui",
-  "desc": "spare lands in the gap + stitches",
+  "desc": "spare lands in the gap",
   "sfx": "kit/click.ogg",
   "gain": -19
  },
@@ -112,9 +112,16 @@
   "gain": -20
  },
  {
-  "t": 25.75,
+  "t": 25.22,
+  "type": "appear",
+  "desc": "elbow ring pops on ข้อศอก",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -16
+ },
+ {
+  "t": 25.74,
   "type": "movement",
-  "desc": "pitch release",
+  "desc": "throw arc + ball fly (นักเบสบอล)",
   "sfx": "kit/whoosh.ogg",
   "gain": -24
  },
