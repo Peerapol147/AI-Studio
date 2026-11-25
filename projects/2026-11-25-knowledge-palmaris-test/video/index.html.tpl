@@ -3,6 +3,7 @@
 <!-- look: %%LOOKNAME%% -->
 <html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
+<link rel="stylesheet" href="episode/episode.css"/>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -70,13 +71,15 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
 %%SCENES%%
 </div>
-<!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
+<!-- EPISODE GRAPHICS: episode/episode.js fills the #g-<shot id> slots and this overlay (overlay stays when a slot becomes user footage) -->
+<div id="epi" data-layout-allow-overflow data-layout-allow-overlap></div>
 <div id="flash"></div>
 </div>
 <div id="tshade"></div>
 <div id="title">
 %%TITLE%%
 </div>
+<div id="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span>ลองทำตาม #1</span></div>
 <div id="caps">
 %%CAPS%%
 </div>
@@ -84,6 +87,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%MUSIC%%
 </div>
 
+<script src="episode/episode.js"></script>
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/
    transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
@@ -146,7 +150,7 @@ function captions(t){
   capEls[i].style.transform=BOX?`translateX(-50%) ${tr}`:tr;
 }
 // EPISODE MOTION: editor adds functions of t for the episode graphics and calls them in render()
-function episode(t){}
+function episode(t){ if(window.EPI) window.EPI(t,{DUR,S,clamp,lerp,eo,eio}); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
