@@ -4,99 +4,108 @@
  "duration": 28.314,
  "inputs": {
   "shots.json": "b771b9775804775880d74d44acdf7a12871140dc55516962105ba3344bc23fb1",
-  "footage.json": "61ba20aa6666cd15e04df0b9093a8d82975ef1ebb0474c9297c2b5c63b2e2c8f",
+  "footage.json": "0eba09263217ad30b68a4a443c0feec0cda65040be795bd65ad15bacbbbd1cd8",
   "assets/audio/words.json": "3fa0ba75030dab8f76ef21b92424e4e588d26b846998b6d2a628e4f68a8e8296"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "ร่างกาย",
    "word_at": 0.14,
    "start": 0.0,
    "beat": "hook",
    "end": 1.78,
-   "dur": 1.78
+   "dur": 1.78,
+   "media_start": 3.06
   },
   {
    "id": "pinch",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "ลองเช็ค",
    "word_at": 1.86,
    "start": 1.78,
    "beat": "setup",
    "end": 2.72,
-   "dur": 0.94
+   "dur": 0.94,
+   "media_start": 0.37
   },
   {
    "id": "tip",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "ประกบ",
    "word_at": 2.8,
    "start": 2.72,
    "beat": "setup",
    "end": 4.24,
-   "dur": 1.52
+   "dur": 1.52,
+   "media_start": 7.92
   },
   {
    "id": "flex",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "แล้วงอ",
    "word_at": 4.32,
    "start": 4.24,
    "beat": "setup",
    "end": 5.84,
-   "dur": 1.6
+   "dur": 1.6,
+   "media_start": 17.42
   },
   {
    "id": "count",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "สาม",
    "word_at": 5.92,
    "start": 5.84,
    "beat": "setup",
    "end": 6.88,
-   "dur": 1.04
+   "dur": 1.04,
+   "media_start": 5.92
   },
   {
    "id": "count2",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "สอง",
    "word_at": 6.96,
    "start": 6.88,
    "beat": "setup",
    "end": 7.84,
-   "dur": 0.96
+   "dur": 0.96,
+   "media_start": 10.92
   },
   {
    "id": "count1",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "หนึ่ง",
    "word_at": 7.92,
    "start": 7.84,
    "beat": "setup",
    "end": 8.86,
-   "dur": 1.02
+   "dur": 1.02,
+   "media_start": 11.92
   },
   {
    "id": "see",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "เห็น",
    "word_at": 8.94,
    "start": 8.86,
    "beat": "reveal",
    "end": 10.48,
-   "dur": 1.62
+   "dur": 1.62,
+   "media_start": 12.92
   },
   {
    "id": "spare",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "นี่แหละ",
    "word_at": 10.56,
    "start": 10.48,
    "beat": "reveal",
    "end": 11.48,
-   "dur": 1.0
+   "dur": 1.0,
+   "media_start": 14.92
   },
   {
    "id": "muscle",
@@ -111,13 +120,14 @@
   },
   {
    "id": "weak",
-   "src": null,
+   "src": "assets/footage/pixabay-177206.mp4",
    "cue": "ที่ร่าง",
    "word_at": 12.3,
    "start": 12.22,
    "beat": "explain",
    "end": 13.66,
-   "dur": 1.44
+   "dur": 1.44,
+   "media_start": 4.42
   },
   {
    "id": "graft",
@@ -176,17 +186,18 @@
   },
   {
    "id": "squeeze",
-   "src": null,
+   "src": "assets/footage/pixabay-375102.mp4",
    "cue": "บีบ",
    "word_at": 19.84,
    "start": 19.76,
    "beat": "twist",
    "end": 21.24,
-   "dur": 1.48
+   "dur": 1.48,
+   "media_start": 0.92
   },
   {
    "id": "ball",
-   "src": "assets/footage/pixabay-7295619.jpg",
+   "src": "assets/footage/pixabay-1479770.jpg",
    "cue": "นักเบส",
    "word_at": 21.32,
    "start": 21.24,
@@ -197,23 +208,25 @@
   },
   {
    "id": "elbow",
-   "src": null,
+   "src": "assets/footage/pixabay-7295619.jpg",
    "cue": "ข้อศอก",
    "word_at": 22.46,
    "start": 22.38,
    "beat": "share",
    "end": 24.66,
-   "dur": 2.28
+   "dur": 2.28,
+   "media_start": 0.0
   },
   {
    "id": "ask",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "มีกี่",
    "word_at": 24.74,
    "start": 24.66,
    "beat": "cta",
    "end": 27.42,
-   "dur": 2.76
+   "dur": 2.76,
+   "media_start": 8.92
   },
   {
    "id": "loop",

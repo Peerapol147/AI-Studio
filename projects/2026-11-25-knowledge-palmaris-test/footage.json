@@ -1,10 +1,22 @@
 {
+ "hook":   {"src": "assets/footage/pixabay-32187.mp4", "action_at": 3.2},
+ "pinch":  {"src": "assets/footage/pixabay-32185.mp4", "action_at": 0.45},
+ "tip":    {"src": "assets/footage/pixabay-32187.mp4", "action_at": 8.0},
+ "flex":   {"src": "assets/footage/pixabay-32185.mp4", "action_at": 17.5},
+ "count":  {"src": "assets/footage/pixabay-32185.mp4", "action_at": 6.0},
+ "count2": {"src": "assets/footage/pixabay-32187.mp4", "action_at": 11.0},
+ "count1": {"src": "assets/footage/pixabay-32185.mp4", "action_at": 12.0},
+ "see":    {"src": "assets/footage/pixabay-32187.mp4", "action_at": 13.0},
+ "spare":  {"src": "assets/footage/pixabay-32187.mp4", "action_at": 15.0},
  "muscle": {"src": "assets/footage/pixabay-177206.mp4", "action_at": 1.0},
- "rare":   {"src": "assets/footage/pixabay-177206.mp4", "action_at": 3.2},
- "none":   {"src": "assets/footage/pixabay-32185.mp4", "action_at": 4.0},
- "grip":   {"src": "assets/footage/pixabay-9830.mp4", "action_at": 14.4},
- "one":    {"src": "assets/footage/pixabay-32187.mp4", "action_at": 6.0},
+ "weak":   {"src": "assets/footage/pixabay-177206.mp4", "action_at": 4.5},
  "graft":  {"src": "assets/footage/pixabay-238889.mp4", "action_at": 2.0},
  "fix":    {"src": "assets/footage/pixabay-378726.mp4", "action_at": 6.0},
- "ball":   {"src": "assets/footage/pixabay-7295619.jpg", "action_at": 0.08}
+ "none":   {"src": "assets/footage/pixabay-32185.mp4", "action_at": 4.0},
+ "one":    {"src": "assets/footage/pixabay-32187.mp4", "action_at": 6.0},
+ "grip":   {"src": "assets/footage/pixabay-9830.mp4", "action_at": 14.4},
+ "squeeze":{"src": "assets/footage/pixabay-375102.mp4", "action_at": 1.0},
+ "ball":   {"src": "assets/footage/pixabay-1479770.jpg", "action_at": 0.08},
+ "elbow":  {"src": "assets/footage/pixabay-7295619.jpg", "action_at": 0.08},
+ "ask":    {"src": "assets/footage/pixabay-32185.mp4", "action_at": 9.0}
 }
