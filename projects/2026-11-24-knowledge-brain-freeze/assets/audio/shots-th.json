@@ -3,14 +3,14 @@
  "lead": 0.08,
  "duration": 30.573,
  "inputs": {
-  "shots.json": "77c3cfca7c23bcac75d74ecc9939fc67fbe570b2377031a6a60487fc6c978ff1",
-  "footage.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "shots.json": "9df8b0d449a9f084d78cd869f97172e87cd3d63802deb788e8e126a46b5f2dca",
+  "footage.json": "1f523a881d0b75ee345f444c0d6deb2494bc661e49d8814d598dbc5d9bff29a6",
   "assets/audio/words.json": "ab4ead223bb4f3c9830e8810153294c2b97b93f7bcb81fbdc2fe9d96e1336d43"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-481425.jpg",
    "cue": "กิน",
    "word_at": 0.08,
    "start": 0.0,
@@ -20,33 +20,36 @@
   },
   {
    "id": "ouch1",
-   "src": null,
+   "src": "assets/footage/pixabay-129427.mp4",
    "cue": "หัว",
    "word_at": 1.16,
    "start": 1.08,
    "beat": "hook",
    "end": 1.94,
-   "dur": 0.86
+   "dur": 0.86,
+   "media_start": 2.5
   },
   {
    "id": "why",
-   "src": null,
+   "src": "assets/footage/pixabay-307248.mp4",
    "cue": "เพราะ",
    "word_at": 2.02,
    "start": 1.94,
    "beat": "hook",
    "end": 3.04,
-   "dur": 1.1
+   "dur": 1.1,
+   "media_start": 1.5
   },
   {
    "id": "belief",
-   "src": null,
+   "src": "assets/footage/pixabay-149479.mp4",
    "cue": "หลายคน",
    "word_at": 3.12,
    "start": 3.04,
    "beat": "setup",
    "end": 4.32,
-   "dur": 1.28
+   "dur": 1.28,
+   "media_start": 3.0
   },
   {
    "id": "run",
@@ -80,7 +83,7 @@
   },
   {
    "id": "culprit",
-   "src": null,
+   "src": "assets/footage/pixabay-2588541.jpg",
    "cue": "ตัวการ",
    "word_at": 9.76,
    "start": 9.68,
@@ -120,27 +123,29 @@
   },
   {
    "id": "forehead",
-   "src": null,
+   "src": "assets/footage/pixabay-345611.mp4",
    "cue": "นึกว่า",
    "word_at": 16.2,
    "start": 16.12,
    "beat": "explain",
    "end": 17.92,
-   "dur": 1.8
+   "dur": 1.8,
+   "media_start": 4.0
   },
   {
    "id": "rush1",
-   "src": null,
+   "src": "assets/footage/pixabay-334213.mp4",
    "cue": "แถม",
    "word_at": 18.0,
    "start": 17.92,
    "beat": "twist",
    "end": 19.16,
-   "dur": 1.24
+   "dur": 1.24,
+   "media_start": 3.0
   },
   {
    "id": "rush2",
-   "src": null,
+   "src": "assets/footage/pixabay-7519000.jpg",
    "cue": "ก็ยิ่ง",
    "word_at": 19.24,
    "start": 19.16,
@@ -150,13 +155,14 @@
   },
   {
    "id": "trick",
-   "src": null,
+   "src": "assets/footage/pixabay-331934.mp4",
    "cue": "ทริค",
    "word_at": 20.88,
    "start": 20.8,
    "beat": "share",
    "end": 22.0,
-   "dur": 1.2
+   "dur": 1.2,
+   "media_start": 1.0
   },
   {
    "id": "tongue",
@@ -170,33 +176,36 @@
   },
   {
    "id": "warm",
-   "src": null,
+   "src": "assets/footage/pixabay-204420.mp4",
    "cue": "ให้มัน",
    "word_at": 23.72,
    "start": 23.64,
    "beat": "share",
    "end": 25.2,
-   "dur": 1.56
+   "dur": 1.56,
+   "media_start": 2.0
   },
   {
    "id": "warn",
-   "src": null,
+   "src": "assets/footage/pixabay-44637.mp4",
    "cue": "ถ้าปวด",
    "word_at": 25.28,
    "start": 25.2,
    "beat": "share",
    "end": 26.88,
-   "dur": 1.68
+   "dur": 1.68,
+   "media_start": 3.3
   },
   {
    "id": "doctor",
-   "src": null,
+   "src": "assets/footage/pixabay-49808.mp4",
    "cue": "หาหมอ",
    "word_at": 26.96,
    "start": 26.88,
    "beat": "share",
    "end": 28.02,
-   "dur": 1.14
+   "dur": 1.14,
+   "media_start": 0.5
   },
   {
    "id": "ask",
