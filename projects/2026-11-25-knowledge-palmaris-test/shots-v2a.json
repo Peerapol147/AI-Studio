@@ -1,0 +1,122 @@
+{
+ "lead": 0.08,
+ "topic": {
+  "th": "อะไหล่"
+ },
+ "experiment": "ซีรีส์ลองทำตาม: เฉลยเร็ว (~30%) ตั้งใจ — pacing WARN จุดเฉลยได้",
+ "shots": [
+  {
+   "id": "hook",
+   "cue": {
+    "th": "ร่างกาย"
+   },
+   "beat": "hook",
+   "want": "ข้อมือจริง/กราฟิก เส้นเอ็นไฮไลต์ + หัวข้อ (USER SLOT A)"
+  },
+  {
+   "id": "pinch",
+   "cue": {
+    "th": "ลองเช็ค"
+   },
+   "beat": "setup",
+   "want": "ประกบนิ้วโป้ง-ก้อย (USER SLOT B)"
+  },
+  {
+   "id": "flex",
+   "cue": {
+    "th": "งอ"
+   },
+   "beat": "setup",
+   "want": "งอข้อมือ (USER SLOT B)"
+  },
+  {
+   "id": "count",
+   "cue": {
+    "th": "สาม"
+   },
+   "beat": "setup",
+   "want": "ท่าค้าง + 3-2-1 (USER SLOT C)"
+  },
+  {
+   "id": "see",
+   "cue": {
+    "th": "เห็น"
+   },
+   "beat": "reveal",
+   "want": "เส้นเอ็นไฮไลต์"
+  },
+  {
+   "id": "spare",
+   "cue": {
+    "th": "นี่แหละ"
+   },
+   "beat": "reveal",
+   "want": "ป้าย 'อะไหล่' เด้งบนเส้นเอ็น"
+  },
+  {
+   "id": "muscle",
+   "cue": {
+    "th": "มันคือ"
+   },
+   "beat": "explain",
+   "want": "เอกซเรย์/มือ 3D + เส้นเอ็น"
+  },
+  {
+   "id": "graft",
+   "cue": {
+    "th": "หมอเลย"
+   },
+   "beat": "explain",
+   "want": "ห้องผ่าตัด + เอ็นลอยไปต่อจุดที่ขาด"
+  },
+  {
+   "id": "none",
+   "cue": {
+    "th": "แต่บางคน"
+   },
+   "beat": "twist",
+   "want": "มือ 2 ข้าง มีเส้น vs ไม่มีเส้น"
+  },
+  {
+   "id": "one",
+   "cue": {
+    "th": "มีแค่"
+   },
+   "beat": "twist",
+   "want": "ข้างเดียว"
+  },
+  {
+   "id": "grip",
+   "cue": {
+    "th": "จับ"
+   },
+   "beat": "twist",
+   "want": "มือหยิบแก้ว ปกติ"
+  },
+  {
+   "id": "ball",
+   "cue": {
+    "th": "นักเบส"
+   },
+   "beat": "share",
+   "want": "นักเบสบอล + วงข้อศอก",
+   "long_ok": true
+  },
+  {
+   "id": "ask",
+   "cue": {
+    "th": "มีกี่"
+   },
+   "beat": "cta",
+   "want": "0 / 1 / 2"
+  },
+  {
+   "id": "loop",
+   "cue": {
+    "th": "พิมพ์"
+   },
+   "beat": "loop",
+   "want": "กลับภาพ hook จบที่เฟรม 0"
+  }
+ ]
+}

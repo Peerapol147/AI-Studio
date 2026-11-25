@@ -3,7 +3,7 @@
  "lead": 0.08,
  "duration": 28.314,
  "inputs": {
-  "shots.json": "491f83886af91ec1df9c965c50075e5efb3467327ebecbb4db56d6b9a87b7e81",
+  "shots.json": "b771b9775804775880d74d44acdf7a12871140dc55516962105ba3344bc23fb1",
   "footage.json": "61ba20aa6666cd15e04df0b9093a8d82975ef1ebb0474c9297c2b5c63b2e2c8f",
   "assets/audio/words.json": "3fa0ba75030dab8f76ef21b92424e4e588d26b846998b6d2a628e4f68a8e8296"
  },
@@ -25,18 +25,28 @@
    "word_at": 1.86,
    "start": 1.78,
    "beat": "setup",
-   "end": 4.38,
-   "dur": 2.6
+   "end": 2.72,
+   "dur": 0.94
+  },
+  {
+   "id": "tip",
+   "src": null,
+   "cue": "ประกบ",
+   "word_at": 2.8,
+   "start": 2.72,
+   "beat": "setup",
+   "end": 4.24,
+   "dur": 1.52
   },
   {
    "id": "flex",
    "src": null,
-   "cue": "งอ",
-   "word_at": 4.46,
-   "start": 4.38,
+   "cue": "แล้วงอ",
+   "word_at": 4.32,
+   "start": 4.24,
    "beat": "setup",
    "end": 5.84,
-   "dur": 1.46
+   "dur": 1.6
   },
   {
    "id": "count",
@@ -45,8 +55,28 @@
    "word_at": 5.92,
    "start": 5.84,
    "beat": "setup",
+   "end": 6.88,
+   "dur": 1.04
+  },
+  {
+   "id": "count2",
+   "src": null,
+   "cue": "สอง",
+   "word_at": 6.96,
+   "start": 6.88,
+   "beat": "setup",
+   "end": 7.84,
+   "dur": 0.96
+  },
+  {
+   "id": "count1",
+   "src": null,
+   "cue": "หนึ่ง",
+   "word_at": 7.92,
+   "start": 7.84,
+   "beat": "setup",
    "end": 8.86,
-   "dur": 3.02
+   "dur": 1.02
   },
   {
    "id": "see",
@@ -75,9 +105,19 @@
    "word_at": 11.56,
    "start": 11.48,
    "beat": "explain",
-   "end": 13.66,
-   "dur": 2.18,
+   "end": 12.22,
+   "dur": 0.74,
    "media_start": 0.92
+  },
+  {
+   "id": "weak",
+   "src": null,
+   "cue": "ที่ร่าง",
+   "word_at": 12.3,
+   "start": 12.22,
+   "beat": "explain",
+   "end": 13.66,
+   "dur": 1.44
   },
   {
    "id": "graft",
@@ -86,9 +126,20 @@
    "word_at": 13.74,
    "start": 13.66,
    "beat": "explain",
-   "end": 15.9,
-   "dur": 2.24,
+   "end": 14.42,
+   "dur": 0.76,
    "media_start": 1.92
+  },
+  {
+   "id": "fix",
+   "src": "assets/footage/pixabay-378726.mp4",
+   "cue": "ซ่อม",
+   "word_at": 14.5,
+   "start": 14.42,
+   "beat": "explain",
+   "end": 15.9,
+   "dur": 1.48,
+   "media_start": 5.92
   },
   {
    "id": "none",
@@ -97,31 +148,41 @@
    "word_at": 15.98,
    "start": 15.9,
    "beat": "twist",
-   "end": 17.62,
-   "dur": 1.72,
+   "end": 17.32,
+   "dur": 1.42,
    "media_start": 3.92
   },
   {
    "id": "one",
    "src": "assets/footage/pixabay-32187.mp4",
-   "cue": "มีแค่",
-   "word_at": 17.7,
-   "start": 17.62,
+   "cue": "บางคนมีแค่",
+   "word_at": 17.4,
+   "start": 17.32,
    "beat": "twist",
-   "end": 19.1,
-   "dur": 1.48,
+   "end": 18.84,
+   "dur": 1.52,
    "media_start": 5.92
   },
   {
    "id": "grip",
    "src": "assets/footage/pixabay-9830.mp4",
-   "cue": "จับ",
-   "word_at": 19.18,
-   "start": 19.1,
+   "cue": "ก็ยังจับ",
+   "word_at": 18.92,
+   "start": 18.84,
+   "beat": "twist",
+   "end": 19.76,
+   "dur": 0.92,
+   "media_start": 14.32
+  },
+  {
+   "id": "squeeze",
+   "src": null,
+   "cue": "บีบ",
+   "word_at": 19.84,
+   "start": 19.76,
    "beat": "twist",
    "end": 21.24,
-   "dur": 2.14,
-   "media_start": 14.32
+   "dur": 1.48
   },
   {
    "id": "ball",
@@ -130,9 +191,19 @@
    "word_at": 21.32,
    "start": 21.24,
    "beat": "share",
-   "end": 24.66,
-   "dur": 3.42,
+   "end": 22.38,
+   "dur": 1.14,
    "media_start": 0.0
+  },
+  {
+   "id": "elbow",
+   "src": null,
+   "cue": "ข้อศอก",
+   "word_at": 22.46,
+   "start": 22.38,
+   "beat": "share",
+   "end": 24.66,
+   "dur": 2.28
   },
   {
    "id": "ask",
