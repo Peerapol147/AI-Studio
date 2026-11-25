@@ -1,0 +1,14 @@
+{
+  "template": "brainrot-v3",
+  "palette": "mono-yellow",
+  "font": "sarabun",
+  "caption": "pop",
+  "opening": "question",
+  "cover": "stack",
+  "transition": "slide",
+  "music_mood": "upbeat",
+  "voice": "liam",
+  "music_file": "music-jamendo-fb1328d9.mp3",
+  "cover_text": "ข้อมือมีเส้นนี้ไหม?",
+  "why": "look.py pick แล้วแก้: opening question (ซีรีส์ลองทำตาม เปิดด้วยคำถาม+คำสั่ง; number ไม่มีตัวเลขเด่นที่ใช้กับคนไทยได้), music upbeat (ชวนลงมือทำ) ป้ายซีรีส์ \"ลองทำตาม #1\" เป็นกราฟิกตอน"
+}

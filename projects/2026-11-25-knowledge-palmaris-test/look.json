@@ -1,6 +1,6 @@
 {
   "template": "brainrot-v3",
-  "palette": "mono-yellow",
+  "palette": "sunrise-coral",
   "font": "sarabun",
   "caption": "pop",
   "opening": "question",
@@ -9,6 +9,6 @@
   "music_mood": "upbeat",
   "voice": "liam",
   "music_file": "music-jamendo-fb1328d9.mp3",
-  "cover_text": "ข้อมือมีเส้นนี้ไหม?",
-  "why": "look.py pick แล้วแก้: opening question (ซีรีส์ลองทำตาม เปิดด้วยคำถาม+คำสั่ง; number ไม่มีตัวเลขเด่นที่ใช้กับคนไทยได้), music upbeat (ชวนลงมือทำ) ป้ายซีรีส์ \"ลองทำตาม #1\" เป็นกราฟิกตอน"
+  "cover_text": "ร่างกายเรามีอะไหล่สำรองด้วยนะ",
+  "why": "look.py pick แล้วแก้: opening question (ซีรีส์ลองทำตาม เปิดด้วยคำถาม+คำสั่ง; number ไม่มีตัวเลขเด่นที่ใช้กับคนไทยได้), music upbeat (ชวนลงมือทำ) ป้ายซีรีส์ \"ลองทำตาม #1\" เป็นกราฟิกตอน | v2 (ผู้ใช้: ปกดู AI/ภาพจืด): palette mono-yellow → sunrise-coral (เกรดอุ่น ผิวดูเป็นธรรมชาติ), hook ใหม่ตามแนวผู้ใช้"
 }
