@@ -3,8 +3,8 @@
  "lead": 0.08,
  "duration": 31.195,
  "inputs": {
-  "shots.json": "f383b0ebacb730252c4be5f4e9dc7f2eea9e3aae3c3a3167115ef73c4114f6c6",
-  "footage.json": null,
+  "shots.json": "6f9fbbe6b4f3b90090996db0087cb95a8beb7101b3f620e07e6a10d31fc30495",
+  "footage.json": "ed16efeb06f6167c7a30bf1ea8aec1d4d8d4b81a5da1e01cd327f48cb2f35adf",
   "assets/audio/words.json": "724d810a3752c5e0d8ddc4f399f11de9f282d65bbe46144c89bf2e9e1cd2c249"
  },
  "shots": [
@@ -65,8 +65,18 @@
    "word_at": 10.42,
    "start": 10.34,
    "beat": "explain",
+   "end": 12.44,
+   "dur": 2.1
+  },
+  {
+   "id": "rare",
+   "src": null,
+   "cue": "ที่ร่าง",
+   "word_at": 12.52,
+   "start": 12.44,
+   "beat": "explain",
    "end": 14.32,
-   "dur": 3.98
+   "dur": 1.88
   },
   {
    "id": "none",
@@ -80,13 +90,14 @@
   },
   {
    "id": "grip",
-   "src": null,
+   "src": "assets/footage/pixabay-375102.mp4",
    "cue": "จับ",
    "word_at": 16.16,
    "start": 16.08,
    "beat": "explain",
    "end": 18.42,
-   "dur": 2.34
+   "dur": 2.34,
+   "media_start": 0.92
   },
   {
    "id": "one",
@@ -105,8 +116,18 @@
    "word_at": 20.66,
    "start": 20.58,
    "beat": "share",
+   "end": 23.12,
+   "dur": 2.54
+  },
+  {
+   "id": "fix",
+   "src": null,
+   "cue": "ซ่อม",
+   "word_at": 23.2,
+   "start": 23.12,
+   "beat": "share",
    "end": 24.82,
-   "dur": 4.24
+   "dur": 1.7
   },
   {
    "id": "ball",
