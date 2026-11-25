@@ -258,6 +258,7 @@ const ELB=P(305,738);
 const epi=$('epi');
 const bed=div(epi,'capbed','','');                                         // dark bed under the captions (white text never on white)
 const cnt=div(epi,'','<div class="disc"></div>','');cnt.id='cnt';
+cnt.setAttribute('data-motion-blur','off');   // the disc jumps place at each count cut: render blur smeared it across both places (ghost)
 const cs=el(cnt,'svg',{viewBox:'0 0 400 400'});
 const cr=el(cs,'circle',{cx:200,cy:200,r:178,pathLength:1,transform:'rotate(-90 200 200)'},ACC+';stroke-width:16;stroke-dasharray:1 1');
 const nums=['3','2','1'].map(n=>div(cnt,'n',n));
@@ -266,7 +267,8 @@ const HARD=[['count',5.84],['count2',6.88],['count1',7.84]];
 const CNT=[5.92,6.96,7.92], CNTPOS=[[660,190],[30,620],[640,300]];   // the disc changes place with each framing
 window.EPI=function(t,h){ if(h) window.__DUR=h.DUR; const DD=window.__DUR||99;
   bed.style.opacity=f3(clamp((t-0.08)/0.06)*(1-clamp((t-(DD-0.2))/0.1)));   // frame 0 / last frame = clean cover
-  badge.style.transform=`scale(${f3(1+0.015*(1-Math.cos(t*Math.PI*2/1.6)))})`;
+  const bp=DD/Math.max(1,Math.round(DD/1.6));                              // whole cycles in the clip: last frame = frame 0
+  badge.style.transform=`scale(${f3(1+0.015*(1-Math.cos(t*Math.PI*2/bp)))})`;
   const ci=clamp((t-5.84)/0.12)*(1-clamp((t-8.8)/0.06));
   const j=t<6.88?0:t<7.84?1:2; cnt.style.left=CNTPOS[j][0]+'px'; cnt.style.top=CNTPOS[j][1]+'px';
   cnt.style.opacity=f3(ci); cnt.style.transform=`scale(${f3(0.8+0.2*eo((t-5.84)/0.2))}) rotate(${f1(4*Math.sin(t*3))}deg)`;
