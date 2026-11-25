@@ -9,7 +9,8 @@
            "ส่วนเส้นนี้แหละ", "หมอเอาไปใช้", "เป็น*เอ็นสำรอง*", "*ซ่อม*เอ็น", "ส่วนอื่นได้", "รวมถึง*ข้อศอก*", "ของนักเบสบอล", "ด้วย",
            "มีกี่*ข้าง*?", "*ศูนย์*", "*หนึ่ง*", "หรือ*สอง*", "พิมพ์ตัวเลขมา"],
   "plates": {"hook": "graphic", "pinch": "graphic", "flex": "graphic", "count": "graphic", "see": "graphic",
-             "muscle": "graphic", "rare": "graphic", "none": "graphic", "grip": "assets/grip-v.mp4", "one": "graphic",
-             "graft": "graphic", "fix": "graphic", "ball": "graphic", "ask": "graphic", "loop": "graphic"},
+             "muscle": "assets/xray-v.mp4", "rare": "assets/xray-v.mp4", "none": "assets/none-v.mp4", "grip": "assets/grip-v.mp4",
+             "one": "assets/one-v.mp4", "graft": "assets/graft-v.mp4", "fix": "assets/fix-v.mp4", "ball": "assets/ball-v.jpg",
+             "ask": "graphic", "loop": "graphic"},
   "vo": "assets/vo-th.mp3"
 }

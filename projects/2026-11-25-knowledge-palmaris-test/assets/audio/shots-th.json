@@ -4,7 +4,7 @@
  "duration": 31.195,
  "inputs": {
   "shots.json": "6f9fbbe6b4f3b90090996db0087cb95a8beb7101b3f620e07e6a10d31fc30495",
-  "footage.json": "ed16efeb06f6167c7a30bf1ea8aec1d4d8d4b81a5da1e01cd327f48cb2f35adf",
+  "footage.json": "b03e4202d642ae7f88df94a327b955161165048a76fd08893176a3150175f447",
   "assets/audio/words.json": "724d810a3752c5e0d8ddc4f399f11de9f282d65bbe46144c89bf2e9e1cd2c249"
  },
  "shots": [
@@ -60,84 +60,91 @@
   },
   {
    "id": "muscle",
-   "src": null,
+   "src": "assets/footage/pixabay-177206.mp4",
    "cue": "มันคือ",
    "word_at": 10.42,
    "start": 10.34,
    "beat": "explain",
    "end": 12.44,
-   "dur": 2.1
+   "dur": 2.1,
+   "media_start": 0.92
   },
   {
    "id": "rare",
-   "src": null,
+   "src": "assets/footage/pixabay-177206.mp4",
    "cue": "ที่ร่าง",
    "word_at": 12.52,
    "start": 12.44,
    "beat": "explain",
    "end": 14.32,
-   "dur": 1.88
+   "dur": 1.88,
+   "media_start": 3.12
   },
   {
    "id": "none",
-   "src": null,
+   "src": "assets/footage/pixabay-32185.mp4",
    "cue": "บางคน",
    "word_at": 14.4,
    "start": 14.32,
    "beat": "explain",
    "end": 16.08,
-   "dur": 1.76
+   "dur": 1.76,
+   "media_start": 3.92
   },
   {
    "id": "grip",
-   "src": "assets/footage/pixabay-375102.mp4",
+   "src": "assets/footage/pixabay-9830.mp4",
    "cue": "จับ",
    "word_at": 16.16,
    "start": 16.08,
    "beat": "explain",
    "end": 18.42,
    "dur": 2.34,
-   "media_start": 0.92
+   "media_start": 15.37
   },
   {
    "id": "one",
-   "src": null,
+   "src": "assets/footage/pixabay-32187.mp4",
    "cue": "แถม",
    "word_at": 18.5,
    "start": 18.42,
    "beat": "twist",
    "end": 20.58,
-   "dur": 2.16
+   "dur": 2.16,
+   "media_start": 5.92
   },
   {
    "id": "graft",
-   "src": null,
+   "src": "assets/footage/pixabay-238889.mp4",
    "cue": "ส่วน",
    "word_at": 20.66,
    "start": 20.58,
    "beat": "share",
    "end": 23.12,
-   "dur": 2.54
+   "dur": 2.54,
+   "media_start": 1.92
   },
   {
    "id": "fix",
-   "src": null,
+   "src": "assets/footage/pixabay-378726.mp4",
    "cue": "ซ่อม",
    "word_at": 23.2,
    "start": 23.12,
    "beat": "share",
    "end": 24.82,
-   "dur": 1.7
+   "dur": 1.7,
+   "media_start": 5.92
   },
   {
    "id": "ball",
-   "src": null,
+   "src": "assets/footage/pixabay-7295619.jpg",
    "cue": "รวมถึง",
    "word_at": 24.9,
    "start": 24.82,
    "beat": "share",
    "end": 27.46,
-   "dur": 2.64
+   "dur": 2.64,
+   "media_start": 0.0
   },
   {
    "id": "ask",
