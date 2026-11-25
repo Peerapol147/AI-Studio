@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- Cover v2 (still, 1080x1920): separate composition, NOT part of the clip (index.html untouched).
+     Full-frame close-up of the palm-side wrist (hand rig episode/hand.js, test pose), glowing palmaris ridge,
+     thick accent ring + dashed cut line with scissors along the tendon. Text: "หมอตัดเส้นนี้" / "ไปใช้ได้!?"
+     (research.md 5: tendon graft). Colours = look.json palette sunrise-coral (same values build_index.py writes
+     into index.html). Two variants: set VARIANT below ('a' = dark, highlight "ตัด"; 'b' = yellow field,
+     highlight "ไปใช้ได้!?"). Snapshot at t=0 -> renders/palmaris-test-th-cover-v2{a,b}.jpg -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="episode/hand.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{--bg:#2A0F12;--bg2:#C2453A;--ink:#1A0A06;--text:#FFFFFF;--accent:#FFD23F;--accent2:#FF8A5B;--panel:#3D1714;--paneltext:#FFFFFF}
+#root{--sk:color-mix(in srgb,#f4cfb2 80%,var(--accent2));--skd:color-mix(in srgb,var(--sk) 55%,var(--ink));--skc:color-mix(in srgb,var(--sk) 62%,var(--ink))}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Kanit',sans-serif}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.va #bg{background:radial-gradient(ellipse 620px 760px at 560px 1000px,color-mix(in srgb,var(--bg2) 85%,#fff) 0%,var(--bg2) 38%,var(--bg) 100%)}
+.vb #bg{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 55%,color-mix(in srgb,var(--accent) 80%,var(--accent2)) 100%)}
+.vb #rays{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:.22;
+  background:repeating-conic-gradient(from 0deg at 560px 1020px,var(--accent2) 0deg 9deg,transparent 9deg 20deg)}
+.va #rays{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:3;background:linear-gradient(var(--bg) 0%,color-mix(in srgb,var(--bg) 88%,transparent) 30%,transparent 40%)}
+#hand{z-index:2;position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+#title{position:absolute;left:0;width:1080px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:6px}
+.tl{font-weight:900;line-height:1.3;white-space:nowrap;text-align:center;paint-order:stroke fill;-webkit-text-stroke:30px var(--ink)}
+.tl b{display:inline-block;font-weight:900;line-height:1.12;padding:.24em .14em .1em;border-radius:22px;-webkit-text-stroke:0;
+  box-shadow:0 0 0 12px var(--ink),0 18px 0 12px rgba(0,0,0,.35)}
+/* variant A: dark-red field, white/yellow type, "ตัด" on a red plate */
+.va #title{top:250px}
+.va .t1{font-size:168px;color:#fff;text-shadow:0 16px 0 rgba(0,0,0,.45)}
+.va .t2{font-size:196px;color:var(--accent);text-shadow:0 16px 0 rgba(0,0,0,.45)}
+.va #title{top:262px}
+.va .t1 b{color:#fff;background:var(--bg2);transform:rotate(-4deg);margin:0 10px;-webkit-text-stroke:14px var(--ink);paint-order:stroke fill}
+/* variant B: yellow field, black type, "ไปใช้ได้!?" white on a red plate, text low (hand from the top-right) */
+.vb #title{top:960px}
+.vb .t1{font-size:166px;color:var(--ink);-webkit-text-stroke:26px #fff}
+.vb .t2{font-size:176px;color:#fff}
+.vb .t2 b{color:#fff;background:var(--bg2);transform:rotate(-3deg);padding:.2em .3em .06em;-webkit-text-stroke:16px var(--ink);paint-order:stroke fill}
+.vb .t1 span{color:var(--bg2)}
+#badge{position:absolute;left:60px;top:150px;z-index:6;display:flex;align-items:center;gap:10px;font-weight:700;font-size:40px;line-height:1;
+  color:var(--ink);background:var(--accent);padding:10px 22px 14px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink)}
+.vb #badge{background:#fff}
+#badge svg{width:38px;height:38px}
+#scis{position:absolute;z-index:4;width:170px;height:170px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 10px var(--ink),0 14px 30px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}
+.vb #scis{background:#fff}
+#scis svg{width:112px;height:112px;color:var(--ink)}
+</style></head><body>
+<div id="root" class="va" data-composition-id="cover" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+  <div id="bg"></div><div id="rays"></div>
+  <svg id="hand" viewBox="0 0 1080 1920"></svg>
+  <!-- scissors: lucide "scissors" (ISC licence, same set as assets/vendor/lucide) -->
+  <div id="scis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></div>
+  <div id="title"><div class="tl t1"></div><div class="tl t2"></div></div>
+  <div id="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span>ลองทำตาม #1</span></div>
+</div>
+<script>
+const VARIANT='a';
+(function(){
+const root=document.getElementById('root'); root.className='v'+VARIANT;
+const t1=document.querySelector('.t1'), t2=document.querySelector('.t2');
+if(VARIANT==='a'){t1.innerHTML='หมอ<b>ตัด</b>เส้นนี้'; t2.innerHTML='ไปใช้ได้!?';}
+else {t1.innerHTML='หมอ<span>ตัด</span>เส้นนี้'; t2.innerHTML='<b>ไปใช้ได้!?</b>';}
+const NS='http://www.w3.org/2000/svg', svg=document.getElementById('hand');
+const el=(p,tag,at,st)=>{const e=document.createElementNS(NS,tag); for(const k in at)e.setAttribute(k,at[k]); if(st)e.setAttribute('style',st); p.appendChild(e); return e;};
+// camera: close on the palm-side wrist, forearm from the bottom, tendon through the middle of the frame
+const CAM=VARIANT==='a'?{X:520,Y:965,S:1.3,yaw:-4,pitch:4,roll:16}:{X:600,Y:520,S:1.45,yaw:-4,pitch:4,roll:-20};
+const P={o:1,op:1,press:0,wig:[0,0,0,0],spread:0,flex:40,tendon:1,pulse:0,ring:0};
+const R=window.HandRig(svg); const r=R.draw({...P,...CAM});
+const w=r.wrist, d=r.tendon, at=u=>({x:w.x+(d.x-w.x)*u,y:w.y+(d.y-w.y)*u});
+const ux=(d.x-w.x), uy=(d.y-w.y), L=Math.hypot(ux,uy), nx=-uy/L, ny=ux/L;
+const pt=(u,o=0)=>{const p=at(u); return `${(p.x+nx*o).toFixed(1)},${(p.y+ny*o).toFixed(1)}`;};
+const defs=el(svg,'defs',{}), f=el(defs,'filter',{id:'gl',x:'-100%',y:'-30%',width:'300%',height:'160%'}); el(f,'feGaussianBlur',{stdDeviation:18});
+const f2=el(defs,'filter',{id:'gl2',x:'-100%',y:'-30%',width:'300%',height:'160%'}); el(f2,'feGaussianBlur',{stdDeviation:6});
+const u0=0.0, u1=2.25, path=`M${pt(u0)} Q${pt((u0+u1)/2,8)} ${pt(u1)}`;
+// raised, glowing tendon: dark shadow side + warm glow + bright crest
+el(svg,'path',{d:`M${pt(u0,22)} Q${pt((u0+u1)/2,30)} ${pt(u1,22)}`},'fill:none;stroke:var(--ink);stroke-width:46;stroke-linecap:round;opacity:.38;filter:url(#gl2)');
+el(svg,'path',{d:path},'fill:none;stroke:var(--accent);stroke-width:110;stroke-linecap:round;opacity:.55;filter:url(#gl)');
+el(svg,'path',{d:path},'fill:none;stroke:#fff6ea;stroke-width:34;stroke-linecap:round;opacity:.95;filter:url(#gl2)');
+// dashed cut line along the tendon (ink under-stroke + white dashes), slightly offset so the glow stays visible
+const cut=`M${pt(-0.15,-52)} Q${pt(1.05,-44)} ${pt(2.35,-52)}`;
+el(svg,'path',{d:cut},'fill:none;stroke:var(--ink);stroke-width:26;stroke-linecap:round;stroke-dasharray:46 30');
+el(svg,'path',{d:cut},'fill:none;stroke:#fff;stroke-width:13;stroke-linecap:round;stroke-dasharray:46 30');
+// thick ring around the tendon (ellipse along the tendon axis)
+const c=at(1.05), ang=Math.atan2(uy,ux)*180/Math.PI, RX=L*1.3, RY=120;
+const g=el(svg,'g',{transform:`translate(${c.x.toFixed(1)} ${c.y.toFixed(1)}) rotate(${ang.toFixed(2)})`});
+el(g,'ellipse',{rx:RX,ry:RY},'fill:none;stroke:var(--ink);stroke-width:46');
+el(g,'ellipse',{rx:RX,ry:RY},`fill:none;stroke:${VARIANT==='a'?'var(--accent)':'var(--bg2)'};stroke-width:24`);
+// scissors at the top end of the cut line, pointing along it
+const s=document.getElementById('scis'), sp=at(-0.15); const sx=sp.x+nx*-52, sy=sp.y+ny*-52;
+s.style.left=(sx-85).toFixed(1)+'px'; s.style.top=(sy-85).toFixed(1)+'px';
+s.querySelector('svg').style.transform=`rotate(${(ang+180).toFixed(1)}deg)`;
+window.__cover={wrist:w,tendon:d,ring:c};
+const tl=gsap.timeline({paused:true}); tl.set('#root',{opacity:1},0); tl.to({},{duration:1},0);
+window.__timelines=window.__timelines||{}; window.__timelines["cover"]=tl;
+})();
+</script>
+</body></html>
