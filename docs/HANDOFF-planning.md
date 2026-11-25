@@ -1,7 +1,7 @@
 # Handoff: ห้องวางแผน Creative (ศูนย์รวม — อัปเดต 2026-11-24 โดยห้อง Creative #3 ก่อนปิดห้อง; ห้อง #4 แก้ข้อ 5-6, 8 วันเดียวกัน)
 
 อ่านไฟล์นี้ไฟล์เดียวพอเริ่มงาน ตัวเลขทุกตัวเช็กกับไฟล์ต้นทางก่อนพูดกับผู้ใช้ (ผู้ใช้เคยบอกว่าข้อมูลห้องก่อน "เพี้ยน")
-ไฟล์ต้นทาง: สถิติ `channels/knowledge/results.md` · สรุปโปรเจกต์ (ส่งให้ AI อื่นได้) `docs/PROJECT-SUMMARY.md` · วิจัยตัดต่อ `docs/editing-research-2026-11-22.md` · ระบบตัดต่อ `docs/editing-v3.md` (บน stoic-cray) · บันทึกเก่า `docs/strategy-notes.md` · แนวทางห้อง Content (ไม่ใช่กฎ) `docs/strategy-content-2026-11-24.md` บน branch `claude/quirky-davinci-lih1l9`
+ไฟล์ต้นทาง: สถิติ `channels/knowledge/results.md` · สรุปโปรเจกต์ (ส่งให้ AI อื่นได้) `docs/PROJECT-SUMMARY.md` · วิจัยตัดต่อ `docs/editing-research-2026-11-22.md` · ระบบตัดต่อ `docs/editing-v3.md` (บน stoic-cray) · บันทึกเก่า `docs/strategy-notes.md` · สแกนเทรนด์ `docs/trends-2026-11-25.md` (ทำซ้ำสัปดาห์ละครั้ง) · แนวทางห้อง Content (ไม่ใช่กฎ) `docs/strategy-content-2026-11-24.md` บน branch `claude/quirky-davinci-lih1l9`
 สายห้องวางแผน: Content `session_016zMkaNsKYFpyNCmuargtH6` → Creative #1 `session_016zMkaQgYTDMQ6GkBLuLqSX` → #2 (ปิด) → #3 `session_016zMkaQZ2mFG1JvcQgmgnZP` (ผู้ใช้จะลบ) → #4 `session_016zMkaSyNJ1q5w5ZvoFEJXS`
 branch ของห้องวางแผน: `claude/content-strategy` (`git pull origin claude/content-strategy` ก่อนเริ่ม; push ด้วย `git push origin HEAD:claude/content-strategy`)
 
