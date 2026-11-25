@@ -2,9 +2,6 @@
  "hook": {
   "src": "assets/footage/pixabay-481425.jpg"
  },
- "ouch1": {
-  "src": "assets/footage/pixabay-129427.mp4"
- },
  "why": {
   "src": "assets/footage/pixabay-307248.mp4"
  },
@@ -20,17 +17,8 @@
  "rush1": {
   "src": "assets/footage/pixabay-334213.mp4"
  },
- "rush2": {
-  "src": "assets/footage/pixabay-7519000.jpg"
- },
- "trick": {
-  "src": "assets/footage/pixabay-331934.mp4"
- },
  "warm": {
   "src": "assets/footage/pixabay-204420.mp4"
- },
- "warn": {
-  "src": "assets/footage/pixabay-44637.mp4"
  },
  "doctor": {
   "src": "assets/footage/pixabay-49808.mp4"

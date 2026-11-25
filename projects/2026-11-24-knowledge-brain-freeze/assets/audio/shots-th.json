@@ -3,8 +3,8 @@
  "lead": 0.08,
  "duration": 30.573,
  "inputs": {
-  "shots.json": "9df8b0d449a9f084d78cd869f97172e87cd3d63802deb788e8e126a46b5f2dca",
-  "footage.json": "1f523a881d0b75ee345f444c0d6deb2494bc661e49d8814d598dbc5d9bff29a6",
+  "shots.json": "15d733bbb6c7dc44046cffb0b22bc063dc8f669a40366b8f3973d0685264e446",
+  "footage.json": "8e8dad813415aee7294b08cc9ec21c1af3de5c58e2a534d321d465016454c912",
   "assets/audio/words.json": "ab4ead223bb4f3c9830e8810153294c2b97b93f7bcb81fbdc2fe9d96e1336d43"
  },
  "shots": [
@@ -15,19 +15,8 @@
    "word_at": 0.08,
    "start": 0.0,
    "beat": "hook",
-   "end": 1.08,
-   "dur": 1.08
-  },
-  {
-   "id": "ouch1",
-   "src": "assets/footage/pixabay-129427.mp4",
-   "cue": "หัว",
-   "word_at": 1.16,
-   "start": 1.08,
-   "beat": "hook",
    "end": 1.94,
-   "dur": 0.86,
-   "media_start": 2.5
+   "dur": 1.94
   },
   {
    "id": "why",
@@ -68,18 +57,8 @@
    "word_at": 6.12,
    "start": 6.04,
    "beat": "reveal",
-   "end": 7.78,
-   "dur": 1.74
-  },
-  {
-   "id": "nopain",
-   "src": null,
-   "cue": "ไม่มี",
-   "word_at": 7.86,
-   "start": 7.78,
-   "beat": "reveal",
    "end": 9.68,
-   "dur": 1.9
+   "dur": 3.64
   },
   {
    "id": "culprit",
@@ -98,38 +77,18 @@
    "word_at": 11.48,
    "start": 11.4,
    "beat": "explain",
-   "end": 12.54,
-   "dur": 1.14
-  },
-  {
-   "id": "nerve",
-   "src": null,
-   "cue": "เส้นประสาท",
-   "word_at": 12.62,
-   "start": 12.54,
-   "beat": "explain",
    "end": 15.04,
-   "dur": 2.5
-  },
-  {
-   "id": "confused",
-   "src": null,
-   "cue": "สมอง",
-   "word_at": 15.12,
-   "start": 15.04,
-   "beat": "explain",
-   "end": 16.12,
-   "dur": 1.08
+   "dur": 3.64
   },
   {
    "id": "forehead",
    "src": "assets/footage/pixabay-345611.mp4",
-   "cue": "นึกว่า",
-   "word_at": 16.2,
-   "start": 16.12,
+   "cue": "สมองเลย",
+   "word_at": 15.12,
+   "start": 15.04,
    "beat": "explain",
    "end": 17.92,
-   "dur": 1.8,
+   "dur": 2.88,
    "media_start": 4.0
   },
   {
@@ -139,40 +98,19 @@
    "word_at": 18.0,
    "start": 17.92,
    "beat": "twist",
-   "end": 19.16,
-   "dur": 1.24,
-   "media_start": 3.0
-  },
-  {
-   "id": "rush2",
-   "src": "assets/footage/pixabay-7519000.jpg",
-   "cue": "ก็ยิ่ง",
-   "word_at": 19.24,
-   "start": 19.16,
-   "beat": "twist",
    "end": 20.8,
-   "dur": 1.64
-  },
-  {
-   "id": "trick",
-   "src": "assets/footage/pixabay-331934.mp4",
-   "cue": "ทริค",
-   "word_at": 20.88,
-   "start": 20.8,
-   "beat": "share",
-   "end": 22.0,
-   "dur": 1.2,
-   "media_start": 1.0
+   "dur": 2.88,
+   "media_start": 3.0
   },
   {
    "id": "tongue",
    "src": null,
-   "cue": "ลิ้น",
-   "word_at": 22.08,
-   "start": 22.0,
+   "cue": "ทริค",
+   "word_at": 20.88,
+   "start": 20.8,
    "beat": "share",
    "end": 23.64,
-   "dur": 1.64
+   "dur": 2.84
   },
   {
    "id": "warm",
@@ -186,25 +124,14 @@
    "media_start": 2.0
   },
   {
-   "id": "warn",
-   "src": "assets/footage/pixabay-44637.mp4",
+   "id": "doctor",
+   "src": "assets/footage/pixabay-49808.mp4",
    "cue": "ถ้าปวด",
    "word_at": 25.28,
    "start": 25.2,
    "beat": "share",
-   "end": 26.88,
-   "dur": 1.68,
-   "media_start": 3.3
-  },
-  {
-   "id": "doctor",
-   "src": "assets/footage/pixabay-49808.mp4",
-   "cue": "หาหมอ",
-   "word_at": 26.96,
-   "start": 26.88,
-   "beat": "share",
    "end": 28.02,
-   "dur": 1.14,
+   "dur": 2.82,
    "media_start": 0.5
   },
   {
