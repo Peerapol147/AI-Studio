@@ -9,7 +9,7 @@
   color:var(--ink);background:var(--accent);padding:12px 26px 16px 20px;border-radius:999px;box-shadow:0 0 0 5px var(--ink),0 10px 24px rgba(0,0,0,.45);transform-origin:0 50%}
 #badge svg{width:44px;height:44px;color:var(--ink)}
 #epi{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:30;pointer-events:none}
-#cnt{position:absolute;left:340px;top:250px;width:400px;height:400px;opacity:0}
+#cnt{position:absolute;left:340px;top:320px;width:400px;height:400px;opacity:0}
 #cnt .disc{position:absolute;left:30px;top:30px;width:340px;height:340px;border-radius:50%;background:var(--panel);box-shadow:0 0 0 8px var(--ink),0 20px 50px rgba(0,0,0,.5)}
 #cnt svg{position:absolute;left:0;top:0;width:400px;height:400px}
 #cnt .n{position:absolute;left:0;top:0;width:400px;height:400px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:300px;line-height:1;

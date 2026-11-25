@@ -244,6 +244,14 @@ const cr=el(cs,'circle',{cx:200,cy:200,r:178,pathLength:1,transform:'rotate(-90 
 const nums=['3','2','1'].map(n=>div(cnt,'n',n));
 const ok=label(epi,'ปกติ ✓','acc',0,0,64); ok.id='okpill'; ok.style.left='800px'; ok.style.top='330px';
 const badge=$('badge');
+/* user footage (editor-notes "เปลี่ยนเป็นคลิปผู้ใช้"): when hook/loop/see slots are footage there is no drawn ring,
+   so an overlay ring marks the tendon instead. Set x/y/r to where the wrist tendon is in the user's clip (1080x1920). */
+const USER_RING={x:540,y:980,r:130};
+const ur=el(el(epi,'svg',{class:'gsvg',viewBox:'0 0 1080 1920'}),'g',{});
+const urI=el(ur,'circle',{cx:USER_RING.x,cy:USER_RING.y,r:USER_RING.r},INK+';stroke-width:28');
+const urA=el(ur,'circle',{cx:USER_RING.x,cy:USER_RING.y,r:USER_RING.r},ACC+';stroke-width:15');
+const userHook=!$('g-hook'), userLoop=!$('g-loop');
+const shotA=id=>{const e=$('sh-'+id); return e;};
 window.EPI=function(t,h){ if(h) window.__DUR=h.DUR;
   // badge: on from frame 0, a small nudge on each new beat section is not needed - it just breathes with the title
   badge.style.transform=`scale(${(1+0.015*(1-Math.cos(t*Math.PI*2/1.6))).toFixed(4)})`;
@@ -256,6 +264,8 @@ window.EPI=function(t,h){ if(h) window.__DUR=h.DUR;
   // grip footage: "ปกติ" pill on the word
   const og=t<18.42?1:0; ok.style.opacity=(og*clamp(sp(t,17.42,20,0.55)*3)).toFixed(3);
   ok.style.transform=`translate(-50%,-50%) scale(${(0.6+0.4*sp(t,17.42,20,0.55)).toFixed(4)}) rotate(-4deg)`;
+  const D=window.__DUR||31.167, inHook=t<1.52, inLoop=t>=30.3;   // shot edges = shots-th.json hook end / loop start
+  ur.style.opacity=((inHook&&userHook)||(inLoop&&userLoop))?'1':'0';
   for(const u of UP) u(t);
 };
 })();

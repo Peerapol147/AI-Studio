@@ -1,0 +1,149 @@
+[
+ {
+  "t": 1.5,
+  "type": "scene_cut",
+  "desc": "slide: hook -> try it (ลองเลย)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 3.9,
+  "type": "hover_or_small_ui",
+  "desc": "thumb meets little finger (spark)",
+  "sfx": "kit/tick.ogg",
+  "gain": -20
+ },
+ {
+  "t": 5.98,
+  "type": "appear",
+  "desc": "count 3 on สาม",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -14
+ },
+ {
+  "t": 6.84,
+  "type": "appear",
+  "desc": "count 2 on สอง",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -14
+ },
+ {
+  "t": 7.62,
+  "type": "appear",
+  "desc": "count 1 on หนึ่ง",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -13
+ },
+ {
+  "t": 8.24,
+  "type": "scene_cut",
+  "desc": "slide: count -> see",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 8.8,
+  "type": "reveal",
+  "desc": "tendon lights up on นูน",
+  "sfx": "impact/fs524817.ogg",
+  "gain": -20
+ },
+ {
+  "t": 10.32,
+  "type": "scene_cut",
+  "desc": "slide: reveal -> explain (arm turns sideways)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -23
+ },
+ {
+  "t": 13.04,
+  "type": "appear",
+  "desc": "pill หน้าที่น้อยมาก",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 17.42,
+  "type": "success",
+  "desc": "pill ปกติ on grip footage",
+  "sfx": "kit/pop.ogg",
+  "gain": -19
+ },
+ {
+  "t": 18.4,
+  "type": "scene_cut",
+  "desc": "slide: twist (บางคนมีข้างเดียว)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -21
+ },
+ {
+  "t": 19.34,
+  "type": "appear",
+  "desc": "ring on the one wrist (ข้างเดียว)",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -18
+ },
+ {
+  "t": 20.56,
+  "type": "scene_cut",
+  "desc": "slide: share (graft)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 21.6,
+  "type": "movement",
+  "desc": "spare tendon lifts out",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -26
+ },
+ {
+  "t": 23.5,
+  "type": "hover_or_small_ui",
+  "desc": "spare lands in the gap + stitches",
+  "sfx": "kit/click.ogg",
+  "gain": -19
+ },
+ {
+  "t": 24.0,
+  "type": "success",
+  "desc": "pill ต่อแล้ว",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 25.75,
+  "type": "movement",
+  "desc": "pitch release",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 27.44,
+  "type": "scene_cut",
+  "desc": "slide: cta 0/1/2",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 28.56,
+  "type": "appear",
+  "desc": "card 0 on ศูนย์",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -14
+ },
+ {
+  "t": 29.16,
+  "type": "appear",
+  "desc": "card 1 on หนึ่ง",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -14
+ },
+ {
+  "t": 29.82,
+  "type": "appear",
+  "desc": "card 2 on สอง",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -13
+ }
+]
