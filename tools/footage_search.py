@@ -14,8 +14,9 @@ words, no stills, gave up, and nobody told the user. The director then found 9 f
       only one kind / only one source; exit 2 (and writes assets/footage/ALERT.md) when < 50 % of the shots got a file:
       the director must tell the user right away with the choices (graphic, hand-drawn rig, user films it), never silently.
 
-Rate limits: a 429 is retried at most twice (3 s, then 9 s; never a long retry-after) and then that source is skipped for
-the rest of the run and logged as BLOCKED, so a run never waits more than ~12 s per source (the "fail fast, never wait
+Rate limits: a 429 is retried at most twice (3 s, then 9 s; never a long retry-after; FOOTAGE_BACKOFF is clamped in code
+to <= 12 s of waiting) and then that source is logged as BLOCKED in SEARCH.json "_blocked" and skipped for every shot
+for BLOCK_MIN (10) minutes, so the whole footage step waits at most ~12 s per source (the "fail fast, never wait
 silently" rule still holds). Every request goes through tools/get.sh. Keys: PIXABAY_API_KEY, PEXELS_API_KEY (env or
 .env; a source without its key is skipped and logged). Base URLs can be overridden (PIXABAY_BASE, PEXELS_BASE,
 OPENVERSE_BASE, NASA_BASE, WIKIMEDIA_BASE) for tests.
@@ -24,7 +25,24 @@ import argparse, json, os, pathlib, re, subprocess, sys, time, urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 GET = ROOT / 'tools' / 'get.sh'
-BACKOFF = tuple(float(x) for x in os.environ.get('FOOTAGE_BACKOFF', '3,9').split(','))  # tests set 0,0
+MAX_WAIT = 12          # s of sleeping per source per run, hard ceiling (review 2026-11-26): env cannot raise it
+BLOCK_MIN = 10         # min: a source BLOCKED in SEARCH.json within this time is skipped for every shot, no retry
+
+
+def _backoff(raw):
+    """FOOTAGE_BACKOFF ("3,9"; tests "0,0") clamped: at most 2 waits, each <= 9 s, total <= MAX_WAIT."""
+    out, total = [], 0.0
+    for x in (raw or '3,9').split(',')[:2]:
+        try:
+            w = min(max(float(x), 0.0), 9.0)
+        except ValueError:
+            continue
+        w = min(w, MAX_WAIT - total)
+        out.append(w); total += w
+    return tuple(out)
+
+
+BACKOFF = _backoff(os.environ.get('FOOTAGE_BACKOFF'))
 UA = 'AI-Studio-footage-search/1.0 (stock footage lookup)'
 THAI = re.compile(r'[฀-๿]')
 SOURCES = ('pixabay', 'pexels', 'openverse', 'nasa', 'wikimedia')
@@ -143,7 +161,7 @@ def search_one(src, kind, term, per):
             ii = (p.get('imageinfo') or [{}])[0]
             em = ii.get('extmetadata') or {}
             lic = (em.get('LicenseShortName') or {}).get('value', '')
-            if lic and not re.search(r'CC0|CC BY|Public domain|PD', lic, re.I):
+            if not lic or re.search(r'\bN[CD]\b|-N[CD]', lic, re.I) or not re.search(r'CC0|CC BY|Public domain|PD', lic, re.I):
                 continue
             out.append(dict(id=f"wikimedia-{p.get('pageid')}", url=ii.get('url'), preview=ii.get('thumburl'), w=ii.get('width'),
                             h=ii.get('height'), page=ii.get('descriptionurl'), license=lic or '?',
@@ -157,7 +175,11 @@ def search(project, shot, terms, kinds, sources, per, sleep=time.sleep):
     f.parent.mkdir(parents=True, exist_ok=True)
     db = json.loads(f.read_text()) if f.exists() else {}
     entry = db.setdefault(shot, {'tried': [], 'candidates': []})
-    blocked = set()
+    # a source BLOCKED in the last BLOCK_MIN minutes (any shot) is skipped right away: "skip for the whole run" holds
+    # across the one-shot-per-call CLI, so 15 shots do not each wait out the backoff again
+    now = time.time()
+    blocks = db.setdefault('_blocked', {})
+    blocked = {src for src, t in blocks.items() if now - t < BLOCK_MIN * 60}
     seen = {c['id'] + c['kind'] for c in entry['candidates']}
     for term in terms:
         for src in sources:
@@ -170,6 +192,7 @@ def search(project, shot, terms, kinds, sources, per, sleep=time.sleep):
                                            status=st, hits=len(cands), note=note))
                 if st == 'blocked':
                     blocked.add(src)
+                    blocks[src] = time.time()
                     print(f'BLOCKED {src}: {note} -> skipped for the rest of this run', file=sys.stderr)
                 for c in cands:
                     c.update(source=src, kind=kind, q=term)
@@ -195,7 +218,7 @@ def report(project, min_terms=10):
         terms = {t['q'] for t in (db.get(sid) or {}).get('tried', [])}
         langs = {('th' if THAI.search(t) else 'en') for t in terms}
         kinds = {t['kind'] for t in tried}
-        srcs = {t['source'] for t in tried}
+        srcs = {t['source'] for t in tried if t.get('status') == 'ok'}   # a blocked/error source did not answer
         has = bool((found.get(sid) or {}).get('src'))
         rows.append(f'| {sid} | {"✅ " + found[sid]["src"] if has else "❌"} | {len(terms)} | {",".join(sorted(langs))} | '
                     f'{",".join(sorted(kinds))} | {",".join(sorted(srcs))} |')

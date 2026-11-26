@@ -28,7 +28,8 @@ class H(http.server.BaseHTTPRequestHandler):
                                              'license_version': '4.0', 'foreign_landing_url': 'https://ov/1', 'source': 'flickr'}]},
                 '/w/api.php': {'query': {'pages': {'7': {'pageid': 7, 'index': 1, 'imageinfo': [
                     {'url': 'https://up/w.jpg', 'descriptionurl': 'https://c/w', 'extmetadata': {'LicenseShortName': {'value': 'CC BY-SA 4.0'}}}]},
-                    '8': {'pageid': 8, 'index': 2, 'imageinfo': [{'url': 'https://up/x.jpg', 'extmetadata': {'LicenseShortName': {'value': 'All rights reserved'}}}]}}}},
+                    '8': {'pageid': 8, 'index': 2, 'imageinfo': [{'url': 'https://up/x.jpg', 'extmetadata': {'LicenseShortName': {'value': 'All rights reserved'}}}]},
+                    '9': {'pageid': 9, 'index': 3, 'imageinfo': [{'url': 'https://up/n.jpg', 'extmetadata': {'LicenseShortName': {'value': 'CC BY-NC-SA 2.0'}}}]}}}},
                 }.get(p)
         return self._send(200 if body else 404, body or {'e': 'nf'})
 
@@ -73,7 +74,7 @@ def test_search_all_sources_429_backoff_and_report(srv, tmp_path):
     db = json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']
     ids = {c['id'] for c in db['candidates']}
     assert {'pixabay-1', 'pixabay-2', 'pexels-3', 'pexels-4', 'openverse-abcdef12', 'wikimedia-7'} <= ids
-    assert 'wikimedia-8' not in ids                                  # all-rights-reserved file dropped
+    assert 'wikimedia-8' not in ids and 'wikimedia-9' not in ids     # all-rights-reserved and NC (no monetising) dropped
     nasa = [t for t in db['tried'] if t['source'] == 'nasa']
     assert nasa[0]['status'] == 'blocked' and all(t['status'] == 'skipped' for t in nasa[1:])
     assert any('lang=th' in u for u, _, _ in srv.log)                 # Thai term sent to Pixabay in Thai
@@ -108,3 +109,34 @@ def test_missing_key_source_is_skipped_not_fatal(srv, tmp_path):
     assert r.returncode == 0
     t = json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']['tried']
     assert {x['status'] for x in t} == {'skipped'} and 'no PEXELS_API_KEY' in t[0]['note']
+
+
+def test_blocked_source_skipped_for_the_next_shots_too(srv, tmp_path):
+    """review 2026-11-26: the CLI takes one shot per call, so the block must outlive the call (no 12 s wait per shot)."""
+    p = project(tmp_path)
+    env = {'NASA_BASE': srv.url + '/nasa429'}
+    assert run('search', p, 'wrist', 'wrist', '--sources', 'nasa', '--kinds', 'photo', env=env).returncode == 0
+    assert srv.n429 == 3
+    r = run('search', p, 'graft', 'tendon graft', '--sources', 'nasa', '--kinds', 'photo', env=env)
+    assert r.returncode == 0 and srv.n429 == 3                        # not asked again
+    t = json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['graft']['tried']
+    assert t[0]['status'] == 'skipped' and 'blocked' in t[0]['note']
+
+
+def test_backoff_is_clamped_in_code():
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import footage_search as fs
+    assert fs._backoff('3,9') == (3.0, 9.0)
+    assert fs._backoff('60,600') == (9.0, 3.0) and sum(fs._backoff('60,600')) <= fs.MAX_WAIT
+    assert fs._backoff('5,5,5,5') == (5.0, 5.0)
+    assert fs._backoff('0,0') == (0.0, 0.0)
+
+
+def test_blocked_source_does_not_count_as_answered(srv, tmp_path):
+    p = project(tmp_path, ids=('a', 'b', 'g'))
+    env = {'PIXABAY_BASE': srv.url, 'PIXABAY_API_KEY': 'K1', 'NASA_BASE': srv.url + '/nasa429'}
+    terms = [f'คำ{i}' for i in range(5)] + [f'word{i}' for i in range(5)]
+    assert run('search', p, 'b', *terms, '--sources', 'pixabay,nasa', env=env).returncode == 0
+    (p / 'footage.json').write_text(json.dumps({'a': {'src': 'assets/footage/x.mp4'}}))
+    r = run('report', p)
+    assert r.returncode == 1 and 'only one source answered' in r.stdout
