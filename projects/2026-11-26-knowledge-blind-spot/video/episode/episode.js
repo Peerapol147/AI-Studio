@@ -125,13 +125,13 @@ function build(SC){
 
 const TW={hole:1.46, cover:3.84, rightEye:5.12, test:5.48, dont:7.06, move:8.38, c3:10.70, c2:11.80, c1:12.78,
   gone:13.86, thatsit:15.68, nerveDot:18.10, nerveOut:18.32, exit:19.10, nocell:19.84, mai:20.48, cell:20.72,
-  brain:24.14, fill:25.38, sci:28.26, fr:28.90, n350:30.16, pi:30.94, ask:[32.12,32.32,32.50,32.68]};
+  brain:24.14, fill:25.38, sci:28.26, fr:28.90, y0:29.46, n350:30.16, pi:30.94, ask:[32.12,32.32,32.50,32.68]};
 
 window.EPI=function(t,o){
   if(!B) build(o.SC);
   const DUR=o.DUR;
   /* badge: from the end of the hook title to just before the loop seam (frame 0 / last frame show the kicker) */
-  const bIn=T.cover.a, bOut=DUR-0.3, bd=$('badge');
+  const bIn=T.cover.a+0.14, bOut=DUR-0.45, bd=$('badge');
   const bu=t<bIn?0:(t<bOut?sp(t,bIn,18,0.6):1-clamp((t-bOut)/0.12));
   bd.style.opacity=f3(clamp(bu*2)); bd.style.transform=`scale(${f3(0.8+0.2*clamp(bu))})`;
 
@@ -153,7 +153,7 @@ window.EPI=function(t,o){
   }
 
   /* ---------- hole ---------- */
-  if(B.hole){const u=sp(t,TW.hole,9,0.7), r=8+46*u+3*Math.sin((t-TW.hole)*5)*clamp(u), x=355, y=975;
+  if(B.hole){const u=sp(t,TW.hole,9,0.7), r=8+46*u+3*Math.sin((t-TW.hole)*5)*clamp(u), x=250, y=985;
     B.hole.style.opacity=t>=TW.hole-0.05?f3(clamp(u*2)):'0';
     B.hole.style.transform=`translate(${f1(x-100)}px,${f1(y-100)}px) scale(${f3(r/56)})`;
     B.holeR.set(x,y,eo((t-TW.hole-0.15)/0.5),(r+16)/70,0.9);}
@@ -202,11 +202,11 @@ window.EPI=function(t,o){
   else B.sci.style.opacity='0';
   /* ---------- years: count up to 350 on "350", "+" lands, "ปี" pops ---------- */
   const yOn=t>=T.years.a&&t<T.ask.a;
-  if(yOn){const cu=eo((t-TW.n350)/0.7), n=Math.round(350*cu);
-    B.yN.textContent=t<TW.n350?'0':(cu>=0.999?'350+':String(n));
-    const a=sp(t,TW.n350,14,0.5);
-    B.yrs.style.opacity=f3(clamp((t-T.years.a)/0.15));
-    B.yrs.style.transform=`translate(-50%,-50%) scale(${f3((0.75+0.25*a)*(1+0.08*Math.exp(-Math.max(0,t-TW.n350-0.72)*6)*(t>TW.n350+0.72?1:0)))})`;
+  if(yOn){const cu=eo((t-TW.y0)/(TW.n350+0.6-TW.y0)), n=Math.round(350*cu);
+    B.yN.textContent=cu>=0.999?'350+':String(n);
+    const a=sp(t,TW.y0,14,0.5);
+    B.yrs.style.opacity=f3(clamp((t-TW.y0)/0.1));
+    B.yrs.style.transform=`translate(-50%,-50%) scale(${f3((0.75+0.25*a)*(1+0.08*Math.exp(-Math.max(0,t-TW.n350-0.6)*6)*(t>TW.n350+0.6?1:0)))})`;
     const u=B.yrs.querySelector('.u'); const pu=sp(t,TW.pi,20,0.5); u.style.opacity=t<TW.pi?'0':'1'; u.style.transform=`scale(${f3(0.6+0.4*pu)})`;
     }
   else B.yrs.style.opacity='0';
