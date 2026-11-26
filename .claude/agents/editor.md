@@ -30,4 +30,5 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
   กราฟิกเฉพาะตอนใช้ตัวแปรสี `var(--accent)` `var(--accent2)` `var(--panel)` `var(--ink)` ห้ามฝังสีของตอนเก่า; เกรด footage ตาม `grade` ของ palette
   จังหวะ: แล้วแต่คลิป (style.md ข้อ 4, ผู้ใช้ 2026-11-25) เวลาช็อตมาจาก shots.json ของผู้กำกับ; ทุกช็อตต้องมีของขยับ ห้ามค้างนิ่ง >0.5 วิ; ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
   หลังเรนเดอร์ทุกรอบ: `python3 tools/contact_sheet.py make renders/<slug>-<lang>.mp4 renders/frames-<lang>` แล้วเปิดดูทุกแผ่นเอง (ไม่ใช่ snapshot ไม่กี่เฟรม; feedback palmaris ข้อ 1) แก้ก่อนส่ง reviewer
+  **ซีรีส์ "ลองทำตามเดี๋ยวนี้" / ท่ามือ:** ใช้มือ SVG rig `templates/brainrot-v3/compositions/components/hand-rig/` (README ในนั้น; ผู้ใช้ 2026-11-25 "การวาดแบบนี้ค่อยเข้าท่าหน่อย") ห้ามมือการ์ตูนขาวแบน มือ 3D หุ่นนิ่ง หรือเส้นชี้ลอยๆ (ผู้ใช้ตีตกทั้งหมด)
   ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = แยก A/B (ด้านบน) ไม่ใช่ snapshot เฟรม 0

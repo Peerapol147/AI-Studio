@@ -84,6 +84,7 @@ python3 tools/sound_pass_vo.py --video renders/<slug>-<lang>-silent.mp4 --voice 
 cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", "desc": "...", "sfx": "kit/pop.ogg", "gain": -8}` (ไฟล์ sfx อ้างจาก `.claude/skills/sound-effects/sfx/`) ตัวอย่าง: `templates/brainrot-v2/sound/cues-th.json` (สร้างด้วย `sound/make_cues.py`)
 
 ## มาตรฐาน motion (ผู้ใช้เคยบอกว่า "แปลกๆ" กับเวอร์ชันแรก)
+- **ซีรีส์ "ลองทำตามเดี๋ยวนี้" / ท่ามือ:** ใช้มือ SVG rig `templates/brainrot-v3/compositions/components/hand-rig/` (README ในนั้น; ผู้ใช้ 2026-11-25 "การวาดแบบนี้ค่อยเข้าท่าหน่อย") ห้ามมือการ์ตูนขาวแบน มือ 3D หุ่นนิ่ง หรือเส้นชี้ลอยๆ (ผู้ใช้ตีตกทั้งหมด); ช็อตท่ามือใน shots.json ใส่ `"footage": false` ได้ (ไม่นับใน footage report) แต่ต้องตัดสินจากผลค้นจริงหรือแผนตั้งแต่บท
 - กราฟิกเป็น **รูปร่างเดียวที่ morph ต่อเนื่อง** (ขนาด มุม สี) ด้วย spring ไม่โผล่/หายกระตุก ไม่ใช้ "ขีดฆ่าแล้วใส่ไอคอนใหม่"
 - ทุกการเปลี่ยนลงตรงคำพูด; ภาพนิ่งมี Ken Burns ช้าๆ
 - ฉากแผนภาพ: แผนภาพอยู่บน ~60% ของจอ, ซับใต้แผนภาพ, ส่วนล่างไม่ว่าง (เช่น แถบขั้นตอน)
