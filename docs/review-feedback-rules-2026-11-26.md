@@ -121,3 +121,38 @@ Pixabay ok 6/6, Pexels skipped (no key), **Openverse 429 → backoff → BLOCKED
 - contact sheet: `ffmpeg testsrc + color concat` → make → verify (4 กรณี)
 - footage: โปรเจกต์ปลอม 3 ช็อต, search 2 คำ (ไทย/อังกฤษ) เรียก API จริง → report
 - hand-rig: playwright 1080x1920 ท่า 3 แบบ ดูภาพด้วยตาแล้ว
+
+---
+
+# รอบ 2: `3e0e04c..defa014` (2026-11-26)
+3 commit: a95bf1a ปก, df0b62b footage, defa014 เอกสาร/⚪ — 18 ไฟล์ +193/−37, **ไม่แตะ projects/** ✅
+
+## สรุปรอบ 2: **รวมได้** ✅ (🔴 ปิดแล้ว, 🟡 ปิดครบ 3 ข้อ, เหลือ ⚪ 2 ข้อ ไม่บล็อก)
+
+| ข้อรอบ 1 | ผลรอบ 2 |
+|---|---|
+| 🔴 ภาพปก ≠ look.json | ✅ ปิด: `cover_shot.js` อ่าน `look.json "covers"` + palette/font แล้วส่งเข้า `window.__COVER`; `cover.html` ไม่มีข้อความจริงอีก (ค่าเริ่ม = "แก้ข้อความ / ใน look.json"); `cover_check.py:229-233` ERROR ถ้าข้อความในภาพ ≠ look.json |
+| 🟡 blocked แค่ 1 ช็อต | ✅ ปิด: `SEARCH.json "_blocked"` ข้ามแหล่งนั้นทุกช็อต 10 นาที |
+| 🟡 backoff ไม่มีเพดาน | ✅ ปิด: `_backoff()` clamp ≤2 ครั้ง, ครั้งละ ≤9 วิ, รวม ≤12 วิ |
+| 🟡 "เฟรม 0 = ปก" ค้าง | ✅ ปิดในกฎ/เอกสารที่ใช้งาน (style.md:45, looks.json:2,159, make-clip, TEMPLATE.md, look.py:270) |
+| ⚪ ทั้ง 7 ข้อ | ✅ ปิด 6 ข้อ (voice.md เทคเดียว/ทีละฉาก, vo_finish อ่าน look.json, srcs นับเฉพาะ ok, ตัด NC/ND, importorskip, ทำตอนเก่าใหม่ใน make-clip+channel.md); `verify` พิสูจน์การดูไม่ได้ = ข้อจำกัดที่รับได้ |
+
+## ตรวจซ้ำ
+- **เทสต์:** `pytest tests/` → **111 passed, 0 skipped** ตรงกับที่ dev อ้าง (env นี้ติดตั้ง soundfile/librosa/matplotlib/scipy แล้ว)
+- **ปก: ลองกรณี look.json ≠ ภาพอีกครั้ง** (worktree defa014 + ประวัติ palmaris):
+  1. look.json a="หมอตัดเส้นนี้/ไป*ใช้*ได้!?" b="เส้นเอ็นที่/14% ไม่มี", font sarabun → `cover_shot.js` → `cover_check --final` **OK** ภาพใช้ข้อความ, palette (mono-yellow), Sarabun ตาม look จริง (ดู compare.png ด้วยตาแล้ว)
+  2. แก้ look.json a เป็น "ร่างกายเรา/มีอะไหล่!?" โดยไม่ถ่ายใหม่ → **ERROR** "the image says 'หมอตัดเส้นนี้ / ไปใช้ได้!?' but look.json covers says ..." + ERROR คล้ายปก palmaris 0.72 → exit 1 ✅
+  3. แก้ cover-b.json ให้เป็นข้อความ placeholder "แก้ข้อความ" → **ERROR** cover b ✅
+  4. `cover_shot.js ... c` (ไม่มี variant c ใน look.json) → "look.json has no covers entry for id c" exit 1 ✅
+- **footage:** `FOOTAGE_BACKOFF=60,600` → (9.0, 3.0) รวม 12 ✅; `x,5,9` → (5.0,) ✅
+  API จริง 2 ช็อตต่อกัน: ช็อต s1 Wikimedia ตอบ 429 → backoff → BLOCKED (14 วิ); ช็อต s2 **ไม่เรียก Wikimedia เลย ใช้ 1 วิ** ✅ `_blocked` ถูกจดไว้
+- **vo_finish.sh + look.json:** `{"atempo":1.05,"vo_lufs":-20}` → −20.5 LUFS, atempo 1.05 ✅; look.json ที่ไม่มีค่าล็อก (football) → fallback 1.1/−18 ✅
+- **grep ทั้ง repo "เฟรม 0 = ปก"** (md/json/py/js/html/sh ยกเว้น projects/): เหลือแค่
+  - `docs/editing-v3.md:106,111`, `docs/dev-feedback-rules-2026-11-26.md:41` = บันทึกประวัติ/รายการแก้ ไม่ต้องแก้
+  - `style.md:95` "ทำเฟรม 0.0 วิให้ดูเหมือนปก" ต่อท้ายว่า "ปกที่อัปทำแยก A/B ดูข้อ 9a" ไม่ขัดกัน
+
+## เหลือ ⚪ (ไม่บล็อก)
+| ไฟล์:บรรทัด | เรื่อง |
+|---|---|
+| `templates/brainrot-v3/build_index.py:70,73` | คอมเมนต์และข้อความ SystemExit ยังเขียน "frame 0 = (the) cover" ส่วนตรรกะถูก (cover_text = title เฟรม 0) แค่คำอาจทำให้เข้าใจผิด ควรเป็น "frame 0 = cover_text" |
+| `tools/footage_search.py` `fetch()` (`msg = ...splitlines()[-1]`) | note ใน SEARCH.json/stderr เก็บบรรทัดสุดท้ายของ body (เช่น "If you are unsure how to get the access you need, contact bo") ทำให้ไม่เห็น "BLOCKED 429 <url>" ควรใช้บรรทัดแรกของ stderr (การลองซ้ำไม่กระทบ เพราะเช็ก `'BLOCKED 429' in r.stderr` ทั้งก้อน) |
