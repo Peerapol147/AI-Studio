@@ -2,6 +2,9 @@
 """Project copy of the sound-effects skill's sound_pass.py, extended for a voiceover:
 --voice is mixed on top at 0 dB, the music bed is ducked under it (--duck-db), and a cue may
 name its own bundled file ("sfx") and level ("gain"). Everything else is unchanged.
+Defaults (palmaris feedback 4, 2026-11-26 "เพลงก็ดังเกิน"): music bed -24 dB, ducked 8 dB under the voice, and the
+voice should already be normalized to -18 LUFS (tools/vo_finish.sh); the report warns when the voice is not near -18
+LUFS or the music bed is less than 12 LU under the voice.
 Measured sound pass for a motion-graphics video.
 Approach credit: Vox (@Voxyz_ai), x.com/Voxyz_ai/status/2109358372873183564
 Usage: sound_pass.py --video silent.mp4 --cues cues.json --music track.mp3 --manifest ../sfx/manifest.json --out outdir
@@ -14,9 +17,9 @@ import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 SR=48000
 ap=argparse.ArgumentParser()
 for a in ['video','cues','music','manifest','out']: ap.add_argument('--'+a,required=True)
-ap.add_argument('--music-db',type=float,default=-12.0)
+ap.add_argument('--music-db',type=float,default=-24.0)
 ap.add_argument('--voice',required=True)
-ap.add_argument('--duck-db',type=float,default=10.0)
+ap.add_argument('--duck-db',type=float,default=8.0)
 ap.add_argument('--sfx-db',type=float,default=-3.0)
 ap.add_argument('--music-source',default=None,help='where the music came from (track, artist, link), for CREDITS.txt')
 ap.add_argument('--music-license',default=None,help='the music licence the user confirmed, e.g. "Mixkit Stock Music Free License"')
@@ -123,6 +126,17 @@ duck=10**(-A.duck_db*np.interp(np.arange(len(seg)),np.arange(n)*hop,g)/20)
 seg=seg*duck[:,None]; mix[:len(seg)]+=seg
 log.append(f"Voice {os.path.basename(A.voice)} at 0 dB; music bed {A.music_db:+.0f} dB, ducked {A.duck_db:.0f} dB under the voice; SFX offset {A.sfx_db:+.0f} dB.")
 mix[:min(len(vo),len(mix))]+=vo[:min(len(vo),len(mix))]
+def lufs_of(arr,name):
+  if not len(arr): return None
+  f=f'{A.out}/{name}.wav'; sf.write(f,arr,SR); o=run(['ffmpeg','-nostats','-i',f,'-af','ebur128','-f','null','-']).stderr
+  try: return float(re.findall(r'I:\s+([-\d.]+) LUFS',o)[-1])
+  except (IndexError,ValueError): return None
+  finally: os.remove(f)
+vl,ml=lufs_of(vo,'_vo'),lufs_of(seg,'_bed')
+if vl is not None:
+  log.append(f"Voice loudness {vl:.1f} LUFS (target -18: tools/vo_finish.sh)"+(f"; music bed {ml:.1f} LUFS = {vl-ml:.1f} LU under the voice" if ml is not None else '')+'.')
+  if abs(vl+18)>2: log.append(f"WARN voice is {vl:.1f} LUFS, not ~-18: run tools/vo_finish.sh on the voice before words/mix.")
+  if ml is not None and vl-ml<12: log.append(f"WARN music bed only {vl-ml:.1f} LU under the voice (want >= 12, palmaris ~20): lower --music-db.")
 mix=mix[:int(dur*SR)]; sf.write(f'{A.out}/mix_raw.wav',mix,SR)
 # 4. loudness: measure the exported MP4, adjust, repeat
 def export(gain_db,limit):

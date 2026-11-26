@@ -76,6 +76,8 @@ python3 tools/sound_pass_vo.py --video renders/<slug>-<lang>-silent.mp4 --voice 
   --manifest .claude/skills/sound-effects/sfx/manifest.json --out renders/sound-<lang> \
   --music-source "<เพลง> by <ศิลปิน> <ลิงก์>" --music-license "CC BY 3.0"
 ```
+**ค่ามาตรฐานมิกซ์ (ผู้ใช้ 2026-11-26 "เพลงก็ดังเกิน", feedback palmaris ข้อ 4):** เพลง `--music-db -24`, duck `--duck-db 8` (= ค่าเริ่มต้นของสคริปต์แล้ว ไม่ต้องใส่),
+เสียงพากย์ต้องผ่าน `tools/vo_finish.sh` (-18 LUFS) **ก่อน** words และก่อนมิกซ์ → เพลงต่ำกว่าเสียงพูด ~20 LU; SOUND.md ขึ้น `WARN` ถ้าพากย์ไม่ใกล้ -18 หรือเพลงต่ำกว่าพูดไม่ถึง 12 LU = แก้ก่อนส่ง
 cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", "desc": "...", "sfx": "kit/pop.ogg", "gain": -8}` (ไฟล์ sfx อ้างจาก `.claude/skills/sound-effects/sfx/`) ตัวอย่าง: `templates/brainrot-v2/sound/cues-th.json` (สร้างด้วย `sound/make_cues.py`)
 
 ## มาตรฐาน motion (ผู้ใช้เคยบอกว่า "แปลกๆ" กับเวอร์ชันแรก)
@@ -83,7 +85,7 @@ cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", 
 - ทุกการเปลี่ยนลงตรงคำพูด; ภาพนิ่งมี Ken Burns ช้าๆ
 - ฉากแผนภาพ: แผนภาพอยู่บน ~60% ของจอ, ซับใต้แผนภาพ, ส่วนล่างไม่ว่าง (เช่น แถบขั้นตอน)
 - ซับ 1-3 คำ (อังกฤษ 1-4) **ทุกก้อน ≥0.4 วิ**, ขาวขอบดำ, ~60-62% ความสูง, Kanit 700 จาก `assets/fonts/` (v3: ฟอนต์/แบบซับตาม look.json ใน `video/fonts/`), ข้อความต้องตรงเสียงที่อ่านจริง (ดูจาก words.json ไม่ใช่บท)
-- เสียง: -16 LUFS, true peak < -4 dBFS วัดจากไฟล์ MP4 จริง
+- เสียง: -16 LUFS, true peak < -4 dBFS วัดจากไฟล์ MP4 จริง; พากย์ดิบ normalize -18 LUFS ก่อนมิกซ์, เพลง -24 dB duck 8 dB (หัวข้อ "มิกซ์เสียง")
 
 ## เรียนสไตล์จากคลิปตัวอย่าง
 ห้ามดาวน์โหลดจาก YouTube เอง ขอให้ผู้ใช้ส่งไฟล์ (อัดหน้าจอได้) แล้ว: ffmpeg contact sheet ทุก 1 วิ, `select='gt(scene,0.3)'` นับจุดตัด, ถอดเสียงด้วย ElevenLabs `scribe_v1` (ภาษาไทยได้) วัดความเร็วพูด/ความยาวบท, ดูซับ (ตำแหน่ง ขนาด กี่คำ) → เขียน `channels/<channel>/style.md` เรียนแค่รูปแบบ ไม่ลอกเนื้อหา

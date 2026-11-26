@@ -43,3 +43,6 @@ def test_mix_and_report_from_other_checkout(tmp_path):
     for f in ('after.mp4', 'SOUND.md', 'CREDITS.txt', 'report.html'):
         assert (out / f).stat().st_size > 0, f
     assert 'FINAL after.mp4' in (out / 'SOUND.md').read_text()
+    rep = (out / 'SOUND.md').read_text()
+    assert 'music bed -24 dB, ducked 8 dB' in rep               # palmaris feedback 4 defaults
+    assert 'Voice loudness' in rep and 'WARN voice is' in rep    # the synthetic voice is ~-13 LUFS, not -18

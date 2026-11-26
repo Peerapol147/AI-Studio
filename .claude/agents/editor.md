@@ -18,7 +18,7 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - ภาพปก (thumbnail): ทำคอมโพสิชันแยก 1 เฟรม ภาพเด่นจากคลิป + ข้อความ 2-5 คำ Kanit 900 ตัวใหญ่ ขอบตัดสีเข้ม
   long: `renders/<slug>-<ภาษา>-thumb.jpg` 1280x720 / short: 1080x1920 (ใช้เป็นปก TikTok และเฟรมแรก)
   ส่งออกด้วย ffmpeg จากเฟรมที่เรนเดอร์ ไฟล์ต้องไม่เกิน 2MB
-- เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด
+- เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด: `tools/sound_pass_vo.py` ค่าเริ่มต้นเพลง -24 dB duck 8 dB (ผู้ใช้ 2026-11-26 "เพลงก็ดังเกิน"); SOUND.md มี `WARN` เรื่องความดังพากย์/ช่องว่างเพลง = แก้ก่อนส่ง ห้ามเพิ่ม `--music-db` สูงกว่า -24 โดยไม่มีเหตุผล
 - เรนเดอร์ `npx hyperframes render` แล้วย้ายไฟล์ไป `<project>/renders/<slug>-<ภาษา>.mp4`
 - เปิดดูเฟรมตัวอย่าง (ffmpeg ดึงทุก 5 วิ) ก่อนส่ง
 - **ภาพตรงคำพากย์**: เวลาช็อต footage มาจาก `assets/audio/shots-<lang>.json` เท่านั้น (start/end/media_start/hit_at)
