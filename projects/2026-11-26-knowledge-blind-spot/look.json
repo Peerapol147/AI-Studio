@@ -11,7 +11,7 @@
   "tts_model": "eleven_v3",
   "atempo": 1.1,
   "vo_lufs": -18,
-  "music_file": "music-jamendo-b6fb4ded.mp3",
+  "music_file": "music-jamendo-16c1c37e.mp3",
   "cover_text": "ตาเรามีรูที่มองไม่เห็น",
   "covers": [
     {
@@ -29,5 +29,5 @@
       ]
     }
   ],
-  "why": "look.py pick แล้วแก้: palette mint-paper → mono-yellow (หน้าจอทดลองต้องพื้นดำ กากบาทขาว จุดเหลือง คอนทราสต์สูงสุดบนมือถือ; ต่างจาก 3 ตอนล่าสุด), music quirky → playful (ชวนลองทำ เหมือน EP1 upbeat แต่ไม่ใช่เพลงเดิม), opening pov (EP1 = question ห้ามซ้ำ; kicker = ป้ายซีรีส์) | โครงลอก EP1 ลองทำตาม #1 ทุกอย่าง เปลี่ยนแค่หัวข้อ"
+  "why": "look.py pick แล้วแก้: palette mint-paper → mono-yellow (หน้าจอทดลองต้องพื้นดำ กากบาทขาว จุดเหลือง คอนทราสต์สูงสุดบนมือถือ; ต่างจาก 3 ตอนล่าสุด), music quirky → playful (ชวนลองทำ เหมือน EP1 upbeat แต่ไม่ใช่เพลงเดิม), opening pov (EP1 = question ห้ามซ้ำ; kicker = ป้ายซีรีส์) | โครงลอก EP1 ลองทำตาม #1 ทุกอย่าง เปลี่ยนแค่หัวข้อ | เพลง: \"happy hour\" filippo martin (ค้น \"happy\"; ตัวแรก playfulness ซ้ำตอนไอติม จึงเปลี่ยน)"
 }
