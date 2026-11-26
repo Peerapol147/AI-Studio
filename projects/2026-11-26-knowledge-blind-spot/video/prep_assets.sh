@@ -37,4 +37,7 @@ want sci && ffmpeg -v error -y -ss 16 -t 3 -i $F/pixabay-107189.mp4 -filter_comp
 want years && ffmpeg -v error -y -ss 31 -t 4 -i $F/pixabay-107189.mp4 -filter_complex "$(CARD 640:720:150:0 960 1080 420)" $ENC assets/years-v.mp4
 # fill: 3382663 field (the hole + fill are drawn in episode.js)
 want fill && ffmpeg -v error -y -i $F/pixabay-3382663.jpg -filter_complex "$(CARDI 900:690:190:0 1080 828 520)" -q:v 2 assets/fill-v.jpg
+
+# cover B hero: frame-0 eye (91698 @4.6) square, same B&W grade (cover.html #art)
+ffmpeg -v error -y -ss 4.6 -i $F/pixabay-91698.mp4 -frames:v 1 -vf "crop=720:720:333:0,scale=900:900:flags=lanczos,$GR" -q:v 2 assets/cover-eye.jpg
 echo ok

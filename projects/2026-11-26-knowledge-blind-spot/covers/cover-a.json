@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 60,
+   "y": 780,
+   "w": 960,
+   "h": 860,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "จ้องกากบาท",
+   "x": 143.875,
+   "y": 269,
+   "w": 792.25,
+   "h": 147,
+   "font_px": 142,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "จุดนี้จะหายไป!?",
+   "x": 63.078125,
+   "y": 426.59974670410156,
+   "w": 953.84375,
+   "h": 220.99400329589844,
+   "font_px": 142,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-26-knowledge-blind-spot/look.json",
+  "lines": [
+   "จ้องกากบาท",
+   "จุดนี้จะหายไป!?"
+  ],
+  "palette": "mono-yellow",
+  "font": "prompt"
+ }
+}

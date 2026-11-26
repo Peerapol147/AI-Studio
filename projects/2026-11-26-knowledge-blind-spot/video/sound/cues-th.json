@@ -1,0 +1,191 @@
+[
+ {
+  "t": 1.38,
+  "type": "scene_cut",
+  "desc": "hook -> hole (eye)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 1.55,
+  "type": "appear",
+  "desc": "dark hole grows beside the pupil",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 3.76,
+  "type": "scene_cut",
+  "desc": "-> cover (hand over the eye)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 3.88,
+  "type": "hover_or_small_ui",
+  "desc": "ring on the covered eye",
+  "sfx": "kit/tick.ogg",
+  "gain": -22
+ },
+ {
+  "t": 5.14,
+  "type": "hover_or_small_ui",
+  "desc": "ring on the open right eye",
+  "sfx": "kit/tick.ogg",
+  "gain": -24
+ },
+ {
+  "t": 10.7,
+  "type": "hover_or_small_ui",
+  "desc": "count 3 (soft tick only, test screen)",
+  "sfx": "tick/fs528561.ogg",
+  "gain": -26
+ },
+ {
+  "t": 11.8,
+  "type": "hover_or_small_ui",
+  "desc": "count 2 (soft tick only, test screen)",
+  "sfx": "tick/fs528561.ogg",
+  "gain": -26
+ },
+ {
+  "t": 12.78,
+  "type": "hover_or_small_ui",
+  "desc": "count 1 (soft tick only, test screen)",
+  "sfx": "tick/fs528561.ogg",
+  "gain": -26
+ },
+ {
+  "t": 17.56,
+  "type": "scene_cut",
+  "desc": "test screen -> eye diagram",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 18.12,
+  "type": "appear",
+  "desc": "ring on the optic nerve exit",
+  "sfx": "kit/pop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 19.1,
+  "type": "movement",
+  "desc": "optic nerve draws out of the eye",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -24
+ },
+ {
+  "t": 19.86,
+  "type": "appear",
+  "desc": "photoreceptor cells pop in",
+  "sfx": "pop/kenney-interface-pluck-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 20.74,
+  "type": "success",
+  "desc": "\"0 cells\" label at the gap",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 22.22,
+  "type": "scene_cut",
+  "desc": "-> street (never notice)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 24.14,
+  "type": "build_up",
+  "desc": "brain glows",
+  "sfx": "riser/kenney-digital-powerup2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 25.1,
+  "type": "scene_cut",
+  "desc": "-> field with a hole",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 25.4,
+  "type": "success",
+  "desc": "hole fills in",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 26.58,
+  "type": "scene_cut",
+  "desc": "-> candle + quill",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 28.28,
+  "type": "appear",
+  "desc": "scientist card",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 28.92,
+  "type": "appear",
+  "desc": "17th century pill",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -20
+ },
+ {
+  "t": 30.16,
+  "type": "build_up",
+  "desc": "count up to 350",
+  "sfx": "riser/kenney-digital-phaserup2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 30.9,
+  "type": "reveal",
+  "desc": "350+ lands",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -20
+ },
+ {
+  "t": 32.04,
+  "type": "scene_cut",
+  "desc": "-> ask",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -22
+ },
+ {
+  "t": 32.32,
+  "type": "appear",
+  "desc": "card 1",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 32.5,
+  "type": "appear",
+  "desc": "card 2",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 32.68,
+  "type": "appear",
+  "desc": "card 3+",
+  "sfx": "kit/pop.ogg",
+  "gain": -20
+ },
+ {
+  "t": 33.58,
+  "type": "scene_cut",
+  "desc": "-> loop (hook eye)",
+  "sfx": "kit/whoosh.ogg",
+  "gain": -24
+ }
+]

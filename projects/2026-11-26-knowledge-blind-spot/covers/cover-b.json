@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 60,
+   "y": 780,
+   "w": 960,
+   "h": 860,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "สมองแอบ",
+   "x": 201.515625,
+   "y": 303,
+   "w": 676.953125,
+   "h": 113,
+   "font_px": 142,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "เติมภาพให้เรา",
+   "x": 107.796875,
+   "y": 461.59375,
+   "w": 864.390625,
+   "h": 147,
+   "font_px": 142,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-26-knowledge-blind-spot/look.json",
+  "lines": [
+   "สมองแอบ",
+   "เติมภาพให้เรา"
+  ],
+  "palette": "mono-yellow",
+  "font": "prompt"
+ }
+}

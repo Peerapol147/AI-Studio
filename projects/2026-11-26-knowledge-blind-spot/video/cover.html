@@ -31,6 +31,18 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #root.vb{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 60%,var(--accent2) 100%)}
 #root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
 #root.vb .tl b{color:var(--bg2)}
+
+/* blind-spot covers. a: the test screen itself (+ and the yellow dot half gone, dashed ring); b: macro eye with a black
+   hole being painted in (the brain fills it). Colours from the look's variables only. */
+#art{left:60px;width:960px;top:780px;height:860px}
+#root .tl{font-size:142px}
+.pie{position:absolute;left:58px;top:428px;width:224px;height:224px;border-radius:50%;
+  background:radial-gradient(circle,#000 0%,#000 70%,rgba(0,0,0,.85) 86%,rgba(0,0,0,0) 100%);
+  -webkit-mask:conic-gradient(from 20deg,transparent 0deg 150deg,#000 150deg 360deg);mask:conic-gradient(from 20deg,transparent 0deg 150deg,#000 150deg 360deg)}
+.scr{position:absolute;left:0;top:70px;width:960px;height:680px;border-radius:48px;background:#000;box-shadow:0 0 0 8px var(--accent2),0 30px 70px rgba(0,0,0,.6)}
+.scr svg,.eye svg{position:absolute;left:0;top:0;width:100%;height:100%}
+.eye{position:absolute;left:30px;top:0;width:900px;height:860px;border-radius:56px;overflow:hidden;background:#000 url(assets/cover-eye.jpg) center/cover;
+  box-shadow:0 0 0 10px var(--ink),0 30px 70px rgba(0,0,0,.45)}
 </style></head><body>
 <div id="root">
   <div id="art" data-cover="art"></div>
@@ -50,6 +62,25 @@ document.getElementById('title').innerHTML =
   c.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
 const bd = document.getElementById('badge');
 if (c.badge) bd.textContent = c.badge; else bd.remove();
-// draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
+
+// hero picture
+const art=document.getElementById('art');
+if(v==='b'){
+  art.innerHTML=`<div class="eye"><div class="pie"></div><svg viewBox="0 0 900 860">
+    <circle cx="170" cy="540" r="134" fill="none" stroke="var(--ink)" stroke-width="22" stroke-dasharray="34 22"/>
+    <circle cx="170" cy="540" r="134" fill="none" stroke="var(--accent)" stroke-width="12" stroke-dasharray="34 22"/>
+    <path d="M300,500 A132,132 0 0 1 250,640" fill="none" stroke="var(--ink)" stroke-width="30" stroke-linecap="round"/>
+    <path d="M300,500 A132,132 0 0 1 250,640" fill="none" stroke="var(--accent)" stroke-width="16" stroke-linecap="round"/>
+  </svg></div>`;
+} else {
+  art.innerHTML=`<div class="scr"><svg viewBox="0 0 960 680">
+    <defs><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset=".48" stop-color="var(--accent)"/>
+      <stop offset=".52" stop-color="var(--accent)" stop-opacity=".22"/><stop offset="1" stop-color="var(--accent)" stop-opacity=".05"/></linearGradient></defs>
+    <rect x="112" y="322" width="150" height="24" fill="#fff"/><rect x="175" y="259" width="24" height="150" fill="#fff"/>
+    <circle cx="735" cy="370" r="108" fill="url(#fade)"/>
+    <circle cx="735" cy="370" r="146" fill="none" stroke="var(--accent2)" stroke-width="10" stroke-dasharray="30 20" opacity=".8"/>
+  </svg></div>`;
+}
+// (hero picture drawn above) (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
 </script>
 </body></html>
