@@ -1,0 +1,44 @@
+/* blind-spot ("ลองทำตาม #2"): episode graphics. Colours only from the look's variables (mono-yellow). */
+#epi{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:30;pointer-events:none}
+.gsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.ov{position:absolute;left:0;top:0;width:1080px;height:1920px}
+/* series badge: top corner, whole pill inside Y < 240 (never inside the test frame Y 450-1000) */
+#badge{position:absolute;left:60px;top:150px;z-index:56;font-weight:700;font-size:44px;line-height:1;opacity:0;
+  color:var(--ink);background:var(--accent);padding:12px 26px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink),0 10px 24px rgba(0,0,0,.45);transform-origin:0 50%}
+/* ---- test screen (5.48-17.56): one fixed layer. Solid black, "+" centre (130,690), dot centre (950,750) d 120 ---- */
+#ts{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#000;opacity:0}
+#ts .plus-h{position:absolute;left:85px;top:683px;width:90px;height:14px;background:#fff}
+#ts .plus-v{position:absolute;left:123px;top:645px;width:14px;height:90px;background:#fff}
+#ts .dot{position:absolute;left:890px;top:690px;width:120px;height:120px;border-radius:50%;background:var(--accent)}
+#ts svg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+/* labels outside the test frame: top label Y ~336-414 */
+.tlab{position:absolute;left:540px;top:375px;white-space:nowrap;font-weight:700;font-size:58px;line-height:1;opacity:0;
+  color:#fff;background:var(--panel);padding:10px 34px 16px;border-radius:999px;box-shadow:0 0 0 4px var(--accent2)}
+.tlab em{font-style:normal;color:var(--accent)}
+.tlab.acc{color:var(--ink);background:var(--accent);box-shadow:0 0 0 4px var(--ink)}
+.tnum{position:absolute;left:540px;top:1352px;font-weight:900;font-size:170px;line-height:1;opacity:0;color:var(--accent);
+  -webkit-text-stroke:0;padding-bottom:20px}
+/* ---- shot overlays ---- */
+.hole{position:absolute;border-radius:50%;background:radial-gradient(circle,#000 0%,#000 58%,rgba(0,0,0,.85) 72%,rgba(0,0,0,0) 100%)}
+.lab{position:absolute;white-space:nowrap;font-weight:700;line-height:1;transform-origin:50% 50%;opacity:0;font-size:54px}
+.lab.acc{color:var(--ink);background:var(--accent);padding:14px 30px 18px;border-radius:999px;box-shadow:0 0 0 6px var(--ink)}
+.lab.neu{color:var(--paneltext);background:var(--panel);padding:14px 30px 18px;border-radius:999px;box-shadow:0 0 0 4px var(--accent2)}
+.glow{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;mix-blend-mode:screen;
+  background:radial-gradient(ellipse 430px 430px at 540px 940px,var(--accent) 0%,color-mix(in srgb,var(--accent) 35%,transparent) 45%,rgba(0,0,0,0) 100%)}
+.fhole{position:absolute;border-radius:50%;background:radial-gradient(circle,#000 0%,#000 62%,rgba(0,0,0,.8) 78%,rgba(0,0,0,0) 100%)}
+.dimall{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;background:rgba(0,0,0,.45)}
+.card{position:absolute;left:540px;top:640px;opacity:0;text-align:center;padding:34px 50px 40px;border-radius:40px;background:var(--panel);
+  box-shadow:0 0 0 6px var(--accent2),0 24px 60px rgba(0,0,0,.6)}
+.card .c1{font-weight:700;font-size:70px;line-height:1.35;color:var(--paneltext);white-space:nowrap}
+.card .c2{display:inline-block;margin-top:18px;font-weight:700;font-size:60px;line-height:1;color:var(--ink);background:var(--accent);padding:12px 30px 18px;border-radius:999px}
+.yrs{position:absolute;left:540px;top:720px;opacity:0;text-align:center;white-space:nowrap}
+.yrs .n{font-weight:900;font-size:270px;line-height:1.1;color:var(--accent);-webkit-text-stroke:22px var(--ink);paint-order:stroke fill;text-shadow:0 16px 0 rgba(0,0,0,.45)}
+.yrs .u{font-weight:900;font-size:120px;line-height:1;color:#fff;-webkit-text-stroke:16px var(--ink);paint-order:stroke fill;margin-top:-10px}
+.ncard{position:absolute;top:790px;width:240px;height:270px;border-radius:40px;background:var(--panel);box-shadow:0 0 0 7px var(--accent2);opacity:0;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:180px;line-height:1;color:#fff;padding-bottom:22px}
+.ncard.on{background:var(--accent);color:var(--ink);box-shadow:0 0 0 8px var(--ink),0 0 0 16px var(--accent)}
+.mini{position:absolute;left:540px;top:490px;width:600px;height:330px;border-radius:34px;background:#000;
+  box-shadow:0 0 0 6px var(--accent2),0 20px 50px rgba(0,0,0,.6);opacity:0}
+.mini .mp1{position:absolute;left:47px;top:129px;width:50px;height:8px;background:#fff}
+.mini .mp2{position:absolute;left:68px;top:108px;width:8px;height:50px;background:#fff}
+.mini .md{position:absolute;left:495px;top:134px;width:66px;height:66px;border-radius:50%;background:var(--accent)}

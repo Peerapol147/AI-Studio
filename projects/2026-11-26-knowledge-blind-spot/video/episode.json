@@ -1,0 +1,20 @@
+{
+  "title": ["ตาเรามี*รู*", "ที่มองไม่เห็น"],
+  "kicker": "ลองทำตาม #2",
+  "caps": ["ตาเรามี*รู*", "ที่มองไม่เห็น", "อยู่*ตลอดเวลา*นะ", "ลองดู", "*ปิดตาซ้าย*", "ใช้*ตาขวา*",
+           "จ้อง*กากบาท*ไว้", "*อย่ามองจุด*นะ", "ค่อยๆ ขยับหน้า", "เข้าหาจอ",
+           "*สาม*", "*สอง*", "*หนึ่ง*",
+           "*จุดเหลือง*หายไป", "ใช่ไหม?", "นั่นแหละ", "*รูในตา*เรา",
+           "ตรงนั้นคือจุด", "ที่*เส้นประสาทตา*", "ออกจากลูกตา", "เลย*ไม่มี*", "*เซลล์รับแสง*เลย",
+           "แต่ที่ไม่เคย", "เห็น*รู*นี้", "เพราะ*สมอง*", "เติมภาพให้เอง", "แบบ*เนียนๆ*",
+           "คนแรกที่เจอ", "*รู*นี้คือ", "*นักวิทยาศาสตร์*", "*ฝรั่งเศส*", "เมื่อกว่า", "*350* ปีก่อน",
+           "ลองกี่รอบ", "ถึง*หาย*?", "พิมพ์*ตัวเลข*มา"],
+  "plates": {"hook": "assets/hook-v.mp4", "hole": "assets/hole-v.mp4", "cover": "assets/cover-v.jpg",
+             "test": "graphic", "dont": "graphic", "move": "graphic", "c3": "graphic", "c2": "graphic", "c1": "graphic",
+             "gone": "graphic", "thatsit": "graphic",
+             "nerve": "assets/nerve-v.jpg", "exit": "graphic", "nocell": "graphic",
+             "never": "assets/never-v.mp4", "brain": "assets/brain-v.mp4", "fill": "assets/fill-v.jpg",
+             "who": "assets/who-v.mp4", "sci": "assets/sci-v.mp4", "years": "assets/years-v.mp4",
+             "ask": "graphic", "loop": "graphic"},
+  "vo": "assets/vo-th.mp3"
+}

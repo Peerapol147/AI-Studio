@@ -1,0 +1,7 @@
+/* Skin colours for compositions/components/hand-rig/hand.js. Mixed from the episode look (look.json palette via
+   build_index.py :root vars), so the hand changes with the look instead of one fixed clip-art colour. */
+#root,.hand-rig-scope{
+  --sk:color-mix(in srgb,#f4cfb2 80%,var(--accent2));   /* skin */
+  --skd:color-mix(in srgb,var(--sk) 55%,var(--ink));    /* outline */
+  --skc:color-mix(in srgb,var(--sk) 62%,var(--ink));    /* creases */
+}
