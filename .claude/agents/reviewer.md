@@ -32,7 +32,8 @@ tools: Bash, Read, Glob, Grep, WebSearch, WebFetch, Skill
    - [ ] **หน้าตาไม่ซ้ำ:** `git fetch origin 'refs/heads/claude/ep-*:refs/remotes/origin/claude/ep-*'` แล้ว `python3 tools/look.py check <project> --final` ต้อง `look: OK`
      (แนบรายชื่อตอนที่เทียบ); เปิดเฟรม 0 / 50% เทียบกับตอนก่อนหน้า ต้องเห็นว่าสี/ฟอนต์/ซับ/โครงเปิดต่างกันจริง (ไม่ใช่แค่ใน look.json);
      ใช้ `templates/brainrot-v3/` (index.html มีบรรทัด `<!-- look: ... -->` ตรง look.json); เพลงใน MP4/CREDITS.md = `music_file`, เสียงพากย์ = `voice`;
-     ข้อความเฟรม 0 = `cover_text` และไม่ซ้ำ/คล้ายปกตอนก่อน (look.py เช็กให้ แต่ดูภาพเทียบด้วย); ซับทุกก้อนอ่านออกบนพื้นของมัน
+     ข้อความเฟรม 0 = `cover_text` และไม่ซ้ำ/คล้ายปกตอนก่อน (look.py เช็กให้ แต่ดูภาพเทียบด้วย);
+     **ปก A/B (แยกจากเฟรม 0):** `python3 tools/cover_check.py <project> --final` ต้องผ่าน + เปิดดู `covers/compare.png` เอง (อ่านออกที่ 200 px? น่ากดกว่าปกเก่า? ภาพเด่นครบ? ข้อความจริงตาม research.md?); ซับทุกก้อนอ่านออกบนพื้นของมัน
 
 แต่ละข้อที่ไม่ผ่าน: บอกฉาก เวลา ปัญหา และ agent ที่ต้องแก้
 - ภาพตรงคำพากย์: ดึงเฟรมที่ `word_at + 0.1` และ `hit_at` ของทุกช็อตใน `assets/audio/shots-<lang>.json` ภาพต้องตรงกับคำที่ได้ยิน ถ้าไม่ตรง = ต้องแก้

@@ -19,7 +19,8 @@
 4. กราฟิกเฉพาะตอน: ใส่ใน `index.html.tpl` ตรง `EPISODE CSS` / `EPISODE GRAPHICS` / `function episode(t)` (ช็อต `"graphic"` มีช่อง `#g-<id>` ให้วาด)
    ใช้สีจากตัวแปร `var(--accent)` ฯลฯ ห้ามฝังสี hex ใหม่ (ไม่งั้นหน้าตาไม่เปลี่ยนตาม look)
 5. `npm run check` → snapshot → render → `tools/sound_pass_vo.py` (make-clip "มิกซ์เสียง")
-6. ปก = เฟรม 0 (`npx hyperframes snapshot --at 0`) เพราะเฟรม 0 ทำให้เหมือนปกอยู่แล้ว
+6. เฟรม 0 ยังต้องเข้าใจใน 1 วิแบบปิดเสียง (ฟีด Shorts) แต่**ปกที่อัปทำแยก 2 แบบ** (style.md 9a, ผู้ใช้ 2026-11-26 "ปกชีพ ไม่น่ากด"):
+   แก้ `cover.html` (COVERS a/b ≤2 บรรทัด + ภาพเด่นใน `#art`) → `node ../../../tools/cover_shot.js cover.html ../covers a,b` → `python3 tools/cover_check.py <project> --final` → ดู `covers/compare.png`
 
 ## สิ่งที่แม่แบบทำให้เอง
 - จังหวะ: ช็อต beat `hook`/`twist` = กล้องเร็ว (push 1.04→1.12 + ส่าย); ช็อตอื่น = ค้างภาพ (push ช้า 8% + หมุน 1° ไม่ตัด); ทรานซิชันของ look เล่นทุกครั้งที่เปลี่ยนช่วงเรื่อง และใน hook/หักมุม ช็อตอื่นในช่วงเดียวกัน = ครอสเฟด 0.1 วิ

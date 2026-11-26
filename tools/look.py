@@ -7,7 +7,9 @@
 <project> = projects/<YYYY-MM-DD>-<channel>-<slug>. Catalog: templates/looks/looks.json.
 look.json = {"template": "brainrot-v3", "palette": .., "font": .., "caption": .., "opening": .., "cover": ..,
              "transition": .., "music_mood": .., "voice": "<catalog key>|id:<elevenlabs voice_id>",
-             "music_file": "<file in assets/audio>|null", "cover_text": "<frame-0 / cover text>", "why": ".."}
+             "music_file": "<file in assets/audio>|null", "cover_text": "<frame-0 text>", "why": "..",
+             "covers": [{"id": "a", "lines": [..]}, ..]  (uploaded thumbnail A/B, checked by tools/cover_check.py)}
+Locked channels (looks.json channel_lock) also carry "tts_model", "atempo", "vo_lufs".
 
 History = the other projects of the same channel, from projects/ in this checkout AND from every
 episode branch git knows (refs/remotes/origin/claude/ep-*, refs/heads/claude/ep-*; run

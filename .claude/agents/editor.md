@@ -15,8 +15,9 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
 - ฟอนต์: คัดลอก `assets/fonts/` ไปที่ `<project>/video/fonts/` แล้วโหลด `fonts/fonts.css`
   short: Kanit 900 (หัวข้อ/hook) + Kanit 700 (ซับ) / long: Prompt 700 (หัวข้อ) + Sarabun หรือ Noto Sans Thai (ซับ)
   ภาษาอังกฤษใช้ฟอนต์เดียวกันได้ (มีตัวละตินในชุด) ห้ามปล่อยให้ตกไปใช้ฟอนต์ระบบ
-- ภาพปก (thumbnail): ทำคอมโพสิชันแยก 1 เฟรม ภาพเด่นจากคลิป + ข้อความ 2-5 คำ Kanit 900 ตัวใหญ่ ขอบตัดสีเข้ม
-  long: `renders/<slug>-<ภาษา>-thumb.jpg` 1280x720 / short: 1080x1920 (ใช้เป็นปก TikTok และเฟรมแรก)
+- ภาพปก (thumbnail): **2 แบบ (A/B) แยกจากเฟรม 0** ตาม `look.json` `"covers"` (style.md 9a): `templates/brainrot-v3/cover.html` → `tools/cover_shot.js` → `<project>/covers/cover-{a,b}.jpg`
+  แล้ว `python3 tools/cover_check.py <project> --final` ต้องผ่าน และเปิดดู `covers/compare.png` (200 px เทียบปกเก่า) เอง; ≤2 บรรทัด ไม่ซ้ำคำ ไม่ทับ ไม่ชนขอบ ภาพเด่นไม่ถูกตัด
+  long: 1280x720 / short: 1080x1920 (TikTok ใช้ปกเดียวกัน); เฟรม 0 ของคลิปยังต้องเข้าใจใน 1 วิแบบปิดเสียง
   ส่งออกด้วย ffmpeg จากเฟรมที่เรนเดอร์ ไฟล์ต้องไม่เกิน 2MB
 - เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด: `tools/sound_pass_vo.py` ค่าเริ่มต้นเพลง -24 dB duck 8 dB (ผู้ใช้ 2026-11-26 "เพลงก็ดังเกิน"); SOUND.md มี `WARN` เรื่องความดังพากย์/ช่องว่างเพลง = แก้ก่อนส่ง ห้ามเพิ่ม `--music-db` สูงกว่า -24 โดยไม่มีเหตุผล
 - เรนเดอร์ `npx hyperframes render` แล้วย้ายไฟล์ไป `<project>/renders/<slug>-<ภาษา>.mp4`
@@ -28,4 +29,4 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
   หน้าตาทั้งหมด (สี ฟอนต์ สไตล์ซับ โครงเปิด ทรานซิชัน) มาจาก `<project>/look.json` ห้ามเปลี่ยนเอง ถ้าคิดว่าไม่เข้ากับเรื่อง แจ้งผู้กำกับให้แก้ look.json แล้วรัน `tools/look.py check`
   กราฟิกเฉพาะตอนใช้ตัวแปรสี `var(--accent)` `var(--accent2)` `var(--panel)` `var(--ink)` ห้ามฝังสีของตอนเก่า; เกรด footage ตาม `grade` ของ palette
   จังหวะ: แล้วแต่คลิป (style.md ข้อ 4, ผู้ใช้ 2026-11-25) เวลาช็อตมาจาก shots.json ของผู้กำกับ; ทุกช็อตต้องมีของขยับ ห้ามค้างนิ่ง >0.5 วิ; ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
-  ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = เฟรม 0 (`npx hyperframes snapshot --at 0`)
+  ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = แยก A/B (ด้านบน) ไม่ใช่ snapshot เฟรม 0
