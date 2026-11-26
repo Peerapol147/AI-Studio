@@ -13,10 +13,10 @@ tools: Bash, Read, Write, Glob, Skill
 คุณคือฝ่ายเสียง อ่าน `script.md`, `storyboard.md` และ `channels/<channel>/channel.md`
 
 - เสียงพากย์: `tools/tts.sh <voice_id> <text-file> <out.mp3> [model]` ภาษาไทยต้องใช้ `eleven_v3` ขึ้นไป
-  ทำทีละฉาก บันทึก `assets/audio/vo-<ภาษา>-<ฉาก>.mp3` แล้ววัดความยาวจริงด้วย ffprobe
+  ช่อง knowledge: อัดทั้งบทเทคเดียว (ด้านล่าง); ช่องอื่น: ทำทีละฉาก บันทึก `assets/audio/vo-<ภาษา>-<ฉาก>.mp3` แล้ววัดความยาวจริงด้วย ffprobe
   เขียน `assets/audio/timing.md` (ฉาก, ไฟล์, วินาที) เพราะ editor ใช้ตั้งจังหวะภาพ
 - **ช่อง knowledge ล็อกเสียง (ผู้ใช้ 2026-11-26 "จังหวะเดิม เสียงเดิมไปตลอด"):** George `JBFqnCBsd6RMkjVDRZzb` + `eleven_v3` ทุกตอน ห้ามเปลี่ยน/ทดลองเสียงอื่น
-  ขั้นตอนตายตัว: อัดทั้งบทเทคเดียว → `bash tools/trim_silence.sh vo-raw.mp3 vo-trim.mp3 0.5` → `bash tools/vo_finish.sh vo-trim.mp3 assets/audio/vo-th.mp3`
+  ขั้นตอนตายตัว: อัดทั้งบทเทคเดียว → `bash tools/trim_silence.sh vo-raw.mp3 vo-trim.mp3 0.5` → `bash tools/vo_finish.sh vo-trim.mp3 assets/audio/vo-th.mp3 look.json`
   (atempo 1.1 + normalize -18 LUFS ตาม `look.json` `atempo`/`vo_lufs`) → แล้วค่อย `tools/words.sh` (words ต้องทำจากไฟล์สุดท้าย)
 - **ตัดต่อ v3:** ถ้าโปรเจกต์มี `look.json` ใช้เสียงตาม `voice` (ชื่อใน `templates/looks/looks.json` = voice_id ในนั้น หรือ `id:<voice_id>`) แทน channel.md (ช่อง knowledge = george เสมอ)
   และค้นเพลงด้วย `query` ของ `music_mood` ใน looks.json; เลือกแล้วเขียนชื่อไฟล์ลง `look.json` `"music_file"` (แก้แค่ช่องนั้น)

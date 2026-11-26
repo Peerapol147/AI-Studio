@@ -1,5 +1,5 @@
 {
-  "_doc": "ชุดหน้าตาให้เลือกต่อตอน (editing v3) ผู้กำกับเลือก 1 ค่าต่อด้านแล้วจดใน projects/<id>/look.json ด้วย `python3 tools/look.py pick <project> --write` แล้วแก้ได้ เช็กซ้ำ: `python3 tools/look.py check <project>` แม่แบบ templates/brainrot-v3/ อ่านค่าจากไฟล์นี้ look.json ใส่ \"cover_text\" = ข้อความเฟรม 0/ปก ด้วย (เช็กว่าไม่ซ้ำ/ไม่คล้ายตอนก่อน) ช่องที่อยู่ใน channel_lock (knowledge: เสียง George, eleven_v3, atempo 1.1) ไม่สุ่มด้านนั้น",
+  "_doc": "ชุดหน้าตาให้เลือกต่อตอน (editing v3) ผู้กำกับเลือก 1 ค่าต่อด้านแล้วจดใน projects/<id>/look.json ด้วย `python3 tools/look.py pick <project> --write` แล้วแก้ได้ เช็กซ้ำ: `python3 tools/look.py check <project>` แม่แบบ templates/brainrot-v3/ อ่านค่าจากไฟล์นี้ look.json ใส่ \"cover_text\" = ข้อความเฟรม 0 (เช็กว่าไม่ซ้ำ/ไม่คล้ายตอนก่อน) และ \"covers\" = ข้อความปกที่อัป A/B (tools/cover_check.py) ช่องที่อยู่ใน channel_lock (knowledge: เสียง George, eleven_v3, atempo 1.1) ไม่สุ่มด้านนั้น",
   "axes": [
     "palette",
     "font",
@@ -156,7 +156,7 @@
     }
   },
   "cover": {
-    "_doc": "การจัดวางข้อความเฟรม 0 (= ปก) ใช้ร่วมกับ opening",
+    "_doc": "การจัดวางข้อความเฟรม 0 ใช้ร่วมกับ opening (ปกที่อัปแยก: look.json covers A/B, templates/brainrot-v3/cover.html)",
     "stack": {
       "label": "ข้อความซ้อนบรรทัดกลางจอ ขอบหนา (เดิม)"
     },

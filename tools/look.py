@@ -267,7 +267,7 @@ def check(root, project, final=False, use_git=True):
     if not look.get('music_file'):
         (errs if final else warns).append('music_file not set (voice step writes the chosen track into look.json)')
     if not ct:
-        (errs if final else warns).append('cover_text not set (the frame-0 / cover text, = episode.json title)')
+        (errs if final else warns).append('cover_text not set (the frame-0 text, = episode.json title; the uploaded cover is look.json "covers")')
     return errs, warns, rec
 
 

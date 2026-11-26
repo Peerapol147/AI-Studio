@@ -6,6 +6,8 @@ import pytest
 np = pytest.importorskip('numpy')
 sf = pytest.importorskip('soundfile')
 pytest.importorskip('librosa')
+pytest.importorskip('scipy')
+pytest.importorskip('matplotlib')
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SR = 48000
 

@@ -31,3 +31,19 @@ branch: `claude/dev-feedback-rules-2026-11-26` แตกจาก `claude/stoic-
 - ปกเก่าก่อนวันนี้ไม่มีไฟล์ภาพใน git (`renders/` ถูก ignore) `compare.png` จะมีปกเก่าเมื่อตอนต่อไป commit `covers/*.jpg` ตามกฎใหม่; ตอนนี้ tool WARN ให้เทียบกับหน้าช่องด้วยตา
 - look.json ของตอนเก่าที่ใช้ Liam ไม่ได้แก้ (ห้ามแตะ projects/) ถ้ารัน `look.py check` กับตอนเก่าจะ ERROR เรื่องเสียง ซึ่งถูกต้องตามกฎใหม่ แต่ไม่กระทบตอนใหม่ (history อ่านแค่ palette/opening/เพลง/ปก)
 - `hand.js` รองรับแค่มือขวาด้านฝ่ามือ (เขียนไว้ใน README)
+
+## รอบแก้ตามห้องตรวจอิสระ (`docs/review-feedback-rules-2026-11-26.md` บน `claude/review-feedback-rules-2026-11-26` @91e8689)
+| ระดับ | เรื่อง | แก้ |
+|---|---|---|
+| 🔴 | ข้อความในภาพปก ≠ look.json "covers" แต่ผ่าน; ค่าเริ่มแม่แบบ = ปก palmaris | `cover.html` ไม่มีข้อความปกแล้ว (เปิดเองเห็นแค่ "แก้ข้อความ / ใน look.json"); `cover_shot.js` อ่าน `look.json` "covers" + palette/font จาก `looks.json` แล้วใส่เป็น `window.__COVER` (ไม่มี covers ของ id = exit ≠ 0); `cover_check.py` ERROR ถ้าข้อความในภาพ (`cover-<id>.json`) ไม่ตรง look.json; ข้อเสนอนโยบาย: ปกใช้ palette/font ของ look ทำแล้ว (A = พื้นเข้มสี bg ของ look, B = พื้นสว่างสี accent) |
+| 🟡 | แหล่งที่โดน 429 ถูกลองใหม่ทุกช็อต | สถานะ BLOCKED เก็บใน `SEARCH.json` `_blocked` ข้ามทุกช็อต 10 นาที |
+| 🟡 | `FOOTAGE_BACKOFF` ไม่มีเพดาน | `_backoff()` clamp: ≤2 ครั้ง, ครั้งละ ≤9 วิ, รวม ≤12 วิ |
+| 🟡 | "เฟรม 0 (= ปก)" ค้าง | style.md ข้อ 9, looks.json `_doc` + `cover._doc`, make-clip ขั้น 3, look.py WARN, TEMPLATE.md |
+| ⚪ | license regex ยอม NC/ND | ตัด `NC`/`ND` และไฟล์ที่ไม่มีไลเซนส์ |
+| ⚪ | นับแหล่ง blocked/error เป็น "ตอบแล้ว" | นับเฉพาะ `ok` |
+| ⚪ | test_sound_pass_vo FAIL แทน skip | `importorskip` scipy + matplotlib |
+| ⚪ | voice.md "ทีละฉาก" vs "เทคเดียว" | แยก knowledge = เทคเดียว / ช่องอื่น = ทีละฉาก |
+| ⚪ | vo_finish ค่าตายตัว | อาร์กิวเมนต์ที่ 3 รับ `look.json` (อ่าน atempo/vo_lufs) |
+| ⚪ | ทำตอนเก่าใหม่หลังล็อกเสียง | วิธีทำใน channel.md + make-clip ตารางปัญหา |
+| ⚪ | verify พิสูจน์ไม่ได้ว่ามีคนดูจริง / ≤12 วิไม่รวมเวลาคำขอ | รับไว้ตามที่ห้องตรวจบอก (ข้อจำกัดของวิธี) |
+เทสต์หลังแก้: `pytest tests/` → **111 passed** (เพิ่ม: ข้อความภาพ ≠ look.json, palette ถึงภาพ, แม่แบบไม่มีปกเก่า, block ข้ามช็อต, clamp backoff, blocked ไม่นับ, NC ถูกตัด, vo_finish อ่าน look.json)

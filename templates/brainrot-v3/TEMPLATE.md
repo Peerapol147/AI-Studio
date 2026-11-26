@@ -20,7 +20,7 @@
    ใช้สีจากตัวแปร `var(--accent)` ฯลฯ ห้ามฝังสี hex ใหม่ (ไม่งั้นหน้าตาไม่เปลี่ยนตาม look)
 5. `npm run check` → snapshot → render → `python3 tools/contact_sheet.py make renders/<slug>-th.mp4 renders/frames-th` แล้วดูทุกแผ่น → `tools/sound_pass_vo.py` (make-clip "มิกซ์เสียง")
 6. เฟรม 0 ยังต้องเข้าใจใน 1 วิแบบปิดเสียง (ฟีด Shorts) แต่**ปกที่อัปทำแยก 2 แบบ** (style.md 9a, ผู้ใช้ 2026-11-26 "ปกชีพ ไม่น่ากด"):
-   แก้ `cover.html` (COVERS a/b ≤2 บรรทัด + ภาพเด่นใน `#art`) → `node ../../../tools/cover_shot.js cover.html ../covers a,b` → `python3 tools/cover_check.py <project> --final` → ดู `covers/compare.png`
+   ข้อความ A/B ≤2 บรรทัดอยู่ใน `look.json` `"covers"` เท่านั้น (สี/ฟอนต์ตาม look; `cover_shot.js` ใส่ให้ ห้ามพิมพ์ข้อความใน cover.html) + วาดภาพเด่นใน `#art` ของ `cover.html` → `node ../../../tools/cover_shot.js cover.html ../covers a,b` → `python3 tools/cover_check.py <project> --final` → ดู `covers/compare.png`
 
 ## คอมโพเนนต์
 - `compositions/components/hand-rig/`: มือ SVG ข้อนิ้วหมุนได้ (ซีรีส์ "ลองทำตามเดี๋ยวนี้", ผู้ใช้อนุมัติ 2026-11-25) อ่าน README ในนั้น; `demo.html?pose=test` ดูท่าตัวอย่าง
