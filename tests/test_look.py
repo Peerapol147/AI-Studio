@@ -4,7 +4,8 @@ import json, pathlib, shutil, subprocess, sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TOOL = ROOT / 'tools' / 'look.py'
 BASE = {'template': 'brainrot-v3', 'palette': 'sunrise-coral', 'font': 'prompt', 'caption': 'box', 'opening': 'pov',
-        'cover': 'card', 'transition': 'slide', 'music_mood': 'lofi', 'voice': 'liam', 'music_file': 'music-a.mp3'}
+        'cover': 'card', 'transition': 'slide', 'music_mood': 'lofi', 'voice': 'george', 'music_file': 'music-a.mp3',
+        'tts_model': 'eleven_v3', 'atempo': 1.1, 'vo_lufs': -18}
 
 
 def repo(tmp_path, git=False):
@@ -111,7 +112,56 @@ def test_unknown_value_fails_voice_id_matches_catalog_name(tmp_path):
                                               'music_file': 'q.mp3'})
     res = run('check', new, '--no-git')
     assert res.returncode == 1 and "palette: 'neon' not in" in res.stdout
-    assert 'WARN  voice' in res.stdout                        # id:JBFq... is George = same voice as last time
+    assert 'voice' not in res.stdout.split('compared with')[0] and 'ERROR voice' not in res.stdout  # id:JBFq... = George = the lock
+
+
+def test_voice_comparison_still_works_where_not_locked(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-21-football-b', {**BASE, 'voice': 'george'})
+    new = ep(r, '2026-11-22-football-new', {**BASE, 'palette': 'ocean-teal', 'opening': 'number',
+                                            'voice': 'id:JBFqnCBsd6RMkjVDRZzb', 'music_file': 'q.mp3', 'cover_text': 'x'})
+    res = run('check', new, '--no-git')
+    assert res.returncode == 0 and 'WARN  voice' in res.stdout   # football has no lock: same voice twice = WARN
+
+
+def test_knowledge_voice_locked_to_george(tmp_path):
+    """User 2026-11-26 (palmaris feedback 9): same voice and pace every episode -> George, eleven_v3, atempo 1.1."""
+    r = repo(tmp_path)
+    ep(r, '2026-11-20-knowledge-a', {**BASE, 'palette': 'night-violet', 'opening': 'question', 'voice': 'george'})
+    ep(r, '2026-11-21-knowledge-b', {**BASE, 'palette': 'mint-paper', 'opening': 'number', 'voice': 'george',
+                                     'music_file': 'b.mp3'})
+    new = r / 'projects' / '2026-11-22-knowledge-new'
+    assert run('pick', new, '--write', '--no-git').returncode == 0
+    look = json.loads((new / 'look.json').read_text())
+    assert look['voice'] == 'george' and look['tts_model'] == 'eleven_v3' and look['atempo'] == 1.1
+    assert look['palette'] not in ('night-violet', 'mint-paper') and look['opening'] not in ('question', 'number')
+    look.update(music_file='n.mp3', cover_text='ร่างกายมีอะไหล่สำรอง')
+    (new / 'look.json').write_text(json.dumps(look))
+    res = run('check', new, '--final', '--no-git')
+    assert res.returncode == 0, res.stdout
+    assert 'WARN  voice' not in res.stdout                    # same voice as last time is the rule, not a repeat
+    del look['atempo']
+    (new / 'look.json').write_text(json.dumps(look))
+    assert 'WARN  atempo not set' in run('check', new, '--no-git').stdout
+    assert run('check', new, '--final', '--no-git').returncode == 1
+    look['atempo'] = 1.1
+    for bad in ({'voice': 'liam'}, {'tts_model': 'eleven_v4'}, {'atempo': 1.12}):
+        (new / 'look.json').write_text(json.dumps({**look, **bad}))
+        res = run('check', new, '--no-git')
+        k = next(iter(bad))
+        assert res.returncode == 1 and f'ERROR {k}:' in res.stdout and 'locked' in res.stdout, res.stdout
+    # the other "no repeat" rules still hold with the voice locked
+    (new / 'look.json').write_text(json.dumps({**look, 'palette': 'mint-paper'}))
+    assert run('check', new, '--no-git').returncode == 1
+
+
+def test_pick_rotates_voice_on_unlocked_channel(tmp_path):
+    r = repo(tmp_path)
+    ep(r, '2026-11-21-football-b', {**BASE, 'voice': 'george'})
+    new = r / 'projects' / '2026-11-22-football-new'
+    assert run('pick', new, '--write', '--no-git').returncode == 0
+    look = json.loads((new / 'look.json').read_text())
+    assert look['voice'] == 'liam' and 'tts_model' not in look
 
 
 def test_cover_text_repeat_or_similar_fails(tmp_path):

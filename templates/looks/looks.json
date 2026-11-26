@@ -1,5 +1,5 @@
 {
-  "_doc": "ชุดหน้าตาให้เลือกต่อตอน (editing v3) ผู้กำกับเลือก 1 ค่าต่อด้านแล้วจดใน projects/<id>/look.json ด้วย `python3 tools/look.py pick <project> --write` แล้วแก้ได้ เช็กซ้ำ: `python3 tools/look.py check <project>` แม่แบบ templates/brainrot-v3/ อ่านค่าจากไฟล์นี้ look.json ใส่ \"cover_text\" = ข้อความเฟรม 0/ปก ด้วย (เช็กว่าไม่ซ้ำ/ไม่คล้ายตอนก่อน)",
+  "_doc": "ชุดหน้าตาให้เลือกต่อตอน (editing v3) ผู้กำกับเลือก 1 ค่าต่อด้านแล้วจดใน projects/<id>/look.json ด้วย `python3 tools/look.py pick <project> --write` แล้วแก้ได้ เช็กซ้ำ: `python3 tools/look.py check <project>` แม่แบบ templates/brainrot-v3/ อ่านค่าจากไฟล์นี้ look.json ใส่ \"cover_text\" = ข้อความเฟรม 0/ปก ด้วย (เช็กว่าไม่ซ้ำ/ไม่คล้ายตอนก่อน) ช่องที่อยู่ใน channel_lock (knowledge: เสียง George, eleven_v3, atempo 1.1) ไม่สุ่มด้านนั้น",
   "axes": [
     "palette",
     "font",
@@ -18,6 +18,15 @@
     "cover",
     "transition"
   ],
+  "channel_lock": {
+    "_doc": "ด้านที่ล็อกต่อช่อง ไม่สุ่ม: look.py pick ใส่ค่านี้เสมอ, check = ERROR ถ้าต่าง และไม่นับว่าซ้ำตอนก่อน. ผู้ใช้ 2026-11-26 (feedback palmaris ข้อ 9): \"อยากให้ใช้จังหวะเดิม เสียงเดิมไปตลอด\" เลือก George. กฎหน้าตาไม่ซ้ำ (สี ฟอนต์ ซับ โครงเปิด ปก ทรานซิชัน เพลง) ยังคุมเหมือนเดิม",
+    "knowledge": {
+      "voice": "george",
+      "tts_model": "eleven_v3",
+      "atempo": 1.1,
+      "vo_lufs": -18
+    }
+  },
   "palette": {
     "night-violet": {
       "label": "ม่วงกลางคืน (สีเดิมของ v2)",
@@ -203,7 +212,7 @@
   },
   "voice": {
     "george": {
-      "label": "George ชาย นักเล่าเรื่อง (เดิม)",
+      "label": "George ชาย นักเล่าเรื่อง (ล็อกสำหรับช่อง knowledge ทุกตอน)",
       "id": "JBFqnCBsd6RMkjVDRZzb",
       "fits": "ความรู้ทั่วไป, ตำนาน/ลี้ลับ"
     },

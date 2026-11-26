@@ -25,6 +25,10 @@ check, exit 1 (ERROR) when:
   - cover_text equal or similar (character-pair overlap >= 0.6) to the cover text of ANY earlier episode of the
     channel (not only the last 3: the knee-crack cover repeated the knuckle-crack cover ~10 episodes later)
   - --final and music_file or cover_text is empty, or no claude/ep-* branch is known to git (history not fetched)
+  - the channel has a lock in looks.json "channel_lock" (knowledge: voice George, tts_model eleven_v3, atempo 1.1)
+    and look.json differs from it (user 2026-11-26: "same voice, same pace from now on")
+A locked axis is never counted as a repeat (same voice every episode is the point); the repeat rules above still
+cover palette, font, caption, opening, cover, transition and music, so the channel does not become one template.
 WARN (exit 0): any other axis equal to the previous episode; music_file used in one of the last 3 episodes;
 music_file / cover_text not set yet; no ep branches.
 These thresholds are tool settings (dev brief: "differs from the last 3"; planning room 2026-11-23: cover text
@@ -49,6 +53,11 @@ def catalog(root):
 
 def options(cat, axis):
     return [k for k in cat[axis] if not k.startswith('_')]
+
+
+def channel_lock(cat, channel):
+    """{"voice": .., "tts_model": .., "atempo": .., ...} the channel always uses (looks.json channel_lock), or {}."""
+    return {k: v for k, v in (cat.get('channel_lock') or {}).get(channel, {}).items() if not k.startswith('_')}
 
 
 def voice_key(cat, v):
@@ -215,6 +224,16 @@ def check(root, project, final=False, use_git=True):
         return [f'{f}: not JSON ({e})'], [], []
     cat, rec, refs, covers = recent(root, project, use_git)
     errs += validate(cat, look)
+    lock = channel_lock(cat, ID_RE.match(project.name).group(2))
+    for k, want in lock.items():
+        have = look.get(k)
+        if have is None and k not in cat['axes']:
+            (errs if final else warns).append(f'{k} not set: this channel is locked to {want!r} (looks.json channel_lock)')
+            continue
+        ok = same(cat, k, have, want) if k == 'voice' else have == want
+        if not ok:
+            errs.append(f'{k}: {have!r} but this channel is locked to {want!r} (templates/looks/looks.json channel_lock; '
+                        'user 2026-11-26: same voice and pace every episode)')
     if refs == 0:
         (errs if final else warns).append(
             "git knows no claude/ep-* branch: run git fetch origin 'refs/heads/claude/ep-*:refs/remotes/origin/claude/ep-*' "
@@ -225,7 +244,7 @@ def check(root, project, final=False, use_git=True):
             if same(cat, axis, look.get(axis), prev['look'].get(axis)):
                 errs.append(f'{axis} {look.get(axis)!r} = previous episode {prev["id"]}: change it')
         for axis in cat['axes']:
-            if axis not in ('palette', 'opening') and same(cat, axis, look.get(axis), prev['look'].get(axis)):
+            if axis not in ('palette', 'opening') and axis not in lock and same(cat, axis, look.get(axis), prev['look'].get(axis)):
                 warns.append(f'{axis} {look.get(axis)!r} = previous episode {prev["id"]}')
         mf = look.get('music_file')
         if mf and prev['look'].get('music_file') and pathlib.Path(mf).name == pathlib.Path(prev['look']['music_file']).name:
@@ -252,10 +271,14 @@ def check(root, project, final=False, use_git=True):
 
 def pick(root, project, pins, use_git=True):
     cat, rec, refs, _ = recent(root, project, use_git)
+    lock = channel_lock(cat, ID_RE.match(project.name).group(2))
     look = {'template': 'brainrot-v3'}
     for axis in cat['axes']:
         if axis in pins:
             look[axis] = pins[axis]
+            continue
+        if axis in lock:                                  # locked per channel: never rotated
+            look[axis] = lock[axis]
             continue
         used = [r['look'].get(axis) for r in rec]                     # newest first
         opts = options(cat, axis)
@@ -266,9 +289,13 @@ def pick(root, project, pins, use_git=True):
             key = voice_key(cat, o) if axis == 'voice' else o
             return ids.index(key) if key in ids else RECENT + 1
         look[axis] = sorted(opts, key=lambda o: (-age(o), h(o)))[0]
+    for k, v in lock.items():
+        if k not in cat['axes']:
+            look[k] = v                                   # tts_model, atempo, vo_lufs: the voice step reads these
     look['music_file'] = None
     look['cover_text'] = None
-    look['why'] = 'เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: เสียงพากย์/อารมณ์เพลงให้เลือกตามแนวเรื่อง'
+    look['why'] = 'เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง' + (
+        '; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน' if lock else '; เสียงพากย์ให้เลือกตามแนวเรื่อง')
     return look, rec, refs
 
 
