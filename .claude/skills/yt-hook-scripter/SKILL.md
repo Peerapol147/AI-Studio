@@ -77,6 +77,13 @@ rules:
 - Short: the payoff or tension lands on frame one (second 0 to 1), with on-screen
   text so it works muted. Design the ending to loop back to the start.
 - The opening can never promise more than the video delivers. Honor the click.
+- **AI Studio project rule (user feedback 2026-11-26, Thai too):** a bare yes/no question is not a hook.
+  The first line must carry at least one of: (a) stakes for the viewer (their body, money, time, safety),
+  (b) a strange word or image they must keep listening to decode ("your body has spare parts"),
+  (c) a specific contradiction of what they believe. Won: "ร่างกายเรามีอะไหล่สำรองด้วยนะ" ("your body
+  has spare parts"). Lost: "ข้อมือมีเส้นนี้ไหม?" ("do you have this line on your wrist?"), which the user
+  called abrupt and not worth stopping for. Test: if a stranger can answer the hook with "yes/no" and stop
+  caring, rewrite it. The strange word must be true to research.md. Label each of the 3 variants (a)/(b)/(c).
 - Use `..` for a spoken pause. A dash in a script is only a breath mark the
   reader sees, not a tell, but `..` reads better on a teleprompter.
 
