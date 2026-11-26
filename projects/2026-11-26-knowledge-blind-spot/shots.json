@@ -37,7 +37,8 @@
    "beat": "setup",
    "want": "หน้าจอทดลองเต็ม: พื้นดำ กากบาทขาว X130 Y690 จุดเหลือง X950 Y750 (ห้ามขยับ ห้าม push) ป้าย 'ตาขวาจ้อง +' Y≈380",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "dont",
@@ -47,7 +48,8 @@
    "beat": "setup",
    "want": "จอทดลองเดิม + ป้าย 'อย่ามองจุด' Y≈380 (นอกกรอบ Y450-1000)",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "move",
@@ -57,7 +59,8 @@
    "beat": "setup",
    "want": "จอทดลองเดิม + ไอคอนมือถือ↔หน้า เลื่อนเข้า ล่างจอ Y≈1250",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "c3",
@@ -67,7 +70,8 @@
    "beat": "setup",
    "want": "จอทดลองเดิม + เลข 3 เล็ก ล่าง",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "c2",
@@ -77,7 +81,8 @@
    "beat": "setup",
    "want": "จอทดลองเดิม + เลข 2",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "c1",
@@ -87,7 +92,8 @@
    "beat": "setup",
    "want": "จอทดลองเดิม + เลข 1",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "gone",
@@ -97,7 +103,8 @@
    "beat": "reveal",
    "want": "จอทดลองเดิม (จุดยังอยู่สำหรับคนที่ยังลอง) + ป้าย 'หายไหม?' Y≈380",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "thatsit",
@@ -107,7 +114,8 @@
    "beat": "reveal",
    "want": "จอทดลองเดิม + ป้าย 'รูในตาเรา' Y≈380 ; ท้ายช็อตค่อยๆ วงประรอบตำแหน่งจุด",
    "footage": false,
-   "test_screen": true
+   "test_screen": true,
+   "long_ok": true
   },
   {
    "id": "nerve",
@@ -120,7 +128,7 @@
   {
    "id": "exit",
    "cue": {
-    "th": "เส้นประสาท"
+    "th": "ออกจาก"
    },
    "beat": "explain",
    "want": "แผนภาพลูกตา เส้นประสาทตาพุ่งออกด้านหลัง (เส้นวิ่ง)",
@@ -129,7 +137,7 @@
   {
    "id": "nocell",
    "cue": {
-    "th": "ไม่มีเซลล์"
+    "th": "เลยไม่มี"
    },
    "beat": "explain",
    "want": "ซูมจุดนั้น: เซลล์รับแสงเรียงเป็นแถว เว้นช่องว่างตรงจุดเส้นประสาท (เครื่องหมาย 0)",
@@ -138,7 +146,7 @@
   {
    "id": "never",
    "cue": {
-    "th": "แต่ที่ไม่เคย"
+    "th": "แต่ที่"
    },
    "beat": "twist",
    "want": "ตาคน/คนมองไปรอบๆ ใช้ชีวิตปกติ ไม่เห็นรู"
@@ -146,7 +154,7 @@
   {
    "id": "brain",
    "cue": {
-    "th": "สมอง"
+    "th": "เพราะสมอง"
    },
    "beat": "twist",
    "want": "สมอง (footage/ภาพ) เรืองแสง"
@@ -154,7 +162,7 @@
   {
    "id": "fill",
    "cue": {
-    "th": "เนียน"
+    "th": "แบบเนียน"
    },
    "beat": "twist",
    "want": "ภาพวิวมีรูดำ แล้วรูถูกเติมเต็มเนียนๆ (morph)",
@@ -169,9 +177,18 @@
    "want": "ภาพเก่า/หนังสือโบราณ/เทียน ศตวรรษ 17 (ไม่ใช่ภาพบุคคลจริงถ้าไม่มีไลเซนส์)"
   },
   {
+   "id": "sci",
+   "cue": {
+    "th": "นักวิทยา"
+   },
+   "beat": "share",
+   "want": "มุมใหม่: ภาพเก่าอีกภาพ (เครื่องมือวิทยาศาสตร์/ปากกาขนนก) หรือการ์ด 'นักวิทยาศาสตร์ฝรั่งเศส' + 'ศตวรรษที่ 17' kinetic",
+   "footage": false
+  },
+  {
    "id": "years",
    "cue": {
-    "th": "สามร้อย"
+    "th": "เมื่อกว่า"
    },
    "beat": "share",
    "want": "ตัวเลข 350+ ปี เด้ง บนภาพเก่า + ธงฝรั่งเศสไม่ต้อง (ข้อความ 'ฝรั่งเศส')",
@@ -180,7 +197,7 @@
   {
    "id": "ask",
    "cue": {
-    "th": "ลองกี่รอบ"
+    "th": "ลองกี่"
    },
    "beat": "cta",
    "want": "ตัวเลข 1 / 2 / 3+ เด้งทีละตัว + จอทดลองย่อเล็ก",

@@ -1,0 +1,232 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 34.623,
+ "inputs": {
+  "shots.json": "4c0a3f15c4da64e021a406237e815fe6c00337ea0b88377d8cfeec532ebe21e7",
+  "footage.json": null,
+  "assets/audio/words.json": "4515b99963f68634336964bcf6c4183f20a4e35d8fd9315cc20e3b864ad82254"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ตาเรา",
+   "word_at": 0.1,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.38,
+   "dur": 1.38
+  },
+  {
+   "id": "hole",
+   "src": null,
+   "cue": "อยู่ตลอด",
+   "word_at": 1.46,
+   "start": 1.38,
+   "beat": "hook",
+   "end": 3.76,
+   "dur": 2.38
+  },
+  {
+   "id": "cover",
+   "src": null,
+   "cue": "ปิดตา",
+   "word_at": 3.84,
+   "start": 3.76,
+   "beat": "setup",
+   "end": 5.48,
+   "dur": 1.72
+  },
+  {
+   "id": "test",
+   "src": null,
+   "cue": "จ้อง",
+   "word_at": 5.56,
+   "start": 5.48,
+   "beat": "setup",
+   "end": 7.06,
+   "dur": 1.58
+  },
+  {
+   "id": "dont",
+   "src": null,
+   "cue": "อย่ามอง",
+   "word_at": 7.14,
+   "start": 7.06,
+   "beat": "setup",
+   "end": 8.3,
+   "dur": 1.24
+  },
+  {
+   "id": "move",
+   "src": null,
+   "cue": "ค่อยๆ",
+   "word_at": 8.38,
+   "start": 8.3,
+   "beat": "setup",
+   "end": 10.62,
+   "dur": 2.32
+  },
+  {
+   "id": "c3",
+   "src": null,
+   "cue": "สาม",
+   "word_at": 10.7,
+   "start": 10.62,
+   "beat": "setup",
+   "end": 11.72,
+   "dur": 1.1
+  },
+  {
+   "id": "c2",
+   "src": null,
+   "cue": "สอง",
+   "word_at": 11.8,
+   "start": 11.72,
+   "beat": "setup",
+   "end": 12.7,
+   "dur": 0.98
+  },
+  {
+   "id": "c1",
+   "src": null,
+   "cue": "หนึ่ง",
+   "word_at": 12.78,
+   "start": 12.7,
+   "beat": "setup",
+   "end": 13.78,
+   "dur": 1.08
+  },
+  {
+   "id": "gone",
+   "src": null,
+   "cue": "จุดเหลือง",
+   "word_at": 13.86,
+   "start": 13.78,
+   "beat": "reveal",
+   "end": 15.6,
+   "dur": 1.82
+  },
+  {
+   "id": "thatsit",
+   "src": null,
+   "cue": "นั่นแหละ",
+   "word_at": 15.68,
+   "start": 15.6,
+   "beat": "reveal",
+   "end": 17.56,
+   "dur": 1.96
+  },
+  {
+   "id": "nerve",
+   "src": null,
+   "cue": "ตรงนั้น",
+   "word_at": 17.64,
+   "start": 17.56,
+   "beat": "explain",
+   "end": 19.02,
+   "dur": 1.46
+  },
+  {
+   "id": "exit",
+   "src": null,
+   "cue": "ออกจาก",
+   "word_at": 19.1,
+   "start": 19.02,
+   "beat": "explain",
+   "end": 19.76,
+   "dur": 0.74
+  },
+  {
+   "id": "nocell",
+   "src": null,
+   "cue": "เลยไม่มี",
+   "word_at": 19.84,
+   "start": 19.76,
+   "beat": "explain",
+   "end": 22.22,
+   "dur": 2.46
+  },
+  {
+   "id": "never",
+   "src": null,
+   "cue": "แต่ที่",
+   "word_at": 22.3,
+   "start": 22.22,
+   "beat": "twist",
+   "end": 23.86,
+   "dur": 1.64
+  },
+  {
+   "id": "brain",
+   "src": null,
+   "cue": "เพราะสมอง",
+   "word_at": 23.94,
+   "start": 23.86,
+   "beat": "twist",
+   "end": 25.1,
+   "dur": 1.24
+  },
+  {
+   "id": "fill",
+   "src": null,
+   "cue": "แบบเนียน",
+   "word_at": 25.18,
+   "start": 25.1,
+   "beat": "twist",
+   "end": 26.58,
+   "dur": 1.48
+  },
+  {
+   "id": "who",
+   "src": null,
+   "cue": "คนแรก",
+   "word_at": 26.66,
+   "start": 26.58,
+   "beat": "share",
+   "end": 28.18,
+   "dur": 1.6
+  },
+  {
+   "id": "sci",
+   "src": null,
+   "cue": "นักวิทยา",
+   "word_at": 28.26,
+   "start": 28.18,
+   "beat": "share",
+   "end": 29.38,
+   "dur": 1.2
+  },
+  {
+   "id": "years",
+   "src": null,
+   "cue": "เมื่อกว่า",
+   "word_at": 29.46,
+   "start": 29.38,
+   "beat": "share",
+   "end": 32.039,
+   "dur": 2.659
+  },
+  {
+   "id": "ask",
+   "src": null,
+   "cue": "ลองกี่",
+   "word_at": 32.119,
+   "start": 32.039,
+   "beat": "cta",
+   "end": 33.58,
+   "dur": 1.541
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "พิมพ์",
+   "word_at": 33.66,
+   "start": 33.58,
+   "beat": "loop",
+   "end": 34.623,
+   "dur": 1.043
+  }
+ ]
+}
