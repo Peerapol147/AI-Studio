@@ -18,7 +18,7 @@
 3. เขียน `episode.json` แล้ว `python3 build_index.py`
 4. กราฟิกเฉพาะตอน: ใส่ใน `index.html.tpl` ตรง `EPISODE CSS` / `EPISODE GRAPHICS` / `function episode(t)` (ช็อต `"graphic"` มีช่อง `#g-<id>` ให้วาด)
    ใช้สีจากตัวแปร `var(--accent)` ฯลฯ ห้ามฝังสี hex ใหม่ (ไม่งั้นหน้าตาไม่เปลี่ยนตาม look)
-5. `npm run check` → snapshot → render → `tools/sound_pass_vo.py` (make-clip "มิกซ์เสียง")
+5. `npm run check` → snapshot → render → `python3 tools/contact_sheet.py make renders/<slug>-th.mp4 renders/frames-th` แล้วดูทุกแผ่น → `tools/sound_pass_vo.py` (make-clip "มิกซ์เสียง")
 6. เฟรม 0 ยังต้องเข้าใจใน 1 วิแบบปิดเสียง (ฟีด Shorts) แต่**ปกที่อัปทำแยก 2 แบบ** (style.md 9a, ผู้ใช้ 2026-11-26 "ปกชีพ ไม่น่ากด"):
    แก้ `cover.html` (COVERS a/b ≤2 บรรทัด + ภาพเด่นใน `#art`) → `node ../../../tools/cover_shot.js cover.html ../covers a,b` → `python3 tools/cover_check.py <project> --final` → ดู `covers/compare.png`
 

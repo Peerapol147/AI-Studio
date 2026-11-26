@@ -10,6 +10,7 @@
 - `test_vo_finish.py`: `tools/vo_finish.sh` atempo 1.1 + loudnorm to -18 LUFS
 - `test_cover_check.py`: `tools/cover_check.py` cover A/B (<= 2 lines, repeated word, A = B, similar to earlier covers/frame 0, overlap / edge / 200 px size / contrast, CTR log) and `tools/cover_shot.js` on `templates/brainrot-v3/cover.html` (browser part skipped without node + playwright)
 - `test_footage_search.py`: `tools/footage_search.py` searches Pixabay/Pexels/Openverse/NASA/Wikimedia (mock server), retries a 429 twice then skips the source, drops non-free Wikimedia files, `report` demands >= 10 terms (th + en, video + photo, >= 2 sources) and writes ALERT.md under 50 % coverage
+- `test_contact_sheet.py`: `tools/contact_sheet.py` a frame every 0.25 s on sheets, a held frame > 0.5 s found (a slow push-in is not), `verify` needs a note per sheet under "## ตรวจภาพทุกเฟรม" in review.md
 - `test_pacing.py`: `tools/pacing.py` topic by 1.5 s, reveal 50-60 %, twist/share/cta present, explain 2-3 s / hook+twist speed = INFO only (style.md 4), length 20-40 s (long_reason, 59 s ceiling), legend twist >= 70 %; `beat` in shot_times
 - `test_shot_times.py`: `tools/shot_times.py` good run, media_start priority, footage.json merge by id, the hard errors (empty shots/cue, NaN/Infinity, duplicate id) and stale-timeline deletion
 - `test_fetch.py`: `tools/get.sh` (200/403/429/5xx/4xx/timeout, never overwrites a good file, key masked) and tts/words/voices/footage/music + `tools/credits.py` against a local mock server (`conftest.py`); no real API is called

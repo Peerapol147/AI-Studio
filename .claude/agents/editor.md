@@ -29,4 +29,5 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
   หน้าตาทั้งหมด (สี ฟอนต์ สไตล์ซับ โครงเปิด ทรานซิชัน) มาจาก `<project>/look.json` ห้ามเปลี่ยนเอง ถ้าคิดว่าไม่เข้ากับเรื่อง แจ้งผู้กำกับให้แก้ look.json แล้วรัน `tools/look.py check`
   กราฟิกเฉพาะตอนใช้ตัวแปรสี `var(--accent)` `var(--accent2)` `var(--panel)` `var(--ink)` ห้ามฝังสีของตอนเก่า; เกรด footage ตาม `grade` ของ palette
   จังหวะ: แล้วแต่คลิป (style.md ข้อ 4, ผู้ใช้ 2026-11-25) เวลาช็อตมาจาก shots.json ของผู้กำกับ; ทุกช็อตต้องมีของขยับ ห้ามค้างนิ่ง >0.5 วิ; ช็อต loop เล่นภาพ hook ให้เฟรมท้าย = เฟรม 0
+  หลังเรนเดอร์ทุกรอบ: `python3 tools/contact_sheet.py make renders/<slug>-<lang>.mp4 renders/frames-<lang>` แล้วเปิดดูทุกแผ่นเอง (ไม่ใช่ snapshot ไม่กี่เฟรม; feedback palmaris ข้อ 1) แก้ก่อนส่ง reviewer
   ก่อนเรนเดอร์: `python3 tools/pacing.py <project>` ต้องไม่มี FAIL; ปก = แยก A/B (ด้านบน) ไม่ใช่ snapshot เฟรม 0
