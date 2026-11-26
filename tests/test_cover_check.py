@@ -62,8 +62,8 @@ def test_repeated_word():
 def test_good_ab_passes_and_writes_200px_and_compare(tmp_path):
     r = repo(tmp_path)
     d = ep(r, '2026-11-27-knowledge-x', {'cover_text': 'ร่างกายมีอะไหล่สำรอง', 'covers': GOOD})
-    for v in 'ab':
-        shot(d, v, [T('l1', 190, 290), T('l2', 190, 510)])
+    for c in GOOD:
+        shot(d, c['id'], [T(c['lines'][0].replace('*', ''), 190, 290), T(c['lines'][1].replace('*', ''), 190, 510)])
     res = run(d, '--final', '--no-git')
     assert res.returncode == 0, res.stdout
     assert (d / 'covers' / 'cover-a-200.png').exists() and (d / 'covers' / 'compare.png').exists()
@@ -100,6 +100,7 @@ def test_layout_overlap_edge_small_and_low_contrast(tmp_path):
     shot(d, 'a', [T('l1', 190, 290), T('l2', 190, 400), {'kind': 'badge', 'text': 'ลองทำตาม', 'x': 10, 'y': 140, 'w': 300, 'h': 70}])
     shot(d, 'b', [T('tiny', 190, 290, fs=40), T('l2', 190, 600)], light=False)
     out = run(d, '--no-git').stdout
+    assert "cover a: the image says 'l1 / l2' but look.json covers says 'ร่างกายเรา / มี*อะไหล่*!?'" in out
     assert "text 'l1' overlaps text 'l2'" in out
     assert "badge 'ลองทำตาม' touches/leaves the edge" in out
     assert "text 'tiny' is 7.4 px at 200 px wide" in out
@@ -123,7 +124,7 @@ def _node_ok():
 @pytest.mark.skipif(not _node_ok(), reason='node + playwright not installed')
 def test_template_cover_shot_measures_and_passes(tmp_path):
     r = repo(tmp_path)
-    d = ep(r, '2026-11-27-knowledge-x', {'covers': GOOD})
+    d = ep(r, '2026-11-27-knowledge-x', {'palette': 'mint-paper', 'font': 'sarabun', 'covers': GOOD})
     shutil.copytree(ROOT / 'templates' / 'brainrot-v3', d / 'video', ignore=shutil.ignore_patterns('vendor', 'node_modules'))
     res = subprocess.run(['node', str(ROOT / 'tools' / 'cover_shot.js'), str(d / 'video' / 'cover.html'), str(d / 'covers'), 'a,b'],
                          capture_output=True, text=True, timeout=120)
@@ -134,3 +135,27 @@ def test_template_cover_shot_measures_and_passes(tmp_path):
     assert lines[0]['y'] + lines[0]['h'] <= lines[1]['y'] + 5           # ink boxes, not the tall Thai line boxes
     res = run(d, '--final', '--no-git')
     assert res.returncode == 0, res.stdout
+    assert geo['look']['palette'] == 'mint-paper'
+    b = json.loads((d / 'covers' / 'cover-b.json').read_text())
+    assert [i['text'] for i in b['items'] if i['kind'] == 'text'] == ['หมอตัดเส้นนี้', 'ไปใช้ได้!?']
+    # palette from look.json reaches the image: mint-paper variant a is a light field (sunrise-coral default is dark)
+    px = Image.open(d / 'covers' / 'cover-a.jpg').convert('L').getpixel((540, 1500))
+    assert px > 150, px
+    # look.json text changed but the image not re-shot -> ERROR (review 2026-11-26)
+    lk = json.loads((d / 'look.json').read_text())
+    lk['covers'][1]['lines'] = ['เส้นเอ็นสำรอง', 'ในข้อมือ!?']
+    (d / 'look.json').write_text(json.dumps(lk, ensure_ascii=False))
+    res = run(d, '--no-git')
+    assert res.returncode == 1 and 'cover b: the image says' in res.stdout
+
+
+@pytest.mark.skipif(not _node_ok(), reason='node + playwright not installed')
+def test_template_default_is_a_placeholder_not_an_old_cover(tmp_path):
+    html = (ROOT / 'templates' / 'brainrot-v3' / 'cover.html').read_text()
+    assert 'อะไหล่' not in html and 'ตัดเส้นนี้' not in html            # no palmaris cover baked into the template
+    r = repo(tmp_path)
+    d = ep(r, '2026-11-27-knowledge-x', {'palette': 'mint-paper'})        # no "covers" in look.json
+    shutil.copytree(ROOT / 'templates' / 'brainrot-v3', d / 'video', ignore=shutil.ignore_patterns('vendor', 'node_modules'))
+    res = subprocess.run(['node', str(ROOT / 'tools' / 'cover_shot.js'), str(d / 'video' / 'cover.html'), str(d / 'covers'), 'a'],
+                         capture_output=True, text=True, timeout=120)
+    assert res.returncode != 0 and 'no "covers" entry' in res.stderr

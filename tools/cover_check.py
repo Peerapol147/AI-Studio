@@ -15,6 +15,8 @@ images + layout: <project>/covers/cover-<id>.jpg and cover-<id>.json from `node 
 uploaded) so later episodes can be compared with them.
 
 ERROR (exit 1):
+  - the text in the image (cover-<id>.json) is not the look.json text (cover_shot.js injects look.json; a stale image or
+    a hand-edited cover.html fails)
   - fewer than 2 variants, a variant with 0 or more than 2 lines, two variants with the same text
   - a word repeated inside one cover (same token twice, or the same 3+ letter Thai run twice: "ร่างกาย... ร่างกาย")
   - cover text equal/similar (look.py similarity >= 0.6) to a cover or frame-0 text of ANY earlier episode of the channel
@@ -59,6 +61,10 @@ def repeated(lines):
             if re.search(r'[ก-ฮ]', sub) and s.count(sub) >= 2:
                 return sub
     return None
+
+
+def _plain(t):
+    return re.sub(r'[\s*]+', '', t or '')
 
 
 def _overlap(a, b):
@@ -220,6 +226,11 @@ def check(root, project, final=False, use_git=True):
                 f'cover {vid}: {img.name}/{lay.name} missing: node tools/cover_shot.js <video/cover.html> {cdir} {",".join(ids)}')
             continue
         geo = json.loads(lay.read_text())
+        shown = [i['text'] for i in geo.get('items', []) if i['kind'] == 'text']
+        want = next((c.get('lines') or [] for c in covers if c.get('id') == vid), [])
+        if [_plain(t) for t in shown] != [_plain(t) for t in want]:
+            errs.append(f'cover {vid}: the image says {" / ".join(shown)!r} but look.json covers says '
+                        f'{" / ".join(want)!r}: re-run node tools/cover_shot.js (it takes the text from look.json)')
         errs += layout_errors(geo, vid)
         sm, e2 = small_and_contrast(img, geo, vid, cdir / f'cover-{vid}-{SMALL}.png')
         errs += e2

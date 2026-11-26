@@ -1,5 +1,8 @@
 // Cover A/B stills + layout for tools/cover_check.py (palmaris feedback 7-8, 2026-11-26).
-// Use: node tools/cover_shot.js <video/cover.html> <out dir, e.g. projects/<x>/covers> [a,b]
+// Use: node tools/cover_shot.js <video/cover.html> <out dir, e.g. projects/<x>/covers> [a,b] [--look <look.json>]
+// The text, palette and font come from look.json (default <out dir>/../look.json): its "covers" entry for the variant
+// ({id, lines, badge}) and the look's palette/font values in templates/looks/looks.json are injected as
+// window.__COVER, so the image always shows the text tools/cover_check.py checks (review 2026-11-26).
 // For each variant: opens cover.html?v=<id>, waits for fonts, writes <out>/cover-<id>.jpg (the image to upload) and
 // <out>/cover-<id>.json = {w, h, items: [{kind, text, x, y, w, h, font_px, overflow}]} from every element marked
 // data-cover="text" (one per text line), "badge" or "art" (the hero picture). Needs node + playwright (preinstalled).
@@ -7,14 +10,33 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 (async () => {
-  const [html, out, list] = process.argv.slice(2);
-  if (!html || !out) { console.error('use: node tools/cover_shot.js <cover.html> <out dir> [a,b]'); process.exit(2); }
+  const args = process.argv.slice(2);
+  const li = args.indexOf('--look');
+  const lookPath = li >= 0 ? args.splice(li, 2)[1] : null;
+  const [html, out, list] = args;
+  if (!html || !out) { console.error('use: node tools/cover_shot.js <cover.html> <out dir> [a,b] [--look look.json]'); process.exit(2); }
   const variants = (list || 'a,b').split(',').filter(Boolean);
+  const lf = path.resolve(lookPath || path.join(out, '..', 'look.json'));
+  if (!fs.existsSync(lf)) { console.error(`${lf} missing: covers need look.json "covers" (text) + palette/font`); process.exit(2); }
+  const look = JSON.parse(fs.readFileSync(lf, 'utf8'));
+  let cat = null;                                    // templates/looks/looks.json: walk up from look.json to the repo
+  for (let d = path.dirname(lf); d !== path.dirname(d); d = path.dirname(d)) {
+    const c = path.join(d, 'templates', 'looks', 'looks.json');
+    if (fs.existsSync(c)) { cat = JSON.parse(fs.readFileSync(c, 'utf8')); break; }
+  }
+  const vars = {};
+  const pal = cat && cat.palette && cat.palette[look.palette];
+  if (pal) for (const k of ['bg', 'bg2', 'ink', 'text', 'accent', 'accent2', 'panel']) if (pal[k]) vars['--' + k] = pal[k];
+  const font = cat && cat.font && cat.font[look.font];
+  if (font) { vars['--font'] = `'${font.family}'`; vars['--tw'] = String(font.title_weight || 900); }
   fs.mkdirSync(out, { recursive: true });
   const b = await chromium.launch();
   let bad = 0;
   for (const v of variants) {
+    const cv = (look.covers || []).find(c => c.id === v);
+    if (!cv || !(cv.lines || []).length) { console.error(`look.json has no "covers" entry with lines for id ${v}`); bad = 1; continue; }
     const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
+    await p.addInitScript(c => { window.__COVER = c; }, { lines: cv.lines, badge: cv.badge || '', vars });
     const errs = [];
     p.on('pageerror', e => errs.push(String(e)));
     await p.goto('file://' + path.resolve(html) + '?v=' + encodeURIComponent(v));
@@ -54,6 +76,7 @@ const fs = require('fs');
     geo.errors = errs;
     const el = await p.$('#root');
     await (el || p).screenshot({ path: path.join(out, `cover-${v}.jpg`), type: 'jpeg', quality: 88 });
+    geo.look = { file: lf, lines: cv.lines, palette: look.palette || null, font: look.font || null };
     fs.writeFileSync(path.join(out, `cover-${v}.json`), JSON.stringify(geo, null, 1));
     if (!geo.items.some(i => i.kind === 'text')) { console.error(`cover-${v}: no data-cover="text" element`); bad = 1; }
     if (errs.length) { console.error(`cover-${v}: page errors: ${errs.join(' | ')}`); bad = 1; }
