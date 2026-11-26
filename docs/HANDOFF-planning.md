@@ -22,7 +22,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 - บทเรียน (n เล็ก): เรื่องร่างกายที่ทุกคนเจอเอง 20-35 วิ ชนะ; นามธรรม/อนาคต/ตำนาน แพ้; **ภาคต่อ 0/2 → พักกฎ ">5K = ภาคต่อ"** (2026-11-23); คลิป 54-59 วิไม่ดีกว่า
 - ยังไม่ได้ Analytics: ท้องร้อง (ลงแล้ว ผู้ใช้ทักเรื่องปก), พลังงาน/Gen Z/แม่นาค/ปวดอึ ครบ 48 ชม.แล้วแต่ขอภาพ "ดูต่อ" เพิ่มได้
 
-## 4. ระบบตัดต่อ v3 (บน `claude/stoic-cray-6z2ajs` @7341c6e ห้องทำคลิปใหม่ใช้อัตโนมัติ)
+## 4. ระบบตัดต่อ v3 (บน `claude/stoic-cray-6z2ajs` @defa014 ห้องทำคลิปใหม่ใช้อัตโนมัติ)
 ที่มา: ผู้ใช้สงสัยโดนมองเป็นสแปม → วิจัย (`docs/editing-research-2026-11-22.md`): ไม่มีหลักฐานโดนบล็อก แต่แม่แบบเดียว+เสียง AI ซ้ำ = เสี่ยง **หารายได้ไม่ได้** (นโยบาย inauthentic/template-based) + คลิปแพ้ใน 3 วิแรก
 | รุ่น | เนื้อหา | ตรวจ |
 |---|---|---|
@@ -30,7 +30,8 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 | v3.2 | ปก midstory+card อ่านออก, ข้อความปกห้ามซ้ำ **ทุกตอน**, อ่านปกเก่า 16/20, เฟรม 0 = cover_text, เพลงซ้ำ 3 ตอน WARN | ✅ (branch claude/review-editing-v3.2) |
 | v3.3 | จากตอนท้องร้อง: สระบน/ล่าง+วรรณยุกต์ไม่ทับแถบ/ไม่หาย, ขนาดหัวข้อตามความกว้างจริง + ต่ำสุด 72/60 px (ต่ำกว่า = build หยุด), ซับ `"แสดง|ถอด"`, เทสต์เบราว์เซอร์ `tests/test_title_fit_v3.py` | ✅ 3 รอบ (branch claude/review-editing-v3.3) เทสต์ 88 |
 | v3.4 (2026-11-25) | **จังหวะตัดแล้วแต่คลิป** (ผู้ใช้สั่ง): เลิกบังคับ explain ค้าง 2-3 วิ / ตัดเร็วเฉพาะ hook-twist; shots.json มี `"pace"` อธิบายเหตุผล; pacing.py เรื่องนี้เป็น INFO + เทสต์กันถอย | ✅ รอบ 2 (claude/review-cut-rule-2026-11-25 @ed79934) เทสต์ 88 |
-ค้าง: **กล้องของแม่แบบ brainrot-v3 เร็วเฉพาะ beat hook/twist ช่วงอื่น push ช้า = ต้นเหตุจริงของ "motion ไม่สวย" (ห้องตรวจชี้) → งานถัดไปของห้อง #4**; shot_times.py:192 คอมเมนต์ยังพูด 2-3 วิ (⚪); ป้าย POV ใหญ่ใกล้บรรทัด 2 ใน look card+pov; editor-notes ตอนท้องร้องข้อ 3-7 (พิมพ์ระยะซับทุกก้อน, ช่อง overlay มาตรฐาน, overlay ลูปคาบ DUR, WARN hyperframes check ที่คาดไว้, prep_assets.sh ใน v3); ทำตอนอังกฤษต้องเพิ่ม `cover_text_en`; look.py อ่าน cover.json ระบบปกเก่าไม่ได้ (2 ตอน)
+| v3.5 (2026-11-26) | จาก feedback ผู้ใช้: **ล็อกเสียง George** (eleven_v3, atempo 1.1, -18 LUFS; `tools/vo_finish.sh`) เฉพาะ knowledge; มิกซ์เพลง -24/duck 8; **ปกแยกจากเฟรม 0 ทำ A/B** (`templates/brainrot-v3/cover.html`, `tools/cover_shot.js`, `tools/cover_check.py` เทียบภาพกับ look.json, CTR จดใน `channels/knowledge/cover-ctr.md` — ผู้ใช้ต้องส่งตัวเลข); hook ต้องมีเดิมพัน; `tools/footage_search.py` ≥10 คำ/ช็อต 5 แหล่ง <50% = ALERT แจ้งผู้ใช้ (ข้อยกเว้น 429 รอ ≤12 วิ เฉพาะตัวนี้); `tools/contact_sheet.py` ดูเฟรมทุก 0.25 วิ; มือ SVG `templates/brainrot-v3/compositions/components/hand-rig/` | ✅ รอบ 2 (claude/review-feedback-rules-2026-11-26 @bd78cea) เทสต์ 111 |
+ค้าง: ⚪ build_index.py:70,73 คอมเมนต์ "frame 0 = cover"; footage_search note ไม่โชว์ BLOCKED; ไม่มี PEXELS_API_KEY; **กล้องของแม่แบบ brainrot-v3 เร็วเฉพาะ beat hook/twist ช่วงอื่น push ช้า = ต้นเหตุจริงของ "motion ไม่สวย" (ห้องตรวจชี้) → งานถัดไปของห้อง #4**; shot_times.py:192 คอมเมนต์ยังพูด 2-3 วิ (⚪); ป้าย POV ใหญ่ใกล้บรรทัด 2 ใน look card+pov; editor-notes ตอนท้องร้องข้อ 3-7 (พิมพ์ระยะซับทุกก้อน, ช่อง overlay มาตรฐาน, overlay ลูปคาบ DUR, WARN hyperframes check ที่คาดไว้, prep_assets.sh ใน v3); ทำตอนอังกฤษต้องเพิ่ม `cover_text_en`; look.py อ่าน cover.json ระบบปกเก่าไม่ได้ (2 ตอน)
 
 ## 5. ห้องลูก/คลิป
 | คลิป | สถานะ | branch / ห้อง |
@@ -74,7 +75,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 
 - **ผู้ใช้ 2026-11-25 (ผ่านห้อง palmaris):** จังหวะตัด "แล้วแต่คลิป ให้ผู้กำกับ/editor ตัดสินใจเอง" (ไม่บังคับค้างภาพ explain 2-3 วิ; ผู้ใช้ชอบ motion เร็วแบบ brainrot เดิม เฉลี่ย ~1.4 วิ/ช็อต) → **รวมเข้า stoic-cray แล้ว @7341c6e (v3.4)**. ผู้ใช้บ่น "ปกดูเป็น AI" และ "footage หาไม่ได้" (footage agent ค้นน้อย + Wikimedia 429)
 
-- **feedback ผู้ใช้ 2026-11-26 (จากห้อง palmaris, ฉบับเต็ม `projects/2026-11-25-knowledge-palmaris-test/feedback.md` บน branch palmaris):** ล็อกเสียง George + จังหวะพูดเดิมทุกตอน; เพลง -24 dB duck 8 + VO -18 LUFS; ปกแยกจากเฟรม 0 แนว curiosity ทำ A/B (CTR สูงสุดช่อง 11%); hook ต้องมีเดิมพัน/คำแปลก; footage ≥10 คำ/ช็อต หาไม่ได้ต้องบอกผู้ใช้ทันที; ดูเฟรมทุก 0.25 วิก่อนส่ง; มือ SVG rig (hand.js) ผ่าน → ห้อง dev `session_016zMkaST1RLgN86BYfuqT4Q` branch `claude/dev-feedback-rules-2026-11-26` กำลังทำ → ห้องตรวจอิสระ → ff stoic-cray
+- **feedback ผู้ใช้ 2026-11-26 (จากห้อง palmaris, ฉบับเต็ม `projects/2026-11-25-knowledge-palmaris-test/feedback.md` บน branch palmaris):** ล็อกเสียง George + จังหวะพูดเดิมทุกตอน; เพลง -24 dB duck 8 + VO -18 LUFS; ปกแยกจากเฟรม 0 แนว curiosity ทำ A/B (CTR สูงสุดช่อง 11%); hook ต้องมีเดิมพัน/คำแปลก; footage ≥10 คำ/ช็อต หาไม่ได้ต้องบอกผู้ใช้ทันที; ดูเฟรมทุก 0.25 วิก่อนส่ง; มือ SVG rig (hand.js) ผ่าน → **รวมแล้ว v3.5 @defa014**
 - **รายงานวิจัยเชิงลึก 2026-11-25:** `docs/research/shorts-upgrade-2026-11-25.md` (สรุป: วินาทีแรกตัดสิน ≥70% ดูต่อ; เส้นตาย YPP จริง 1 ก.พ. 2027 หลังนั้นผู้สมัครใหม่ 20M; ElevenLabs free ใช้เชิงพาณิชย์ไม่ได้ถาวร → อัปเกรดก่อนอัดต่อ; US RPM ~$0.33 vs ไทยต่ำมาก → ช่องอังกฤษแยก; inauthentic content = ความเหมือนแม่แบบ ห้าม AI แนะนำตัวเป็นหมอ)
 
 ## 9. ข้อจำกัดระบบที่เจอ (สำคัญ)
