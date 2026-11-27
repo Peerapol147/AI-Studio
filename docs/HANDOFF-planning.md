@@ -29,7 +29,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 - บทเรียน (n เล็ก): เรื่องร่างกายที่ทุกคนเจอเอง 20-35 วิ ชนะ; นามธรรม/อนาคต/ตำนาน แพ้; **ภาคต่อ 0/2 → พักกฎ ">5K = ภาคต่อ"** (2026-11-23); คลิป 54-59 วิไม่ดีกว่า
 - ยังไม่ได้ Analytics: ท้องร้อง (ลงแล้ว ผู้ใช้ทักเรื่องปก), พลังงาน/Gen Z/แม่นาค/ปวดอึ ครบ 48 ชม.แล้วแต่ขอภาพ "ดูต่อ" เพิ่มได้
 
-## 4. ระบบตัดต่อ v3 (บน `claude/stoic-cray-6z2ajs` @defa014 ห้องทำคลิปใหม่ใช้อัตโนมัติ)
+## 4. ระบบตัดต่อ v3 (บน `claude/stoic-cray-6z2ajs` @fde08d6 ห้องทำคลิปใหม่ใช้อัตโนมัติ)
 ที่มา: ผู้ใช้สงสัยโดนมองเป็นสแปม → วิจัย (`docs/editing-research-2026-11-22.md`): ไม่มีหลักฐานโดนบล็อก แต่แม่แบบเดียว+เสียง AI ซ้ำ = เสี่ยง **หารายได้ไม่ได้** (นโยบาย inauthentic/template-based) + คลิปแพ้ใน 3 วิแรก
 | รุ่น | เนื้อหา | ตรวจ |
 |---|---|---|
@@ -38,7 +38,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 | v3.3 | จากตอนท้องร้อง: สระบน/ล่าง+วรรณยุกต์ไม่ทับแถบ/ไม่หาย, ขนาดหัวข้อตามความกว้างจริง + ต่ำสุด 72/60 px (ต่ำกว่า = build หยุด), ซับ `"แสดง|ถอด"`, เทสต์เบราว์เซอร์ `tests/test_title_fit_v3.py` | ✅ 3 รอบ (branch claude/review-editing-v3.3) เทสต์ 88 |
 | v3.4 (2026-11-25) | **จังหวะตัดแล้วแต่คลิป** (ผู้ใช้สั่ง): เลิกบังคับ explain ค้าง 2-3 วิ / ตัดเร็วเฉพาะ hook-twist; shots.json มี `"pace"` อธิบายเหตุผล; pacing.py เรื่องนี้เป็น INFO + เทสต์กันถอย | ✅ รอบ 2 (claude/review-cut-rule-2026-11-25 @ed79934) เทสต์ 88 |
 | v3.5 (2026-11-26) | จาก feedback ผู้ใช้: **ล็อกเสียง George** (eleven_v3, atempo 1.1, -18 LUFS; `tools/vo_finish.sh`) เฉพาะ knowledge; มิกซ์เพลง -24/duck 8; **ปกแยกจากเฟรม 0 ทำ A/B** (`templates/brainrot-v3/cover.html`, `tools/cover_shot.js`, `tools/cover_check.py` เทียบภาพกับ look.json, CTR จดใน `channels/knowledge/cover-ctr.md` — ผู้ใช้ต้องส่งตัวเลข); hook ต้องมีเดิมพัน; `tools/footage_search.py` ≥10 คำ/ช็อต 5 แหล่ง <50% = ALERT แจ้งผู้ใช้ (ข้อยกเว้น 429 รอ ≤12 วิ เฉพาะตัวนี้); `tools/contact_sheet.py` ดูเฟรมทุก 0.25 วิ; มือ SVG `templates/brainrot-v3/compositions/components/hand-rig/` | ✅ รอบ 2 (claude/review-feedback-rules-2026-11-26 @bd78cea) เทสต์ 111 |
-**รอตรวจรวมรอบหน้า:** branch `claude/dev-pending-rules` (จาก defa014) b4e6c30 style.md: แปลงถ้อยคำ research เป็นภาษาพูดก่อนใส่บท (ผู้ใช้: "แทบไม่ต้องพึ่ง" ฟังแปลก → "แทบไม่ได้ใช้งาน") — แก้เล็ก รวมพร้อมงานกล้องแม่แบบแล้วส่งห้องตรวจทีเดียว; จนกว่าจะรวม ใส่กฎนี้ใน brief ทุกห้องลูก
+| v3.6 (2026-11-27) | **ขั้นเกลาภาษาพูดบังคับก่อนล็อกบท** (ผู้ใช้สั่ง; พรอมพ์ 6 ข้อใน style.md + ตาราง ก่อน→หลัง ใน script.md ต้องคงความหมาย/คำกำกับ/ตัวเลข/ชื่อ); ห้ามยกถ้อยคำ research ตรงๆ; make-clip ขั้น 3 + reviewer อ้างแล้ว | ✅ รอบ 2 (claude/review-pending-rules-2026-11-27 @5f602b3); ⚪5-7 ค้าง |
 ค้าง: ⚪ build_index.py:70,73 คอมเมนต์ "frame 0 = cover"; footage_search note ไม่โชว์ BLOCKED; ไม่มี PEXELS_API_KEY; **กล้องของแม่แบบ brainrot-v3 เร็วเฉพาะ beat hook/twist ช่วงอื่น push ช้า = ต้นเหตุจริงของ "motion ไม่สวย" (ห้องตรวจชี้) → งานถัดไปของห้อง #4**; shot_times.py:192 คอมเมนต์ยังพูด 2-3 วิ (⚪); ป้าย POV ใหญ่ใกล้บรรทัด 2 ใน look card+pov; editor-notes ตอนท้องร้องข้อ 3-7 (พิมพ์ระยะซับทุกก้อน, ช่อง overlay มาตรฐาน, overlay ลูปคาบ DUR, WARN hyperframes check ที่คาดไว้, prep_assets.sh ใน v3); ทำตอนอังกฤษต้องเพิ่ม `cover_text_en`; look.py อ่าน cover.json ระบบปกเก่าไม่ได้ (2 ตอน)
 
 ## 5. ห้องลูก/คลิป
