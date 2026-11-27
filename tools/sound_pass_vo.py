@@ -118,7 +118,7 @@ yt,_=librosa.load(A.music,sr=SR,mono=False); yt=np.atleast_2d(yt); yt=(np.vstack
 seg=yt[int(mstart*SR):int(mstart*SR)+len(mix)]; seg=seg*10**(A.music_db/20)
 f=int(.6*SR); seg[-f:]*=np.linspace(1,0,f)[:,None]
 # voice: on top at 0 dB; music ducks by --duck-db wherever the voice is active (40 ms attack, 350 ms release)
-vo,_=librosa.load(A.voice,sr=SR,mono=False); vo=np.atleast_2d(vo); vo=(np.vstack([vo,vo]) if vo.shape[0]==1 else vo).T
+vo,_=librosa.load(A.voice,sr=SR,mono=False); vo=np.atleast_2d(vo); vo_mono=vo.shape[0]==1; vo=(np.vstack([vo,vo]) if vo_mono else vo).T
 hop=480; vm=np.abs(vo).mean(1); n=len(vm)//hop; rms=np.sqrt((vm[:n*hop].reshape(n,hop)**2).mean(1)); act=(rms>rms.max()*0.04).astype(float)
 g=np.zeros(n); att,rel=np.exp(-1/(0.04*SR/hop)),np.exp(-1/(0.35*SR/hop)); x=0.0
 for k in range(n): a_=att if act[k]>x else rel; x=a_*x+(1-a_)*act[k]; g[k]=x
@@ -132,11 +132,17 @@ def lufs_of(arr,name):
   try: return float(re.findall(r'I:\s+([-\d.]+) LUFS',o)[-1])
   except (IndexError,ValueError): return None
   finally: os.remove(f)
-vl,ml=lufs_of(vo,'_vo'),lufs_of(seg,'_bed')
+# -18 LUFS target = the voice FILE as vo_finish.sh measured it. A mono file copied to both channels measures +3 LU
+# (ebur128 sums the channels): itch 2026-11-27 got "WARN voice is -15" on a correct -18 mono VO. So the file check
+# measures one channel of a mono source; the bed-under-voice gap compares both as they play in the stereo mix.
+vmix,ml=lufs_of(vo,'_vo'),lufs_of(seg,'_bed')
+vl=lufs_of(vo[:,:1],'_vo1') if vo_mono else vmix
 if vl is not None:
-  log.append(f"Voice loudness {vl:.1f} LUFS (target -18: tools/vo_finish.sh)"+(f"; music bed {ml:.1f} LUFS = {vl-ml:.1f} LU under the voice" if ml is not None else '')+'.')
+  log.append(f"Voice loudness {vl:.1f} LUFS ({'mono file' if vo_mono else 'stereo file'}; target -18: tools/vo_finish.sh)"
+             +(f"; in the stereo mix {vmix:.1f} LUFS" if vo_mono and vmix is not None else '')
+             +(f"; music bed {ml:.1f} LUFS = {vmix-ml:.1f} LU under the voice" if ml is not None and vmix is not None else '')+'.')
   if abs(vl+18)>2: log.append(f"WARN voice is {vl:.1f} LUFS, not ~-18: run tools/vo_finish.sh on the voice before words/mix.")
-  if ml is not None and vl-ml<12: log.append(f"WARN music bed only {vl-ml:.1f} LU under the voice (want >= 12, palmaris ~20): lower --music-db.")
+  if ml is not None and vmix is not None and vmix-ml<12: log.append(f"WARN music bed only {vmix-ml:.1f} LU under the voice (want >= 12, palmaris ~20): lower --music-db.")
 mix=mix[:int(dur*SR)]; sf.write(f'{A.out}/mix_raw.wav',mix,SR)
 # 4. loudness: measure the exported MP4, adjust, repeat
 def export(gain_db,limit):
