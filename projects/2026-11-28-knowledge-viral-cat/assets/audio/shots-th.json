@@ -4,19 +4,20 @@
  "duration": 44.353,
  "inputs": {
   "shots.json": "d265f8dfc6f74e140b765806b534a2793e351a921256d397f76817ed2a521111",
-  "footage.json": null,
+  "footage.json": "8265ea33f2670357cea62a36f79103b46489460b1b65562b1fae844a820961b9",
   "assets/audio/words.json": "ab660de002a67e61c3a06db8025d82166165c6c9a2133f365a425bedbc7560ee"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-168334.mp4",
    "cue": "แมวบน",
    "word_at": 0.08,
    "start": 0.0,
    "beat": "hook",
    "end": 2.36,
-   "dur": 2.36
+   "dur": 2.36,
+   "media_start": 5.72
   },
   {
    "id": "hook_fight",
@@ -30,7 +31,7 @@
   },
   {
    "id": "paint",
-   "src": null,
+   "src": "assets/footage/pixabay-108560.mp4",
    "cue": "โดนทาสี",
    "word_at": 3.98,
    "start": 3.9,
@@ -40,7 +41,7 @@
   },
   {
    "id": "viral",
-   "src": null,
+   "src": "assets/footage/pixabay-339775.mp4",
    "cue": "แต่คนไทย",
    "word_at": 5.72,
    "start": 5.64,
@@ -100,23 +101,25 @@
   },
   {
    "id": "reveal",
-   "src": null,
+   "src": "assets/footage/pixabay-185937.mp4",
    "cue": "แต่ลายแบบนี้",
    "word_at": 19.32,
    "start": 19.24,
    "beat": "reveal",
    "end": 20.96,
-   "dur": 1.72
+   "dur": 1.72,
+   "media_start": 7.42
   },
   {
    "id": "reveal_b",
-   "src": null,
+   "src": "assets/footage/pixabay-347102.mp4",
    "cue": "เกิดเอง",
    "word_at": 21.04,
    "start": 20.96,
    "beat": "reveal",
    "end": 22.34,
-   "dur": 1.38
+   "dur": 1.38,
+   "media_start": 2.92
   },
   {
    "id": "gene",
@@ -140,7 +143,7 @@
   },
   {
    "id": "white",
-   "src": null,
+   "src": "assets/footage/pixabay-3683186.jpg",
    "cue": "ขนตรงนั้น",
    "word_at": 25.86,
    "start": 25.78,
@@ -200,7 +203,7 @@
   },
   {
    "id": "share_siam",
-   "src": null,
+   "src": "assets/footage/pixabay-806210.jpg",
    "cue": "วิเชียรมาศ",
    "word_at": 38.12,
    "start": 38.04,
@@ -210,7 +213,7 @@
   },
   {
    "id": "share_korat",
-   "src": null,
+   "src": "assets/footage/pixabay-2669735.jpg",
    "cue": "สีสวาด",
    "word_at": 39.14,
    "start": 39.06,
@@ -220,7 +223,7 @@
   },
   {
    "id": "share_khao",
-   "src": null,
+   "src": "assets/footage/pixabay-46226.mp4",
    "cue": "แล้วก็ขาว",
    "word_at": 39.92,
    "start": 39.84,
@@ -230,7 +233,7 @@
   },
   {
    "id": "cta",
-   "src": null,
+   "src": "assets/footage/pixabay-39009.mp4",
    "cue": "แมวที่บ้าน",
    "word_at": 41.5,
    "start": 41.42,
