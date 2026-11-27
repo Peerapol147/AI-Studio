@@ -23,6 +23,7 @@ tools: Bash, Read, Write, WebFetch, Glob
 - เลือกจาก candidates (ดู tags/ภาพตัวอย่าง ข้ามภาพ AI/generated) แล้วดาวน์โหลด: Pixabay ใช้ `tools/footage.sh`; แหล่งอื่น `bash tools/get.sh <url> assets/footage/<source>-<id>.<ext>` + `tools/credits.py add` (ไลเซนส์ + ผู้สร้างจาก SEARCH.json)
 - ไม่มี `PEXELS_API_KEY` = ข้าม Pexels (tool จดว่า skipped) บอกผู้กำกับในคำตอบ
 - จบงาน: `python3 tools/footage_search.py report <project>` แล้วแนบตารางในคำตอบ
+  คำที่นับว่า "ค้นแล้ว" = คำที่มีแหล่งตอบกลับจริงเท่านั้น (429/BLOCKED/skipped ไม่นับ, caffeine-ranking 2026-11-27): แหล่งโดนบล็อกหมดต้องค้นใหม่ในแหล่งอื่นหรือรอบหลัง ไม่ใช่รายงานว่าค้นครบ
   exit 1 = ช็อตที่ยังไม่มีไฟล์ค้นไม่ครบ → ค้นต่อ; **exit 2 = ได้ไม่ถึงครึ่งของช็อต → หยุดแล้วตอบผู้กำกับทันทีพร้อม `assets/footage/ALERT.md`**
 
 - เครื่องมือหลัก: `tools/footage.sh <photo|video> "<คำค้นอังกฤษ>" <project-dir> [จำนวน] [vertical|horizontal]`

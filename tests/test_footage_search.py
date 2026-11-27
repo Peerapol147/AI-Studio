@@ -91,7 +91,7 @@ def test_search_all_sources_429_backoff_and_report(srv, tmp_path):
     (p / 'footage.json').write_text(json.dumps({'graft': {'src': 'assets/footage/pixabay-1.mp4', 'action_at': 1}}))
     r = run('report', p)
     assert r.returncode == 2 and 'coverage: 1/3' in r.stdout
-    assert 'shot wrist has no file and was not searched enough: 2 terms (< 10)' in r.stdout
+    assert 'shot wrist has no file and was not searched enough: 2 terms answered by a source (< 10' in r.stdout
     assert 'shot fix' in r.stdout and 'title' not in r.stdout.split('coverage')[1]
     alert = (p / 'assets' / 'footage' / 'ALERT.md').read_text()
     assert 'แจ้งผู้ใช้ทันที' in alert and 'ผู้ใช้ถ่ายเอง' in alert and 'hand-rig' in alert
@@ -180,3 +180,15 @@ def test_searches_run_one_at_a_time(srv, tmp_path):
     assert json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']['candidates']
     r = run('search', p, 'wrist', 'hand', '--sources', 'openverse', env=env)  # free lock: no WAIT
     assert r.returncode == 0 and 'WAIT' not in r.stderr
+
+
+def test_report_does_not_count_blocked_or_skipped_searches(srv, tmp_path):
+    """caffeine-ranking 2026-11-27: 10 terms all sent to sources that answered 429 / were skipped passed as
+    "searched enough". Only terms a source answered count."""
+    p = project(tmp_path, ids=('a', 'b', 'g'))
+    terms = [f'คำ{i}' for i in range(5)] + [f'word{i}' for i in range(5)]
+    env = {'NASA_BASE': srv.url + '/nasa429', 'PEXELS_API_KEY': ''}
+    assert run('search', p, 'b', *terms, '--sources', 'nasa,pexels', env=env).returncode == 0
+    (p / 'footage.json').write_text(json.dumps({'a': {'src': 'assets/footage/x.mp4'}}))
+    r = run('report', p)
+    assert r.returncode == 1 and 'shot b has no file and was not searched enough: 0 terms answered' in r.stdout

@@ -227,8 +227,10 @@ def report(project, min_terms=10):
     db = json.loads(sf.read_text()) if sf.exists() else {}
     errs, rows = [], []
     for sid in need:
-        tried = [t for t in (db.get(sid) or {}).get('tried', []) if t.get('status') != 'skipped']
-        terms = {t['q'] for t in (db.get(sid) or {}).get('tried', [])}
+        # only searches a source ANSWERED count (caffeine-ranking 2026-11-27: terms sent to 429/blocked/skipped sources
+        # were counted as "searched enough" although nothing came back)
+        tried = [t for t in (db.get(sid) or {}).get('tried', []) if t.get('status') == 'ok']
+        terms = {t['q'] for t in tried}
         langs = {('th' if THAI.search(t) else 'en') for t in terms}
         kinds = {t['kind'] for t in tried}
         srcs = {t['source'] for t in tried if t.get('status') == 'ok'}   # a blocked/error source did not answer
@@ -239,7 +241,7 @@ def report(project, min_terms=10):
             continue
         probs = []
         if len(terms) < min_terms:
-            probs.append(f'{len(terms)} terms (< {min_terms})')
+            probs.append(f'{len(terms)} terms answered by a source (< {min_terms}; 429/blocked/skipped searches do not count)')
         if langs != {'th', 'en'}:
             probs.append('Thai and English terms both needed')
         if kinds != {'video', 'photo'}:
