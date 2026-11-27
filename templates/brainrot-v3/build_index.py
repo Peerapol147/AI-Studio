@@ -66,11 +66,12 @@ def _plain(s):
     return re.sub(r"[\s*?!.,:;'\"“”‘’=\-–—()…]+", '', (s or '').lower())
 
 
-# frame 0 = the cover: the on-screen title must be the cover_text that tools/look.py checked for repeats
+# frame-0 title = look.json cover_text (the feed's first frame, checked for repeats by tools/look.py). The covers that
+# get UPLOADED are separate since 2026-11-26 (look.json "covers" A/B -> cover.html, tools/cover_check.py)
 _ct = LOOK.get('cover_text')
 _shown = ' '.join(EP.get('title', []))
 if _ct and _plain(_ct) != _plain(_shown):
-    raise SystemExit(f'look.json cover_text {_ct!r} != episode.json title {_shown!r} (frame 0 = cover): '
+    raise SystemExit(f'look.json cover_text {_ct!r} != episode.json title {_shown!r} (cover_text = the frame-0 title): '
                      'make them the same text, then rerun tools/look.py check')
 if not _ct:
     print('WARN look.json cover_text not set: write the frame-0 title there and run tools/look.py check', file=sys.stderr)

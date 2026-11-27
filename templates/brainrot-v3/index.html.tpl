@@ -33,7 +33,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 /* pov: kicker + question centred like every other opening (itch 2026-11-27: left-aligned 65 px read as a small corner note) */
 .kick{font-weight:var(--tw);white-space:nowrap;line-height:1}
 .kick.pov{font-size:64px;color:var(--ink);background:var(--accent);padding:10px 28px;border-radius:999px;margin-bottom:10px}
-/* cover layouts (frame 0 = the thumbnail) */
+/* frame-0 title layouts (look.json "cover" axis; the uploaded A/B covers are cover.html, separate) */
 .cv-card #title{background:var(--panel);border-radius:44px;box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5);padding:34px 40px 40px}
 .cv-card #title .tl{-webkit-text-stroke:0;color:var(--paneltext);text-shadow:none}
 .cv-card #title em{color:var(--ink);background:var(--accent);padding:.38em 16px .24em;border-radius:16px}
