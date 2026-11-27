@@ -206,7 +206,7 @@ def test_smithsonian_cc0_stills_only(srv, tmp_path):
     st = {(t['q'], t['kind']): (t['status'], t['note']) for t in db['tried']}
     assert st[('tiger', 'video')][0] == 'skipped' and st[('เสือ', 'photo')] == ('skipped', 'smithsonian: English terms only')
     hdr = [h for path, _, _ in srv.log if path.startswith('/openaccess') for h in [path]]
-    assert hdr and 'online_media_type%3AImages' in hdr[0]
+    assert hdr and 'online_media_type%3AImages' in hdr[0] and 'media_usage%3A%22CC0%22' in hdr[0]   # review Y2
     src = (ROOT / 'tools' / 'footage_search.py').read_text()
     assert 'proxy-injected' in src and not re.search(r'X-Api-Key: [0-9A-Za-z]{20,}', src)   # never a real key in code
 

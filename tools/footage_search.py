@@ -185,7 +185,8 @@ def search_one(src, kind, term, per):
         if th:
             return 'skipped', [], 'smithsonian: English terms only', None
         base = os.environ.get('SI_BASE', 'https://api.si.edu')
-        url = q(base, '/openaccess/api/v1.0/search', q=f'{term} AND online_media_type:Images', rows=per * 2)
+        # media_usage:"CC0" in the query (review v3.7 Y2: without it common words returned only restricted media -> 0)
+        url = q(base, '/openaccess/api/v1.0/search', q=f'{term} AND online_media_type:Images AND media_usage:"CC0"', rows=per * 2)
         # the proxy replaces this placeholder with the real key (network secret); never put a key in code
         st, d, note = fetch(url, headers=[f"X-Api-Key: {os.environ.get('SI_API_KEY') or 'proxy-injected'}"])
         out = []
