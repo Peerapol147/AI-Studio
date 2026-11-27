@@ -16,7 +16,8 @@ vplate(){ # name src crop(w:h:x:y) seconds
 vplate r4      pixabay-79908.mp4  1215:2160:1270:0 4.5
 vplate r4num   pixabay-82601.mp4  810:1440:750:0   6
 vplate r4punch pixabay-331066.mp4 608:1080:723:0   5
-vplate r2      pixabay-134.mp4    405:720:437:0    5
+# r2 (pixabay-134 is only 1280x720: a 9:16 crop would be blown up 2.7x and soft) -> 16:9 card on its own blurred copy
+ffmpeg -v error -y -t 5 -i "$F/pixabay-134.mp4" -filter_complex "[0:v]fps=30,split[a][b];[a]crop=405:720:437:0,scale=1080:1920,gblur=sigma=34,$GR,eq=brightness=-0.16:saturation=0.8,vignette=PI/4[bg];[b]crop=1040:720:120:0,scale=980:-2:flags=lanczos,$GR,pad=iw+16:ih+16:8:8:color=0x1A0A06[fg];[bg][fg]overlay=(W-w)/2:1000-h/2" $ENC assets/r2.mp4
 BG="scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=38,$GR,eq=brightness=-0.16:saturation=0.8,vignette=PI/4"
 still(){ # name src
   ffmpeg -v error -y -i "$F/$2" -vf "$GR" -q:v 2 "assets/$1.jpg"
@@ -60,3 +61,6 @@ ls -la assets
 ffmpeg -v error -y -ss 1.8 -i $F/pixabay-79908.mp4 -frames:v 1 -vf "crop=2100:2160:830:0,scale=600:-1,$GR" -q:v 2 assets/cover-cola.jpg   # cover B
 ffmpeg -v error -y -i assets/espm.jpg -vf crop=640:640:300:200 -q:v 2 assets/cover-esp.jpg   # cover B
 ffmpeg -v error -y -i assets/cafe.jpg -vf crop=440:700:500:140 -q:v 2 assets/cover-ame.jpg   # cover B
+# mix voice: the mono vo (-18.4 LUFS) becomes dual-mono stereo in sound_pass_vo.py, which reads +3 LU (-15.4) -> WARN.
+# sound_pass_vo.py measures a stereo copy (+0.4 dB, as never-colonized) at -18.0 LUFS (same voice level as the mono file).
+ffmpeg -v error -y -i ../assets/audio/vo-th.mp3 -af "volume=0.4dB" -ac 2 -ar 48000 assets/vo-th-mix.wav

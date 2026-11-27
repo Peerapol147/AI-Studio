@@ -436,25 +436,26 @@ function gauge(t){
   // 400 label rides the 400 line
   const lb=$('l400'), lp=pop(t,W.adult,18,0.55);
   lb.style.opacity=f2(clamp((t-W.adult)/0.08)*(1-gout));
-  lb.style.transform=`translate(${f2(x+w+40)}px,${f2(y400-lb.offsetHeight/2)}px) scale(${(0.5+0.5*clamp(lp,0,1.2)).toFixed(4)})`;
+  const np=t>=W.n400?0.1*Math.exp(-4*(t-W.n400))*Math.sin((t-W.n400)*14):0;
+  lb.style.transform=`translate(${f2(x+w+40)}px,${f2(y400-lb.offsetHeight/2)}px) scale(${((0.5+0.5*clamp(lp,0,1.2))*(1+np)).toFixed(4)})`;
 }
 // ---- value chip: one pill that rides the fill level; the running number stops on the spoken number ----
 const R4=sh('r3').a, R2=sh('r2').a, R1=sh('r1').a;
 function chip(t){
-  const {x,y,w,h,v,m}=G; let big='', small='', tc=0, on=wins(t,[[W.n34,R4],[W.rule,R2],[W.n60,R1],[W.n200,CTA.a]]);
-  const run=(a,from,to,lab)=>t<a+0.62?`ราว ${Math.max(from,Math.min(to,Math.round(v/5)*5))}`:lab;
+  const {x,y,w,h,v,m}=G; let big='', small='', tc=0, on=wins(t,[[W.n34,R4],[W.rule,R2],[W.n60,sh('r2_punch').a],[sh('r2_pass').a,R1],[W.n200,CTA.a]]);
+  const run=(a,from,to,lab)=>t<a+0.62?`${Math.max(from,Math.min(to,Math.round(v/5)*5))} มก.`:lab;
   if(t>=W.n200){ tc=W.n200; big=run(W.n200,60,200,'ราว 200 มก.'); small='บางร้าน 3 ช็อต';
     if(t>=W.half){ tc=W.half; big='แก้วเดียว<br>≈ เกือบครึ่ง'; small='ของ ~400 มก./วัน'; } }
   else if(t>=W.n60){ tc=W.n60; big=run(W.n60,50,60,'ราว 60 มก.'); small='เอสเพรสโซ่ 1 ช็อต';
     if(t>=W.pass){ tc=W.pass; small='แซงเกณฑ์ขวด (≤ 50)'; } }
   else if(t>=W.rule){ tc=W.rule; big='≤ 50 มก./ขวด'; small='เกณฑ์ อย. · คำสั่ง 185/2534'; }
-  else { tc=W.n34; big=t<W.n34+0.62?`ราว ${Math.min(30,Math.round(v/5)*5)}`:'ราว 30+ มก.'; small='โคล่า 1 กระป๋อง'; }
+  else { tc=W.n34; big=t<W.n34+0.62?`${Math.min(30,Math.round(v/5)*5)} มก.`:'ราว 30+ มก.'; small='โคล่า 1 กระป๋อง'; }
   setH($('gc-big'),big); setT($('gc-small'),small);
-  const el=$('g-chip'), ch=el.offsetHeight||130, fy=y+h-h*clamp(v/m,0,1);
+  const el=$('g-chip'), ch=el.offsetHeight||130, fy=y+h-h*clamp(v/m,0,1), hp=t>=W.half2?0.08*Math.exp(-4*(t-W.half2))*Math.sin((t-W.half2)*14):0;
   const top=(tc===W.rule)?fy-ch-12:clamp(fy-ch/2,y-50,y+h-ch+40), p=pop(t,tc,20,0.55);
   el.style.opacity=f2(on);
   el.style.filter=`blur(${f2(8*(1-clamp((t-tc)/0.15)))}px)`;
-  el.style.transform=`translate(${f2(x+w+34)}px,${f2(top)}px) scale(${(0.6+0.4*clamp(p,0,1.15)).toFixed(4)})`;
+  el.style.transform=`translate(${f2(x+w+34)}px,${f2(top)}px) scale(${((0.6+0.4*clamp(p,0,1.15))*(1+hp)).toFixed(4)})`;
 }
 // ---- top label: setup "4 -> 1" -> rank 4..1 -> FDA -> cta question ----
 const RK=[[W.set,'',`4 → 1`,140],[W.r4,'4','โคล่า',96],[W.r3,'3','ชูกำลังขวดเล็ก',84],[W.r2,'2','เอสเพรสโซ่ 1 ช็อต',80],
@@ -535,7 +536,11 @@ function cup3(t){
     st.style.opacity=son?'1':'0';
   });
 }
-function episode(t){ cards(t); gauge(t); chip(t); rank(t); bottle(t); cup3(t); }
+// graphic hold: the whole graphics layer drifts in slowly on the long FDA/share stretch (no frozen frames)
+function drift(t){ const a=W.usa, b=CTA.a, u=clamp((t-a)/(b-a)), k=t<a||t>=b+0.3?0:1;
+  $('ep').style.transformOrigin='300px 800px';
+  $('ep').style.transform=k?`translate(${f2(14*Math.sin(u*Math.PI))}px,${f2(-26*u)}px) scale(${(1+0.06*eio(u)).toFixed(4)})`:'none'; }
+function episode(t){ cards(t); gauge(t); chip(t); rank(t); bottle(t); cup3(t); drift(t); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
