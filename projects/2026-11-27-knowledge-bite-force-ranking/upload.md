@@ -12,19 +12,38 @@
 อันดับในคลิป (ตัวเลขเป็นกิโลกรัมแรง ปัดจากนิวตัน):
 5. เสือโคร่ง ~150 กก. (ประมาณจากกะโหลก)
 4. ไฮยีนาลายจุด ~460 กก. (วัดได้ 1 ตัว)
-3. อัลลิเกเตอร์อเมริกัน ~960 กก. (วัดจริง)
+3. อัลลิเกเตอร์อเมริกัน ~1,340 กก. (วัดจริง)
 2. จระเข้น้ำเค็ม ~1,670 กก. (วัดจริง สูงสุดที่เคยวัดในสัตว์มีชีวิต)
 1. ฉลามขาวตัวใหญ่ ~1,860 กก. (ประมาณจากโมเดลคอมพิวเตอร์)
 เทียบแรงกัดฟันกรามผู้ชายราว 86-93 กก.
 
 แหล่งข้อมูล:
-- Erickson et al. 2012, PLoS ONE 7(3):e31781 (จระเข้/อัลลิเกเตอร์)
+- Erickson et al. 2012, PLoS ONE 7(3):e31781 (จระเข้น้ำเค็ม)
+- Erickson, Lappin, Parker & Vliet 2004, Journal of Zoology 262:21-28 (อัลลิเกเตอร์)
 - Wroe et al. 2008, Journal of Zoology 276:336-342 (ฉลามขาว)
 - Wroe, McHenry & Thomason 2005, Proc R Soc B; Christiansen & Wroe 2007, Ecology (เสือโคร่ง)
 - Binder & Van Valkenburgh 2000, J Zool (ไฮยีนา, อ้างผ่าน San Diego Zoo Wildlife Alliance)
 - Waltimo & Könönen 1993 (แรงกัดคน)
 
-เครดิตภาพ: Pixabay (ดูรายชื่อใน CREDITS ด้านล่าง) | เพลง: "Epical Drums 05" by Grigoriy Nuzhny (Mixkit, Mixkit Stock Music Free License)
+เครดิตภาพ (Pixabay Content License):
+- juliaharwood via Pixabay (Pixabay Content License) https://pixabay.com/photos/crocodile-salty-saltwater-mouth-1214750/
+- u_esxp8hxwk1 via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-122124/
+- JawadAliKhan via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-143892/
+- VarietycinemaProduction via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-173059/
+- EclipseChasers via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-214432/
+- BlenderTimer via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-258584/
+- suju-foto via Pixabay (Pixabay Content License) https://pixabay.com/photos/alligator-reptile-missisipi-aligator-3768772/
+- JamesDeMers via Pixabay (Pixabay Content License) https://pixabay.com/photos/alligator-american-alligator-gator-439890/
+- MLbay via Pixabay (Pixabay Content License) https://pixabay.com/photos/great-white-shark-great-white-shark-5217363/
+- gris379 via Pixabay (Pixabay Content License) https://pixabay.com/photos/great-wthite-shark-shark-534838/
+- ambquinn via Pixabay (Pixabay Content License) https://pixabay.com/photos/tiger-skull-panthera-tigris-skull-7564428/
+- giusti596 via Pixabay (Pixabay Content License) https://pixabay.com/photos/white-shark-south-africa-nature-8463561/
+- RoyBuri via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-85691/
+- RoyBuri via Pixabay (Pixabay Content License) https://pixabay.com/videos/id-85692/
+- Storme22k via Pixabay (Pixabay Content License) https://pixabay.com/photos/crocodile-saltwater-9846339/
+- Storme22k via Pixabay (Pixabay Content License) https://pixabay.com/photos/crocodile-saltwater-9846341/
+- Storme22k via Pixabay (Pixabay Content License) https://pixabay.com/photos/crocodile-saltwater-9846352/
+เพลง: "Epical Drums 05" by Grigoriy Nuzhny (Mixkit, Mixkit Stock Music Free License)
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
 #จัดอันดับ #สัตว์ #ความรู้ #shorts #แรงกัด #จระเข้ #ฉลาม

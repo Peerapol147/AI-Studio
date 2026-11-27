@@ -1,11 +1,11 @@
 {
  "lang": "th",
  "lead": 0.08,
- "duration": 48.155,
+ "duration": 47.766,
  "inputs": {
-  "shots.json": "b373ea51f381c0807e30d88b5d6d24ff519dc5086cd4af8981b2448bcc5f09cd",
-  "footage.json": "63a2bd9bb8d0e54d6520399487023bde1a0481e33da7ef128a356635766d30ca",
-  "assets/audio/words.json": "2b4ce4cb5cb53f3c0c5c966f9b46b357390502386c755e860cef3e7aff874548"
+  "shots.json": "b7104f9d5c68bc3ecc10f3ac635fc29feceaa940f916b48767e9bd4dadb5e748",
+  "footage.json": "a041e308198d5037c0dc9c171e788b5aa38d50e73b2680ce1c4781d04a89df6d",
+  "assets/audio/words.json": "d88f748f44ded3f5ed1a70dff13bc1b4818b4ad3ef8261a8f8e7f72cb86f9661"
  },
  "shots": [
   {
@@ -15,70 +15,70 @@
    "word_at": 0.08,
    "start": 0.0,
    "beat": "hook",
-   "end": 1.6,
-   "dur": 1.6
+   "end": 1.8,
+   "dur": 1.8
   },
   {
    "id": "hook_wave",
    "src": "assets/footage/pixabay-1214750.jpg",
    "cue": "รถเวฟ",
-   "word_at": 1.68,
-   "start": 1.6,
+   "word_at": 1.88,
+   "start": 1.8,
    "beat": "hook",
-   "end": 3.72,
-   "dur": 2.12
+   "end": 3.9,
+   "dur": 2.1
   },
   {
    "id": "hook_not1",
    "src": "assets/footage/pixabay-214432.mp4",
    "cue": "แต่ยัง",
-   "word_at": 3.8,
-   "start": 3.72,
+   "word_at": 3.98,
+   "start": 3.9,
    "beat": "hook",
-   "end": 5.4,
-   "dur": 1.68
+   "end": 5.54,
+   "dur": 1.64
   },
   {
    "id": "guess",
    "src": null,
    "cue": "เดาไว้",
-   "word_at": 5.48,
-   "start": 5.4,
+   "word_at": 5.62,
+   "start": 5.54,
    "beat": "setup",
-   "end": 8.22,
-   "dur": 2.82
+   "end": 8.42,
+   "dur": 2.88
   },
   {
    "id": "r5",
    "src": "assets/footage/pixabay-122124.mp4",
    "cue": "อันดับห้า",
-   "word_at": 8.3,
-   "start": 8.22,
+   "word_at": 8.5,
+   "start": 8.42,
    "beat": "setup",
    "hit": "เสือโคร่ง",
-   "hit_at": 9.3,
-   "end": 10.58,
-   "dur": 2.36,
-   "media_start": 7.42
+   "hit_at": 9.52,
+   "end": 10.82,
+   "dur": 2.4,
+   "media_start": 7.4
   },
   {
    "id": "r5_skull",
    "src": "assets/footage/pixabay-7564428.jpg",
    "cue": "นักวิจัย",
-   "word_at": 10.66,
-   "start": 10.58,
+   "word_at": 10.9,
+   "start": 10.82,
    "beat": "explain",
-   "end": 12.24,
-   "dur": 1.66
+   "end": 12.5,
+   "dur": 1.68
   },
   {
    "id": "r5_num",
    "src": "assets/footage/pixabay-143892.mp4",
    "cue": "ได้ประมาณ",
-   "word_at": 12.32,
-   "start": 12.24,
+   "word_at": 12.58,
+   "start": 12.5,
    "beat": "explain",
-   "end": 14.14,
+   "end": 14.4,
    "dur": 1.9,
    "media_start": 4.12
   },
@@ -86,174 +86,173 @@
    "id": "r5_human",
    "src": null,
    "cue": "เกือบสอง",
-   "word_at": 14.22,
-   "start": 14.14,
+   "word_at": 14.48,
+   "start": 14.4,
    "beat": "explain",
-   "end": 16.44,
-   "dur": 2.3
+   "end": 16.74,
+   "dur": 2.34
   },
   {
    "id": "r4",
    "src": "assets/footage/pixabay-85691.mp4",
    "cue": "อันดับสี่",
-   "word_at": 16.52,
-   "start": 16.44,
+   "word_at": 16.82,
+   "start": 16.74,
    "beat": "setup",
-   "end": 18.62,
-   "dur": 2.18
+   "end": 18.74,
+   "dur": 2.0
   },
   {
    "id": "r4_num",
    "src": "assets/footage/pixabay-85692.mp4",
    "cue": "ตัวที่เคย",
-   "word_at": 18.7,
-   "start": 18.62,
+   "word_at": 18.82,
+   "start": 18.74,
    "beat": "explain",
-   "end": 20.12,
-   "dur": 1.5,
+   "end": 20.28,
+   "dur": 1.54,
    "media_start": 5.92
   },
   {
    "id": "r4_human",
    "src": "assets/footage/pixabay-258584.mp4",
    "cue": "ราวสี่ร้อย",
-   "word_at": 20.2,
-   "start": 20.12,
+   "word_at": 20.36,
+   "start": 20.28,
    "beat": "explain",
-   "end": 22.1,
-   "dur": 1.98
+   "end": 22.16,
+   "dur": 1.88
   },
   {
    "id": "r3",
-   "src": "assets/footage/pixabay-136331.mp4",
+   "src": "assets/footage/pixabay-3768772.jpg",
    "cue": "อันดับสาม",
-   "word_at": 22.18,
-   "start": 22.1,
+   "word_at": 22.24,
+   "start": 22.16,
    "beat": "setup",
-   "end": 24.6,
-   "dur": 2.5
+   "end": 24.44,
+   "dur": 2.28
   },
   {
    "id": "r3_num",
-   "src": "assets/footage/pixabay-136331.mp4",
-   "cue": "วัดจริงได้ราวเก้า",
-   "word_at": 24.68,
-   "start": 24.6,
+   "src": "assets/footage/pixabay-439890.jpg",
+   "cue": "วัดจริงได้ราวพันสาม",
+   "word_at": 24.52,
+   "start": 24.44,
    "beat": "explain",
-   "end": 27.12,
-   "dur": 2.52,
-   "media_start": 7.92
+   "end": 27.14,
+   "dur": 2.7
   },
   {
    "id": "r2",
    "src": "assets/footage/pixabay-9846341.jpg",
    "cue": "อันดับสอง",
-   "word_at": 27.2,
-   "start": 27.12,
+   "word_at": 27.22,
+   "start": 27.14,
    "beat": "reveal",
-   "end": 29.58,
-   "dur": 2.46
+   "end": 29.16,
+   "dur": 2.02
   },
   {
    "id": "r2_back",
    "src": "assets/footage/pixabay-9846352.jpg",
    "cue": "ตัวเมื่อกี้",
-   "word_at": 29.66,
-   "start": 29.58,
+   "word_at": 29.24,
+   "start": 29.16,
    "beat": "reveal",
-   "end": 30.8,
-   "dur": 1.22
+   "end": 30.48,
+   "dur": 1.32
   },
   {
    "id": "r2_num",
    "src": "assets/footage/pixabay-1214750.jpg",
    "cue": "วัดจริงได้ราวพัน",
-   "word_at": 30.88,
-   "start": 30.8,
+   "word_at": 30.56,
+   "start": 30.48,
    "beat": "reveal",
-   "end": 33.44,
+   "end": 33.12,
    "dur": 2.64
   },
   {
    "id": "r1",
    "src": "assets/footage/pixabay-5217363.jpg",
    "cue": "อันดับหนึ่ง",
-   "word_at": 33.52,
-   "start": 33.44,
+   "word_at": 33.2,
+   "start": 33.12,
    "beat": "reveal",
-   "end": 36.06,
-   "dur": 2.62
+   "end": 35.3,
+   "dur": 2.18
   },
   {
    "id": "r1_num",
    "src": "assets/footage/pixabay-8463561.jpg",
    "cue": "ประมาณพันแปด",
-   "word_at": 36.14,
-   "start": 36.06,
+   "word_at": 35.38,
+   "start": 35.3,
    "beat": "reveal",
-   "end": 38.34,
-   "dur": 2.28
+   "end": 37.54,
+   "dur": 2.24
   },
   {
    "id": "twist_model",
    "src": null,
    "cue": "แต่เลขนี้",
-   "word_at": 38.42,
-   "start": 38.34,
+   "word_at": 37.62,
+   "start": 37.54,
    "beat": "twist",
-   "end": 40.38,
-   "dur": 2.04
+   "end": 39.48,
+   "dur": 1.94
   },
   {
    "id": "twist_real",
    "src": "assets/footage/pixabay-534838.jpg",
    "cue": "ไม่ได้วัด",
-   "word_at": 40.46,
-   "start": 40.38,
+   "word_at": 39.56,
+   "start": 39.48,
    "beat": "twist",
-   "end": 42.26,
-   "dur": 1.88
+   "end": 41.44,
+   "dur": 1.96
   },
   {
    "id": "twist_measured",
    "src": "assets/footage/pixabay-214432.mp4",
    "cue": "ถ้านับ",
-   "word_at": 42.34,
-   "start": 42.26,
+   "word_at": 41.52,
+   "start": 41.44,
    "beat": "share",
-   "end": 43.66,
-   "dur": 1.4,
+   "end": 42.88,
+   "dur": 1.44,
    "media_start": 3.5
   },
   {
    "id": "twist_champ",
    "src": "assets/footage/pixabay-9846339.jpg",
    "cue": "แชมป์",
-   "word_at": 43.74,
-   "start": 43.66,
+   "word_at": 42.96,
+   "start": 42.88,
    "beat": "share",
-   "end": 45.46,
-   "dur": 1.8
+   "end": 44.72,
+   "dur": 1.84
   },
   {
    "id": "cta",
    "src": "assets/footage/pixabay-8463561.jpg",
    "cue": "เดาถูก",
-   "word_at": 45.54,
-   "start": 45.46,
+   "word_at": 44.8,
+   "start": 44.72,
    "beat": "cta",
-   "end": 46.74,
-   "dur": 1.28
+   "end": 45.88,
+   "dur": 1.16
   },
   {
    "id": "loop",
    "src": "assets/footage/pixabay-9846352.jpg",
    "cue": "พิมพ์",
-   "word_at": 46.82,
-   "start": 46.74,
+   "word_at": 45.96,
+   "start": 45.88,
    "beat": "loop",
-   "end": 48.155,
-   "dur": 1.415
+   "end": 47.766,
+   "dur": 1.886
   }
  ]
 }
