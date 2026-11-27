@@ -24,14 +24,14 @@ FDA (สหรัฐฯ): สำหรับผู้ใหญ่ทั่วไ
 - Wikipedia (แหล่งรอง): Caffeine, Caffè americano
 
 เครดิตภาพ: Pixabay (Pixabay Content License) — xxyooonxx, Coverr-Free-Footage, 709K, Solarselle77, poedynchuk, nots12311, 13027327, chico明, TPMotion (ลิงก์ทุกรายการใน assets/CREDITS.md)
-เพลง: "Upbeat Lounge Background" by Soundrider/Dope (CC BY 3.0) — Jamendo (ลิงก์ใน assets/CREDITS.md)
+เพลง: "Upbeat Lounge Background" by Soundrider/Dope (CC BY 3.0) https://www.jamendo.com/track/1670563
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
 #จัดอันดับ #คาเฟอีน #ความรู้ #genz #shorts
 
 ## TikTok
 แคปชัน (≤150): ขวดชูกำลังได้แค่อันดับ 3 ☕ แก้วไหนคาเฟอีนแรงสุด? วันนี้กินไปกี่แก้วแล้ว #จัดอันดับ #คาเฟอีน #ความรู้ #genz
-คอมเมนต์แรก: ข้อมูล: คำสั่ง อย. 185/2534 (ชูกำลัง ≤50 มก.), US FDA (400 มก./วัน ผู้ใหญ่ทั่วไป), Mayo Clinic | ตัวเลขกาแฟร้านแปรผันตามจำนวนช็อต | ภาพ Pixabay | เพลง "Upbeat Lounge Background" by Soundrider/Dope (CC BY 3.0, Jamendo)
+คอมเมนต์แรก: ข้อมูล: คำสั่ง อย. 185/2534 (ชูกำลัง ≤50 มก.), US FDA (400 มก./วัน ผู้ใหญ่ทั่วไป), Mayo Clinic | ตัวเลขกาแฟร้านแปรผันตามจำนวนช็อต | ภาพ Pixabay | เพลง "Upbeat Lounge Background" by Soundrider/Dope (CC BY 3.0) jamendo.com/track/1670563
 ติด label "เนื้อหาที่สร้างด้วย AI" (เสียงพากย์ AI)
 
 ## Facebook Reels
