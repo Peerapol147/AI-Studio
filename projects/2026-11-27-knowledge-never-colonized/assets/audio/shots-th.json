@@ -4,7 +4,7 @@
  "duration": 47.721,
  "inputs": {
   "shots.json": "3fce2aebb0552d9af58820258f37e3b1223dd56fdf9dc51b87550c0dfc85e8f3",
-  "footage.json": "86e4a93414530b897a119c4c41b0922fe086ce2e3b037703016fb327b43deb2d",
+  "footage.json": "c8960897e3fce3085cb2cb1b001341689a1ebffb936bcef46a65cc04d4909847",
   "assets/audio/words.json": "2b6a9f97790d8c314f81c852790b83f5227b39400910af044f79a23e56192289"
  },
  "shots": [
@@ -50,14 +50,13 @@
   },
   {
    "id": "guess_q",
-   "src": "assets/footage/nasa-earth-orbit-trim.mp4",
+   "src": "assets/footage/pixabay-104270.mp4",
    "cue": "คือที่ไหน",
    "word_at": 6.84,
    "start": 6.76,
    "beat": "setup",
    "end": 8.0,
-   "dur": 1.24,
-   "media_start": 2.92
+   "dur": 1.24
   },
   {
    "id": "r5",
