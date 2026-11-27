@@ -1,0 +1,70 @@
+{
+ "hook": {
+  "src": "assets/footage/pixabay-9846352.jpg"
+ },
+ "hook_wave": {
+  "src": "assets/footage/pixabay-1214750.jpg"
+ },
+ "hook_not1": {
+  "src": "assets/footage/pixabay-214432.mp4"
+ },
+ "r5": {
+  "src": "assets/footage/pixabay-122124.mp4",
+  "action_at": 8.5
+ },
+ "r5_num": {
+  "src": "assets/footage/pixabay-143892.mp4",
+  "action_at": 4.2
+ },
+ "r4": {
+  "src": "assets/footage/pixabay-85691.mp4"
+ },
+ "r4_num": {
+  "src": "assets/footage/pixabay-85692.mp4",
+  "action_at": 6
+ },
+ "r4_human": {
+  "src": "assets/footage/pixabay-258584.mp4"
+ },
+ "r3": {
+  "src": "assets/footage/pixabay-136331.mp4"
+ },
+ "r3_num": {
+  "src": "assets/footage/pixabay-136331.mp4",
+  "action_at": 8
+ },
+ "r2": {
+  "src": "assets/footage/pixabay-9846341.jpg"
+ },
+ "r2_back": {
+  "src": "assets/footage/pixabay-9846352.jpg"
+ },
+ "r2_num": {
+  "src": "assets/footage/pixabay-173059.mp4",
+  "action_at": 2.3
+ },
+ "twist_champ": {
+  "src": "assets/footage/pixabay-9846339.jpg"
+ },
+ "cta": {
+  "src": "assets/footage/pixabay-8463561.jpg"
+ },
+ "r5_skull": {
+  "src": "assets/footage/pixabay-7564428.jpg"
+ },
+ "r1": {
+  "src": "assets/footage/pixabay-5217363.jpg"
+ },
+ "r1_num": {
+  "src": "assets/footage/pixabay-8463561.jpg"
+ },
+ "twist_real": {
+  "src": "assets/footage/pixabay-534838.jpg"
+ },
+ "twist_measured": {
+  "src": "assets/footage/pixabay-173059.mp4"
+ },
+ "loop": {
+  "src": "assets/footage/pixabay-9846352.jpg"
+ }
+}

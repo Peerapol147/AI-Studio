@@ -11,9 +11,9 @@
   "tts_model": "eleven_v3",
   "atempo": 1.1,
   "vo_lufs": -18,
-  "music_file": null,
+  "music_file": "music-mixkit-680.mp3",
   "cover_text": "งับเดียว = เวฟ 17 คัน",
-  "why": "look.py pick แล้วแก้: music quirky → cinematic (นับถอยหลังนักล่า ต้องการความลุ้น/หนัก); opening number เข้ากับคลิปจัดอันดับตัวเลขแรงกัด (ตัวเลขจาก research.md เท่านั้น); เสียงล็อก George",
+  "why": "look.py pick แล้วแก้: music quirky → cinematic (นับถอยหลังนักล่า ต้องการความลุ้น/หนัก); opening number เข้ากับคลิปจัดอันดับตัวเลขแรงกัด (ตัวเลขจาก research.md เท่านั้น); เสียงล็อก George | เพลง: Openverse 429 (ทั้ง voice agent และ Wikimedia) + ElevenLabs Music ต้องแผนจ่ายเงิน → Mixkit \"Epical Drums 05\" (Mixkit Stock Music Free License: ใช้ YouTube/TikTok เชิงพาณิชย์ได้ ไม่ต้องเครดิต; ห้ามลงทะเบียน Content ID) เพิ่ม host mixkit.co ด้วย update_environment",
   "covers": [
     {
       "id": "a",
