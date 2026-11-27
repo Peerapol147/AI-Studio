@@ -20,16 +20,16 @@ The approach is Vox's sound-pass prompt (@Voxyz_ai, https://x.com/Voxyz_ai/statu
 | riser | "Cinematic Riser #3 subtle" | bundled `sfx/kit/riser.ogg` (CC0) |
 | impact | "soft_impact3" by peoplearehappy | bundled `sfx/kit/impact.ogg` (CC0) |
 | tick | "Click / Tick" by Squirrel_404 | bundled `sfx/kit/tick.ogg` (CC0) |
-| typing | Mixkit "Fast laptop keyboard typing" (#1392) | **downloaded at runtime** into `<out>/sound-effects-cache/` (Mixkit licence: never commit it) |
+| typing | "keyboard typing" by j1987 (Freesound) | bundled `sfx/typing/fs-79388-keyboard-typing-wav.ogg` (CC0; was a Mixkit download until 2026-11-28) |
 
 Everything else in the manifest is an alternative (`alt_categories` lists which categories can stand in for each other). See `TOP-PICKS.md` for credits.
 
 ## Rules
 - **Never synthesize music or sound effects in code** (no oscillator or sine beeps). Use real recorded files.
 - **Sound effects: use the bundled library first.** `sfx/manifest.json` lists every file with its category, duration, source and licence. All bundled files are CC0.
-- If the bundled library has nothing that fits, use the `runtime` entries in the manifest (Mixkit). Download them into the user's project, never into this skill folder, and never commit them. Mixkit allows use in videos but not standalone redistribution.
-- **Music:** a track the user gives you, or one from `MUSIC.md` (suggested free tracks by feel, downloaded at runtime, never committed). Write the source and licence into `SOUND.md`. If the user has no track, suggest 2–3 from `MUSIC.md` that fit the video and let them pick.
-- **Licences:** only CC0 and Mixkit Free License count as free and safe; the script checks every sound it places. Don't list licences sound by sound. If all are known, tell the user once: the sounds are listed as CC0 or Mixkit Free License by their sources, sources can change their terms so check the source page now and then. If the script reports an unknown licence, name that exact sound, its licence and its source link, and tell the user not to publish until it is checked or swapped. Never describe an unknown licence as probably fine.
+- **AI Studio: no Mixkit at all, neither sound effects nor music** (planning room 2026-11-28: its licence cannot be verified for this channel). The Mixkit `runtime` entries were removed from the manifest and both mix scripts refuse a Mixkit URL, track or licence. If the bundled library has nothing that fits, find a CC0 sound on Freesound (CC0 filter), Kenney or Pixabay (see "More sounds"), confirm its licence on its page, download it into the user's project and add it to `CREDITS.txt`.
+- **Music (AI Studio): only the project's `look.json` `music_file`** (chosen by the voice step from Jamendo / Wikimedia CC BY or CC0 with `tools/music.sh`, licence checked on the track page; see `MUSIC.md`). The editor never picks another track. Pass its source and licence from `assets/CREDITS.md` to `--music-source` / `--music-license`.
+- **Licences:** only CC0 counts as free and safe for sound effects; the script checks every sound it places. Don't list licences sound by sound. If all are known, tell the user once: the sounds are listed as CC0 by their sources, sources can change their terms so check the source page now and then. If the script reports an unknown licence, name that exact sound, its licence and its source link, and tell the user not to publish until it is checked or swapped. Never describe an unknown licence as probably fine.
 - **Music licence:** ask where the track came from and pass `--music-source "track, artist, link"` and `--music-license "..."`. Without them the run marks the music LICENCE NOT CONFIRMED; say so plainly.
 - **Credits:** every run writes `CREDITS.txt`, a paste-ready list of the sounds actually used and the music. Recommend it once: optional, for a YouTube, Instagram or TikTok description; CC0 needs no credit, but the list is proof of source if a platform flags the audio.
 - Measure the **exported MP4**, never the intermediate WAV.
@@ -40,16 +40,15 @@ Sources change their terms, so check the current terms for **what this video act
 
 1. **Use case.** Ask where the video will be published, unless it is already clear (for example "my YouTube video"): YouTube, Instagram, TikTok, other social, online ads, a podcast, client work, TV or radio broadcast, a video game, CDs or DVDs, or a template or tool for other people. Pass it as `--use-case "..."` so it lands in `SOUND.md`.
 2. **Sources.** For each source used in this video (the providers in `CREDITS.txt`, plus the music), open its current licence page (web fetch; if the site blocks it, the user's browser) and check two things: the terms still say what the table below says, and the use case is allowed. For Freesound, open the page of each sound actually used and confirm it still says Creative Commons 0. For the music, open the track's page.
-3. **Report it plainly**, one line per source: "Checked today: Mixkit Stock Music Free License, unchanged, YouTube allowed." If a source changed its terms or the use case is not allowed, name the exact sound or track and why, and swap it before exporting. Never call an unchecked or unclear licence fine.
+3. **Report it plainly**, one line per source: "Checked today: Jamendo track page, CC BY 4.0, unchanged, YouTube allowed." If a source changed its terms or the use case is not allowed, name the exact sound or track and why, and swap it before exporting. Never call an unchecked or unclear licence fine.
 
 | Source | Licence page | Allows (checked 13 Oct 2026) | Doesn't allow |
 |---|---|---|---|
 | Freesound, CC0 | the sound's own page | anything, no credit needed | nothing (CC-BY needs a credit; never use CC-BY-NC commercially) |
 | Kenney | the pack's page on kenney.nl | anything (CC0) | nothing |
-| Mixkit sound effects | https://mixkit.co/license/#sfxFree | web, social, podcasts, games, films, CDs/DVDs, TV/radio | redistributing the file on its own or inside a tool or template; registering it with a rights service |
-| Mixkit music | https://mixkit.co/license/#musicFree | YouTube, social, online ads, podcasts, education | CDs/DVDs, TV/radio, video games, remixing, registering it with Content ID |
+| Jamendo music, CC BY / CC0 | the track's page on jamendo.com | anything the licence allows, credit for CC BY | NC / ND tracks (never) |
 
-Mixkit forbids redistributing its files "in a tool or template", which is why this skill never stores Mixkit sounds or music: they are downloaded into the user's project at runtime.
+AI Studio does not use Mixkit (sound effects or music) at all since 2026-11-28.
 
 ## 1. Set up
 Needs ffmpeg and Python 3.10+. Install into a folder you can delete:
@@ -111,7 +110,6 @@ When the user wants more or different sounds, search these sources, suggest 3–
 |---|---|---|
 | Freesound | `https://freesound.org/search/?q=<words>&f=license:"Creative Commons 0"` | Use the CC0 filter. CC0 can be bundled and needs no credit (credit anyway). CC-BY needs credit in the video description; never bundle CC-BY-NC or use it commercially. |
 | Kenney | `https://kenney.nl/assets/category:Audio` | All CC0. Free to use and bundle. |
-| Mixkit | `https://mixkit.co/free-sound-effects/<category>/` (e.g. `whoosh`, `typing`) | Mixkit SFX Free License: fine in videos, including monetised ones, but **no redistribution**. Download only into the user's project at runtime; never commit or bundle it. |
 | Pixabay | `https://pixabay.com/sound-effects/search/<words>/` | Free in videos, no credit needed, but no standalone redistribution. The user downloads it in a browser; never bundle it. |
 | Sonniss GDC bundles | `https://sonniss.com/gameaudiogdc/` | Royalty-free in videos; no raw redistribution or AI training. Local use only. |
 | YouTube Audio Library | YouTube Studio → Audio Library | For YouTube videos only; available only inside Studio. Never bundle it. |

@@ -19,7 +19,7 @@ Based on the sound-pass prompt by **Vox ([@Voxyz_ai](https://x.com/Voxyz_ai/stat
 The video with sound (`after.mp4`), a `report.html` where you can play every cue and swap sounds (or let the model decide), proof frames and waveforms for each cue, and 5 timestamps to check with headphones.
 
 ## The sounds
-A 7-sound default kit plus 103 alternatives (whoosh, transition, pop, click, typing, riser, impact, ding, glitch, UI blips, ambience), all CC0 from Kenney and Freesound and bundled as small OGG files. The default typing sound and 40 optional extras come from Mixkit, which allows use in videos but not redistribution, so the skill downloads them into your project when needed and they're never stored in this repo. Every file's creator, source and licence is in [`LICENSES.md`](LICENSES.md).
+A 7-sound default kit plus 103 alternatives (whoosh, transition, pop, click, typing, riser, impact, ding, glitch, UI blips, ambience), all CC0 from Kenney and Freesound and bundled as small OGG files. AI Studio removed the 40 Mixkit extras and the Mixkit typing sound on 2026-11-28 (no Mixkit, sound effects or music); typing is a bundled CC0 Freesound file.md`](LICENSES.md).
 
 ## Use it
 Run `npx skills add Barty-Bart/motion-graphics` and pick `sound-effects`, then ask Claude Code something like *"add sound effects to this video"*.
@@ -28,11 +28,11 @@ Run `npx skills add Barty-Bart/motion-graphics` and pick `sound-effects`, then a
 Claude can't hear, so this skill measures everything instead: it checks the music's beat grid against the kick drums, lands cuts on the beat, places one real sound effect per cue, and mixes to -16 LUFS measured on the exported MP4.
 
 ## Library
-`sfx/` contains a 7-sound **default kit** (`sfx/kit/`, 6 CC0 files plus Mixkit typing fetched at runtime) and 103 CC0 alternatives, stored as small OGG Vorbis files (about 2.7 MB in total). Every bundled file is **CC0**, from Kenney and Freesound. `sfx/manifest.json` lists each file's category, duration, source URL and licence. There are also 40 optional Mixkit links that are downloaded at runtime and never stored in this repo. See `LICENSES.md`.
+`sfx/` contains a 7-sound **default kit** (`sfx/kit/`, all 7 CC0 and bundled) and 103 CC0 alternatives, stored as small OGG Vorbis files (about 2.7 MB in total). Every bundled file is **CC0**, from Kenney and Freesound. `sfx/manifest.json` lists each file's category, duration, source URL and licence. (The 40 Mixkit runtime links were removed for AI Studio on 2026-11-28.) See `LICENSES.md`.
 
-The bundled files are compressed OGG previews. If one sounds too rough, every entry in the manifest links to its original (Freesound or Kenney), and the skill can help you grab it. Ask for more sounds and it will search Freesound, Kenney, Mixkit and other free libraries and suggest options with their licences, checking each one against your use case first.
+The bundled files are compressed OGG previews. If one sounds too rough, every entry in the manifest links to its original (Freesound or Kenney), and the skill can help you grab it. Ask for more sounds and it will search Freesound (CC0), Kenney and Pixabay (no Mixkit) and suggest options with their licences, checking each one against your use case first.
 
-**Music:** `MUSIC.md` suggests free tracks by feel (high energy, product demo, calm, tension), all from Mixkit. They're downloaded into your project when picked, never stored in this repo.
+**Music:** AI Studio uses only the project `look.json` `music_file` (Jamendo / Wikimedia CC BY or CC0, licence checked); see `MUSIC.md`. No Mixkit.
 
 ## Install
 ```
@@ -42,14 +42,14 @@ Then ask Claude Code: "add sound effects to this video".
 Requirements: ffmpeg and Python 3.10+. The skill installs librosa and its dependencies into a local venv.
 
 ## Licences
-The bundled sounds are listed as CC0 (free, no credit needed) by their sources, Freesound and Kenney. The optional Mixkit sounds are under Mixkit's Free License, which allows monetised videos. Sources can change their terms, so check the source page now and then, especially before an important release. Music is your responsibility: use a track you have a licence for. If YouTube's Content ID claims a free sound by mistake, dispute it and link the source page (every sound's link is in `sfx/manifest.json`).
+The bundled sounds are listed as CC0 (free, no credit needed) by their sources, Freesound and Kenney.
 
-While editing, Claude asks where the video will be published (unless it's obvious), then opens the current licence page of every source actually used and checks two things: the terms haven't changed, and your use case is allowed (for example, Mixkit music is fine on YouTube and Instagram but not on TV or in a video game). Every run also names any sound whose licence isn't a known free one (CC0 or Mixkit Free License), and flags the music until you confirm its licence. It also writes `CREDITS.txt`, a paste-ready list of the sounds and music used. Credit is optional for CC0, but the list is handy for a YouTube, Instagram or TikTok description and proves where the audio came from if a platform ever flags it.
+While editing, Claude asks where the video will be published (unless it's obvious), then opens the current licence page of every source actually used and checks two things: the terms haven't changed, and your use case is allowed (for example, a CC BY track needs its credit in the description). Every run also names any sound whose licence isn't a known free one (CC0), and flags the music until you confirm its licence. It also writes `CREDITS.txt`, a paste-ready list of the sounds and music used. Credit is optional for CC0, but the list is handy for a YouTube, Instagram or TikTok description and proves where the audio came from if a platform ever flags it.
 
 ## Credits
-- Default kit (short list): qubodup, adh.dreaming, ethernel0, BeaconStudio, peoplearehappy, Squirrel_404 and Mixkit; alternatives by Kenney and the Freesound creators listed in [`TOP-PICKS.md`](TOP-PICKS.md) and [`LICENSES.md`](LICENSES.md).
+- Default kit (short list): qubodup, adh.dreaming, ethernel0, BeaconStudio, peoplearehappy, Squirrel_404, j1987; alternatives by Kenney and the Freesound creators listed in [`TOP-PICKS.md`](TOP-PICKS.md) and [`LICENSES.md`](LICENSES.md).
 
 The top picks per category, with links, are in `TOP-PICKS.md`. Every file's source and licence is in `LICENSES.md`.
 
 ## Licence
-Skill code: MIT. Sound effects in `sfx/`: CC0 1.0 (see [`LICENSES.md`](LICENSES.md)). Mixkit sounds are downloaded at runtime under the Mixkit Free License and never stored in this repo.
+Skill code: MIT. Sound effects in `sfx/`: CC0 1.0 (see [`LICENSES.md`](LICENSES.md)).

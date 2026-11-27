@@ -17,6 +17,6 @@
 - `test_shot_times.py`: `tools/shot_times.py` good run, media_start priority, footage.json merge by id, the hard errors (empty shots/cue, NaN/Infinity, duplicate id) and stale-timeline deletion
 - `test_fetch.py`: `tools/get.sh` (200/403/429/5xx/4xx/timeout, never overwrites a good file, key masked) and tts/words/voices/footage/music + `tools/credits.py` against a local mock server (`conftest.py`); no real API is called
 - `test_timing.py`: `tools/timing.py` writes timing.md line start/end from words.json (aligned per letter, a word the transcriber spelled differently marked ≈, gaps > 0.4 s listed)
-- `test_sound_pass_vo.py`: `tools/sound_pass_vo.py` mixes synthetic sine/kick audio and writes report.html from a clone at another path; a mono VO at -18 LUFS is measured as -18 (not +3 LU as dual mono) and not WARNed
+- `test_sound_pass_vo.py`: `tools/sound_pass_vo.py` mixes synthetic sine/kick audio and writes report.html from a clone at another path; a mono VO at -18 LUFS is measured as -18 (not +3 LU as dual mono) and not WARNed; no Mixkit (manifest, kit, refuses a Mixkit track)
 
 Fixtures stay tiny and self-made: no footage, music, logos or keys (the repo is public).

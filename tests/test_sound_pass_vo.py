@@ -92,3 +92,29 @@ def test_mono_voice_at_minus_18_is_not_warned(tmp_path):
     assert 'WARN voice is' not in rep
     mix = re.search(r'in the stereo mix ([-\d.]+) LUFS', rep)
     assert mix and 2 < float(mix.group(1)) - float(m.group(1)) < 4          # dual mono = +3 LU in the mix
+
+
+def test_no_mixkit_anywhere_in_the_sound_kit(tmp_path):
+    """review v3.7 Y4 (planning room): no Mixkit for music or sound effects (licence cannot be verified). The manifest has
+    no Mixkit entry, every default-kit sound is a bundled CC0 file, and the mix refuses a Mixkit track/swap."""
+    import re
+    man = json.loads((ROOT / '.claude/skills/sound-effects/sfx/manifest.json').read_text())
+    entries = man['bundled'] + man['runtime'] + man['default_kit']
+    assert not [e for e in entries if 'mixkit' in json.dumps(e).lower()]
+    for e in man['default_kit']:
+        assert e['file'] and (ROOT / '.claude/skills/sound-effects/sfx' / e['file']).exists() and 'CC0' in e['license'], e
+    for f in ('tools/sound_pass_vo.py', '.claude/skills/sound-effects/scripts/sound_pass.py'):
+        src = (ROOT / f).read_text()
+        assert "'Mixkit' in l and 'Free License'" not in src and 'Mixkit is not allowed' in src
+    if not shutil.which('ffmpeg'):
+        return
+    w = tmp_path / 'in'; w.mkdir()
+    sf.write(w / 'm.wav', (0.1 * np.sin(2 * np.pi * 220 * np.arange(SR * 3) / SR)).astype('float32'), SR)
+    (w / 'cues.json').write_text('[]')
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=black:s=64x112:r=30:d=2', '-pix_fmt', 'yuv420p',
+                    str(w / 's.mp4')], check=True)
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'sound_pass_vo.py'), '--video', str(w / 's.mp4'), '--cues',
+                        str(w / 'cues.json'), '--music', str(w / 'm.wav'), '--voice', str(w / 'm.wav'), '--manifest',
+                        str(ROOT / '.claude/skills/sound-effects/sfx/manifest.json'), '--out', str(tmp_path / 'o'),
+                        '--music-license', 'Mixkit Stock Music Free License'], capture_output=True, text=True, timeout=120)
+    assert r.returncode != 0 and 'Mixkit is not allowed' in r.stderr

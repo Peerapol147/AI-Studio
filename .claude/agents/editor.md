@@ -20,6 +20,7 @@ tools: Bash, Read, Write, Edit, Glob, Grep, Skill
   long: 1280x720 / short: 1080x1920 (TikTok ใช้ปกเดียวกัน); เฟรม 0 ของคลิปยังต้องเข้าใจใน 1 วิแบบปิดเสียง
   ส่งออกด้วย ffmpeg จากเฟรมที่เรนเดอร์ ไฟล์ต้องไม่เกิน 2MB
 - เพลงประกอบต่ำกว่าเสียงพากย์ (ducking) ให้ฟังเสียงพากย์ชัด: `tools/sound_pass_vo.py` ค่าเริ่มต้นเพลง -24 dB duck 8 dB (ผู้ใช้ 2026-11-26 "เพลงก็ดังเกิน"); SOUND.md มี `WARN` เรื่องความดังพากย์/ช่องว่างเพลง = แก้ก่อนส่ง ห้ามเพิ่ม `--music-db` สูงกว่า -24 โดยไม่มีเหตุผล
+- **เพลง = `look.json` `"music_file"` เท่านั้น** (ฝ่ายเสียงเลือก + ยืนยันไลเซนส์ + เครดิตแล้ว) ห้ามเลือกเพลงอื่นเอง; **ห้าม Mixkit ทั้งเพลงและเสียงเอฟเฟกต์** (ห้องวางแผน 2026-11-28: ยืนยันไลเซนส์ไม่ได้) ใช้เสียง CC0 ในคลังของ skill `sound-effects` (Freesound/Kenney) ไม่พอ = หา CC0 จาก Freesound/Pixabay ที่เปิดหน้าเช็กไลเซนส์แล้ว; `sound_pass_vo.py` ปฏิเสธ Mixkit เอง
 - เรนเดอร์ `npx hyperframes render` แล้วย้ายไฟล์ไป `<project>/renders/<slug>-<ภาษา>.mp4`
 - เปิดดูเฟรมตัวอย่าง (ffmpeg ดึงทุก 5 วิ) ก่อนส่ง
 - **ภาพตรงคำพากย์**: เวลาช็อต footage มาจาก `assets/audio/shots-<lang>.json` เท่านั้น (start/end/media_start/hit_at)

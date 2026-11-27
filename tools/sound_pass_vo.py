@@ -22,11 +22,14 @@ ap.add_argument('--voice',required=True)
 ap.add_argument('--duck-db',type=float,default=8.0)
 ap.add_argument('--sfx-db',type=float,default=-3.0)
 ap.add_argument('--music-source',default=None,help='where the music came from (track, artist, link), for CREDITS.txt')
-ap.add_argument('--music-license',default=None,help='the music licence the user confirmed, e.g. "Mixkit Stock Music Free License"')
+ap.add_argument('--music-license',default=None,help='the music licence the user confirmed, e.g. "CC BY 4.0" (Jamendo track page checked)')
 ap.add_argument('--use-case',default=None,help='where the video will be published, e.g. "YouTube and Instagram"; checked against known licence limits')
 ap.add_argument('--seed',type=int,default=7)
 ap.add_argument('--swaps',default=None,help='swaps.json from report.html: {cue_index: file|runtime_url|"auto"}')
 A=ap.parse_args(); os.makedirs(A.out,exist_ok=True); os.makedirs(f'{A.out}/checks',exist_ok=True)
+# AI Studio 2026-11-28 (review v3.7 Y4): no Mixkit, neither sound effects nor music (licence cannot be verified here)
+if 'mixkit' in ' '.join(str(x or '') for x in (A.music,A.music_source,A.music_license)).lower() or (A.swaps and 'mixkit' in open(A.swaps).read().lower()):
+  raise SystemExit('Mixkit is not allowed for music or sound effects (AI Studio): use look.json music_file (Jamendo CC BY / CC0, licence checked) and the bundled CC0 sounds')
 random.seed(A.seed)
 run=lambda c,**kw:subprocess.run(c,capture_output=True,text=True,**kw)
 dur=float(run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',A.video]).stdout)
@@ -61,12 +64,15 @@ log.append(f"Music starts {mstart:.3f}s into the track. Cut-to-beat error: "+', 
 # 3. choose one SFX per cue: default kit first, then swaps (--swaps), alternatives for the report
 cmap=man['category_map']; lib={}
 for e in man.get('bundled',[]): lib.setdefault(e['category'],[]).append({**e,'path':os.path.join(base,e['file'])})
-for e in man.get('runtime',[]): lib.setdefault(e['category'],[]).append({**e,'path':None})
+for e in man.get('runtime',[]):
+  if 'mixkit' not in str(e.get('runtime_url','')).lower(): lib.setdefault(e['category'],[]).append({**e,'path':None})
 kit={e['category']:e for e in man.get('default_kit',[])}
 cache=os.path.join(A.out,'sound-effects-cache'); os.makedirs(cache,exist_ok=True)
 def fetch(e):
   if e.get('path') and os.path.exists(e['path']): return e['path']
-  url=e.get('runtime_url'); f=os.path.join(cache,(e.get('category','x'))+'-'+os.path.basename(url))
+  url=e.get('runtime_url')
+  if 'mixkit' in str(url).lower(): raise SystemExit(f'{url}: Mixkit sounds are not allowed (AI Studio); pick a bundled CC0 sound')
+  f=os.path.join(cache,(e.get('category','x'))+'-'+os.path.basename(url))
   if not os.path.exists(f):
     # tools/get.sh: 60 s cap, 403/429/5xx/timeout = exit 75, never leaves a half file
     r=run(['bash',os.path.join(os.path.dirname(os.path.abspath(__file__)),'get.sh'),url,f],env={**os.environ,'GET_MAX_TIME':'60'})
@@ -112,7 +118,7 @@ for idx,c in enumerate(cues):
   if c['type'] in('appear','click','hover_or_small_ui'): gain=-6
   gain=c.get('gain',gain)+A.sfx_db
   i=max(0,int(start*SR)); a=a*10**(gain/20); n=min(len(a),len(mix)-i); mix[i:i+n]+=a[:n]
-  placed.append({**c,'idx':idx,'category':cat,'sfx':e.get('file') or e.get('runtime_url'),'sfx_path':fetch(e),'source_url':e.get('source_url') or e.get('source_page'),'license':e.get('license'),'credit':e.get('credit') or e.get('attribution') or 'Mixkit','start':round(start,3),'gain_db':gain,'alternatives':[{'id':x.get('file') or x.get('runtime_url'),'play':(os.path.relpath(x['path'],A.out) if x.get('path') else x.get('runtime_url')),'source_url':x.get('source_url') or x.get('source_page'),'license':x.get('license'),'label':x.get('note') or x.get('title') or os.path.basename(x.get('file') or x.get('runtime_url'))} for x in alts(cat)][:12]})
+  placed.append({**c,'idx':idx,'category':cat,'sfx':e.get('file') or e.get('runtime_url'),'sfx_path':fetch(e),'source_url':e.get('source_url') or e.get('source_page'),'license':e.get('license'),'credit':e.get('credit') or e.get('attribution') or 'unknown','start':round(start,3),'gain_db':gain,'alternatives':[{'id':x.get('file') or x.get('runtime_url'),'play':(os.path.relpath(x['path'],A.out) if x.get('path') else x.get('runtime_url')),'source_url':x.get('source_url') or x.get('source_page'),'license':x.get('license'),'label':x.get('note') or x.get('title') or os.path.basename(x.get('file') or x.get('runtime_url'))} for x in alts(cat)][:12]})
 # music bed
 yt,_=librosa.load(A.music,sr=SR,mono=False); yt=np.atleast_2d(yt); yt=(np.vstack([yt,yt]) if yt.shape[0]==1 else yt).T
 seg=yt[int(mstart*SR):int(mstart*SR)+len(mix)]; seg=seg*10**(A.music_db/20)
@@ -169,14 +175,14 @@ for k,c in enumerate(placed):
   s0=max(0,c['t']-0.5); s1=min(dur,c['t']+0.8); seg=au[int(s0*SR):int(s1*SR)]
   ax[2].plot(np.linspace(s0,s1,len(seg)),seg,lw=.4); ax[2].axvline(c['t'],color='r'); ax[2].set_title(f"cue {k} @ {c['t']:.2f}s {c['type']} <- {os.path.basename(c['sfx'])}",fontsize=8)
   plt.tight_layout(); plt.savefig(f"{A.out}/checks/cue-{k:02d}.png",dpi=80); plt.close()
-# credits + licence check: only CC0 and Mixkit Free License count as known free licences; anything else is named as unknown
+# credits + licence check: only CC0 / public domain counts as a known free licence (AI Studio: no Mixkit); anything else is named as unknown
 allman={}
 for e in man.get('bundled',[])+man.get('runtime',[])+man.get('default_kit',[]): allman[e.get('file') or e.get('runtime_url')]=e
-def free(lic): l=(lic or ''); return 'CC0' in l or ('Mixkit' in l and 'Free License' in l and 'Restricted' not in l)
+def free(lic): l=(lic or ''); return 'CC0' in l or 'public domain' in l.lower()
 def credit_line(c):
   e=allman.get(c['sfx'],{}); lic=c.get('license') or e.get('license') or 'licence unknown'
   if e.get('title') and e.get('creator'): name,who,src=e['title'],e['creator'],e.get('source','Freesound').split(' (')[0]
-  elif str(c['sfx']).startswith('http'): name,who,src='Mixkit #'+str(e.get('mixkit_id') or ''),'Mixkit','Mixkit'
+  elif str(c['sfx']).startswith('http'): name,who,src=os.path.basename(str(c['sfx'])),'unknown creator','runtime download'
   else:
     b=os.path.basename(c['sfx']).rsplit('.',1)[0]; kenney=b.startswith('kenney-')
     name=re.sub(r'^kenney-','',re.sub(r'^fs-?\d+-?','',b)).replace('-',' ').strip().capitalize() or 'Freesound '+(re.findall(r'\d+',b) or [''])[0]
@@ -190,7 +196,7 @@ for c in placed:
   if not ok: unknown.append(f'"{name}" by {who} ({url or "no source link"}): licence "{lic}" is not a known free licence')
 music_line=(f"{A.music_source or os.path.basename(A.music)}, {A.music_license}" if A.music_license else f"{A.music_source or os.path.basename(A.music)} - LICENCE NOT CONFIRMED, add the track, artist and licence before publishing")
 open(f'{A.out}/CREDITS.txt','w').write('Sound effects\n'+'\n'.join(seen.values())+'\n\nMusic\n'+music_line+'\n')
-lic_report=(["All sound effects have a known free licence (CC0 or Mixkit Free License). Sources can change their terms; check the source pages now and then."] if not unknown else ["UNKNOWN LICENCES, do not publish until checked:"]+['  '+u for u in unknown])+[("Music licence: "+A.music_license) if A.music_license else "Music licence: NOT CONFIRMED. Ask the user where the track is from and what licence it has."]
+lic_report=(["All sound effects have a known free licence (CC0). Sources can change their terms; check the source pages now and then."] if not unknown else ["UNKNOWN LICENCES, do not publish until checked:"]+['  '+u for u in unknown])+[("Music licence: "+A.music_license) if A.music_license else "Music licence: NOT CONFIRMED. Ask the user where the track is from and what licence it has."]
 # use case against the known limits of the sources (Claude still checks each source's current page, SKILL.md step 0)
 uc=(A.use_case or '').lower(); conflicts=[]
 if A.use_case:

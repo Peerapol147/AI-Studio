@@ -14,7 +14,7 @@ Changes made: leading silence trimmed, length capped (4 s; risers 6 s; ambience 
 |---|---|---|---|---|
 | kit/whoosh.ogg | whoosh | kit | qubodup | [source](https://freesound.org/people/qubodup/sounds/60013/) |
 | kit/click.ogg | click | kit | adh.dreaming | [source](https://freesound.org/people/adh.dreaming/sounds/671105/) |
-| runtime: https://assets.mixkit.co/active_storage/sfx/1392/1392-preview.mp3 | typing | kit | Mixkit | [source](https://mixkit.co/free-sound-effects/typing/) |
+| typing/fs-79388-keyboard-typing-wav.ogg | typing | kit | j1987 | [source](https://freesound.org/people/j1987/sounds/79388/) |
 | kit/pop.ogg | pop | kit | ethernel0 | [source](https://freesound.org/people/ethernel0/sounds/776016/) |
 | kit/riser.ogg | riser | kit | BeaconStudio | [source](https://freesound.org/people/BeaconStudio/sounds/859482/) |
 | kit/impact.ogg | impact | kit | peoplearehappy | [source](https://freesound.org/people/peoplearehappy/sounds/841274/) |
@@ -124,7 +124,7 @@ Changes made: leading silence trimmed, length capped (4 s; risers 6 s; ambience 
 | riser/kenney-digital-powerup3.ogg | riser | 1.01 | Kenney (kenney.nl), CC0; credit optional | [source](https://kenney.nl/assets/digital-audio) |
 
 ## Runtime-only sources (NOT bundled)
-- **Mixkit Sound Effects Free License** (https://mixkit.co/license/#sfxFree): you can use it in commercial videos, including monetised YouTube, with no attribution. Standalone redistribution of the files is not allowed, so the skill downloads them into your project at runtime. The URLs are under `runtime` in the manifest.
+- (none) AI Studio removed the Mixkit runtime sounds on 2026-11-28; every sound used is CC0 and bundled.
 
 ## Sources checked but not bundled
 - **Pixabay sounds**: free for commercial use with no attribution, but it bans standalone distribution, so it can't be bundled. Pixabay also blocks non-browser downloads. https://pixabay.com/service/license-summary/
