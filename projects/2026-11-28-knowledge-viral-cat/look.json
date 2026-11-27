@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "ocean-teal",
+  "font": "kanit",
+  "caption": "stroke",
+  "opening": "midstory",
+  "cover": "stack",
+  "transition": "flash",
+  "music_mood": "mysterious",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": null,
+  "why": "เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน | ผู้กำกับ: ocean-teal (ทะเลเกาะพีพี) + flash + เพลง mysterious (ปริศนาตำราโบราณ/ทาสีไหม) ต่างจากตอน never-colonized (retro-cream/whip/cinematic) ที่ผู้ใช้เพิ่งเห็น"
+}
