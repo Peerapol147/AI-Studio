@@ -172,7 +172,7 @@ window.ITCH = (function () {
     [[498, 470], [480, 480], [440, 488]], [[390, 496], [345, 505], [318, 535]], [[292, 562], [283, 600], [281, 640]],
     [[276, 740], [268, 830], [264, 905]], [[259, 990], [256, 1080], [258, 1170]], [[259, 1230], [266, 1290], [290, 1302]],
     [[314, 1310], [322, 1262], [321, 1190]], [[322, 1090], [330, 1000], [333, 920]], [[337, 840], [342, 760], [350, 690]],
-    [[362, 780], [370, 880], [376, 980]], [[381, 1060], [368, 1150], [372, 1260]], [[376, 1360], [378, 1460], [380, 1600]]];
+    [[362, 780], [370, 880], [376, 980]], [[381, 1060], [368, 1150], [372, 1260]], [[376, 1360], [380, 1700], [390, 2400]]];
   function bodyPath() {
     const m = p => [1080 - p[0], p[1]], P = q => f1(q[0]) + ' ' + f1(q[1]);
     let d = 'M500 430 ', prev = [500, 430]; const segs = [];
@@ -375,7 +375,7 @@ window.ITCH = (function () {
     // labels
     if (run === 'r2') {
       place(R.lHist, P(560, 760), popS(t, T.hist) * (1 - .25 * eio((t - T.nerve) / .5)), 1 - clamp((t - T.nerveW) / .3), 0, -40, -3);
-      place(R.lItch, P(640, 470), popS(t, T.nerveW), 1, 0, -10, 0);
+      { const q = P(640, 470); q[1] = Math.max(300, q[1]); place(R.lItch, q, popS(t, T.nerveW), 1, 0, -10, 0); }
     }
     if (run === 'r4') {
       place(R.lP, P(300, 470), popS(t, T.painW) * (1 + .25 * pulse(t, T.cover, .3)), 1, 0, -20, -4);
@@ -395,7 +395,7 @@ window.ITCH = (function () {
   function renderBody(t, run) {
     let c, upLvl = 0, painUp = 0, dnLvl = 0, brainLvl = .2, seroOn = 0, spot = 0, scr = 0, cordMix = 0;
     if (run === 'r3') {
-      c = track([[T.spine, [520, 760, .74]], [T.brain, [535, 560, .86]], [T.must, [430, 900, .9]]], t, 6, .85);
+      c = track([[T.spine, [520, 700, .98]], [T.brain, [535, 560, 1.12]], [T.must, [420, 860, 1.05]]], t, 6, .85);
       spot = 1; upLvl = 1 - clamp((t - T.cmd) / .3) * .7; brainLvl = .3 + .7 * clamp((t - T.brain) / .12);
       dnLvl = clamp((t - T.cmd - .1) / .2); scr = clamp((t - T.scr) / .1);
     } else {
@@ -421,7 +421,7 @@ window.ITCH = (function () {
       const born = clamp((t - T.release2 - p.ph * .8) / .15); p.e.setAttribute('cx', f1(x)); p.e.setAttribute('cy', f1(y)); p.e.setAttribute('opacity', f3(born * seroOn * (1 - (u % 1) * .6))); });
     R.bodyCam.setAttribute('opacity', f3(1 - cordMix));
     // labels
-    if (run === 'r3') place(R.lBrain, P(540, 200), popS(t, T.brain), 1, 0, -20, -2);
+    if (run === 'r3') place(R.lBrain, P(720, 290), popS(t, T.brain), 1, 0, 0, -2);
     if (run === 'r5') {
       place(R.lSero, P(700, 470), popS(t, T.seroW) * (1 + .15 * pulse(t, T.calm, .3)), 1 - cordMix, 0, 0, -3);
       place(R.lP, P(300, 900), 1 - eio((t - T.calm) / .3), painUp > .02 ? 1 : 0, 0, 0, -4);
@@ -433,7 +433,7 @@ window.ITCH = (function () {
   }
   function renderCord(t, mix) {
     const s = track([[T.sero2, .35], [T.sero2 + .12, 1.0], [T.strong, 1.12], [T.cycle, .42]], t, 10, .8);
-    const cx = 540 + 4 * Math.sin(t * .8), cy = track([[T.sero2, 760], [T.cycle, 740]], t, 7, .85) + 4 * Math.cos(t * .7);
+    const cx = 540 + 4 * Math.sin(t * .8), cy = track([[T.sero2, 760], [T.cycle, 670]], t, 7, .85) + 4 * Math.cos(t * .7);
     R.cordG.setAttribute('transform', `translate(${f1(cx)} ${f1(cy)}) scale(${f3(s)}) rotate(${f1(2 * Math.sin(t * .5))})`);
     const Lp = (x, y) => [cx + x * s, cy + y * s];
     // serotonin particles from the top, docking on receptors
@@ -453,7 +453,7 @@ window.ITCH = (function () {
       r.setAttribute('r', f1(30 + 220 * ph)); r.setAttribute('opacity', f3(on * (1 - ph) * .9)); });
     const cyc = clamp((t - T.cycle) / .25);
     place(R.lSero2, Lp(270, -150), popS(t, T.sero2W) * (1 - cyc), mix * (1 - cyc), 0, 0, -3);
-    place(R.lNeu, Lp(-60, -330), popS(t, T.itchW2 - .3) * (1 + .3 * pulse(t, T.strong, .3)) * (1 - cyc), mix * (1 - cyc), 0, 0, 2);
+    place(R.lNeu, Lp(60, -310), popS(t, T.itchW2 - .3) * (1 + .3 * pulse(t, T.strong, .3)) * (1 - cyc), mix * (1 - cyc), 0, 0, 2);
     // cycle
     R.cycleG.setAttribute('opacity', f3(cyc * mix));
     if (cyc > 0) {
@@ -530,11 +530,11 @@ window.ITCH = (function () {
     else {
       fo.style.opacity = f3(st.o); fo.style.transform = `translateY(${f1(st.ty)}px)`;
       fo.style.clipPath = st.clip > 0 ? `inset(0 0 ${f1(st.clip)}px 0)` : 'none';
-      [32.66, 32.98, 33.28].forEach((at, i) => { const p = document.getElementById('fp-' + (i + 1)); const s = t < at ? 0 : S(t - at, 15, .55);
+      [32.58, 32.92, 33.22].forEach((at, i) => { const p = document.getElementById('fp-' + (i + 1)); const s = t < at ? 0 : S(t - at, 15, .55);
         const kb = 1 + .05 * clamp((t - at) / 2);
         p.style.opacity = f3(clamp((t - at) / .06)); p.style.transform = `translateX(${f1((i % 2 ? 1 : -1) * 140 * (1 - s))}px) scale(${f3(.86 + .14 * s)}) rotate(${f1((i - 1) * 1.2)}deg)`;
         const m = p.firstElementChild; m.style.transform = `scale(${f3(kb)})`; });
-      [['zap1', 32.9], ['zap2', 33.2]].forEach(([id, at]) => { const z = document.getElementById(id); const u = t - at;
+      [['zap1', 32.86], ['zap2', 33.16]].forEach(([id, at]) => { const z = document.getElementById(id); const u = t - at;
         z.setAttribute('opacity', f3(u < 0 ? 0 : Math.exp(-u / .35))); z.setAttribute('stroke-width', f1(6 + 10 * Math.exp(-Math.max(0, u) / .2))); });
     }
     // nail sparks (hook: red flash under the nails before "เจ็บ"; scratch2: "ผิวจะเจ็บนิดๆ")
