@@ -16,27 +16,21 @@
   "action_at": 1.5
  },
  "r2_punch": {
-  "src": "assets/footage/pixabay-4334647.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-4334647.jpg"
  },
  "r1_why": {
-  "src": "assets/footage/pixabay-3759005.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-3759005.jpg"
  },
  "hook": {
-  "src": "assets/footage/pixabay-3908006.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-3908006.jpg"
  },
  "r1": {
-  "src": "assets/footage/pixabay-1018062.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-1018062.jpg"
  },
  "cta": {
-  "src": "assets/footage/pixabay-6600644.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-6600644.jpg"
  },
  "hook_cup": {
-  "src": "assets/footage/pixabay-2546041.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-2546041.jpg"
  }
 }

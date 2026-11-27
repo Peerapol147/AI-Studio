@@ -1,0 +1,256 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 49.254,
+ "inputs": {
+  "shots.json": "4dc4418f336bc6ee4643fc28894c8ad878cff6703963733bdf77de50010ec87e",
+  "footage.json": "0a14e4c34a5f9d64bdcd4fb7765f082588922031ab84feb487bfc1363ce796c4",
+  "assets/audio/words.json": "e258b3f822919347d24b76ca8ee229f9119d488d3e408802ef938c942c39cd2d"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/pixabay-3908006.jpg",
+   "cue": "คาเฟอีนตัว",
+   "word_at": 0.06,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.4,
+   "dur": 1.4
+  },
+  {
+   "id": "hook_bottle",
+   "src": null,
+   "cue": "ไม่ได้อยู่ใน",
+   "word_at": 1.48,
+   "start": 1.4,
+   "beat": "hook",
+   "end": 3.16,
+   "dur": 1.76
+  },
+  {
+   "id": "hook_cup",
+   "src": "assets/footage/pixabay-2546041.jpg",
+   "cue": "แต่อยู่ใน",
+   "word_at": 3.24,
+   "start": 3.16,
+   "beat": "hook",
+   "end": 5.68,
+   "dur": 2.52
+  },
+  {
+   "id": "setup",
+   "src": null,
+   "cue": "ไล่จากน้อย",
+   "word_at": 5.76,
+   "start": 5.68,
+   "beat": "setup",
+   "end": 7.8,
+   "dur": 2.12
+  },
+  {
+   "id": "r4",
+   "src": "assets/footage/pixabay-79908.mp4",
+   "cue": "อันดับสี่",
+   "word_at": 7.88,
+   "start": 7.8,
+   "beat": "explain",
+   "end": 9.84,
+   "dur": 2.04,
+   "media_start": 0.92
+  },
+  {
+   "id": "r4_num",
+   "src": "assets/footage/pixabay-82601.mp4",
+   "cue": "ราวสามสิบ",
+   "word_at": 9.92,
+   "start": 9.84,
+   "beat": "explain",
+   "end": 11.54,
+   "dur": 1.7,
+   "media_start": 2.92
+  },
+  {
+   "id": "r4_punch",
+   "src": "assets/footage/pixabay-331066.mp4",
+   "cue": "ซ่าก็จริง",
+   "word_at": 11.62,
+   "start": 11.54,
+   "beat": "explain",
+   "end": 14.04,
+   "dur": 2.5,
+   "media_start": 1.42
+  },
+  {
+   "id": "r3",
+   "src": null,
+   "cue": "อันดับสาม",
+   "word_at": 14.12,
+   "start": 14.04,
+   "beat": "explain",
+   "end": 16.159,
+   "dur": 2.119
+  },
+  {
+   "id": "r3_belief",
+   "src": null,
+   "cue": "ที่ใครๆ",
+   "word_at": 16.239,
+   "start": 16.159,
+   "beat": "explain",
+   "end": 18.28,
+   "dur": 2.121
+  },
+  {
+   "id": "r3_rule",
+   "src": null,
+   "cue": "ให้ใส่ได้",
+   "word_at": 18.36,
+   "start": 18.28,
+   "beat": "explain",
+   "end": 20.4,
+   "dur": 2.12
+  },
+  {
+   "id": "r3_punch",
+   "src": null,
+   "cue": "ชื่อดูแรง",
+   "word_at": 20.48,
+   "start": 20.4,
+   "beat": "explain",
+   "end": 23.02,
+   "dur": 2.62
+  },
+  {
+   "id": "r2",
+   "src": "assets/footage/pixabay-134.mp4",
+   "cue": "อันดับสอง",
+   "word_at": 23.1,
+   "start": 23.02,
+   "beat": "explain",
+   "end": 25.4,
+   "dur": 2.38,
+   "media_start": 1.42
+  },
+  {
+   "id": "r2_num",
+   "src": null,
+   "cue": "ก็ราวหก",
+   "word_at": 25.48,
+   "start": 25.4,
+   "beat": "explain",
+   "end": 26.88,
+   "dur": 1.48
+  },
+  {
+   "id": "r2_punch",
+   "src": "assets/footage/pixabay-4334647.jpg",
+   "cue": "แก้วจิ๋ว",
+   "word_at": 26.96,
+   "start": 26.88,
+   "beat": "explain",
+   "end": 28.02,
+   "dur": 1.14
+  },
+  {
+   "id": "r2_pass",
+   "src": null,
+   "cue": "แซงขวด",
+   "word_at": 28.1,
+   "start": 28.02,
+   "beat": "explain",
+   "end": 29.96,
+   "dur": 1.94
+  },
+  {
+   "id": "r1",
+   "src": "assets/footage/pixabay-1018062.jpg",
+   "cue": "แล้วอันดับหนึ่ง",
+   "word_at": 30.04,
+   "start": 29.96,
+   "beat": "reveal",
+   "end": 33.12,
+   "dur": 3.16
+  },
+  {
+   "id": "r1_why",
+   "src": "assets/footage/pixabay-3759005.jpg",
+   "cue": "เพราะมันคือ",
+   "word_at": 33.2,
+   "start": 33.12,
+   "beat": "twist",
+   "end": 35.8,
+   "dur": 2.68
+  },
+  {
+   "id": "r1_shots",
+   "src": null,
+   "cue": "บางร้าน",
+   "word_at": 35.88,
+   "start": 35.8,
+   "beat": "explain",
+   "end": 37.22,
+   "dur": 1.42
+  },
+  {
+   "id": "r1_200",
+   "src": null,
+   "cue": "ก็ราวสอง",
+   "word_at": 37.3,
+   "start": 37.22,
+   "beat": "reveal",
+   "end": 39.62,
+   "dur": 2.4
+  },
+  {
+   "id": "fda",
+   "src": null,
+   "cue": "ของอเมริกา",
+   "word_at": 39.7,
+   "start": 39.62,
+   "beat": "share",
+   "end": 41.16,
+   "dur": 1.54
+  },
+  {
+   "id": "share",
+   "src": null,
+   "cue": "ผู้ใหญ่ทั่วไป",
+   "word_at": 41.24,
+   "start": 41.16,
+   "beat": "share",
+   "end": 44.56,
+   "dur": 3.4
+  },
+  {
+   "id": "share_half",
+   "src": null,
+   "cue": "แปลว่าแก้ว",
+   "word_at": 44.64,
+   "start": 44.56,
+   "beat": "share",
+   "end": 46.92,
+   "dur": 2.36
+  },
+  {
+   "id": "cta",
+   "src": "assets/footage/pixabay-6600644.jpg",
+   "cue": "วันนี้กิน",
+   "word_at": 47.0,
+   "start": 46.92,
+   "beat": "cta",
+   "end": 48.4,
+   "dur": 1.48
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "พิมพ์",
+   "word_at": 48.48,
+   "start": 48.4,
+   "beat": "loop",
+   "end": 49.254,
+   "dur": 0.854
+  }
+ ]
+}
