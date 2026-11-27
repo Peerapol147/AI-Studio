@@ -27,12 +27,13 @@ hookplate hook 0 6.2 ""
 # hook_fight: the same cat right after the hook in-point, blurred under the comment bubbles
 hookplate hookblur 5.3 1.9 ",gblur=sigma=14,eq=brightness=-0.1"
 vplate paint   pixabay-108560.mp4 405:720:430:0 2 4
-vplate viral   pixabay-339775.mp4 1440:2560:0:0 0 5.6
+# viral: the source is HLG/BT.2020 (10 bit) -> tone-map to SDR BT.709 first (else the render auto-promotes to HDR HEVC)
+ffmpeg -v error -y -t 5.6 -i "$F/pixabay-339775.mp4" -vf "zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p,fps=30,scale=1080:1920:flags=lanczos,eq=brightness=0.04:saturation=1.15,$GR,vignette=PI/6" $ENC -color_primaries bt709 -color_trc bt709 -colorspace bt709 assets/viral.mp4
 vplate reveal  pixabay-185937.mp4 608:1080:1160:330 0 10.6
 vplate revealb pixabay-347102.mp4 1215:2160:700:0 0 5.2
 # khao: face sits at the top of the 720 px frame -> lower card; cta: 39009 never shows a face, use 16975 (two cats look at camera)
 lowplate khao pixabay-46226.mp4 6 4 640:720:250:0 1440 480 ""
-lowplate cta  pixabay-16975.mp4 2 5 1080:1440:640:0 1440 60 ""
+lowplate cta  pixabay-16975.mp4 2 5 1080:1440:640:0 1440 250 ""
 BG="scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=38,$GR,eq=brightness=-0.14:saturation=0.75,vignette=PI/4"
 still(){ # name src
   ffmpeg -v error -y -i "$F/$2" -vf "$GR" -q:v 2 "assets/$1.jpg"
@@ -41,3 +42,5 @@ still white pixabay-3683186.jpg
 still siam  pixabay-806210.jpg
 still korat pixabay-2669735.jpg
 ls -la assets
+# mono voice -> stereo at -3 dB per channel, so the mix script's stereo LUFS reads the voice at its real -18 (not -15)
+ffmpeg -v error -y -i ../assets/audio/vo-th.mp3 -af "pan=stereo|c0=0.7071*c0|c1=0.7071*c0" -ar 48000 assets/vo-th-mix.wav
