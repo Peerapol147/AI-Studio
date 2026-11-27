@@ -12,6 +12,24 @@
   "atempo": 1.1,
   "vo_lufs": -18,
   "music_file": null,
-  "cover_text": null,
-  "why": "look.py pick แล้วแก้: palette night-violet (ข้างในร่างกายโทนมืด เส้นประสาทเรืองแสง แบบ 3D body explainer อเมริกา), music quirky (เรื่องคันขำๆ ใกล้ตัว); opening pov ใช้ kicker 'POV: โดนยุงกัด' + คำถามตรง (question ห้ามซ้ำตอน caffeine ก่อนหน้า); เสียงล็อกช่อง"
+  "cover_text": "เวลาเกาแก้คัน เรากำลังทำให้ตัวเองเจ็บนะ",
+  "why": "look.py pick แล้วแก้: palette night-violet (ข้างในร่างกายโทนมืด เส้นประสาทเรืองแสง แบบ 3D body explainer อเมริกา), music quirky (เรื่องคันขำๆ ใกล้ตัว); opening pov ใช้ kicker 'POV: โดนยุงกัด' + คำถามตรง (question ห้ามซ้ำตอน caffeine ก่อนหน้า); เสียงล็อกช่อง",
+  "covers": [
+    {
+      "id": "a",
+      "lines": [
+        "ทำไมเกาแล้ว",
+        "*คันกว่าเดิม*?"
+      ],
+      "badge": "รู้ไหม?"
+    },
+    {
+      "id": "b",
+      "lines": [
+        "เกาแก้คัน =",
+        "ทำให้ตัวเอง*เจ็บ*"
+      ],
+      "badge": "ในร่างกาย"
+    }
+  ]
 }
