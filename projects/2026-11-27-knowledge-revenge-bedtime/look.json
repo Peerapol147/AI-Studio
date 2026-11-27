@@ -11,7 +11,7 @@
   "tts_model": "eleven_v3",
   "atempo": 1.1,
   "vo_lufs": -18,
-  "music_file": null,
+  "music_file": "music-jamendo-b386828e.mp3",
   "cover_text": "ตี 2 แล้ว ยังไม่นอน?",
   "why": "เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน | ผู้กำกับ: mono-yellow (ดำ + เหลืองแบบแสงโคมไฟ/นาฬิกาดิจิทัลตอนดึก; night-violet/pov ห้องคันใช้ไปแล้ว); question = 'ตี 2 แล้ว ยังไม่นอน?' บอกหัวข้อตั้งแต่ 0.0 วิ รองรับ hook ผู้ใช้ที่พูดหัวข้อช้า; lofi ดึกๆ"
 }
