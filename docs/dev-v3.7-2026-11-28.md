@@ -1,4 +1,4 @@
-# dev v3.7 (2026-11-28): กล้องตามจังหวะตัด, หัวข้อเฟรม 0, เครื่องมือจากตอน itch
+# dev v3.7 (2026-11-28): กล้องตามจังหวะตัด, หัวข้อเฟรม 0, คัตแข็ง + zoom punch, เครื่องมือจากตอน itch / caffeine-ranking / never-colonized
 
 ห้อง dev (ลูกของห้องวางแผน Creative #4) branch `claude/dev-pending-rules-2` ต่อจาก 643253b (style.md feedback ผู้ใช้ยังอยู่ ไม่ได้แตะ)
 ยังไม่ merge เข้า stoic-cray (รอห้องตรวจ)
@@ -58,6 +58,9 @@
 | cta | cta | 1.48 | 2.33 / 0.89 | 2.53 / 1.2 |
 | loop | loop | 0.88 | 2.02 / 1.74 | 2.02 / 1.74 |
 
+ตัวเลขในตารางบนวัดตอนมีแค่ข้อ 1 (กล้อง) หลังเพิ่มข้อ 18 (คัตแข็ง + zoom punch) วัดซ้ำได้: ค่ากลาง 2.03, p10 1.13, เฟรมเกือบนิ่ง 0,
+ช็อตยาวเฉลี่ย 2.58 (รวม punch) — กราฟ/GIF ด้านล่างเป็น**ฉบับสุดท้าย** (ข้อ 1 + 18)
+
 ![กราฟการเคลื่อนไหว](review-assets/v3.7/camera-motion-before-after.png)
 เส้นเทา (ก่อน) เริ่มจากเกือบ 0 ทุกคัตแล้วค่อยเร่ง = เห็นเป็นภาพค้างตรงจุดตัด; เส้นแดง (หลัง) พุ่งตรงคัตแล้วผ่อน
 - ภาพเคลื่อนไหวก่อน/หลัง 4.5-10.5 วิ: `review-assets/v3.7/camera-before-after-4.5-10.5s.gif`
@@ -73,12 +76,33 @@
 - midstory+tilt คง line-height 1.42 (ลองแล้ว 1.26 สระบน Sarabun แตะแถบบรรทัดบน)
 
 ## เทสต์
-`python3 -m pytest -q tests`: **117 passed, 0 skipped** (ฐาน 110 passed 1 skipped; skipped เดิม = sound_pass_vo ที่ข้ามเมื่อไม่มี librosa ห้องนี้ติดตั้ง librosa แล้วรันจริงทั้ง 2 เทสต์; +6 เทสต์ใหม่)
+`python3 -m pytest -q tests`: **125 passed, 0 skipped** (ฐาน 110 passed 1 skipped; skipped เดิม = sound_pass_vo ที่ข้ามเมื่อไม่มี librosa ห้องนี้ติดตั้ง librosa แล้วรันจริง; ข้อ 1-8 +6 เทสต์, ข้อ 9-18 +8 เทสต์ (test_timing.py มี 2))
 เทสต์ใหม่: ข้อ 1 `test_camera_speed_follows_real_shot_length`, ข้อ 2 (ด้านบน), ข้อ 4 `test_still_image_action_at_skipped_not_error`, ข้อ 6/8b `test_searches_run_one_at_a_time` + `test_blocked_note_shows_the_429_not_the_error_body`, ข้อ 7 `test_mono_voice_at_minus_18_is_not_warned` (โค้ดเดิม: รายงาน -15.0 + WARN; ใหม่: -18 ไม่ WARN)
 
+## ข้อ 9-18 (ห้องวางแผนส่งเพิ่ม จากห้อง caffeine-ranking / never-colonized)
+
+| ข้อ | commit | ทำอะไร | ไฟล์ / เทสต์ |
+|---|---|---|---|
+| 9 ภาพหลักค้าง | `ec7f4ec` | `contact_sheet.py make` ย่อทุกเฟรมเป็นตารางสี 9x16 ตัดแถบซับ (Y 55-73%) ออก เทียบกับเฟรมแรกของภาพนั้น ต่างไม่ถึง 25 = ภาพเดิม (วัดจากภาพจริง: push 1.04→1.21 = 5-24, ตัดภาพ = 41-54) → `main_holds` + หัวข้อใน INDEX.md; `verify` พิมพ์ `WARN main picture held` ช่วง > 3 วิ (WARN ไม่ใช่ FAIL: แผนภาพยาวตั้งใจได้ reviewer.md บอกวิธีจด) ตัวอย่าง itch ไม่มี WARN เท็จ | `tools/contact_sheet.py`, reviewer.md / `test_main_picture_held_warns_even_if_small_things_move` (แถบสี 7 วิ + กล่องเล็กขยับ + แถบซับขยับ = WARN 0-7 วิ) |
+| 10 ปกพื้นเข้ม | `b7b2476` | `look.json` `cover_palette`: pick ใส่ให้ (= palette ถ้าเข้ม, ไม่งั้น palette เข้มที่ไม่ได้ใช้นานสุด ไม่ซ้ำปกตอนก่อน); check: ปกสว่าง = WARN (`--final` ERROR), ซ้ำปกตอนก่อน/ชื่อไม่มี = ERROR; `cover_shot.js` ใช้ `cover_palette` | `tools/look.py`, `tools/cover_shot.js`, style.md 9a, TEMPLATE.md / `test_cover_palette_dark_even_when_the_look_is_light` + เรนเดอร์ปกจริงในเบราว์เซอร์ (look mint-paper + ปก night-violet = พื้นมืด) |
+| 11 timing.md | `d39bf62` | `tools/timing.py` จับคู่บท (`script-vo-<lang>.txt` / `vo-<lang>-tts.txt`) กับ words.json ทีละตัวอักษร (difflib) → เริ่ม/จบ/ยาวทุกบรรทัด, แถวที่ถอดไม่ตรงบท = ≈, ช่วงเงียบ > 0.4 วิ; voice.md: ห้ามพิมพ์เวลาเอง | `tools/timing.py`, voice.md / `tests/test_timing.py`; ลองกับ transcript ตอน itch ได้ 21 บรรทัดตรง |
+| 12ก ดูเฟรม footage | `ee4b7e5` | make-clip ขั้น 5: ผู้กำกับดูเฟรมทุกไฟล์ footage (contact_sheet / Read) ว่าตรงความหมายก่อนส่ง editor | make-clip |
+| 12ข ต้นฉบับตัวเลข | `ee4b7e5` | **เลือก: researcher ไม่มี Bash ต่อไป** (อ่านหน้าเว็บที่คุมไม่ได้ทั้งวัน ถ้ามี Bash ข้อความแฝงในเว็บสั่งรันคำสั่งได้) → ตัวเลขหลักสุขภาพ/กฎหมาย/การเงินที่เปิดไม่ได้ติด ⚠️ + ลิงก์ ผู้กำกับ (มี Bash อยู่แล้ว) เปิดเองด้วย `tools/get.sh` แล้วจด "ผู้กำกับเปิดยืนยันแล้ว"; แก้ researcher.md ที่เคยบอกให้ใช้ get.sh ทั้งที่ไม่มี Bash | make-clip ขั้น 2, researcher.md |
+| 12ค report ไม่นับ 429 | `6e2bd57` | `footage_search.py report` นับคำ/ชนิดเฉพาะการค้นที่แหล่งตอบจริง (ok) 429/blocked/skipped ไม่นับ | `test_report_does_not_count_blocked_or_skipped_searches` |
+| 13 topic_exception | `55cd445` | `pacing.py`: หัวข้อจบหลัง 1.5 วิ + `"topic_exception": "<เหตุผล>"` (≥10 ตัว) = INFO; เหตุผลสั้น/ว่าง = FAIL; หาหัวข้อไม่เจอ = FAIL; ข้อความ FAIL บอกชื่อฟิลด์ | `tools/pacing.py`, style.md ข้อ 1 / `test_topic_exception_turns_late_topic_into_info` |
+| 14 จำนวนรวม | `54401d0` | เช็กลิสต์ style.md + reviewer 1b: คลิปจัดอันดับ จำนวนรวม/คำเหมารวมต้องมีแหล่งที่นับแบบเดียวกัน ไม่มี = 🔴 | style.md, reviewer.md |
+| 15 แผนที่ | `ef1bec8` | วง/ลูกศรครอบเฉพาะพื้นที่ที่พูดถึง (ไม่แน่ใจ = ลูกศร); ดินแดนพิพาท/ที่เสีย = ลายขีด + "พื้นที่โดยประมาณ" ห้ามระบายประเทศอื่นสีไทย | style.md 9a |
+| 16 เพลงสำรอง | `f6b304a` | Openverse 429 → โหลดตรง Jamendo `prod-1.storage.jamendo.com/?trackid=<id>&format=mp31` ผ่าน get.sh เฉพาะ track ที่ยืนยันไลเซนส์ CC BY/CC0 แล้ว + จดเครดิต; ห้าม Mixkit/ยืนยันไม่ได้ | voice.md, make-clip ตารางปัญหา (ไม่ได้ทดลองโหลดจริง) |
+| 17 Smithsonian | `69dd0a6` | แหล่งที่ 6 ใน `footage_search.py`: ภาพนิ่งเท่านั้น คำอังกฤษเท่านั้น CC0 ทั้ง record และไฟล์ภาพ, ใช้ High-resolution JPEG (ไม่เอา .tif), เครดิต = ชื่อพิพิธภัณฑ์ + ลิงก์ record; คีย์ = network secret ที่ proxy ใส่ (โค้ดส่งค่าแทนที่ `proxy-injected`, ไม่มีคีย์ใน repo); กฎ 429/ห้ามขนานเหมือนแหล่งอื่น; ทดสอบจริงผ่าน proxy ได้ภาพ CC0 | `tools/footage_search.py`, footage.md, make-clip / `test_smithsonian_cc0_stills_only` (mock) |
+| 18 คัตแข็ง + punch | `01573b2` | `cut_kind()`: เปลี่ยนช่วงเรื่อง/hook/twist = ทรานซิชันของ look (look.py ยังสุ่ม), ในช่วงเดียวกัน = **คัตแข็ง** (เดิมครอสเฟด 0.1 วิ), loop = match; zoom punch สูตร v2 (ปรับให้ ≥ 0 ภาพไม่หดจนเห็นขอบ) ตรงซับ `*คำสำคัญ*` หลัง hook ห่าง ≥1.5 วิ (`episode.json` `"punch": "off"` / รายการซับ) — itch: 12 punch ใน 37 วิ, ไม่มีขอบโผล่ทั้ง 1110 เฟรม | `build_index.py`, `index.html.tpl`, TEMPLATE.md, style.md / `test_hard_cuts_inside_a_beat_and_zoom_punch_on_key_words` |
+
+การตัดสินจากห้องวางแผน: (ก) หัวข้อ 83-100 px พอ ไม่ดันถึง 116 ✔ (ข) คัตแข็ง + zoom punch = ข้อ 18 ✔
+
 ## ที่ทำไม่ได้ / ข้อสังเกต
-- หัวข้อไม่ถึง 116 px แบบที่ editor แก้มือในตอน itch: 3 บรรทัด + kicker ในแถบ ~Y 250-790 ได้ ~85 px; ใหญ่กว่านี้ต้องย้ายหัวข้อลงต่ำกว่า Y 800 (ชนกฎตำแหน่ง style.md) หรือเลิก stroke/kicker ควรให้ผู้ใช้ตัดสินถ้ายังเล็ก
+- หัวข้อไม่ถึง 116 px แบบที่ editor แก้มือในตอน itch (~85 px) — ห้องวางแผนตัดสินว่าพอแล้ว
 - ไม่ได้ยกเกณฑ์ขั้นต่ำเกิน 72/60 (cover card 3 บรรทัดได้ 65 px จะ FAIL ทันที)
-- การเปลี่ยนจาก crossfade 0.1 วิ (match) ระหว่างช็อตในช่วงเดียวกัน ยังเหมือนเดิม; v2 ใช้คัตแข็ง/whip เกือบทุกคัต + zoom punch ตรงคำ อาจเป็นอีกส่วนของความรู้สึก "เรียงจังหวะ" ไม่ได้แตะเพราะนอกขอบเขตข้อ 1 (เสนอให้ห้องวางแผนตัดสิน)
+- ข้อ 18 punch เลือกจากซับที่ไฮไลต์อัตโนมัติ ถ้าตอนไหนไฮไลต์เยอะ/คำไม่สำคัญจริง editor ควรใส่ `"punch": [...]` เอง
+- ข้อ 9 เกณฑ์ 25 วัดจากภาพถ่ายจริง 3 ภาพ + ตัวอย่าง itch; กราฟิกพื้นเรียบที่เปลี่ยนเลย์เอาต์เล็กน้อยอาจถูกนับเป็น "ภาพเดิม" (เป็น WARN ให้ reviewer ตัดสิน)
+- ข้อ 16 ไม่ได้ทดลองโหลด Jamendo ตรงในห้องนี้ (เขียนตามที่ห้อง never-colonized ใช้ได้)
 - ไม่ได้เรนเดอร์ด้วย hyperframes CLI / footage จริง (ตัวอย่างใช้ภาพทดสอบ); ห้องทำตอนถัดไปควรดู contact sheet ของคลิปจริง
 - ไฟล์ `.hyperframes/` ที่ track อยู่ใน projects/2026-11-17-knowledge-nature ไม่ได้ลบ (ห้ามแตะ projects/ ตอนอื่น) .gitignore ใหม่ไม่มีผลกับไฟล์ที่ track แล้ว
