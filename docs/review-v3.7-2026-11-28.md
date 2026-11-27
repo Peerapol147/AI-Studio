@@ -76,3 +76,39 @@
 
 ## ไฟล์ประกอบ
 `docs/review-assets/v3.7-review/`: `frame0-12-pairs.jpg`, `hardcut-punch-10.3-11.3s.jpg`, `slide-punch-3.35-4.15s.jpg`, สคริปต์ตรวจ (`edges.js` + `green.py` ขอบภาพ, `seq.js` แถบเฟรม, `f0.js` วัดหัวข้อ, `test_pick_conflict2.py` look.py)
+
+---
+
+# รอบ 2 (2026-11-28): 469e687..c405f38 (8 commit แก้ 🟡1-5 + ⚪)
+**ผล: รวมได้ ไม่มี 🔴 🟡 รอบ 1 ปิดครบทุกข้อ** มี 🟡 ใหม่ 1 ข้อ (นโยบาย ไม่ใช่โค้ด) + ⚪ 3 ข้อ
+
+| ข้อ | commit | ผลตรวจ |
+|---|---|---|
+| tests | | ✅ `pytest -q tests` **127 passed** 0 skipped (ตรงที่ dev อ้าง) |
+| diff | | ✅ ไม่แตะ projects/ ไม่มีคีย์/token 40 ตัวใน diff |
+| 🟡1 cover_palette | 0dae5c2 | ✅ สคริปต์รอบ 1 (`test_pick_conflict2.py`): pick 40 ชื่อ ตก check **0/40** (เดิม 5/40) |
+| 🟡2 Smithsonian CC0 | 2d8691b | ✅ ค้นจริงผ่าน proxy: tiger 6, fossil 6, mosquito 6 (เดิม 0/0/6) license ทุกแถว CC0 |
+| 🟡3 si_slug | 90c4e80 | ✅ 18 id ผ่าน `[A-Za-z0-9_-]+` ทั้งหมด ไม่ซ้ำกัน (เช่น `smithsonian-CHSDM-57268_01-000001`) |
+| 🟡4 Mixkit | c6c5144 | ✅ ดูด้านล่าง |
+| 🟡5 punch หลังคัต | 89ca23c | ✅ itch: punch ภายใน 0.3 วิหลังช็อตเข้า **0** (เดิม 4) |
+| ⚪ punch ≤8 + แรงตาม look | c7a9c0e | ✅ itch 8 ครั้ง (5.90 8.64 16.14 18.98 21.16 25.86 29.92 33.12) แรง 0.072-0.098 / decay 7.1-8.5 ต่างกันทั้ง 5 look ที่ลอง |
+| ⚪ editing-v3.md | 73e9dc1 | ✅ แถวครอสเฟด / push 8% ติดป้ายว่าแทนแล้วใน v3.7 |
+
+## c6c5144 (ห้าม Mixkit) ✅
+- manifest: runtime 40 → 0, bundled 103 ไฟล์**มีครบบนดิสก์ทุกไฟล์**, default_kit 7 ตัวเป็นไฟล์ bundled CC0 ทั้งหมด (typing = `typing/fs-79388-keyboard-typing-wav.ogg` j1987 CC0 ซึ่ง**มีอยู่ใน bundled ตั้งแต่ก่อน**, ไม่ได้เพิ่มไฟล์ใหม่) ทุก `category_map` ยังชี้หมวดที่มีไฟล์ (หมวดที่เคยมีแต่ Mixkit ไม่มีหมวดไหนหายไป)
+- **ไม่มี sfx ที่อ้างแล้วหาย**: สแกนทุก `"sfx": ...` / path `.ogg` ใน cues/make_cues/SKILL ของ tree (80 รายการ) และของทุก branch `claude/ep-*` (2,865 รายการ): หาไฟล์ไม่เจอ 0, อ้าง URL Mixkit 0
+- `sound_pass.py` (skill) รันจริงกับคลังใหม่ (วิดีโอ 12 วิ + เพลงมีจังหวะสังเคราะห์ + cue ทุกประเภทใน `category_map` 11 แบบ): ✅ วางเสียงครบ, `CREDITS.txt` ทุกเสียงเป็น Freesound CC0, "All sound effects have a known free licence (CC0)", `sound-effects-cache/` ว่าง (ไม่โหลดอะไรจากเน็ต); `--music-source "Mixkit #130"` → ถูกปฏิเสธพร้อมบอกทางแก้ ✅ (`sound_pass_vo.py` มีเทสต์ใหม่ใน test_sound_pass_vo.py และอยู่ใน 127 passed)
+- โปรเจกต์เก่าที่มีสำเนา `sound_pass_vo.py` ของตัวเอง (nature, elder-thirst, wrinkly-fingers ฯลฯ) อ่าน manifest จาก skill: runtime ว่าง = แค่ไม่มีตัวเลือก Mixkit ไม่พัง
+
+## 🟡 ใหม่ (นโยบาย ให้ห้องวางแผน/ผู้ใช้ตัดสิน)
+- **ตอนที่ส่งไปแล้วใช้เพลง Mixkit**: `claude/ep-2026-11-27-bite-force-ranking` `look.json` `music_file: music-mixkit-680.mp3` ("Epical Drums 05", Mixkit #680) อยู่ใน CREDITS.md / upload.md / DELIVERY.md ด้วย ตามกฎใหม่ (1) ถ้าเรนเดอร์/มิกซ์ตอนนี้ใหม่ `sound_pass_vo.py` จะปฏิเสธ (ชื่อไฟล์มี "mixkit") (2) คลิปที่ผู้ใช้อาจอัปไปแล้วยังใช้เพลงนี้: ควรแจ้งผู้ใช้ว่าจะเปลี่ยนเพลงหรือคงไว้ (ห้องตรวจไม่ได้แตะ)
+
+## ⚪
+- **โค้ดตายใน sound_pass**: `.claude/skills/sound-effects/scripts/sound_pass.py:165-168` และ `tools/sound_pass_vo.py:203-206` ยังมีเงื่อนไข use-case ของ Mixkit (TV/เกม/template) ซึ่งเข้าไม่ถึงแล้วเพราะ Mixkit ถูกปฏิเสธตั้งแต่ต้น ลบได้
+- **skill `sound-effects` เป็นของ upstream ที่ถูกแก้ในที่**: ถ้ามีคน `npx hyperframes skills update sound-effects` (หรืออัปเดต skill) runtime Mixkit 40 รายการ + MUSIC.md เดิมจะกลับมา กันไว้แล้วระดับหนึ่งเพราะ sound_pass(_vo) ปฏิเสธ URL/ชื่อ Mixkit แต่ควรจดใน SKILL.md/README ว่า "แก้เฉพาะ AI Studio ห้ามอัปเดตทับ" และอาจให้ `look.py check --final` ERROR เมื่อ `music_file` มี "mixkit" (ตอนนี้ check ไม่ดู)
+- `.claude/skills/style-sampling/references/remix.md:49` ยังแนะนำ **Mixkit เป็นแหล่งฟุตเทจวิดีโอ** กฎใหม่เขียนว่า "sfx/เพลง" ถ้าตั้งใจห้าม Mixkit ทั้งหมดควรแก้ด้วย (skill นี้ไม่อยู่ในสายพานหลัก ความเสี่ยงต่ำ)
+
+## เรนเดอร์ itch ซ้ำ (แม่แบบ @c405f38) ✅
+- ขอบภาพ (วิธีเดียวกับรอบ 1): slide **0/1,111** เฟรม, whip/zoom/match/flash **0/556** ต่อแบบ; punch แรงสุด 0.098 ยังขยายอย่างเดียว ไม่ทำให้ขอบโผล่
+- แถบเฟรม punch 5.90 วิ (`review-assets/v3.7-review/r2-punch-5.75-6.45s.jpg`): punch ลงกลางช็อต mast (ห่างคัต 4.66 ไป 1.2 วิ) เด้งแล้วคืนใน ~0.4 วิ ซับไม่ขยับ ไม่ซ้อนทรานซิชันแล้ว
+- ระยะระหว่าง punch หลังลดเหลือ 8: 2.7-7.5 วิ (ช่วง 8.64→16.14 ว่าง 7.5 วิเพราะเลือกกระจายเท่าๆ กัน) ⚪ รับได้ ถ้าอยากให้ช่วง explain มี punch ด้วยให้ editor ใส่ `"punch": [...]`
