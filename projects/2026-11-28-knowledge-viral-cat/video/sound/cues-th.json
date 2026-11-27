@@ -1,0 +1,247 @@
+[
+ {
+  "t": 2.5,
+  "type": "appear",
+  "desc": "bubble 1 pops (ลายแปลก...)",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -22
+ },
+ {
+  "t": 2.82,
+  "type": "appear",
+  "desc": "bubble 2 pops (ลายจริงมั้ย?)",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 3.18,
+  "type": "appear",
+  "desc": "bubble 3 pops (painted??)",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -23
+ },
+ {
+  "t": 4.12,
+  "type": "scene_cut",
+  "desc": "brush swipe under ทาสี?",
+  "sfx": "transition/fs-816262-broomstick-whoosh-3-quiet-okm1.ogg",
+  "gain": -20
+ },
+ {
+  "t": 5.98,
+  "type": "hover_or_small_ui",
+  "desc": "view counter 1K",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -25
+ },
+ {
+  "t": 6.24,
+  "type": "hover_or_small_ui",
+  "desc": "view counter 10K",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -25
+ },
+ {
+  "t": 6.5,
+  "type": "hover_or_small_ui",
+  "desc": "view counter 100K",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -25
+ },
+ {
+  "t": 6.76,
+  "type": "hover_or_small_ui",
+  "desc": "view counter 1M+",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -25
+ },
+ {
+  "t": 7.02,
+  "type": "appear",
+  "desc": "counter lands หลายล้านวิว",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -25
+ },
+ {
+  "t": 7.52,
+  "type": "scene_cut",
+  "desc": "folding book opens",
+  "sfx": "transition/fs-850347-swipe-various.ogg",
+  "gain": -25
+ },
+ {
+  "t": 7.88,
+  "type": "appear",
+  "desc": "แมววิลาศ? label",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 11.1,
+  "type": "appear",
+  "desc": "chip สมุดข่อย",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 12.22,
+  "type": "appear",
+  "desc": "17 icons pop",
+  "sfx": "pop/kenney-interface-drop-003.ogg",
+  "gain": -24
+ },
+ {
+  "t": 12.72,
+  "type": "reveal",
+  "desc": "big 17",
+  "sfx": "ding/kenney-interface-glass-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 14.0,
+  "type": "appear",
+  "desc": "วิลาศ label",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -23
+ },
+ {
+  "t": 16.88,
+  "type": "scene_cut",
+  "desc": "circle on the ears",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -24
+ },
+ {
+  "t": 17.5,
+  "type": "scene_cut",
+  "desc": "arrow to the tail",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -24
+ },
+ {
+  "t": 18.36,
+  "type": "scene_cut",
+  "desc": "circle on the legs",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -24
+ },
+ {
+  "t": 20.22,
+  "type": "appear",
+  "desc": "ไม่ต้องทาสี",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -23
+ },
+ {
+  "t": 21.04,
+  "type": "appear",
+  "desc": "เกิดเองได้",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -24
+ },
+ {
+  "t": 22.6,
+  "type": "appear",
+  "desc": "ยีน KIT label",
+  "sfx": "ui-blip/kenney-digital-twotone1.ogg",
+  "gain": -25
+ },
+ {
+  "t": 23.48,
+  "type": "scene_cut",
+  "desc": "DNA dots spring into the cat",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -25
+ },
+ {
+  "t": 24.32,
+  "type": "appear",
+  "desc": "arrows: pigment stops",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -25
+ },
+ {
+  "t": 27.32,
+  "type": "appear",
+  "desc": "circle on the white paw",
+  "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg",
+  "gain": -24
+ },
+ {
+  "t": 28.98,
+  "type": "reveal",
+  "desc": "big ? (แมวโบราณ?)",
+  "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg",
+  "gain": -21
+ },
+ {
+  "t": 30.52,
+  "type": "appear",
+  "desc": "ยังตอบไม่ได้",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -23
+ },
+ {
+  "t": 32.62,
+  "type": "appear",
+  "desc": "check สีขน",
+  "sfx": "click/kenney-interface-select-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 33.24,
+  "type": "appear",
+  "desc": "check หน้าตา",
+  "sfx": "click/kenney-interface-select-001.ogg",
+  "gain": -23
+ },
+ {
+  "t": 34.08,
+  "type": "reveal",
+  "desc": "X over DNA (ไม่ได้ตรวจ)",
+  "sfx": "impact/fs-222517-dramatic-hit.ogg",
+  "gain": -21
+ },
+ {
+  "t": 35.78,
+  "type": "reveal",
+  "desc": "stamp thud",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg",
+  "gain": -20
+ },
+ {
+  "t": 36.48,
+  "type": "appear",
+  "desc": "chips pop",
+  "sfx": "pop/kenney-interface-drop-001.ogg",
+  "gain": -25
+ },
+ {
+  "t": 38.12,
+  "type": "appear",
+  "desc": "name tag วิเชียรมาศ",
+  "sfx": "pop/kenney-interface-pluck-002.ogg",
+  "gain": -24
+ },
+ {
+  "t": 39.14,
+  "type": "appear",
+  "desc": "name tag สีสวาด",
+  "sfx": "pop/kenney-interface-pluck-002.ogg",
+  "gain": -24
+ },
+ {
+  "t": 40.22,
+  "type": "appear",
+  "desc": "name tag ขาวมณี",
+  "sfx": "pop/kenney-interface-pluck-002.ogg",
+  "gain": -24
+ },
+ {
+  "t": 42.08,
+  "type": "appear",
+  "desc": "question ลายตรงตำราไหม?",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -23
+ }
+]

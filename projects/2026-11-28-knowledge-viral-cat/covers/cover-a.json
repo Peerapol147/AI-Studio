@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 0,
+   "y": 0,
+   "w": 1080,
+   "h": 1920,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ลายแบบนี้",
+   "x": 250.375,
+   "y": 268,
+   "w": 579.25,
+   "h": 164,
+   "font_px": 126,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ทาสีมาจริงเหรอ?",
+   "x": 53.94189453125,
+   "y": 491.3521728515625,
+   "w": 969.79248046875,
+   "h": 184.686279296875,
+   "font_px": 126,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "ไวรัล",
+   "x": 65.21073913574219,
+   "y": 79.94331359863281,
+   "w": 207.3441619873047,
+   "h": 122.11337280273438,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-28-knowledge-viral-cat/look.json",
+  "lines": [
+   "ลายแบบนี้",
+   "*ทาสี*มาจริงเหรอ?"
+  ],
+  "palette": "ocean-teal",
+  "font": "kanit"
+ }
+}
