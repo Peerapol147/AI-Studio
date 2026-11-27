@@ -98,16 +98,15 @@ const S=(tau,w,z)=>{if(tau<=0)return 0; if(z<1){const wd=w*Math.sqrt(1-z*z);
 const $=id=>document.getElementById(id), f2=v=>v.toFixed(2);
 const FASTB={hook:1,twist:1};
 const XF=0.12;
-// entry of shot s (the look's transition; fast beats always get it, hold beats get a soft 0.1 s match)
-// the look's transition: inside hook/twist and wherever the beat changes; other cuts inside one beat = soft match
-const kind=(s,prev)=>(s.beat==='loop')?'match':(FASTB[s.beat]||s.beat!==prev.beat)?TR:'match';
-SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1); s.k=i?kind(s,SC[i-1]):'none';});
+// entry of shot s = s.k from build_index.py cut_kind(): the look's transition inside hook/twist and wherever the beat
+// changes, a HARD cut inside one beat (v3.7, brainrot-v2 feel; was a 0.1 s crossfade), a 0.1 s match into the loop seam
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1);});
 function sceneState(s,t){
   if(t<s.a) return null;
   const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,ty=0,sc=1;
   if(s.k==='whip') tx=1080*(1-eo(u/XF)); else if(s.k==='slide') ty=1920*(1-eo(u/0.16));
   else if(s.k==='zoom'){o=eio(u/0.1); sc=1+0.3*(1-S(u,18,0.9));} else if(s.k==='match') o=eio(u/0.1);
-  if(nx){ if(nx.k==='flash'){ if(t>=end) return null; }
+  if(nx){ if(nx.k==='flash'||nx.k==='cut'){ if(t>=end) return null; }
     else { if(t>=end+(nx.k==='slide'?0.16:XF)) return null;
       if(t>=end&&nx.k==='whip') tx=-1080*eo((t-end)/XF); if(t>=end&&nx.k==='slide') ty=-480*eo((t-end)/0.16); } }
   return {o,tx,ty,sc};
@@ -126,6 +125,9 @@ function scenes(t){
     s.kb.style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`;
   });
   $('flash').style.opacity=f2(clamp(fl));
+  // zoom punch on key words (brainrot v2): damped scale kick of the picture layer only (title/captions stay put)
+  let p=0; D.punch.forEach(a=>{const u=t-a; if(u>=0&&u<0.8) p+=0.085*Math.exp(-u*7)*(1+Math.cos(u*13))/2;});  // >= 0: never shrinks below the frame
+  $('stage').style.transform=`scale(${(1+p).toFixed(4)})`;
 }
 // hook title: full from frame 0 (no fade-in), breathes, leaves at the end of the hook, springs back for the loop seam
 function title(t){

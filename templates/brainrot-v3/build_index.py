@@ -12,8 +12,10 @@ look.json picks palette / font / caption / opening / cover / transition from tem
 voice are for the voice step; music_file becomes the music track). Shot times come from shots-th.json only
 (tools/shot_times.py, refused if stale). Every shot needs a "beat" (hook ... loop). Camera (dev v3.7): every shot
 moves at a speed set by its REAL length (camera() below: a short shot pushes faster, never a still frame > 0.5 s),
-hook/twist ~1.3x stronger; the look's transition plays wherever the beat changes and inside hook/twist, other cuts
-inside one beat are a 0.1 s match. See docs/editing-v3.md.
+hook/twist ~1.3x stronger. Cuts (dev v3.7 #18, brainrot-v2 feel): the look's transition (look.py rotates it) plays
+wherever the beat changes and inside hook/twist; every other cut is a HARD cut (was a 0.1 s crossfade); the loop shot
+keeps a 0.1 s match into the hook plate. Zoom punch (v2): the picture punches in on highlighted *caption* words, at
+most one per PUNCH_GAP s (episode.json "punch": "off" | ["caption text", ...] overrides). See docs/editing-v3.md.
 
 episode.json:
 {
@@ -156,6 +158,36 @@ def camera(d, beat, i):
             'pan': 24 if i % 2 else -24}
 
 
+def cut_kind(i, s, prev):
+    """How shot i enters: none (first), match (loop seam), the look's transition (beat change / hook / twist), else cut."""
+    if i == 0:
+        return 'none'
+    if s['beat'] == 'loop':
+        return 'match'
+    if s['beat'] in FAST or s['beat'] != prev['beat']:
+        return LOOK['transition']
+    return 'cut'
+
+
+PUNCH_GAP = 1.5
+
+
+def punches(caps, times, dur, hook_end):
+    """Zoom-punch times: highlighted captions after the hook, >= PUNCH_GAP s apart, not in the last 0.5 s (loop seam)."""
+    want = EP.get('punch', 'auto')
+    if want == 'off':
+        return []
+    if isinstance(want, list):
+        pick = [t for c, t in zip(caps, times) if c in want or c.replace('*', '') in want]
+    else:
+        pick = [t for c, t in zip(caps, times) if '*' in c and t >= hook_end]
+    out = []
+    for t in pick:
+        if t < dur - 0.5 and (not out or t - out[-1] >= PUNCH_GAP):
+            out.append(t)
+    return out
+
+
 def is_video(p):
     return p.lower().endswith(('.mp4', '.webm', '.mov'))
 
@@ -181,7 +213,8 @@ def scenes():
         else:
             inner = f'<img class="vid" src="{html.escape(plate)}" alt=""/>'
         out.append(f'  <div class="sc" id="sh-{sid}"><div class="kb" id="kb-{sid}">{inner}</div><div class="vig"></div></div>')
-        sc.append({'id': sid, 'a': a, 'b': b, 'beat': s['beat'], 'still': loop or i == 0, 'cam': camera(b - a, s['beat'], i)})
+        sc.append({'id': sid, 'a': a, 'b': b, 'beat': s['beat'], 'still': loop or i == 0, 'cam': camera(b - a, s['beat'], i),
+                   'k': cut_kind(i, s, SHOTS[i - 1] if i else None)})
     return '\n'.join(out), sc
 
 
@@ -300,7 +333,7 @@ VARS = {'--bg': PAL['bg'], '--bg2': PAL['bg2'], '--ink': PAL['ink'], '--text': P
 music = LOOK.get('music_file')
 MUSIC = (f'<audio id="music" class="clip" data-start="0" data-duration="{DUR}" data-track-index="31" data-volume="0.1" '
          f'src="assets/{html.escape(pathlib.Path(music).name)}"></audio>') if music else '<!-- no music_file in look.json yet -->'
-DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'look': {k: LOOK[k] for k in
+DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'punch': punches(CAPS, capt, DUR, HOOK_END), 'look': {k: LOOK[k] for k in
         ('palette', 'font', 'caption', 'opening', 'cover', 'transition')}}
 rep = {'%%DUR%%': str(DUR), '%%VARS%%': ';'.join(f'{k}:{v}' for k, v in VARS.items()),
        '%%SCENES%%': SCENES, '%%CAPS%%': caps(), '%%TITLE%%': title(), '%%ICONS%%': icons(),

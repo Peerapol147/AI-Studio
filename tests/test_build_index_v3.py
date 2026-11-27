@@ -258,3 +258,33 @@ def test_camera_speed_follows_real_shot_length(tmp_path):
     tpl = (V3 / 'index.html.tpl').read_text()
     assert 'lerp(1.0,1.08,eio(uu))' not in tpl and 'const c=s.cam' in tpl
     assert sp(1.0) >= 0.095 and sp(2.0) >= 0.06 and all(cam(d, b, 0)['k1'] <= 1.22 for d in (1, 3, 9) for b in ('hook', 'setup'))
+
+
+def test_hard_cuts_inside_a_beat_and_zoom_punch_on_key_words(tmp_path):
+    """planning room v3.7 #18 (brainrot-v2 feel): inside one beat = hard cut (was a 0.1 s crossfade); beat change and
+    hook/twist = the look's transition (look.py still rotates it); loop seam = match. Zoom punch on highlighted
+    captions after the hook, >= 1.5 s apart; episode.json "punch": "off" turns it off."""
+    shots = json.loads((FIX / 'shots.json').read_text())
+    # two explain shots in a row -> the second one must enter with a hard cut
+    ex = next(i for i, s in enumerate(shots['shots']) if s['beat'] == 'explain')
+    shots['shots'][ex + 1]['beat'] = 'explain'
+    proj, video = project(tmp_path / 'a', LOOK_A, shots=json.dumps(shots, ensure_ascii=False))
+    r = build(video)
+    assert r.returncode == 0, r.stderr
+    page = (video / 'index.html').read_text()
+    data = json.loads(re.search(r'const D=(\{.*?\}), DUR=', page).group(1))
+    sc = data['sc']
+    assert sc[0]['k'] == 'none' and sc[-1]['k'] == 'match'
+    for prev, s in zip(sc, sc[1:-1]):
+        want = 'slide' if (s['beat'] in ('hook', 'twist') or s['beat'] != prev['beat']) else 'cut'
+        assert s['k'] == want, (s['id'], s['k'], want)
+    assert any(s['k'] == 'cut' for s in sc)
+    caps = json.loads((FIX / 'episode.json').read_text())['caps']
+    assert any('*' in c for c in caps)
+    p = data['punch']
+    assert p and all(b - a >= 1.5 for a, b in zip(p, p[1:])) and all(t >= data['hookEnd'] for t in p)
+    tpl = (V3 / 'index.html.tpl').read_text()
+    assert "nx.k==='cut'" in tpl and 'const kind=' not in tpl and '(1+Math.cos(u*13))/2' in tpl
+    proj, video = project(tmp_path / 'b', LOOK_A, episode={'punch': 'off'})
+    assert build(video).returncode == 0
+    assert '"punch": []' in (video / 'index.html').read_text()
