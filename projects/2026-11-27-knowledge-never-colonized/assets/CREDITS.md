@@ -6,6 +6,7 @@
 - nasa-earth-orbit-trim.mp4: NASA GSFC, 'Earth from Orbit 2014' (public domain, NASA media) https://images.nasa.gov/details/GSFC_20150420_Orbit_m11858_2014
 - pixabay-10104.mp4: truthseeker08 (Pixabay Content License) https://pixabay.com/videos/id-10104/
 - pixabay-141424.mp4: ClickingLoop (Pixabay Content License) https://pixabay.com/videos/id-141424/
+- pixabay-143645.mp4: TravelingOnTheGoYoutubeCh (Pixabay Content License) https://pixabay.com/videos/id-143645/
 - pixabay-145845.mp4: TravelingOnTheGoYoutubeCh (Pixabay Content License) https://pixabay.com/videos/id-145845/
 - pixabay-162244.png: OpenClipart-Vectors (Pixabay Content License) https://pixabay.com/vectors/bhutan-flag-national-flag-nation-162244/
 - pixabay-162370.png: OpenClipart-Vectors (Pixabay Content License) https://pixabay.com/vectors/nepal-flag-national-flag-nation-162370/
