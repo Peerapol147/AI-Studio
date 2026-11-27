@@ -472,8 +472,8 @@
   },
   "checks": {
     "latest": {
-      "revision": "f4ce7689-4553-4a8e-a232-33d8c38e019b",
-      "id": "35ae29d5-534c-4282-8ff7-3aacab713fe5"
+      "revision": "20a64861-dc6c-4339-b28a-d3cbf1cc2261",
+      "id": "fc0132d9-d163-44f6-aabc-ddd231041ff9"
     },
     "revisions": {
       "04e09939-ad98-44d7-9400-da41e1a31357": [
@@ -547,6 +547,43 @@
           "contentHash": "a2d8aecbf5766159682fa496fae04cd1f37c2c22e371c2a55ec32d7279b6ebaf",
           "revision": "f4ce7689-4553-4a8e-a232-33d8c38e019b",
           "inputFingerprint": "107c3c358eca1a6db1e95860b9cc38746406ec9ba031b96f9561003cbc2e85b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "20a64861-dc6c-4339-b28a-d3cbf1cc2261": [
+        {
+          "id": "fc0132d9-d163-44f6-aabc-ddd231041ff9",
+          "scope": "project",
+          "report": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/video/.hyperframes/artifacts/checks/fc0132d9-d163-44f6-aabc-ddd231041ff9.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795762866821,
+          "contentHash": "e550c7aea1d9677caa9afec7ae7679ae14e61f1c419e7aa0892f5e4c84eb6290",
+          "revision": "20a64861-dc6c-4339-b28a-d3cbf1cc2261",
+          "inputFingerprint": "8595c98dc884c642d657c695c453c7de1611403d84298a553fd84858c7b77850",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
