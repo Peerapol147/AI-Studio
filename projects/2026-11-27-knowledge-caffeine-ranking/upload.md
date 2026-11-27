@@ -14,7 +14,8 @@
 3. เครื่องดื่มชูกำลังขวดเล็ก — ไม่เกิน 50 มก./ขวด ตามเกณฑ์ อย. (คำสั่ง อย. ที่ 185/2534)
 2. เอสเพรสโซ่ 1 ช็อต — ราว 60 มก.
 1. อเมริกาโน่เย็นแก้วใหญ่ — ขึ้นกับจำนวนช็อต บางร้านใส่ 3 ช็อต ≈ ราว 200 มก.
-FDA (สหรัฐฯ): สำหรับผู้ใหญ่ทั่วไป 400 มก./วัน เป็นปริมาณที่โดยทั่วไปไม่สัมพันธ์กับผลเสีย แต่แต่ละคนไวต่อคาเฟอีนไม่เท่ากัน; ตั้งครรภ์/ให้นมบุตร/มีโรคประจำตัว ปรึกษาบุคลากรทางการแพทย์ (คลิปนี้ให้ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางการแพทย์)
+FDA (สหรัฐฯ): สำหรับผู้ใหญ่ทั่วไป 400 มก./วัน เป็นปริมาณที่โดยทั่วไปไม่สัมพันธ์กับผลเสีย แต่แต่ละคนไวต่อคาเฟอีนไม่เท่ากัน; ตั้งครรภ์/ให้นมบุตร/มีโรคประจำตัว ปรึกษาบุคลากรทางการแพทย์ FDA อ้าง American Academy of Pediatrics: ผู้เชี่ยวชาญแนะนำไม่ให้เด็กและวัยรุ่นดื่มเครื่องดื่มชูกำลัง (ตัวเลข 400 มก. เป็นของผู้ใหญ่ ไม่ใช่วัยรุ่น)
+(คลิปนี้ให้ข้อมูลทั่วไป ไม่ใช่คำแนะนำทางการแพทย์)
 
 แหล่งข้อมูล:
 - คำสั่งสำนักงานคณะกรรมการอาหารและยา ที่ 185/2534 https://exfood.fda.moph.go.th/law/data/command_fda/185_2534.pdf
@@ -22,7 +23,7 @@ FDA (สหรัฐฯ): สำหรับผู้ใหญ่ทั่วไ
 - Mayo Clinic: Caffeine content for coffee, tea, soda and more https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372
 - Wikipedia (แหล่งรอง): Caffeine, Caffè americano
 
-เครดิตภาพ: Pixabay (Pixabay Content License) — CREDITS_PLACEHOLDER (ลิงก์ทุกรายการใน assets/CREDITS.md)
+เครดิตภาพ: Pixabay (Pixabay Content License) — xxyooonxx, Coverr-Free-Footage, 709K, Solarselle77, poedynchuk, nots12311, 13027327, chico明, TPMotion (ลิงก์ทุกรายการใน assets/CREDITS.md)
 เพลง: "Upbeat Lounge Background" by Soundrider/Dope (CC BY 3.0) — Jamendo (ลิงก์ใน assets/CREDITS.md)
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
