@@ -207,7 +207,7 @@ def line_ems(ln):
 TITLE_BAND = 450                           # title starts at Y 250, must end by ~Y 700 (style.md)
 # pov / number put a kicker above the question: let those titles run lower (captions start at Y 1100);
 # review v3.3: a 270 px number inside the 450 px band shrank the question to 10-59 px
-BAND = {'pov': 500, 'number': 570}
+BAND = {'pov': 540, 'number': 570}
 NUM_SIZE = lambda n: 220 if n <= 1 else 170 if n == 2 else 140   # the big number above the question
 MIN_TITLE = (72, 60)                       # px for <= 2 / 3+ lines; smaller is unreadable on a phone -> refuse, never shrink silently
 
@@ -239,13 +239,16 @@ def title():
         rows.append(f'<div class="kick num" style="font-size:{num}px">{html.escape(kick)}</div>')
     sizes = [min(big, int(title_room(ln) / max(0.5, line_ems(ln)))) for ln in lines]
     # keep the whole title inside the Y 240-700 band (style.md): taller Thai line-height (1.42) needs a height cap
-    per = 1.42 + (0.16 if LOOK['opening'] == 'midstory' else 0)
+    tilt = LOOK['cover'] == 'tilt' and LOOK['opening'] != 'midstory'   # tight 1.26 line (no plates), see index.html.tpl
+    per = (1.26 if tilt else 1.42) + (0.16 if LOOK['opening'] == 'midstory' else 0)
     gap = {'tilt': 30}.get(LOOK['cover'], 14)
     kick_h = {'pov': 104, 'number': NUM_SIZE(len(lines)) + 12}.get(LOOK['opening'], 0)
     fixed = gap * (len(rows) + len(lines) - 1) + kick_h + (74 if LOOK['cover'] == 'card' else 0)
     room = BAND.get(LOOK['opening'], TITLE_BAND) - fixed
     # a line with a highlight plate grows: the plate is an inline-block 1.12 em + .38 em top + .24 em bottom padding
-    pers = [max(per, 1.74 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln else per for ln in lines]
+    # tilt: the highlighted word is an underline (1.12 em + 4 px + 16 px border), ~24 px below the 1.26 line
+    pers = [max(per, 1.74 + (0.16 if LOOK['opening'] == 'midstory' else 0)) if '*' in ln and not tilt else per for ln in lines]
+    room -= 24 * sum('*' in ln for ln in lines) if tilt else 0
     if sum(sz * pp for sz, pp in zip(sizes, pers)) > room:
         k = room / sum(sz * pp for sz, pp in zip(sizes, pers))
         sizes = [int(sz * k) for sz in sizes]

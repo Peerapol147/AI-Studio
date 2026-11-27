@@ -204,3 +204,25 @@ def test_caption_alias_malformed_refused(tmp_path):
         proj, video = project(tmp_path / str(abs(hash(bad))), LOOK_A, episode={'caps': caps})
         r = build(video)
         assert r.returncode != 0 and 'exactly "shown|as transcribed"' in r.stderr, (bad, r.stderr)
+
+
+def test_frame0_title_every_opening_cover_itch_regression(tmp_path):
+    """itch 2026-11-27: pov + tilt + sarabun built a 3-line title at 65 px, left-aligned top (editor had to hand-fix 116 px
+    centred). Every opening x cover must build the itch title >= 60 px (3 lines; 72 for 2) and pov/tilt now >= 80 px;
+    no opening may left-align the title. Browser check of the size on screen + centring: tests/test_title_fit_v3.py."""
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    opts = lambda ax: [k for k in cat[ax] if not k.startswith('_')]
+    itch = ['เวลาเกาแก้คัน', 'เรากำลังทำให้', 'ตัวเอง*เจ็บ*นะ']
+    got, i = {}, 0
+    for op in opts('opening'):
+        for cv in opts('cover'):
+            i += 1
+            proj, video = project(tmp_path / f'p{i}', {**LOOK_A, 'font': 'sarabun', 'opening': op, 'cover': cv},
+                                  episode={'title': itch, 'kicker': '70%' if op == 'number' else 'POV: โดนยุงกัด'})
+            r = build(video)
+            assert r.returncode == 0, (op, cv, r.stderr)
+            got[op, cv] = [int(x) for x in re.findall(r'class="tl" style="font-size:(\d+)px"', (video / 'index.html').read_text())]
+            assert len(got[op, cv]) == 3 and min(got[op, cv]) >= 60, (op, cv, got[op, cv])
+    assert min(got['pov', 'tilt']) >= 80, got['pov', 'tilt']          # was 65
+    tpl = (V3 / 'index.html.tpl').read_text()
+    assert 'align-items:flex-start' not in tpl and 'text-align:left' not in tpl

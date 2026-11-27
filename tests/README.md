@@ -4,7 +4,7 @@
     python3 -m pytest -q tests
 
 - `test_build_index.py`: `templates/brainrot-v2/build_index.py` builds index.html from a fresh checkout (fixture in `fixtures/brainrot/`)
-- `test_build_index_v3.py`: `templates/brainrot-v3/build_index.py` builds two different looks from look.json (fixture `fixtures/v3/`), refuses a missing look / unknown value / shot without beat; every palette keeps flat-colour text >= 4.5:1 contrast
+- `test_build_index_v3.py`: `templates/brainrot-v3/build_index.py` builds two different looks from look.json (fixture `fixtures/v3/`), refuses a missing look / unknown value / shot without beat; every palette keeps flat-colour text >= 4.5:1 contrast; the itch 3-line title builds >= 60 px in every opening x cover (pov/tilt >= 80 px), never left-aligned; `test_title_fit_v3.py` (browser) also checks the size ON SCREEN at frame 0 and that every line + kicker is centred
 - `test_look.py`: `tools/look.py` pick avoids the channel's last 3 looks; check fails on same palette/opening/music as the previous episode, an identical look or a similar cover text; reads ep branches from git (music also from credits/music.json, covers from thumbnail.md)
 - `test_look.py` (cont.): knowledge voice locked to George / eleven_v3 / atempo 1.1 (looks.json channel_lock): pick never rotates it, check ERRORs on another voice and does not WARN on the same voice; unlocked channels still rotate
 - `test_vo_finish.py`: `tools/vo_finish.sh` atempo 1.1 + loudnorm to -18 LUFS

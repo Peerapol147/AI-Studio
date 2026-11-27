@@ -30,8 +30,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .op-midstory #title{gap:14px}
 .op-midstory #title .tl{-webkit-text-stroke:0;color:var(--ink);background:var(--accent);padding:.16em 26px 0;border-radius:18px;text-shadow:none}
 .op-midstory #title em{color:var(--text);-webkit-text-stroke:10px var(--ink);paint-order:stroke fill}
-.op-pov #title{align-items:flex-start}
-.op-pov #title .tl{text-align:left}
+/* pov: kicker + question centred like every other opening (itch 2026-11-27: left-aligned 65 px read as a small corner note) */
 .kick{font-weight:var(--tw);white-space:nowrap;line-height:1}
 .kick.pov{font-size:64px;color:var(--ink);background:var(--accent);padding:10px 28px;border-radius:999px;margin-bottom:10px}
 /* cover layouts (frame 0 = the thumbnail) */
@@ -42,6 +41,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .op-midstory.cv-card #title .tl{color:var(--ink)}
 .op-midstory.cv-card #title em{-webkit-text-stroke:0;color:var(--accent);background:var(--ink);padding:.38em 16px .24em;border-radius:16px}
 .cv-tilt #title{gap:30px;padding:0 16px}
+/* tilt has no highlight plate (underline only; midstory keeps its line plates + 1.42): a tighter 1.26 line keeps 3-line titles big; title_fit.js checks the marks */
+.cv-tilt:not(.op-midstory) #title .tl{line-height:1.26}
 .cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
 .cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
 .cv-tilt #title .tl em{padding:0 0 4px;background:none;border-bottom:16px solid var(--accent);color:var(--text)}

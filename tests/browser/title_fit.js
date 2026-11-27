@@ -64,9 +64,18 @@ const { chromium } = require('playwright');
         }
         return { text, inkTop, inkBottom, l, r: rr, plateBottom };
       });
-      lines.forEach((tl, i) => { const fs = parseFloat(getComputedStyle(tl).fontSize); const min = lines.length <= 2 ? 72 : 60; if (fs < min) probs.push(`line ${i + 1} font ${fs}px < ${min}px (unreadable on a phone)`); });
+      // size ON SCREEN at frame 0 (font-size x every ancestor transform: #title breathes, .tl may be rotated), not the CSS
+      // number alone; itch 2026-11-27: pov + tilt + sarabun passed the CSS check at 65 px yet read as a small corner note
+      const scaleOf = e => e.getBoundingClientRect().width / Math.max(1, e.offsetWidth);
+      lines.forEach((tl, i) => { const fs = parseFloat(getComputedStyle(tl).fontSize) * Math.min(1, scaleOf(title)); const min = lines.length <= 2 ? 72 : 60;
+        if (fs < min - 0.5) probs.push(`line ${i + 1} font ${fs.toFixed(1)}px on screen < ${min}px (unreadable on a phone)`);
+        // centred in the 1080 frame (every opening): a line hugging the left edge is a layout bug
+        const r = tl.getBoundingClientRect(), mid = (r.left + r.right) / 2;
+        if (Math.abs(mid - 540) > 40) probs.push(`line ${i + 1} centre at X ${mid.toFixed(0)} (not centred, want 540 +- 40)`); });
+      const kick = title.querySelector('.kick');
+      if (kick) { const r = kick.getBoundingClientRect(), mid = (r.left + r.right) / 2; if (Math.abs(mid - 540) > 40) probs.push(`kicker centre at X ${mid.toFixed(0)} (not centred)`); }
       const tb = title.getBoundingClientRect().bottom;
-      const lim = document.getElementById('root').classList.contains('op-number') ? 840 : document.getElementById('root').classList.contains('op-pov') ? 770 : 720;
+      const lim = document.getElementById('root').classList.contains('op-number') ? 840 : document.getElementById('root').classList.contains('op-pov') ? 800 : 720;
       if (tb > lim) probs.push(`title ends at Y ${tb.toFixed(0)}: below ${lim}`);
       geo.forEach((g, i) => {
         if (g.l < left - 1 || g.r > right + 1) probs.push(`line ${i + 1} "${g.text}" overflows the title box (${g.l.toFixed(0)}-${g.r.toFixed(0)} vs ${left.toFixed(0)}-${right.toFixed(0)})`);
