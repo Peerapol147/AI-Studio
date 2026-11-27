@@ -1309,13 +1309,14 @@
   },
   "renders": {
     "latest": {
-      "id": "16c45c5f-34d5-4e4b-a67e-7bc31784f180",
-      "completedAt": 1795762138844,
+      "id": "c1cb35c7-c66e-4be2-9224-bc77b46ab94d",
+      "completedAt": 1795763258437,
       "output": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/renders/never-colonized-th-silent.mp4",
       "status": "completed",
-      "revision": "f4ce7689-4553-4a8e-a232-33d8c38e019b"
+      "revision": "20a64861-dc6c-4339-b28a-d3cbf1cc2261"
     },
     "retainedRevisions": [
+      "20a64861-dc6c-4339-b28a-d3cbf1cc2261",
       "f4ce7689-4553-4a8e-a232-33d8c38e019b"
     ]
   },
