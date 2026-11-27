@@ -56,7 +56,7 @@ out.append(sea('loop'))
 # ---------- WORLD map (guess / guess_def / cta) ----------
 P = M['world']['pins']
 NAMES = {'th': 'ไทย', 'bt': 'ภูฏาน', 'np': 'เนปาล', 'ir': 'อิหร่าน', 'jp': 'ญี่ปุ่น'}
-LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (-180, -24), 'ir': (20, 30), 'jp': (-40, 34)}
+LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (0, -118), 'ir': (20, 30), 'jp': (-40, 34)}
 
 
 def world(sid, mode):
