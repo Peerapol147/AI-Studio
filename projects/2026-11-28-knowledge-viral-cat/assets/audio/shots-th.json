@@ -1,0 +1,252 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 44.353,
+ "inputs": {
+  "shots.json": "d265f8dfc6f74e140b765806b534a2793e351a921256d397f76817ed2a521111",
+  "footage.json": null,
+  "assets/audio/words.json": "ab660de002a67e61c3a06db8025d82166165c6c9a2133f365a425bedbc7560ee"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "แมวบน",
+   "word_at": 0.08,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 2.36,
+   "dur": 2.36
+  },
+  {
+   "id": "hook_fight",
+   "src": null,
+   "cue": "ชาวเน็ต",
+   "word_at": 2.44,
+   "start": 2.36,
+   "beat": "hook",
+   "end": 3.9,
+   "dur": 1.54
+  },
+  {
+   "id": "paint",
+   "src": null,
+   "cue": "โดนทาสี",
+   "word_at": 3.98,
+   "start": 3.9,
+   "beat": "setup",
+   "end": 5.64,
+   "dur": 1.74
+  },
+  {
+   "id": "viral",
+   "src": null,
+   "cue": "แต่คนไทย",
+   "word_at": 5.72,
+   "start": 5.64,
+   "beat": "setup",
+   "end": 7.52,
+   "dur": 1.88
+  },
+  {
+   "id": "thai_say",
+   "src": null,
+   "cue": "นี่มันแมว",
+   "word_at": 7.6,
+   "start": 7.52,
+   "beat": "setup",
+   "end": 11.02,
+   "dur": 3.5
+  },
+  {
+   "id": "tamra",
+   "src": null,
+   "cue": "ตำราแมวไทย",
+   "word_at": 11.1,
+   "start": 11.02,
+   "beat": "explain",
+   "end": 12.14,
+   "dur": 1.12
+  },
+  {
+   "id": "seventeen",
+   "src": null,
+   "cue": "มงคล",
+   "word_at": 12.22,
+   "start": 12.14,
+   "beat": "explain",
+   "end": 13.72,
+   "dur": 1.58
+  },
+  {
+   "id": "wilat",
+   "src": null,
+   "cue": "แล้ววิลาศ",
+   "word_at": 13.8,
+   "start": 13.72,
+   "beat": "explain",
+   "end": 16.04,
+   "dur": 2.32
+  },
+  {
+   "id": "wilat_marks",
+   "src": null,
+   "cue": "ขาวแซม",
+   "word_at": 16.12,
+   "start": 16.04,
+   "beat": "explain",
+   "end": 19.24,
+   "dur": 3.2
+  },
+  {
+   "id": "reveal",
+   "src": null,
+   "cue": "แต่ลายแบบนี้",
+   "word_at": 19.32,
+   "start": 19.24,
+   "beat": "reveal",
+   "end": 20.96,
+   "dur": 1.72
+  },
+  {
+   "id": "reveal_b",
+   "src": null,
+   "cue": "เกิดเอง",
+   "word_at": 21.04,
+   "start": 20.96,
+   "beat": "reveal",
+   "end": 22.34,
+   "dur": 1.38
+  },
+  {
+   "id": "gene",
+   "src": null,
+   "cue": "เพราะยีน",
+   "word_at": 22.42,
+   "start": 22.34,
+   "beat": "reveal",
+   "end": 23.48,
+   "dur": 1.14
+  },
+  {
+   "id": "cells",
+   "src": null,
+   "cue": "เซลล์สี",
+   "word_at": 23.56,
+   "start": 23.48,
+   "beat": "reveal",
+   "end": 25.78,
+   "dur": 2.3
+  },
+  {
+   "id": "white",
+   "src": null,
+   "cue": "ขนตรงนั้น",
+   "word_at": 25.86,
+   "start": 25.78,
+   "beat": "reveal",
+   "end": 28.54,
+   "dur": 2.76
+  },
+  {
+   "id": "twist",
+   "src": null,
+   "cue": "ส่วนจะเป็น",
+   "word_at": 28.62,
+   "start": 28.54,
+   "beat": "twist",
+   "end": 30.44,
+   "dur": 1.9
+  },
+  {
+   "id": "twist_q",
+   "src": null,
+   "cue": "ยังตอบ",
+   "word_at": 30.52,
+   "start": 30.44,
+   "beat": "twist",
+   "end": 31.66,
+   "dur": 1.22
+  },
+  {
+   "id": "twist_dna",
+   "src": null,
+   "cue": "เพราะตำรา",
+   "word_at": 31.74,
+   "start": 31.66,
+   "beat": "twist",
+   "end": 34.0,
+   "dur": 2.34
+  },
+  {
+   "id": "twist_blood",
+   "src": null,
+   "cue": "ไม่ได้ตรวจ",
+   "word_at": 34.08,
+   "start": 34.0,
+   "beat": "twist",
+   "end": 35.6,
+   "dur": 1.6
+  },
+  {
+   "id": "share_law",
+   "src": null,
+   "cue": "แมวในตำรา",
+   "word_at": 35.68,
+   "start": 35.6,
+   "beat": "share",
+   "end": 38.04,
+   "dur": 2.44
+  },
+  {
+   "id": "share_siam",
+   "src": null,
+   "cue": "วิเชียรมาศ",
+   "word_at": 38.12,
+   "start": 38.04,
+   "beat": "share",
+   "end": 39.06,
+   "dur": 1.02
+  },
+  {
+   "id": "share_korat",
+   "src": null,
+   "cue": "สีสวาด",
+   "word_at": 39.14,
+   "start": 39.06,
+   "beat": "share",
+   "end": 39.84,
+   "dur": 0.78
+  },
+  {
+   "id": "share_khao",
+   "src": null,
+   "cue": "แล้วก็ขาว",
+   "word_at": 39.92,
+   "start": 39.84,
+   "beat": "share",
+   "end": 41.42,
+   "dur": 1.58
+  },
+  {
+   "id": "cta",
+   "src": null,
+   "cue": "แมวที่บ้าน",
+   "word_at": 41.5,
+   "start": 41.42,
+   "beat": "cta",
+   "end": 43.42,
+   "dur": 2.0
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "เมนต์บอก",
+   "word_at": 43.5,
+   "start": 43.42,
+   "beat": "loop",
+   "end": 44.353,
+   "dur": 0.933
+  }
+ ]
+}
