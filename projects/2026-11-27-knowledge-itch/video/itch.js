@@ -157,10 +157,15 @@ window.ITCH = (function () {
     el('path', { d: 'M-98 -330 C-100 -250 -112 -170 -104 -100 C-96 -30 -50 8 0 10', fill: 'none', stroke: 'var(--accent2)', 'stroke-width': 6, opacity: .85, filter: 'url(#glow)' }, fg);
     el('path', { d: 'M-96 -1000 L-98 -330', fill: 'none', stroke: 'var(--accent2)', 'stroke-width': 4, opacity: .6 }, fg);
     ['M-98 -300 C-70 -290 -40 -296 -20 -312', 'M-97 -330 C-72 -318 -46 -322 -28 -336', 'M-96 -700 C-70 -690 -44 -694 -24 -708'].forEach(d => el('path', { d, fill: 'none', stroke: 'var(--skinlo)', 'stroke-width': 4, 'stroke-linecap': 'round', opacity: .8 }, fg));
-    // nail: thin plate on the dorsal side, cuticle at -250, free edge hooks past the tip
-    el('path', { d: 'M52 -250 C66 -180 74 -110 70 -50 C66 -10 44 18 14 26 L8 14 C34 4 50 -24 52 -60 C54 -120 46 -190 36 -244 Z', fill: 'url(#gNail)' }, fg);
-    el('path', { d: 'M14 26 C44 18 66 -10 70 -50', fill: 'none', stroke: '#fff', 'stroke-width': 5, 'stroke-linecap': 'round', opacity: .95, filter: 'url(#glow)' }, fg);
-    el('path', { d: 'M58 -230 C68 -170 72 -110 69 -60', fill: 'none', stroke: '#fff', 'stroke-width': 3, opacity: .55 }, fg);
+    // nail: plate on the dorsal side with cuticle, lunula and a white free edge hooking past the tip
+    el('path', { d: 'M36 -300 C60 -230 78 -140 76 -60 C74 -12 50 22 12 32 L4 16 C34 6 52 -22 54 -60 C56 -130 44 -220 22 -292 Z', fill: 'url(#gNail)' }, fg);
+    el('path', { d: 'M36 -300 C46 -296 52 -286 54 -270 C40 -268 30 -276 24 -290 Z', fill: 'var(--skinlo)', opacity: .9 }, fg);
+    el('path', { d: 'M30 -282 C44 -262 50 -244 52 -226', fill: 'none', stroke: '#fff', 'stroke-width': 10, 'stroke-linecap': 'round', opacity: .45 }, fg);
+    el('path', { d: 'M12 32 C52 22 76 -10 78 -56', fill: 'none', stroke: '#fff', 'stroke-width': 9, 'stroke-linecap': 'round', opacity: .95, filter: 'url(#glow)' }, fg);
+    el('path', { d: 'M62 -220 C72 -160 76 -110 74 -70', fill: 'none', stroke: '#fff', 'stroke-width': 4, opacity: .6 }, fg);
+    // knuckle creases on the dorsal side (distal joint) + pad crease
+    ['M30 -440 C52 -432 70 -436 84 -448', 'M24 -468 C50 -458 70 -462 84 -476', 'M34 -412 C54 -404 70 -408 82 -418'].forEach(d => el('path', { d, fill: 'none', stroke: 'var(--skinlo)', 'stroke-width': 5, 'stroke-linecap': 'round', opacity: .95 }, fg));
+    el('path', { d: 'M-100 -140 C-80 -128 -62 -130 -50 -140', fill: 'none', stroke: 'var(--skinlo)', 'stroke-width': 4, 'stroke-linecap': 'round', opacity: .7 }, fg);
     el('path', { d: 'M84 -1000 L78 -60', fill: 'none', stroke: 'var(--accent2)', 'stroke-width': 4, opacity: .5 }, fg);
     // near-field dermis bokeh (in front, blurred, parallax)
     const near = el('g', { filter: 'url(#blur8)' }, g); R.nearBok = []; const r4 = rng(5);
