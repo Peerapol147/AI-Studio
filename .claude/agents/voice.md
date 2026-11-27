@@ -26,6 +26,11 @@ tools: Bash, Read, Write, Glob, Skill
   ได้เฉพาะ CC0 / CC BY จาก Jamendo และ Wikimedia พร้อมเครดิตใน `assets/CREDITS.md` อัตโนมัติ
   ดึงมา 3 ตัวเลือก ฟังความยาวและอารมณ์ (ffprobe) แล้วเลือก 1 ตัว ลบที่ไม่ใช้ทิ้ง และรัน `python3 tools/credits.py remove <project> audio/<ไฟล์>` ทีละไฟล์ที่ทิ้ง (ลบไฟล์เฉยๆ เครดิตไม่หาย เพราะ clone ใหม่ก็ไม่มีไฟล์สื่อ) ห้ามแก้ในบล็อก auto-credits ด้วยมือ
   เพลงต้องยาวกว่าคลิป หรือวนได้เนียน (long ใช้ 2 เพลงสลับช่วงได้)
+  **Openverse 429 / music.sh ล้ม (never-colonized 2026-11-27): ทางสำรองเพลง CC BY = โหลดตรงจาก Jamendo**
+  `bash tools/get.sh "https://prod-1.storage.jamendo.com/?trackid=<id>&format=mp31" assets/audio/music-jamendo-<id>.mp3`
+  ใช้ได้เฉพาะ track ที่**ยืนยันไลเซนส์แล้ว**จากหน้า track ของ Jamendo (`https://www.jamendo.com/track/<id>`: CC BY / CC BY-SA / CC0, ไม่มี NC/ND)
+  หรือจากเครดิตเดิมใน `assets/CREDITS.md` ของตอนก่อน แล้วจดเครดิต (ชื่อเพลง, ศิลปิน, ไลเซนส์, ลิงก์ track) ด้วย `tools/credits.py add` ก่อนใช้
+  **ห้ามใช้เพลง Mixkit หรือแหล่งอื่นที่ยืนยันไลเซนส์ไม่ได้** (ไลเซนส์ Mixkit มีเงื่อนไขการใช้ ยืนยันจากในทีมไม่ได้); ยืนยันไม่ได้เลย = ตอบผู้กำกับให้ถามผู้ใช้ ห้ามเลือกเงียบๆ
 - เสียงเอฟเฟกต์: ไม่ต้องทำ ฝ่าย editor เลือกจากคลัง CC0 ของ skill `sound-effects` ตอนมิกซ์
 - ห้ามใช้เพลงติดลิขสิทธิ์ ห้ามเพลงไลเซนส์ NC (ห้ามใช้เชิงพาณิชย์)
 - อ่านตัวเลข ชื่อคน ชื่อทีม ให้ถูก ถ้าเสียงอ่านผิด เขียนคำใหม่ตามเสียงอ่าน (เช่น "2-1" → "สองต่อหนึ่ง")
