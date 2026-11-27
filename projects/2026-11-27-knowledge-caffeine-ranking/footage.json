@@ -1,0 +1,38 @@
+{
+ "r4": {
+  "src": "assets/footage/pixabay-80136.mp4",
+  "action_at": 3.0
+ },
+ "r4_num": {
+  "src": "assets/footage/pixabay-82601.mp4",
+  "action_at": 3.0
+ },
+ "r4_punch": {
+  "src": "assets/footage/pixabay-331066.mp4",
+  "action_at": 1.5
+ },
+ "r2": {
+  "src": "assets/footage/pixabay-134.mp4",
+  "action_at": 1.5
+ },
+ "r2_punch": {
+  "src": "assets/footage/pixabay-202910.mp4",
+  "action_at": 1.0
+ },
+ "r1_why": {
+  "src": "assets/footage/pixabay-74909.mp4",
+  "action_at": 7.5
+ },
+ "hook": {
+  "src": "assets/footage/pixabay-3908006.jpg",
+  "action_at": 0
+ },
+ "r1": {
+  "src": "assets/footage/pixabay-1018062.jpg",
+  "action_at": 0
+ },
+ "cta": {
+  "src": "assets/footage/pixabay-2546041.jpg",
+  "action_at": 0
+ }
+}
