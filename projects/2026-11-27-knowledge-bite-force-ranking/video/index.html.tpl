@@ -161,7 +161,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    <circle id="tm-eye" cx="128" cy="184" r="9" stroke="#5CF2E3" stroke-width="4"/>
   </svg>
   <div id="tm-scan"></div>
-  <div id="tm-read">แรงกัด ≈ ~1,860 กก. (จากโมเดล)</div>
+  <div id="tm-read">แรงกัด ~1,860 กก. (จากโมเดล)</div>
  </div>
 </div>
 <div id="ep">
@@ -349,7 +349,7 @@ function barGfx(t){
   // m = 1 on r5_human: the same bars zoom up to the middle (man ~86 vs tiger ~150), then return to the track
   const m=clamp(S(t-14.14,13,0.8)*(1-S(t-16.44,13,0.8)),0,1.08);
   const ppk=lerp(770/1860,3.0,m), x0=lerp(130,120,m);
-  const v=kgf(t), k=rankAt(t), r=R[Math.max(0,k)];
+  const v=kgf(t); let r=R[0]; R.forEach(q=>{if(t>=q.c0) r=q;});   // the animal whose value the bar shows
   const yM=lerp(1336,830,m), hM=lerp(22,72,m), yB=lerp(1368,935,m), hB=lerp(44,110,m);
   const land=R.find(q=>t>=q.c1&&t<q.c1+0.6), wob=land?1+0.04*Math.exp(-(t-land.c1)*8)*Math.sin((t-land.c1)*28):1;
   const wMain=Math.max(0,Math.min(v,1670))*ppk*wob, wSeg=Math.max(0,v-1670)*ppk*wob;
@@ -362,7 +362,7 @@ function barGfx(t){
   // labels: right of each bar (bigger while zoomed)
   const fs=lerp(40,64,m), bml=$('bml'), bbl=$('bbl');
   Object.assign(bml.style,{left:f2(x0+MAN*ppk+18)+'px',top:f2(yM+hM/2-fs*0.7)+'px',fontSize:f2(fs)+'px'});
-  const champ=t>=43.74, nm=champ?'วัดจริงสูงสุด: จระเข้ ~1,670':t>=42.34?'จระเข้ ~1,670 (วัดจริง)':(r.sh+' ~'+(v>=r.val-0.5&&t>=r.c1?fmt(r.val):fmt(Math.round(v/10)*10)));
+  const nm=t>=42.34?'จระเข้ ~1,670 (วัดจริง)':(r.sh+' ~'+(v>=r.val-0.5&&t>=r.c1?fmt(r.val):fmt(Math.round(v/10)*10)));
   setTxt(bml,'ผู้ชาย ~86'); setTxt(bbl,v>0?nm:'');
   const wAll=wMain+wSeg, inside=wAll>560&&m<0.1;
   const fs2=lerp(40,72,m);
