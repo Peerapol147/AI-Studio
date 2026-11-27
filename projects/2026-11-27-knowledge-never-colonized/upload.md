@@ -23,14 +23,14 @@
 - Wikipedia (เป็นแหล่งรอง): Treaty of Sugauli, Treaty of Punakha, Anglo-Russian Convention, Anglo-Soviet invasion of Iran, Occupation of Japan, Franco-Siamese crisis
 
 เครดิตภาพ: Pixabay (Pixabay Content License) — truthseeker08, ClickingLoop, TravelingOnTheGoYoutubeCh, OpenClipart-Vectors, Kanenori, Natures_Embrace, Premium_flag, suketdedhia, RainMeditateHub, Expatsiam, Peggychoucair, Close-UpStock, viarami, Amirirani, wreindl, JuliusH (ลิงก์ทุกรายการใน assets/CREDITS.md); แผนที่: Natural Earth (สาธารณสมบัติ)
-เพลง: Mixkit (Mixkit Stock Music Free License)
+เพลง: "Imagination" by Yakov Golman (CC BY 3.0) https://www.jamendo.com/track/1559873
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
 #ประวัติศาสตร์ #จัดอันดับ #ประเทศไทย #ความรู้ #shorts
 
 ## TikTok
 แคปชัน (≤150): ทั้งย่านเป็นเมืองขึ้นหมด เหลือรอดประเทศเดียว 🇹🇭 แต่ไม่ได้รอดฟรีนะ ประเทศไหนควรติดอีก? #ประวัติศาสตร์ #จัดอันดับ #ประเทศไทย #ความรู้
-คอมเมนต์แรก: ข้อมูล: กระทรวงการต่างประเทศไทย (mfa.go.th) | ภาพ Pixabay | เพลง Mixkit | นับเฉพาะ "ไม่เคยเป็นอาณานิคมของชาติตะวันตก"
+คอมเมนต์แรก: ข้อมูล: กระทรวงการต่างประเทศไทย (mfa.go.th) | ภาพ Pixabay | เพลง "Imagination" by Yakov Golman (CC BY 3.0) jamendo.com/track/1559873 | นับเฉพาะ "ไม่เคยเป็นอาณานิคมของชาติตะวันตก"
 ติด label "เนื้อหาที่สร้างด้วย AI" (เสียงพากย์ AI)
 
 ## Facebook Reels

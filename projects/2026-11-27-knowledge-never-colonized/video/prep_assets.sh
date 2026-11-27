@@ -5,7 +5,7 @@
 # Flag stills (Bhutan, Nepal) become short waving plates (geq ripple + light sweep) on a blurred backdrop.
 set -e
 cd "$(dirname "$0")"; mkdir -p assets
-cp ../assets/audio/vo-th.mp3 ../assets/audio/music-mixkit-675.mp3 assets/
+cp ../assets/audio/vo-th.mp3 ../assets/audio/music-jamendo-1559873.mp3 assets/
 F=../assets/footage
 GR="curves=all='0/0.07 0.5/0.52 1/0.95',eq=contrast=0.97:saturation=0.8,colorbalance=rs=0.05:gs=0.01:bs=-0.06:rm=0.04:gm=0.0:bm=-0.04:rh=0.03:bh=-0.04"
 ENC="-an -c:v libx264 -preset medium -crf 17 -pix_fmt yuv420p -r 30 -g 6"

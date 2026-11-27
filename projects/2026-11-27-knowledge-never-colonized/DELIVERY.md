@@ -43,16 +43,18 @@ branch `claude/ep-2026-11-27-never-colonized` (ไม่ merge เข้า stoi
 - 0:40.3 "ฝั่งซ้ายโขง / หัวเมืองมลายู"
 - 0:43.2 "ไท" (ต้องฟังออกว่า ไท ไม่ใช่ ไทย)
 
-## ⚠️ เพลง: ต้องเช็กก่อนอัป
-Mixkit #675 (`assets/audio/music-mixkit-675.mp3`) โหลดตรงจาก assets.mixkit.co ไม่ทราบชื่อเพลง; reviewer ยืนยันไม่ได้ว่าเป็น Mixkit Free License (ไม่ใช่ Restricted) เพราะหน้า mixkit.co ติด Cloudflare และ Openverse ถูก throttle ~9.6 ชม. จึงเปลี่ยนเป็น CC0/CC BY ไม่ได้
-→ ผู้ใช้เปิด https://mixkit.co/free-stock-music/ หาเพลง #675 เช็กไลเซนส์ หรือสั่งให้เปลี่ยนเพลง (มิกซ์ใหม่ ไม่ต้องเรนเดอร์ภาพใหม่)
+## เพลง (เปลี่ยนแล้ว หลังส่งรอบแรก)
+เดิม Mixkit #675 ยืนยันไลเซนส์ไม่ได้ (ห้องวางแผน: Mixkit มี Restricted License ที่ห้ามใช้บน YouTube ปนอยู่) → เปลี่ยนเป็น **"Imagination" by Yakov Golman (CC BY 3.0)** https://www.jamendo.com/track/1559873 (ไลเซนส์เดียวกับที่ช่องใช้ผ่านแล้วในตอน road-hug-anime; ไม่ซ้ำ 3 ตอนล่าสุด) **ต้องใส่เครดิตในคำอธิบาย/คอมเมนต์แรก (ใส่ใน upload.md แล้ว)**
+มิกซ์ใหม่เฉพาะเสียง (ภาพเดิมทุกเฟรม จาก renders/never-colonized-th-silent.mp4): --music-db -18 (เพลงนี้เบากว่า ได้ bed ต่ำกว่าพากย์ 24.8 LU ใกล้ของเดิม 23.7) → -16.3 LUFS, TP -4.8 dBFS, SOUND.md ไม่มี WARN
+check ซ้ำหลังเปลี่ยน: look --final OK, pacing OK, cover_check --final OK, contact_sheet make ใหม่ + verify frames OK
+ฟังเพิ่ม: เพลงใหม่ทั้งคลิป (อารมณ์เข้ากับเรื่องไหม ดังชนพากย์ไหม) โดยเฉพาะ 3.1, 30.7, 36.5, 40.3 วิ (จุดตัด/impact ตาม SOUND.md)
 
 ## footage + เครดิต
 18 ช็อตภาพจริง (Pixabay Content License) + 8 ช็อตกราฟิก/แผนที่ (Natural Earth สาธารณสมบัติ, world-atlas + d3-geo) รายชื่อเต็ม `assets/CREDITS.md` และ upload.md; footage_search ครอบคลุม 18/18
 ภาพอ่อน (ยอมรับ): อิหร่านใช้ทะเลทราย+ธง (ไม่มีเปอร์เซโปลิส), ธงอิหร่านขยายจากความละเอียดต่ำ, อยุธยากลางวัน, หิมาลัยสีจืด
 
 ## ค่าใช้จ่าย
-- ElevenLabs TTS eleven_v3 1 เทค (~545 ตัวอักษร) + scribe 1 ครั้ง (~48 วิ); Pixabay/Mixkit/Natural Earth ฟรี; เพิ่ม host mfa.go.th, image.mfa.go.th, britannica.com ใน environment (ผู้ใช้อนุมัติ)
+- ElevenLabs TTS eleven_v3 1 เทค (~545 ตัวอักษร) + scribe 1 ครั้ง (~48 วิ); Pixabay/Jamendo CC BY/Natural Earth ฟรี; เพิ่ม host mfa.go.th, image.mfa.go.th, britannica.com ใน environment (ผู้ใช้อนุมัติ)
 
 ## ชื่อ / ปก
 - ชื่อแนะนำ: "5 ประเทศที่ไม่เคยเป็นเมืองขึ้น อันดับ 1 คือไทย แต่ไม่ได้รอดฟรี" (อีก 2 ตัวเลือกใน upload.md)

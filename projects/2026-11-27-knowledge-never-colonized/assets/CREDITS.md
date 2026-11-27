@@ -23,6 +23,6 @@
 - pixabay-739723.jpg: wreindl (Pixabay Content License) https://pixabay.com/photos/nepal-kathmandu-durbar-square-739723/
 
 ## music
-music-mixkit-675.mp3: Mixkit #675 (ไม่ทราบชื่อเพลง เพราะหน้า mixkit.co ติด Cloudflare; ดาวน์โหลดจาก assets.mixkit.co/music/675/675.mp3) Mixkit Stock Music Free License (ไม่ต้องใส่เครดิต) https://mixkit.co/free-stock-music/
+- music-jamendo-1559873.mp3: "Imagination" by Yakov Golman (CC BY 3.0) https://www.jamendo.com/track/1559873
 
 <!-- auto-credits:end -->
