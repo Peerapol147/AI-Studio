@@ -1,0 +1,38 @@
+{
+ "hook": {
+  "src": "assets/footage/pixabay-168341.mp4",
+  "action_at": 2.0
+ },
+ "scratch2": {
+  "src": "assets/footage/pixabay-168341.mp4",
+  "action_at": 6.5
+ },
+ "follow": {
+  "src": "assets/footage/pixabay-168341.mp4",
+  "action_at": 10.5
+ },
+ "cta": {
+  "src": "assets/footage/pixabay-168341.mp4",
+  "action_at": 13.5
+ },
+ "contagious": {
+  "src": "assets/footage/pixabay-3382130.jpg",
+  "action_at": 0
+ },
+ "signal": {
+  "src": "assets/footage/pixabay-114977.mp4",
+  "action_at": 0.5
+ },
+ "watch": {
+  "src": "assets/footage/pixabay-61706.mp4",
+  "action_at": 0.5
+ },
+ "mouse": {
+  "src": "assets/footage/pixabay-1554745.jpg",
+  "action_at": 0
+ },
+ "mosquito": {
+  "src": "assets/footage/pixabay-719613.jpg",
+  "action_at": 0
+ }
+}
