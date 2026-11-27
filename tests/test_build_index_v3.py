@@ -283,6 +283,11 @@ def test_hard_cuts_inside_a_beat_and_zoom_punch_on_key_words(tmp_path):
     assert any('*' in c for c in caps)
     p = data['punch']
     assert p and all(b - a >= 1.5 for a, b in zip(p, p[1:])) and all(t >= data['hookEnd'] for t in p)
+    assert not any(0 <= t - s['a'] < 0.3 for t in p for s in sc[1:])    # review Y5: never on top of a cut/transition
+    sys_src = (V3 / 'build_index.py').read_text()
+    ns = {'EP': {}}
+    exec(re.search(r'(PUNCH_GAP = .*?\n)(?=\n\ndef is_video)', sys_src, re.S).group(1), ns)
+    assert ns['punches'](['*a*', '*b*', '*c*'], [2.0, 4.1, 6.0], 10.0, 1.0, cuts=[4.0, 8.0]) == [2.0, 6.0]
     tpl = (V3 / 'index.html.tpl').read_text()
     assert "nx.k==='cut'" in tpl and 'const kind=' not in tpl and '(1+Math.cos(u*13))/2' in tpl
     proj, video = project(tmp_path / 'b', LOOK_A, episode={'punch': 'off'})

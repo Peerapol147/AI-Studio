@@ -170,10 +170,12 @@ def cut_kind(i, s, prev):
 
 
 PUNCH_GAP = 1.5
+PUNCH_AFTER_CUT = 0.3      # review v3.7 Y5: a punch right on a cut/transition stacks two hits; skip it
 
 
-def punches(caps, times, dur, hook_end):
-    """Zoom-punch times: highlighted captions after the hook, >= PUNCH_GAP s apart, not in the last 0.5 s (loop seam)."""
+def punches(caps, times, dur, hook_end, cuts=()):
+    """Zoom-punch times: highlighted captions after the hook, >= PUNCH_GAP s apart, not in the last 0.5 s (loop seam),
+    not within PUNCH_AFTER_CUT s after a shot enters (cut or the look's transition)."""
     want = EP.get('punch', 'auto')
     if want == 'off':
         return []
@@ -183,6 +185,8 @@ def punches(caps, times, dur, hook_end):
         pick = [t for c, t in zip(caps, times) if '*' in c and t >= hook_end]
     out = []
     for t in pick:
+        if any(0 <= t - c < PUNCH_AFTER_CUT for c in cuts):
+            continue
         if t < dur - 0.5 and (not out or t - out[-1] >= PUNCH_GAP):
             out.append(t)
     return out
@@ -333,7 +337,7 @@ VARS = {'--bg': PAL['bg'], '--bg2': PAL['bg2'], '--ink': PAL['ink'], '--text': P
 music = LOOK.get('music_file')
 MUSIC = (f'<audio id="music" class="clip" data-start="0" data-duration="{DUR}" data-track-index="31" data-volume="0.1" '
          f'src="assets/{html.escape(pathlib.Path(music).name)}"></audio>') if music else '<!-- no music_file in look.json yet -->'
-DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'punch': punches(CAPS, capt, DUR, HOOK_END), 'look': {k: LOOK[k] for k in
+DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'punch': punches(CAPS, capt, DUR, HOOK_END, [s['a'] for s in SC[1:]]), 'look': {k: LOOK[k] for k in
         ('palette', 'font', 'caption', 'opening', 'cover', 'transition')}}
 rep = {'%%DUR%%': str(DUR), '%%VARS%%': ';'.join(f'{k}:{v}' for k, v in VARS.items()),
        '%%SCENES%%': SCENES, '%%CAPS%%': caps(), '%%TITLE%%': title(), '%%ICONS%%': icons(),
