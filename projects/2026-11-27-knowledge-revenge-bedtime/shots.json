@@ -198,7 +198,8 @@
     "th": "กี่โมง"
    },
    "beat": "loop",
-   "want": "เล่น plate hook จบที่ media_start = เฟรม 0"
+   "want": "เล่น plate hook จบที่ media_start = เฟรม 0",
+   "footage": false
   }
  ],
  "beat_note": "ประโยค 2 'เสียดายเวลา' = คำใบ้ (setup) ที่ hook ผู้ใช้ตั้งไว้; เฉลยหลัก = เหตุผล 'ทั้งวันไม่มีเวลาเป็นของตัวเอง' ที่ ~50%"

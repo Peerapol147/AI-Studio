@@ -1,0 +1,257 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 39.178,
+ "inputs": {
+  "shots.json": "dbc82c5583ad99f0f0026050e67a2461fbf39837704b540d72a774686f796d82",
+  "footage.json": "5518ef5ef5e00068850913301950162b3e148ed071a9a31d97abe6826cf2b4d3",
+  "assets/audio/words.json": "bc9195280b8d7e4341fa9a550deadffa26ef1710b5808c39d990143897ad3782"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": "footage/pixabay-233390.mp4",
+   "cue": "ฮั่นแน่",
+   "word_at": 0.12,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 2.16,
+   "dur": 2.16,
+   "media_start": 2.0
+  },
+  {
+   "id": "hook_clock",
+   "src": null,
+   "cue": "ตีหนึ่ง",
+   "word_at": 2.24,
+   "start": 2.16,
+   "beat": "hook",
+   "end": 3.3,
+   "dur": 1.14
+  },
+  {
+   "id": "hook_awake",
+   "src": "footage/pixabay-61298.mp4",
+   "cue": "ยังไม่ง่วง",
+   "word_at": 3.38,
+   "start": 3.3,
+   "beat": "hook",
+   "end": 4.92,
+   "dur": 1.62,
+   "media_start": 2.92
+  },
+  {
+   "id": "setup_yawn",
+   "src": "footage/pixabay-44647.mp4",
+   "cue": "บางที",
+   "word_at": 5.0,
+   "start": 4.92,
+   "beat": "setup",
+   "end": 7.02,
+   "dur": 2.1,
+   "media_start": 1.92
+  },
+  {
+   "id": "reveal_time",
+   "src": "footage/pixabay-26452.mp4",
+   "cue": "เสียดาย",
+   "word_at": 7.1,
+   "start": 7.02,
+   "beat": "setup",
+   "end": 9.16,
+   "dur": 2.14,
+   "media_start": 0.92
+  },
+  {
+   "id": "name",
+   "src": null,
+   "cue": "ชื่อเรียก",
+   "word_at": 9.24,
+   "start": 9.16,
+   "beat": "explain",
+   "end": 10.44,
+   "dur": 1.28
+  },
+  {
+   "id": "name_en",
+   "src": null,
+   "cue": "Revenge",
+   "word_at": 10.52,
+   "start": 10.44,
+   "beat": "explain",
+   "end": 13.6,
+   "dur": 3.16
+  },
+  {
+   "id": "revenge",
+   "src": "footage/pixabay-42408.mp4",
+   "cue": "แก้แค้น",
+   "word_at": 13.68,
+   "start": 13.6,
+   "beat": "explain",
+   "end": 14.86,
+   "dur": 1.26,
+   "media_start": 0.92
+  },
+  {
+   "id": "notdisease",
+   "src": null,
+   "cue": "ไม่ใช่โรค",
+   "word_at": 14.94,
+   "start": 14.86,
+   "beat": "explain",
+   "end": 18.12,
+   "dur": 3.26
+  },
+  {
+   "id": "who",
+   "src": "footage/pixabay-142641.mp4",
+   "cue": "ใคร",
+   "word_at": 18.2,
+   "start": 18.12,
+   "beat": "explain",
+   "end": 19.46,
+   "dur": 1.34,
+   "media_start": 0.92
+  },
+  {
+   "id": "work",
+   "src": "footage/pixabay-7269.mp4",
+   "cue": "ทั้งวัน",
+   "word_at": 19.54,
+   "start": 19.46,
+   "beat": "reveal",
+   "end": 20.56,
+   "dur": 1.1,
+   "media_start": 0.92
+  },
+  {
+   "id": "rush",
+   "src": "footage/pixabay-1694.mp4",
+   "cue": "ตัวเอง",
+   "word_at": 20.64,
+   "start": 20.56,
+   "beat": "reveal",
+   "end": 21.74,
+   "dur": 1.18,
+   "media_start": 0.92
+  },
+  {
+   "id": "night_me",
+   "src": "footage/pixabay-202987.mp4",
+   "cue": "กลางคืน",
+   "word_at": 21.82,
+   "start": 21.74,
+   "beat": "explain",
+   "end": 22.42,
+   "dur": 0.68,
+   "media_start": 0.92
+  },
+  {
+   "id": "takeback",
+   "src": null,
+   "cue": "เอาคืน",
+   "word_at": 22.5,
+   "start": 22.42,
+   "beat": "explain",
+   "end": 24.26,
+   "dur": 1.84
+  },
+  {
+   "id": "tired",
+   "src": "footage/pixabay-151295.mp4",
+   "cue": "พรุ่งนี้",
+   "word_at": 24.34,
+   "start": 24.26,
+   "beat": "explain",
+   "end": 26.26,
+   "dur": 2.0,
+   "media_start": 2.92
+  },
+  {
+   "id": "twist",
+   "src": "footage/pixabay-729.mp4",
+   "cue": "ตลก",
+   "word_at": 26.34,
+   "start": 26.26,
+   "beat": "twist",
+   "end": 28.8,
+   "dur": 2.54,
+   "media_start": 7.42
+  },
+  {
+   "id": "twist_me",
+   "src": "footage/pixabay-31672.mp4",
+   "cue": "ตัวเรา",
+   "word_at": 28.88,
+   "start": 28.8,
+   "beat": "twist",
+   "end": 30.6,
+   "dur": 1.8,
+   "media_start": 1.42
+  },
+  {
+   "id": "tip",
+   "src": "footage/pixabay-20156.mp4",
+   "cue": "ผู้เชี่ยวชาญ",
+   "word_at": 30.68,
+   "start": 30.6,
+   "beat": "share",
+   "end": 32.44,
+   "dur": 1.84,
+   "media_start": 0.92
+  },
+  {
+   "id": "tip_30",
+   "src": null,
+   "cue": "กันเวลา",
+   "word_at": 32.52,
+   "start": 32.44,
+   "beat": "share",
+   "end": 35.38,
+   "dur": 2.94
+  },
+  {
+   "id": "tip_alarm",
+   "src": "footage/pixabay-15629.mp4",
+   "cue": "ตั้งปลุก",
+   "word_at": 35.46,
+   "start": 35.38,
+   "beat": "share",
+   "end": 36.26,
+   "dur": 0.88,
+   "media_start": 0.92
+  },
+  {
+   "id": "tip_putdown",
+   "src": null,
+   "cue": "วางมือถือ",
+   "word_at": 36.34,
+   "start": 36.26,
+   "beat": "share",
+   "end": 37.54,
+   "dur": 1.28
+  },
+  {
+   "id": "cta",
+   "src": "footage/pixabay-120483.mp4",
+   "cue": "แล้วคืนนี้",
+   "word_at": 37.62,
+   "start": 37.54,
+   "beat": "cta",
+   "end": 38.3,
+   "dur": 0.76,
+   "media_start": 0.92
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "กี่โมง",
+   "word_at": 38.38,
+   "start": 38.3,
+   "beat": "loop",
+   "end": 39.178,
+   "dur": 0.878
+  }
+ ]
+}

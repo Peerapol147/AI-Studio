@@ -1,7 +1,7 @@
 {
  "hook": {
   "src": "footage/pixabay-233390.mp4",
-  "action_at": 0,
+  "action_at": 1.0,
   "media_start_note": "ผู้กำกับดู hook-sheet แล้ว: ทุกเฟรมเห็นคนนั่งบนเตียงเล่นมือถือชัด ใช้ media_start 2.0"
  },
  "hook_awake": {
@@ -14,27 +14,27 @@
  },
  "reveal_time": {
   "src": "footage/pixabay-26452.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "revenge": {
   "src": "footage/pixabay-42408.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "who": {
   "src": "footage/pixabay-142641.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "work": {
   "src": "footage/pixabay-7269.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "rush": {
   "src": "footage/pixabay-1694.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "night_me": {
   "src": "footage/pixabay-202987.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "tired": {
   "src": "footage/pixabay-151295.mp4",
@@ -50,14 +50,14 @@
  },
  "tip": {
   "src": "footage/pixabay-20156.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "tip_alarm": {
   "src": "footage/pixabay-15629.mp4",
-  "action_at": 0
+  "action_at": 1.0
  },
  "cta": {
   "src": "footage/pixabay-120483.mp4",
-  "action_at": 0
+  "action_at": 1.0
  }
 }
