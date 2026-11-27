@@ -1,0 +1,22 @@
+[
+ {"t": 0.36, "type": "reveal", "desc": "hook: jaws on \"งับ\" (frame-0 card push)", "sfx": "impact/kenney-impact-impactsoft-heavy-000.ogg", "gain": -22},
+ {"t": 1.96, "type": "appear", "desc": "17 motorbikes start dropping (\"รถเวฟสิบเจ็ดคัน\")", "sfx": "pop/kenney-interface-drop-002.ogg", "gain": -20},
+ {"t": 4.10, "type": "error_or_tech", "desc": "#1 struck through on \"ไม่ใช่\"", "sfx": "glitch/kenney-interface-glitch-002.ogg", "gain": -22},
+ {"t": 5.40, "type": "scene_cut", "desc": "flash to the 5 guess slots", "sfx": "whoosh/fs-683101-quick-woosh.ogg", "gain": -22},
+ {"t": 6.74, "type": "hover_or_small_ui", "desc": "slot 1 ? pops on \"ที่หนึ่ง\"", "sfx": "tick/fs384187.ogg", "gain": -21},
+ {"t": 8.22, "type": "scene_cut", "desc": "whoosh into rank 5 (flash)", "sfx": "whoosh/fs-169867-swoosh.ogg", "gain": -20},
+ {"t": 13.40, "type": "reveal", "desc": "counter lands ~150 kg (tiger)", "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg", "gain": -22},
+ {"t": 16.44, "type": "scene_cut", "desc": "whoosh into rank 4", "sfx": "whoosh/fs-264777-swoosh.ogg", "gain": -20},
+ {"t": 21.06, "type": "reveal", "desc": "counter lands ~460 kg (hyena)", "sfx": "impact/kenney-impact-impactpunch-heavy-001.ogg", "gain": -21},
+ {"t": 22.10, "type": "scene_cut", "desc": "whoosh into rank 3", "sfx": "whoosh/fs-127197-fast-simple-chop-5-aif.ogg", "gain": -20},
+ {"t": 26.08, "type": "reveal", "desc": "counter lands ~960 kg (alligator) + 10 bikes", "sfx": "impact/fs524817.ogg", "gain": -21},
+ {"t": 27.12, "type": "scene_cut", "desc": "whoosh into rank 2", "sfx": "whoosh/fs393811.ogg", "gain": -20},
+ {"t": 32.38, "type": "reveal", "desc": "counter lands ~1,670 kg (saltwater croc)", "sfx": "impact/fs-222517-dramatic-hit.ogg", "gain": -20},
+ {"t": 33.44, "type": "scene_cut", "desc": "whoosh into rank 1", "sfx": "whoosh/fs810485.ogg", "gain": -19},
+ {"t": 37.38, "type": "reveal", "desc": "counter lands ~1,860 kg (great white) - heaviest hit", "sfx": "impact/fs-177242-cinematic-impact.ogg", "gain": -17},
+ {"t": 38.34, "type": "error_or_tech", "desc": "computer model screen", "sfx": "glitch/kenney-sci-computernoise-000.ogg", "gain": -24},
+ {"t": 40.46, "type": "appear", "desc": "\"ไม่ได้วัดจากตัวจริง\" label", "sfx": "pop/fs-824189-pop-in-sfx.ogg", "gain": -21},
+ {"t": 43.74, "type": "success", "desc": "champion badge: measured = saltwater croc", "sfx": "ding/kenney-interface-confirmation-001.ogg", "gain": -20},
+ {"t": 45.60, "type": "appear", "desc": "ถูก / ผิด buttons pop", "sfx": "pop/kenney-interface-pluck-001.ogg", "gain": -20},
+ {"t": 47.08, "type": "click", "desc": "ถูก button pulses on the word", "sfx": "click/kenney-interface-select-001.ogg", "gain": -22}
+]

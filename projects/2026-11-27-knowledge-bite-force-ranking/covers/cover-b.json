@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 40,
+   "y": 800,
+   "w": 1000,
+   "h": 1000,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ฉลาม vs จระเข้",
+   "x": 108.72883605957031,
+   "y": 236.53195190429688,
+   "w": 862.5062866210938,
+   "h": 140,
+   "font_px": 128,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ใครกัดแรงกว่า?",
+   "x": 86.14557647705078,
+   "y": 439.46337890625,
+   "w": 907.7102661132812,
+   "h": 140,
+   "font_px": 128,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-bite-force-ranking/look.json",
+  "lines": [
+   "ฉลาม vs จระเข้",
+   "ใครกัดแรงกว่า?"
+  ],
+  "palette": "ocean-teal",
+  "font": "noto"
+ }
+}

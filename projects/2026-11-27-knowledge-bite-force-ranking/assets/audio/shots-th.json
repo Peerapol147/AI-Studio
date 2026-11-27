@@ -3,8 +3,8 @@
  "lead": 0.08,
  "duration": 48.155,
  "inputs": {
-  "shots.json": "7d7edf4f348422b9603ea37b65ffc4978330099dc099652a505fbd71888b133e",
-  "footage.json": "d40852ae4f54e8840b16891b8972a6d0612f95254ddb52549f48ca45cfe5535a",
+  "shots.json": "9e36e1e0ec759f1842c797f9271ef3e0ddf84e933af3abec597d1a6aa4f034a2",
+  "footage.json": "b5b79a1ba7b1aef673f73d12752998b78e055983c24754f6b532e36f9b47bacb",
   "assets/audio/words.json": "2b4ce4cb5cb53f3c0c5c966f9b46b357390502386c755e860cef3e7aff874548"
  },
  "shots": [
@@ -175,7 +175,7 @@
    "hit_at": 31.56,
    "end": 33.44,
    "dur": 2.64,
-   "media_start": 1.54
+   "media_start": 0.0
   },
   {
    "id": "r1",
@@ -219,13 +219,14 @@
   },
   {
    "id": "twist_measured",
-   "src": "assets/footage/pixabay-173059.mp4",
+   "src": "assets/footage/pixabay-214432.mp4",
    "cue": "ถ้านับ",
    "word_at": 42.34,
    "start": 42.26,
    "beat": "share",
    "end": 43.66,
-   "dur": 1.4
+   "dur": 1.4,
+   "media_start": 3.5
   },
   {
    "id": "twist_champ",

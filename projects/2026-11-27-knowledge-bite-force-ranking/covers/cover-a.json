@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 40,
+   "y": 800,
+   "w": 1000,
+   "h": 1000,
+   "font_px": 16,
+   "overflow": true
+  },
+  {
+   "kind": "text",
+   "text": "1,670 กิโล",
+   "x": 133.30450439453125,
+   "y": 245.94825744628906,
+   "w": 813.3909912109375,
+   "h": 194,
+   "font_px": 170,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ในงับเดียว!?",
+   "x": 93.13372039794922,
+   "y": 498.45458984375,
+   "w": 893.7687377929688,
+   "h": 171,
+   "font_px": 164,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-bite-force-ranking/look.json",
+  "lines": [
+   "1,670 กิโล",
+   "ในงับเดียว!?"
+  ],
+  "palette": "ocean-teal",
+  "font": "noto"
+ }
+}
