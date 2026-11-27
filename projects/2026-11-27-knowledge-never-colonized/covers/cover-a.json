@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 90,
+   "y": 640,
+   "w": 900,
+   "h": 1160,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ไม่เคยเป็นเมืองขึ้น",
+   "x": 63.78125,
+   "y": 238,
+   "w": 952.421875,
+   "h": 156,
+   "font_px": 118,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "แต่ไม่ได้รอดฟรี!?",
+   "x": 102.71875,
+   "y": 429.390625,
+   "w": 874.546875,
+   "h": 126,
+   "font_px": 118,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/look.json",
+  "lines": [
+   "ไม่เคยเป็นเมืองขึ้น",
+   "แต่ไม่ได้รอดฟรี!?"
+  ],
+  "palette": "retro-cream",
+  "font": "kanit"
+ }
+}

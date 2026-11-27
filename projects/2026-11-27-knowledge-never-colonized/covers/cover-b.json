@@ -1,0 +1,46 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 90,
+   "y": 760,
+   "w": 900,
+   "h": 900,
+   "font_px": 16,
+   "overflow": true
+  },
+  {
+   "kind": "text",
+   "text": "5 ประเทศที่รอด",
+   "x": 175.8125,
+   "y": 247,
+   "w": 728.375,
+   "h": 139,
+   "font_px": 110,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "อันดับ 1 คือบ้านเรา",
+   "x": 98.375,
+   "y": 417,
+   "w": 883.25,
+   "h": 120,
+   "font_px": 110,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/look.json",
+  "lines": [
+   "5 ประเทศที่รอด",
+   "อันดับ 1 คือบ้านเรา"
+  ],
+  "palette": "retro-cream",
+  "font": "kanit"
+ }
+}
