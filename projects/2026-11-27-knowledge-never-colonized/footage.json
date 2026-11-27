@@ -1,0 +1,67 @@
+{
+ "hook_one": {
+  "src": "assets/footage/pixabay-244977.mp4"
+ },
+ "r5": {
+  "src": "assets/footage/pixabay-2691190.jpg"
+ },
+ "r5b": {
+  "src": "assets/footage/pixabay-292862.mp4",
+  "action_at": 5
+ },
+ "r5c": {
+  "src": "assets/footage/pixabay-162244.png"
+ },
+ "r4": {
+  "src": "assets/footage/pixabay-10104.mp4",
+  "action_at": 3
+ },
+ "r4b": {
+  "src": "assets/footage/pixabay-739723.jpg"
+ },
+ "r4c": {
+  "src": "assets/footage/pixabay-162370.png"
+ },
+ "r3": {
+  "src": "assets/footage/pixabay-3362936.jpg"
+ },
+ "r3b": {
+  "src": "assets/footage/pixabay-70872.mp4",
+  "action_at": 3
+ },
+ "r3c": {
+  "src": "assets/footage/pixabay-141424.mp4",
+  "action_at": 3
+ },
+ "r2": {
+  "src": "assets/footage/pixabay-173522.mp4",
+  "action_at": 3
+ },
+ "r2b": {
+  "src": "assets/footage/pixabay-243075.mp4",
+  "action_at": 4
+ },
+ "r2c": {
+  "src": "assets/footage/pixabay-53789.mp4",
+  "action_at": 3
+ },
+ "r1": {
+  "src": "assets/footage/pixabay-24700.mp4",
+  "action_at": 3
+ },
+ "r1b": {
+  "src": "assets/footage/pixabay-7046511.jpg"
+ },
+ "tw_mekong": {
+  "src": "assets/footage/pixabay-32194.mp4",
+  "action_at": 5
+ },
+ "share": {
+  "src": "assets/footage/pixabay-145845.mp4",
+  "action_at": 4
+ },
+ "guess_q": {
+  "src": "assets/footage/nasa-earth-orbit-trim.mp4",
+  "action_at": 3
+ }
+}

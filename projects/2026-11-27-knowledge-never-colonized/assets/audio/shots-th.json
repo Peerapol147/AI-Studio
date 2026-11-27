@@ -4,7 +4,7 @@
  "duration": 47.721,
  "inputs": {
   "shots.json": "3fce2aebb0552d9af58820258f37e3b1223dd56fdf9dc51b87550c0dfc85e8f3",
-  "footage.json": null,
+  "footage.json": "1f7a2207dc7835f2c8b810b25224c77ad2099b73014e6238527de52fc59a8562",
   "assets/audio/words.json": "2b6a9f97790d8c314f81c852790b83f5227b39400910af044f79a23e56192289"
  },
  "shots": [
@@ -20,7 +20,7 @@
   },
   {
    "id": "hook_one",
-   "src": null,
+   "src": "assets/footage/pixabay-244977.mp4",
    "cue": "เหลือรอด",
    "word_at": 1.36,
    "start": 1.28,
@@ -50,17 +50,18 @@
   },
   {
    "id": "guess_q",
-   "src": null,
+   "src": "assets/footage/nasa-earth-orbit-trim.mp4",
    "cue": "คือที่ไหน",
    "word_at": 6.84,
    "start": 6.76,
    "beat": "setup",
    "end": 8.0,
-   "dur": 1.24
+   "dur": 1.24,
+   "media_start": 2.92
   },
   {
    "id": "r5",
-   "src": null,
+   "src": "assets/footage/pixabay-2691190.jpg",
    "cue": "อันดับห้า",
    "word_at": 8.08,
    "start": 8.0,
@@ -70,17 +71,18 @@
   },
   {
    "id": "r5b",
-   "src": null,
+   "src": "assets/footage/pixabay-292862.mp4",
    "cue": "ไม่เคยมีใคร",
    "word_at": 10.08,
    "start": 10.0,
    "beat": "explain",
    "end": 11.86,
-   "dur": 1.86
+   "dur": 1.86,
+   "media_start": 4.92
   },
   {
    "id": "r5c",
-   "src": null,
+   "src": "assets/footage/pixabay-162244.png",
    "cue": "ช่วงหนึ่ง",
    "word_at": 11.94,
    "start": 11.86,
@@ -90,17 +92,18 @@
   },
   {
    "id": "r4",
-   "src": null,
+   "src": "assets/footage/pixabay-10104.mp4",
    "cue": "อันดับสี่",
    "word_at": 14.38,
    "start": 14.3,
    "beat": "explain",
    "end": 16.38,
-   "dur": 2.08
+   "dur": 2.08,
+   "media_start": 2.92
   },
   {
    "id": "r4b",
-   "src": null,
+   "src": "assets/footage/pixabay-739723.jpg",
    "cue": "แพ้อังกฤษ",
    "word_at": 16.46,
    "start": 16.38,
@@ -110,7 +113,7 @@
   },
   {
    "id": "r4c",
-   "src": null,
+   "src": "assets/footage/pixabay-162370.png",
    "cue": "แต่ยัง",
    "word_at": 17.88,
    "start": 17.8,
@@ -120,7 +123,7 @@
   },
   {
    "id": "r3",
-   "src": null,
+   "src": "assets/footage/pixabay-3362936.jpg",
    "cue": "อันดับสาม",
    "word_at": 19.56,
    "start": 19.48,
@@ -130,67 +133,73 @@
   },
   {
    "id": "r3b",
-   "src": null,
+   "src": "assets/footage/pixabay-70872.mp4",
    "cue": "ช่วงสงคราม",
    "word_at": 22.02,
    "start": 21.94,
    "beat": "explain",
    "end": 22.94,
-   "dur": 1.0
+   "dur": 1.0,
+   "media_start": 2.92
   },
   {
    "id": "r3c",
-   "src": null,
+   "src": "assets/footage/pixabay-141424.mp4",
    "cue": "ไม่เคยเป็น",
    "word_at": 23.02,
    "start": 22.94,
    "beat": "explain",
    "end": 24.84,
-   "dur": 1.9
+   "dur": 1.9,
+   "media_start": 2.92
   },
   {
    "id": "r2",
-   "src": null,
+   "src": "assets/footage/pixabay-173522.mp4",
    "cue": "อันดับสอง",
    "word_at": 24.92,
    "start": 24.84,
    "beat": "explain",
    "end": 27.3,
-   "dur": 2.46
+   "dur": 2.46,
+   "media_start": 2.92
   },
   {
    "id": "r2b",
-   "src": null,
+   "src": "assets/footage/pixabay-243075.mp4",
    "cue": "หลังสงคราม",
    "word_at": 27.38,
    "start": 27.3,
    "beat": "explain",
    "end": 28.94,
-   "dur": 1.64
+   "dur": 1.64,
+   "media_start": 3.92
   },
   {
    "id": "r2c",
-   "src": null,
+   "src": "assets/footage/pixabay-53789.mp4",
    "cue": "ไม่ใช่",
    "word_at": 29.02,
    "start": 28.94,
    "beat": "explain",
    "end": 30.62,
-   "dur": 1.68
+   "dur": 1.68,
+   "media_start": 2.92
   },
   {
    "id": "r1",
-   "src": null,
+   "src": "assets/footage/pixabay-24700.mp4",
    "cue": "อันดับหนึ่ง",
    "word_at": 30.7,
    "start": 30.62,
    "beat": "reveal",
    "end": 33.06,
-   "dur": 2.44
+   "dur": 2.44,
+   "media_start": 2.92
   },
   {
    "id": "r1b",
-   "src": null,
+   "src": "assets/footage/pixabay-7046511.jpg",
    "cue": "ปฏิรูป",
    "word_at": 33.14,
    "start": 33.06,
@@ -220,13 +229,14 @@
   },
   {
    "id": "tw_mekong",
-   "src": null,
+   "src": "assets/footage/pixabay-32194.mp4",
    "cue": "ฝั่งซ้าย",
    "word_at": 40.34,
    "start": 40.26,
    "beat": "twist",
    "end": 41.24,
-   "dur": 0.98
+   "dur": 0.98,
+   "media_start": 4.92
   },
   {
    "id": "tw_malay",
@@ -240,13 +250,14 @@
   },
   {
    "id": "share",
-   "src": null,
+   "src": "assets/footage/pixabay-145845.mp4",
    "cue": "คำว่า",
    "word_at": 42.92,
    "start": 42.84,
    "beat": "share",
    "end": 45.46,
-   "dur": 2.62
+   "dur": 2.62,
+   "media_start": 3.92
   },
   {
    "id": "cta",
