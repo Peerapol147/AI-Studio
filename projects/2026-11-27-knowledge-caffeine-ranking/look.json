@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "sunrise-coral",
+  "font": "prompt",
+  "caption": "pop",
+  "opening": "question",
+  "cover": "stack",
+  "transition": "zoom",
+  "music_mood": "upbeat",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": null,
+  "why": "pick แนะนำ mint-paper (สว่าง) แต่ผู้กำกับเปลี่ยนเป็น sunrise-coral: โทนน้ำตาลเข้ม-ส้มเข้ากับกาแฟ/ชาไทย และปกต้องพื้นเข้มตาม feedback ปก A never-colonized; font prompt (ต่างจากตอนก่อน kanit) หนาอ่านง่ายบนปก; เพลง upbeat (เรื่องพลังงาน/คาเฟอีน); เสียงล็อกตามช่อง"
+}
