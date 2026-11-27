@@ -20,8 +20,13 @@ for BLOCK_MIN (10) minutes, so the whole footage step waits at most ~12 s per so
 silently" rule still holds). Every request goes through tools/get.sh. Keys: PIXABAY_API_KEY, PEXELS_API_KEY (env or
 .env; a source without its key is skipped and logged). Base URLs can be overridden (PIXABAY_BASE, PEXELS_BASE,
 OPENVERSE_BASE, NASA_BASE, WIKIMEDIA_BASE) for tests.
+
+ONE AT A TIME (itch 2026-11-27: searches run in parallel = 429 from every source): `search` takes an exclusive lock
+(FOOTAGE_LOCK, default <tmp>/ai-studio-footage-search.lock) for the whole call. A second search started meanwhile prints
+"WAIT ... (parallel search = 429)" and queues behind it for up to FOOTAGE_LOCK_WAIT s (default 600), then exits 3.
+Do not start footage_search in parallel (no `&`, no several agents at once): run the shots one command after another.
 """
-import argparse, json, os, pathlib, re, subprocess, sys, time, urllib.parse
+import argparse, contextlib, fcntl, json, os, pathlib, re, subprocess, sys, tempfile, time, urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 GET = ROOT / 'tools' / 'get.sh'
@@ -73,9 +78,14 @@ def fetch(url, headers=(), sleep=time.sleep):
                 return 'ok', json.loads(r.stdout), f'tries={k + 1}'
             except ValueError:
                 return 'error', None, 'not JSON'
-        msg = r.stderr.strip().splitlines()[-1][:200] if r.stderr.strip() else f'exit {r.returncode}'
+        # get.sh's own "BLOCKED 429 <url>" / "HTTP 404 <url>" line, not the last line of a multi-line error body
+        # (review: SEARCH.json notes showed a fragment of the server's HTML instead of the 429)
+        lines = r.stderr.strip().splitlines()
+        msg = next((ln for ln in lines if ln.startswith(('BLOCKED', 'HTTP '))), lines[-1] if lines else f'exit {r.returncode}')[:200]
         if r.returncode == 75 and 'BLOCKED 429' in r.stderr and k < len(BACKOFF):
             continue
+        if r.returncode == 75 and k:
+            msg = f'{msg} (after {k + 1} tries)'
         return ('blocked' if r.returncode == 75 else 'error'), None, msg
     return 'blocked', None, 'still 429 after backoff'
 
@@ -180,12 +190,14 @@ def search(project, shot, terms, kinds, sources, per, sleep=time.sleep):
     now = time.time()
     blocks = db.setdefault('_blocked', {})
     blocked = {src for src, t in blocks.items() if now - t < BLOCK_MIN * 60}
+    why = db.setdefault('_blocked_why', {})
     seen = {c['id'] + c['kind'] for c in entry['candidates']}
     for term in terms:
         for src in sources:
             for kind in kinds:
                 if src in blocked:
-                    entry['tried'].append(dict(q=term, source=src, kind=kind, status='skipped', note='blocked earlier this run'))
+                    entry['tried'].append(dict(q=term, source=src, kind=kind, status='skipped',
+                                               note=f"blocked earlier this run: {why.get(src, 'BLOCKED')}"[:240]))
                     continue
                 st, cands, note, _ = search_one(src, kind, term, per)
                 entry['tried'].append(dict(q=term, lang='th' if THAI.search(term) else 'en', source=src, kind=kind,
@@ -193,6 +205,7 @@ def search(project, shot, terms, kinds, sources, per, sleep=time.sleep):
                 if st == 'blocked':
                     blocked.add(src)
                     blocks[src] = time.time()
+                    why[src] = note
                     print(f'BLOCKED {src}: {note} -> skipped for the rest of this run', file=sys.stderr)
                 for c in cands:
                     c.update(source=src, kind=kind, q=term)
@@ -261,6 +274,39 @@ def report(project, min_terms=10):
     return 1 if errs else 0
 
 
+@contextlib.contextmanager
+def one_at_a_time():
+    """Exclusive lock so footage searches never run in parallel (parallel = every source answers 429)."""
+    path = pathlib.Path(os.environ.get('FOOTAGE_LOCK') or pathlib.Path(tempfile.gettempdir()) / 'ai-studio-footage-search.lock')
+    wait = float(os.environ.get('FOOTAGE_LOCK_WAIT', '600'))
+    with open(path, 'a+') as fh:
+        try:
+            fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            fh.seek(0)
+            other = fh.read().strip() or '?'
+            print(f'WAIT another footage_search is running ({other}): searches run one at a time (parallel search = 429 '
+                  f'from every source); queued up to {wait:.0f} s', file=sys.stderr)
+            t0 = time.time()
+            while True:
+                try:
+                    fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    break
+                except BlockingIOError:
+                    if time.time() - t0 >= wait:
+                        print(f'ERROR still locked after {wait:.0f} s: wait for the other search to finish, then rerun '
+                              '(never run footage_search in parallel)', file=sys.stderr)
+                        raise SystemExit(3)
+                    time.sleep(0.5)
+            print(f'WAIT done after {time.time() - t0:.0f} s', file=sys.stderr)
+        fh.seek(0); fh.truncate(); fh.write(f'pid {os.getpid()} {" ".join(sys.argv[1:4])}'); fh.flush()
+        try:
+            yield
+        finally:
+            fh.seek(0); fh.truncate(); fh.flush()
+            fcntl.flock(fh, fcntl.LOCK_UN)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     sub = ap.add_subparsers(dest='cmd', required=True)
@@ -270,7 +316,8 @@ def main(argv=None):
     r = sub.add_parser('report'); r.add_argument('project', type=pathlib.Path); r.add_argument('--min-terms', type=int, default=10)
     a = ap.parse_args(argv)
     if a.cmd == 'search':
-        search(a.project, a.shot, a.terms, a.kinds.split(','), a.sources.split(','), a.per)
+        with one_at_a_time():
+            search(a.project, a.shot, a.terms, a.kinds.split(','), a.sources.split(','), a.per)
         return 0
     return report(a.project, a.min_terms)
 

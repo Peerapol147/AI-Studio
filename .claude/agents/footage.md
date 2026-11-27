@@ -18,6 +18,7 @@ tools: Bash, Read, Write, WebFetch, Glob
 - **ทุกช็อตที่ยังไม่มีไฟล์: ค้นอย่างน้อย 10 คำ** ไทย + อังกฤษ, วิดีโอ + ภาพนิ่ง, หลายแหล่ง ด้วย
   `python3 tools/footage_search.py search <project> <shot id> "ข้อมือ" "เส้นเอ็นข้อมือ" "wrist tendon" "palm close up" ... `
   (ค่าเริ่ม = Pixabay + Pexels + Openverse + NASA + Wikimedia × video + photo, จดทุกคำ/ผลลง `assets/footage/SEARCH.json`; ไม่ดาวน์โหลด)
+  **รันทีละคำสั่งเท่านั้น ห้ามขนาน** (ห้าม `&`, ห้ามสั่งหลายช็อตพร้อมกัน, ห้ามแยก agent ค้นพร้อมกัน): ตอน itch ค้นขนาน = 429 ทุกแหล่ง; เครื่องมือล็อกไว้แล้ว ตัวที่สองจะขึ้น `WAIT` แล้วรอคิว (เกิน 10 นาที exit 3)
   คำค้นให้หลากหลาย: สิ่งของตรงๆ, ท่าทาง, มุมกล้อง (close up / macro / top view), อาชีพ/สถานที่, คำพ้อง, ชื่อวิทยาศาสตร์
 - เลือกจาก candidates (ดู tags/ภาพตัวอย่าง ข้ามภาพ AI/generated) แล้วดาวน์โหลด: Pixabay ใช้ `tools/footage.sh`; แหล่งอื่น `bash tools/get.sh <url> assets/footage/<source>-<id>.<ext>` + `tools/credits.py add` (ไลเซนส์ + ผู้สร้างจาก SEARCH.json)
 - ไม่มี `PEXELS_API_KEY` = ข้าม Pexels (tool จดว่า skipped) บอกผู้กำกับในคำตอบ

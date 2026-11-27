@@ -18,6 +18,8 @@ class H(http.server.BaseHTTPRequestHandler):
         if p.startswith('/nasa429'):
             self.server.n429 += 1
             return self._send(429, {'e': 'slow down'})
+        if p.startswith('/html429'):                                 # multi-line error page body
+            return self._raw(429, b'<html>\n<body>\nToo Many Requests\n</body>\n</html>\n')
         body = {'/api/videos/': {'hits': [{'id': 1, 'user': 'u', 'pageURL': 'https://px/1', 'duration': 9,
                                            'videos': {'medium': {'url': 'https://cdn/v1.mp4', 'width': 1920, 'height': 1080}}}]},
                 '/api/': {'hits': [{'id': 2, 'user': 'u', 'pageURL': 'https://px/2', 'largeImageURL': 'https://cdn/p2.jpg'}]},
@@ -32,6 +34,9 @@ class H(http.server.BaseHTTPRequestHandler):
                     '9': {'pageid': 9, 'index': 3, 'imageinfo': [{'url': 'https://up/n.jpg', 'extmetadata': {'LicenseShortName': {'value': 'CC BY-NC-SA 2.0'}}}]}}}},
                 }.get(p)
         return self._send(200 if body else 404, body or {'e': 'nf'})
+
+    def _raw(self, code, b):
+        self.send_response(code); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
 
     def _send(self, code, obj):
         b = json.dumps(obj).encode()
@@ -140,3 +145,38 @@ def test_blocked_source_does_not_count_as_answered(srv, tmp_path):
     (p / 'footage.json').write_text(json.dumps({'a': {'src': 'assets/footage/x.mp4'}}))
     r = run('report', p)
     assert r.returncode == 1 and 'only one source answered' in r.stdout
+
+
+def test_blocked_note_shows_the_429_not_the_error_body(srv, tmp_path):
+    """review: SEARCH.json note was the last line of the server's HTML ("</html>"), not "BLOCKED 429"."""
+    p = project(tmp_path)
+    env = {'NASA_BASE': srv.url + '/html429'}
+    r = run('search', p, 'wrist', 'wrist', 'hand', '--sources', 'nasa', '--kinds', 'photo', env=env)
+    assert r.returncode == 0, r.stderr
+    db = json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())
+    t = db['wrist']['tried']
+    assert t[0]['status'] == 'blocked' and t[0]['note'].startswith('BLOCKED 429') and '(after 3 tries)' in t[0]['note']
+    assert t[1]['status'] == 'skipped' and 'BLOCKED 429' in t[1]['note']
+    assert db['_blocked_why']['nasa'].startswith('BLOCKED 429')
+
+
+def test_searches_run_one_at_a_time(srv, tmp_path):
+    """itch 2026-11-27: parallel searches = 429 from every source. A second search waits for the lock (queue), and
+    gives up with exit 3 when the first one does not finish within FOOTAGE_LOCK_WAIT."""
+    import fcntl, time
+    p = project(tmp_path)
+    lock = tmp_path / 'fs.lock'
+    env = {'FOOTAGE_LOCK': str(lock), 'OPENVERSE_BASE': srv.url}
+    with open(lock, 'a+') as fh:
+        fcntl.flock(fh, fcntl.LOCK_EX)                              # another search holds the lock
+        r = run('search', p, 'wrist', 'wrist', '--sources', 'openverse', env={**env, 'FOOTAGE_LOCK_WAIT': '1'})
+        assert r.returncode == 3 and 'WAIT another footage_search is running' in r.stderr and 'parallel' in r.stderr
+        assert not (p / 'assets' / 'footage' / 'SEARCH.json').exists()
+        threading.Timer(1.0, lambda: fcntl.flock(fh, fcntl.LOCK_UN)).start()   # first search finishes after 1 s
+        t0 = time.time()
+        r = run('search', p, 'wrist', 'wrist', '--sources', 'openverse', env={**env, 'FOOTAGE_LOCK_WAIT': '20'})
+    assert r.returncode == 0, r.stderr
+    assert 'WAIT done' in r.stderr and time.time() - t0 >= 0.9
+    assert json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']['candidates']
+    r = run('search', p, 'wrist', 'hand', '--sources', 'openverse', env=env)  # free lock: no WAIT
+    assert r.returncode == 0 and 'WAIT' not in r.stderr

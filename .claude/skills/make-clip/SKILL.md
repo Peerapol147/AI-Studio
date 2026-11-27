@@ -107,6 +107,7 @@ cues: list ของ `{"t": วินาที, "type": "appear|scene_cut|...", 
 | scribe ถอดคำควบกล้ำผิด ("กร๊อบ"→"ก๊อบ") cue หาไม่เจอ | ใช้คำข้างเคียงเป็น cue หรือสะกดตามที่ถอด; ซับแก้กลับเป็นคำที่ถูก |
 | footage ได้น้อยแล้วไม่มีใครบอกผู้ใช้ (palmaris: ค้นไม่กี่คำ ไม่ค้นภาพนิ่ง) | `tools/footage_search.py` ≥10 คำ/ช็อต หลายแหล่ง + `report` (ไม่ถึงครึ่ง = ALERT.md แจ้งผู้ใช้ทันที) |
 | Wikimedia API 429 (retry-after 600) | **429: `footage_search.py` ลองซ้ำ 2 ครั้ง (3, 9 วิ) แล้วข้ามทั้งรอบ ห้ามรอ retry-after** ใช้ Openverse images API ตั้งแต่แรก: `https://api.openverse.org/v1/images/?q=<คำ>&license=cc0,by,by-sa,pdm` (ได้ Wikimedia/Flickr/iNaturalist พร้อม creator/license) |
+| footage_search ขนาน (itch 2026-11-27: 429 ทุกแหล่ง) | **ค้นทีละคำสั่ง ห้ามขนาน**: `footage_search.py search` ล็อกไฟล์ ตัวที่สองขึ้น `WAIT` รอคิว (เกิน `FOOTAGE_LOCK_WAIT` 600 วิ exit 3); note ใน SEARCH.json บอก `BLOCKED 429 ...` ของแหล่งที่โดน |
 | ภาพนิ่ง Pixabay API กว้าง ≤1280 px | editor ทำ "การ์ดภาพ" บนพื้นเบลอของภาพเดียวกัน + push-in/parallax (ได้ผลดี) ไม่ขยายเต็มจอให้แตก |
 | agent ของโปรเจกต์ไม่โหลด (เซสชันเริ่มที่ /home/user ไม่ใช่ในรีโป) | ใช้ agent `general-purpose` แล้วสั่งให้อ่าน `.claude/agents/<role>.md` ก่อนเริ่ม (ระบุ model ตามตำแหน่ง) |
 | `tools/music.sh` คำค้นยาวได้ 0 ผล | ใช้ 1-2 คำ (เช่น "playful", "funny") |
