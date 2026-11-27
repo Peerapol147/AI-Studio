@@ -677,7 +677,6 @@
         {
           "id": "fc0132d9-d163-44f6-aabc-ddd231041ff9",
           "scope": "project",
-          "report": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/video/.hyperframes/artifacts/checks/fc0132d9-d163-44f6-aabc-ddd231041ff9.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -707,7 +706,9 @@
           "revision": "20a64861-dc6c-4339-b28a-d3cbf1cc2261",
           "inputFingerprint": "8595c98dc884c642d657c695c453c7de1611403d84298a553fd84858c7b77850",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "82710d42-3fe1-47ac-b67b-a9428125e481"
         }
       ],
       "4e1e8641-7668-48dc-8e6c-146c5ddf88f5": [
@@ -1712,15 +1713,15 @@
   },
   "renders": {
     "latest": {
-      "id": "e18d57e9-2579-4cac-8c9a-a3d4ccd12e1c",
-      "completedAt": 1795766657409,
+      "id": "82710d42-3fe1-47ac-b67b-a9428125e481",
+      "completedAt": 1795767267130,
       "output": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/renders/never-colonized-th-silent.mp4",
       "status": "completed",
-      "revision": "4e1e8641-7668-48dc-8e6c-146c5ddf88f5"
+      "revision": "1c3fdce0-e4dc-4d69-b516-f77ec944ded9"
     },
     "retainedRevisions": [
-      "4e1e8641-7668-48dc-8e6c-146c5ddf88f5",
-      "20a64861-dc6c-4339-b28a-d3cbf1cc2261"
+      "1c3fdce0-e4dc-4d69-b516-f77ec944ded9",
+      "4e1e8641-7668-48dc-8e6c-146c5ddf88f5"
     ]
   },
   "pendingArtifactCleanup": []
