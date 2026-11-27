@@ -644,8 +644,8 @@
   },
   "checks": {
     "latest": {
-      "revision": "4e1e8641-7668-48dc-8e6c-146c5ddf88f5",
-      "id": "e0f12ecf-f52c-4365-9bae-405f245385d9"
+      "revision": "77606da0-59b2-459c-833a-b1332f47386c",
+      "id": "f40beb87-58d5-458f-8bb1-022b6878fff8"
     },
     "revisions": {
       "04e09939-ad98-44d7-9400-da41e1a31357": [
@@ -766,7 +766,6 @@
         {
           "id": "e0f12ecf-f52c-4365-9bae-405f245385d9",
           "scope": "project",
-          "report": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/video/.hyperframes/artifacts/checks/e0f12ecf-f52c-4365-9bae-405f245385d9.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -795,6 +794,45 @@
           "contentHash": "f279116730bec85d11f9c320b9fda1f8850cb069cd4dc0499a6198c028c65461",
           "revision": "4e1e8641-7668-48dc-8e6c-146c5ddf88f5",
           "inputFingerprint": "ac7aff9613eaa8338bddceaf405a99815c34b78e971a9612fa6c70ba780907b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "52933019-2610-45e2-b918-dd7d7f1fd52a"
+        }
+      ],
+      "77606da0-59b2-459c-833a-b1332f47386c": [
+        {
+          "id": "f40beb87-58d5-458f-8bb1-022b6878fff8",
+          "scope": "project",
+          "report": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/video/.hyperframes/artifacts/checks/f40beb87-58d5-458f-8bb1-022b6878fff8.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795769543170,
+          "contentHash": "ac2a0bcd82309fe3abe01c8ac9e4f5239a467cd573d3919fce82d6f579155c7a",
+          "revision": "77606da0-59b2-459c-833a-b1332f47386c",
+          "inputFingerprint": "358de709f85838e6e9504a0289c5d5644ed7b12c22079da57cc3917cfef62285",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -1866,15 +1904,15 @@
   },
   "renders": {
     "latest": {
-      "id": "82710d42-3fe1-47ac-b67b-a9428125e481",
-      "completedAt": 1795767267130,
+      "id": "52933019-2610-45e2-b918-dd7d7f1fd52a",
+      "completedAt": 1795770018527,
       "output": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/renders/never-colonized-th-silent.mp4",
       "status": "completed",
-      "revision": "1c3fdce0-e4dc-4d69-b516-f77ec944ded9"
+      "revision": "77606da0-59b2-459c-833a-b1332f47386c"
     },
     "retainedRevisions": [
-      "1c3fdce0-e4dc-4d69-b516-f77ec944ded9",
-      "4e1e8641-7668-48dc-8e6c-146c5ddf88f5"
+      "77606da0-59b2-459c-833a-b1332f47386c",
+      "1c3fdce0-e4dc-4d69-b516-f77ec944ded9"
     ]
   },
   "pendingArtifactCleanup": []
