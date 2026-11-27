@@ -208,7 +208,9 @@ const FASTB={hook:1,twist:1};
 const XF=0.12;
 // entry of shot s (the look's transition; fast beats always get it, hold beats get a soft 0.1 s match)
 // the look's transition: inside hook/twist and wherever the beat changes; other cuts inside one beat = soft match
-const kind=(s,prev)=>(s.beat==='loop')?'match':(FASTB[s.beat]||s.beat!==prev.beat)?TR:'match';
+// episode edit: the look's flash only on a new rank / hook / twist (director 2026-11-27: no flash inside one rank)
+const FLASHAT={guess:1,r5:1,r4:1,r3:1,r2:1,r1:1,twist_model:1,twist_real:1,twist_measured:1};
+const kind=(s,prev)=>(s.beat==='loop')?'match':(FASTB[s.beat]||FLASHAT[s.id])?TR:'match';
 SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1); s.k=i?kind(s,SC[i-1]):'none';});
 function sceneState(s,t){
   if(t<s.a) return null;
@@ -350,7 +352,7 @@ function barGfx(t){
   const m=clamp(S(t-14.14,13,0.8)*(1-S(t-16.44,13,0.8)),0,1.08);
   const ppk=lerp(770/1860,3.0,m), x0=lerp(130,120,m);
   const v=kgf(t); let r=R[0]; R.forEach(q=>{if(t>=q.c0) r=q;});   // the animal whose value the bar shows
-  const yM=lerp(1336,830,m), hM=lerp(22,72,m), yB=lerp(1368,935,m), hB=lerp(44,110,m);
+  const yM=lerp(1290,830,m), hM=lerp(36,72,m), yB=lerp(1344,935,m), hB=lerp(62,110,m);
   const land=R.find(q=>t>=q.c1&&t<q.c1+0.6), wob=land?1+0.04*Math.exp(-(t-land.c1)*8)*Math.sin((t-land.c1)*28):1;
   const wMain=Math.max(0,Math.min(v,1670))*ppk*wob, wSeg=Math.max(0,v-1670)*ppk*wob;
   const bm=$('bm'), bb=$('bb'), bs=$('bseg');
@@ -360,12 +362,12 @@ function barGfx(t){
   Object.assign(bs.style,{left:f2(x0+wMain)+'px',top:yB+'px',height:hB+'px',width:f2(wSeg)+'px',opacity:wSeg>1?'1':'0'});
   bs.className='bar'+(t>=40.46?' st':'');
   // labels: right of each bar (bigger while zoomed)
-  const fs=lerp(40,64,m), bml=$('bml'), bbl=$('bbl');
+  const fs=lerp(46,64,m), bml=$('bml'), bbl=$('bbl');
   Object.assign(bml.style,{left:f2(x0+MAN*ppk+18)+'px',top:f2(yM+hM/2-fs*0.7)+'px',fontSize:f2(fs)+'px'});
   const nm=t>=42.34?'จระเข้ ~1,670 (วัดจริง)':(r.sh+' ~'+(v>=r.val-0.5&&t>=r.c1?fmt(r.val):fmt(Math.round(v/10)*10)));
   setTxt(bml,'ผู้ชาย ~86'); setTxt(bbl,v>0?nm:'');
-  const wAll=wMain+wSeg, inside=wAll>560&&m<0.1;
-  const fs2=lerp(40,72,m);
+  const wAll=wMain+wSeg, inside=wAll>380&&m<0.1;
+  const fs2=lerp(46,72,m);
   Object.assign(bbl.style,{fontSize:f2(fs2)+'px',top:f2(yB+hB/2-fs2*0.68)+'px'});
   if(inside){ bbl.style.left=f2(x0+18)+'px'; } else bbl.style.left=f2(x0+wAll+18)+'px';
 }

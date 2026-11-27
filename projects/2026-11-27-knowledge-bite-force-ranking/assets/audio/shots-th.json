@@ -3,8 +3,8 @@
  "lead": 0.08,
  "duration": 48.155,
  "inputs": {
-  "shots.json": "9e36e1e0ec759f1842c797f9271ef3e0ddf84e933af3abec597d1a6aa4f034a2",
-  "footage.json": "b5b79a1ba7b1aef673f73d12752998b78e055983c24754f6b532e36f9b47bacb",
+  "shots.json": "b373ea51f381c0807e30d88b5d6d24ff519dc5086cd4af8981b2448bcc5f09cd",
+  "footage.json": "63a2bd9bb8d0e54d6520399487023bde1a0481e33da7ef128a356635766d30ca",
   "assets/audio/words.json": "2b4ce4cb5cb53f3c0c5c966f9b46b357390502386c755e860cef3e7aff874548"
  },
  "shots": [
@@ -166,16 +166,13 @@
   },
   {
    "id": "r2_num",
-   "src": "assets/footage/pixabay-173059.mp4",
+   "src": "assets/footage/pixabay-1214750.jpg",
    "cue": "วัดจริงได้ราวพัน",
    "word_at": 30.88,
    "start": 30.8,
    "beat": "reveal",
-   "hit": "พันหก",
-   "hit_at": 31.56,
    "end": 33.44,
-   "dur": 2.64,
-   "media_start": 0.0
+   "dur": 2.64
   },
   {
    "id": "r1",
