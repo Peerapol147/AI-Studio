@@ -236,9 +236,9 @@ function cards(t){
     el.style.transform=`translateY(${f2(-30*u)}px) rotate(${((u-0.5)*1.4).toFixed(3)}deg) scale(${(1+0.07*u).toFixed(4)})`; });
 }
 // ---- SEA map (hook, and the loop shot plays it backwards so the last frame = frame 0) ----
-const TH=[313.7,414], HX=540, HY=880;
+const TH=[313.7,414], HX=540, HY=1000, HS=1.3;
 function seaState(sid,tau){
-  const z=eio((tau-0.86)/0.42), s=1+1.5*z;
+  const z=eio((tau-0.86)/0.42), s=HS*(1+1.2*z);
   mapT($(sid+'-w'),s,TH[0],TH[1]+40*z,HX,HY+40*z);
   $(sid+'-glow').style.opacity=f2(0.5+0.4*Math.cos(2*Math.PI*tau/1.6));
   for(let i=0;i<5;i++){ const l=$(sid+'-l'+i); l.style.transform=`translateY(${f2(-5*Math.sin(2*Math.PI*tau/1.4+i*1.3)+5*Math.sin(i*1.3))}px)`; l.style.opacity=f2(1-z); }
@@ -249,8 +249,8 @@ function seaGfx(t){
 }
 // ---- WORLD map: guess (Thailand pinned, 4 floating ?), definition card, cta (5 pins + ?6) ----
 const WY=520;
-function worldState(sid,t,a){
-  const u=t-a; mapT($(sid+'-w'),1+0.012*u,608,470,540+12*Math.sin(u*0.9),WY+470+6*Math.sin(u*1.1));
+function worldState(sid,t,a,px=608){
+  const u=t-a; mapT($(sid+'-w'),1+0.012*u,px,470,540+12*Math.sin(u*0.9),WY+470+6*Math.sin(u*1.1));
 }
 function guessGfx(t){
   if(t>=3.0&&t<=6.9){
@@ -270,7 +270,7 @@ function guessGfx(t){
 }
 function ctaGfx(t){
   const C=shotAt('cta'); if(t<C.a-0.2||t>C.b+0.2) return;
-  worldState('cta',t,C.a);
+  worldState('cta',t,C.a,566);
   ['th','bt','np','ir','jp'].forEach((k,i)=>{ const ta=C.a+0.02+i*0.06, a=pop(t,ta,22,0.5), p=$('cta-p'+k), n=$('cta-n'+k);
     p.style.opacity=f2(clamp((t-ta)/0.05)); p.style.transform=`translateY(${f2(-70*(1-clamp(a,0,1.2))-6*Math.abs(Math.sin((t-ta)*3+i)))}px)`;
     n.style.opacity=f2(clamp((t-ta-0.08)/0.08)); });
@@ -320,7 +320,7 @@ function stamp(t){
 const ZC=[492,500];
 function zoomGfx(t){
   const a=35.36, e=40.26; const el=$('zmap');
-  if(t<a-0.01||t>e+0.13){ el.style.opacity='0'; return; }
+  if(t<a-0.01||t>e+0.13){ el.style.opacity='0'; $('bigtop').style.opacity='0'; return; }
   const out=t>=e?eo((t-e)/0.12):0;
   el.style.opacity=f2(clamp((t-a)/0.1)); el.style.transform=`translateX(${f2(-1080*out)}px)`;
   const u=clamp((t-a)/(e-a)), s=0.92+0.06*eio(u);

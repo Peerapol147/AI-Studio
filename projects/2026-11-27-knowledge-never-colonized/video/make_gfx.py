@@ -54,7 +54,7 @@ out.append(sea('loop'))
 # ---------- WORLD map (guess / guess_def / cta) ----------
 P = M['world']['pins']
 NAMES = {'th': 'ไทย', 'bt': 'ภูฏาน', 'np': 'เนปาล', 'ir': 'อิหร่าน', 'jp': 'ญี่ปุ่น'}
-LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (-150, -96), 'ir': (-60, 36), 'jp': (-40, 34)}
+LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (-150, -96), 'ir': (20, 30), 'jp': (-40, 34)}
 
 
 def world(sid, mode):
@@ -113,7 +113,7 @@ def zoom(sid, slot):
             s.append(f'<g id="{sid}-{aid}" class="arr"><path class="ash" d="{d}" pathLength="1"/>'
                      f'<path class="ahd" id="{sid}-{aid}h" d="{HEAD[aid]}"/></g>')
     s.append('</svg>')
-    lab = [pill('uk', 'อังกฤษ', 96, 560, f' id="{sid}-luk1"'), pill('uk', 'อังกฤษ', 640, 960, f' id="{sid}-luk2"'),
+    lab = [pill('uk', 'อังกฤษ', 96, 560, f' id="{sid}-luk1"'), pill('uk', 'อังกฤษ', 590, 1020, f' id="{sid}-luk2"'),
            pill('fr', 'ฝรั่งเศส', 668, 190, f' id="{sid}-lfr"')]
     return f'<div class="mapw zmapw" id="{sid}-w">' + ''.join(s) + ''.join(lab) + '</div>'
 
