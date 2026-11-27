@@ -87,8 +87,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/
-   transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
-   push + drift + the look's transition); setup/explain/reveal/share/cta = hold the picture (slow push only). */
+   transition) comes from look.json via CSS variables + classes. Camera: every shot moves at the speed of its real
+   length (s.cam from build_index.py camera(): short cut = faster push; hook/twist stronger), never a still frame. */
 (function(){
 const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, SC=D.sc, TR=D.look.transition;
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
@@ -121,10 +121,9 @@ function scenes(t){
     const uu=clamp((t-s.a)/Math.max(0.3,s.b-s.a));
     if(s.beat==='hook'&&s.still){ s.kb.style.transform=`scale(${lerp(1.0,1.06,uu).toFixed(5)})`; return; }
     if(s.beat==='loop'){ s.kb.style.transform=`scale(${lerp(1.06,1.0,uu).toFixed(5)})`; return; } // ends on the frame-0 scale
-    if(FASTB[s.beat]){ const k=lerp(1.04,1.12,eio(uu)), rr=lerp(0.8,-0.8,uu), dx=12*Math.sin(t*1.9+s.a), dy=9*Math.cos(t*1.4+s.a);
-      s.kb.style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
-    else { const k=lerp(1.0,1.08,eio(uu)), dy=-18*uu, rr=lerp(-0.5,0.5,uu);  // hold: 8 % push + 1 deg drift, no cut
-      s.kb.style.transform=`translateY(${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
+    // push fast off the cut (2.2x mean), ease out but keep >= 40 % speed to the next cut; drift (sin/cos) never stops
+    const c=s.cam, k=lerp(c.k0,c.k1,0.4*uu+0.6*eo(uu)), rr=lerp(c.r0,c.r1,uu), dx=c.dr*Math.sin(t*1.7+s.a), dy=0.8*c.dr*Math.cos(t*1.3+s.a)-c.pan*(uu-0.5);
+    s.kb.style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`;
   });
   $('flash').style.opacity=f2(clamp(fl));
 }

@@ -10,9 +10,10 @@ Generates index.html from index.html.tpl + episode.json (this folder) + ../look.
 
 look.json picks palette / font / caption / opening / cover / transition from templates/looks/looks.json (music_mood and
 voice are for the voice step; music_file becomes the music track). Shot times come from shots-th.json only
-(tools/shot_times.py, refused if stale). Every shot needs a "beat" (hook ... loop): hook + twist shots get the
-fast camera, the rest hold the picture (slow 8 % push + 1 deg drift, no cut); the look's transition plays wherever the
-beat changes and inside hook/twist, other cuts inside one beat are a 0.1 s match. See docs/editing-v3.md.
+(tools/shot_times.py, refused if stale). Every shot needs a "beat" (hook ... loop). Camera (dev v3.7): every shot
+moves at a speed set by its REAL length (camera() below: a short shot pushes faster, never a still frame > 0.5 s),
+hook/twist ~1.3x stronger; the look's transition plays wherever the beat changes and inside hook/twist, other cuts
+inside one beat are a 0.1 s match. See docs/editing-v3.md.
 
 episode.json:
 {
@@ -140,6 +141,21 @@ hook_ms = SHOTS[0].get('media_start') or 0.0
 XF = 0.12
 
 
+def camera(d, beat, i):
+    """Ken Burns of one shot from its real length d (s), brainrot-v2 feel (every shot moves: push + tilt + drift).
+    push grows with length but slower than the length, so a short cut moves faster (1 s: 10 %/s, 2 s: 6.5 %/s,
+    4 s+: 17 % = 4.3 %/s and less) and a 24 px pan (up/down, alternating) rides on every shot; it starts at 2.2x its mean speed on the cut (the punch) and keeps >= 40 % of the
+    mean speed to the next cut (the old smootherstep stood still for the first and last ~10 % of every hold shot), and
+    the drift never stops. hook/twist get 1.3x push (scale capped at 1.22) and a wider drift. k0 >= 1.04/1.06 keeps
+    the plate edge out of frame under the tilt + drift."""
+    fast = beat in FAST
+    push = min(0.17, max(0.10, 0.07 + 0.03 * d)) * (1.3 if fast else 1.0)
+    k0 = 1.06 if fast else 1.04
+    rot = (0.8 if fast else 0.6) * (1 if i % 2 else -1)
+    return {'k0': k0, 'k1': round(min(1.22, k0 + push), 4), 'r0': rot, 'r1': -rot, 'dr': 14 if fast else 10,
+            'pan': 24 if i % 2 else -24}
+
+
 def is_video(p):
     return p.lower().endswith(('.mp4', '.webm', '.mov'))
 
@@ -165,7 +181,7 @@ def scenes():
         else:
             inner = f'<img class="vid" src="{html.escape(plate)}" alt=""/>'
         out.append(f'  <div class="sc" id="sh-{sid}"><div class="kb" id="kb-{sid}">{inner}</div><div class="vig"></div></div>')
-        sc.append({'id': sid, 'a': a, 'b': b, 'beat': s['beat'], 'still': loop or i == 0})
+        sc.append({'id': sid, 'a': a, 'b': b, 'beat': s['beat'], 'still': loop or i == 0, 'cam': camera(b - a, s['beat'], i)})
     return '\n'.join(out), sc
 
 

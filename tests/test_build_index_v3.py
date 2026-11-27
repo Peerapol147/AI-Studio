@@ -226,3 +226,35 @@ def test_frame0_title_every_opening_cover_itch_regression(tmp_path):
     assert min(got['pov', 'tilt']) >= 80, got['pov', 'tilt']          # was 65
     tpl = (V3 / 'index.html.tpl').read_text()
     assert 'align-items:flex-start' not in tpl and 'text-align:left' not in tpl
+
+
+def test_camera_speed_follows_real_shot_length(tmp_path):
+    """dev v3.7 (user: "motion เมื่อก่อนสวยและเรียงจังหวะดีกว่านี้"): v3 moved only hook/twist; every other shot crept an
+    8 % smootherstep push that stood still at both ends. Now every shot gets camera() from its real length: shorter =
+    faster push, push never below 40 % of its mean speed before the next cut, drift on every shot, hook/twist stronger."""
+    proj, video = project(tmp_path / 'a', LOOK_A)
+    r = build(video)
+    assert r.returncode == 0, r.stderr
+    page = (video / 'index.html').read_text()
+    data = json.loads(re.search(r'const D=(\{.*?\}), DUR=', page).group(1))
+    moving = [s for s in data['sc'] if not s['still']]
+    assert moving
+    for s in moving:
+        c, d = s['cam'], s['b'] - s['a']
+        assert c['k0'] >= 1.04 and c['dr'] >= 10 and abs(c['pan']) >= 20 and abs(c['r0']) >= 0.6 and c['r0'] == -c['r1']   # edge-safe, drifts
+        speed = (c['k1'] - c['k0']) / d
+        assert speed >= 0.02, (s['id'], d, speed)                  # >= 2 %/s mean push on a <= 4 s shot
+        assert 0.4 * speed * 1080 / 30 > 0.2                        # slowest moment still moves > 0.2 px/frame at the edge
+    # the rule itself: shorter shot = faster, longer = more push but slower; fast beats stronger
+    src = (V3 / 'build_index.py').read_text()
+    ns = {'FAST': ('hook', 'twist')}
+    exec(re.search(r'(def camera\(.*?\n)(?=\n\ndef )', src, re.S).group(1), ns)
+    cam = ns['camera']
+    sp = lambda d, beat='explain': (cam(d, beat, 1)['k1'] - cam(d, beat, 1)['k0']) / d
+    assert sp(0.8) > sp(1.5) > sp(3.0) > sp(5.0) > 0.02
+    assert cam(5.0, 'explain', 1)['k1'] - cam(5.0, 'explain', 1)['k0'] > cam(1.0, 'explain', 1)['k1'] - cam(1.0, 'explain', 1)['k0']
+    assert sp(1.5, 'twist') > sp(1.5, 'explain') and cam(1, 'hook', 0)['dr'] > cam(1, 'setup', 0)['dr']
+    assert cam(1, 'setup', 0)['r0'] == -cam(1, 'setup', 1)['r0']     # tilt direction alternates shot to shot
+    tpl = (V3 / 'index.html.tpl').read_text()
+    assert 'lerp(1.0,1.08,eio(uu))' not in tpl and 'const c=s.cam' in tpl
+    assert sp(1.0) >= 0.095 and sp(2.0) >= 0.06 and all(cam(d, b, 0)['k1'] <= 1.22 for d in (1, 3, 9) for b in ('hook', 'setup'))
