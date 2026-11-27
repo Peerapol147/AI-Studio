@@ -237,3 +237,34 @@ def test_music_reused_within_last_three_warns(tmp_path):
                                              'music_file': 'same.mp3', 'cover_text': 'ใหม่หมด'})
     res = run('check', new, '--no-git')
     assert 'WARN  music_file same.mp3 also used in 2026-11-20-knowledge-a' in res.stdout
+
+
+def test_cover_palette_dark_even_when_the_look_is_light(tmp_path):
+    """caffeine-ranking 2026-11-27: the user liked the glowing map on a dark cover, pick had drawn mint-paper.
+    pick on a light palette writes a dark cover_palette (not the previous episode's); --final refuses a light cover
+    palette; the same cover palette as the previous episode is refused."""
+    r = repo(tmp_path)
+    ep(r, '2026-11-20-knowledge-a', {**BASE, 'palette': 'night-violet', 'opening': 'question', 'cover_palette': 'ocean-teal'})
+    new = r / 'projects' / '2026-11-22-knowledge-new'
+    assert run('pick', new, '--write', '--no-git', '--set', 'palette=mint-paper').returncode == 0
+    look = json.loads((new / 'look.json').read_text())
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    assert look['palette'] == 'mint-paper' and look['cover_palette'] not in ('mint-paper', 'retro-cream', 'ocean-teal')
+    look.update(music_file='music-new.mp3', cover_text='กาแฟแก้วไหนแรงสุด?')
+    (new / 'look.json').write_text(json.dumps(look))
+    assert run('check', new, '--final', '--no-git').returncode == 0
+    del look['cover_palette']                                       # cover would be mint-paper = light
+    (new / 'look.json').write_text(json.dumps(look))
+    res = run('check', new, '--no-git')
+    assert res.returncode == 0 and 'is light' in res.stdout
+    res = run('check', new, '--final', '--no-git')
+    assert res.returncode == 1 and 'cover palette \'mint-paper\' is light' in res.stdout and 'night-violet' in res.stdout
+    look['cover_palette'] = 'ocean-teal'                            # = previous episode's cover palette
+    (new / 'look.json').write_text(json.dumps(look))
+    res = run('check', new, '--no-git')
+    assert res.returncode == 1 and 'cover palette \'ocean-teal\' = previous episode' in res.stdout
+    look['cover_palette'] = 'pink'
+    (new / 'look.json').write_text(json.dumps(look))
+    assert 'cover_palette \'pink\' not in' in run('check', new, '--no-git').stdout
+    src = (ROOT / 'tools' / 'cover_shot.js').read_text()
+    assert 'look.cover_palette || look.palette' in src

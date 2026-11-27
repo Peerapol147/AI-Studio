@@ -8,7 +8,8 @@
 look.json = {"template": "brainrot-v3", "palette": .., "font": .., "caption": .., "opening": .., "cover": ..,
              "transition": .., "music_mood": .., "voice": "<catalog key>|id:<elevenlabs voice_id>",
              "music_file": "<file in assets/audio>|null", "cover_text": "<frame-0 text>", "why": "..",
-             "covers": [{"id": "a", "lines": [..]}, ..]  (uploaded thumbnail A/B, checked by tools/cover_check.py)}
+             "covers": [{"id": "a", "lines": [..]}, ..]  (uploaded thumbnail A/B, checked by tools/cover_check.py),
+             "cover_palette": "<dark palette for the uploaded covers; default = palette>"}
 Locked channels (looks.json channel_lock) also carry "tts_model", "atempo", "vo_lufs".
 
 History = the other projects of the same channel, from projects/ in this checkout AND from every
@@ -27,6 +28,10 @@ check, exit 1 (ERROR) when:
   - cover_text equal or similar (character-pair overlap >= 0.6) to the cover text of ANY earlier episode of the
     channel (not only the last 3: the knee-crack cover repeated the knuckle-crack cover ~10 episodes later)
   - --final and music_file or cover_text is empty, or no claude/ep-* branch is known to git (history not fetched)
+  - cover palette (cover_palette, else palette) not in the catalog, or = the previous episode's cover palette when either
+    episode sets cover_palette; --final and the cover palette is LIGHT (bg luminance > 0.2): covers are dark
+    (caffeine-ranking 2026-11-27: the user liked the glowing map on a dark background, pick had drawn mint-paper).
+    pick writes cover_palette = palette when it is dark, else the dark palette used longest ago (not the previous one)
   - the channel has a lock in looks.json "channel_lock" (knowledge: voice George, tts_model eleven_v3, atempo 1.1)
     and look.json differs from it (user 2026-11-26: "same voice, same pace from now on")
 A locked axis is never counted as a repeat (same voice every episode is the point); the repeat rules above still
@@ -196,6 +201,24 @@ def recent(root, project, use_git=True):
     return cat, out, refs, covers
 
 
+def _lum(h):
+    c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
+DARK = 0.2           # bg relative luminance at or under this = a dark palette (night/coral/mono/ocean ~0.01; mint/cream ~0.8)
+
+
+def is_dark(cat, name):
+    pal = cat['palette'].get(name) or {}
+    return bool(pal.get('bg')) and _lum(pal['bg']) <= DARK
+
+
+def cover_palette(look):
+    return (look or {}).get('cover_palette') or (look or {}).get('palette')
+
+
 def validate(cat, look):
     errs = []
     for axis in cat['axes']:
@@ -256,6 +279,17 @@ def check(root, project, final=False, use_git=True):
             if mf and old and pathlib.Path(mf).name == pathlib.Path(old).name:
                 warns.append(f'music_file {mf} also used in {r["id"]} (one of the last {RECENT}): '
                              'YouTube spam policy cites the same background music across many videos')
+    cp = cover_palette(look)
+    if look.get('cover_palette') is not None and look['cover_palette'] not in options(cat, 'palette'):
+        errs.append(f'cover_palette {look["cover_palette"]!r} not in templates/looks/looks.json palettes')
+    elif cp in options(cat, 'palette'):
+        if not is_dark(cat, cp):
+            dark = [o for o in options(cat, 'palette') if is_dark(cat, o)]
+            (errs if final else warns).append(
+                f'cover palette {cp!r} is light: uploaded covers use a dark background (user liked the glowing map on '
+                f'dark, caffeine-ranking 2026-11-27) -> set "cover_palette" to one of {", ".join(dark)}')
+        if rec and (look.get('cover_palette') or rec[0]['look'].get('cover_palette')) and cp == cover_palette(rec[0]['look']):
+            errs.append(f'cover palette {cp!r} = previous episode {rec[0]["id"]} cover: pick another dark palette for the covers')
     for r in rec:
         if all(same(cat, a, look.get(a), r['look'].get(a)) for a in cat['visual_axes']):
             errs.append(f'visual look (palette/font/caption/opening/cover/transition) identical to {r["id"]}')
@@ -294,6 +328,13 @@ def pick(root, project, pins, use_git=True):
     for k, v in lock.items():
         if k not in cat['axes']:
             look[k] = v                                   # tts_model, atempo, vo_lufs: the voice step reads these
+    if is_dark(cat, look['palette']):
+        look['cover_palette'] = look['palette']
+    else:                                                 # light look: covers still dark, rotated like the other axes
+        used = [cover_palette(r['look']) for r in rec]
+        dark = [o for o in options(cat, 'palette') if is_dark(cat, o) and (not used or o != used[0])]
+        h = lambda o: hashlib.sha256(f'{project.name}|cover_palette|{o}'.encode()).hexdigest()
+        look['cover_palette'] = sorted(dark, key=lambda o: (-(used.index(o) if o in used else RECENT + 1), h(o)))[0]
     look['music_file'] = None
     look['cover_text'] = None
     look['why'] = 'เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง' + (

@@ -25,7 +25,9 @@ const fs = require('fs');
     if (fs.existsSync(c)) { cat = JSON.parse(fs.readFileSync(c, 'utf8')); break; }
   }
   const vars = {};
-  const pal = cat && cat.palette && cat.palette[look.palette];
+  // covers may use their own dark palette (look.json cover_palette, caffeine-ranking 2026-11-27); default = the look's palette
+  const palName = look.cover_palette || look.palette;
+  const pal = cat && cat.palette && cat.palette[palName];
   if (pal) for (const k of ['bg', 'bg2', 'ink', 'text', 'accent', 'accent2', 'panel']) if (pal[k]) vars['--' + k] = pal[k];
   const font = cat && cat.font && cat.font[look.font];
   if (font) { vars['--font'] = `'${font.family}'`; vars['--tw'] = String(font.title_weight || 900); }
@@ -76,7 +78,7 @@ const fs = require('fs');
     geo.errors = errs;
     const el = await p.$('#root');
     await (el || p).screenshot({ path: path.join(out, `cover-${v}.jpg`), type: 'jpeg', quality: 88 });
-    geo.look = { file: lf, lines: cv.lines, palette: look.palette || null, font: look.font || null };
+    geo.look = { file: lf, lines: cv.lines, palette: palName || null, font: look.font || null };
     fs.writeFileSync(path.join(out, `cover-${v}.json`), JSON.stringify(geo, null, 1));
     if (!geo.items.some(i => i.kind === 'text')) { console.error(`cover-${v}: no data-cover="text" element`); bad = 1; }
     if (errs.length) { console.error(`cover-${v}: page errors: ${errs.join(' | ')}`); bad = 1; }

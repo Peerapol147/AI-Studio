@@ -147,6 +147,16 @@ def test_template_cover_shot_measures_and_passes(tmp_path):
     (d / 'look.json').write_text(json.dumps(lk, ensure_ascii=False))
     res = run(d, '--no-git')
     assert res.returncode == 1 and 'cover b: the image says' in res.stdout
+    # look.json cover_palette (dark covers on a light look, caffeine-ranking 2026-11-27) wins over palette
+    lk['covers'][1]['lines'] = ['หมอตัดเส้นนี้', 'ไปใช้ได้!?']
+    lk['cover_palette'] = 'night-violet'
+    (d / 'look.json').write_text(json.dumps(lk, ensure_ascii=False))
+    res = subprocess.run(['node', str(ROOT / 'tools' / 'cover_shot.js'), str(d / 'video' / 'cover.html'), str(d / 'covers'), 'a'],
+                         capture_output=True, text=True, timeout=120)
+    assert res.returncode == 0, res.stderr
+    assert json.loads((d / 'covers' / 'cover-a.json').read_text())['look']['palette'] == 'night-violet'
+    px = Image.open(d / 'covers' / 'cover-a.jpg').convert('L').getpixel((540, 1500))
+    assert px < 100, px
 
 
 @pytest.mark.skipif(not _node_ok(), reason='node + playwright not installed')
