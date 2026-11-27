@@ -4,7 +4,7 @@
  "duration": 44.353,
  "inputs": {
   "shots.json": "ba2084b35ecfec2fc47257c9d847ef012ffa33e564535a4129d3d5d4d947fb1d",
-  "footage.json": "8265ea33f2670357cea62a36f79103b46489460b1b65562b1fae844a820961b9",
+  "footage.json": "9794d88ea4861e6c93518d5c5c4a65bd95fd7b65637fd43b7a4d6caeaad725d9",
   "assets/audio/words.json": "ab660de002a67e61c3a06db8025d82166165c6c9a2133f365a425bedbc7560ee"
  },
  "shots": [
@@ -233,7 +233,7 @@
   },
   {
    "id": "cta",
-   "src": "assets/footage/pixabay-39009.mp4",
+   "src": "assets/footage/pixabay-16975.mp4",
    "cue": "แมวที่บ้าน",
    "word_at": 41.5,
    "start": 41.42,

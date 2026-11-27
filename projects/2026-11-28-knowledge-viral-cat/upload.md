@@ -21,7 +21,7 @@
 - พันธุศาสตร์สีขน: Wikipedia "Cat coat genetics" (อ้าง UC Davis VGL), MedlinePlus KIT gene https://medlineplus.gov/genetics/gene/kit
 - แมวไทย 5 พันธุ์: Time Out Bangkok, The Thaiger, The Nation (พ.ย. 2568)
 
-เครดิตภาพ/วิดีโอ: Pixabay (Pixabay Content License) — รายชื่อและลิงก์ครบใน assets/CREDITS.md (__PIXABAY_USERS__)
+เครดิตภาพ/วิดีโอ: Pixabay (Pixabay Content License) — รายชื่อและลิงก์ครบใน assets/CREDITS.md — iddrm, TRAPHITHO, Solarselle77, zekibnc, Amshuwu, Nova2000, birgl, AndreasPetzold, 15claudia, yeracastelan
 ภาพตำราในคลิปเป็นภาพวาดประกอบ ไม่ใช่ต้นฉบับ
 เพลง: "Finding, curious, taking" by Wobinidan (CC BY 3.0) https://www.jamendo.com/track/209419
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
