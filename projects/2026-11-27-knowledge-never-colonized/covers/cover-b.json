@@ -10,14 +10,14 @@
    "w": 900,
    "h": 900,
    "font_px": 16,
-   "overflow": true
+   "overflow": false
   },
   {
    "kind": "text",
-   "text": "5 ประเทศที่รอด",
-   "x": 175.8125,
+   "text": "4 ประเทศที่รอด",
+   "x": 174.484375,
    "y": 247,
-   "w": 728.375,
+   "w": 731.015625,
    "h": 139,
    "font_px": 110,
    "overflow": false
@@ -37,7 +37,7 @@
  "look": {
   "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/look.json",
   "lines": [
-   "5 ประเทศที่รอด",
+   "4 ประเทศที่รอด",
    "อันดับ 1 คือบ้านเรา"
   ],
   "palette": "retro-cream",

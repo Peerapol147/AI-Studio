@@ -1,184 +1,184 @@
 [
  {
-  "t": 0.95,
+  "t": 1.68,
+  "type": "appear",
+  "desc": "coloniser labels pop (ชาติตะวันตก)",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -24
+ },
+ {
+  "t": 3.36,
   "type": "scene_cut",
-  "desc": "hook: zoom into Thailand, whip to the flag",
+  "desc": "hook: zoom into Thailand",
   "sfx": "whoosh/fs-683101-quick-woosh.ogg",
   "gain": -24
  },
  {
-  "t": 3.1,
+  "t": 5.6,
   "type": "scene_cut",
-  "desc": "whip to the world map (guess)",
+  "desc": "whip to the world map",
   "sfx": "transition/fs-702773-swipe-wav.ogg",
   "gain": -26
  },
  {
-  "t": 4.36,
+  "t": 7.02,
   "type": "appear",
-  "desc": "4 question marks pop (อีกสี่ประเทศ)",
+  "desc": "3 question marks (อีกสาม)",
   "sfx": "pop/kenney-interface-drop-002.ogg",
   "gain": -22
  },
  {
-  "t": 5.68,
+  "t": 7.68,
   "type": "appear",
   "desc": "definition card",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -24
  },
  {
-  "t": 6.84,
+  "t": 9.22,
   "type": "appear",
-  "desc": "big ? over the globe",
+  "desc": "big ? over the magnifier",
   "sfx": "pop/kenney-interface-drop-001.ogg",
   "gain": -22
  },
  {
-  "t": 8.08,
-  "type": "appear",
-  "desc": "rank 5 badge (อันดับห้า)",
-  "sfx": "pop/fs-447910-plop.ogg",
-  "gain": -20
- },
- {
-  "t": 11.94,
-  "type": "hover_or_small_ui",
-  "desc": "chip พ.ศ. 2453",
-  "sfx": "tick/fs384187.ogg",
-  "gain": -24
- },
- {
-  "t": 14.38,
+  "t": 10.48,
   "type": "appear",
   "desc": "rank 4 badge",
   "sfx": "pop/fs-447910-plop.ogg",
   "gain": -20
  },
  {
-  "t": 16.46,
+  "t": 12.56,
   "type": "hover_or_small_ui",
-  "desc": "chip พ.ศ. 2357-2359",
+  "desc": "chip 2357-2359",
   "sfx": "tick/fs384187.ogg",
   "gain": -24
  },
  {
-  "t": 17.88,
+  "t": 15.72,
   "type": "appear",
   "desc": "stamp ยังเป็นเอกราช",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
   "gain": -24
  },
  {
-  "t": 19.56,
+  "t": 17.3,
   "type": "appear",
   "desc": "rank 3 badge",
   "sfx": "pop/fs-447910-plop.ogg",
   "gain": -20
  },
  {
-  "t": 21.98,
+  "t": 19.32,
   "type": "hover_or_small_ui",
-  "desc": "chip พ.ศ. 2450",
+  "desc": "chip 2450",
   "sfx": "tick/fs384187.ogg",
   "gain": -24
  },
  {
-  "t": 23.02,
+  "t": 21.74,
   "type": "appear",
-  "desc": "stamp ไม่เคยเป็นอาณานิคม",
+  "desc": "stamp ยึดครอง ≠ เมืองขึ้น",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
   "gain": -24
  },
  {
-  "t": 24.92,
+  "t": 23.66,
   "type": "appear",
   "desc": "rank 2 badge",
   "sfx": "pop/fs-447910-plop.ogg",
   "gain": -20
  },
  {
-  "t": 27.38,
+  "t": 26.88,
   "type": "hover_or_small_ui",
-  "desc": "chip พ.ศ. 2488-2495",
+  "desc": "chip 2488-2495",
   "sfx": "tick/fs384187.ogg",
   "gain": -24
  },
  {
-  "t": 29.02,
+  "t": 28.98,
   "type": "appear",
-  "desc": "stamp ไม่ใช่อาณานิคม",
+  "desc": "stamp ไม่เคยเป็นอาณานิคม",
   "sfx": "ding/kenney-interface-confirmation-001.ogg",
   "gain": -24
  },
  {
-  "t": 30.7,
+  "t": 31.12,
+  "type": "appear",
+  "desc": "rank 1 number",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -21
+ },
+ {
+  "t": 32.36,
   "type": "reveal",
-  "desc": "rank 1 Thailand (อันดับหนึ่ง) impact",
+  "desc": "1 ไทย big pop (ไทยเรา) impact",
   "sfx": "impact/fs-177242-cinematic-impact.ogg",
   "gain": -19
  },
  {
-  "t": 35.58,
+  "t": 35.16,
+  "type": "hover_or_small_ui",
+  "desc": "chip ร.5",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -25
+ },
+ {
+  "t": 39.08,
   "type": "build_up",
-  "desc": "riser into \"ไม่ได้รอดฟรี\"",
+  "dur": 2.4,
+  "desc": "riser into \"แต่รอดได้\"",
   "sfx": "riser/fs-685256-riser-sound-effect-short-wav.ogg",
-  "gain": -27,
-  "dur": 2.4
+  "gain": -27
  },
  {
-  "t": 36.46,
+  "t": 40.02,
   "type": "scene_cut",
-  "desc": "British arrows push in",
+  "desc": "arrows squeeze in (บีบมาสองฝั่ง)",
   "sfx": "transition/fs-786514-swoosh-v2.ogg",
-  "gain": -26
+  "gain": -25
  },
  {
-  "t": 36.82,
-  "type": "scene_cut",
-  "desc": "French arrow pushes in",
-  "sfx": "transition/fs-786514-swoosh-v2.ogg",
-  "gain": -26
- },
- {
-  "t": 37.98,
+  "t": 41.48,
   "type": "reveal",
-  "desc": "low hit: Thailand shakes (ไม่ได้รอดฟรี)",
+  "desc": "low hit: รอดได้ แต่ต้องแลก",
   "sfx": "impact/fs-222517-dramatic-hit.ogg",
   "gain": -20
  },
  {
-  "t": 40.26,
+  "t": 44.58,
   "type": "scene_cut",
   "desc": "whip to the Mekong",
   "sfx": "whoosh/fs-683101-quick-woosh.ogg",
   "gain": -24
  },
  {
-  "t": 41.24,
+  "t": 46.16,
   "type": "scene_cut",
   "desc": "whip to the Malay map",
   "sfx": "whoosh/fs-169867-swoosh.ogg",
   "gain": -26
  },
  {
-  "t": 43.2,
+  "t": 49.72,
   "type": "appear",
   "desc": "ไท = อิสระ shimmer",
   "sfx": "ding/fs-349504-triangle-open-04.ogg",
   "gain": -28
  },
  {
-  "t": 45.54,
+  "t": 51.84,
   "type": "appear",
   "desc": "ควรติดอีกไหม? pill",
   "sfx": "pop/fs-824189-pop-in-sfx.ogg",
   "gain": -24
  },
  {
-  "t": 46.0,
+  "t": 52.54,
   "type": "appear",
-  "desc": "6th ? pin",
+  "desc": "extra ? pin",
   "sfx": "pop/kenney-interface-drop-001.ogg",
   "gain": -22
  }

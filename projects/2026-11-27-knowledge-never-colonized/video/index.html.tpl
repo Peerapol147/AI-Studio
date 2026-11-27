@@ -307,11 +307,11 @@ const S_=id=>shotAt(id);
 const CA=[[W.c4,S_('r4c').a,'<b>พ.ศ. 2357-2359</b><br>แพ้สงครามอังกฤษ เสียดินแดน',470],
   [W.c3a,S_('r2').a,'<b>พ.ศ. 2450</b> ถูกแบ่งเขตอิทธิพล',470],
   [W.c2,S_('r1').a,'<b>พ.ศ. 2488-2495</b><br>ถูกยึดครอง ~7 ปี',470],
-  [W.c1,S_('r1c').a,'<b>สมัยรัชกาลที่ 5</b><br>(พ.ศ. 2411-2453)',470],
+  [W.c1,S_('r1c').a,'<b>สมัยรัชกาลที่ 5</b> (พ.ศ. 2411-2453)',470],
   [W.cmek,S_('tw_malay').a,'<b>พ.ศ. 2436</b><br>ฝั่งซ้ายโขง → ฝรั่งเศส',290],
   [W.cmal,S_('share').a,'<b>พ.ศ. 2452</b><br>หัวเมืองมลายู → อังกฤษ',290]];
-const CB=[[W.c3b,S_('r2').a,'<b>พ.ศ. 2484-2489</b> ถูกยึดครอง',590]];
-const ST=[[W.s4,S_('r3').a,'ยังเป็นเอกราช'],[W.s3,S_('r2').a,'ไม่เคยเป็นอาณานิคม'],[W.s2,S_('r1').a,'ไม่ใช่อาณานิคม']];
+const CB=[[W.c3b,S_('r2').a,'<b>พ.ศ. 2484-2489</b> ถูกยึดครอง',590],[W.c1b,S_('r1c').a,'ปฏิรูป เช่น ตั้งกระทรวง <b>พ.ศ. 2435</b>',585]];
+const ST=[[W.s4,S_('r3').a,'ยังเป็นเอกราช'],[W.s3,S_('r2').a,'ยึดครอง ≠ เมืองขึ้น'],[W.s2,S_('r1').a,'ไม่เคยเป็นอาณานิคม']];
 function chip(id,L,t){
   const el=$(id); let c=null; L.forEach(x=>{if(t>=x[0]-0.01&&t<x[1]+0.13) c=x;});
   if(!c){ show(el,0); return; }
@@ -356,7 +356,7 @@ function zoomGfx(t){
   // one top pill morphs: "คานอำนาจ" -> "ไม่ได้รอดฟรี" (flip on the word)
   const b=$('bigtop'), on=win(t,W.kan,e,0.06,0.1);
   const fa=t<tw?pop(t,W.kan):pop(t,tw,18,0.45), flip=t>=tw-0.08&&t<tw?1-(tw-t)/0.08:0;
-  $('bigtop-t').textContent=t<tw?'คานอำนาจ':'ไม่ได้รอดฟรี';
+  $('bigtop-t').textContent=t<tw?'คานอำนาจ':'รอดได้ แต่ต้องแลก'; $('bigtop-t').style.fontSize=t<tw?'':'84px';
   show(b,on*(1-out),`scale(${((0.6+0.4*clamp(fa,0,1.2))*(1-flip)).toFixed(4)},${(0.6+0.4*clamp(fa,0,1.2)).toFixed(4)}) rotate(${f2(t>=tw?-2*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*30):0)}deg)`);
 }
 // tw_malay: same zoom map (slot copy), closer on the south; the Malay north piece slides away on "มลายู"

@@ -56,17 +56,17 @@ out.append(sea('loop'))
 # ---------- WORLD map (guess / guess_def / cta) ----------
 P = M['world']['pins']
 NAMES = {'th': 'ไทย', 'bt': 'ภูฏาน', 'np': 'เนปาล', 'ir': 'อิหร่าน', 'jp': 'ญี่ปุ่น'}
-LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (-150, -96), 'ir': (20, 30), 'jp': (-40, 34)}
+LBL_OFF = {'th': (34, -20), 'bt': (30, -96), 'np': (-180, -24), 'ir': (20, 30), 'jp': (-40, 34)}
 
 
 def world(sid, mode):
     s = ['<svg class="msvg" viewBox="0 0 1080 700" width="1080" height="700">', '<use href="#w-land" class="lb"/>']
-    for k in ('bt', 'np', 'ir', 'jp'):
+    for k in ('np', 'ir', 'jp'):
         s.append(u('w', k, 'lw' if mode == 'cta' else 'lb', f' id="{sid}-c{k}"'))
     s.append('<use href="#w-th" class="thg" filter="url(#glow)"/>' + u('w', 'th', 'th'))
     s.append('</svg>')
     pins = []
-    keys = ['th'] + (['bt', 'np', 'ir', 'jp'] if mode == 'cta' else [])
+    keys = ['th'] + (['np', 'ir', 'jp'] if mode == 'cta' else [])
     for k in keys:
         x, y = P[k]
         pins.append(f'<div class="pin{" pth" if k == "th" else ""}" id="{sid}-p{k}" style="left:{x - 36:.0f}px;top:{y - 84:.0f}px">'
@@ -80,7 +80,7 @@ def world(sid, mode):
         body += ('<div class="qpin" id="cta-q6" style="left:820px;top:470px"><span>?</span></div>')
     q = ''
     if mode in ('guess', 'def'):
-        q = '<div class="qrow">' + ''.join(f'<div class="qb" id="{sid}-q{i}"><span>?</span></div>' for i in range(4)) + '</div>'
+        q = '<div class="qrow">' + ''.join(f'<div class="qb" id="{sid}-q{i}"><span>?</span></div>' for i in range(3)) + '</div>'
     extra = ''
     if mode == 'def':
         extra = ('<div class="dim"></div><div class="defcard" id="defcard"><div class="d1">นับเฉพาะ</div>'
@@ -128,7 +128,7 @@ out.append('<div id="gx-tw_malay" class="gfill mapbg">' + GRID + zoom('tm', True
 EP = ['<div id="ep">',
       '<div class="g" id="zmap">' + GRID + zoom('zm', False) + '<div class="approx" id="approx2"><span>พื้นที่โดยประมาณ</span></div></div>',
       '<div class="g" id="rshade"></div>',
-      '<div class="g" id="rank"><div id="rk-num"><span id="rk-n">5</span></div><div id="rk-name" class="out">ภูฏาน</div></div>',
+      '<div class="g" id="rank"><div id="rk-num"><span id="rk-n">4</span></div><div id="rk-name" class="out">เนปาล</div></div>',
       '<div class="g chip" id="chipA"><span id="chipA-t"></span></div>',
       '<div class="g chip" id="chipB"><span id="chipB-t"></span></div>',
       '<div class="g" id="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-circle-check"/></svg><span id="stamp-t"></span></div>',
