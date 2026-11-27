@@ -1,217 +1,217 @@
 {
  "lang": "th",
  "lead": 0.08,
- "duration": 54.396,
+ "duration": 54.424,
  "inputs": {
-  "shots.json": "f62b1240738fe8c18487e785dbbd6a6a122dfc22392cee86e857ba9f1f08db6f",
+  "shots.json": "94df371159888154b72b40d143e99599385c132598840c15ea479a66e3e5e397",
   "footage.json": "cf18036342b27dddfd88e276904061459b8e9f791693931d8ca3bc99d066296c",
-  "assets/audio/words.json": "b0a2ce56c8bb1fb2cdf51fdb430f56102082ddfbf4755f24f1d1e0600fe2ae0c"
+  "assets/audio/words.json": "cb0c981e54ac5f69452622d3321b45dff89162d65b0df687ef756077b238507c"
  },
  "shots": [
   {
    "id": "hook",
    "src": null,
    "cue": "ประเทศแถว",
-   "word_at": 0.04,
+   "word_at": 0.06,
    "start": 0.0,
    "beat": "hook",
-   "end": 3.78,
-   "dur": 3.78
+   "end": 3.7,
+   "dur": 3.7
   },
   {
    "id": "hook_one",
    "src": "assets/footage/pixabay-244977.mp4",
    "cue": "รอดมาได้",
-   "word_at": 3.86,
-   "start": 3.78,
+   "word_at": 3.78,
+   "start": 3.7,
    "beat": "hook",
-   "end": 5.6,
+   "end": 5.52,
    "dur": 1.82
   },
   {
    "id": "guess",
    "src": null,
    "cue": "แล้วทั้งโลก",
-   "word_at": 5.68,
-   "start": 5.6,
+   "word_at": 5.6,
+   "start": 5.52,
    "beat": "setup",
-   "end": 6.94,
-   "dur": 1.34
+   "end": 6.58,
+   "dur": 1.06
   },
   {
    "id": "guess_def",
    "src": null,
-   "cue": "อีกสาม",
-   "word_at": 7.02,
-   "start": 6.94,
+   "cue": "ก็ยังมี",
+   "word_at": 6.66,
+   "start": 6.58,
    "beat": "setup",
-   "end": 9.14,
-   "dur": 2.2
+   "end": 8.7,
+   "dur": 2.12
   },
   {
    "id": "guess_q",
    "src": "assets/footage/pixabay-104270.mp4",
    "cue": "ลองเดา",
-   "word_at": 9.22,
-   "start": 9.14,
+   "word_at": 8.78,
+   "start": 8.7,
    "beat": "setup",
-   "end": 10.4,
-   "dur": 1.26
+   "end": 10.66,
+   "dur": 1.96
   },
   {
    "id": "r4",
    "src": "assets/footage/pixabay-10104.mp4",
    "cue": "อันดับสี่",
-   "word_at": 10.48,
-   "start": 10.4,
+   "word_at": 10.74,
+   "start": 10.66,
    "beat": "explain",
-   "end": 12.48,
-   "dur": 2.08,
+   "end": 12.82,
+   "dur": 2.16,
    "media_start": 2.92
   },
   {
    "id": "r4b",
    "src": "assets/footage/pixabay-739723.jpg",
    "cue": "รบแพ้",
-   "word_at": 12.56,
-   "start": 12.48,
+   "word_at": 12.9,
+   "start": 12.82,
    "beat": "explain",
-   "end": 14.94,
-   "dur": 2.46
+   "end": 15.2,
+   "dur": 2.38
   },
   {
    "id": "r4c",
    "src": "assets/footage/pixabay-162370.png",
    "cue": "แต่ก็ยัง",
-   "word_at": 15.02,
-   "start": 14.94,
+   "word_at": 15.28,
+   "start": 15.2,
    "beat": "explain",
-   "end": 17.22,
-   "dur": 2.28
+   "end": 17.42,
+   "dur": 2.22
   },
   {
    "id": "r3",
    "src": "assets/footage/pixabay-3362936.jpg",
    "cue": "อันดับสาม",
-   "word_at": 17.3,
-   "start": 17.22,
+   "word_at": 17.5,
+   "start": 17.42,
    "beat": "explain",
-   "end": 19.24,
-   "dur": 2.02
+   "end": 19.5,
+   "dur": 2.08
   },
   {
    "id": "r3b",
    "src": "assets/footage/pixabay-70872.mp4",
    "cue": "โดนยึดครอง",
-   "word_at": 19.32,
-   "start": 19.24,
+   "word_at": 19.58,
+   "start": 19.5,
    "beat": "explain",
-   "end": 21.14,
-   "dur": 1.9,
+   "end": 21.38,
+   "dur": 1.88,
    "media_start": 2.92
   },
   {
    "id": "r3c",
    "src": "assets/footage/pixabay-141424.mp4",
    "cue": "แต่ยึดครอง",
-   "word_at": 21.22,
-   "start": 21.14,
+   "word_at": 21.46,
+   "start": 21.38,
    "beat": "explain",
-   "end": 23.58,
-   "dur": 2.44,
+   "end": 23.92,
+   "dur": 2.54,
    "media_start": 2.92
   },
   {
    "id": "r2",
    "src": "assets/footage/pixabay-173522.mp4",
    "cue": "อันดับสอง",
-   "word_at": 23.66,
-   "start": 23.58,
+   "word_at": 24.0,
+   "start": 23.92,
    "beat": "explain",
-   "end": 25.5,
-   "dur": 1.92,
+   "end": 25.78,
+   "dur": 1.86,
    "media_start": 2.92
   },
   {
    "id": "r2b",
    "src": "assets/footage/pixabay-243075.mp4",
    "cue": "แพ้สงคราม",
-   "word_at": 25.58,
-   "start": 25.5,
+   "word_at": 25.86,
+   "start": 25.78,
    "beat": "explain",
-   "end": 28.68,
-   "dur": 3.18,
+   "end": 28.98,
+   "dur": 3.2,
    "media_start": 3.92
   },
   {
    "id": "r2c",
    "src": "assets/footage/pixabay-53789.mp4",
    "cue": "แต่ก็ไม่เคย",
-   "word_at": 28.76,
-   "start": 28.68,
+   "word_at": 29.06,
+   "start": 28.98,
    "beat": "explain",
-   "end": 30.86,
-   "dur": 2.18,
+   "end": 31.22,
+   "dur": 2.24,
    "media_start": 2.92
   },
   {
    "id": "r1",
    "src": "assets/footage/pixabay-143645.mp4",
    "cue": "แล้วอันดับหนึ่ง",
-   "word_at": 30.94,
-   "start": 30.86,
+   "word_at": 31.3,
+   "start": 31.22,
    "beat": "reveal",
-   "end": 32.28,
-   "dur": 1.42
+   "end": 32.66,
+   "dur": 1.44
   },
   {
    "id": "r1_thai",
    "src": "assets/footage/pixabay-244977.mp4",
    "cue": "ไทยเรา",
-   "word_at": 32.36,
-   "start": 32.28,
+   "word_at": 32.74,
+   "start": 32.66,
    "beat": "reveal",
-   "end": 34.2,
-   "dur": 1.92
+   "end": 34.54,
+   "dur": 1.88
   },
   {
    "id": "r1b",
    "src": "assets/footage/pixabay-7046511.jpg",
    "cue": "ส่วนหนึ่ง",
-   "word_at": 34.28,
-   "start": 34.2,
+   "word_at": 34.62,
+   "start": 34.54,
    "beat": "reveal",
-   "end": 37.86,
-   "dur": 3.66
+   "end": 38.1,
+   "dur": 3.56
   },
   {
    "id": "r1c",
    "src": null,
    "cue": "การทูต",
-   "word_at": 37.94,
-   "start": 37.86,
+   "word_at": 38.18,
+   "start": 38.1,
    "beat": "reveal",
-   "end": 41.4,
-   "dur": 3.54
+   "end": 41.34,
+   "dur": 3.24
   },
   {
    "id": "tw",
    "src": null,
    "cue": "แต่รอดได้",
-   "word_at": 41.48,
-   "start": 41.4,
+   "word_at": 41.42,
+   "start": 41.34,
    "beat": "twist",
-   "end": 44.58,
-   "dur": 3.18
+   "end": 44.72,
+   "dur": 3.38
   },
   {
    "id": "tw_mekong",
    "src": "assets/footage/pixabay-32194.mp4",
    "cue": "ฝั่งซ้าย",
-   "word_at": 44.66,
-   "start": 44.58,
+   "word_at": 44.8,
+   "start": 44.72,
    "beat": "twist",
-   "end": 46.16,
+   "end": 46.3,
    "dur": 1.58,
    "media_start": 4.92
   },
@@ -219,21 +219,21 @@
    "id": "tw_malay",
    "src": null,
    "cue": "หัวเมือง",
-   "word_at": 46.24,
-   "start": 46.16,
+   "word_at": 46.38,
+   "start": 46.3,
    "beat": "twist",
-   "end": 47.98,
-   "dur": 1.82
+   "end": 48.06,
+   "dur": 1.76
   },
   {
    "id": "share",
    "src": "assets/footage/pixabay-145845.mp4",
    "cue": "ก็สมกับ",
-   "word_at": 48.06,
-   "start": 47.98,
+   "word_at": 48.14,
+   "start": 48.06,
    "beat": "share",
    "end": 51.76,
-   "dur": 3.78,
+   "dur": 3.7,
    "media_start": 3.92
   },
   {
@@ -243,18 +243,18 @@
    "word_at": 51.84,
    "start": 51.76,
    "beat": "cta",
-   "end": 53.6,
-   "dur": 1.84
+   "end": 53.58,
+   "dur": 1.82
   },
   {
    "id": "loop",
    "src": null,
    "cue": "พิมพ์",
-   "word_at": 53.68,
-   "start": 53.6,
+   "word_at": 53.66,
+   "start": 53.58,
    "beat": "loop",
-   "end": 54.396,
-   "dur": 0.796
+   "end": 54.424,
+   "dur": 0.844
   }
  ]
 }
