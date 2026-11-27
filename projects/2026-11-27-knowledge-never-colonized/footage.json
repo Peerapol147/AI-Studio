@@ -2,16 +2,6 @@
  "hook_one": {
   "src": "assets/footage/pixabay-244977.mp4"
  },
- "r5": {
-  "src": "assets/footage/pixabay-2691190.jpg"
- },
- "r5b": {
-  "src": "assets/footage/pixabay-292862.mp4",
-  "action_at": 5
- },
- "r5c": {
-  "src": "assets/footage/pixabay-162244.png"
- },
  "r4": {
   "src": "assets/footage/pixabay-10104.mp4",
   "action_at": 3
@@ -61,5 +51,8 @@
  },
  "guess_q": {
   "src": "assets/footage/pixabay-104270.mp4"
+ },
+ "r1_thai": {
+  "src": "assets/footage/pixabay-244977.mp4"
  }
 }
