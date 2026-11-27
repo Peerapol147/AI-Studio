@@ -4,7 +4,7 @@
  "duration": 47.721,
  "inputs": {
   "shots.json": "3fce2aebb0552d9af58820258f37e3b1223dd56fdf9dc51b87550c0dfc85e8f3",
-  "footage.json": "1f7a2207dc7835f2c8b810b25224c77ad2099b73014e6238527de52fc59a8562",
+  "footage.json": "86e4a93414530b897a119c4c41b0922fe086ce2e3b037703016fb327b43deb2d",
   "assets/audio/words.json": "2b6a9f97790d8c314f81c852790b83f5227b39400910af044f79a23e56192289"
  },
  "shots": [
@@ -188,14 +188,13 @@
   },
   {
    "id": "r1",
-   "src": "assets/footage/pixabay-24700.mp4",
+   "src": "assets/footage/pixabay-143645.mp4",
    "cue": "อันดับหนึ่ง",
    "word_at": 30.7,
    "start": 30.62,
    "beat": "reveal",
    "end": 33.06,
-   "dur": 2.44,
-   "media_start": 2.92
+   "dur": 2.44
   },
   {
    "id": "r1b",
