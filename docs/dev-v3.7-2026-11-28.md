@@ -106,3 +106,16 @@
 - ข้อ 16 ไม่ได้ทดลองโหลด Jamendo ตรงในห้องนี้ (เขียนตามที่ห้อง never-colonized ใช้ได้)
 - ไม่ได้เรนเดอร์ด้วย hyperframes CLI / footage จริง (ตัวอย่างใช้ภาพทดสอบ); ห้องทำตอนถัดไปควรดู contact sheet ของคลิปจริง
 - ไฟล์ `.hyperframes/` ที่ track อยู่ใน projects/2026-11-17-knowledge-nature ไม่ได้ลบ (ห้ามแตะ projects/ ตอนอื่น) .gitignore ใหม่ไม่มีผลกับไฟล์ที่ track แล้ว
+
+## ปิด 🟡 จากห้องตรวจ (docs/review-v3.7-2026-11-28.md บน claude/review-v3.7-2026-11-28 @52454f0: "รวมได้ ไม่มี 🔴")
+
+| ข้อ | commit | แก้อะไร | เทสต์ |
+|---|---|---|---|
+| 🟡1 pick ปกซ้ำ | `0dae5c2` | look.py pick: palette เข้มที่ = ปกตอนก่อน → เลือก cover_palette เข้มอื่น (เดิม copy palette ตรงๆ check ตกเอง 5/40) | `test_pick_never_repeats_previous_cover_palette_and_passes_check` ทุก palette × ปกตอนก่อน (โค้ดเดิม FAIL) |
+| 🟡2 Smithsonian 0 ผล | `2d8691b` | ใส่ `AND media_usage:"CC0"` ใน q (ลองจริง: coffee/cat ได้ผล) | mock ตรวจว่า query มีเงื่อนไขนี้ |
+| 🟡3 id เป็น URL | `90c4e80` | `si_slug()` ทำ id ปลอดภัยเป็นชื่อไฟล์ (ark/URL/download?id/media:) ≤48 ตัว `[A-Za-z0-9_-]` | ทดสอบ URL, ark, `../../etc/passwd`, None |
+| 🟡4 ห้าม Mixkit | `c6c5144` | manifest ลบ Mixkit runtime 40 รายการ, เสียง typing ในชุดหลักเปลี่ยนเป็น CC0 Freesound (j1987 #79388) ที่อยู่ในคลัง; `sound_pass.py` + `sound_pass_vo.py` ปฏิเสธเพลง/ไลเซนส์/swap/URL ที่เป็น Mixkit และนับเฉพาะ CC0 ว่าไลเซนส์ฟรี; MUSIC.md เขียนใหม่ (เพลง = look.json music_file เท่านั้น, Jamendo/Wikimedia CC BY/CC0 ที่ยืนยันแล้ว); SKILL/README/TOP-PICKS/LICENSES, editor.md, make-clip | `test_no_mixkit_anywhere_in_the_sound_kit` (manifest + ชุดหลักมีไฟล์ CC0 จริง + มิกซ์ปฏิเสธ Mixkit) |
+| 🟡5 punch ทับคัต | `89ca23c` | ไม่ punch ใน 0.3 วิแรกของช็อตที่เพิ่งเข้า (คัตหรือทรานซิชัน) | ฟังก์ชัน punches() + ข้อมูลที่ build ออกมา |
+| ⚪ | `73e9dc1`, `c7a9c0e` | editing-v3.md แถว push 8%/ครอสเฟด หมายเหตุ "แทนที่ใน v3.7"; punch ≤8 ครั้งต่อคลิปกระจายทั้งคลิป + แรง 6-10%/ความยาวต่างกันตาม look | ทดสอบใน test_hard_cuts... |
+
+pytest: **127 passed, 0 skipped**. ตัวอย่าง itch ด้วยแม่แบบสุดท้าย: 8 punch (amp 0.09), ขอบภาพไม่โผล่ทั้ง 1110 เฟรม
