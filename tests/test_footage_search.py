@@ -207,6 +207,14 @@ def test_smithsonian_cc0_stills_only(srv, tmp_path):
     assert st[('tiger', 'video')][0] == 'skipped' and st[('เสือ', 'photo')] == ('skipped', 'smithsonian: English terms only')
     hdr = [h for path, _, _ in srv.log if path.startswith('/openaccess') for h in [path]]
     assert hdr and 'online_media_type%3AImages' in hdr[0] and 'media_usage%3A%22CC0%22' in hdr[0]   # review Y2
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import footage_search as fs                                      # review Y3: ids become file names
+    for raw in ('https://ids.si.edu/ids/deliveryService/id/ark:/65665/m3abc', 'https://ids.si.edu/ids/download?id=NMNH-39_9.jpg',
+                'media:NMNH-399076-399100', 'ark:/65665/m3d84', None, '../../etc/passwd'):
+        sl = fs.si_slug(raw)
+        assert re.fullmatch(r'[A-Za-z0-9_-]{1,48}', sl), (raw, sl)
+    assert fs.si_slug('https://ids.si.edu/ids/deliveryService/id/ark:/65665/m3abc') == 'm3abc'
+    assert fs.si_slug('https://ids.si.edu/ids/download?id=NMNH-39_9.jpg') == 'NMNH-39_9'
     src = (ROOT / 'tools' / 'footage_search.py').read_text()
     assert 'proxy-injected' in src and not re.search(r'X-Api-Key: [0-9A-Za-z]{20,}', src)   # never a real key in code
 

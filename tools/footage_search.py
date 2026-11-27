@@ -199,7 +199,7 @@ def search_one(src, kind, term, per):
                     continue                                  # CC0 only (some Smithsonian media are rights-restricted)
                 res = {(x.get('label') or ''): x.get('url') for x in m.get('resources') or []}
                 hi = res.get('High-resolution JPEG') or res.get('Screen Image')       # never the .tif master
-                out.append(dict(id=f"smithsonian-{m.get('idsId') or m.get('id')}".replace('ark:/65665/', ''), url=hi or m.get('content'),
+                out.append(dict(id='smithsonian-' + si_slug(m.get('idsId') or m.get('id') or r.get('id')), url=hi or m.get('content'),
                                 preview=m.get('thumbnail'), w=m.get('width'), h=m.get('height'),
                                 page=dn.get('record_link') or dn.get('guid'), creator=dn.get('data_source') or 'Smithsonian',
                                 license='CC0 (Smithsonian Open Access)', title=r.get('title')))
@@ -208,6 +208,17 @@ def search_one(src, kind, term, per):
                 break
         return st, out, note, url
     raise SystemExit(f'unknown source {src}')
+
+
+def si_slug(raw):
+    """File-name-safe id from a Smithsonian idsId / media id, which can be an ark: path or a whole URL (review v3.7 Y3)."""
+    v = str(raw or 'x')
+    v = re.sub(r'^.*?ark:/\d+/', '', v)                     # ark:/65665/m3... or https://ids.si.edu/.../ark:/65665/m3...
+    v = re.sub(r'^https?://[^?]*[?&]id=', '', v)            # https://ids.si.edu/ids/download?id=NMNH-1.jpg
+    v = re.sub(r'^media:', '', v)
+    v = re.sub(r'\.(jpe?g|tiff?|png)$', '', v, flags=re.I)
+    v = re.sub(r'[^A-Za-z0-9_-]+', '-', v).strip('-')
+    return (v[-48:] or 'x').strip('-')
 
 
 def search(project, shot, terms, kinds, sources, per, sleep=time.sleep):
