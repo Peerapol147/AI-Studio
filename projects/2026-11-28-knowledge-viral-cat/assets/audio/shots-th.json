@@ -3,7 +3,7 @@
  "lead": 0.08,
  "duration": 44.353,
  "inputs": {
-  "shots.json": "d265f8dfc6f74e140b765806b534a2793e351a921256d397f76817ed2a521111",
+  "shots.json": "ef3c921fb691340c46c53241ae76e87b3a39907d3f0dec4605864394b7671c5a",
   "footage.json": "8265ea33f2670357cea62a36f79103b46489460b1b65562b1fae844a820961b9",
   "assets/audio/words.json": "ab660de002a67e61c3a06db8025d82166165c6c9a2133f365a425bedbc7560ee"
  },
@@ -17,7 +17,7 @@
    "beat": "hook",
    "end": 2.36,
    "dur": 2.36,
-   "media_start": 5.72
+   "media_start": 3.0
   },
   {
    "id": "hook_fight",
