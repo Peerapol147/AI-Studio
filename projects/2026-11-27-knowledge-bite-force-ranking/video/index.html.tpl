@@ -89,7 +89,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .mb svg{width:56px;height:56px}
 #wv-chip{position:absolute;font-weight:900;font-size:64px;line-height:1.2;color:var(--accent);white-space:nowrap}
 #bikes17{left:0;top:0;width:1080px;height:1920px}
-#bikes10{left:0;top:690px;width:1080px;height:200px}
+#bikes10{left:0;top:690px;width:1080px;height:170px}
 #bikes10 .mb{width:72px;height:72px}
 #bikes10 .mb svg{width:50px;height:50px}
 #no1{left:340px;top:820px;width:400px;height:220px}
@@ -170,7 +170,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
  <div class="g" id="count"><div id="cn-lbl" class="out">แรงกัด</div><div id="cn-val" class="out">~0</div><div id="cn-unit" class="out">กก.</div></div>
  <div class="g rowc" id="tag"><span class="pill" id="tag-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use id="tag-ic" href="#ic-circle-help"/></svg><span id="tag-t">ประมาณจากกะโหลก</span></span></div>
  <div class="g rowc" id="cmp"><span class="pill" id="cmp-t">เกือบ <b>2 เท่า</b> ของผู้ชาย</span></div>
- <div class="g" id="bikes10"><div class="mb" id="mt0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div></div>
+ <div class="g" id="bikes10"><div class="mb" id="mt0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mt13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div></div>
  <div class="g" id="bars"><div class="bar" id="bm"></div><div class="bar" id="bb"></div><div class="bar" id="bseg"></div>
   <div class="bl out" id="bml">ผู้ชาย ~86</div><div class="bl out" id="bbl">เสือ ~150</div></div>
  <div class="g" id="bikes17"><div class="mb" id="mb0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb15"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div class="mb" id="mb16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-moto"/></svg></div><div id="wv-chip" class="out">×0</div></div>
@@ -260,11 +260,11 @@ function captions(t){
 // Numbers = research.md "ตัวเลขที่ล็อกใช้ในคลิป" (kgf); every counter lands exactly on its value.
 ['guess','r5_human','twist_model'].forEach(id=>{const g=$('g-'+id), x=$('gx-'+id); if(g&&x) g.appendChild(x);});
 const R=[
- {n:5,name:'เสือโคร่ง',sh:'เสือ',val:150,a:8.30,na:9.30,c0:12.88,c1:13.40,tag:'ประมาณจากกะโหลก',ta:11.10,est:1,e:16.44},
- {n:4,name:'ไฮยีนา',sh:'ไฮยีนา',val:460,a:16.52,na:17.40,c0:20.20,c1:21.06,tag:'วัดได้ 1 ตัว',ta:18.70,est:1,e:22.10},
- {n:3,name:'อัลลิเกเตอร์',sh:'อัลลิเกเตอร์',val:960,a:22.18,na:23.26,c0:25.20,c1:26.08,tag:'วัดจริง',ta:24.68,est:0,e:27.12},
- {n:2,name:'จระเข้น้ำเค็ม',sh:'จระเข้',val:1670,a:27.20,na:28.24,c0:31.36,c1:32.38,tag:'วัดจริง',ta:30.88,est:0,e:33.44},
- {n:1,name:'ฉลามขาว',sh:'ฉลามขาว',val:1860,a:33.52,na:34.62,c0:36.42,c1:37.38,tag:'ประมาณจากโมเดล',ta:36.14,est:1,e:38.34}];
+ {n:5,name:'เสือโคร่ง',sh:'เสือ',val:150,a:8.50,na:9.52,c0:13.12,c1:13.64,tag:'ประมาณจากกะโหลก',ta:11.36,est:1,e:16.74},
+ {n:4,name:'ไฮยีนา',sh:'ไฮยีนา',val:460,a:16.82,na:17.56,c0:20.36,c1:21.14,tag:'วัดได้ 1 ตัว',ta:18.82,est:1,e:22.16},
+ {n:3,name:'อัลลิเกเตอร์',sh:'อัลลิเกเตอร์',val:1340,a:22.24,na:23.16,c0:25.02,c1:26.14,tag:'วัดจริง',ta:24.52,est:0,e:27.14},
+ {n:2,name:'จระเข้น้ำเค็ม',sh:'จระเข้',val:1670,a:27.22,na:27.98,c0:31.08,c1:32.12,tag:'วัดจริง',ta:30.56,est:0,e:33.12},
+ {n:1,name:'ฉลามขาว',sh:'ฉลามขาว',val:1860,a:33.20,na:33.88,c0:35.62,c1:36.56,tag:'ประมาณจากโมเดล',ta:35.38,est:1,e:37.54}];
 const MAN=86, fmt=v=>Math.round(v).toLocaleString('en-US');
 const win=(t,a,b,fi=0.15,fo=0.15)=>clamp(Math.min((t-a)/fi,(b-t)/fo));
 const show=(el,o,tr)=>{el.style.opacity=f2(clamp(o)); if(tr!==undefined) el.style.transform=tr;};
@@ -274,7 +274,7 @@ const setTxt=(el,s)=>{if(el.textContent!==s) el.textContent=s;};
 function kgf(t){
   let v=0;
   for(const r of R){ if(t<r.c0) break; v=lerp(v,r.val,eio((t-r.c0)/(r.c1-r.c0))); }
-  if(t>=42.34) v=lerp(1860,1670,S(t-42.34,12,0.75));    // "ถ้านับแค่ที่วัดจริง": the model-only part drops away
+  if(t>=41.52) v=lerp(1860,1670,S(t-41.52,12,0.75));    // "ถ้านับแค่ที่วัดจริง": the model-only part drops away
   return v;
 }
 const rankAt=t=>{let k=-1; R.forEach((r,i)=>{if(t>=r.a) k=i;}); return k;};
@@ -286,34 +286,34 @@ function cards(t){
     el.style.transform=`translateY(${f2(-26*p)}px) rotate(${rot.toFixed(3)}deg) scale(${(1+0.06*p).toFixed(4)})`; });
 }
 function hookGfx(t){
-  // 17 motorbikes drop in one by one on "รถเวฟสิบเจ็ดคัน กดลงมา" (1.96 -> 2.96), count stops at 17
-  const vis=win(t,1.9,3.72,0.05,0.15);
+  // 17 motorbikes drop in one by one on "รถเวฟสิบเจ็ดคัน กดลงมา" (2.18 -> 3.11), count stops at 17
+  const vis=win(t,2.1,3.9,0.05,0.15);
   show($('bikes17'),vis);
   let landed=0;
-  for(let k=0;k<17;k++){ const row=Math.floor(k/6), col=k%6, ta=1.96+k*0.0588;
+  for(let k=0;k<17;k++){ const row=Math.floor(k/6), col=k%6, ta=2.18+k*0.0588;
     const x=540+(col-2.5)*118-39, y=836+row*92, a=pop(t,ta); if(t>=ta+0.08) landed++;
     $('mb'+k).style.left=x+'px'; $('mb'+k).style.top=y+'px';
     $('mb'+k).style.opacity=f2(clamp((t-ta)/0.05));
     $('mb'+k).style.transform=`translateY(${f2(-260*(1-a))}px) scale(${(0.6+0.4*clamp(a,0,1.2)).toFixed(3)})`; }
   const ch=$('wv-chip'); ch.style.left=(540+(5-2.5)*118-50)+'px'; ch.style.top=(836+2*92-2)+'px';
-  setTxt(ch,'×'+landed); ch.style.transform=`scale(${(1+0.25*(landed>0?Math.exp(-((t-(1.96+(landed-1)*0.0588))*12)):0)).toFixed(3)})`;
+  setTxt(ch,'×'+landed); ch.style.transform=`scale(${(1+0.25*(landed>0?Math.exp(-((t-(2.18+(landed-1)*0.0588))*12)):0)).toFixed(3)})`;
   // "แต่ยังไม่ใช่อันดับหนึ่งนะ": #1 gets struck through + ?
-  const n1=win(t,3.80,5.40,0.06,0.15);
-  show($('no1'),n1,`scale(${(0.7+0.3*clamp(pop(t,3.80),0,1.15)).toFixed(3)})`);
-  $('no1-x').style.transform=`rotate(-14deg) scaleX(${eo((t-4.10)/0.18).toFixed(3)})`;
-  show($('no1-q'),clamp((t-4.32)/0.08),`rotate(${(12*Math.sin(t*7)).toFixed(2)}deg) scale(${(0.6+0.4*clamp(pop(t,4.32),0,1.2)).toFixed(3)})`);
+  const n1=win(t,3.98,5.54,0.06,0.15);
+  show($('no1'),n1,`scale(${(0.7+0.3*clamp(pop(t,3.98),0,1.15)).toFixed(3)})`);
+  $('no1-x').style.transform=`rotate(-14deg) scaleX(${eo((t-4.28)/0.18).toFixed(3)})`;
+  show($('no1-q'),clamp((t-4.48)/0.08),`rotate(${(12*Math.sin(t*7)).toFixed(2)}deg) scale(${(0.6+0.4*clamp(pop(t,4.48),0,1.2)).toFixed(3)})`);
 }
 function guessGfx(t){
-  if(t<5.3||t>8.4) return;
-  [5,4,3,2,1].forEach((n,i)=>{ const ta=n===1?6.74:5.48+i*0.12, a=pop(t,ta), el=$('gr'+n);
+  if(t<5.4||t>8.6) return;
+  [5,4,3,2,1].forEach((n,i)=>{ const ta=n===1?6.94:5.62+i*0.12, a=pop(t,ta), el=$('gr'+n);
     el.style.opacity=f2(clamp((t-ta)/0.08));
     el.style.transform=`translateX(${f2(-420*(1-clamp(a,0,1.2)))}px)`; });
-  const q=$('gr1').querySelector('.s'); q.style.transform=`scale(${(1+0.06*Math.sin((t-6.74)*9)).toFixed(4)})`;
+  const q=$('gr1').querySelector('.s'); q.style.transform=`scale(${(1+0.06*Math.sin((t-6.94)*9)).toFixed(4)})`;
   $('gr1').querySelector('.s').style.boxShadow=`0 0 ${f2(20+18*Math.sin(t*9))}px var(--accent)`;
 }
 function rankGfx(t){
-  const k=rankAt(t), on=win(t,8.30,38.34,0.08,0.12);
-  show($('rshade'),Math.max(on,win(t,40.38,45.46,0.1,0.15)));
+  const k=rankAt(t), on=win(t,8.50,37.54,0.08,0.12);
+  show($('rshade'),Math.max(on,win(t,39.48,44.72,0.1,0.15)));
   if(k<0||on<=0){ ['rank','count','tag'].forEach(id=>show($(id),0)); return; }
   const r=R[k];
   // rank badge: one circle, the number flips (squash spring) on each "อันดับ ..."
@@ -332,25 +332,26 @@ function rankGfx(t){
   show($('tag'),(t>=r.ta?clamp((t-r.ta)/0.08):0)*on,`scale(${(0.6+0.4*clamp(tg,0,1.2)).toFixed(4)})`);
 }
 function cmpGfx(t){
-  // one comparison chip, its text changes: tiger ~2x man, hyena ~5x man, alligator ~ 10 Wave motorbikes
+  if(t>=14.3&&t<=16.9){ const u=t-14.4; $('gx-r5_human').querySelector('img').style.transform=`translateX(${f2(-30*u)}px) scale(${(1.1+0.03*u).toFixed(4)})`; }
+  // one comparison chip, its text changes: tiger ~2x man, hyena ~5x man, alligator ~ 14 Wave motorbikes (1,340 / 95-99)
   let txt=null, a=0, o=0;
-  if(t>=14.38&&t<16.44){txt='เกือบ <b>2 เท่า</b> ของผู้ชาย'; a=14.38; o=win(t,14.38,16.44,0.08,0.12);}
-  else if(t>=21.06&&t<22.10){txt='<b>≈5 เท่า</b>แรงกัดผู้ชาย'; a=21.06; o=win(t,21.06,22.10,0.08,0.12);}
-  else if(t>=26.08&&t<27.12){txt='<b>≈ เวฟ 10 คัน</b>'; a=26.08; o=win(t,26.08,27.12,0.08,0.12);}
+  if(t>=14.72&&t<16.74){txt='เกือบ <b>2 เท่า</b> ของผู้ชาย'; a=14.72; o=win(t,14.72,16.74,0.08,0.12);}
+  else if(t>=21.14&&t<22.16){txt='<b>≈5 เท่า</b>แรงกัดผู้ชาย'; a=21.14; o=win(t,21.14,22.16,0.08,0.12);}
+  else if(t>=26.14&&t<27.14){txt='<b>≈ เวฟ 14 คัน</b>'; a=26.14; o=win(t,26.14,27.14,0.08,0.12);}
   if(txt!==null&&$('cmp-t').innerHTML!==txt) $('cmp-t').innerHTML=txt;
-  $('cmp').style.top=(t>=26?790:700)+'px';
-  show($('cmp'),o,`scale(${(0.6+0.4*clamp(pop(t,a),0,1.2)).toFixed(4)})`);
-  const b10=win(t,25.9,27.12,0.05,0.12); show($('bikes10'),b10);
-  for(let k=0;k<10;k++){ const ta=25.9+k*0.035, e=$('mt'+k), pp=pop(t,ta);
-    e.style.left=(540+(k-4.5)*84-36)+'px'; e.style.top='0px';
+  $('cmp').style.top=(t>=26?872:700)+'px';
+  show($('cmp'),o,`scale(${((0.6+0.4*clamp(pop(t,a),0,1.2))*(1+0.03*Math.sin((t-a)*5))).toFixed(4)})`);
+  const b10=win(t,25.96,27.14,0.05,0.12); show($('bikes10'),b10);
+  for(let k=0;k<14;k++){ const ta=25.96+k*0.03, e=$('mt'+k), pp=pop(t,ta), row=Math.floor(k/7), col=k%7;
+    e.style.left=(540+(col-3)*92-36)+'px'; e.style.top=(row*84)+'px';
     e.style.opacity=f2(clamp((t-ta)/0.05)); e.style.transform=`translateY(${f2(-120*(1-clamp(pp,0,1.2)))}px)`; }
 }
 function barGfx(t){
-  const o=win(t,12.24,45.46,0.2,0.2); show($('bars'),o);
+  const o=win(t,12.5,44.72,0.2,0.2); show($('bars'),o);
   if(o<=0) return;
   // m = 1 on r5_human: the same bars zoom up to the middle (man ~86 vs tiger ~150), then return to the track
-  const m=clamp(S(t-14.14,13,0.8)*(1-S(t-16.44,13,0.8)),0,1.08);
-  const ppk=lerp(770/1860,3.0,m), x0=lerp(130,120,m);
+  const m=clamp(S(t-14.40,13,0.8)*(1-S(t-16.74,13,0.8)),0,1.08);
+  const ppk=lerp(770/1860,3.0,m)*(1+0.025*clamp(m,0,1)*Math.sin((t-14.4)*4.2)), x0=lerp(130,120,m);   // zoomed: bars breathe (no held frame)
   const v=kgf(t); let r=R[0]; R.forEach(q=>{if(t>=q.c0) r=q;});   // the animal whose value the bar shows
   const yM=lerp(1290,830,m), hM=lerp(36,72,m), yB=lerp(1344,935,m), hB=lerp(62,110,m);
   const land=R.find(q=>t>=q.c1&&t<q.c1+0.6), wob=land?1+0.04*Math.exp(-(t-land.c1)*8)*Math.sin((t-land.c1)*28):1;
@@ -360,11 +361,11 @@ function barGfx(t){
   Object.assign(bb.style,{left:x0+'px',top:yB+'px',height:hB+'px',width:f2(Math.max(v>0?8:0,wMain))+'px',opacity:v>0?'1':'0'});
   bb.style.borderRadius=wSeg>1?'14px 0 0 14px':'14px';
   Object.assign(bs.style,{left:f2(x0+wMain)+'px',top:yB+'px',height:hB+'px',width:f2(wSeg)+'px',opacity:wSeg>1?'1':'0'});
-  bs.className='bar'+(t>=40.46?' st':'');
+  bs.className='bar'+(t>=39.56?' st':'');
   // labels: right of each bar (bigger while zoomed)
   const fs=lerp(46,64,m), bml=$('bml'), bbl=$('bbl');
   Object.assign(bml.style,{left:f2(x0+MAN*ppk+18)+'px',top:f2(yM+hM/2-fs*0.7)+'px',fontSize:f2(fs)+'px'});
-  const nm=t>=42.34?'จระเข้ ~1,670 (วัดจริง)':(r.sh+' ~'+(v>=r.val-0.5&&t>=r.c1?fmt(r.val):fmt(Math.round(v/10)*10)));
+  const nm=t>=41.52?'จระเข้ ~1,670 (วัดจริง)':(r.sh+' ~'+(v>=r.val-0.5&&t>=r.c1?fmt(r.val):fmt(Math.round(v/10)*10)));
   setTxt(bml,'ผู้ชาย ~86'); setTxt(bbl,v>0?nm:'');
   const wAll=wMain+wSeg, inside=wAll>380&&m<0.1;
   const fs2=lerp(46,72,m);
@@ -372,25 +373,25 @@ function barGfx(t){
   if(inside){ bbl.style.left=f2(x0+18)+'px'; } else bbl.style.left=f2(x0+wAll+18)+'px';
 }
 function twistGfx(t){
-  if(t>=38.2&&t<=40.6){ const u=t-38.34;
+  if(t>=37.4&&t<=39.8){ const u=t-37.54;
     $('tm-grid').style.transform=`translate(${f2((u*40)%60)}px,${f2((u*25)%60)}px)`;
     $('tm-out').style.strokeDashoffset=(1-eio(u/0.9)).toFixed(4);
     $('tm-jaw').style.strokeDashoffset=(1-eio((u-0.6)/0.4)).toFixed(4);
     $('tm-mesh').style.opacity=f2(clamp((u-0.3)/0.6)*(0.75+0.25*Math.sin(u*14)));
     $('tm-scan').style.transform=`translateX(${f2(892*((u*0.8)%1))}px)`;
-    $('tm-read').style.opacity=f2(clamp((u-0.62)/0.15)*(t<39.3?(Math.sin(u*40)>0?1:0.3):1));
+    $('tm-read').style.opacity=f2(clamp((u-0.62)/0.15)*(t<38.5?(Math.sin(u*40)>0?1:0.3):1));
     $('tm-win').style.transform=`scale(${(0.94+0.06*S(u,12,0.8)).toFixed(4)})`;
-    $('tm-lbl').style.transform=`scale(${(0.6+0.4*clamp(pop(t,38.42),0,1.2)).toFixed(4)})`;
+    $('tm-lbl').style.transform=`scale(${(0.6+0.4*clamp(pop(t,37.62),0,1.2)).toFixed(4)})`;
     $('tm-svg').style.transform=`translateX(${f2(-14*u)}px) rotate(${f2(-1+u)}deg)`; }
-  show($('lbl-real'),win(t,40.46,42.26,0.06,0.1),`scale(${(0.6+0.4*clamp(pop(t,40.46),0,1.2)).toFixed(4)})`);
-  show($('lbl-meas'),win(t,42.34,43.66,0.06,0.1),`scale(${(0.6+0.4*clamp(pop(t,42.34),0,1.2)).toFixed(4)})`);
-  const ch=pop(t,43.74);
-  show($('champ'),win(t,43.74,45.46,0.06,0.12),`translateY(${f2(-12*Math.sin((t-43.74)*2.2))}px) scale(${(0.5+0.5*clamp(ch,0,1.15)).toFixed(4)})`);
+  show($('lbl-real'),win(t,39.56,41.44,0.06,0.1),`scale(${(0.6+0.4*clamp(pop(t,39.56),0,1.2)).toFixed(4)})`);
+  show($('lbl-meas'),win(t,41.52,42.88,0.06,0.1),`scale(${(0.6+0.4*clamp(pop(t,41.52),0,1.2)).toFixed(4)})`);
+  const ch=pop(t,42.96);
+  show($('champ'),win(t,42.96,44.72,0.06,0.12),`translateY(${f2(-12*Math.sin((t-42.96)*2.2))}px) scale(${(0.5+0.5*clamp(ch,0,1.15)).toFixed(4)})`);
 }
 function ctaGfx(t){
-  const o=win(t,45.54,48.06,0.06,0.1); show($('btns'),o);
-  const py=pop(t,45.6), pn=pop(t,45.78);
-  const hy=t>=47.08?1+0.14*Math.exp(-(t-47.08)*6)*Math.cos((t-47.08)*20):1, hn=t>=47.94?1+0.14*Math.exp(-(t-47.94)*6)*Math.cos((t-47.94)*20):1;
+  const o=win(t,44.80,47.68,0.06,0.1); show($('btns'),o);
+  const py=pop(t,44.86), pn=pop(t,45.04);
+  const hy=t>=46.78?1+0.14*Math.exp(-(t-46.78)*6)*Math.cos((t-46.78)*20):1, hn=t>=47.50?1+0.14*Math.exp(-(t-47.50)*6)*Math.cos((t-47.50)*20):1;
   const br=1+0.025*Math.sin(t*6);
   $('bt-y').style.transform=`scale(${((0.4+0.6*clamp(py,0,1.2))*hy*br).toFixed(4)})`;
   $('bt-n').style.transform=`scale(${((0.4+0.6*clamp(pn,0,1.2))*hn/br).toFixed(4)})`;
