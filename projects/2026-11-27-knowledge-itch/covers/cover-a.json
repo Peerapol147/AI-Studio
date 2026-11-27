@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 0,
+   "y": 0,
+   "w": 1080,
+   "h": 1920,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ทำไมเกาแล้ว",
+   "x": 118.171875,
+   "y": 295,
+   "w": 843.65625,
+   "h": 180,
+   "font_px": 150,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "คันกว่าเดิม?",
+   "x": 128.34556579589844,
+   "y": 516.3804931640625,
+   "w": 822.4356842041016,
+   "h": 242.239013671875,
+   "font_px": 150,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "รู้ไหม?",
+   "x": 65.34217071533203,
+   "y": 97.4354476928711,
+   "w": 255.065673828125,
+   "h": 127.12909698486328,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-itch/look.json",
+  "lines": [
+   "ทำไมเกาแล้ว",
+   "*คันกว่าเดิม*?"
+  ],
+  "palette": "night-violet",
+  "font": "sarabun"
+ }
+}

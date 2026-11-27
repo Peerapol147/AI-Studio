@@ -16,8 +16,7 @@
   "action_at": 13.5
  },
  "contagious": {
-  "src": "assets/footage/pixabay-3382130.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-3382130.jpg"
  },
  "signal": {
   "src": "assets/footage/pixabay-114977.mp4",
@@ -28,11 +27,9 @@
   "action_at": 0.5
  },
  "mouse": {
-  "src": "assets/footage/pixabay-1554745.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-1554745.jpg"
  },
  "mosquito": {
-  "src": "assets/footage/pixabay-719613.jpg",
-  "action_at": 0
+  "src": "assets/footage/pixabay-719613.jpg"
  }
 }

@@ -60,6 +60,24 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cap-underline .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
 .cap-underline .cap em{display:inline-block;line-height:1.05;padding-bottom:8px;border-bottom:18px solid var(--accent);border-radius:4px}
 /* ---- EPISODE CSS (editor adds the episode's own graphics styles here) ---- */
+#root{--pain:color-mix(in oklab,#FF3B1F 78%,var(--accent2));--skin:color-mix(in oklab,var(--accent2) 42%,var(--bg2));
+  --skinhi:color-mix(in oklab,var(--accent2) 70%,#fff);--skinlo:color-mix(in oklab,var(--accent2) 22%,var(--bg))}
+#gfx,#gfx-in,#follow,#fx{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none}
+#gfx{z-index:20;opacity:0}
+#follow{z-index:21;opacity:0}
+#fx{z-index:22}
+.ilab{position:absolute;left:0;top:0;white-space:nowrap;font-weight:700;color:#fff;line-height:1.25;padding:.06em .5em .16em;
+  border-radius:.4em;background:rgba(8,6,28,.72);border:5px solid var(--lc);box-shadow:0 0 26px var(--lc),inset 0 0 18px rgba(255,255,255,.08);
+  opacity:0;will-change:auto}
+#gfx-timer{position:absolute;left:0;top:0;width:120px;height:120px;opacity:0}
+#mouse-chip{position:absolute;left:0;top:0;z-index:23;font-weight:700;font-size:118px;line-height:1.2;color:var(--ink);background:var(--accent);
+  padding:.02em .5em .14em;border-radius:.42em;box-shadow:0 0 0 9px var(--ink),0 18px 50px rgba(0,0,0,.55);opacity:0;white-space:nowrap}
+.fp{position:absolute;left:40px;width:1000px;height:540px;border-radius:34px;overflow:hidden;box-shadow:0 0 0 6px var(--ink),0 0 0 11px var(--accent),0 24px 60px rgba(0,0,0,.6);opacity:0}
+.fp img,.fp video{position:absolute;left:0;top:0;width:1000px;height:540px;object-fit:cover}
+#fp-1{top:130px}#fp-2{top:690px}#fp-3{top:1250px}
+.zap{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#ctaq{position:absolute;left:540px;top:300px;z-index:24;font-weight:700;font-size:104px;line-height:1.25;color:var(--ink);background:var(--accent);
+  padding:.02em .5em .16em;border-radius:.42em;box-shadow:0 0 0 9px var(--ink),0 18px 50px rgba(0,0,0,.5);opacity:0;white-space:nowrap}
 </style></head><body>
 <div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
  data-motion-blur="on" data-motion-blur-events="on">
@@ -71,6 +89,24 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%SCENES%%
 </div>
 <!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
+<div id="gfx" data-layout-allow-overflow data-layout-allow-overlap><div id="gfx-in"><div id="gfx-lab"></div>
+ <div id="gfx-timer"><svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="rgba(8,6,28,.75)" stroke="#fff" stroke-width="5"/>
+ <circle class="sweep" cx="60" cy="60" r="54" fill="none" stroke="var(--accent)" stroke-width="9" stroke-dasharray="339.3" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+ <line x1="60" y1="60" x2="60" y2="20" stroke="#fff" stroke-width="7" stroke-linecap="round"/></svg></div>
+</div></div>
+<div id="follow" data-layout-allow-overflow data-layout-allow-overlap>
+ <div class="fp" id="fp-1"><img id="fp1i" src="assets/fp1.jpg" alt=""/></div>
+ <div class="fp" id="fp-2"><video id="v-fp2" class="clip" data-start="32.579" data-duration="2.221" data-media-start="10.42" data-track-index="5" muted playsinline src="assets/fp2.mp4"></video></div>
+ <div class="fp" id="fp-3"><video id="v-fp3" class="clip" data-start="32.579" data-duration="2.221" data-media-start="0.2" data-track-index="6" muted playsinline src="assets/fp3.mp4"></video></div>
+ <svg class="zap" viewBox="0 0 1080 1920"><path id="zap1" d="M540 670 C600 690 480 700 540 720" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" opacity="0" filter="url(#glow)"/>
+ <path id="zap2" d="M540 1230 C600 1250 480 1260 540 1280" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" opacity="0" filter="url(#glow)"/></svg>
+</div>
+<div id="fx" data-layout-allow-overflow data-layout-allow-overlap><svg class="zap" viewBox="0 0 1080 1920"><g id="spark" opacity="0">
+ <circle r="70" fill="var(--pain)" opacity=".45" filter="url(#blur16)"/><circle r="22" fill="#fff" filter="url(#blur3)"/>
+ <g id="spark-rays" stroke="var(--pain)" stroke-width="7" stroke-linecap="round" filter="url(#glow)">
+ <line x1="0" y1="-30" x2="0" y2="-80"/><line x1="26" y1="-15" x2="70" y2="-40"/><line x1="26" y1="15" x2="70" y2="40"/><line x1="0" y1="30" x2="0" y2="80"/><line x1="-26" y1="15" x2="-70" y2="40"/><line x1="-26" y1="-15" x2="-70" y2="-40"/></g></g></svg></div>
+<div id="ctaq">คันตรงไหน?</div>
+<div id="mouse-chip">ในหนู</div>
 <div id="flash"></div>
 </div>
 <div id="tshade"></div>
@@ -84,6 +120,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%MUSIC%%
 </div>
 
+<script src="itch.js"></script>
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/
    transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
@@ -146,7 +183,7 @@ function captions(t){
   capEls[i].style.transform=BOX?`translateX(-50%) ${tr}`:tr;
 }
 // EPISODE MOTION: editor adds functions of t for the episode graphics and calls them in render()
-function episode(t){}
+function episode(t){ ITCH.render(t,SC); ITCH.extras(t,SC); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});

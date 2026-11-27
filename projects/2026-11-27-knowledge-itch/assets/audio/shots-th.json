@@ -4,13 +4,13 @@
  "duration": 37.044,
  "inputs": {
   "shots.json": "714e1bfd488b0b15585a4911c3e46c37e2025be5810f095c6b590e974dd2c136",
-  "footage.json": null,
+  "footage.json": "5577d0a865f34f29bc21f59fc1929de5438155a4dcf3ae61c6193bb543dac6c5",
   "assets/audio/words.json": "0d853672ca799b5d76b7842a46df56284ff2c73262820146daa5576d52df89d9"
  },
  "shots": [
   {
    "id": "hook",
-   "src": null,
+   "src": "assets/footage/pixabay-168341.mp4",
    "cue": "เวลาเกา",
    "word_at": 0.06,
    "start": 0.0,
@@ -33,7 +33,7 @@
   },
   {
    "id": "mosquito",
-   "src": null,
+   "src": "assets/footage/pixabay-719613.jpg",
    "cue": "ตอนโดน",
    "word_at": 3.58,
    "start": 3.5,
@@ -65,13 +65,14 @@
   },
   {
    "id": "signal",
-   "src": null,
+   "src": "assets/footage/pixabay-114977.mp4",
    "cue": "แล้วสัญญาณ",
    "word_at": 9.66,
    "start": 9.58,
    "beat": "explain",
    "end": 10.66,
-   "dur": 1.08
+   "dur": 1.08,
+   "media_start": 0.42
   },
   {
    "id": "spine",
@@ -97,13 +98,14 @@
   },
   {
    "id": "scratch2",
-   "src": null,
+   "src": "assets/footage/pixabay-168341.mp4",
    "cue": "พอเกา",
    "word_at": 13.02,
    "start": 12.94,
    "beat": "explain",
    "end": 14.9,
-   "dur": 1.96
+   "dur": 1.96,
+   "media_start": 6.42
   },
   {
    "id": "pain_cover",
@@ -129,7 +131,7 @@
   },
   {
    "id": "mouse",
-   "src": null,
+   "src": "assets/footage/pixabay-1554745.jpg",
    "cue": "แต่งานวิจัย",
    "word_at": 18.4,
    "start": 18.32,
@@ -183,7 +185,7 @@
   },
   {
    "id": "contagious",
-   "src": null,
+   "src": "assets/footage/pixabay-3382130.jpg",
    "cue": "แถมความคัน",
    "word_at": 29.22,
    "start": 29.14,
@@ -193,33 +195,36 @@
   },
   {
    "id": "watch",
-   "src": null,
+   "src": "assets/footage/pixabay-61706.mp4",
    "cue": "แค่เห็น",
    "word_at": 31.38,
    "start": 31.3,
    "beat": "share",
    "end": 32.579,
-   "dur": 1.279
+   "dur": 1.279,
+   "media_start": 0.42
   },
   {
    "id": "follow",
-   "src": null,
+   "src": "assets/footage/pixabay-168341.mp4",
    "cue": "หลายคน",
    "word_at": 32.659,
    "start": 32.579,
    "beat": "share",
    "end": 34.64,
-   "dur": 2.061
+   "dur": 2.061,
+   "media_start": 10.42
   },
   {
    "id": "cta",
-   "src": null,
+   "src": "assets/footage/pixabay-168341.mp4",
    "cue": "ตอนนี้คัน",
    "word_at": 34.72,
    "start": 34.64,
    "beat": "cta",
    "end": 36.12,
-   "dur": 1.48
+   "dur": 1.48,
+   "media_start": 13.42
   },
   {
    "id": "loop",

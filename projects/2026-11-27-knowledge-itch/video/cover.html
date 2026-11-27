@@ -1,42 +1,76 @@
 <!doctype html>
-<!-- Cover (thumbnail to upload) = a separate still, NOT frame 0 (palmaris feedback 8, 2026-11-26: "ปกชีพ ไม่น่ากด",
-     best CTR so far 11%). Frame 0 of the clip still has to be understood in 1 s with the sound off (Shorts feed shows
-     frame 0); this cover can be a curiosity line instead. Make 2 variants (A/B) every episode.
-     TEXT, COLOURS AND FONT COME FROM look.json, never typed here (review 2026-11-26: the image and the checked text
-     must be the same): tools/cover_shot.js reads <project>/look.json "covers" (lines <= 2, *word* = accent, optional
-     "badge") + the look's palette and font from templates/looks/looks.json, and injects them as window.__COVER.
-     1. look.json "covers": [{"id": "a", "lines": [..]}, {"id": "b", "lines": [..]}]  (facts only from research.md)
-     2. Draw the hero picture inside #art (hand rig: compositions/components/hand-rig/, footage still, graphic).
-     3. node ../../../tools/cover_shot.js cover.html ../covers a,b   (from video/)  -> covers/cover-a.jpg, cover-b.jpg
-     4. python3 tools/cover_check.py projects/<x>   (text = look.json, lines, repeats, overlap, edges, 200 px, old covers)
-     Opened without cover_shot.js it shows a placeholder ("แก้ข้อความ / ใน look.json"), so a forgotten cover cannot
-     pass as a real one. Variant b = light field in the look's accent colour, a = dark field in the look's bg colours.
-     Mark every text line data-cover="text", the series badge data-cover="badge", the hero picture data-cover="art". -->
+<!-- Cover A/B for itch (separate from frame 0). Text/colours/font are injected from look.json by tools/cover_shot.js.
+     A = the real scratching frame (hook plate at media 2.0) + glowing nerves under the skin + red spark under the nail,
+         hand-drawn circle on the nail point and arrow to it.
+     B = the episode's own skin cross-section graphic (itch.js at t = 16.2 s: fingernail scratching, red pain signal
+         taking over the yellow itch nerve), hand-drawn circle on the scratch point.
+     Highlight word = tilted box (same family as never-colonized cover, user liked the old channel covers). -->
 <html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
-#root{--bg:#2A0F12;--bg2:#C2453A;--ink:#1A0A06;--text:#FFFFFF;--accent:#FFD23F;--accent2:#FF8A5B;--panel:#3D1714;--font:'Kanit'}
-#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;
-  background:radial-gradient(ellipse 640px 800px at 540px 1060px,var(--bg2) 0%,var(--bg) 100%)}
-#art{position:absolute;left:90px;top:760px;width:900px;height:900px;z-index:2}
-#title{position:absolute;left:60px;right:60px;top:260px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px}
-.tl{font-weight:var(--tw,900);font-size:170px;line-height:1.3;white-space:nowrap;text-align:center;color:var(--text);
-  paint-order:stroke fill;-webkit-text-stroke:28px var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
-.tl b{color:var(--accent)}
-#badge{position:absolute;left:60px;top:140px;z-index:6;font-weight:700;font-size:42px;line-height:1;color:var(--ink);
-  background:var(--accent);padding:12px 24px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink)}
-/* variant b: light field, dark type (A/B should differ in more than the words) */
-#root.vb{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 60%,var(--accent2) 100%)}
-#root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
-#root.vb .tl b{color:var(--bg2)}
+#root{--bg:#0B1026;--bg2:#3A2477;--ink:#10080A;--text:#FFFFFF;--accent:#FFE14D;--accent2:#FF6FAE;--panel:#1A1440;--font:'Sarabun'}
+#root{--pain:color-mix(in oklab,#FF3B1F 78%,var(--accent2));--skin:color-mix(in oklab,var(--accent2) 42%,var(--bg2));
+  --skinhi:color-mix(in oklab,var(--accent2) 70%,#fff);--skinlo:color-mix(in oklab,var(--accent2) 22%,var(--bg))}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;background:var(--bg)}
+#art{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:2;overflow:hidden}
+#shade{position:absolute;left:0;top:0;width:1080px;height:900px;z-index:3;background:linear-gradient(rgba(11,16,38,.92) 0%,rgba(11,16,38,.7) 55%,rgba(11,16,38,0) 100%)}
+#title{position:absolute;left:60px;right:60px;top:300px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:40px}
+.tl{font-weight:var(--tw,700);font-size:150px;line-height:1.3;white-space:nowrap;text-align:center;color:var(--text);
+  paint-order:stroke fill;-webkit-text-stroke:26px var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 22px 10px;margin:0 4px;border-radius:22px;
+  transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.35);-webkit-text-stroke:0}
+#badge{position:absolute;left:70px;top:110px;z-index:6;font-weight:700;font-size:66px;line-height:1;color:var(--ink);transform:rotate(-6deg);
+  background:var(--accent);padding:14px 34px 22px;border-radius:999px;box-shadow:0 0 0 6px var(--ink)}
+.va,.vbart{display:none}
+#root:not(.vb) .va{display:block}
+#root.vb .vbart{display:block}
+#photo{position:absolute;left:0;top:120px;width:1080px;height:1920px;object-fit:cover}
+#ov,#ovb{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:4;pointer-events:none}
+/* variant b: the graphic layer from the clip */
+#gfx,#gfx-in{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#gfx{transform:translateY(560px) scale(1.12);transform-origin:540px 0}
+#gfx-lab,#gfx-timer,#mouse-chip{display:none}
+.ilab{display:none}
+#root.vb #badge{background:var(--accent2)}
+#root.vb #shade{height:820px;background:linear-gradient(rgba(11,16,38,.95) 0%,rgba(11,16,38,.9) 66%,rgba(11,16,38,0) 100%)}
 </style></head><body>
 <div id="root">
-  <div id="art" data-cover="art"></div>
+  <div id="art" data-cover="art">
+    <div class="va"><img id="photo" src="cover-hook0.jpg" alt=""/></div>
+    <div class="vbart"><div id="gfx"><div id="gfx-in"><div id="gfx-lab"></div><div id="gfx-timer"><svg><circle class="sweep"/><line/></svg></div></div></div><div id="mouse-chip"></div></div>
+  </div>
+  <div id="shade"></div>
+  <svg id="ov" class="va" viewBox="0 0 1080 1920">
+    <defs><filter id="cgl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <radialGradient id="csp"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="var(--pain)"/><stop offset="1" stop-color="var(--pain)" stop-opacity="0"/></radialGradient></defs>
+    <!-- itch nerve fibres glowing under the skin: a fine branching tree spreading from the scratch point across the hand -->
+    <g fill="none" stroke="var(--accent)" stroke-linecap="round" filter="url(#cgl)" opacity=".85">
+      <path d="M720 1080 C790 1110 850 1150 900 1230 C950 1310 1010 1350 1080 1370" stroke-width="7"/>
+      <path d="M900 1230 C880 1320 900 1420 950 1520 C980 1580 1000 1650 1010 1760" stroke-width="5"/>
+      <path d="M950 1520 C900 1560 860 1620 840 1700" stroke-width="3.5"/>
+      <path d="M810 1140 C780 1220 730 1290 650 1340 C580 1380 520 1440 470 1530" stroke-width="5"/>
+      <path d="M650 1340 C660 1420 640 1500 600 1590" stroke-width="3.5"/>
+      <path d="M470 1530 C420 1560 370 1580 300 1580" stroke-width="3"/>
+      <path d="M1010 1350 C1030 1300 1050 1270 1080 1250" stroke-width="3"/>
+    </g>
+    <g fill="#fff" filter="url(#cgl)"><circle cx="900" cy="1230" r="7"/><circle cx="650" cy="1340" r="6"/><circle cx="950" cy="1520" r="6"/><circle cx="470" cy="1530" r="5"/></g>
+    <circle cx="655" cy="1050" r="120" fill="url(#csp)" opacity=".9"/>
+    <g stroke="var(--pain)" stroke-width="9" stroke-linecap="round" filter="url(#cgl)"><path d="M655 985 L655 945"/><path d="M712 1018 L748 998"/><path d="M712 1082 L748 1102"/><path d="M598 1018 L562 998"/></g>
+    <!-- hand-drawn circle on the scratch point + arrow -->
+    <path d="M560 1000 C548 920 640 880 720 905 C800 930 820 1040 760 1110 C700 1170 590 1160 560 1090 C548 1060 552 1030 575 990" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M985 820 C990 900 930 960 830 985" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M868 950 L826 987 L880 1006" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <svg id="ovb" class="vbart" viewBox="0 0 1080 1920">
+    <path id="bcirc" d="" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round"/>
+    <path id="barrow" d="" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
   <div id="title"></div>
   <div id="badge" data-cover="badge"></div>
 </div>
+<script src="itch.js"></script>
 <script>
 // injected by tools/cover_shot.js from look.json; the placeholder below is only for opening the file by hand
 const C = window.__COVER || { lines: ['แก้ข้อความ', 'ใน look.json'], badge: '', vars: {} };
@@ -44,12 +78,23 @@ const v = new URLSearchParams(location.search).get('v') || 'a';
 const root = document.getElementById('root');
 for (const [k, val] of Object.entries(C.vars || {})) root.style.setProperty(k, val);
 if (v === 'b') root.classList.add('vb');
-const c = C;
 const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
 document.getElementById('title').innerHTML =
-  c.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
+  C.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
 const bd = document.getElementById('badge');
-if (c.badge) bd.textContent = c.badge; else bd.remove();
-// draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
+if (C.badge) bd.textContent = C.badge; else bd.remove();
+// fit every line inside 940 px
+function fit() { document.querySelectorAll('#title .tl').forEach(e => { let fs = 150; e.style.fontSize = fs + 'px';
+  while (e.scrollWidth > 930 && fs > 60) { fs -= 4; e.style.fontSize = fs + 'px'; } }); }
+fit(); if (document.fonts) document.fonts.ready.then(fit);
+if (v === 'b') {
+  const T = 16.55, SC = [{ a: 14.9, k: 'none' }, { a: 16.98, k: 'match' }, { a: 18.32, k: 'match' }];
+  ITCH.render(T, SC);
+  const nail = [...document.querySelectorAll('#gfx path')].find(p => (p.getAttribute('fill') || '').includes('gNail'));
+  const r = nail.getBoundingClientRect(), x = r.left + r.width * .5, y = r.bottom - 6;
+  document.getElementById('bcirc').setAttribute('d', `M${x-95} ${y-10} C${x-100} ${y-90} ${x+10} ${y-120} ${x+85} ${y-80} C${x+150} ${y-40} ${x+130} ${y+70} ${x+40} ${y+95} C${x-40} ${y+115} ${x-110} ${y+60} ${x-90} ${y-25}`);
+  document.getElementById('barrow').setAttribute('d', `M${x+330} ${y+330} C${x+300} ${y+220} ${x+240} ${y+150} ${x+150} ${y+110} M${x+190} ${y+85} L${x+148} ${y+112} L${x+196} ${y+140}`);
+  document.getElementById('gfx').style.clipPath = 'none';
+}
 </script>
 </body></html>
