@@ -422,7 +422,6 @@
         {
           "id": "bd7aebe2-1063-49a4-9d5a-0dc66b51027d",
           "scope": "project",
-          "report": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/video/.hyperframes/artifacts/checks/bd7aebe2-1063-49a4-9d5a-0dc66b51027d.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -452,7 +451,9 @@
           "revision": "04e09939-ad98-44d7-9400-da41e1a31357",
           "inputFingerprint": "fd19d8b27e48359c4b0e3f5cb3e0e9652157685eb2a70bc7e613ba14a4380413",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "16c45c5f-34d5-4e4b-a67e-7bc31784f180"
         }
       ],
       "f4ce7689-4553-4a8e-a232-33d8c38e019b": [
@@ -1091,13 +1092,15 @@
   },
   "renders": {
     "latest": {
-      "id": "d5ee52e1-5fe8-4594-a4b0-c5da2d9b77e3",
-      "completedAt": 1795761537038,
+      "id": "16c45c5f-34d5-4e4b-a67e-7bc31784f180",
+      "completedAt": 1795762138844,
       "output": "/home/user/AI-Studio/projects/2026-11-27-knowledge-never-colonized/renders/never-colonized-th-silent.mp4",
       "status": "completed",
-      "revision": null
+      "revision": "f4ce7689-4553-4a8e-a232-33d8c38e019b"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "f4ce7689-4553-4a8e-a232-33d8c38e019b"
+    ]
   },
   "pendingArtifactCleanup": []
 }
