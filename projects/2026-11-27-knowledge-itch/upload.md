@@ -16,7 +16,7 @@
 
 แหล่งข้อมูล: WashU Source "Why scratching makes you itch more" (2014); Zhao et al., Neuron 84:821-834 (2014); Holle et al., PNAS (2012); Pitt Immunology "Why does a mosquito bite itch"; NIH IRP blog (2019)
 เพลง: "Ruslan Latypov - Funny Piano" by Ruslan Latypov (CC BY 3.0) https://www.jamendo.com/track/1693127 — https://creativecommons.org/licenses/by/3.0/
-ภาพ: ดู assets/CREDITS.md (ใส่บรรทัดเครดิตฟุตเทจ CC BY ที่ใช้จริงจากไฟล์นั้น)
+ภาพ/วิดีโอ (Pixabay License): Amorn_mimi, IMGMIDI, tiburi, MabelAmber, Engin_Akyurt, mikadago via Pixabay | กราฟิกในร่างกายทำเอง
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 
 #ร่างกาย #ความรู้ #คัน #shorts
