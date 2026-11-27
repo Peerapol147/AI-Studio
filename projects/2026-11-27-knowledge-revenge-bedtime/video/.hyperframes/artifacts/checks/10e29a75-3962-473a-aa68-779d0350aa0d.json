@@ -1,0 +1,2165 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 353 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/AI-Studio/projects/2026-11-27-knowledge-revenge-bedtime/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 42 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/AI-Studio/projects/2026-11-27-knowledge-revenge-bedtime/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "composition_heavy_overlay_count_high",
+        "severity": "warning",
+        "message": "This composition has 54 elements carrying \"heavy overlay\" CSS (filter:blur, radial-gradient, or clip-path). Field signal: a composition with ~40 such elements (including opacity:0 / visibility:hidden ones) captures solid-black for the first ~half of the render, recovering near the end. Reproduces identically via drawElement, forced screenshot capture, and snapshot, so the capture layer itself is the offender (not encoder/mux). Independent of duration. Presence alone matters; only display:none elements are excluded here.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/AI-Studio/projects/2026-11-27-knowledge-revenge-bedtime/video/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes / transitions into separate .html files under compositions/ and concat the pieces (FFmpeg or the runtime's slideshow) so each capture only sees a small subset of heavy overlays at once. Even hidden overlays (opacity:0 / visibility:hidden) contribute: either remove truly unused ones from the source or scope them into their own per-transition sub-composition. If an overlay is genuinely inert for the whole clip, use display:none so it never enters the render tree. Field ref ts=1784040753 (#hyperframes-cli-feedback)."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "selector": "#title > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 327.59,
+          "y": 273.13,
+          "width": 424.8,
+          "height": 177.54
+        },
+        "time": 2.176,
+        "rect": {
+          "left": 327.59,
+          "top": 273.13,
+          "right": 752.39,
+          "bottom": 450.67,
+          "width": 424.8,
+          "height": 177.54
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "ตี 2 แล้ว",
+        "message": "<div> \"ตี 2 แล้ว\" is outside the safe area: YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 2.176,
+        "lastSeen": 2.176,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.176
+        ]
+      },
+      {
+        "selector": "#c8 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 219.06,
+          "y": 1121.57,
+          "width": 581.88,
+          "height": 121.02
+        },
+        "time": 6.528,
+        "rect": {
+          "left": 219.06,
+          "top": 1121.57,
+          "right": 800.94,
+          "bottom": 1242.59,
+          "width": 581.88,
+          "height": 121.02
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "หรอกนะ แต่เพราะ",
+        "message": "<span> \"หรอกนะ แต่เพราะ\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 6.528,
+        "lastSeen": 6.528,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          6.528
+        ]
+      },
+      {
+        "selector": "#tb-lw",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 63.33,
+          "y": 608.76,
+          "width": 305.01,
+          "height": 96.46
+        },
+        "time": 23.935,
+        "rect": {
+          "left": 63.33,
+          "top": 608.76,
+          "right": 368.34,
+          "bottom": 705.22,
+          "width": 305.01,
+          "height": 96.46
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "งาน / เรียน",
+        "message": "<div> \"งาน / เรียน\" is outside the safe area: TikTok (left edge), Instagram Reels (left edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.935,
+        "lastSeen": 23.935,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.935
+        ]
+      },
+      {
+        "selector": "#tb-lm",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 627.57,
+          "y": 606.25,
+          "width": 355.62,
+          "height": 108.11
+        },
+        "time": 23.935,
+        "rect": {
+          "left": 627.57,
+          "top": 606.25,
+          "right": 983.19,
+          "bottom": 714.36,
+          "width": 355.62,
+          "height": 108.11
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "เวลาของฉัน",
+        "message": "<div> \"เวลาของฉัน\" is outside the safe area: TikTok (right edge), YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.935,
+        "lastSeen": 23.935,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.935
+        ]
+      },
+      {
+        "selector": "#tb-ls",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 780.29,
+          "y": 989.62,
+          "width": 243.94,
+          "height": 96.11
+        },
+        "time": 23.935,
+        "rect": {
+          "left": 780.29,
+          "top": 989.62,
+          "right": 1024.23,
+          "bottom": 1085.73,
+          "width": 243.94,
+          "height": 96.11
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "เวลานอน",
+        "message": "<div> \"เวลานอน\" is outside the safe area: TikTok (right edge), Instagram Reels (right edge), YouTube Shorts (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.935,
+        "lastSeen": 23.935,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.935
+        ]
+      },
+      {
+        "selector": "#c27 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 201.21,
+          "y": 1111.17,
+          "width": 605.58,
+          "height": 133
+        },
+        "time": 28.287,
+        "rect": {
+          "left": 201.21,
+          "top": 1111.17,
+          "right": 806.79,
+          "bottom": 1244.17,
+          "width": 605.58,
+          "height": 133
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "คนที่โดน แก้แค้น",
+        "message": "<span> \"คนที่โดน แก้แค้น\" is outside the safe area: TikTok (right edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 28.287,
+        "lastSeen": 28.287,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          28.287
+        ]
+      }
+    ],
+    "duration": 39.167,
+    "samples": [
+      2.176,
+      6.528,
+      10.88,
+      15.232,
+      19.584,
+      23.935,
+      28.287,
+      32.639,
+      36.991
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 6,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2.176,
+      10.88,
+      19.584,
+      28.287,
+      36.991
+    ],
+    "checked": 9,
+    "passed": 9
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 25,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ยังไม่นอน\" (3 words) is on screen 0.47 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ยังไม่นอน",
+        "selector": "#c1 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 323.91,
+          "y": 1110.99,
+          "width": 372.18,
+          "height": 138.07999999999993
+        },
+        "time": 0.803,
+        "words": 3,
+        "seconds": 0.468,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 0.499,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 0.624,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 0.748,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 0.873,
+            "opacity": 1,
+            "heightPx": 138
+          },
+          {
+            "time": 0.998,
+            "opacity": 1,
+            "heightPx": 147
+          },
+          {
+            "time": 1.123,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.247,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.372,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 1.497,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 1.622,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"กันอีกหรอ\" (3 words) is on screen 1.00 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "กันอีกหรอ",
+        "selector": "#c2 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 303.24,
+          "y": 1096.28,
+          "width": 413.52,
+          "height": 148.01
+        },
+        "time": 1.27,
+        "words": 3,
+        "seconds": 0.998,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 0.998,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 1.123,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 1.247,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 1.372,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 1.497,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.622,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.746,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.871,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 1.996,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 2.121,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 2.245,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 2.37,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.495,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.619,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ตีหนึ่งตีสองแล้ว\" (5 words) is on screen 1.14 s (±0.01 s), under its 1.50 s floor: hold it about 0.5 s + 0.3 s a word (2.00 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ตีหนึ่งตีสองแล้ว",
+        "selector": "#c3 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 198.46,
+          "y": 1106.9,
+          "width": 623.08,
+          "height": 135.75
+        },
+        "time": 2.268,
+        "words": 5,
+        "seconds": 1.139,
+        "floorSeconds": 1.5,
+        "measured": [
+          {
+            "time": 1.996,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.121,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.245,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.37,
+            "opacity": 1,
+            "heightPx": 136
+          },
+          {
+            "time": 2.495,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 2.619,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 2.744,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 2.994,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 3.118,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 3.243,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 3.368,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 3.493,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.617,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.742,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ยังไม่ง่วง\" (3 words) is on screen 0.50 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ยังไม่ง่วง",
+        "selector": "#c4 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 315.09,
+          "y": 1102.39,
+          "width": 377.91,
+          "height": 143.87999999999988
+        },
+        "time": 3.407,
+        "words": 3,
+        "seconds": 0.499,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 3.118,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.243,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.368,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.493,
+            "opacity": 1,
+            "heightPx": 144
+          },
+          {
+            "time": 3.617,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 3.742,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 3.867,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 3.992,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 4.116,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 4.241,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"บางทีอาจไม่ใช่\" (3 words) is on screen 0.70 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "บางทีอาจไม่ใช่",
+        "selector": "#c6 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 254.02,
+          "y": 1109.44,
+          "width": 511.96000000000004,
+          "height": 134.11000000000013
+        },
+        "time": 5.005,
+        "words": 3,
+        "seconds": 0.702,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 4.74,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 4.865,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 4.989,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.114,
+            "opacity": 1,
+            "heightPx": 134
+          },
+          {
+            "time": 5.239,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 5.364,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 5.488,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 5.613,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 5.738,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.863,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.987,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"เพราะไม่ง่วง\" (3 words) is on screen 0.43 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "เพราะไม่ง่วง",
+        "selector": "#c7 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 297.08,
+          "y": 1128.66,
+          "width": 414.86000000000007,
+          "height": 121.73000000000002
+        },
+        "time": 5.707,
+        "words": 3,
+        "seconds": 0.429,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 5.364,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.488,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.613,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.738,
+            "opacity": 1,
+            "heightPx": 122
+          },
+          {
+            "time": 5.863,
+            "opacity": 1,
+            "heightPx": 135
+          },
+          {
+            "time": 5.987,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 6.112,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 6.237,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.362,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.486,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"หรอกนะ แต่เพราะ\" (4 words) is on screen 0.97 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "หรอกนะ แต่เพราะ",
+        "selector": "#c8 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 214.08,
+          "y": 1118.19,
+          "width": 591.84,
+          "height": 123.08999999999992
+        },
+        "time": 6.135,
+        "words": 4,
+        "seconds": 0.967,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 5.863,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5.987,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.112,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.237,
+            "opacity": 1,
+            "heightPx": 123
+          },
+          {
+            "time": 6.362,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 6.486,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 6.611,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 6.736,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 6.86,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 6.985,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 7.11,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 7.235,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 7.359,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"หรือนอนดึก\" (3 words) is on screen 0.56 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "หรือนอนดึก",
+        "selector": "#c12 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 317.07,
+          "y": 1147.16,
+          "width": 376.45,
+          "height": 113.69000000000005
+        },
+        "time": 12.973,
+        "words": 3,
+        "seconds": 0.56,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 12.598,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 12.723,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 12.848,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 12.973,
+            "opacity": 1,
+            "heightPx": 114
+          },
+          {
+            "time": 13.097,
+            "opacity": 1,
+            "heightPx": 147
+          },
+          {
+            "time": 13.222,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 13.347,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 13.471,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 13.596,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.721,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.846,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"แก้แค้นใคร\" (3 words) is on screen 0.63 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "แก้แค้นใคร",
+        "selector": "#c14 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 308.56,
+          "y": 1132.79,
+          "width": 392.67,
+          "height": 123.38000000000011
+        },
+        "time": 17.806,
+        "words": 3,
+        "seconds": 0.632,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 17.463,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.588,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.712,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.837,
+            "opacity": 1,
+            "heightPx": 123
+          },
+          {
+            "time": 17.962,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 18.087,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 18.211,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 18.336,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 18.461,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.586,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.71,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ก็ทั้งวัน\" (3 words) is on screen 0.41 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ก็ทั้งวัน",
+        "selector": "#c16 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 386.03,
+          "y": 1144.83,
+          "width": 238.4000000000001,
+          "height": 115.25999999999999
+        },
+        "time": 19.436,
+        "words": 3,
+        "seconds": 0.405,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 19.085,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 19.209,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 19.334,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 19.459,
+            "opacity": 1,
+            "heightPx": 115
+          },
+          {
+            "time": 19.584,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 19.708,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 19.833,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 19.958,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 20.082,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 20.207,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"เป็นของตัวเอง\" (4 words) is on screen 0.56 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "เป็นของตัวเอง",
+        "selector": "#c18 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 227.43,
+          "y": 1107.6,
+          "width": 552.9300000000001,
+          "height": 135.29999999999995
+        },
+        "time": 20.34,
+        "words": 4,
+        "seconds": 0.561,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 20.082,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 20.207,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 20.332,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 20.457,
+            "opacity": 1,
+            "heightPx": 135
+          },
+          {
+            "time": 20.581,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 20.706,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 20.831,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 20.956,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 21.08,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 21.205,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"กลางคืนเลยขอ\" (4 words) is on screen 0.67 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "กลางคืนเลยขอ",
+        "selector": "#c20 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 229.61,
+          "y": 1107.6,
+          "width": 560.78,
+          "height": 135.29999999999995
+        },
+        "time": 21.837,
+        "words": 4,
+        "seconds": 0.67,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 21.579,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 21.704,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 21.829,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 21.953,
+            "opacity": 1,
+            "heightPx": 135
+          },
+          {
+            "time": 22.078,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 22.203,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 22.328,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 22.452,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 22.577,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 22.702,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 22.827,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ทั้งที่รู้ว่า\" (4 words) is on screen 0.57 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ทั้งที่รู้ว่า",
+        "selector": "#c22 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 380.57,
+          "y": 1141.44,
+          "width": 258.86000000000007,
+          "height": 117.54999999999995
+        },
+        "time": 23.802,
+        "words": 4,
+        "seconds": 0.568,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 23.45,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 23.575,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 23.7,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 23.825,
+            "opacity": 1,
+            "heightPx": 118
+          },
+          {
+            "time": 23.949,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 24.074,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 24.199,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 24.323,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 24.448,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 24.573,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 24.698,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"พรุ่งนี้ต้องเพลีย\" (4 words) is on screen 0.60 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "พรุ่งนี้ต้องเพลีย",
+        "selector": "#c23 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 209.19,
+          "y": 1110.9,
+          "width": 589.6100000000001,
+          "height": 133.18000000000006
+        },
+        "time": 24.37,
+        "words": 4,
+        "seconds": 0.601,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 24.074,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 24.199,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 24.323,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 24.448,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 24.573,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 24.698,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 24.822,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 24.947,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 25.072,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 25.197,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 25.321,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"แต่ที่ตลก\" (3 words) is on screen 0.47 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "แต่ที่ตลก",
+        "selector": "#c25 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 316.76,
+          "y": 1102.39,
+          "width": 374.5799999999999,
+          "height": 143.87999999999988
+        },
+        "time": 26.101,
+        "words": 3,
+        "seconds": 0.468,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 25.82,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 25.945,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 26.07,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 26.194,
+            "opacity": 1,
+            "heightPx": 144
+          },
+          {
+            "time": 26.319,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 26.444,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 26.569,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 26.693,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 26.818,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"คนที่โดนแก้แค้น\" (5 words) is on screen 0.80 s (±0.01 s), under its 1.50 s floor: hold it about 0.5 s + 0.3 s a word (2.00 s here) before it leaves or changes; see references/motion.md.",
+        "text": "คนที่โดนแก้แค้น",
+        "selector": "#c27 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 203.59,
+          "y": 1112.76,
+          "width": 600.91,
+          "height": 131.98000000000002
+        },
+        "time": 27.505,
+        "words": 5,
+        "seconds": 0.803,
+        "floorSeconds": 1.5,
+        "measured": [
+          {
+            "time": 27.192,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 27.317,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 27.442,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 27.567,
+            "opacity": 1,
+            "heightPx": 132
+          },
+          {
+            "time": 27.691,
+            "opacity": 1,
+            "heightPx": 134
+          },
+          {
+            "time": 27.816,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 27.941,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 28.066,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 28.19,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 28.315,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.44,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.564,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"จริงๆ ก็คือ\" (3 words) is on screen 0.60 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "จริงๆ ก็คือ",
+        "selector": "#c28 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 338.47,
+          "y": 1141.44,
+          "width": 343.05999999999995,
+          "height": 117.54999999999995
+        },
+        "time": 28.307,
+        "words": 3,
+        "seconds": 0.601,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 27.941,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.066,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.19,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.315,
+            "opacity": 1,
+            "heightPx": 118
+          },
+          {
+            "time": 28.44,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 28.564,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 28.689,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 28.814,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 28.939,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 29.063,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 29.188,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ตัวเราเอง\" (3 words) is on screen 0.43 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ตัวเราเอง",
+        "selector": "#c29 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 336.06,
+          "y": 1118.95,
+          "width": 347.88000000000005,
+          "height": 132.71000000000004
+        },
+        "time": 28.908,
+        "words": 3,
+        "seconds": 0.429,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 28.564,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.689,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.814,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 28.939,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 29.063,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 29.188,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 29.313,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 29.438,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 29.562,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 29.687,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ให้กันเวลา\" (3 words) is on screen 0.62 s (±0.06 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ให้กันเวลา",
+        "selector": "#c33 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 314.15,
+          "y": 1114.77,
+          "width": 380.48,
+          "height": 135.53999999999996
+        },
+        "time": 32.431,
+        "words": 3,
+        "seconds": 0.624,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 32.057,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 32.182,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 32.307,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 32.431,
+            "opacity": 1,
+            "heightPx": 136
+          },
+          {
+            "time": 32.556,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 32.681,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 32.805,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 32.93,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 33.055,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 33.18,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 33.304,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ของตัวเองไว้\" (4 words) is on screen 0.50 s (±0.06 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ของตัวเองไว้",
+        "selector": "#c34 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 277.28,
+          "y": 1110.9,
+          "width": 465.44000000000005,
+          "height": 133.18000000000006
+        },
+        "time": 33.055,
+        "words": 4,
+        "seconds": 0.499,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 32.681,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 32.805,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 32.93,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 33.055,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 33.18,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 33.304,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 33.429,
+            "opacity": 1,
+            "heightPx": 133
+          },
+          {
+            "time": 33.554,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 33.679,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 33.803,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"แล้วตั้งปลุก\" (3 words) is on screen 0.62 s (±0.06 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "แล้วตั้งปลุก",
+        "selector": "#c37 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 321.89,
+          "y": 1141.44,
+          "width": 376.22,
+          "height": 117.54999999999995
+        },
+        "time": 35.3,
+        "words": 3,
+        "seconds": 0.624,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 34.926,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 35.051,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 35.175,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 35.3,
+            "opacity": 1,
+            "heightPx": 118
+          },
+          {
+            "time": 35.425,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 35.55,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 35.674,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 35.799,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 35.924,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 36.049,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 36.173,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"แล้วคืนนี้\" (3 words) is on screen 0.50 s (±0.06 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "แล้วคืนนี้",
+        "selector": "#c40 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 351.6,
+          "y": 1123.42,
+          "width": 316.80000000000007,
+          "height": 129.70000000000005
+        },
+        "time": 37.67,
+        "words": 3,
+        "seconds": 0.499,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 37.296,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 37.421,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 37.545,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 37.67,
+            "opacity": 1,
+            "heightPx": 130
+          },
+          {
+            "time": 37.795,
+            "opacity": 1,
+            "heightPx": 148
+          },
+          {
+            "time": 37.92,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 38.044,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 38.169,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.294,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.419,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"จะนอนกี่โมงกันดี?\" (6 words) is on screen 1.06 s (±0.06 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "จะนอนกี่โมงกันดี?",
+        "selector": "#c41 > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 217.71,
+          "y": 1131.05,
+          "width": 584.58,
+          "height": 115.23000000000002
+        },
+        "time": 38.169,
+        "words": 6,
+        "seconds": 1.061,
+        "floorSeconds": 2,
+        "measured": [
+          {
+            "time": 37.795,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 37.92,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.044,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.169,
+            "opacity": 1,
+            "heightPx": 115
+          },
+          {
+            "time": 38.294,
+            "opacity": 1,
+            "heightPx": 123
+          },
+          {
+            "time": 38.419,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 38.543,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 38.668,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 38.793,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 38.918,
+            "opacity": 1,
+            "heightPx": 121
+          },
+          {
+            "time": 39.042,
+            "opacity": 0.64,
+            "heightPx": 121
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"ตี 2 แล้ว\" (3 words) is on screen 0.24 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "ตี 2 แล้ว",
+        "selector": "#title > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 326.83,
+          "y": 272.57,
+          "width": 426.32,
+          "height": 178.17000000000002
+        },
+        "time": 38.933,
+        "words": 3,
+        "seconds": 0.237,
+        "floorSeconds": 2,
+        "measured": [
+          {
+            "time": 38.668,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.793,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.918,
+            "opacity": 0.19,
+            "heightPx": 162
+          },
+          {
+            "time": 39.042,
+            "opacity": 1,
+            "heightPx": 178
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"ยังไม่นอน?\" (3 words) is on screen 0.24 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "ยังไม่นอน?",
+        "selector": "#title > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 262.88,
+          "y": 482.01,
+          "width": 554.22,
+          "height": 178.18000000000006
+        },
+        "time": 38.933,
+        "words": 3,
+        "seconds": 0.237,
+        "floorSeconds": 2,
+        "measured": [
+          {
+            "time": 38.668,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.793,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 38.918,
+            "opacity": 0.19,
+            "heightPx": 162
+          },
+          {
+            "time": 39.042,
+            "opacity": 1,
+            "heightPx": 178
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 314
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}
