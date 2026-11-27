@@ -11,7 +11,7 @@
   "tts_model": "eleven_v3",
   "atempo": 1.1,
   "vo_lufs": -18,
-  "music_file": null,
+  "music_file": "music-jamendo-209419.mp3",
   "cover_text": "แมวเกาะพีพี ทาสีหรือลายจริง?",
   "why": "เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน | ผู้กำกับ: ocean-teal (ทะเลเกาะพีพี) + flash + เพลง mysterious (ปริศนาตำราโบราณ/ทาสีไหม) ต่างจากตอน never-colonized (retro-cream/whip/cinematic) ที่ผู้ใช้เพิ่งเห็น",
   "covers": [
