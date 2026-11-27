@@ -36,9 +36,9 @@ flag(){
   ffmpeg -v error -y -ss "$4" -i "$F/$3" -frames:v 1 -vf "$BG" -q:v 3 "assets/$1-bg.jpg"
   ffmpeg -v error -y -loop 1 -framerate 30 -t 3.2 -i "assets/$1-bg.jpg" -loop 1 -framerate 30 -t 3.2 -i "$F/$2" -filter_complex \
    "[1:v]format=rgba,scale=$5:$6:flags=lanczos,pad=iw+60:ih+60:30:30:color=0x00000000,\
-geq=r='r(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2))':\
-g='g(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2))':\
-b='b(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2))':\
+geq=r='min(255,r(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2)))':\
+g='min(255,g(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2)))':\
+b='min(255,b(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2)))':\
 a='alpha(X,Y+14*sin(2*PI*(X/460-T*0.8)))',$GR[f];\
    [0:v][f]overlay=x=(W-w)/2:y=1010-h/2:format=auto,format=yuv420p" $ENC "assets/$1.mp4"; }
 flag bt-flag pixabay-162244.png pixabay-292862.mp4 6 900 600
