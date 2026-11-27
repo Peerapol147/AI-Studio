@@ -63,8 +63,9 @@ function build(SC){
 
   /* ---------- hole (hook): dark hole grows beside the pupil ---------- */
   const kh=$('kb-hole');
-  if(kh){const o=div(kh,'ov'); B.hole=div(o,'hole','','left:0;top:0;width:200px;height:200px');
-    const sv=el(o,'svg',{class:'gsvg',viewBox:'0 0 1080 1920',width:1080,height:1920}); B.holeR=ringEl(sv,70,7);}
+  if(kh){const o=div(kh,'ov'); B.hole=div(o,'hole','','left:0;top:0;width:120px;height:120px');
+    const sv=el(o,'svg',{class:'gsvg',viewBox:'0 0 1080 1920',width:1080,height:1920});
+    B.holeG=el(sv,'g',{}); B.holeR=el(B.holeG,'circle',{r:52,pathLength:1,transform:'rotate(-90)'},'fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round');}
   /* ---------- cover: ring on the covered eye, then the open (right) eye ---------- */
   const kc=$('kb-cover');
   if(kc){const sv=el(div(kc,'ov'),'svg',{class:'gsvg',viewBox:'0 0 1080 1920',width:1080,height:1920});
@@ -123,6 +124,7 @@ function build(SC){
   B.nc=[['1',220],['2',540],['3+',860]].map(([n,x])=>div(epi,'ncard',n,`left:${x}px;margin-left:-120px`));
 }
 
+const HOLE_TR={"t0": 1.38, "fps": 30, "x": [566, 565, 562, 560, 557, 554, 550, 550, 548, 548, 548, 548, 549, 550, 549, 550, 551, 551, 552, 554, 555, 556, 557, 558, 559, 560, 562, 563, 566, 570, 575, 580, 586, 591, 596, 601, 607, 611, 616, 620, 623, 622, 622, 621, 621, 621, 621, 624, 630, 636, 642, 648, 653, 657, 658, 658, 656, 653, 649, 644, 639, 635, 632, 628, 625, 622, 618, 616, 613, 612, 612, 612, 613, 614], "y": [1004, 1003, 1003, 1003, 1002, 1003, 1004, 1007, 1011, 1015, 1020, 1024, 1028, 1031, 1032, 1032, 1033, 1033, 1033, 1033, 1034, 1035, 1036, 1037, 1038, 1038, 1038, 1038, 1036, 1034, 1032, 1030, 1029, 1028, 1028, 1028, 1029, 1031, 1033, 1035, 1037, 1040, 1042, 1044, 1046, 1047, 1048, 1048, 1047, 1046, 1045, 1043, 1041, 1039, 1038, 1037, 1037, 1036, 1036, 1037, 1038, 1038, 1038, 1038, 1038, 1038, 1038, 1039, 1040, 1042, 1043, 1045, 1046, 1047]};
 const BLINK=[[1.76,1.99],[2.84,3.20],[3.27,3.60]];
 const TW={hole:1.46, cover:3.84, rightEye:5.12, test:5.48, dont:7.06, move:8.38, c3:10.70, c2:11.80, c1:12.78,
   gone:13.86, thatsit:15.68, nerveDot:18.10, nerveOut:18.32, exit:19.10, nocell:19.84, mai:20.48, cell:20.72,
@@ -149,12 +151,22 @@ window.EPI=function(t,o){
   }
 
   /* ---------- hole ---------- */
-  if(B.hole){const u=sp(t,TW.hole,9,0.7), r=8+46*u+3*Math.sin((t-TW.hole)*5)*clamp(u), x=250, y=985;
-    // hide the hole while the eye in hole-v blinks (eye-region luma from the plate: closed ~1.77-1.98, 2.84-3.20, 3.27-3.60)
-    const bl=BLINK.reduce((m,[a,b])=>Math.min(m,clamp(Math.max(a-t,t-b)/0.05)),1);
-    B.hole.style.opacity=t>=TW.hole-0.05?f3(clamp(u*2)*bl):'0';
-    B.hole.style.transform=`translate(${f1(x-100)}px,${f1(y-100)}px) scale(${f3(r/56)})`;
-    B.holeR.set(x,y,eo((t-TW.hole-0.15)/0.5),(r+16)/70,0.9*bl);}
+  if(B.hole){
+    // follows the eye: HOLE_TR = iris centre (tracked from the corneal highlight in hole-v, smoothed) + nasal offset
+    const fi=clamp((t-HOLE_TR.t0)*HOLE_TR.fps,0,HOLE_TR.x.length-1), i0=Math.floor(fi), i1=Math.min(i0+1,HOLE_TR.x.length-1), w=fi-i0;
+    const x=lerp(HOLE_TR.x[i0],HOLE_TR.x[i1],w), y=lerp(HOLE_TR.y[i0],HOLE_TR.y[i1],w);
+    const at=T.hole.a+0.04, u=S(Math.max(0,t-at),14,1.0);              // soft critically-damped spring ~0.35 s, no bounce
+    const bl=BLINK.reduce((m,[a,b])=>Math.min(m,eio(Math.max(a-t,t-b)/0.1)),1);   // smooth fade out/in round each blink
+    const out=1-eio((t-(T.cover.a-0.16))/0.14);                        // soft exit before the cut to cover
+    const br=1+0.02*(1-Math.cos((t-at)*Math.PI*2/1.4));                // breathing 1.0 <-> 1.04
+    const o=t<at?0:clamp(u)*bl*out, sc=Math.max(0.01,u)*br;
+    B.hole.style.opacity=f3(o);
+    B.hole.style.transform=`translate(${f1(x-60)}px,${f1(y-60)}px) scale(${f3(sc)})`;
+    B.holeG.setAttribute('transform',`translate(${f1(x)} ${f1(y)}) scale(${f3(sc)})`); B.holeG.style.opacity=f3(o);
+    // thin dashed ring drawn round: N dashes, the first k*u visible
+    const N=22, k=clamp((t-at-0.12)/0.45), seg=[]; for(let j=0;j<N;j++){ const vis=clamp(k*N-j); seg.push(f3(0.026*vis), f3(0.0195+0.026*(1-vis))); }
+    B.holeR.style.strokeDasharray=seg.join(' '); B.holeR.style.strokeDashoffset=f3(-(t-at)*0.04);
+  }
   /* ---------- cover rings ---------- */
   if(B.covR){B.covR.set(320,930,eo((t-TW.cover)/0.45),1+0.04*Math.sin((t-TW.cover)*6)*clamp(t-TW.cover));
     B.eyeR.set(565,968,eo((t-TW.rightEye)/0.35),1);}
