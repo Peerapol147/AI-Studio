@@ -123,6 +123,7 @@ function build(SC){
   B.nc=[['1',220],['2',540],['3+',860]].map(([n,x])=>div(epi,'ncard',n,`left:${x}px;margin-left:-120px`));
 }
 
+const BLINK=[[1.76,1.99],[2.84,3.20],[3.27,3.60]];
 const TW={hole:1.46, cover:3.84, rightEye:5.12, test:5.48, dont:7.06, move:8.38, c3:10.70, c2:11.80, c1:12.78,
   gone:13.86, thatsit:15.68, nerveDot:18.10, nerveOut:18.32, exit:19.10, nocell:19.84, mai:20.48, cell:20.72,
   brain:24.14, fill:25.38, sci:28.26, fr:28.90, y0:29.46, n350:30.16, pi:30.94, ask:[32.12,32.32,32.50,32.68]};
@@ -130,11 +131,6 @@ const TW={hole:1.46, cover:3.84, rightEye:5.12, test:5.48, dont:7.06, move:8.38,
 window.EPI=function(t,o){
   if(!B) build(o.SC);
   const DUR=o.DUR;
-  /* badge: from the end of the hook title to just before the loop seam (frame 0 / last frame show the kicker) */
-  const bIn=T.cover.a+0.14, bOut=DUR-0.45, bd=$('badge');
-  const bu=t<bIn?0:(t<bOut?sp(t,bIn,18,0.6):1-clamp((t-bOut)/0.12));
-  bd.style.opacity=f3(clamp(bu*2)); bd.style.transform=`scale(${f3(0.8+0.2*clamp(bu))})`;
-
   /* ---------- test screen: on (no fade) from test.a to nerve.a ---------- */
   const on=t>=T.test.a && t<T.nerve.a;
   B.ts.style.opacity=on?'1':'0';
@@ -154,9 +150,11 @@ window.EPI=function(t,o){
 
   /* ---------- hole ---------- */
   if(B.hole){const u=sp(t,TW.hole,9,0.7), r=8+46*u+3*Math.sin((t-TW.hole)*5)*clamp(u), x=250, y=985;
-    B.hole.style.opacity=t>=TW.hole-0.05?f3(clamp(u*2)):'0';
+    // hide the hole while the eye in hole-v blinks (eye-region luma from the plate: closed ~1.77-1.98, 2.84-3.20, 3.27-3.60)
+    const bl=BLINK.reduce((m,[a,b])=>Math.min(m,clamp(Math.max(a-t,t-b)/0.05)),1);
+    B.hole.style.opacity=t>=TW.hole-0.05?f3(clamp(u*2)*bl):'0';
     B.hole.style.transform=`translate(${f1(x-100)}px,${f1(y-100)}px) scale(${f3(r/56)})`;
-    B.holeR.set(x,y,eo((t-TW.hole-0.15)/0.5),(r+16)/70,0.9);}
+    B.holeR.set(x,y,eo((t-TW.hole-0.15)/0.5),(r+16)/70,0.9*bl);}
   /* ---------- cover rings ---------- */
   if(B.covR){B.covR.set(320,930,eo((t-TW.cover)/0.45),1+0.04*Math.sin((t-TW.cover)*6)*clamp(t-TW.cover));
     B.eyeR.set(565,968,eo((t-TW.rightEye)/0.35),1);}

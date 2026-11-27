@@ -15,6 +15,9 @@ WANT=" ${*:-hook hole cover nerve never brain who sci years fill} "
 want(){ [[ "$WANT" == *" $1 "* ]]; }
 # CARD <crop w:h:x:y> <card w> <card h> <card y> : sharp card over a blurred darker copy (same crop)
 CARD(){ echo "fps=30,$GR,crop=$1,split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=42,eq=brightness=-0.28[bg];[b]scale=$2:$3:flags=lanczos[c];[bg][c]overlay=(W-w)/2:$4"; }
+# CARDL: same card with a lift before the grade + a lighter blurred ground (dark candle shots; review 2026-11-27 "มืดเกิน")
+LIFT="eq=gamma=1.75:brightness=0.04"
+CARDL(){ echo "fps=30,$LIFT,$GR,crop=$1,split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=42,eq=brightness=-0.15[bg];[b]scale=$2:$3:flags=lanczos[c];[bg][c]overlay=(W-w)/2:$4"; }
 CARDI(){ echo "$GR,crop=$1,split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=42,eq=brightness=-0.28[bg];[b]scale=$2:$3:flags=lanczos[c];[bg][c]overlay=(W-w)/2:$4"; }
 
 # hook (+loop): 91698 macro eye, iris at source (693,360) -> plate (540,1005)
@@ -22,7 +25,7 @@ want hook && ffmpeg -v error -y -t 8 -i $F/pixabay-91698.mp4 -filter_complex "$(
 # hole: 34848 green eye (blinks), iris at source ~(580,340) -> plate ~(551,982)
 want hole && ffmpeg -v error -y -t 8 -i $F/pixabay-34848.mp4 -filter_complex "$(CARD 960:720:100:0 1080 810 600)" $ENC assets/hole-v.mp4
 # cover: 1869740 FLIPPED (hand over the eye on the viewer's left = mirror of the viewer's own left eye)
-want cover && ffmpeg -v error -y -i $F/pixabay-1869740.jpg -filter_complex "hflip,$(CARDI 900:853:40:0 1080 1024 470)" -q:v 2 assets/cover-v.jpg
+want cover && ffmpeg -v error -y -i $F/pixabay-1869740.jpg -filter_complex "hflip,eq=gamma=1.4:brightness=0.06,hue=s=0,eq=contrast=1.1,crop=900:853:40:0,split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=42,eq=brightness=-0.1[bg];[b]scale=1080:1024:flags=lanczos[c];[bg][c]overlay=0:470" -q:v 2 assets/cover-v.jpg
 # nerve: 31145 eye cross-section (alpha) on black, B&W; optic nerve leaves at source ~(1110,650) -> plate (937,1018)
 want nerve && ffmpeg -v error -y -f lavfi -i color=c=black:s=1080x1920 -i $F/pixabay-31145.png -filter_complex "[1]crop=1262:1141:9:9,scale=1080:976:flags=lanczos,format=rgba,hue=s=0,eq=contrast=1.35:brightness=-0.06[e];[0][e]overlay=0:470" -frames:v 1 -q:v 2 assets/nerve-v.jpg
 # never: 1694 street, feet walking
@@ -30,11 +33,11 @@ want never && ffmpeg -v error -y -t 8 -i $F/pixabay-1694.mp4 -filter_complex "$(
 # brain: 91633 neuron on black, 1.5x square card (black ground blends into the blurred ground)
 want brain && ffmpeg -v error -y -t 5.4 -i $F/pixabay-91633.mp4 -filter_complex "$(CARD 720:720:310:0 1080 1080 400)" $ENC assets/brain-v.mp4
 # who: 107189 candle + quill (wide)
-want who && ffmpeg -v error -y -t 4 -i $F/pixabay-107189.mp4 -filter_complex "$(CARD 960:720:160:0 1080 810 540)" $ENC assets/who-v.mp4
+want who && ffmpeg -v error -y -t 4 -i $F/pixabay-107189.mp4 -filter_complex "$(CARDL 960:720:160:0 1080 810 540)" $ENC assets/who-v.mp4
 # sci: same clip later (16 s), tighter on the writing hand + quill
-want sci && ffmpeg -v error -y -ss 16 -t 3 -i $F/pixabay-107189.mp4 -filter_complex "$(CARD 720:720:500:0 1080 1080 420)" $ENC assets/sci-v.mp4
+want sci && ffmpeg -v error -y -ss 16 -t 3 -i $F/pixabay-107189.mp4 -filter_complex "$(CARDL 720:720:500:0 1080 1080 420)" $ENC assets/sci-v.mp4
 # years: same clip (31 s), candle flame close
-want years && ffmpeg -v error -y -ss 31 -t 4 -i $F/pixabay-107189.mp4 -filter_complex "$(CARD 640:720:150:0 960 1080 420)" $ENC assets/years-v.mp4
+want years && ffmpeg -v error -y -ss 31 -t 4 -i $F/pixabay-107189.mp4 -filter_complex "$(CARDL 640:720:150:0 960 1080 420)" $ENC assets/years-v.mp4
 # fill: 3382663 field (the hole + fill are drawn in episode.js)
 want fill && ffmpeg -v error -y -i $F/pixabay-3382663.jpg -filter_complex "$(CARDI 900:690:190:0 1080 828 520)" -q:v 2 assets/fill-v.jpg
 

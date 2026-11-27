@@ -79,7 +79,6 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="title">
 %%TITLE%%
 </div>
-<div id="badge"><span>ลองทำตาม #2</span></div>
 <div id="caps">
 %%CAPS%%
 </div>

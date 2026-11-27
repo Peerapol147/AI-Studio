@@ -2,9 +2,6 @@
 #epi{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:30;pointer-events:none}
 .gsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
 .ov{position:absolute;left:0;top:0;width:1080px;height:1920px}
-/* series badge: top corner, whole pill inside Y < 240 (never inside the test frame Y 450-1000) */
-#badge{position:absolute;left:60px;top:150px;z-index:56;font-weight:700;font-size:44px;line-height:1;opacity:0;
-  color:var(--ink);background:var(--accent);padding:12px 26px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink),0 10px 24px rgba(0,0,0,.45);transform-origin:0 50%}
 /* ---- test screen (5.48-17.56): one fixed layer. Solid black, "+" centre (130,690), dot centre (950,750) d 120 ---- */
 #ts{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#000;opacity:0}
 #ts .plus-h{position:absolute;left:85px;top:683px;width:90px;height:14px;background:#fff}
@@ -26,7 +23,7 @@
 .glow{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;mix-blend-mode:screen;
   background:radial-gradient(ellipse 430px 430px at 540px 940px,var(--accent) 0%,color-mix(in srgb,var(--accent) 35%,transparent) 45%,rgba(0,0,0,0) 100%)}
 .fhole{position:absolute;border-radius:50%;background:radial-gradient(circle,#000 0%,#000 62%,rgba(0,0,0,.8) 78%,rgba(0,0,0,0) 100%)}
-.dimall{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;background:rgba(0,0,0,.45)}
+.dimall{position:absolute;left:-200px;top:-200px;width:1480px;height:2320px;background:rgba(0,0,0,.22)}
 .card{position:absolute;left:540px;top:640px;opacity:0;text-align:center;padding:34px 50px 40px;border-radius:40px;background:var(--panel);
   box-shadow:0 0 0 6px var(--accent2),0 24px 60px rgba(0,0,0,.6)}
 .card .c1{font-weight:700;font-size:70px;line-height:1.35;color:var(--paneltext);white-space:nowrap}
@@ -42,3 +39,5 @@
 .mini .mp1{position:absolute;left:47px;top:129px;width:50px;height:8px;background:#fff}
 .mini .mp2{position:absolute;left:68px;top:108px;width:8px;height:50px;background:#fff}
 .mini .md{position:absolute;left:495px;top:134px;width:66px;height:66px;border-radius:50%;background:var(--accent)}
+/* user 2026-11-27: no series label on screen. opening pov forces a kicker pill ("POV:" when kicker is null) -> hidden */
+#root .kick.pov{display:none}
