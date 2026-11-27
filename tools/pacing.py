@@ -10,6 +10,9 @@ shots.json additions:
   "topic": {"th": "<last words of the topic in the hook line>"}   # must be spoken by 1.5 s
   "genre": "legend"                                              # optional: legend/mystery = story 70 / twist 30
   "long_reason": "..."                                           # required when the clip is longer than 40 s
+  "topic_exception": "<why + who approved>"                      # optional: topic may finish after 1.5 s (INFO, not
+                         FAIL) when frame 0 already says the topic on screen and the USER approved it, e.g.
+                         "เฟรม 0 ขึ้นหัวข้อบนจอ, ผู้ใช้อนุมัติ 2026-11-27" (never-colonized); a reason of < 10 letters is refused
   each shot: "beat": hook | setup | explain | reveal | twist | share | cta | loop
 
 FAIL (exit 1):
@@ -82,6 +85,7 @@ def main(proj, lang='th'):
              if w.get('type', 'word') == 'word']
     shots, dur = tl['shots'], tl['duration']
     legend = plan.get('genre') == 'legend'
+    infos = []
 
     # hook: voice + topic
     if words and words[0]['start'] > VOICE_BY:
@@ -94,7 +98,14 @@ def main(proj, lang='th'):
         if te is None:
             fails.append(f'topic {topic!r} not found in the voice')
         elif te > TOPIC_BY:
-            fails.append(f'topic {topic!r} ends at {te:.2f} s: say it within {TOPIC_BY} s (shorten the hook line)')
+            exc = plan.get('topic_exception')
+            if isinstance(exc, str) and len(exc.strip()) >= 10:
+                infos.append(f'topic {topic!r} ends at {te:.2f} s (> {TOPIC_BY} s) allowed by topic_exception: {exc.strip()}')
+            elif exc is not None:
+                fails.append(f'topic_exception {exc!r}: write why the late topic is OK and who approved it (>= 10 letters)')
+            else:
+                fails.append(f'topic {topic!r} ends at {te:.2f} s: say it within {TOPIC_BY} s (shorten the hook line, or '
+                             'if frame 0 shows the topic on screen and the user approved: "topic_exception" in shots.json)')
         else:
             print(f'topic {topic!r} said by {te:.2f} s')
 
@@ -149,7 +160,6 @@ def main(proj, lang='th'):
             warns.append(f'cta lasts {cta_len:.1f} s (style.md: <= {CTA_MAX:.0f} s)')
 
     # cut speed: INFO only (style.md ข้อ 4, ผู้ใช้ 2026-11-25: จังหวะตัดแล้วแต่คลิป)
-    infos = []
     for s in shots:
         if s.get('beat') == 'explain' and not HOLD[0] <= s['dur'] <= HOLD[1]:
             infos.append(f'explain shot {s["id"]} is {s["dur"]:.2f} s (outside {HOLD[0]:.0f}-{HOLD[1]:.0f} s; fine if the clip is cut fast on purpose)')

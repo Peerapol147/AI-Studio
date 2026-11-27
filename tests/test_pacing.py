@@ -9,13 +9,13 @@ GOOD = [(0, 'hook'), (1, 'hook'), (2, 'setup'), (4, 'explain'), (6, 'explain'), 
         (12, 'twist'), (13, 'twist'), (14, 'share'), (16, 'cta'), (18, 'loop')]
 
 
-def run(tmp_path, beats=GOOD, topic='w0xw1x', genre=None, src_loop='a.mp4'):
+def run(tmp_path, beats=GOOD, topic='w0xw1x', genre=None, src_loop='a.mp4', extra=None):
     (tmp_path / 'assets' / 'audio').mkdir(parents=True, exist_ok=True)
     (tmp_path / 'assets' / 'audio' / 'words.json').write_text(json.dumps(WORDS))
     shots = [{'id': f's{i}', 'cue': {'th': f'w{i}x'}, **({'beat': b} if b else {}), 'long_ok': True,
               'src': 'a.mp4' if n == 0 else (src_loop if n == len(beats) - 1 else f'{i}.mp4')}
              for n, (i, b) in enumerate(beats)]
-    plan = {'lead': 0, 'shots': shots, **({'topic': {'th': topic}} if topic else {}), **({'genre': genre} if genre else {})}
+    plan = {'lead': 0, 'shots': shots, **({'topic': {'th': topic}} if topic else {}), **({'genre': genre} if genre else {}), **(extra or {})}
     (tmp_path / 'shots.json').write_text(json.dumps(plan))
     r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'shot_times.py'), str(tmp_path), 'th'], capture_output=True, text=True)
     if r.returncode:
@@ -138,3 +138,18 @@ def test_share_before_twist_warns_and_v3_loop_not_flagged(tmp_path):
     r = run(tmp_path, beats, src_loop='other.mp4')
     assert r.returncode == 0 and '"share" comes before the twist' in r.stdout
     assert 'check the loop by eye' not in r.stdout
+
+
+def test_topic_exception_turns_late_topic_into_info(tmp_path):
+    """never-colonized 2026-11-27: the user approved a hook that names the topic after 1.5 s because frame 0 shows it
+    on screen. "topic_exception" with a reason -> INFO; an empty/short reason is still a FAIL; not found = FAIL."""
+    why = 'เฟรม 0 ขึ้นหัวข้อบนจอ ผู้ใช้อนุมัติ 2026-11-27'
+    r = run(tmp_path, topic='w0xw1xw2x', extra={'topic_exception': why})
+    assert r.returncode == 0, r.stdout
+    assert 'INFO topic' in r.stdout and 'ends at 2.50 s' in r.stdout and why in r.stdout and 'pacing: OK' in r.stdout
+    r = run(tmp_path, topic='w0xw1xw2x', extra={'topic_exception': 'ok'})
+    assert r.returncode == 1 and 'topic_exception' in r.stdout
+    r = run(tmp_path, topic='nope', extra={'topic_exception': why})
+    assert r.returncode == 1 and 'not found in the voice' in r.stdout
+    r = run(tmp_path, topic='w0xw1xw2x')
+    assert r.returncode == 1 and '"topic_exception"' in r.stdout          # the FAIL names the way out
