@@ -1,6 +1,6 @@
 """tools/footage_search.py: many terms x 5 sources x video/photo into SEARCH.json, 429 retried twice then the source
 is skipped, report demands >= 10 terms (Thai + English, video + photo, >= 2 sources) and raises ALERT.md under 50 %."""
-import http.server, json, pathlib, subprocess, sys, threading
+import http.server, json, pathlib, re, subprocess, sys, threading
 
 import pytest
 
@@ -18,6 +18,15 @@ class H(http.server.BaseHTTPRequestHandler):
         if p.startswith('/nasa429'):
             self.server.n429 += 1
             return self._send(429, {'e': 'slow down'})
+        if p == '/openaccess/api/v1.0/search':
+            def row(i, meta, media):
+                return {'id': f'r{i}', 'title': f'Tiger {i}', 'content': {'descriptiveNonRepeating': {
+                    'record_link': f'http://n2t.net/ark:/65665/rec{i}', 'data_source': 'NMNH - Mammals',
+                    'metadata_usage': {'access': meta}, 'online_media': {'media': [{'type': 'Images', 'idsId': f'ark:/65665/m{i}',
+                        'usage': {'access': media}, 'content': f'https://ids.si.edu/ids/deliveryService/id/ark:/65665/m{i}',
+                        'thumbnail': f'https://ids.si.edu/t{i}', 'resources': [{'label': 'High-resolution JPEG', 'url': f'https://ids.si.edu/ids/download?id=M{i}.jpg'}]}]}}}}
+            return self._send(200, {'response': {'rows': [row(1, 'CC0', 'CC0'), row(2, 'CC0', 'Usage conditions apply'),
+                                                          row(3, 'Usage conditions apply', 'CC0'), row(4, 'CC0', 'CC0')]}})
         if p.startswith('/html429'):                                 # multi-line error page body
             return self._raw(429, b'<html>\n<body>\nToo Many Requests\n</body>\n</html>\n')
         body = {'/api/videos/': {'hits': [{'id': 1, 'user': 'u', 'pageURL': 'https://px/1', 'duration': 9,
@@ -72,7 +81,7 @@ def project(tmp_path, ids=('wrist', 'graft', 'fix', 'title')):
 def test_search_all_sources_429_backoff_and_report(srv, tmp_path):
     p = project(tmp_path)
     env = {'PIXABAY_BASE': srv.url, 'PIXABAY_API_KEY': 'K1', 'PEXELS_BASE': srv.url, 'PEXELS_API_KEY': 'K2',
-           'OPENVERSE_BASE': srv.url, 'NASA_BASE': srv.url + '/nasa429', 'WIKIMEDIA_BASE': srv.url}
+           'OPENVERSE_BASE': srv.url, 'NASA_BASE': srv.url + '/nasa429', 'WIKIMEDIA_BASE': srv.url, 'SI_BASE': srv.url}
     r = run('search', p, 'wrist', 'ข้อมือ', 'wrist tendon', env=env)
     assert r.returncode == 0, r.stderr
     assert srv.n429 == 3 and 'BLOCKED nasa' in r.stderr              # 1 try + 2 backoff retries, then skipped
@@ -180,6 +189,26 @@ def test_searches_run_one_at_a_time(srv, tmp_path):
     assert json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']['candidates']
     r = run('search', p, 'wrist', 'hand', '--sources', 'openverse', env=env)  # free lock: no WAIT
     assert r.returncode == 0 and 'WAIT' not in r.stderr
+
+
+def test_smithsonian_cc0_stills_only(srv, tmp_path):
+    """Smithsonian Open Access (key = proxy network secret on api.si.edu, header X-Api-Key): CC0 record AND CC0 media
+    only, stills only, English terms only; credit = museum + record link."""
+    p = project(tmp_path)
+    r = run('search', p, 'wrist', 'tiger', 'เสือ', '--sources', 'smithsonian', env={'SI_BASE': srv.url, 'SI_API_KEY': ''})
+    assert r.returncode == 0, r.stderr
+    db = json.loads((p / 'assets' / 'footage' / 'SEARCH.json').read_text())['wrist']
+    ids = [c['id'] for c in db['candidates']]
+    assert ids == ['smithsonian-m1', 'smithsonian-m4']                 # m2 media restricted, m3 record restricted
+    c = db['candidates'][0]
+    assert c['url'] == 'https://ids.si.edu/ids/download?id=M1.jpg' and c['license'].startswith('CC0')
+    assert c['page'] == 'http://n2t.net/ark:/65665/rec1' and c['creator'] == 'NMNH - Mammals' and c['kind'] == 'photo'
+    st = {(t['q'], t['kind']): (t['status'], t['note']) for t in db['tried']}
+    assert st[('tiger', 'video')][0] == 'skipped' and st[('เสือ', 'photo')] == ('skipped', 'smithsonian: English terms only')
+    hdr = [h for path, _, _ in srv.log if path.startswith('/openaccess') for h in [path]]
+    assert hdr and 'online_media_type%3AImages' in hdr[0]
+    src = (ROOT / 'tools' / 'footage_search.py').read_text()
+    assert 'proxy-injected' in src and not re.search(r'X-Api-Key: [0-9A-Za-z]{20,}', src)   # never a real key in code
 
 
 def test_report_does_not_count_blocked_or_skipped_searches(srv, tmp_path):

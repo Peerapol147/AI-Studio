@@ -17,7 +17,8 @@ tools: Bash, Read, Write, WebFetch, Glob
 ตอน palmaris ฝ่ายนี้ค้น Pixabay วิดีโอไม่กี่คำแล้วยอมแพ้ ผู้กำกับค้นเองด้วยวิดีโอ 35 คำ + ภาพนิ่ง 13 คำ ได้ 9 ไฟล์
 - **ทุกช็อตที่ยังไม่มีไฟล์: ค้นอย่างน้อย 10 คำ** ไทย + อังกฤษ, วิดีโอ + ภาพนิ่ง, หลายแหล่ง ด้วย
   `python3 tools/footage_search.py search <project> <shot id> "ข้อมือ" "เส้นเอ็นข้อมือ" "wrist tendon" "palm close up" ... `
-  (ค่าเริ่ม = Pixabay + Pexels + Openverse + NASA + Wikimedia × video + photo, จดทุกคำ/ผลลง `assets/footage/SEARCH.json`; ไม่ดาวน์โหลด)
+  (ค่าเริ่ม = Pixabay + Pexels + Openverse + NASA + Wikimedia + Smithsonian × video + photo, จดทุกคำ/ผลลง `assets/footage/SEARCH.json`; ไม่ดาวน์โหลด)
+  Smithsonian Open Access = ภาพนิ่ง CC0 เท่านั้น ค้นด้วยคำอังกฤษ (คำไทยถูกข้าม) **เหมาะกับสัตว์/ธรรมชาติ/ประวัติศาสตร์/ของในพิพิธภัณฑ์** (ภาพสัตว์สตัฟฟ์ ฟอสซิล แผนที่เก่า ภาพถ่ายเก่า); คีย์เป็น network secret ของ api.si.edu ที่ proxy ใส่ให้ ห้ามเขียนคีย์ลงไฟล์; เครดิต = ชื่อพิพิธภัณฑ์ (creator) + ลิงก์ record (page) จาก SEARCH.json
   **รันทีละคำสั่งเท่านั้น ห้ามขนาน** (ห้าม `&`, ห้ามสั่งหลายช็อตพร้อมกัน, ห้ามแยก agent ค้นพร้อมกัน): ตอน itch ค้นขนาน = 429 ทุกแหล่ง; เครื่องมือล็อกไว้แล้ว ตัวที่สองจะขึ้น `WAIT` แล้วรอคิว (เกิน 10 นาที exit 3)
   คำค้นให้หลากหลาย: สิ่งของตรงๆ, ท่าทาง, มุมกล้อง (close up / macro / top view), อาชีพ/สถานที่, คำพ้อง, ชื่อวิทยาศาสตร์
 - เลือกจาก candidates (ดู tags/ภาพตัวอย่าง ข้ามภาพ AI/generated) แล้วดาวน์โหลด: Pixabay ใช้ `tools/footage.sh`; แหล่งอื่น `bash tools/get.sh <url> assets/footage/<source>-<id>.<ext>` + `tools/credits.py add` (ไลเซนส์ + ผู้สร้างจาก SEARCH.json)

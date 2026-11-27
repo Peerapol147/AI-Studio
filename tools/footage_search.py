@@ -5,7 +5,7 @@ The user: "ทำไมหาฟุตไม่ได้ เกิดจาก�
 words, no stills, gave up, and nobody told the user. The director then found 9 files with 35 video + 13 still words.
 
   python3 tools/footage_search.py search <project> <shot id> "<term>" ["<term>" ...] [--kinds video,photo]
-          [--sources pixabay,pexels,openverse,nasa,wikimedia] [--per 6]
+          [--sources pixabay,pexels,openverse,nasa,wikimedia,smithsonian] [--per 6]
       every term x source x kind -> candidates appended to <project>/assets/footage/SEARCH.json (no download).
       Thai terms are sent as-is (Pixabay gets lang=th); write both Thai and English terms.
   python3 tools/footage_search.py report <project> [--min-terms 10]
@@ -18,8 +18,10 @@ Rate limits: a 429 is retried at most twice (3 s, then 9 s; never a long retry-a
 to <= 12 s of waiting) and then that source is logged as BLOCKED in SEARCH.json "_blocked" and skipped for every shot
 for BLOCK_MIN (10) minutes, so the whole footage step waits at most ~12 s per source (the "fail fast, never wait
 silently" rule still holds). Every request goes through tools/get.sh. Keys: PIXABAY_API_KEY, PEXELS_API_KEY (env or
-.env; a source without its key is skipped and logged). Base URLs can be overridden (PIXABAY_BASE, PEXELS_BASE,
-OPENVERSE_BASE, NASA_BASE, WIKIMEDIA_BASE) for tests.
+.env; a source without its key is skipped and logged). Smithsonian Open Access (stills only, English terms only, CC0
+media only; good for animals / nature / history / museum objects): the key is a network secret the proxy adds to
+api.si.edu (header X-Api-Key) - never write it anywhere; SI_API_KEY overrides for a machine without the proxy.
+Base URLs can be overridden (PIXABAY_BASE, PEXELS_BASE, OPENVERSE_BASE, NASA_BASE, WIKIMEDIA_BASE, SI_BASE) for tests.
 
 ONE AT A TIME (itch 2026-11-27: searches run in parallel = 429 from every source): `search` takes an exclusive lock
 (FOOTAGE_LOCK, default <tmp>/ai-studio-footage-search.lock) for the whole call. A second search started meanwhile prints
@@ -50,7 +52,7 @@ def _backoff(raw):
 BACKOFF = _backoff(os.environ.get('FOOTAGE_BACKOFF'))
 UA = 'AI-Studio-footage-search/1.0 (stock footage lookup)'
 THAI = re.compile(r'[฀-๿]')
-SOURCES = ('pixabay', 'pexels', 'openverse', 'nasa', 'wikimedia')
+SOURCES = ('pixabay', 'pexels', 'openverse', 'nasa', 'wikimedia', 'smithsonian')
 
 
 def _env_key(name):
@@ -176,6 +178,33 @@ def search_one(src, kind, term, per):
             out.append(dict(id=f"wikimedia-{p.get('pageid')}", url=ii.get('url'), preview=ii.get('thumburl'), w=ii.get('width'),
                             h=ii.get('height'), page=ii.get('descriptionurl'), license=lic or '?',
                             creator=re.sub('<[^>]+>', '', (em.get('Artist') or {}).get('value', ''))[:80]))
+        return st, out, note, url
+    if src == 'smithsonian':
+        if kind == 'video':
+            return 'skipped', [], 'smithsonian: stills only', None
+        if th:
+            return 'skipped', [], 'smithsonian: English terms only', None
+        base = os.environ.get('SI_BASE', 'https://api.si.edu')
+        url = q(base, '/openaccess/api/v1.0/search', q=f'{term} AND online_media_type:Images', rows=per * 2)
+        # the proxy replaces this placeholder with the real key (network secret); never put a key in code
+        st, d, note = fetch(url, headers=[f"X-Api-Key: {os.environ.get('SI_API_KEY') or 'proxy-injected'}"])
+        out = []
+        for r in ((d or {}).get('response') or {}).get('rows', []):
+            dn = (r.get('content') or {}).get('descriptiveNonRepeating') or {}
+            if ((dn.get('metadata_usage') or {}).get('access')) != 'CC0':
+                continue
+            for m in ((dn.get('online_media') or {}).get('media') or []):
+                if m.get('type') != 'Images' or (m.get('usage') or {}).get('access') != 'CC0':
+                    continue                                  # CC0 only (some Smithsonian media are rights-restricted)
+                res = {(x.get('label') or ''): x.get('url') for x in m.get('resources') or []}
+                hi = res.get('High-resolution JPEG') or res.get('Screen Image')       # never the .tif master
+                out.append(dict(id=f"smithsonian-{m.get('idsId') or m.get('id')}".replace('ark:/65665/', ''), url=hi or m.get('content'),
+                                preview=m.get('thumbnail'), w=m.get('width'), h=m.get('height'),
+                                page=dn.get('record_link') or dn.get('guid'), creator=dn.get('data_source') or 'Smithsonian',
+                                license='CC0 (Smithsonian Open Access)', title=r.get('title')))
+                break
+            if len(out) >= per:
+                break
         return st, out, note, url
     raise SystemExit(f'unknown source {src}')
 
