@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "9b31a267-023d-4a0f-a764-b70a4be84268",
-  "currentRevision": "575d2b09-b61f-494f-b5a6-bf6a8bc86ada",
+  "currentRevision": "46e7b369-fc0e-47bf-80d4-410d0c420982",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -201,12 +201,12 @@
       "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/88/881f8bceaa25e70ad1c502027b966b1565d0d58d093203824973582eeade99ff"
     },
     "index.html": {
-      "hash": "1aa4c056e6edb29bf3f65e290b44c6a8c0fbbb579afa1af2c375838fb750490e",
-      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/1a/1aa4c056e6edb29bf3f65e290b44c6a8c0fbbb579afa1af2c375838fb750490e"
+      "hash": "ac60a749a4a7989ce4b5f9630685deb344986e8a3f71f81d52c684953a869035",
+      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/ac/ac60a749a4a7989ce4b5f9630685deb344986e8a3f71f81d52c684953a869035"
     },
     "index.html.tpl": {
-      "hash": "c73ca296bdc7a0990c71eef9b167c2e1663ab2183a97686016a0676c214f88c4",
-      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/c7/c73ca296bdc7a0990c71eef9b167c2e1663ab2183a97686016a0676c214f88c4"
+      "hash": "10dbe9ea98b67f248411acf8c8d29c515a564c59b1955f967fdc451f3f33b76f",
+      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/10/10dbe9ea98b67f248411acf8c8d29c515a564c59b1955f967fdc451f3f33b76f"
     },
     "meta.json": {
       "hash": "dcae9d3f4572bef6a6db1e8f79c5421fc424aa46ccd238ca472210d53cd8c32c",
@@ -217,8 +217,8 @@
       "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
     },
     "prep_assets.sh": {
-      "hash": "7699b6107fade50a74c9459e74fe5b7e451f72e25f767e8e40dbac0ccbad9a86",
-      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/76/7699b6107fade50a74c9459e74fe5b7e451f72e25f767e8e40dbac0ccbad9a86"
+      "hash": "32d2d444de8fa50902fef793a2665fa50cd7a0b3e97523d173eb490dcd05deba",
+      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/32/32d2d444de8fa50902fef793a2665fa50cd7a0b3e97523d173eb490dcd05deba"
     },
     "vendor/LICENSES.md": {
       "hash": "87f19a9f4b4ca6b5df5c5938c45cdbd7efcf147bfdd756b04fea4e549544325c",
@@ -233,8 +233,8 @@
       "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/f6/f6df524e3d8629ab23b24b678f416e78bcd6ac43473743a9a4292355ab46ad3b"
     },
     "assets/cta.mp4": {
-      "hash": "e096499af7e1bb7503aa270be83d27ad058d353ff4ab2dd16cb8a9f0fe802ee9",
-      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/e0/e096499af7e1bb7503aa270be83d27ad058d353ff4ab2dd16cb8a9f0fe802ee9"
+      "hash": "a0ce99d1e4cc4594f9bdca5de4029c0f69317de6d1942c0dffceb7194804a3b4",
+      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/a0/a0ce99d1e4cc4594f9bdca5de4029c0f69317de6d1942c0dffceb7194804a3b4"
     },
     "assets/hook.mp4": {
       "hash": "15b18f91c9dd9ccee18f1572618f2ab68988d752a8e676c565d3e6a31af130fc",
@@ -279,6 +279,10 @@
     "cover-b-bg.jpg": {
       "hash": "80ff828ff410a924d891c738d7f4b6652de74c6f6f4791201786fc6165937bf3",
       "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/80/80ff828ff410a924d891c738d7f4b6652de74c6f6f4791201786fc6165937bf3"
+    },
+    "assets/vo-th-mix.wav": {
+      "hash": "cb237c05a4b4cd6a545754905eae0361399f2306694e5473117e8f08395a73b8",
+      "content": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/cb/cb237c05a4b4cd6a545754905eae0361399f2306694e5473117e8f08395a73b8"
     }
   },
   "revisions": {
@@ -405,10 +409,44 @@
           "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/76/7699b6107fade50a74c9459e74fe5b7e451f72e25f767e8e40dbac0ccbad9a86"
         }
       }
+    },
+    "46e7b369-fc0e-47bf-80d4-410d0c420982": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795816517126,
+      "endedAt": 1795816517142,
+      "files": {
+        "assets/cta.mp4": {
+          "before": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/e0/e096499af7e1bb7503aa270be83d27ad058d353ff4ab2dd16cb8a9f0fe802ee9",
+          "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/a0/a0ce99d1e4cc4594f9bdca5de4029c0f69317de6d1942c0dffceb7194804a3b4"
+        },
+        "assets/vo-th-mix.wav": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/cb/cb237c05a4b4cd6a545754905eae0361399f2306694e5473117e8f08395a73b8"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/1a/1aa4c056e6edb29bf3f65e290b44c6a8c0fbbb579afa1af2c375838fb750490e",
+          "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/ac/ac60a749a4a7989ce4b5f9630685deb344986e8a3f71f81d52c684953a869035"
+        },
+        "index.html.tpl": {
+          "before": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/c7/c73ca296bdc7a0990c71eef9b167c2e1663ab2183a97686016a0676c214f88c4",
+          "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/10/10dbe9ea98b67f248411acf8c8d29c515a564c59b1955f967fdc451f3f33b76f"
+        },
+        "prep_assets.sh": {
+          "before": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/76/7699b6107fade50a74c9459e74fe5b7e451f72e25f767e8e40dbac0ccbad9a86",
+          "after": "/root/.cache/hyperframes/history/9b31a267-023d-4a0f-a764-b70a4be84268/blobs/32/32d2d444de8fa50902fef793a2665fa50cd7a0b3e97523d173eb490dcd05deba"
+        }
+      }
     }
   },
   "checks": {
-    "latest": null,
+    "latest": {
+      "revision": "46e7b369-fc0e-47bf-80d4-410d0c420982",
+      "id": "f15bf683-d0fd-4864-979e-b08ccd66266d"
+    },
     "revisions": {
       "5cb3b515-9e4a-4b32-b8ec-9bc538e058e7": [
         {
@@ -482,6 +520,43 @@
           "attribution": "recorded-revision",
           "status": "cleaned",
           "cleanedAfterRender": "62af2a46-a51b-4383-916d-70c95dd661b0"
+        }
+      ],
+      "46e7b369-fc0e-47bf-80d4-410d0c420982": [
+        {
+          "id": "f15bf683-d0fd-4864-979e-b08ccd66266d",
+          "scope": "project",
+          "report": "/home/user/AI-Studio/projects/2026-11-28-knowledge-viral-cat/video/.hyperframes/artifacts/checks/f15bf683-d0fd-4864-979e-b08ccd66266d.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795816786755,
+          "contentHash": "ed7b65ebaeaeca7420a1fbed1f4e6c4524e06691ecc2859c993b936e9e03f882",
+          "revision": "46e7b369-fc0e-47bf-80d4-410d0c420982",
+          "inputFingerprint": "e90b9aaada5f764f7bd862c265bf0cd458154288a6e4082f3f7e410a60445dbd",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
         }
       ]
     },
@@ -1171,13 +1246,14 @@
   },
   "renders": {
     "latest": {
-      "id": "62af2a46-a51b-4383-916d-70c95dd661b0",
-      "completedAt": 1795816171402,
+      "id": "13bb00ed-d75d-48c2-8eca-7d9d7f2050e7",
+      "completedAt": 1795816698650,
       "output": "/home/user/AI-Studio/projects/2026-11-28-knowledge-viral-cat/renders/viral-cat-th-silent.mp4",
       "status": "completed",
-      "revision": "575d2b09-b61f-494f-b5a6-bf6a8bc86ada"
+      "revision": "46e7b369-fc0e-47bf-80d4-410d0c420982"
     },
     "retainedRevisions": [
+      "46e7b369-fc0e-47bf-80d4-410d0c420982",
       "575d2b09-b61f-494f-b5a6-bf6a8bc86ada"
     ]
   },
