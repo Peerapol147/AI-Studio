@@ -16,9 +16,14 @@ vplate(){ # name src crop(w:h:x:y) grade seconds
 vplate hook        pixabay-233390.mp4 1440:2560:0:0   "$NIGHT" 6
 vplate setup_yawn  pixabay-44647.mp4  810:1440:742:0  "$NIGHT" 5
 vplate reveal_time pixabay-26452.mp4  608:1080:666:0  "$NIGHT" 4
-vplate revenge     pixabay-42408.mp4  608:1080:480:0  "$BASE,eq=brightness=0.06:gamma=1.1,vignette=PI/5" 3
+# revenge: the clip's first seconds are a blurred face behind the phone; the sharp grin + phone is at source 15 s.
+# -ss 14.08 keeps the shot's data-media-start 0.92 (shots-th.json) landing on source 15.0
+ffmpeg -v error -y -ss 14.08 -t 3 -i "$F/pixabay-42408.mp4" -vf "fps=30,crop=608:1080:420:0,scale=1080:1920:flags=lanczos,unsharp=5:5:0.5,$BASE,eq=brightness=0.04:gamma=1.08,vignette=PI/5" $ENC assets/revenge.mp4
 vplate who         pixabay-142641.mp4 810:1440:700:0  "$DAY"   3
-vplate work        pixabay-7269.mp4   608:1080:1080:0 "$DAY"   3
+# work: the source is soft (shallow focus) -> whole 16:9 frame (woman at the desk + computer) as a card on a blurred copy
+ffmpeg -v error -y -t 3 -i "$F/pixabay-7269.mp4" -filter_complex "[0:v]fps=30,split[a][b];\
+[a]scale=-2:1920,crop=1080:1920,gblur=sigma=30,$DAY,eq=brightness=-0.12[bg];\
+[b]scale=1000:-2:flags=lanczos,unsharp=7:7:1.0,$DAY[fg];[bg][fg]overlay=(W-w)/2:780-h/2" $ENC assets/work.mp4
 vplate rush        pixabay-1694.mp4   608:1080:950:0  "$DAY"   3
 vplate night_me    pixabay-202987.mp4 810:1440:870:0  "$NIGHT" 3
 vplate tired       pixabay-151295.mp4 810:1440:1200:0 "$DAY"   6
