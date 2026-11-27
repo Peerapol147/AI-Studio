@@ -14,7 +14,7 @@ tools: Bash, Read, Write, Glob, Skill
 
 - เสียงพากย์: `tools/tts.sh <voice_id> <text-file> <out.mp3> [model]` ภาษาไทยต้องใช้ `eleven_v3` ขึ้นไป
   ช่อง knowledge: อัดทั้งบทเทคเดียว (ด้านล่าง); ช่องอื่น: ทำทีละฉาก บันทึก `assets/audio/vo-<ภาษา>-<ฉาก>.mp3` แล้ววัดความยาวจริงด้วย ffprobe
-  เขียน `assets/audio/timing.md` (ฉาก, ไฟล์, วินาที) เพราะ editor ใช้ตั้งจังหวะภาพ
+  `assets/audio/timing.md` (editor ใช้ตั้งจังหวะภาพ) **ทำด้วย `python3 tools/timing.py <project> <lang>` หลัง `tools/words.sh` เท่านั้น ห้ามพิมพ์/ประมาณเวลาเอง** (caffeine-ranking 2026-11-27: เวลาเริ่มบรรทัดที่ประมาณเองผิด) สคริปต์อ่านบทจาก `script-vo-<lang>.txt` (หรือ `assets/audio/vo-<lang>-tts.txt`) จับคู่กับ words.json ทีละตัวอักษร แถว ≈ = ถอดไม่ตรงบท ให้ฟังเช็ก; หมายเหตุอื่น (เพลง/เทค) เขียนต่อท้ายไฟล์ได้
 - **ช่อง knowledge ล็อกเสียง (ผู้ใช้ 2026-11-26 "จังหวะเดิม เสียงเดิมไปตลอด"):** George `JBFqnCBsd6RMkjVDRZzb` + `eleven_v3` ทุกตอน ห้ามเปลี่ยน/ทดลองเสียงอื่น
   ขั้นตอนตายตัว: อัดทั้งบทเทคเดียว → `bash tools/trim_silence.sh vo-raw.mp3 vo-trim.mp3 0.5` → `bash tools/vo_finish.sh vo-trim.mp3 assets/audio/vo-th.mp3 look.json`
   (atempo 1.1 + normalize -18 LUFS ตาม `look.json` `atempo`/`vo_lufs`) → แล้วค่อย `tools/words.sh` (words ต้องทำจากไฟล์สุดท้าย)

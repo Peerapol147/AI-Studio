@@ -15,6 +15,7 @@
 - `test_pacing.py`: `tools/pacing.py` topic by 1.5 s (or "topic_exception" with a reason -> INFO), reveal 50-60 %, twist/share/cta present, explain 2-3 s / hook+twist speed = INFO only (style.md 4), length 20-40 s (long_reason, 59 s ceiling), legend twist >= 70 %; `beat` in shot_times
 - `test_shot_times.py`: `tools/shot_times.py` good run, media_start priority, footage.json merge by id, the hard errors (empty shots/cue, NaN/Infinity, duplicate id) and stale-timeline deletion
 - `test_fetch.py`: `tools/get.sh` (200/403/429/5xx/4xx/timeout, never overwrites a good file, key masked) and tts/words/voices/footage/music + `tools/credits.py` against a local mock server (`conftest.py`); no real API is called
+- `test_timing.py`: `tools/timing.py` writes timing.md line start/end from words.json (aligned per letter, a word the transcriber spelled differently marked ≈, gaps > 0.4 s listed)
 - `test_sound_pass_vo.py`: `tools/sound_pass_vo.py` mixes synthetic sine/kick audio and writes report.html from a clone at another path; a mono VO at -18 LUFS is measured as -18 (not +3 LU as dual mono) and not WARNed
 
 Fixtures stay tiny and self-made: no footage, music, logos or keys (the repo is public).
