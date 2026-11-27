@@ -1,0 +1,124 @@
+[
+ {
+  "t": 2.56,
+  "type": "hover_or_small_ui",
+  "desc": "clock digit flips 01:00 -> 02:00 (ตีสอง)",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -14
+ },
+ {
+  "t": 4.85,
+  "type": "scene_cut",
+  "desc": "hook -> setup (yawn)",
+  "sfx": "whoosh/fs-264777-swoosh.ogg",
+  "gain": -28
+ },
+ {
+  "t": 9.24,
+  "type": "appear",
+  "desc": "sign drops in (ชื่อเรียก)",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -18
+ },
+ {
+  "t": 10.52,
+  "type": "typing",
+  "desc": "type Revenge",
+  "sfx": "typing/fs-416777-digital-typing-wav.ogg",
+  "gain": -22,
+  "dur": 0.34
+ },
+ {
+  "t": 10.96,
+  "type": "typing",
+  "desc": "type Bedtime",
+  "sfx": "typing/fs-416777-digital-typing-wav.ogg",
+  "gain": -22,
+  "dur": 0.38
+ },
+ {
+  "t": 11.42,
+  "type": "typing",
+  "desc": "type Procrastination",
+  "sfx": "typing/fs-416777-digital-typing-wav.ogg",
+  "gain": -22,
+  "dur": 0.9
+ },
+ {
+  "t": 13.61,
+  "type": "movement",
+  "desc": "whoosh into the revenge shot (แก้แค้น)",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -20
+ },
+ {
+  "t": 14.94,
+  "type": "appear",
+  "desc": "card ไม่ใช่โรค pops",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -21
+ },
+ {
+  "t": 16.02,
+  "type": "success",
+  "desc": "card morphs to แค่ชื่อเรียก",
+  "sfx": "ding/fs-634690-lil-pip.ogg",
+  "gain": -21
+ },
+ {
+  "t": 19.39,
+  "type": "scene_cut",
+  "desc": "into the reveal (ทั้งวัน)",
+  "sfx": "whoosh/fs-169867-swoosh.ogg",
+  "gain": -28
+ },
+ {
+  "t": 22.55,
+  "type": "movement",
+  "desc": "my-time bar stretches into sleep (เอาคืน)",
+  "sfx": "transition/fs-786514-swoosh-v2.ogg",
+  "gain": -22
+ },
+ {
+  "t": 26.34,
+  "type": "appear",
+  "desc": "short soft alarm beep on the twist (ตลก)",
+  "sfx": "ui-blip/kenney-digital-threetone1.ogg",
+  "gain": -24
+ },
+ {
+  "t": 32.52,
+  "type": "appear",
+  "desc": "clock face springs in (กันเวลา)",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -22
+ },
+ {
+  "t": 33.64,
+  "type": "appear",
+  "desc": "pill หัวค่ำ",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -20
+ },
+ {
+  "t": 34.74,
+  "type": "success",
+  "desc": "30-minute ring full + label",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 36.5,
+  "type": "click",
+  "desc": "phone lands face down (วางมือถือ)",
+  "sfx": "click/kenney-interface-click-001.ogg",
+  "gain": -16
+ },
+ {
+  "t": 36.96,
+  "type": "click",
+  "desc": "lamp switched off",
+  "sfx": "click/kenney-interface-toggle-001.ogg",
+  "gain": -18
+ }
+]

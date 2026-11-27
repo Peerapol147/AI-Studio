@@ -1,0 +1,384 @@
+<!doctype html>
+<!-- GENERATED: edit index.html.tpl / episode.json / ../look.json, then run `python3 build_index.py` -->
+<!-- look: %%LOOKNAME%% -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{%%VARS%%}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;background:var(--bg)}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 40%}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0;background:radial-gradient(ellipse at 50% 38%,var(--bg2) 0%,var(--bg) 100%)}
+.kb{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.gslot{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.vig{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
+#flash{position:absolute;left:0;top:0;width:1080px;height:1920px;background:#fff;opacity:0;z-index:40;pointer-events:none}
+/* ---- hook title (Y 240-700 band); opening variants ---- */
+#tshade{position:absolute;left:0;top:0;width:1080px;height:880px;opacity:0;z-index:45;
+  background:linear-gradient(rgba(0,0,0,.62) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,0) 100%)}
+#title{position:absolute;left:60px;top:250px;width:960px;z-index:50;display:flex;flex-direction:column;align-items:center;gap:14px;transform-origin:50% 40%}
+#title .tl{font-weight:var(--tw);line-height:1.42;white-space:nowrap;color:var(--text);text-align:center;
+  -webkit-text-stroke:.15em var(--ink);paint-order:stroke fill;stroke-linejoin:round;text-shadow:0 10px 0 rgba(0,0,0,.4)}
+#title em{font-style:normal;color:var(--accent)}
+/* Thai: upper vowel + tone mark stack ~1.07-1.25 em above the baseline (ทั้ง, เพิ่ง). A highlight plate is an
+   inline-block of line-height 1.12 so it does not hang into the next line (stomach-growl frame 0 bug) */
+#title .tl em{display:inline-block;line-height:1.12;padding-top:.38em;padding-bottom:.24em}
+.op-midstory #title{top:250px}
+.op-midstory #title{gap:14px}
+.op-midstory #title .tl{-webkit-text-stroke:0;color:var(--ink);background:var(--accent);padding:.16em 26px 0;border-radius:18px;text-shadow:none}
+.op-midstory #title em{color:var(--text);-webkit-text-stroke:10px var(--ink);paint-order:stroke fill}
+.op-pov #title{align-items:flex-start}
+.op-pov #title .tl{text-align:left}
+.kick{font-weight:var(--tw);white-space:nowrap;line-height:1}
+.kick.pov{font-size:64px;color:var(--ink);background:var(--accent);padding:10px 28px;border-radius:999px;margin-bottom:10px}
+/* cover layouts (frame 0 = the thumbnail) */
+.cv-card #title{background:var(--panel);border-radius:44px;box-shadow:0 0 0 9px var(--ink),0 26px 60px rgba(0,0,0,.5);padding:34px 40px 40px}
+.cv-card #title .tl{-webkit-text-stroke:0;color:var(--paneltext);text-shadow:none}
+.cv-card #title em{color:var(--ink);background:var(--accent);padding:.38em 16px .24em;border-radius:16px}
+/* midstory + card: the line already sits on an accent plate -> ink text, highlighted word inverted (accent on ink), no stroke */
+.op-midstory.cv-card #title .tl{color:var(--ink)}
+.op-midstory.cv-card #title em{-webkit-text-stroke:0;color:var(--accent);background:var(--ink);padding:.38em 16px .24em;border-radius:16px}
+.cv-tilt #title{gap:30px;padding:0 16px}
+.cv-tilt #title .tl:nth-of-type(odd){transform:rotate(-3deg)}
+.cv-tilt #title .tl:nth-of-type(even){transform:rotate(2.5deg)}
+.cv-tilt #title .tl em{padding:0 0 4px;background:none;border-bottom:16px solid var(--accent);color:var(--text)}
+.kick.num{font-size:170px;color:var(--accent);-webkit-text-stroke:24px var(--ink);paint-order:stroke fill;text-shadow:0 14px 0 rgba(0,0,0,.4)}
+/* ---- captions: centred X 510, Y ~1130-1250 (safe X 120-900 / Y 1100-1300) ---- */
+#caps{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:60;pointer-events:none}
+.cap{position:absolute;left:10px;width:1000px;top:1190px;height:0;text-align:center}
+.cap span{position:absolute;left:0;width:1000px;bottom:-52px;display:block;font-weight:var(--cw);line-height:1.18;white-space:nowrap;transform-origin:50% 80%;color:#fff}
+.cap em{font-style:normal}
+.cap-stroke .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
+.cap-stroke .cap em{color:var(--accent)}
+.cap-box .cap span{left:50%;width:auto;transform-origin:50% 80%;padding:6px 30px 12px;border-radius:26px;background:var(--panel);box-shadow:0 0 0 6px var(--ink);color:var(--paneltext)}
+.cap-box .cap em{color:var(--ink);background:var(--accent);padding:0 12px;border-radius:12px}
+.cap-pop .cap span{-webkit-text-stroke:10px #000;paint-order:stroke fill}
+.cap-pop .cap em{display:inline-block;color:var(--ink);-webkit-text-stroke:0;background:var(--accent);padding:0 18px;border-radius:16px;transform:rotate(-2deg)}
+.cap-underline .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
+.cap-underline .cap em{display:inline-block;line-height:1.05;padding-bottom:8px;border-bottom:18px solid var(--accent);border-radius:4px}
+/* ---- EPISODE CSS (editor adds the episode's own graphics styles here) ---- */
+/* revenge-bedtime: every graphic sits in its shot's #g-<id> slot (moved there at load) so it rides the scene's
+   transition + camera; colours only from the look variables */
+.gx{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.gx svg{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.gbg{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(ellipse 760px 900px at 540px 760px,var(--bg2) 0%,var(--bg) 55%,var(--ink) 100%)}
+.gbg.dark{background:radial-gradient(ellipse 700px 700px at 540px 900px,var(--panel) 0%,var(--ink) 80%)}
+.txt{font-weight:var(--tw);white-space:nowrap;position:absolute}
+/* name: hanging sign */
+#nm-rig{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 430px}
+#nm-sign{position:absolute;left:130px;top:640px;width:820px;height:210px;border-radius:30px;background:var(--accent);
+  box-shadow:0 0 0 10px var(--ink),0 34px 70px rgba(0,0,0,.6);color:var(--ink);font-weight:var(--tw);font-size:88px;
+  line-height:190px;text-align:center;white-space:nowrap}
+/* name_en */
+.ne-w{left:0;width:1080px;text-align:center;color:var(--text);line-height:1.15;-webkit-text-stroke:.08em var(--ink);paint-order:stroke fill}
+.ne-w .cur{display:inline-block;width:.08em;height:.8em;margin-left:.06em;background:var(--accent);vertical-align:-.06em}
+#ne-w0{color:var(--accent);text-shadow:0 0 40px var(--accent)}
+/* notdisease */
+#nd-card{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 800px}
+.nd-bg{position:absolute;left:150px;top:660px;width:780px;height:280px;border-radius:40px;box-shadow:0 0 0 10px var(--ink),0 30px 70px rgba(0,0,0,.55)}
+#nd-bgA{background:var(--panel);box-shadow:0 0 0 10px var(--accent2),0 30px 70px rgba(0,0,0,.55)}
+#nd-bgB{background:var(--accent)}
+.nd-t{left:0;width:1080px;top:660px;height:280px;line-height:270px;text-align:center;font-size:124px}
+#nd-tA{color:var(--paneltext)}
+#nd-tB{color:var(--ink)}
+#nd-hole{position:absolute;left:192px;top:778px;width:44px;height:44px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 6px var(--text)}
+/* takeback */
+.tb-l{font-size:58px;color:var(--text);-webkit-text-stroke:10px var(--ink);paint-order:stroke fill}
+#tb-head{left:0;width:1080px;text-align:center;top:470px;font-size:72px;color:var(--text)}
+#tb-head b{color:var(--accent)}
+/* tip_30 */
+#t3-pill{position:absolute;left:340px;top:230px;width:400px;height:120px;border-radius:999px;background:var(--accent);color:var(--ink);
+  box-shadow:0 0 0 8px var(--ink);font-weight:var(--tw);font-size:76px;line-height:112px;text-align:center;transform-origin:540px 290px}
+#t3-lab{left:0;width:1080px;text-align:center;top:540px;font-size:70px;color:var(--accent);-webkit-text-stroke:12px var(--ink);paint-order:stroke fill}
+/* tip_putdown */
+#pd-glow{position:absolute;left:-120px;top:280px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,var(--accent) 0%,rgba(0,0,0,0) 62%)}
+#pd-phone{position:absolute;left:600px;top:560px;width:230px;height:440px;border-radius:36px;background:var(--ink);box-shadow:0 0 0 8px var(--bg2);transform-origin:115px 440px;overflow:hidden}
+#pd-scr{position:absolute;left:14px;top:18px;width:202px;height:404px;border-radius:24px;overflow:hidden;background:var(--accent2)}
+#pd-scr i{position:absolute;left:16px;width:170px;border-radius:12px;background:var(--bg2);opacity:.55}
+#pd-pglow{position:absolute;left:470px;top:440px;width:490px;height:700px;border-radius:50%;background:radial-gradient(ellipse,var(--accent2) 0%,rgba(0,0,0,0) 60%)}
+</style></head><body>
+<div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
+ data-motion-blur="on" data-motion-blur-events="on">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+%%ICONS%%
+</defs></svg>
+<div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
+<div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
+%%SCENES%%
+</div>
+<!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
+<div id="gfx-src" style="display:none">
+ <!-- hook_clock: bedside digital clock 01:00 -> 02:00 on "ตีสอง" -->
+ <div class="gx" id="x-hook_clock"><div class="gbg dark"></div>
+  <svg viewBox="0 0 1080 1920"><g transform="translate(540 880) scale(.86) translate(-540 -930)"><defs><filter id="hc-gl" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="14"/></filter>
+   <filter id="hc-soft" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="26"/></filter></defs>
+   <ellipse id="hc-spill" cx="540" cy="1100" rx="470" ry="46" fill="var(--accent)" opacity=".16" filter="url(#hc-soft)"/>
+   <rect x="120" y="760" width="840" height="340" rx="64" fill="var(--panel)" stroke="var(--bg2)" stroke-width="6"/>
+   <rect x="160" y="800" width="760" height="260" rx="34" fill="var(--ink)"/>
+   <g id="hc-all"><use href="#hc-dig" filter="url(#hc-gl)" id="hc-glow" opacity=".75"/><g id="hc-dig"></g></g></g>
+  </svg></div>
+ <!-- name: hanging sign "มีชื่อเรียกด้วยนะ" over the blurred phone plate -->
+ <div class="gx" id="x-name" style="background:rgba(0,0,0,.25)"><div id="nm-rig">
+  <svg viewBox="0 0 1080 1920"><g stroke="var(--accent2)" stroke-width="7" stroke-linecap="round" opacity=".9">
+   <line x1="540" y1="430" x2="200" y2="650"/><line x1="540" y1="430" x2="880" y2="650"/></g>
+   <circle cx="540" cy="430" r="16" fill="var(--accent)" stroke="var(--ink)" stroke-width="6"/></svg>
+  <div id="nm-sign">มีชื่อเรียกด้วยนะ</div></div></div>
+ <!-- name_en: the English name typed word by word under a crescent moon -->
+ <div class="gx" id="x-name_en"><div class="gbg"></div>
+  <svg viewBox="0 0 1080 1920"><defs><mask id="ne-cm"><rect x="0" y="0" width="1080" height="1920" fill="#fff"/><circle cx="868" cy="372" r="104" fill="#000"/></mask>
+   <filter id="ne-gl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="22"/></filter></defs>
+   <g id="ne-stars"></g>
+   <g id="ne-moon"><circle cx="820" cy="400" r="118" fill="var(--accent)" mask="url(#ne-cm)" filter="url(#ne-gl)" opacity=".55"/>
+   <circle cx="820" cy="400" r="118" fill="var(--accent)" mask="url(#ne-cm)"/></g></svg>
+  <div class="txt ne-w" id="ne-w0" style="top:560px;font-size:156px"></div>
+  <div class="txt ne-w" id="ne-w1" style="top:745px;font-size:156px"></div>
+  <div class="txt ne-w" id="ne-w2" style="top:945px;font-size:100px"></div></div>
+ <!-- notdisease: one card morphs "ไม่ใช่โรค" -> "แค่ชื่อเรียก" (becomes the name tag), no strike-through -->
+ <div class="gx" id="x-notdisease"><div class="gbg"></div><div id="nd-card">
+  <div class="nd-bg" id="nd-bgA"></div><div class="nd-bg" id="nd-bgB"></div>
+  <div class="txt nd-t" id="nd-tA">ไม่ใช่โรค</div><div class="txt nd-t" id="nd-tB">แค่ชื่อเรียก</div><div id="nd-hole"></div>
+  <svg viewBox="0 0 1080 1920"><path id="nd-str" d="M214,800 C166,700 246,600 196,500" fill="none" stroke="var(--accent2)" stroke-width="7" stroke-linecap="round"/></svg>
+ </div></div>
+ <!-- takeback: the 24 h bar, "my time" stretches into sleep on "เอาคืน" -->
+ <div class="gx" id="x-takeback"><div class="gbg"></div>
+  <div class="txt" id="tb-head">24 ชั่วโมงของเรา</div>
+  <svg viewBox="0 0 1080 1920">
+   <rect x="80" y="740" width="920" height="180" rx="34" fill="var(--ink)"/>
+   <rect id="tb-work" x="90" y="750" width="560" height="160" rx="26" fill="var(--bg2)"/>
+   <rect id="tb-sleep" x="740" y="750" width="250" height="160" rx="26" fill="var(--accent2)"/>
+   <rect id="tb-mine" x="650" y="750" width="90" height="160" rx="26" fill="var(--accent)"/>
+   <text id="tb-chev" x="700" y="852" font-size="64" font-weight="900" fill="var(--ink)" text-anchor="middle" style="font-family:var(--font)">›››</text>
+   <use id="tb-moon" href="#ic-moon" x="835" y="800" width="60" height="60" style="color:var(--ink)"/>
+   <g id="tb-ticks" stroke="var(--bg2)" stroke-width="5"></g></svg>
+  <div class="txt tb-l" id="tb-lw" style="left:96px;top:650px">งาน / เรียน</div>
+  <div class="txt tb-l" id="tb-lm" style="left:0;top:650px;color:var(--accent)">เวลาของฉัน</div>
+  <div class="txt tb-l" id="tb-ls" style="right:90px;top:1000px">เวลานอน</div></div>
+ <!-- tip_30: clock face, 30-minute ring fills on "ครึ่งชั่วโมง", pill "หัวค่ำ" on "หัวค่ำ" -->
+ <div class="gx" id="x-tip_30"><div class="gbg"></div>
+  <svg viewBox="0 0 1080 1920"><defs><filter id="t3-gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter></defs>
+   <g id="t3-clock" style="transform-origin:540px 760px">
+   <circle cx="540" cy="760" r="330" fill="none" stroke="var(--panel)" stroke-width="46"/>
+   <path id="t3-arcg" d="M540,430 A330,330 0 1 1 539.9,430" fill="none" stroke="var(--accent)" stroke-width="46" stroke-linecap="round" filter="url(#t3-gl)" opacity=".6"/>
+   <path id="t3-arc" d="M540,430 A330,330 0 1 1 539.9,430" fill="none" stroke="var(--accent)" stroke-width="46" stroke-linecap="round"/>
+   <circle cx="540" cy="760" r="290" fill="var(--panel)" stroke="var(--ink)" stroke-width="10"/>
+   <g id="t3-ticks" stroke="var(--text)" stroke-linecap="round"></g>
+   <line id="t3-h" x1="540" y1="760" x2="540" y2="600" stroke="var(--text)" stroke-width="24" stroke-linecap="round"/>
+   <line id="t3-m" x1="540" y1="760" x2="540" y2="530" stroke="var(--accent2)" stroke-width="14" stroke-linecap="round"/>
+   <line id="t3-s" x1="540" y1="790" x2="540" y2="510" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+   <circle cx="540" cy="760" r="22" fill="var(--accent)" stroke="var(--ink)" stroke-width="6"/></g></svg>
+  <div id="t3-pill">หัวค่ำ</div><div class="txt" id="t3-lab">30 นาที</div></div>
+ <!-- tip_putdown: phone lies face down on the bedside table on "วางมือถือ", the lamp dims -->
+ <div class="gx" id="x-tip_putdown"><div class="gbg dark" id="pd-room"></div><div id="pd-glow"></div><div id="pd-pglow"></div>
+  <svg viewBox="0 0 1080 1920">
+   <rect x="90" y="1000" width="900" height="34" rx="10" fill="var(--bg2)"/><rect x="130" y="1034" width="820" height="420" fill="var(--panel)"/>
+   <rect x="130" y="1034" width="820" height="16" fill="var(--ink)" opacity=".5"/>
+   <ellipse cx="300" cy="992" rx="110" ry="18" fill="var(--bg2)"/><rect x="290" y="760" width="20" height="236" fill="var(--bg2)"/>
+   <path id="pd-shadeOff" d="M200,560 L400,560 L450,770 L150,770 Z" fill="var(--bg2)" stroke="var(--ink)" stroke-width="8" stroke-linejoin="round"/>
+   <path id="pd-shadeOn" d="M200,560 L400,560 L450,770 L150,770 Z" fill="var(--accent)" stroke="var(--ink)" stroke-width="8" stroke-linejoin="round"/></svg>
+  <div id="pd-phone"><div id="pd-scr"><i style="top:30px;height:120px"></i><i style="top:170px;height:60px"></i><i style="top:250px;height:150px"></i><i style="top:420px;height:60px"></i><i style="top:500px;height:120px"></i><i style="top:640px;height:60px"></i></div></div></div>
+</div>
+<div id="flash"></div>
+</div>
+<div id="tshade"></div>
+<div id="title">
+%%TITLE%%
+</div>
+<div id="caps">
+%%CAPS%%
+</div>
+<audio id="vo" class="clip" data-start="0" data-duration="%%DUR%%" data-track-index="30" data-volume="1" src="%%VO%%"></audio>
+%%MUSIC%%
+</div>
+
+<script>
+/* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/
+   transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
+   push + drift + the look's transition); setup/explain/reveal/share/cta = hold the picture (slow push only). */
+(function(){
+const D=%%DATA%%, DUR=D.dur, CAPT=D.capt, SC=D.sc, TR=D.look.transition;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,u)=>a+(b-a)*u;
+const eo=x=>{x=clamp(x);return 1-Math.pow(1-x,3)}, eio=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)};
+const S=(tau,w,z)=>{if(tau<=0)return 0; if(z<1){const wd=w*Math.sqrt(1-z*z);
+  return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z*w/wd*Math.sin(wd*tau));} return 1-Math.exp(-w*tau)*(1+w*tau);};
+const $=id=>document.getElementById(id), f2=v=>v.toFixed(2);
+const FASTB={hook:1,twist:1};
+const XF=0.12;
+// entry of shot s (the look's transition; fast beats always get it, hold beats get a soft 0.1 s match)
+// the look's transition: inside hook/twist and wherever the beat changes; other cuts inside one beat = soft match
+const kind=(s,prev)=>(s.beat==='loop')?'match':(FASTB[s.beat]||s.beat!==prev.beat)?TR:'match';
+SC.forEach((s,i)=>{s.next=SC[i+1]; s.el=$('sh-'+s.id); s.kb=$('kb-'+s.id); s.el.style.zIndex=String(i+1); s.k=i?kind(s,SC[i-1]):'none';});
+function sceneState(s,t){
+  if(t<s.a) return null;
+  const nx=s.next, end=nx?nx.a:DUR+1, u=t-s.a; let o=1,tx=0,ty=0,sc=1;
+  if(s.k==='whip') tx=1080*(1-eo(u/XF)); else if(s.k==='slide') ty=1920*(1-eo(u/0.16));
+  else if(s.k==='zoom'){o=eio(u/0.1); sc=1+0.3*(1-S(u,18,0.9));} else if(s.k==='match') o=eio(u/0.1);
+  if(nx){ if(nx.k==='flash'){ if(t>=end) return null; }
+    else { if(t>=end+(nx.k==='slide'?0.16:XF)) return null;
+      if(t>=end&&nx.k==='whip') tx=-1080*eo((t-end)/XF); if(t>=end&&nx.k==='slide') ty=-480*eo((t-end)/0.16); } }
+  return {o,tx,ty,sc};
+}
+function scenes(t){
+  let fl=0;
+  SC.forEach(s=>{const r=sceneState(s,t);
+    if(s.k==='flash'&&t>=s.a&&t<s.a+0.067) fl=1-(t-s.a)/0.067;
+    if(!r){s.el.style.opacity='0';return;}
+    s.el.style.opacity=r.o.toFixed(4); s.el.style.transform=`translate(${f2(r.tx)}px,${f2(r.ty)}px) scale(${r.sc.toFixed(4)})`;
+    const uu=clamp((t-s.a)/Math.max(0.3,s.b-s.a));
+    if(s.beat==='hook'&&s.still){ s.kb.style.transform=`scale(${lerp(1.0,1.06,uu).toFixed(5)})`; return; }
+    if(s.beat==='loop'){ s.kb.style.transform=`scale(${lerp(1.06,1.0,uu).toFixed(5)})`; return; } // ends on the frame-0 scale
+    if(FASTB[s.beat]){ const k=lerp(1.04,1.12,eio(uu)), rr=lerp(0.8,-0.8,uu), dx=12*Math.sin(t*1.9+s.a), dy=9*Math.cos(t*1.4+s.a);
+      s.kb.style.transform=`translate(${f2(dx)}px,${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
+    else { const k=lerp(1.0,1.08,eio(uu)), dy=-18*uu, rr=lerp(-0.5,0.5,uu);  // hold: 8 % push + 1 deg drift, no cut
+      s.kb.style.transform=`translateY(${f2(dy)}px) rotate(${rr.toFixed(3)}deg) scale(${k.toFixed(5)})`; }
+  });
+  $('flash').style.opacity=f2(clamp(fl));
+}
+// hook title: full from frame 0 (no fade-in), breathes, leaves at the end of the hook, springs back for the loop seam
+function title(t){
+  const he=D.hookEnd, back=DUR-0.3;
+  let v=1; if(t>=he&&t<back) v=1-clamp((t-he)/0.12); if(t>=back) v=S(t-back,22,0.7);
+  const br=1+0.02*(1-Math.cos(t*Math.PI*2/1.6));
+  $('title').style.opacity=f2(clamp(v)); $('tshade').style.opacity=f2(clamp(v));
+  $('title').style.transform=`scale(${(br*(0.9+0.1*clamp(v))).toFixed(4)})`;
+}
+// captions: spring in on the word; last chunk clears before the loop seam
+const capEls=CAPT.map((s,i)=>$('c'+i).querySelector('span'));
+const BOX=document.getElementById('root').classList.contains('cap-box');
+function captions(t){
+  let i=-1; for(let k=0;k<CAPT.length;k++) if(t>=CAPT[k]) i=k;
+  if(i<0) return; const a=S(t-CAPT[i],30,0.6), fade=i===CAPT.length-1?1-clamp((t-(DUR-0.17))/0.1):1;
+  capEls[i].style.opacity=f2(fade);
+  const tr=`translateY(${f2(22*(1-a))}px) scale(${(0.78+0.22*a).toFixed(4)})`;
+  capEls[i].style.transform=BOX?`translateX(-50%) ${tr}`:tr;
+}
+// EPISODE MOTION: editor adds functions of t for the episode graphics and calls them in render()
+// ---- revenge-bedtime graphics. Word times from ../assets/audio/words.json (first letter of the word) ----
+const W={tiSong:2.56, name:9.24, rev:10.52, bed:10.96, pro:11.42, proEnd:12.36, nd:14.94, ndKae:16.02, ndName:16.38,
+  aokhuen:22.50, khuen:22.64, rukwa:23.78, kanwela:32.52, huakham:33.64, khrueng:34.14, khruengEnd:34.74,
+  wang:36.34, mue:36.54, mueEnd:37.02};
+// captions hide where the graphic already shows the same words (sign / English name / card): no double text
+const CAPHIDE=[[9.16,12.96],[14.86,17.80]];
+const NS='http://www.w3.org/2000/svg', mk=(tag,at,par)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);par.appendChild(e);return e;};
+const put=(src,dst)=>{const a=$(src),b=$(dst); if(a&&b) b.appendChild(a);};
+['hook_clock','name_en','notdisease','takeback','tip_30','tip_putdown'].forEach(id=>put('x-'+id,'g-'+id));
+put('x-name','sh-name');
+// 7-segment digits 0 1 : 0 0  (second digit flips 1 -> 2)
+const SEG={a:[1,0,0],b:[2,1,1],c:[2,2,1],d:[1,3,0],e:[0,2,1],f:[0,1,1],g:[1,1.5,0]};
+const DIG={0:'abcdef',1:'bc',2:'abged'};
+const hcDig=$('hc-dig'), segs=[];
+[[205,0],[365,1],[595,0],[755,0]].forEach(([x0,d],k)=>{
+  const g=mk('g',{transform:`translate(${x0},818) skewX(-6)`},hcDig), T=24, Wd=120, V=79, o={};
+  for(const s in SEG){const [cx,cy,vert]=SEG[s]; let x,y,w,h;
+    if(!vert){w=Wd-2*T+4;h=T;x=T-2;y=cy===0?0:cy===3?3*T+2*V-T:T+V;}  // a / d / g
+    else {w=T;h=V+4;x=cx===0?0:Wd-T;y=cy===1?T-2:2*T+V-2;}
+    o[s]=mk('rect',{x,y,width:w,height:h,rx:9,fill:'var(--accent)'},g);}
+  segs.push({g,o,d,k});});
+const colon=[mk('rect',{x:524,y:880,width:28,height:28,rx:8,fill:'var(--accent)'},hcDig),mk('rect',{x:518,y:960,width:28,height:28,rx:8,fill:'var(--accent)'},hcDig)];
+function hookClock(t){
+  const u=t-W.tiSong, fl=clamp(u/0.22), after=u>=0.11;
+  segs.forEach(sg=>{const on=DIG[sg.k===1?(after?2:1):sg.d];
+    for(const s in sg.o) sg.o[s].setAttribute('opacity',on.includes(s)?1:0.07);
+    if(sg.k===1) sg.g.setAttribute('transform',`translate(365,${(818+122*(1-Math.abs(Math.cos(Math.PI*fl)))).toFixed(1)}) skewX(-6) scale(1,${Math.max(0.02,Math.abs(Math.cos(Math.PI*fl))).toFixed(3)})`);});
+  const blink=(Math.floor(t*2)%2===0)?1:0.25; colon.forEach(c=>c.setAttribute('opacity',blink));
+  const pop=u>=0?Math.exp(-5*u)*Math.sin(16*u):0;
+  $('hc-all').setAttribute('transform',`translate(540 930) scale(${(1+0.07*pop).toFixed(4)}) translate(-540 -930)`);
+  $('hc-glow').setAttribute('opacity',(0.6+0.4*clamp(u>=0?Math.exp(-3*u):0)+0.08*Math.sin(t*5)).toFixed(3));
+  $('hc-spill').setAttribute('opacity',(0.14+0.12*clamp(u>=0?Math.exp(-3*u):0)).toFixed(3));
+}
+function nameSign(t){
+  const u=t-W.name, d=S(u,13,0.55), sw=u>0?-5+11*Math.exp(-2.6*u)*Math.cos(8*u):-5;
+  $('nm-rig').style.transform=`translateY(${f2(-900*(1-d))}px) rotate(${(sw+0.8*Math.sin(t*2.2)).toFixed(3)}deg)`;
+}
+const neW=['Revenge','Bedtime','Procrastination'], neT=[[W.rev,0.34],[W.bed,0.38],[W.pro,0.9]];
+const stars=$('ne-stars'), starEls=[];
+for(let i=0;i<34;i++){const h=Math.sin(i*127.1)*43758.5453, r=h-Math.floor(h), h2=Math.sin(i*311.7)*24634.6345, r2=h2-Math.floor(h2);
+  starEls.push(mk('circle',{cx:(40+r*1000).toFixed(0),cy:(120+r2*1500).toFixed(0),r:(2+3*((i*7)%5)/4).toFixed(1),fill:'var(--accent2)'},stars));}
+function nameEn(t){
+  let last=-1;
+  neW.forEach((w,i)=>{const [a,d]=neT[i], n=t<a?0:Math.min(w.length,Math.ceil((t-a)/d*w.length)), el=$('ne-w'+i);
+    if(t>=a) last=i;
+    const sp=S(t-a,20,0.6);
+    el.style.transform=`translateY(${f2(18*(1-sp))}px)`; el.style.opacity=t>=a?'1':'0';
+    el.dataset.n=n;});
+  neW.forEach((w,i)=>{const el=$('ne-w'+i), n=+el.dataset.n, typing=i===last;
+    const curOn=typing&&(t<neT[i][0]+neT[i][1]||Math.floor(t*2.5)%2===0);
+    el.innerHTML=w.slice(0,n)+(curOn?'<span class="cur"></span>':'');});
+  starEls.forEach((s,i)=>s.setAttribute('opacity',(0.25+0.5*(0.5+0.5*Math.sin(t*(1.3+i%5*0.4)+i))).toFixed(3)));
+  $('ne-moon').setAttribute('transform',`translate(0 ${f2(14*Math.sin(t*1.3))}) rotate(${(4*Math.sin(t*0.9)).toFixed(2)} 820 400)`);
+}
+function notDisease(t){
+  const a=S(t-W.nd,14,0.6), m=S(t-W.ndKae,15,0.62), h=S(t-W.ndName,16,0.5);
+  const sx=1, rot=lerp(0,-3,m)+(t>W.ndName?1.6*Math.sin((t-W.ndName)*2.6)*Math.exp(-0.4*(t-W.ndName)):0)+0.5*Math.sin(t*1.7);
+  $('nd-card').style.transform=`rotate(${rot.toFixed(3)}deg) scale(${(lerp(0.55,1,a)).toFixed(4)})`;
+  $('nd-card').style.opacity=f2(clamp(a*3));
+  $('nd-bgA').style.transform=`scaleX(${sx.toFixed(4)})`; $('nd-bgB').style.transform=`scaleX(${sx.toFixed(4)})`;
+  $('nd-bgB').style.opacity=f2(clamp(m*1.4));
+  const outA=clamp((t-W.ndKae)/0.12), inB=clamp((t-W.ndKae-0.08)/0.14);
+  $('nd-tA').style.opacity=f2(1-outA); $('nd-tA').style.filter=`blur(${f2(14*outA)}px)`;
+  $('nd-tB').style.opacity=f2(inB); $('nd-tB').style.filter=`blur(${f2(14*(1-inB))}px)`;
+  $('nd-tB').style.transform=`scale(${(0.9+0.1*S(t-W.ndKae-0.08,18,0.6)).toFixed(4)})`;
+  $('nd-hole').style.transform=`scale(${clamp(h,0,1.3).toFixed(4)})`;
+  const L=420, sd=clamp((t-W.ndName-0.05)/0.35); const str=$('nd-str');
+  str.setAttribute('stroke-dasharray',L); str.setAttribute('stroke-dashoffset',f2(L*(1-eo(sd))));
+}
+const tbTicks=$('tb-ticks'); for(let i=0;i<=8;i++){const x=90+i*900/8; mk('line',{x1:x,y1:935,x2:x,y2:i%4===0?975:955},tbTicks);}
+function takeBack(t){
+  const k=S(t-(W.aokhuen+0.05),13,0.5), mine=lerp(90,270,k), sleep=lerp(250,70,k);
+  const flick=(t>W.rukwa&&t<W.rukwa+0.5)?(Math.floor((t-W.rukwa)*12)%2?0.45:1):1;
+  const br=1+0.02*Math.sin(t*6);
+  $('tb-mine').setAttribute('x',650); $('tb-mine').setAttribute('width',f2(mine));
+  $('tb-mine').setAttribute('y',f2(750-8*(br-1)*50)); $('tb-mine').setAttribute('height',f2(160+16*(br-1)*50));
+  $('tb-sleep').setAttribute('x',f2(650+mine)); $('tb-sleep').setAttribute('width',f2(Math.max(20,sleep))); $('tb-sleep').setAttribute('opacity',f2(0.9*flick));
+  const cv=clamp((t-W.aokhuen)/0.1)*(1-clamp((t-W.aokhuen-0.9)/0.2));
+  $('tb-chev').setAttribute('x',f2(650+mine/2+18*Math.sin(t*14))); $('tb-chev').setAttribute('opacity',f2(cv));
+  const ms=clamp((sleep-20)/230); $('tb-moon').setAttribute('x',f2(650+mine+sleep/2-30*ms)); $('tb-moon').setAttribute('width',f2(60*ms)); $('tb-moon').setAttribute('height',f2(60*ms));
+  $('tb-moon').setAttribute('y',f2(830-30*ms));
+  const lm=$('tb-lm'); lm.style.transform=`translateX(${f2(650+mine/2-180)}px) scale(${(1+0.12*clamp(k)).toFixed(3)})`;
+  lm.style.width='360px'; lm.style.textAlign='center';
+  $('tb-ls').style.opacity=f2(0.55+0.45*flick);
+}
+const t3t=$('t3-ticks'); for(let i=0;i<12;i++){const a=i*Math.PI/6, r1=i%3===0?225:245; mk('line',{x1:f2(540+r1*Math.sin(a)),y1:f2(760-r1*Math.cos(a)),x2:f2(540+268*Math.sin(a)),y2:f2(760-268*Math.cos(a)),'stroke-width':i%3===0?12:6},t3t);}
+const ARC=2*Math.PI*330;
+function tip30(t){
+  const a=S(t-(W.kanwela-0.08),12,0.6), fill=eio((t-W.khrueng)/(W.khruengEnd-W.khrueng));
+  $('t3-clock').style.transform=`translateY(-60px) scale(${(0.85*lerp(0.7,1,a)).toFixed(4)}) rotate(${(lerp(-8,0,a)+0.6*Math.sin(t*1.5)).toFixed(3)}deg)`;
+  ['t3-arc','t3-arcg'].forEach(id=>{const e=$(id); e.setAttribute('stroke-dasharray',`${f2(ARC*0.5*fill)} ${f2(ARC)}`); e.setAttribute('opacity',fill>0.002?(id==='t3-arc'?1:0.45+0.3*Math.sin(t*6)):0);});
+  const hA=lerp(225,240,S(t-W.huakham,10,0.6)), mA=180*fill;
+  const rot=(id,ang)=>$(id).setAttribute('transform',`rotate(${ang.toFixed(2)} 540 760)`);
+  rot('t3-h',hA); rot('t3-m',mA); rot('t3-s',Math.floor((t-32)*2)*6+(1-Math.exp(-30*(((t-32)*2)%1)))*6);
+  const p=S(t-W.huakham,16,0.5); $('t3-pill').style.transform=`rotate(-5deg) scale(${clamp(p,0,1.3).toFixed(4)})`; $('t3-pill').style.opacity=f2(clamp(p*3));
+  const l=S(t-(W.khruengEnd-0.06),16,0.55); $('t3-lab').style.transform=`scale(${clamp(l,0,1.3).toFixed(4)})`; $('t3-lab').style.opacity=f2(clamp(l*3));
+}
+function putDown(t){
+  const d=S(t-W.wang,11,0.62), sY=lerp(1,0.085,d), off=clamp((t-(W.mueEnd-0.08))/0.35);
+  $('pd-phone').style.transform=`translateY(${f2(-40*Math.sin(Math.PI*clamp((t-W.wang)/0.25))*(1-d))}px) scaleY(${sY.toFixed(4)})`;
+  const scr=clamp(1-d*1.6); $('pd-scr').style.opacity=f2(scr);
+  [...$('pd-scr').children].forEach((e,i)=>e.style.transform=`translateY(${f2(-((t*260)%160))}px)`);
+  $('pd-pglow').style.opacity=f2(0.4*scr+0.04*Math.sin(t*9)*scr);
+  const lamp=1-off*(off<0.3?(Math.floor(off*30)%2?0.6:1):1);
+  $('pd-shadeOn').setAttribute('opacity',f2(clamp(lamp))); $('pd-glow').style.opacity=f2(0.5*clamp(lamp)+0.03);
+  $('pd-room').style.opacity=f2(1); $('pd-glow').style.transform=`scale(${(1+0.03*Math.sin(t*3)).toFixed(4)})`;
+}
+function episode(t){
+  const hide=CAPHIDE.some(([a,b])=>t>=a&&t<b); $('caps').style.opacity=hide?'0':'1';
+  if(t>=2.0&&t<3.6) hookClock(t);
+  if(t>=9.0&&t<10.7) nameSign(t);
+  if(t>=10.3&&t<13.9) nameEn(t);
+  if(t>=14.7&&t<18.4) notDisease(t);
+  if(t>=22.3&&t<24.5) takeBack(t);
+  if(t>=32.3&&t<35.6) tip30(t);
+  if(t>=36.1&&t<37.8) putDown(t);
+}
+function render(t){ scenes(t); title(t); captions(t); episode(t); }
+const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
+const tl=gsap.timeline({paused:true});
+tl.to(proxy,{t:%%DUR%%,duration:%%DUR%%,ease:'none'},0);
+render(0);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>render(proxy._t));
+window.__timelines=window.__timelines||{}; window.__timelines["main"]=tl;
+})();
+</script>
+</body></html>
