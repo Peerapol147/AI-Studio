@@ -3,7 +3,7 @@
  "lead": 0.08,
  "duration": 49.254,
  "inputs": {
-  "shots.json": "932f08582d6af8740ae5cbf85ed3c379e712168283e60cc30418de66bd4a5c11",
+  "shots.json": "4dc4418f336bc6ee4643fc28894c8ad878cff6703963733bdf77de50010ec87e",
   "footage.json": null,
   "assets/audio/words.json": "e258b3f822919347d24b76ca8ee229f9119d488d3e408802ef938c942c39cd2d"
  },
@@ -104,7 +104,7 @@
    "cue": "ให้ใส่ได้",
    "word_at": 18.36,
    "start": 18.28,
-   "beat": "reveal",
+   "beat": "explain",
    "end": 20.4,
    "dur": 2.12
   },
@@ -114,7 +114,7 @@
    "cue": "ชื่อดูแรง",
    "word_at": 20.48,
    "start": 20.4,
-   "beat": "twist",
+   "beat": "explain",
    "end": 23.02,
    "dur": 2.62
   },
@@ -174,7 +174,7 @@
    "cue": "เพราะมันคือ",
    "word_at": 33.2,
    "start": 33.12,
-   "beat": "explain",
+   "beat": "twist",
    "end": 35.8,
    "dur": 2.68
   },
