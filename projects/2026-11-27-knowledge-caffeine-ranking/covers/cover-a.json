@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "?",
+   "x": 0,
+   "y": 0,
+   "w": 1080,
+   "h": 1920,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ชูกำลังยังแพ้",
+   "x": 178.90625,
+   "y": 294.73779296875,
+   "w": 721.9983520507812,
+   "h": 167,
+   "font_px": 110,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "แก้วที่ถืออยู่ทุกเช้า?",
+   "x": 63.28125,
+   "y": 473.22999572753906,
+   "w": 953.4375,
+   "h": 172.77000427246094,
+   "font_px": 110,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "รู้ไหม?",
+   "x": 65.33870697021484,
+   "y": 97.50159454345703,
+   "w": 253.80694580078125,
+   "h": 126.9968032836914,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-caffeine-ranking/look.json",
+  "lines": [
+   "ชูกำลังยัง*แพ้*",
+   "แก้วที่ถืออยู่ทุกเช้า?"
+  ],
+  "palette": "sunrise-coral",
+  "font": "prompt"
+ }
+}

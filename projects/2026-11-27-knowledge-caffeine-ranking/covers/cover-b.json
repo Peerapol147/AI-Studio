@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "?",
+   "x": 0,
+   "y": 0,
+   "w": 1080,
+   "h": 1920,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "4 เครื่องดื่มนี้",
+   "x": 218.859375,
+   "y": 277.25799560546875,
+   "w": 642.28125,
+   "h": 142.74200439453125,
+   "font_px": 106,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "คาเฟอีนแรงสุดคือ?",
+   "x": 44.828125,
+   "y": 467.7943115234375,
+   "w": 990.34375,
+   "h": 165.802001953125,
+   "font_px": 106,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "จัดอันดับ",
+   "x": 65.5601806640625,
+   "y": 93.27554321289062,
+   "w": 334.223388671875,
+   "h": 135.44891357421875,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-caffeine-ranking/look.json",
+  "lines": [
+   "4 เครื่องดื่มนี้",
+   "คาเฟอีน*แรงสุด*คือ?"
+  ],
+  "palette": "sunrise-coral",
+  "font": "prompt"
+ }
+}

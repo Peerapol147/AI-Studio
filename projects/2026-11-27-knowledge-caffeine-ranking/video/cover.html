@@ -1,0 +1,169 @@
+<!doctype html>
+<!-- Cover (thumbnail to upload) = a separate still, NOT frame 0 (palmaris feedback 8, 2026-11-26: "ปกชีพ ไม่น่ากด",
+     best CTR so far 11%). Frame 0 of the clip still has to be understood in 1 s with the sound off (Shorts feed shows
+     frame 0); this cover can be a curiosity line instead. Make 2 variants (A/B) every episode.
+     TEXT, COLOURS AND FONT COME FROM look.json, never typed here (review 2026-11-26: the image and the checked text
+     must be the same): tools/cover_shot.js reads <project>/look.json "covers" (lines <= 2, *word* = accent, optional
+     "badge") + the look's palette and font from templates/looks/looks.json, and injects them as window.__COVER.
+     1. look.json "covers": [{"id": "a", "lines": [..]}, {"id": "b", "lines": [..]}]  (facts only from research.md)
+     2. Draw the hero picture inside #art (hand rig: compositions/components/hand-rig/, footage still, graphic).
+     3. node ../../../tools/cover_shot.js cover.html ../covers a,b   (from video/)  -> covers/cover-a.jpg, cover-b.jpg
+     4. python3 tools/cover_check.py projects/<x>   (text = look.json, lines, repeats, overlap, edges, 200 px, old covers)
+     Opened without cover_shot.js it shows a placeholder ("แก้ข้อความ / ใน look.json"), so a forgotten cover cannot
+     pass as a real one. Variant b = light field in the look's accent colour, a = dark field in the look's bg colours.
+     Mark every text line data-cover="text", the series badge data-cover="badge", the hero picture data-cover="art". -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{--bg:#2A0F12;--bg2:#C2453A;--ink:#1A0A06;--text:#FFFFFF;--accent:#FFD23F;--accent2:#FF8A5B;--panel:#3D1714;--font:'Kanit'}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;
+  background:radial-gradient(ellipse 640px 800px at 540px 1060px,var(--bg2) 0%,var(--bg) 100%)}
+#art{position:absolute;left:90px;top:760px;width:900px;height:900px;z-index:2}
+#title{position:absolute;left:60px;right:60px;top:260px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px}
+.tl{font-weight:var(--tw,900);font-size:170px;line-height:1.3;white-space:nowrap;text-align:center;color:var(--text);
+  paint-order:stroke fill;-webkit-text-stroke:28px var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
+.tl b{color:var(--accent)}
+#badge{position:absolute;left:60px;top:140px;z-index:6;font-weight:700;font-size:42px;line-height:1;color:var(--ink);
+  background:var(--accent);padding:12px 24px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink)}
+/* variant b: light field, dark type (A/B should differ in more than the words) */
+#root.vb{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 60%,var(--accent2) 100%)}
+#root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
+#root.vb .tl b{color:var(--bg2)}
+
+/* caffeine-ranking (ปก A never-colonized style): real photo on a dark field + highlighted word on a tilted plate +
+   corner badge + hand-drawn arrow/ring. No clip-art. A: arrow points at the americano (never ring the bottle).
+   B: 4 drinks as a staircase, ring around the ? above the tallest. Real objects = palette mixes (no new hex). */
+#root{--amber-d:color-mix(in srgb,var(--ink) 82%,var(--accent2));--amber-m:color-mix(in srgb,var(--accent2) 52%,var(--ink));
+  --amber-l:color-mix(in srgb,color-mix(in srgb,var(--accent) 45%,var(--accent2)) 78%,var(--ink))}
+#root,#root.vb{background:radial-gradient(ellipse 760px 980px at 700px 1250px,color-mix(in srgb,var(--accent2) 40%,var(--ink)) 0%,var(--ink) 100%)}
+#root.vb{background:radial-gradient(ellipse 900px 760px at 1080px 1300px,color-mix(in srgb,var(--accent) 34%,var(--ink)) 0%,color-mix(in srgb,var(--bg) 70%,var(--ink)) 100%)}
+#root.vb .tl{color:var(--text);-webkit-text-stroke-color:var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
+#title{top:300px;gap:40px}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 22px 8px;margin:0 4px;border-radius:22px;
+  transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.35);-webkit-text-stroke:0}
+#root.vb #title .tl b{background:var(--accent2);color:var(--ink)}
+#badge{transform:rotate(-6deg);font-size:66px;padding:14px 34px 22px;left:70px;top:110px}
+#root.vb #badge{background:var(--accent2)}
+#art{left:0;top:0;width:1080px;height:1920px}
+.va,.vbart{display:none}
+#root:not(.vb) .va{display:block}
+#root.vb .vbart{display:block}
+.pc{position:absolute;border-radius:34px;overflow:hidden;box-shadow:0 0 0 9px var(--ink),0 34px 70px rgba(0,0,0,.6)}
+.pc img{width:100%;height:100%;object-fit:cover;display:block}
+.bt{position:absolute}
+.bt svg{width:100%;height:100%;overflow:visible}
+.hand{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible}
+.hand path{fill:none;stroke:var(--accent);stroke-width:18;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 6px 0 rgba(0,0,0,.45))}
+.cut{position:absolute;filter:drop-shadow(0 40px 40px rgba(0,0,0,.6))}
+.cut img{width:100%;display:block}
+.q{position:absolute;font-weight:900;font-size:170px;line-height:1;color:var(--accent);-webkit-text-stroke:14px var(--ink);paint-order:stroke fill}
+.flr{position:absolute;left:0;top:1640px;width:1080px;height:280px;background:linear-gradient(color-mix(in srgb,var(--ink) 40%,transparent),var(--ink))}
+</style></head><body>
+<div id="root">
+  <div id="art" data-cover="art">
+  <div class="va">
+   <div class="flr"></div>
+   <div class="pc" style="left:420px;top:760px;width:600px;height:802px;transform:rotate(3deg)"><img src="assets/hook.jpg" alt=""/></div>
+   <div class="bt" style="left:50px;top:1150px;width:400px;height:550px;transform:rotate(-5deg)"><svg viewBox="-60 -40 320 440" aria-hidden="true">
+  <defs>
+   <linearGradient id="bgla" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" style="stop-color:var(--amber-d)"/><stop offset=".2" style="stop-color:var(--amber-m)"/>
+    <stop offset=".42" style="stop-color:var(--amber-l)"/><stop offset=".6" style="stop-color:var(--amber-m)"/>
+    <stop offset=".86" style="stop-color:var(--amber-d)"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
+   <linearGradient id="bcapa" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" style="stop-color:color-mix(in srgb,var(--accent) 30%,var(--ink))"/><stop offset=".35" style="stop-color:color-mix(in srgb,var(--accent) 55%,var(--text))"/>
+    <stop offset=".7" style="stop-color:color-mix(in srgb,var(--accent) 45%,var(--ink))"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
+   <linearGradient id="bliqa" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" style="stop-color:var(--ink);stop-opacity:.05"/><stop offset="1" style="stop-color:var(--ink);stop-opacity:.45"/></linearGradient>
+   <clipPath id="bclipa"><path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z"/></clipPath>
+   <filter id="bsha" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="8"/></filter>
+   <filter id="bglowa" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  
+  <ellipse cx="100" cy="362" rx="96" ry="14" fill="rgba(0,0,0,.55)" filter="url(#bsha)"/>
+  <path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z" fill="url(#bgla)"/>
+  <g clip-path="url(#bclipa)">
+   <rect x="0" y="132" width="200" height="240" fill="url(#bliqa)"/>
+   <ellipse cx="100" cy="132" rx="80" ry="7" style="fill:var(--amber-l)" opacity=".7"/>
+   <path d="M46,150 C40,205 40,280 48,334" fill="none" style="stroke:var(--text)" stroke-opacity=".55" stroke-width="11" stroke-linecap="round"/>
+   <path d="M62,160 C58,210 58,270 62,320" fill="none" style="stroke:var(--text)" stroke-opacity=".18" stroke-width="5" stroke-linecap="round"/>
+   <path d="M80,98 C66,106 50,118 44,140" fill="none" style="stroke:var(--text)" stroke-opacity=".45" stroke-width="7" stroke-linecap="round"/>
+   <path d="M166,154 L168,328" fill="none" style="stroke:var(--accent)" stroke-opacity=".35" stroke-width="6" stroke-linecap="round"/>
+   <rect x="20" y="342" width="160" height="20" style="fill:var(--ink)" opacity=".35"/>
+  </g>
+  <path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z" fill="none" style="stroke:var(--ink)" stroke-width="4"/>
+  <rect x="64" y="2" width="72" height="46" rx="8" fill="url(#bcapa)" style="stroke:var(--ink)" stroke-width="4"/>
+  <path d="M76,8 V44 M88,8 V44 M100,8 V44 M112,8 V44 M124,8 V44" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="3"/>
+  <rect x="64" y="40" width="72" height="8" style="fill:var(--ink)" opacity=".5"/>
+  
+  
+ </svg></div>
+   <svg class="hand" viewBox="0 0 1080 1920"><path d="M230,880 C250,1010 330,1080 470,1110"/><path d="M412,1050 L476,1112 L398,1150"/></svg>
+  </div>
+  <div class="vbart">
+   <div class="flr"></div>
+   <div class="pc" style="left:34px;top:1250px;width:206px;height:300px;transform:rotate(-3deg)"><img src="assets/cover-cola.jpg" alt=""/></div>
+   <div class="bt" style="left:238px;top:1170px;width:250px;height:344px;transform:rotate(2deg)"><svg viewBox="-60 -40 320 440" aria-hidden="true">
+  <defs>
+   <linearGradient id="bglb" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" style="stop-color:var(--amber-d)"/><stop offset=".2" style="stop-color:var(--amber-m)"/>
+    <stop offset=".42" style="stop-color:var(--amber-l)"/><stop offset=".6" style="stop-color:var(--amber-m)"/>
+    <stop offset=".86" style="stop-color:var(--amber-d)"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
+   <linearGradient id="bcapb" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" style="stop-color:color-mix(in srgb,var(--accent) 30%,var(--ink))"/><stop offset=".35" style="stop-color:color-mix(in srgb,var(--accent) 55%,var(--text))"/>
+    <stop offset=".7" style="stop-color:color-mix(in srgb,var(--accent) 45%,var(--ink))"/><stop offset="1" style="stop-color:var(--ink)"/></linearGradient>
+   <linearGradient id="bliqb" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0" style="stop-color:var(--ink);stop-opacity:.05"/><stop offset="1" style="stop-color:var(--ink);stop-opacity:.45"/></linearGradient>
+   <clipPath id="bclipb"><path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z"/></clipPath>
+   <filter id="bshb" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="8"/></filter>
+   <filter id="bglowb" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  
+  <ellipse cx="100" cy="362" rx="96" ry="14" fill="rgba(0,0,0,.55)" filter="url(#bshb)"/>
+  <path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z" fill="url(#bglb)"/>
+  <g clip-path="url(#bclipb)">
+   <rect x="0" y="132" width="200" height="240" fill="url(#bliqb)"/>
+   <ellipse cx="100" cy="132" rx="80" ry="7" style="fill:var(--amber-l)" opacity=".7"/>
+   <path d="M46,150 C40,205 40,280 48,334" fill="none" style="stroke:var(--text)" stroke-opacity=".55" stroke-width="11" stroke-linecap="round"/>
+   <path d="M62,160 C58,210 58,270 62,320" fill="none" style="stroke:var(--text)" stroke-opacity=".18" stroke-width="5" stroke-linecap="round"/>
+   <path d="M80,98 C66,106 50,118 44,140" fill="none" style="stroke:var(--text)" stroke-opacity=".45" stroke-width="7" stroke-linecap="round"/>
+   <path d="M166,154 L168,328" fill="none" style="stroke:var(--accent)" stroke-opacity=".35" stroke-width="6" stroke-linecap="round"/>
+   <rect x="20" y="342" width="160" height="20" style="fill:var(--ink)" opacity=".35"/>
+  </g>
+  <path d="M72,44 L128,44 L128,74 C128,98 176,108 178,146 L178,330 Q178,360 148,360 L52,360 Q22,360 22,330 L22,146 C24,108 72,98 72,74 Z" fill="none" style="stroke:var(--ink)" stroke-width="4"/>
+  <rect x="64" y="2" width="72" height="46" rx="8" fill="url(#bcapb)" style="stroke:var(--ink)" stroke-width="4"/>
+  <path d="M76,8 V44 M88,8 V44 M100,8 V44 M112,8 V44 M124,8 V44" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="3"/>
+  <rect x="64" y="40" width="72" height="8" style="fill:var(--ink)" opacity=".5"/>
+  
+  
+ </svg></div>
+   <div class="pc" style="left:490px;top:1100px;width:250px;height:450px;transform:rotate(-2deg)"><img src="assets/cover-esp.jpg" alt="" style="object-position:50% 60%"/></div>
+   <div class="pc" style="left:756px;top:930px;width:290px;height:620px;transform:rotate(3deg)"><img src="assets/cover-ame.jpg" alt=""/></div>
+   <div class="q" style="left:850px;top:705px">?</div>
+   <svg class="hand" viewBox="0 0 1080 1920"><path d="M905,672 C800,676 790,860 890,888 C990,912 1052,830 1028,748 C1008,680 930,664 880,694"/></svg>
+  </div>
+ </div>
+  <div id="title"></div>
+  <div id="badge" data-cover="badge"></div>
+</div>
+<script>
+// injected by tools/cover_shot.js from look.json; the placeholder below is only for opening the file by hand
+const C = window.__COVER || { lines: ['แก้ข้อความ', 'ใน look.json'], badge: '', vars: {} };
+const v = new URLSearchParams(location.search).get('v') || 'a';
+const root = document.getElementById('root');
+for (const [k, val] of Object.entries(C.vars || {})) root.style.setProperty(k, val);
+if (v === 'b') root.classList.add('vb');
+const c = C;
+const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+document.getElementById('title').innerHTML =
+  c.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
+{ const tls = [...document.querySelectorAll('#title .tl')]; let fs = 150;
+  const fit = () => { tls.forEach(el => el.style.fontSize = fs + 'px'); return tls.every(el => el.scrollWidth <= 940); };
+  while (!fit() && fs > 60) fs -= 4; }
+const bd = document.getElementById('badge');
+if (c.badge) bd.textContent = c.badge; else bd.remove();
+// draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
+</script>
+</body></html>

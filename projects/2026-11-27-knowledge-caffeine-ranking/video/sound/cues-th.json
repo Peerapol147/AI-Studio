@@ -1,0 +1,121 @@
+[
+ {
+  "t": 1.4,
+  "type": "scene_cut",
+  "desc": "bottle springs to centre",
+  "sfx": "whoosh/fs-683101-quick-woosh.ogg",
+  "gain": -26
+ },
+ {
+  "t": 2.18,
+  "type": "appear",
+  "desc": "hand-drawn X on the bottle (ชูกำลัง)",
+  "sfx": "pop/kenney-interface-pluck-001.ogg",
+  "gain": -24
+ },
+ {
+  "t": 5.76,
+  "type": "appear",
+  "desc": "gauge grows + 4 -> 1",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -24
+ },
+ {
+  "t": 7.88,
+  "type": "appear",
+  "desc": "rank 4 label",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 9.92,
+  "type": "hover_or_small_ui",
+  "desc": "gauge fills to ~30+",
+  "sfx": "tick/fs384187.ogg",
+  "gain": -24
+ },
+ {
+  "t": 14.12,
+  "type": "appear",
+  "desc": "rank 3 label + bottle",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 16.24,
+  "type": "error_or_tech",
+  "desc": "belief bolts crackle",
+  "sfx": "glitch/kenney-interface-glitch-002.ogg",
+  "gain": -30
+ },
+ {
+  "t": 18.82,
+  "type": "hover_or_small_ui",
+  "desc": "ceiling line 50 (อย.)",
+  "sfx": "tick/fs528561.ogg",
+  "gain": -24
+ },
+ {
+  "t": 20.48,
+  "type": "reveal",
+  "desc": "hit: bolts shrink (ชื่อดูแรง)",
+  "sfx": "impact/kenney-impact-impactpunch-heavy-000.ogg",
+  "gain": -22
+ },
+ {
+  "t": 23.1,
+  "type": "appear",
+  "desc": "rank 2 label",
+  "sfx": "pop/fs-447910-plop.ogg",
+  "gain": -22
+ },
+ {
+  "t": 28.1,
+  "type": "success",
+  "desc": "espresso passes the 50 line (แซง)",
+  "sfx": "ding/kenney-interface-confirmation-001.ogg",
+  "gain": -25
+ },
+ {
+  "t": 30.04,
+  "type": "reveal",
+  "desc": "impact: แล้วอันดับหนึ่ง",
+  "sfx": "impact/fs-177242-cinematic-impact.ogg",
+  "gain": -18
+ },
+ {
+  "t": 36.54,
+  "type": "appear",
+  "desc": "shots pour (สามช็อต)",
+  "sfx": "pop/kenney-interface-drop-002.ogg",
+  "gain": -25
+ },
+ {
+  "t": 37.42,
+  "type": "appear",
+  "desc": "gauge rockets to ~200",
+  "sfx": "riser/kenney-digital-powerup2.ogg",
+  "gain": -28
+ },
+ {
+  "t": 41.24,
+  "type": "appear",
+  "desc": "400 line + FDA label",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -25
+ },
+ {
+  "t": 44.96,
+  "type": "success",
+  "desc": "แก้วเดียว ≈ เกือบครึ่ง",
+  "sfx": "ding/fs-349504-triangle-open-04.ogg",
+  "gain": -27
+ },
+ {
+  "t": 47.0,
+  "type": "appear",
+  "desc": "cta question pill",
+  "sfx": "pop/fs-824189-pop-in-sfx.ogg",
+  "gain": -24
+ }
+]
