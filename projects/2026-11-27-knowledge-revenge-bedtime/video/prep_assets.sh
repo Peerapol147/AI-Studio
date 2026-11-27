@@ -34,7 +34,8 @@ ffmpeg -v error -y -t 5 -i "$F/pixabay-61298.mp4" -filter_complex "[0:v]fps=30,s
 # name: night_me clip, a later section (5 s on) with another crop, blurred: the plate under the "มีชื่อเรียก" sign
 ffmpeg -v error -y -ss 5 -t 2 -i "$F/pixabay-202987.mp4" -vf "fps=30,crop=810:1440:1300:0,scale=1080:1920,gblur=sigma=14,$NIGHT,eq=brightness=0.02" $ENC assets/name.mp4
 # twist: source is 8.8 s long but the shot needs media 7.42-10.1: the sunrise part plays as is, the 7:00 alarm clock
-# part (8.0-8.8) is slowed 2.7x so it holds to the end of the shot (720p source -> 405x720 crop, sharpened a little)
-ffmpeg -v error -y -i "$F/pixabay-729.mp4" -filter_complex "[0:v]crop=405:720:170:0,scale=1080:1920:flags=lanczos,unsharp=5:5:0.6,split[a][b];\
-[a]trim=0:8.0,setpts=PTS-STARTPTS[x];[b]trim=8.0:8.8,setpts=(PTS-STARTPTS)*2.7[y];[x][y]concat=n=2:v=1,fps=30,$DAY,eq=brightness=-0.05" $ENC assets/twist.mp4
+# part (8.0-8.8) is slowed 2.7x so it holds to the end of the shot (720p source -> 405x720 crop, the clock part cropped on the 7:00 digits, sharpened a little)
+ffmpeg -v error -y -i "$F/pixabay-729.mp4" -filter_complex "[0:v]split[a][b];\
+[a]trim=0:8.0,setpts=PTS-STARTPTS,crop=405:720:170:0,scale=1080:1920:flags=lanczos,unsharp=5:5:0.6[x];\
+[b]trim=8.0:8.8,setpts=(PTS-STARTPTS)*2.7,crop=405:720:250:0,scale=1080:1920:flags=lanczos,unsharp=5:5:0.6,pad=1080:2240:0:0:black,crop=1080:1920:0:320[y];[x][y]concat=n=2:v=1,fps=30,$DAY,eq=brightness=-0.05" $ENC assets/twist.mp4
 ls -la assets
