@@ -17,6 +17,8 @@ c = M['zoom']['malay_north_clip']
 defs.append(f'<clipPath id="mclip"><rect x="{c["x"]:.1f}" y="{c["y"]:.1f}" width="{c["w"]:.1f}" height="{c["h"]:.1f}"/></clipPath>')
 defs.append('<clipPath id="mrest"><path d="M-2000,-2000H3000V%.1fH-2000Z M%.1f,%.1fH3000V3000H-2000V%.1fH%.1fZ"/></clipPath>'
             % (c['y'], c['x'], c['y'] + c['h'], c['y'] + c['h'], c['x']))
+defs.append('<pattern id="hatch" patternUnits="userSpaceOnUse" width="16" height="16" patternTransform="rotate(45)">'
+            '<rect width="16" height="16" fill="var(--accent)" fill-opacity=".12"/><rect width="6" height="16" fill="var(--accent)" fill-opacity=".85"/></pattern>')
 defs.append('<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>')
 out.append('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' + ''.join(defs) + '</defs></svg>')
 
@@ -103,10 +105,12 @@ def zoom(sid, slot):
     s += [u('z', k, 'lb') for k in ('cn', 'in', 'bd', 'id', 'ph', 'tl', 'bn', 'sg')]
     s += [u('z', 'mm', 'luk'), f'<g clip-path="url(#mrest)">{u("z", "my", "luk")}</g>']
     s += [u('z', 'kh', 'lfr'), u('z', 'vn', 'lfr')]
-    s.append(f'<g id="{sid}-la" class="piece">{u("z", "la", "lfr", f" id=\"{sid}-laf\"")}</g>')
-    s.append(f'<g id="{sid}-mn" class="piece"><g clip-path="url(#mclip)">{u("z", "my", "luk", f" id=\"{sid}-mnf\"")}</g></g>')
-    s.append(f'<g id="{sid}-th"><use href="#z-th" class="thg" filter="url(#glow)" id="{sid}-glow"/>{u("z", "th", "th")}'
-             f'<path id="{sid}-crack" class="crack" d="{CRACK}" pathLength="1"/></g>')
+    # base countries never move (Thailand stays whole); the 1893 / 1909 areas are hatch overlays (approximate, present-day
+    # borders) that appear on Thailand's edge and then fade away toward France / Britain (review 2026-11-27 red 1-2)
+    s.append(u('z', 'la', 'lfr') + f'<g clip-path="url(#mclip)">{u("z", "my", "luk")}</g>')
+    s.append(f'<g id="{sid}-th"><use href="#z-th" class="thg" filter="url(#glow)" id="{sid}-glow"/>{u("z", "th", "th", f" id=\"{sid}-thf\"")}</g>')
+    s.append(f'<g id="{sid}-la" class="piece">{u("z", "la", "hat")}</g>')
+    s.append(f'<g id="{sid}-mn" class="piece"><g clip-path="url(#mclip)">{u("z", "my", "hat")}</g></g>')
     if not slot:
         # push arrows: British from the west (Burma) and the south (Malaya), French from the east (Indochina); tips stop at the border
         for aid, d in (('aw', 'M120,420 L292,420'), ('as', 'M520,1010 L520,880'), ('ae', 'M860,330 L600,330')):
@@ -119,10 +123,10 @@ def zoom(sid, slot):
 
 
 out.append('<div id="gx-tw_malay" class="gfill mapbg">' + GRID + zoom('tm', True) +
-           '<div class="approx" id="approx"><span>แผนที่ปัจจุบันโดยประมาณ</span></div></div>')
+           '<div class="approx" id="approx"><span>พื้นที่โดยประมาณ</span></div></div>')
 # arrow heads drawn in HTML space by JS? no: marker-free heads as separate paths, positioned by JS along the shaft
 EP = ['<div id="ep">',
-      '<div class="g" id="zmap">' + GRID + zoom('zm', False) + '</div>',
+      '<div class="g" id="zmap">' + GRID + zoom('zm', False) + '<div class="approx" id="approx2"><span>พื้นที่โดยประมาณ</span></div></div>',
       '<div class="g" id="rshade"></div>',
       '<div class="g" id="rank"><div id="rk-num"><span id="rk-n">5</span></div><div id="rk-name" class="out">ภูฏาน</div></div>',
       '<div class="g chip" id="chipA"><span id="chipA-t"></span></div>',

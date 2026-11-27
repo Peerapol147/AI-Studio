@@ -12,7 +12,7 @@ ENC="-an -c:v libx264 -preset medium -crf 17 -pix_fmt yuv420p -r 30 -g 6"
 vplate(){ # name src crop(w:h:x:y) [max seconds]
   ffmpeg -v error -y -t "${4:-12}" -i "$F/$2" -vf "fps=30,crop=$3,scale=1080:1920:flags=lanczos,$GR,vignette=PI/6" $ENC "assets/$1.mp4"; }
 vplate flag-th     pixabay-244977.mp4 810:1440:875:0 6
-vplate globe       nasa-earth-orbit-trim.mp4 608:1080:656:0 9
+vplate magnifier   pixabay-104270.mp4 608:1080:456:0 6
 vplate bt-valley   pixabay-292862.mp4 405:720:420:0 9
 vplate np-himal    pixabay-10104.mp4 810:1440:200:0 7
 vplate ir-desert   pixabay-70872.mp4 810:1440:875:0 6

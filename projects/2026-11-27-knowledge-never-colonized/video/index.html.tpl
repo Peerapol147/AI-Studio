@@ -82,7 +82,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .msvg .crack{fill:none;stroke:var(--ink);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1}
 .msvg .ahd{fill:var(--ink);transform-box:fill-box;transform-origin:50% 50%}
 .msvg .ash{fill:none;stroke:var(--ink);stroke-width:16;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1}
-.piece{transform-box:fill-box;transform-origin:50% 50%}
+.piece{transform-box:fill-box;transform-origin:50% 50%;opacity:0}
+.msvg .hat{fill:url(#hatch);stroke:var(--accent);stroke-width:4;stroke-dasharray:12 9;stroke-linejoin:round}
 .mlbl{position:absolute;white-space:nowrap;transform-origin:50% 100%}
 .mlbl span{display:block;font-weight:700;font-size:40px;line-height:1.3;padding:2px 20px 6px;border-radius:999px;box-shadow:0 0 0 4px var(--ink),0 6px 0 rgba(0,0,0,.25)}
 .mlbl.uk span{background:var(--uk);color:var(--ink)}
@@ -129,7 +130,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #stamp span{display:inline-block;font-weight:900;font-size:72px;line-height:1.4;padding:4px 36px 10px 40px;border-radius:24px;background:var(--accent2);color:var(--text);box-shadow:0 0 0 7px var(--ink),0 10px 0 rgba(0,0,0,.3)}
 #bigtop{left:0;top:270px;width:1080px;text-align:center}
 #bigtop span{display:inline-block;font-weight:900;font-size:108px;line-height:1.4;color:var(--ink);background:var(--accent);padding:.06em 44px .02em;border-radius:28px;box-shadow:0 0 0 8px var(--ink),0 12px 0 rgba(0,0,0,.3)}
-#bigq{left:390px;top:640px;width:300px;height:400px;text-align:center;font-weight:900;font-size:380px;line-height:1;color:var(--accent);-webkit-text-stroke:.06em var(--ink);paint-order:stroke fill}
+#bigq{left:390px;top:330px;width:300px;height:400px;text-align:center;font-weight:900;font-size:380px;line-height:1;color:var(--accent);-webkit-text-stroke:.06em var(--ink);paint-order:stroke fill}
 #tai{left:0;top:470px;width:1080px;height:560px;display:flex;flex-direction:column;align-items:center}
 #tai1{font-weight:900;font-size:250px;line-height:1.3;color:var(--text)}
 #tai2{font-weight:900;font-size:110px;line-height:.9;color:var(--text)}
@@ -316,7 +317,7 @@ function stamp(t){
   $('stamp-t').textContent=c[2]; const a=pop(t,c[0],18,0.45);
   show($('stamp'),win(t,c[0],c[1],0.05,0.12),`rotate(${f2(-3-6*(1-clamp(a,0,1)))}deg) scale(${((1.5-0.5*clamp(a,0,1.15))*(1+0.012*Math.sin((t-c[0])*5))).toFixed(4)})`);
 }
-// ---- r1c + tw: ONE zoom map in the #ep layer (no cut between them): Britain / France push, Thailand holds; then it cracks ----
+// ---- r1c + tw: ONE zoom map in the #ep layer (no cut between them): Britain / France push, Thailand holds; then the lost areas (hatch) fade away ----
 const ZC=[492,500];
 function zoomGfx(t){
   const a=35.36, e=40.26; const el=$('zmap');
@@ -334,16 +335,17 @@ function zoomGfx(t){
     hd.style.transform=`scale(${clamp((t-ta-0.22)/0.1).toFixed(3)})`; });
   ['zm-luk1','zm-luk2'].forEach(id=>{const p=pop(t,36.46); $(id).style.transform=`scale(${(1/s*(0.85+0.15*clamp(p,0,1.2))).toFixed(4)})`;});
   $('zm-lfr').style.transform=`scale(${(1/s*(0.85+0.15*clamp(pop(t,36.82),0,1.2))).toFixed(4)})`;
-  // twist: Thailand shakes, a crack runs down it, the left bank (la) and the Malay north drift away on "ยอมเสียดินแดน"
-  const tw=37.98, sk=t>=tw?14*Math.exp(-(t-tw)*2.6)*Math.sin((t-tw)*48):0;
-  $('zm-th').style.transform=`translate(${f2(sk)}px,${f2(sk*0.3)}px)`;
-  $('zm-glow').style.opacity=f2(t<tw?0.55+0.3*Math.sin((t-a)*4):0.25+0.15*Math.sin((t-tw)*9));
-  $('zm-crack').style.strokeDashoffset=(1-eio((t-38.22)/0.4)).toFixed(4);
-  const lost=pop(t,39.42,12,0.7), lost2=pop(t,39.76,12,0.7);
-  $('zm-la').style.transform=`translate(${f2(34*lost)}px,${f2(-12*lost)}px)`;
-  $('zm-mn').style.transform=`translate(${f2(8*lost2)}px,${f2(30*lost2)}px)`;
-  ['zm-laf','zm-mnf'].forEach((id,i)=>{const on=t>=(i?39.76:39.42); $(id).style.fill=on?'var(--accent)':''; $(id).style.fillOpacity=on?'0.6':'';
-    $(id).style.stroke=on?'var(--ink)':''; $(id).style.strokeDasharray=on?'10 8':''; $(id).style.strokeWidth=on?'4':'';});
+  // twist (review 2026-11-27): Thailand stays whole; its outline flashes + a small shake on "ไม่ได้รอดฟรี"; on "ยอมเสียดินแดน"
+  // the lost areas show up as hatch on Thailand's edge (approximate) and then drift / fade toward France (east) and Britain (south)
+  const tw=37.98, sk=t>=tw?6*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*40):0;
+  $('zm-th').style.transform=`translate(${f2(sk)}px,0)`;
+  const blink=t>=tw&&t<tw+1.2?0.5+0.5*Math.cos((t-tw)*Math.PI*2/0.4):0;
+  $('zm-thf').style.stroke=blink>0.5?'var(--panel)':''; $('zm-thf').style.strokeWidth=t>=tw&&t<tw+1.2?f2(4+6*blink):'';
+  $('zm-glow').style.opacity=f2(t<tw?0.55+0.3*Math.sin((t-a)*4):0.35+0.3*blink);
+  const piece=(id,ta,tgo,dx,dy)=>{ const ap=clamp((t-ta)/0.15), go=eio((t-tgo)/0.5);
+    $(id).style.opacity=f2(ap*(1-0.55*go)); $(id).style.transform=`translate(${f2(dx*go)}px,${f2(dy*go)}px)`; };
+  piece('zm-la',39.42,39.80,46,-6); piece('zm-mn',39.76,40.02,10,34);
+  show($('approx2'),clamp((t-39.42)/0.1));
   // one top pill morphs: "คานอำนาจ" -> "ไม่ได้รอดฟรี" (flip on the word)
   const b=$('bigtop'), on=win(t,36.0,e,0.06,0.1);
   const fa=t<tw?pop(t,36.0):pop(t,tw,18,0.45), flip=t>=tw-0.08&&t<tw?1-(tw-t)/0.08:0;
@@ -355,11 +357,8 @@ function malayGfx(t){
   const M=shotAt('tw_malay'); if(t<M.a-0.2||t>M.b+0.2) return;
   const u=clamp((t-M.a)/(M.b-M.a)), s=1.85+0.15*eio(u);
   mapT($('tm-w'),s,504,880,540,860);
-  $('tm-la').style.transform='translate(34px,-12px)';
-  ['tm-laf','tm-mnf'].forEach(id=>{const x=$(id).style; x.fill='var(--accent)'; x.fillOpacity='0.6'; x.stroke='var(--ink)'; x.strokeDasharray='10 8'; x.strokeWidth='3';});
-  const m=pop(t,41.68,12,0.6); $('tm-mn').style.transform=`translate(${f2(8+10*m)}px,${f2(30+36*m)}px)`;
-  $('tm-mnf').style.fillOpacity=f2(0.6+0.3*Math.sin((t-M.a)*7));
-  $('tm-th').style.transform=`translate(${f2(2*Math.sin(t*31))}px,0)`;
+  $('tm-la').style.opacity='0.45'; $('tm-la').style.transform='translate(46px,-6px)';
+  const m=eio((t-41.68)/0.6); $('tm-mn').style.opacity=f2(1-0.55*m); $('tm-mn').style.transform=`translate(${f2(4+6*m)}px,${f2(14+30*m)}px)`;
   ['tm-luk1','tm-luk2','tm-lfr'].forEach(id=>$(id).style.transform=`scale(${(1/s).toFixed(4)})`);
   $('tm-glow').style.opacity='0.3';
   show($('approx'),clamp((t-41.32)/0.1));
