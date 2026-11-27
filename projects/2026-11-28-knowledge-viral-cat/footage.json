@@ -1,0 +1,35 @@
+{
+ "hook": {
+  "src": "assets/footage/pixabay-168334.mp4",
+  "action_at": 5.8
+ },
+ "reveal": {
+  "src": "assets/footage/pixabay-185937.mp4",
+  "action_at": 7.5
+ },
+ "reveal_b": {
+  "src": "assets/footage/pixabay-16975.mp4",
+  "action_at": 1.0
+ },
+ "viral": {
+  "src": "assets/footage/pixabay-339775.mp4"
+ },
+ "paint": {
+  "src": "assets/footage/pixabay-108560.mp4"
+ },
+ "white": {
+  "src": "assets/footage/pixabay-3683186.jpg"
+ },
+ "share_siam": {
+  "src": "assets/footage/pixabay-806210.jpg"
+ },
+ "share_korat": {
+  "src": "assets/footage/pixabay-7618223.jpg"
+ },
+ "share_khao": {
+  "src": "assets/footage/pixabay-46226.mp4"
+ },
+ "cta": {
+  "src": "assets/footage/pixabay-39009.mp4"
+ }
+}
