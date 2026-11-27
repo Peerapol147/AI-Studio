@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "night-violet",
+  "font": "sarabun",
+  "caption": "underline",
+  "opening": "pov",
+  "cover": "tilt",
+  "transition": "slide",
+  "music_mood": "quirky",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": null,
+  "why": "look.py pick แล้วแก้: palette night-violet (ข้างในร่างกายโทนมืด เส้นประสาทเรืองแสง แบบ 3D body explainer อเมริกา), music quirky (เรื่องคันขำๆ ใกล้ตัว); opening pov ใช้ kicker 'POV: โดนยุงกัด' + คำถามตรง (question ห้ามซ้ำตอน caffeine ก่อนหน้า); เสียงล็อกช่อง"
+}
