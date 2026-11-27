@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- Hand rig demo / smoke page (tests/test_hand_rig.py). ?pose=rest|test|flex  Open in a browser to see the poses. -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="hand-rig.css"/>
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+#root{--bg:#2A0F12;--bg2:#C2453A;--ink:#1A0A06;--accent:#FFD23F;--accent2:#FF8A5B;position:relative;width:1080px;height:1920px;
+  background:radial-gradient(ellipse 640px 800px at 540px 1000px,var(--bg2),var(--bg))}
+svg{position:absolute;inset:0;width:1080px;height:1920px;overflow:visible}
+</style></head><body>
+<div id="root"><svg id="hand" viewBox="0 0 1080 1920"></svg></div>
+<script src="hand.js"></script>
+<script>
+const POSES = {
+  rest: { o: 0, op: 0, flex: 0, X: 540, Y: 1350, S: 1.2 },
+  test: { o: 1, op: 1, press: 0, flex: 40, tendon: 1, pulse: 0, ring: 1, X: 540, Y: 1250, S: 1.2, yaw: -4, pitch: 4, roll: 6 },
+  flex: { o: 0, op: 0, flex: 40, spread: 0.2, X: 540, Y: 1350, S: 1.1, yaw: 6, pitch: 4 },
+};
+const pose = POSES[new URLSearchParams(location.search).get('pose') || 'test'];
+const r = window.HandRig(document.getElementById('hand')).draw(pose);
+window.__rig = { wrist: r.wrist, tendon: r.tendon, thumbTip: r.thumbTip, pinkyTip: r.pinkyTip, touch: r.touch };
+</script>
+</body></html>
