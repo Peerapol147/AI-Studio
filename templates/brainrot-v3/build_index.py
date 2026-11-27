@@ -170,7 +170,8 @@ def cut_kind(i, s, prev):
 
 
 PUNCH_GAP = 1.5
-PUNCH_AFTER_CUT = 0.3      # review v3.7 Y5: a punch right on a cut/transition stacks two hits; skip it
+PUNCH_AFTER_CUT = 0.3
+PUNCH_MAX = 8      # review v3.7 Y5: a punch right on a cut/transition stacks two hits; skip it
 
 
 def punches(caps, times, dur, hook_end, cuts=()):
@@ -189,7 +190,16 @@ def punches(caps, times, dur, hook_end, cuts=()):
             continue
         if t < dur - 0.5 and (not out or t - out[-1] >= PUNCH_GAP):
             out.append(t)
+    if len(out) > PUNCH_MAX and not isinstance(want, list):   # review v3.7: 4-8 punches a clip, spread over it
+        out = [out[round(k * (len(out) - 1) / (PUNCH_MAX - 1))] for k in range(PUNCH_MAX)]
     return out
+
+
+def punch_feel():
+    """Punch strength (scale kick) and decay per look, so every episode does not punch the same (review v3.7 ⚪)."""
+    h = int(hashlib.sha256('|'.join(str(LOOK[k]) for k in ('palette', 'font', 'caption', 'opening', 'cover', 'transition'))
+                           .encode()).hexdigest(), 16)
+    return {'amp': round(0.06 + 0.04 * (h % 101) / 100, 3), 'decay': round(6 + 3 * (h // 101 % 101) / 100, 2)}
 
 
 def is_video(p):
@@ -337,7 +347,7 @@ VARS = {'--bg': PAL['bg'], '--bg2': PAL['bg2'], '--ink': PAL['ink'], '--text': P
 music = LOOK.get('music_file')
 MUSIC = (f'<audio id="music" class="clip" data-start="0" data-duration="{DUR}" data-track-index="31" data-volume="0.1" '
          f'src="assets/{html.escape(pathlib.Path(music).name)}"></audio>') if music else '<!-- no music_file in look.json yet -->'
-DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'punch': punches(CAPS, capt, DUR, HOOK_END, [s['a'] for s in SC[1:]]), 'look': {k: LOOK[k] for k in
+DATA = {'dur': DUR, 'capt': capt, 'sc': SC, 'hookEnd': HOOK_END, 'punch': punches(CAPS, capt, DUR, HOOK_END, [s['a'] for s in SC[1:]]), 'punchFeel': punch_feel(), 'look': {k: LOOK[k] for k in
         ('palette', 'font', 'caption', 'opening', 'cover', 'transition')}}
 rep = {'%%DUR%%': str(DUR), '%%VARS%%': ';'.join(f'{k}:{v}' for k, v in VARS.items()),
        '%%SCENES%%': SCENES, '%%CAPS%%': caps(), '%%TITLE%%': title(), '%%ICONS%%': icons(),

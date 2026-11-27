@@ -126,7 +126,7 @@ function scenes(t){
   });
   $('flash').style.opacity=f2(clamp(fl));
   // zoom punch on key words (brainrot v2): damped scale kick of the picture layer only (title/captions stay put)
-  let p=0; D.punch.forEach(a=>{const u=t-a; if(u>=0&&u<0.8) p+=0.085*Math.exp(-u*7)*(1+Math.cos(u*13))/2;});  // >= 0: never shrinks below the frame
+  let p=0; D.punch.forEach(a=>{const u=t-a; if(u>=0&&u<0.8) p+=D.punchFeel.amp*Math.exp(-u*D.punchFeel.decay)*(1+Math.cos(u*13))/2;});  // >= 0: never shrinks below the frame
   $('stage').style.transform=`scale(${(1+p).toFixed(4)})`;
 }
 // hook title: full from frame 0 (no fade-in), breathes, leaves at the end of the hook, springs back for the loop seam
