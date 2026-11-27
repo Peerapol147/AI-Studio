@@ -1,4 +1,4 @@
-# script-en.md (ร่างสั้นสำหรับทดลองช่องอังกฤษภายหลัง — ไม่อัด ไม่เรนเดอร์; brief ห้องวางแผน: "why was Thailand never colonised" 5.4M)
+# script-en.md (ร่างเก่า 5 ประเทศ ก่อนผู้ใช้สั่งตัดภูฏาน; ร่างสั้นสำหรับทดลองช่องอังกฤษภายหลัง — ไม่อัด ไม่เรนเดอร์; brief ห้องวางแผน: "why was Thailand never colonised" 5.4M)
 เขียนใหม่เป็นอังกฤษธรรมชาติ ไม่แปลตรง; ข้อเท็จจริงเดียวกับ research.md (ป้ายเดียวกัน)
 
 Every country around here was colonized. Except one.
