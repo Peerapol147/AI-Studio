@@ -111,6 +111,7 @@ branch ของห้องวางแผน: `claude/content-strategy` (`git 
 
 ## 10. เงิน/เครื่องมือ
 - เป้า ≤$10-15/คลิป; ElevenLabs key อยู่ใน network secret (ห้ามรับในแชต → `request_credential` host api.elevenlabs.io header xi-api-key) ผู้ใช้เปลี่ยนคีย์ใหม่อีกครั้งระหว่างห้องการ์ตูนมวย (โควตาไม่ทราบ → ห้องลูกเช็กเองก่อนอัด)
+- **Smithsonian Open Access** (2026-11-28): network secret host api.si.edu header X-Api-Key (ทดสอบผ่าน) → ภาพนิ่ง CC0 สัตว์/ธรรมชาติ/ประวัติศาสตร์; ส่งเข้า footage_search ใน v3.7 แล้ว. Pexels ปิด API (ผู้ใช้แจ้ง); Openverse token หมดอายุทุก 10 ชม. ใช้กับ network secret ไม่ได้ → ไม่ใช้
 - Apify ผ่าน proxy (`tools/apify_mcp.sh`); ค้นยอดวิว: `python3 -I tools/yt_views.py "คำค้นไทย"`; อังกฤษ: `curl -s -A "Mozilla/5.0" "https://www.youtube.com/results?search_query=<q>&sp=EgIYAQ%253D%253D&hl=en&gl=US" | grep -oE '"accessibilityText":"[^"]{0,110}views[^"]*"'`; ดึงสถิติช่องตัวเอง (วิว/ไลก์/คอมเมนต์/ซับ ไม่มี retention): Actor `streamers/youtube-scraper` startUrls `https://www.youtube.com/@vision6498` (ไม่ต่อ /videos, ห้ามตั้ง maxResultsShorts=0) ~$0.004/คลิป — วิธีเต็มในไฟล์ห้อง Content ข้อ 6
 - skills วางแผน: reality-check (ทุกการอ่านสถิติ), yt-content-planner, yt-hook-scripter, yt-title/thumbnail/description (ข้าม publish), caveman (แชตเท่านั้น), superpowers
 - สายพานทำคลิป (ห้องลูกใช้): make-clip (ขั้น 0-7), agents researcher/footage/voice/editor/reviewer, hyperframes(+cli, registry), media-use, sound-effects, tools/look.py, tools/pacing.py, tools/shot_times.py
