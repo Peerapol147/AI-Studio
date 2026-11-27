@@ -149,3 +149,16 @@ def test_english_and_repeated_cue(tmp_path):
     assert r.returncode == 0, r.stderr
     s = json.loads((tmp_path / 'assets' / 'audio' / 'shots-en.json').read_text())['shots']
     assert [x['word_at'] for x in s] == [0.0, 1.0, 3.0] and s[2]['hit_at'] == 4.0
+
+
+def test_still_image_action_at_skipped_not_error(tmp_path):
+    """itch 2026-11-27: footage.json gave a photo "action_at": 0 -> media_start < 0 ERROR. A still has no in-point:
+    the action_at is skipped (INFO), no media_start; a video with the same action_at still errors."""
+    foot = {'s2': {'src': 'assets/footage/mosquito.JPG', 'action_at': 0}, 's4': {'src': 'assets/footage/b.png', 'action_at': 0.0}}
+    r, res = run(tmp_path, [shot(0), shot(2, hit={'th': 'w3x'}), shot(4)], footage=foot)
+    assert r.returncode == 0, r.stderr
+    s = {x['id']: x for x in res['shots']}
+    assert 'media_start' not in s['s2'] and 'media_start' not in s['s4'] and s['s2']['src'].endswith('.JPG')
+    assert 'INFO s2: action_at 0 skipped (still image' in r.stdout and 'ERROR' not in r.stderr
+    r, res = run(tmp_path, [shot(0), shot(2, hit={'th': 'w3x'})], footage={'s2': {'src': 'assets/footage/x.mp4', 'action_at': 0}})
+    assert r.returncode == 1 and 'too early in the source' in r.stderr and res is None

@@ -33,6 +33,8 @@ media_start priority (highest first):
      -> copied as is; action_at is ignored for that shot.
   2. "action_at" -> media_start = action_at - (hit_at or word_at - start), so the action lands on the word.
   3. neither -> no media_start (the editor plays the plate from 0).
+  A still image (src .jpg/.jpeg/.png/.webp/.gif/.avif) has no in-point: its action_at (often 0) is skipped with an INFO
+  line, never an ERROR (itch 2026-11-27: "action_at": 0 on mosquito.jpg gave "too early in the source").
 Cue words are searched in order, each after the previous cue, so a repeated word picks the
 right occurrence. Spaces and punctuation are ignored when matching (Thai timestamps are per character).
 
@@ -50,6 +52,7 @@ refuses a timeline whose inputs changed since it was written: rerun this tool af
 import hashlib, json, math, pathlib, re, sys
 
 BEATS = ("hook", "setup", "explain", "reveal", "twist", "share", "cta", "loop")
+STILL = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif")
 STRIP = re.compile(r"[\s.,!?…'\"“”‘’\-–—:;()]+")
 
 
@@ -128,6 +131,7 @@ def main(proj, lang):
         if fid not in ids:
             warns.append(f"footage.json has '{fid}' but shots.json has no such id (renamed? footage unused)")
 
+    infos = []
     pos, out = 0, []                       # out: (row, merged source dict)
     for i, sh in enumerate(shots):
         if not isinstance(sh, dict) or not sh.get("id"):
@@ -181,6 +185,8 @@ def main(proj, lang):
             r["media_start"] = round(float(src["media_start"]), 3) + 0.0
             if r["media_start"] < 0:
                 errs.append(f"{r['id']}: media_start {r['media_start']} in shots.json is negative")
+        elif src.get("action_at") is not None and str(src.get("src") or "").lower().endswith(STILL):
+            infos.append(f"{r['id']}: action_at {src['action_at']!r} skipped (still image {src['src']}: no in-point)")
         elif src.get("action_at") is not None:
             if not finite(src["action_at"]):
                 errs.append(f"{r['id']}: action_at {src['action_at']!r} is not a finite number")
@@ -197,6 +203,8 @@ def main(proj, lang):
     for r in rows:
         print(f"{r['id']:<14}{r['cue'][:20]:<22}{r['word_at']:>7.2f}{r['start']:>8.2f}{r['dur']:>7.2f}"
               f"{r.get('hit_at', float('nan')):>8.2f}{r.get('media_start', float('nan')):>7.2f}")
+    for m in infos:
+        print("INFO", m)
     for w in warns:
         print("WARN", w)
     if errs:
