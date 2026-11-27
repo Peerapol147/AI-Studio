@@ -301,6 +301,11 @@ rep = {'%%DUR%%': str(DUR), '%%VARS%%': ';'.join(f'{k}:{v}' for k, v in VARS.ite
        '%%VO%%': html.escape(EP.get('vo', 'assets/vo-th.mp3')), '%%MUSIC%%': MUSIC,
        '%%DATA%%': json.dumps(DATA, ensure_ascii=False), '%%LOOKNAME%%': html.escape(
            f"{LOOK['palette']} / {LOOK['font']} / {LOOK['caption']} / {LOOK['opening']} / {LOOK['cover']} / {LOOK['transition']}")}
+# episode edit (never-colonized): graphics word times. episode.json "word_times" = [[key, "phrase|or shown|heard"], ...]
+# in speech order; each key = start of that phrase in words.json (same finder as the captions) -> const W in the page
+_wf = finder()
+WORDS = {k: _wf((ph.partition('|')[2] or ph)) for k, ph in EP.get('word_times', [])}
+rep['%%WORDS%%'] = json.dumps(WORDS)
 page = (HERE / 'index.html.tpl').read_text()
 # episode edit: graphics markup generated from maps.json by make_gfx.py
 page = page.replace('<!--EPISODE_GFX-->', (HERE / 'gfx.html').read_text())

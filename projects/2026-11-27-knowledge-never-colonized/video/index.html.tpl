@@ -236,75 +236,82 @@ function cards(t){
     const u=clamp((t-s.a)/Math.max(0.3,s.b-s.a));
     el.style.transform=`translateY(${f2(-30*u)}px) rotate(${((u-0.5)*1.4).toFixed(3)}deg) scale(${(1+0.07*u).toFixed(4)})`; });
 }
+// ---- word times (s) from words.json: every graphic change lands on one of these (round 3 voice) ----
+const W=%%WORDS%%;
 // ---- SEA map (hook, and the loop shot plays it backwards so the last frame = frame 0) ----
 const TH=[313.7,414], HX=540, HY=1000, HS=1.3;
-function seaState(sid,tau){
-  const z=eio((tau-0.86)/0.42), s=HS*(1+1.2*z);
+const HOOK=shotAt('hook'), ZA=HOOK.b-0.42;     // zoom into Thailand over the last 0.42 s of the hook
+const LPOP=[null,W.colon,null,W.colon+0.12,W.colon+0.24];   // labels 0 + 2 are on screen from frame 0; the rest pop on "ชาติตะวันตก"
+function seaState(sid,zt,lt,gt){
+  const z=eio((zt-ZA)/0.42), s=HS*(1+1.2*z);
   mapT($(sid+'-w'),s,TH[0],TH[1]+40*z,HX,HY+40*z);
-  $(sid+'-glow').style.opacity=f2(0.5+0.4*Math.cos(2*Math.PI*tau/1.6));
-  for(let i=0;i<5;i++){ const l=$(sid+'-l'+i); l.style.transform=`translateY(${f2(-5*Math.sin(2*Math.PI*tau/1.4+i*1.3)+5*Math.sin(i*1.3))}px)`; l.style.opacity=f2(1-z); }
+  $(sid+'-glow').style.opacity=f2(0.5+0.4*Math.cos(2*Math.PI*gt/1.6));
+  for(let i=0;i<5;i++){ const l=$(sid+'-l'+i), pa=LPOP[i], p=pa===null?1:pop(lt,pa,20,0.5), on=pa===null?1:clamp((lt-pa)/0.05);
+    l.style.transform=`translateY(${f2(-5*Math.sin(2*Math.PI*gt/1.4+i*1.3)+5*Math.sin(i*1.3))}px) scale(${(0.4+0.6*clamp(p,0,1.2)).toFixed(3)})`;
+    l.style.opacity=f2(on*(1-z)); }
 }
 function seaGfx(t){
-  if(t<1.5) seaState('hook',t);
-  const L=shotAt('loop'); if(t>=L.a-0.2) seaState('loop',Math.max(0,1.28*(DUR-t)/(DUR-L.a)));
+  if(t<HOOK.b+0.3) seaState('hook',t,t,t);
+  const L=shotAt('loop'); if(t>=L.a-0.2){ const u=clamp((t-L.a)/0.45);   // loop: zoomed in -> frame-0 state (only labels 0 + 2)
+    seaState('loop',ZA+0.42*(1-u),-1,Math.max(0,DUR-t)); }
 }
-// ---- WORLD map: guess (Thailand pinned, 4 floating ?), definition card, cta (5 pins + ?6) ----
+// ---- WORLD map: guess (Thailand pinned, 3 floating ?), definition card, cta (4 pins + ?) ----
 const WY=520;
 function worldState(sid,t,a,px=608){
   const u=t-a; mapT($(sid+'-w'),1+0.012*u,px,470,540+12*Math.sin(u*0.9),WY+470+6*Math.sin(u*1.1));
 }
 function guessGfx(t){
-  if(t>=3.0&&t<=6.9){
-    worldState('guess',t,3.1); worldState('guess_def',t,3.1);
+  const G=shotAt('guess'), GD=shotAt('guess_def');
+  if(t>=G.a-0.1&&t<=GD.b+0.15){
+    worldState('guess',t,G.a); worldState('guess_def',t,G.a);
     ['guess','guess_def'].forEach(sid=>{
-      const p=$(sid+'-pth'); p.style.transform=`translateY(${f2(-8*Math.abs(Math.sin((t-3.1)*3.2)))}px)`;
-      for(let i=0;i<4;i++){ const ta=4.36+i*0.14, el=$(sid+'-q'+i), a=sid==='guess'?pop(t,ta):1;
-        el.style.opacity=f2(sid==='guess'?clamp((t-ta)/0.06):1);
+      const p=$(sid+'-pth'); p.style.transform=`translateY(${f2(-8*Math.abs(Math.sin((t-G.a)*3.2)))}px)`;
+      for(let i=0;i<3;i++){ const ta=W.q3+i*0.14, el=$(sid+'-q'+i), a=pop(t,ta);
+        el.style.opacity=f2(clamp((t-ta)/0.06));
         el.style.transform=`translateY(${f2(-60*(1-clamp(a,0,1.2))+8*Math.sin((t-ta)*4+i))}px) rotate(${f2(8*Math.sin((t-ta)*3+i*2))}deg) scale(${(0.5+0.5*clamp(a,0,1.2)).toFixed(3)})`; } });
-    const d=$('g-guess_def').querySelector('.dim'); d.style.opacity=f2(clamp((t-5.6)/0.12));
-    const c=pop(t,5.68); show($('defcard'),clamp((t-5.68)/0.06),`translateY(${f2(30*(1-c)+(t>5.9?-6*Math.sin((t-5.9)*2.4):0))}px) scale(${(0.8+0.2*clamp(c,0,1.1)).toFixed(4)})`);
-    $('def-hl').style.backgroundSize=`${(100*eo((t-6.2)/0.25)).toFixed(1)}% 100%`;
+    const d=$('g-guess_def').querySelector('.dim'); d.style.opacity=f2(clamp((t-W.def)/0.12));
+    const c=pop(t,W.def); show($('defcard'),clamp((t-W.def)/0.06),`translateY(${f2(30*(1-c)-6*Math.sin(Math.max(0,t-W.def-0.2)*2.4))}px) scale(${(0.8+0.2*clamp(c,0,1.1)).toFixed(4)})`);
+    $('def-hl').style.backgroundSize=`${(100*eo((t-W.defhl)/0.25)).toFixed(1)}% 100%`;
   }
-  // guess_q: one big ? over the NASA globe
-  const qa=6.84, q=pop(t,qa,16,0.45);
-  show($('bigq'),win(t,qa,8.0,0.06,0.1),`rotate(${f2(10*Math.sin((t-qa)*5))}deg) scale(${((0.4+0.6*clamp(q,0,1.2))*(1+0.04*Math.sin((t-qa)*8))).toFixed(4)})`);
+  // guess_q: one big ? over the magnifier
+  const Q=shotAt('guess_q'), qa=W.guessq, q=pop(t,qa,16,0.45);
+  show($('bigq'),win(t,qa,Q.b,0.06,0.1),`rotate(${f2(10*Math.sin((t-qa)*5))}deg) scale(${((0.4+0.6*clamp(q,0,1.2))*(1+0.04*Math.sin((t-qa)*8))).toFixed(4)})`);
 }
 function ctaGfx(t){
   const C=shotAt('cta'); if(t<C.a-0.2||t>C.b+0.2) return;
   worldState('cta',t,C.a,566);
-  ['th','bt','np','ir','jp'].forEach((k,i)=>{ const ta=C.a+0.02+i*0.06, a=pop(t,ta,22,0.5), p=$('cta-p'+k), n=$('cta-n'+k);
+  ['th','np','ir','jp'].forEach((k,i)=>{ const ta=C.a+0.02+i*0.06, a=pop(t,ta,22,0.5), p=$('cta-p'+k), n=$('cta-n'+k);
     p.style.opacity=f2(clamp((t-ta)/0.05)); p.style.transform=`translateY(${f2(-70*(1-clamp(a,0,1.2))-6*Math.abs(Math.sin((t-ta)*3+i)))}px)`;
     n.style.opacity=f2(clamp((t-ta-0.08)/0.08)); });
-  const qa=46.0, q=pop(t,qa,18,0.4);
+  const qa=W.q6, q=pop(t,qa,18,0.4);
   show($('cta-q6'),clamp((t-qa)/0.05),`translateY(${f2(-10*Math.sin((t-qa)*4))}px) rotate(${f2(14*Math.sin((t-qa)*5))}deg) scale(${(0.3+0.7*clamp(q,0,1.25)).toFixed(3)})`);
-  const ca=45.54, c=pop(t,ca);
+  const ca=W.ctaq, c=pop(t,ca);
   show($('ctaq'),clamp((t-ca)/0.06),`translateY(${f2(-4*Math.sin((t-ca)*3))}px) scale(${(0.6+0.4*clamp(c,0,1.15)).toFixed(4)})`);
 }
-// ---- rank badge: ONE piece, the number flips 5 -> 1 on "อันดับ...", the name lands on the spoken name; #1 biggest ----
-const R=[{n:5,name:'ภูฏาน',a:8.08,na:9.0},{n:4,name:'เนปาล',a:14.38,na:15.30},{n:3,name:'อิหร่าน',a:19.56,na:20.42},
-         {n:2,name:'ญี่ปุ่น',a:24.92,na:25.74},{n:1,name:'ไทย',a:30.70,na:31.48}];
+// ---- rank badge: ONE piece, the number flips 4 -> 1 on "อันดับ...", the name lands on the spoken name; #1 = big pop on "ไทยเรา" ----
+const R=[{n:4,name:'เนปาล',a:W.r4,na:W.r4n},{n:3,name:'อิหร่าน',a:W.r3,na:W.r3n},{n:2,name:'ญี่ปุ่น',a:W.r2,na:W.r2n},{n:1,name:'ไทย',a:W.r1,na:W.r1n,big:W.r1n}];
 function rankGfx(t){
-  const on=win(t,8.0,35.36,0.1,0.12); show($('rshade'),on*0.9);
+  const on=win(t,shotAt('r4').a,shotAt('r1c').a,0.1,0.12); show($('rshade'),on*0.9);
   let k=0; R.forEach((r,i)=>{if(t>=r.a) k=i;}); const r=R[k];
   if(on<=0){ show($('rank'),0); return; }
-  const one=r.n===1, fl=one?pop(t,r.a,13,0.32):pop(t,r.a,20,0.5);
+  const fl=pop(t,r.a,20,0.5);
   $('rk-n').textContent=String(r.n);
-  const big=one?lerp(1,1.45,clamp(fl,0,1.3)):1, br=1+0.015*Math.sin((t-r.a)*4);
+  const bp=r.big?pop(t,r.big,13,0.32):0, big=r.big?lerp(1,1.45,clamp(bp,0,1.3)):1, br=1+0.015*Math.sin((t-r.a)*4);
   show($('rank'),on,`scale(${(big*br).toFixed(4)})`);
   $('rk-num').style.transform=`scale(${(0.5+0.5*fl).toFixed(4)}) rotate(${f2(-120*(1-clamp(fl,0,1)))}deg)`;
   const nm=pop(t,r.na); $('rk-name').textContent=r.name;
   $('rk-name').style.opacity=f2(clamp((t-r.na)/0.08)); $('rk-name').style.transform=`translateX(${f2(70*(1-nm))}px)`;
 }
 // ---- year chips (พ.ศ. only, text from the brief) + one check stamp ----
-const CA=[[11.94,14.30,'<b>พ.ศ. 2453</b> สนธิสัญญาปุนาคา<br>ฟังอังกฤษเรื่องต่างประเทศ',470],
-  [16.46,17.80,'<b>พ.ศ. 2357-2359</b><br>แพ้สงครามอังกฤษ เสียดินแดน',470],
-  [21.98,24.84,'<b>พ.ศ. 2450</b> ถูกแบ่งเขตอิทธิพล',470],
-  [27.38,30.62,'<b>พ.ศ. 2488-2495</b><br>ถูกยึดครอง ~7 ปี',470],
-  [33.96,35.36,'<b>สมัยรัชกาลที่ 5</b><br>(พ.ศ. 2411-2453)',470],
-  [40.34,41.24,'<b>พ.ศ. 2436</b><br>ฝั่งซ้ายโขง → ฝรั่งเศส',290],
-  [41.32,42.84,'<b>พ.ศ. 2452</b><br>หัวเมืองมลายู → อังกฤษ',290]];
-const CB=[[22.40,24.84,'<b>พ.ศ. 2484-2489</b> ถูกยึดครอง',590]];
-const ST=[[17.88,19.48,'ยังเป็นเอกราช'],[23.02,24.84,'ไม่เคยเป็นอาณานิคม'],[29.02,30.62,'ไม่ใช่อาณานิคม']];
+const S_=id=>shotAt(id);
+const CA=[[W.c4,S_('r4c').a,'<b>พ.ศ. 2357-2359</b><br>แพ้สงครามอังกฤษ เสียดินแดน',470],
+  [W.c3a,S_('r2').a,'<b>พ.ศ. 2450</b> ถูกแบ่งเขตอิทธิพล',470],
+  [W.c2,S_('r1').a,'<b>พ.ศ. 2488-2495</b><br>ถูกยึดครอง ~7 ปี',470],
+  [W.c1,S_('r1c').a,'<b>สมัยรัชกาลที่ 5</b><br>(พ.ศ. 2411-2453)',470],
+  [W.cmek,S_('tw_malay').a,'<b>พ.ศ. 2436</b><br>ฝั่งซ้ายโขง → ฝรั่งเศส',290],
+  [W.cmal,S_('share').a,'<b>พ.ศ. 2452</b><br>หัวเมืองมลายู → อังกฤษ',290]];
+const CB=[[W.c3b,S_('r2').a,'<b>พ.ศ. 2484-2489</b> ถูกยึดครอง',590]];
+const ST=[[W.s4,S_('r3').a,'ยังเป็นเอกราช'],[W.s3,S_('r2').a,'ไม่เคยเป็นอาณานิคม'],[W.s2,S_('r1').a,'ไม่ใช่อาณานิคม']];
 function chip(id,L,t){
   const el=$(id); let c=null; L.forEach(x=>{if(t>=x[0]-0.01&&t<x[1]+0.13) c=x;});
   if(!c){ show(el,0); return; }
@@ -320,35 +327,35 @@ function stamp(t){
 // ---- r1c + tw: ONE zoom map in the #ep layer (no cut between them): Britain / France push, Thailand holds; then the lost areas (hatch) fade away ----
 const ZC=[492,500];
 function zoomGfx(t){
-  const a=35.36, e=40.26; const el=$('zmap');
+  const a=S_('r1c').a, e=S_('tw_mekong').a; const el=$('zmap');
   if(t<a-0.01||t>e+0.13){ el.style.opacity='0'; $('bigtop').style.opacity='0'; return; }
   const out=t>=e?eo((t-e)/0.12):0;
   el.style.opacity=f2(clamp((t-a)/0.1)); el.style.transform=`translateX(${f2(-1080*out)}px)`;
   const u=clamp((t-a)/(e-a)), s=0.92+0.06*eio(u);
   mapT($('zm-w'),s,ZC[0],ZC[1],540,450+0.92*(ZC[1]-153));
   // arrows: Britain (west + south) on "อังกฤษ", France (east) on "ฝรั่งเศส"; tips stop at the border, then press (balance)
-  [['aw',36.46,1,0],['as',36.50,0,-1],['ae',36.82,-1,0]].forEach(([k,ta,dx,dy],i)=>{
+  [['aw',W.uk,1,0],['as',W.uk+0.04,0,-1],['ae',W.fr,-1,0]].forEach(([k,ta,dx,dy],i)=>{
     const g=$('zm-'+k), d=eo((t-ta)/0.3), sh=g.querySelector('.ash'), hd=$('zm-'+k+'h');
     sh.style.strokeDashoffset=(1-d).toFixed(4);
-    const press=t>ta+0.3?5*Math.sin((t-ta-0.3)*7+i):0, fade=t>=37.98?1-0.6*clamp((t-37.98)/0.3):1;
+    const press=t>ta+0.3?5*Math.sin((t-ta-0.3)*7+i):0, fade=t>=W.tw?1-0.6*clamp((t-W.tw)/0.3):1;
     g.style.transform=`translate(${f2(dx*press)}px,${f2(dy*press)}px)`; g.style.opacity=f2((t>=ta?1:0)*fade);
     hd.style.transform=`scale(${clamp((t-ta-0.22)/0.1).toFixed(3)})`; });
-  ['zm-luk1','zm-luk2'].forEach(id=>{const p=pop(t,36.46); $(id).style.transform=`scale(${(1/s*(0.85+0.15*clamp(p,0,1.2))).toFixed(4)})`;});
-  $('zm-lfr').style.transform=`scale(${(1/s*(0.85+0.15*clamp(pop(t,36.82),0,1.2))).toFixed(4)})`;
+  ['zm-luk1','zm-luk2'].forEach(id=>{const p=pop(t,W.uk); $(id).style.transform=`scale(${(1/s*(0.85+0.15*clamp(p,0,1.2))).toFixed(4)})`;});
+  $('zm-lfr').style.transform=`scale(${(1/s*(0.85+0.15*clamp(pop(t,W.fr),0,1.2))).toFixed(4)})`;
   // twist (review 2026-11-27): Thailand stays whole; its outline flashes + a small shake on "ไม่ได้รอดฟรี"; on "ยอมเสียดินแดน"
   // the lost areas show up as hatch on Thailand's edge (approximate) and then drift / fade toward France (east) and Britain (south)
-  const tw=37.98, sk=t>=tw?6*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*40):0;
+  const tw=W.tw, sk=t>=tw?6*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*40):0;
   $('zm-th').style.transform=`translate(${f2(sk)}px,0)`;
   const blink=t>=tw&&t<tw+1.2?0.5+0.5*Math.cos((t-tw)*Math.PI*2/0.4):0;
   $('zm-thf').style.stroke=blink>0.5?'var(--panel)':''; $('zm-thf').style.strokeWidth=t>=tw&&t<tw+1.2?f2(4+6*blink):'';
   $('zm-glow').style.opacity=f2(t<tw?0.55+0.3*Math.sin((t-a)*4):0.35+0.3*blink);
   const piece=(id,ta,tgo,dx,dy)=>{ const ap=clamp((t-ta)/0.15), go=eio((t-tgo)/0.5);
     $(id).style.opacity=f2(ap*(1-0.55*go)); $(id).style.transform=`translate(${f2(dx*go)}px,${f2(dy*go)}px)`; };
-  piece('zm-la',39.42,39.80,46,-6); piece('zm-mn',39.76,40.02,10,34);
-  show($('approx2'),clamp((t-39.42)/0.1));
+  piece('zm-la',W.lose,W.lose+0.38,46,-6); piece('zm-mn',W.lose+0.34,W.lose+0.6,10,34);
+  show($('approx2'),clamp((t-W.lose)/0.1));
   // one top pill morphs: "คานอำนาจ" -> "ไม่ได้รอดฟรี" (flip on the word)
-  const b=$('bigtop'), on=win(t,36.0,e,0.06,0.1);
-  const fa=t<tw?pop(t,36.0):pop(t,tw,18,0.45), flip=t>=tw-0.08&&t<tw?1-(tw-t)/0.08:0;
+  const b=$('bigtop'), on=win(t,W.kan,e,0.06,0.1);
+  const fa=t<tw?pop(t,W.kan):pop(t,tw,18,0.45), flip=t>=tw-0.08&&t<tw?1-(tw-t)/0.08:0;
   $('bigtop-t').textContent=t<tw?'คานอำนาจ':'ไม่ได้รอดฟรี';
   show(b,on*(1-out),`scale(${((0.6+0.4*clamp(fa,0,1.2))*(1-flip)).toFixed(4)},${(0.6+0.4*clamp(fa,0,1.2)).toFixed(4)}) rotate(${f2(t>=tw?-2*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*30):0)}deg)`);
 }
@@ -358,16 +365,16 @@ function malayGfx(t){
   const u=clamp((t-M.a)/(M.b-M.a)), s=1.85+0.15*eio(u);
   mapT($('tm-w'),s,504,880,540,860);
   $('tm-la').style.opacity='0.45'; $('tm-la').style.transform='translate(46px,-6px)';
-  const m=eio((t-41.68)/0.6); $('tm-mn').style.opacity=f2(1-0.55*m); $('tm-mn').style.transform=`translate(${f2(4+6*m)}px,${f2(14+30*m)}px)`;
+  const m=eio((t-W.malay)/0.6); $('tm-mn').style.opacity=f2(1-0.55*m); $('tm-mn').style.transform=`translate(${f2(4+6*m)}px,${f2(14+30*m)}px)`;
   ['tm-luk1','tm-luk2','tm-lfr'].forEach(id=>$(id).style.transform=`scale(${(1/s).toFixed(4)})`);
   $('tm-glow').style.opacity='0.3';
-  show($('approx'),clamp((t-41.32)/0.1));
+  show($('approx'),clamp((t-M.a)/0.1));
 }
 // share: "ไท = อิสระ" word by word
 function shareGfx(t){
-  const a=42.84, e=45.46; const on=win(t,43.2,e,0.06,0.12); $('tai').style.opacity=f2(on);
+  const e=S_('cta').a; const on=win(t,W.tai,e,0.06,0.12); $('tai').style.opacity=f2(on);
   if(on<=0) return;
-  [['tai1',43.20],['tai2',43.70],['tai3',44.14]].forEach(([id,ta],i)=>{const p=pop(t,ta,18,0.5);
+  [['tai1',W.tai],['tai2',W.tai2],['tai3',W.tai3]].forEach(([id,ta],i)=>{const p=pop(t,ta,18,0.5);
     show($(id),clamp((t-ta)/0.06),`translateY(${f2(40*(1-clamp(p,0,1.2))-4*Math.sin((t-ta)*2.6))}px) scale(${(0.5+0.5*clamp(p,0,1.15)).toFixed(4)})`);});
 }
 function episode(t){ cards(t); seaGfx(t); guessGfx(t); rankGfx(t); chip('chipA',CA,t); chip('chipB',CB,t); stamp(t); zoomGfx(t); malayGfx(t); shareGfx(t); ctaGfx(t); }
