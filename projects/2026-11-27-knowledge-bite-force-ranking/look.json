@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "ocean-teal",
+  "font": "noto",
+  "caption": "box",
+  "opening": "number",
+  "cover": "tilt",
+  "transition": "flash",
+  "music_mood": "cinematic",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": null,
+  "why": "look.py pick แล้วแก้: music quirky → cinematic (นับถอยหลังนักล่า ต้องการความลุ้น/หนัก); opening number เข้ากับคลิปจัดอันดับตัวเลขแรงกัด (ตัวเลขจาก research.md เท่านั้น); เสียงล็อก George"
+}
