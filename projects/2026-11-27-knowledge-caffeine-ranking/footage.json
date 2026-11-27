@@ -1,7 +1,7 @@
 {
  "r4": {
-  "src": "assets/footage/pixabay-80136.mp4",
-  "action_at": 3.0
+  "src": "assets/footage/pixabay-79908.mp4",
+  "action_at": 1.0
  },
  "r4_num": {
   "src": "assets/footage/pixabay-82601.mp4",
@@ -16,12 +16,12 @@
   "action_at": 1.5
  },
  "r2_punch": {
-  "src": "assets/footage/pixabay-202910.mp4",
-  "action_at": 1.0
+  "src": "assets/footage/pixabay-4334647.jpg",
+  "action_at": 0
  },
  "r1_why": {
-  "src": "assets/footage/pixabay-74909.mp4",
-  "action_at": 7.5
+  "src": "assets/footage/pixabay-3759005.jpg",
+  "action_at": 0
  },
  "hook": {
   "src": "assets/footage/pixabay-3908006.jpg",
@@ -32,6 +32,10 @@
   "action_at": 0
  },
  "cta": {
+  "src": "assets/footage/pixabay-6600644.jpg",
+  "action_at": 0
+ },
+ "hook_cup": {
   "src": "assets/footage/pixabay-2546041.jpg",
   "action_at": 0
  }
