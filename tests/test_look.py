@@ -268,3 +268,23 @@ def test_cover_palette_dark_even_when_the_look_is_light(tmp_path):
     assert 'cover_palette \'pink\' not in' in run('check', new, '--no-git').stdout
     src = (ROOT / 'tools' / 'cover_shot.js').read_text()
     assert 'look.cover_palette || look.palette' in src
+
+
+def test_pick_never_repeats_previous_cover_palette_and_passes_check(tmp_path):
+    """review v3.7 Y1: pick on a dark palette copied it to cover_palette without checking the previous episode's cover
+    (5/40 picks then failed check). Every palette x previous cover combination: pick -> check has no cover error."""
+    cat = json.loads((ROOT / 'templates' / 'looks' / 'looks.json').read_text())
+    pals = [k for k in cat['palette'] if not k.startswith('_')]
+    i = 0
+    for pal in pals:
+        for prev_cover in ('night-violet', 'ocean-teal', 'mono-yellow', 'sunrise-coral'):
+            i += 1
+            r = repo(tmp_path / f'r{i}')
+            other = next(p for p in pals if p != pal)
+            ep(r, '2026-11-20-knowledge-a', {**BASE, 'palette': other, 'opening': 'question', 'cover_palette': prev_cover})
+            new = r / 'projects' / '2026-11-22-knowledge-new'
+            assert run('pick', new, '--write', '--no-git', '--set', f'palette={pal}').returncode == 0
+            look = json.loads((new / 'look.json').read_text())
+            assert look['cover_palette'] != prev_cover, (pal, prev_cover, look['cover_palette'])
+            res = run('check', new, '--no-git')
+            assert 'cover palette' not in ''.join(l for l in res.stdout.splitlines() if l.startswith('ERROR')), res.stdout

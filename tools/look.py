@@ -328,10 +328,12 @@ def pick(root, project, pins, use_git=True):
     for k, v in lock.items():
         if k not in cat['axes']:
             look[k] = v                                   # tts_model, atempo, vo_lufs: the voice step reads these
-    if is_dark(cat, look['palette']):
+    # covers: always dark and never the previous episode's cover palette (review v3.7 Y1: a dark look whose palette
+    # was the previous episode's cover_palette made check fail on its own pick)
+    used = [cover_palette(r['look']) for r in rec]
+    if is_dark(cat, look['palette']) and (not used or look['palette'] != used[0]):
         look['cover_palette'] = look['palette']
-    else:                                                 # light look: covers still dark, rotated like the other axes
-        used = [cover_palette(r['look']) for r in rec]
+    else:                                                 # rotated like the other axes, previous cover excluded
         dark = [o for o in options(cat, 'palette') if is_dark(cat, o) and (not used or o != used[0])]
         h = lambda o: hashlib.sha256(f'{project.name}|cover_palette|{o}'.encode()).hexdigest()
         look['cover_palette'] = sorted(dark, key=lambda o: (-(used.index(o) if o in used else RECENT + 1), h(o)))[0]
