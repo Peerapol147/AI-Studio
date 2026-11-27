@@ -1,0 +1,272 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 47.721,
+ "inputs": {
+  "shots.json": "3fce2aebb0552d9af58820258f37e3b1223dd56fdf9dc51b87550c0dfc85e8f3",
+  "footage.json": null,
+  "assets/audio/words.json": "2b6a9f97790d8c314f81c852790b83f5227b39400910af044f79a23e56192289"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "ทั้งย่าน",
+   "word_at": 0.1,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 1.28,
+   "dur": 1.28
+  },
+  {
+   "id": "hook_one",
+   "src": null,
+   "cue": "เหลือรอด",
+   "word_at": 1.36,
+   "start": 1.28,
+   "beat": "hook",
+   "end": 3.1,
+   "dur": 1.82
+  },
+  {
+   "id": "guess",
+   "src": null,
+   "cue": "เดาดู",
+   "word_at": 3.18,
+   "start": 3.1,
+   "beat": "setup",
+   "end": 5.6,
+   "dur": 2.5
+  },
+  {
+   "id": "guess_def",
+   "src": null,
+   "cue": "อาณานิคม",
+   "word_at": 5.68,
+   "start": 5.6,
+   "beat": "setup",
+   "end": 6.76,
+   "dur": 1.16
+  },
+  {
+   "id": "guess_q",
+   "src": null,
+   "cue": "คือที่ไหน",
+   "word_at": 6.84,
+   "start": 6.76,
+   "beat": "setup",
+   "end": 8.0,
+   "dur": 1.24
+  },
+  {
+   "id": "r5",
+   "src": null,
+   "cue": "อันดับห้า",
+   "word_at": 8.08,
+   "start": 8.0,
+   "beat": "explain",
+   "end": 10.0,
+   "dur": 2.0
+  },
+  {
+   "id": "r5b",
+   "src": null,
+   "cue": "ไม่เคยมีใคร",
+   "word_at": 10.08,
+   "start": 10.0,
+   "beat": "explain",
+   "end": 11.86,
+   "dur": 1.86
+  },
+  {
+   "id": "r5c",
+   "src": null,
+   "cue": "ช่วงหนึ่ง",
+   "word_at": 11.94,
+   "start": 11.86,
+   "beat": "explain",
+   "end": 14.3,
+   "dur": 2.44
+  },
+  {
+   "id": "r4",
+   "src": null,
+   "cue": "อันดับสี่",
+   "word_at": 14.38,
+   "start": 14.3,
+   "beat": "explain",
+   "end": 16.38,
+   "dur": 2.08
+  },
+  {
+   "id": "r4b",
+   "src": null,
+   "cue": "แพ้อังกฤษ",
+   "word_at": 16.46,
+   "start": 16.38,
+   "beat": "explain",
+   "end": 17.8,
+   "dur": 1.42
+  },
+  {
+   "id": "r4c",
+   "src": null,
+   "cue": "แต่ยัง",
+   "word_at": 17.88,
+   "start": 17.8,
+   "beat": "explain",
+   "end": 19.48,
+   "dur": 1.68
+  },
+  {
+   "id": "r3",
+   "src": null,
+   "cue": "อันดับสาม",
+   "word_at": 19.56,
+   "start": 19.48,
+   "beat": "explain",
+   "end": 21.94,
+   "dur": 2.46
+  },
+  {
+   "id": "r3b",
+   "src": null,
+   "cue": "ช่วงสงคราม",
+   "word_at": 22.02,
+   "start": 21.94,
+   "beat": "explain",
+   "end": 22.94,
+   "dur": 1.0
+  },
+  {
+   "id": "r3c",
+   "src": null,
+   "cue": "ไม่เคยเป็น",
+   "word_at": 23.02,
+   "start": 22.94,
+   "beat": "explain",
+   "end": 24.84,
+   "dur": 1.9
+  },
+  {
+   "id": "r2",
+   "src": null,
+   "cue": "อันดับสอง",
+   "word_at": 24.92,
+   "start": 24.84,
+   "beat": "explain",
+   "end": 27.3,
+   "dur": 2.46
+  },
+  {
+   "id": "r2b",
+   "src": null,
+   "cue": "หลังสงคราม",
+   "word_at": 27.38,
+   "start": 27.3,
+   "beat": "explain",
+   "end": 28.94,
+   "dur": 1.64
+  },
+  {
+   "id": "r2c",
+   "src": null,
+   "cue": "ไม่ใช่",
+   "word_at": 29.02,
+   "start": 28.94,
+   "beat": "explain",
+   "end": 30.62,
+   "dur": 1.68
+  },
+  {
+   "id": "r1",
+   "src": null,
+   "cue": "อันดับหนึ่ง",
+   "word_at": 30.7,
+   "start": 30.62,
+   "beat": "reveal",
+   "end": 33.06,
+   "dur": 2.44
+  },
+  {
+   "id": "r1b",
+   "src": null,
+   "cue": "ปฏิรูป",
+   "word_at": 33.14,
+   "start": 33.06,
+   "beat": "reveal",
+   "end": 35.36,
+   "dur": 2.3
+  },
+  {
+   "id": "r1c",
+   "src": null,
+   "cue": "การทูต",
+   "word_at": 35.44,
+   "start": 35.36,
+   "beat": "reveal",
+   "end": 37.9,
+   "dur": 2.54
+  },
+  {
+   "id": "tw",
+   "src": null,
+   "cue": "ไม่ได้รอดฟรี",
+   "word_at": 37.98,
+   "start": 37.9,
+   "beat": "twist",
+   "end": 40.26,
+   "dur": 2.36
+  },
+  {
+   "id": "tw_mekong",
+   "src": null,
+   "cue": "ฝั่งซ้าย",
+   "word_at": 40.34,
+   "start": 40.26,
+   "beat": "twist",
+   "end": 41.24,
+   "dur": 0.98
+  },
+  {
+   "id": "tw_malay",
+   "src": null,
+   "cue": "หัวเมือง",
+   "word_at": 41.32,
+   "start": 41.24,
+   "beat": "twist",
+   "end": 42.84,
+   "dur": 1.6
+  },
+  {
+   "id": "share",
+   "src": null,
+   "cue": "คำว่า",
+   "word_at": 42.92,
+   "start": 42.84,
+   "beat": "share",
+   "end": 45.46,
+   "dur": 2.62
+  },
+  {
+   "id": "cta",
+   "src": null,
+   "cue": "ประเทศไหน",
+   "word_at": 45.54,
+   "start": 45.46,
+   "beat": "cta",
+   "end": 46.84,
+   "dur": 1.38
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "พิมพ์",
+   "word_at": 46.92,
+   "start": 46.84,
+   "beat": "loop",
+   "end": 47.721,
+   "dur": 0.881
+  }
+ ]
+}
