@@ -31,9 +31,37 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #root.vb{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 60%,var(--accent2) 100%)}
 #root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
 #root.vb .tl b{color:var(--bg2)}
+#art img{position:absolute;display:block}
+/* revenge-bedtime (style the user praised on never-colonized cover A: serious real photo + highlighted word in a tilted
+   box + tilted corner badge + hand-drawn ring/arrow). A = dark night photo (hook still), B = photo card on the accent field */
+#root:not(.vb){background:var(--ink)}
+#root:not(.vb) #art{left:0;top:260px;width:1080px;height:1660px;overflow:hidden}
+#root:not(.vb) #art img{left:0;top:0;width:1080px;height:1920px}
+#root:not(.vb) #art::after{content:"";position:absolute;left:0;top:0;width:1080px;height:520px;background:linear-gradient(var(--ink),rgba(0,0,0,0))}
+#root.vb #art{left:110px;top:800px;width:860px;height:860px;transform:rotate(3deg);box-shadow:0 0 0 14px var(--ink),0 30px 60px rgba(0,0,0,.35);border-radius:8px;overflow:hidden}
+#root.vb #art img{left:0;top:0;width:860px;height:860px}
+.va,.vbart{display:none}
+#root:not(.vb) .va{display:block}
+#root.vb .vbart{display:block}
+#root:not(.vb) #art img.vbart,#root.vb #art img.va{display:none}
+#root.vb{background:radial-gradient(ellipse 760px 980px at 540px 1060px,var(--accent) 55%,color-mix(in srgb,var(--accent) 78%,var(--ink)) 100%)}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 18px 8px;margin:0 4px;border-radius:22px;
+  transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.35);-webkit-text-stroke:0}
+#root.vb #title .tl b{background:var(--ink);color:var(--accent);-webkit-text-stroke:0;box-shadow:0 0 0 10px var(--accent2),0 18px 0 rgba(0,0,0,.25)}
+#root.vb .tl{color:var(--ink);-webkit-text-stroke-color:var(--accent2)}
+#badge{transform:rotate(-6deg);font-size:64px;padding:14px 34px 22px;left:70px;top:90px}
+#root.vb #badge{background:var(--ink);color:var(--accent);box-shadow:0 0 0 6px var(--accent2)}
+#title{top:290px;gap:40px}
+.ring{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:3;pointer-events:none}
 </style></head><body>
 <div id="root">
-  <div id="art" data-cover="art"></div>
+  <div id="art" data-cover="art"><img class="va" src="cover/art-a.jpg" alt=""/><img class="vbart" src="cover/art-b.jpg" alt=""/></div>
+  <svg class="ring va" viewBox="0 0 1080 1920"><g fill="none" stroke="var(--accent)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M985,1335 C1000,1260 930,1210 840,1222 C730,1238 690,1320 728,1395 C770,1470 920,1465 975,1400 C998,1372 990,1340 960,1318"/>
+   <path d="M1010,960 C1040,1060 1020,1140 985,1195"/><path d="M948,1160 L985,1200 L1030,1168"/></g></svg>
+  <svg class="ring vbart" viewBox="0 0 1080 1920"><g fill="none" stroke="var(--ink)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M958,1060 C960,990 860,955 735,962 C600,972 548,1030 560,1090 C575,1160 700,1182 830,1170 C940,1160 985,1120 965,1072 C955,1050 930,1038 905,1032"/>
+   <path d="M1020,700 C1050,800 1020,880 975,935"/><path d="M935,902 L975,940 L1022,912"/></g></svg>
   <div id="title"></div>
   <div id="badge" data-cover="badge"></div>
 </div>
@@ -48,6 +76,9 @@ const c = C;
 const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
 document.getElementById('title').innerHTML =
   c.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
+{ const tls = [...document.querySelectorAll('#title .tl')]; let fs = 170;
+  const fit = () => { tls.forEach(el => el.style.fontSize = fs + 'px'); return tls.every(el => el.scrollWidth <= 960); };
+  while (!fit() && fs > 60) fs -= 4; }
 const bd = document.getElementById('badge');
 if (c.badge) bd.textContent = c.badge; else bd.remove();
 // draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)

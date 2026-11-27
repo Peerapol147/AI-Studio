@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 0,
+   "y": 260,
+   "w": 1080,
+   "h": 1660,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ที่ดึกแล้วยังไม่นอน",
+   "x": 54.8125,
+   "y": 263,
+   "w": 970.359375,
+   "h": 155,
+   "font_px": 118,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "คือการแก้แค้น?",
+   "x": 103.546875,
+   "y": 470.118896484375,
+   "w": 872.890625,
+   "h": 185.8939208984375,
+   "font_px": 118,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "มีชื่อเรียกด้วย",
+   "x": 65.96065521240234,
+   "y": 67.62307739257812,
+   "w": 441.46929931640625,
+   "h": 144.75384521484375,
+   "font_px": 64,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-27-knowledge-revenge-bedtime/look.json",
+  "lines": [
+   "ที่ดึกแล้วยังไม่นอน",
+   "คือการ*แก้แค้น*?"
+  ],
+  "palette": "mono-yellow",
+  "font": "noto"
+ }
+}
