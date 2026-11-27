@@ -81,13 +81,23 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .bub{position:absolute;border-radius:50%;background:color-mix(in srgb,var(--text) 55%,transparent);width:14px;height:14px}
 .gline{position:absolute;left:-14px;height:0;border-top:7px dashed var(--text);opacity:0}
 #g-l50{border-top-color:var(--accent2)}
-.tk{position:absolute;width:96px;text-align:right;font-weight:700;font-size:34px;line-height:1;color:var(--text);
+.tk{position:absolute;width:96px;text-align:right;white-space:nowrap;font-weight:700;font-size:34px;line-height:1;color:var(--text);
   -webkit-text-stroke:7px var(--ink);paint-order:stroke fill}
 .tk i{position:absolute;right:-24px;top:16px;width:16px;height:4px;background:var(--text);border-radius:2px}
 #g-unit{position:absolute;font-weight:700;font-size:34px;color:var(--text);-webkit-text-stroke:7px var(--ink);paint-order:stroke fill}
 .mk{position:absolute;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--accent);font-weight:900;font-size:36px;
   line-height:52px;text-align:center;box-shadow:0 0 0 4px var(--accent);opacity:0}
-#g-half{position:absolute;width:26px;border:6px solid var(--text);border-left:0;border-radius:0 14px 14px 0;opacity:0}
+#g-half{position:absolute;height:26px;border:6px solid var(--text);border-bottom:0;border-radius:14px 14px 0 0;opacity:0;transform-origin:0 50%}
+#g-l400{position:absolute;width:0;border-left:7px dashed var(--text);opacity:0}
+.gi{position:absolute;left:0;top:0;width:60px;height:60px;color:var(--accent);opacity:0;overflow:visible;filter:drop-shadow(0 4px 0 var(--ink))}
+#i-moon{color:var(--text)}
+#ep #l400 .in{flex-direction:row;align-items:center;gap:16px}
+#l400 .in > div{display:flex;flex-direction:column;align-items:flex-start}
+#l400ck{width:56px;height:56px;flex:none;color:var(--ink);opacity:0}
+#cam{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#espc{left:500px;top:880px;transform-origin:50% 100%}
+#pourcard{left:0;top:0;transform-origin:50% 50%}
+#pourst{left:0;top:0;width:14px;border-radius:7px;background:linear-gradient(var(--coffee),color-mix(in srgb,var(--coffee) 70%,var(--accent2)))}
 /* value chip, rides the fill level */
 #g-chip{left:0;top:0;transform-origin:0 50%}
 #g-chip .in{display:flex;flex-direction:column;align-items:flex-start;padding:10px 30px 14px;border-radius:30px;background:var(--panel);
@@ -134,6 +144,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 </div>
 <!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
 <div id="ep" data-layout-allow-overflow data-layout-allow-overlap>
+<div id="cam" data-layout-allow-overflow data-layout-allow-overlap>
  <div id="gauge" class="g">
   <div class="tk" id="tk0"><span>0</span><i></i></div><div class="tk" id="tk1"><span>50</span><i></i></div><div class="tk" id="tk2"><span>100</span><i></i></div>
   <div class="tk" id="tk3"><span>150</span><i></i></div><div class="tk" id="tk4"><span>200</span><i></i></div><div class="tk" id="tk5"><span>250</span><i></i></div>
@@ -145,11 +156,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
    </div>
    <div class="mk" id="mk4">4</div><div class="mk" id="mk3">3</div><div class="mk" id="mk2">2</div>
   </div>
-  <div class="gline" id="g-l50"></div><div class="gline" id="g-l400"></div>
+  <div class="gline" id="g-l50"></div><div id="g-l400"></div>
+  <svg class="gi" id="i-sun" aria-hidden="true"><use href="#ic-sun"/></svg><svg class="gi" id="i-moon" aria-hidden="true"><use href="#ic-moon"/></svg>
   <div id="g-half"></div>
  </div>
  <div id="g-chip" class="g"><div class="in"><b id="gc-big"></b><i id="gc-small"></i></div></div>
- <div id="l400" class="g"><div class="in"><b>~400 มก./วัน</b><i>FDA: ผู้ใหญ่ทั่วไป</i></div></div>
+ <div id="l400" class="g"><div class="in"><svg id="l400ck" aria-hidden="true"><use href="#ic-circle-check"/></svg><div><b>~400 มก./วัน</b><i>FDA: ผู้ใหญ่ทั่วไป</i></div></div></div>
  <div id="bottle" class="g"><svg viewBox="-60 -40 320 440" aria-hidden="true">
   <defs>
    <linearGradient id="bgl" x1="0" x2="1" y1="0" y2="0">
@@ -217,9 +229,14 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
   <g id="sg1"><rect x="-36" y="-96" width="72" height="96" rx="10" style="fill:var(--text)" fill-opacity=".2"/><rect id="sq1" x="-30" y="-62" width="60" height="56" rx="6" style="fill:var(--coffee)"/><rect id="sk1" x="-30" y="-66" width="60" height="10" rx="4" style="fill:var(--crema)"/><rect x="-36" y="-96" width="72" height="96" rx="10" fill="none" style="stroke:var(--text)" stroke-opacity=".85" stroke-width="5"/></g>
   <g id="sg2"><rect x="-36" y="-96" width="72" height="96" rx="10" style="fill:var(--text)" fill-opacity=".2"/><rect id="sq2" x="-30" y="-62" width="60" height="56" rx="6" style="fill:var(--coffee)"/><rect id="sk2" x="-30" y="-66" width="60" height="10" rx="4" style="fill:var(--crema)"/><rect x="-36" y="-96" width="72" height="96" rx="10" fill="none" style="stroke:var(--text)" stroke-opacity=".85" stroke-width="5"/></g>
  </svg></div>
+</div>
+ <svg id="setgl" class="g" width="1080" height="1920" viewBox="0 0 1080 1920" style="left:0;top:0;overflow:visible" aria-hidden="true"><defs><clipPath id="sgc0"><path d="M-40,-95 L40,-95 L33,0 L-33,0 Z"/></clipPath><clipPath id="sgc1"><path d="M-40,-135 L40,-135 L33,0 L-33,0 Z"/></clipPath><clipPath id="sgc2"><path d="M-40,-175 L40,-175 L33,0 L-33,0 Z"/></clipPath><clipPath id="sgc3"><path d="M-40,-220 L40,-220 L33,0 L-33,0 Z"/></clipPath></defs><g id="sgl0" opacity="0"><path d="M-40,-95 L40,-95 L33,0 L-33,0 Z" style="fill:var(--text)" fill-opacity=".14"/><g clip-path="url(#sgc0)"><g id="sgw0"><rect x="-50" y="-76" width="100" height="95" style="fill:var(--accent)" fill-opacity=".9"/><rect x="-50" y="-76" width="100" height="8" style="fill:var(--text)" fill-opacity=".7"/></g></g><path d="M-40,-95 L40,-95 L33,0 L-33,0 Z" fill="none" style="stroke:var(--ink)" stroke-width="7" stroke-linejoin="round"/><path d="M-28,-81 L-23,-12" style="stroke:var(--text)" stroke-opacity=".6" stroke-width="7" stroke-linecap="round"/><text x="0" y="-22" text-anchor="middle" style="fill:var(--ink);font-weight:900;font-size:40px">4</text></g><g id="sgl1" opacity="0"><path d="M-40,-135 L40,-135 L33,0 L-33,0 Z" style="fill:var(--text)" fill-opacity=".14"/><g clip-path="url(#sgc1)"><g id="sgw1"><rect x="-50" y="-108" width="100" height="135" style="fill:var(--accent)" fill-opacity=".9"/><rect x="-50" y="-108" width="100" height="8" style="fill:var(--text)" fill-opacity=".7"/></g></g><path d="M-40,-135 L40,-135 L33,0 L-33,0 Z" fill="none" style="stroke:var(--ink)" stroke-width="7" stroke-linejoin="round"/><path d="M-28,-121 L-23,-12" style="stroke:var(--text)" stroke-opacity=".6" stroke-width="7" stroke-linecap="round"/><text x="0" y="-22" text-anchor="middle" style="fill:var(--ink);font-weight:900;font-size:40px">3</text></g><g id="sgl2" opacity="0"><path d="M-40,-175 L40,-175 L33,0 L-33,0 Z" style="fill:var(--text)" fill-opacity=".14"/><g clip-path="url(#sgc2)"><g id="sgw2"><rect x="-50" y="-140" width="100" height="175" style="fill:var(--accent)" fill-opacity=".9"/><rect x="-50" y="-140" width="100" height="8" style="fill:var(--text)" fill-opacity=".7"/></g></g><path d="M-40,-175 L40,-175 L33,0 L-33,0 Z" fill="none" style="stroke:var(--ink)" stroke-width="7" stroke-linejoin="round"/><path d="M-28,-161 L-23,-12" style="stroke:var(--text)" stroke-opacity=".6" stroke-width="7" stroke-linecap="round"/><text x="0" y="-22" text-anchor="middle" style="fill:var(--ink);font-weight:900;font-size:40px">2</text></g><g id="sgl3" opacity="0"><path d="M-40,-220 L40,-220 L33,0 L-33,0 Z" style="fill:var(--text)" fill-opacity=".14"/><g clip-path="url(#sgc3)"><g id="sgw3"><rect x="-50" y="-176" width="100" height="220" style="fill:var(--accent)" fill-opacity=".9"/><rect x="-50" y="-176" width="100" height="8" style="fill:var(--text)" fill-opacity=".7"/></g></g><path d="M-40,-220 L40,-220 L33,0 L-33,0 Z" fill="none" style="stroke:var(--ink)" stroke-width="7" stroke-linejoin="round"/><path d="M-28,-206 L-23,-12" style="stroke:var(--text)" stroke-opacity=".6" stroke-width="7" stroke-linecap="round"/><text x="0" y="-22" text-anchor="middle" style="fill:var(--ink);font-weight:900;font-size:40px">1</text></g></svg>
+ <div id="espc" class="g"><div class="card" style="position:relative;width:210px;height:210px"><img src="assets/cover-esp.jpg" alt=""/></div></div>
+ <div id="pourst" class="g"></div>
+ <div id="pourcard" class="g"><div class="card" style="position:relative;width:180px;height:286px"><img src="assets/cover-ame.jpg" alt=""/></div></div>
  <div id="rk-sub" class="g"><span>น้อย → มาก</span></div>
  <div id="rank" class="g"><div class="in"><div id="rk-num"><span id="rk-n">4</span></div><div id="rk-name"></div></div></div>
-<img id="r1ghost" src="assets/r1.png" alt="" style="position:absolute;left:420px;top:560px;width:600px;opacity:.3"/>
+<img id="r1ghost" src="assets/r1.png" alt="" style="position:absolute;left:460px;top:740px;width:560px;filter:drop-shadow(0 34px 34px rgba(0,0,0,.6))"/>
 </div>
 <div id="flash"></div>
 </div>
@@ -305,7 +322,7 @@ const setT=(el,s)=>{if(el.textContent!==s) el.textContent=s;};
 const setH=(el,s)=>{if(el.innerHTML!==s) el.innerHTML=s;};
 const pop=(t,a,w=20,z=0.55)=>t<a?0:S(t-a,w,z);
 const L=sh('loop'), CTA=sh('cta');
-// r1_200: the real big cup sits faded behind the gauge
+// r1_200: the real big cup sits behind the gauge (bigcup() moves it)
 (()=>{const g=$('g-r1_200'), im=$('r1ghost'); if(g&&im) g.appendChild(im);})();
 // ---- still cards: parallax over the blurred backdrop; the loop copy runs backwards so the last frame = frame 0 ----
 const CARDS=SC.map(s=>({s,el:$('cd-'+s.id)})).filter(c=>c.el);
@@ -316,70 +333,128 @@ function cards(t){
       el.style.transform=`translateY(${f2(-24*u+40*(1-clamp(p,0,1.2)))}px) scale(${(0.86+0.14*p+0.05*u).toFixed(4)})`; return; }
     el.style.transform=`translateY(${f2(-30*u)}px) rotate(${((u-0.5)*1.4).toFixed(3)}deg) scale(${(1+0.07*u).toFixed(4)})`; });
 }
-// ---- gauge ----
+// ---- gauge: one tube; vertical through the ranking, then on "ของอเมริกา" it turns into a horizontal day bar (0-400) ----
 const BIG={setup:1,r3:1,r3_belief:1,r3_rule:1,r3_punch:1,r2_num:1,r2_pass:1,r1_shots:1,r1_200:1,fda:1,share:1,share_half:1};
 const KARR=[[0,1]]; SC.forEach(s=>{const k=BIG[s.id]?1:0; if(k!==KARR[KARR.length-1][1]) KARR.push([s.a,k]);});
-const GB={x:190,y:470,w:160,h:620}, GS={x:190,y:560,w:100,h:500};
-const VARR=[[0,0],[W.n34,34],[W.rule,50],[W.n60,60],[W.n200,200]];
+const GB={x:190,y:470,w:160,h:620}, GS={x:190,y:560,w:100,h:500}, GH={x:140,y:680,w:680,h:150};
+const R4=sh('r3').a, R2=sh('r2').a, R1=sh('r1').a, SH=sh('share_half');
+const POUR=W.half+0.25;                       // the real big cup tips over the bar; the bar fills to ~200 by "เกือบครึ่ง"
+const VARR=[[0,0],[W.n34,34],[W.rule,50],[W.n60,60],[W.n200,200],[W.usa,0],[POUR,200]];
 const MARR=[[0,100],[W.n200,250],[W.usa,450]];
+const RARR=[[0,0],[W.usa,1]];
 const GA=sh('setup').a+0.04;
 const tks=[0,1,2,3,4,5,6,7,8].map(i=>$('tk'+i)), bubs=[0,1,2,3,4,5].map(i=>$('bb'+i));
-let G={x:0,y:0,w:0,h:0,v:0,m:100};
+let G={x:0,y:0,w:0,h:0,v:0,m:100,r:0,fr:0};
 function gauge(t){
-  const k=clamp(steps(t,KARR,15,0.8),-0.1,1.1), x=lerp(GS.x,GB.x,k), y=lerp(GS.y,GB.y,k), w=lerp(GS.w,GB.w,k), h=lerp(GS.h,GB.h,k);
-  const v=Math.max(0,steps(t,VARR,9,0.85)), m=steps(t,MARR,7,0.9);
-  G={x,y,w,h,v,m};
-  const gin=t<GA?0:S(t-GA,15,0.62), gout=eio((t-CTA.a)/0.26), on=clamp(gin*1.4)*(1-gout);
+  const k=clamp(steps(t,KARR,15,0.8),-0.1,1.1), r=clamp(steps(t,RARR,8,0.8),0,1.04);
+  const x0=lerp(GS.x,GB.x,k), y0=lerp(GS.y,GB.y,k), w0=lerp(GS.w,GB.w,k), h0=lerp(GS.h,GB.h,k);
+  const x=lerp(x0,GH.x,r), y=lerp(y0,GH.y,r), w=lerp(w0,GH.w,r), h=lerp(h0,GH.h,r);
+  const v=Math.max(0,steps(t,VARR,t>=POUR?6:9,0.88)), m=steps(t,MARR,7,0.9), fr=clamp(v/m,0,1);
+  G={x,y,w,h,v,m,r,fr};
+  const gin=t<GA?0:S(t-GA,15,0.62), gout=eio((t-CTA.a)/0.26);
   const g=$('gauge'); g.style.opacity=f2(clamp((t-GA)/0.08)*(1-gout));
   g.style.transformOrigin=`${f2(x+w/2)}px ${f2(y+h)}px`; g.style.transform=`scaleY(${(clamp(gin,0,1.2)*(1-gout)).toFixed(4)})`;
   const tb=$('g-tube'); tb.style.left=f2(x)+'px'; tb.style.top=f2(y)+'px'; tb.style.width=f2(w)+'px'; tb.style.height=f2(h)+'px';
-  const fh=h*clamp(v/m,0,1); $('g-fill').style.height=f2(fh)+'px';
-  tks.forEach((el,i)=>{const val=i*50, yy=y+h-h*val/m; el.style.left=f2(x-124)+'px'; el.style.top=f2(yy-17)+'px';
+  const fw=lerp(w,w*fr,r), fh=lerp(h*fr,h,r); const fl=$('g-fill'); fl.style.width=f2(fw)+'px'; fl.style.height=f2(fh)+'px';
+  $('g-surf').style.opacity=f2(1-r);
+  tks.forEach((el,i)=>{const val=i*50, vx=x-124, vy=y+h-h*val/m-17, hx=x+w*val/m-48, hy=y+h+20;
+    el.style.left=f2(lerp(vx,hx,r))+'px'; el.style.top=f2(lerp(vy,hy,r))+'px'; el.style.textAlign=r>0.5?'center':'right';
+    el.querySelector('i').style.opacity=f2(1-clamp(r*3));
     el.style.opacity=f2(clamp(1-(val-m)/(0.08*m)));});
-  const u=$('g-unit'); u.style.left=f2(x+w/2-34)+'px'; u.style.top=f2(y-58)+'px';
+  const u=$('g-unit'); u.style.left=f2(x+w/2-34)+'px'; u.style.top=f2(y-58)+'px'; u.style.opacity=f2(1-clamp(r*2));
   bubs.forEach((b,i)=>{const sp=70+i*17, rise=(t*sp+i*131)%(Math.max(40,fh)+30), sz=9+(i%3)*5;
-    b.style.width=b.style.height=sz+'px'; b.style.left=f2(12+((i*41)%Math.max(20,w-40))+7*Math.sin(t*3+i))+'px';
-    b.style.bottom=f2(rise-20)+'px'; b.style.opacity=f2(fh>40?0.8:0);});
+    b.style.width=b.style.height=sz+'px'; b.style.left=f2(12+((i*41+t*40*r)%Math.max(20,fw-40))+7*Math.sin(t*3+i))+'px';
+    b.style.bottom=f2(rise-20)+'px'; b.style.opacity=f2(fh>40&&fw>40?0.8:0);});
   // earlier ranks stay as notches on the tube (gone once the scale stretches for the big cup)
-  [['mk4',34,sh('r3').a],['mk3',50,sh('r2').a],['mk2',60,sh('r1').a]].forEach(([id,val,a])=>{const el=$(id), p=pop(t,a,18,0.55);
+  [['mk4',34,R4],['mk3',50,R2],['mk2',60,R1]].forEach(([id,val,a])=>{const el=$(id), p=pop(t,a,18,0.55);
     el.style.opacity=f2(clamp((t-a)/0.1)*clamp(1-(m-110)/40)); el.style.left='10px'; el.style.top=f2(h-h*val/m-26)+'px';
     el.style.transform=`scale(${(0.4+0.6*clamp(p,0,1.2)).toFixed(3)})`;});
   // ceiling 50 (the bottle's rule), reaches across to the bottle; flashes when the espresso passes it
   const l5=$('g-l50'), y50=y+h-h*50/m, ext=lerp(0,390,eio((t-W.rule)/0.3));
   l5.style.left=f2(x-14)+'px'; l5.style.top=f2(y50-3)+'px'; l5.style.width=f2(w+28+ext)+'px';
   l5.style.opacity=f2(clamp((t-W.rule+0.05)/0.12)*(1-clamp((t-R1)/0.15))*(t>W.pass&&t<W.pass+0.6?0.55+0.45*Math.cos((t-W.pass)*30):1));
-  const l4=$('g-l400'), y400=y+h-h*400/m; l4.style.left=f2(x-14)+'px'; l4.style.top=f2(y400-3)+'px'; l4.style.width=f2(w+28)+'px';
-  l4.style.opacity=f2(clamp((t-W.adult)/0.15)*(0.75+0.25*Math.sin(t*5)));
-  const hb=$('g-half'), y200=y+h-h*200/m; hb.style.left=f2(x+w+10)+'px'; hb.style.top=f2(y200)+'px'; hb.style.height=f2(y+h-y200)+'px';
-  hb.style.opacity=f2(clamp((t-W.half)/0.15)); hb.style.transform=`scaleY(${eo((t-W.half)/0.3).toFixed(3)})`; hb.style.transformOrigin='0 100%';
-  // 400 label rides the 400 line
-  const lb=$('l400'), lp=pop(t,W.adult,18,0.55);
-  lb.style.opacity=f2(clamp((t-W.adult)/0.08)*(1-gout));
-  const np=t>=W.n400?0.1*Math.exp(-4*(t-W.n400))*Math.sin((t-W.n400)*14):0;
-  lb.style.transform=`translate(${f2(x+w+40)}px,${f2(y400-lb.offsetHeight/2)}px) scale(${((0.5+0.5*clamp(lp,0,1.2))*(1+np)).toFixed(4)})`;
+  // 400 mark on the day bar: lights up on "สี่ร้อย"
+  const l4=$('g-l400'), x400=x+w*400/m; l4.style.left=f2(x400-3)+'px'; l4.style.top=f2(y-22)+'px'; l4.style.height=f2(h+44)+'px';
+  const lon=clamp((t-W.n400)/0.12); l4.style.opacity=f2(lon*(0.8+0.2*Math.sin(t*6)));
+  l4.style.boxShadow=`0 0 ${f2(10+26*lon*Math.exp(-2*Math.max(0,t-W.n400)))}px var(--accent)`;
+  // "เกือบครึ่ง" bracket over the bar, 0 -> 200
+  const hb=$('g-half'); hb.style.left=f2(x)+'px'; hb.style.top=f2(y-40)+'px'; hb.style.width=f2(w*200/m)+'px';
+  hb.style.opacity=f2(clamp((t-W.half2)/0.15)*(1-gout)); hb.style.transform=`scaleX(${eo((t-W.half2)/0.35).toFixed(3)})`;
+  // sun -> moon: the bar is one whole day (share)
+  const sp=pop(t,W.adult,18,0.55), mp=pop(t,W.adult+0.15,18,0.55), io=clamp((t-W.adult)/0.08)*(1-gout);
+  $('i-sun').style.opacity=f2(io); $('i-sun').style.transform=`translate(${f2(x-82)}px,${f2(y+h/2-30)}px) rotate(${f2(40*Math.sin(t*1.2))}deg) scale(${(0.3+0.7*clamp(sp,0,1.2)).toFixed(3)})`;
+  $('i-moon').style.opacity=f2(clamp((t-W.adult-0.15)/0.08)*(1-gout)); $('i-moon').style.transform=`translate(${f2(x+w+16)}px,${f2(y+h/2-30)}px) rotate(${f2(-10+8*Math.sin(t*1.5))}deg) scale(${(0.3+0.7*clamp(mp,0,1.2)).toFixed(3)})`;
+  // 400 label sits under the bar at the 400 mark; a neutral tick on "ยังไม่น่ามีปัญหา"
+  const lb=$('l400'), lp=pop(t,W.n400,18,0.55);
+  lb.style.opacity=f2(clamp((t-W.n400)/0.08)*(1-gout));
+  lb.style.transform=`translate(${f2(x400-lb.offsetWidth+40)}px,${f2(y+h+72)}px) scale(${(0.5+0.5*clamp(lp,0,1.2)).toFixed(4)})`;
+  const ck=$('l400ck'), cp=pop(t,W.ok,20,0.5); ck.style.opacity=f2(clamp((t-W.ok)/0.06)); ck.style.transform=`scale(${(0.2+0.8*clamp(cp,0,1.3)).toFixed(3)}) rotate(${f2(-30*(1-clamp(cp,0,1)))}deg)`;
 }
-// ---- value chip: one pill that rides the fill level; the running number stops on the spoken number ----
-const R4=sh('r3').a, R2=sh('r2').a, R1=sh('r1').a;
+// ---- value chip: one pill that rides the fill level. While the number runs it shows the bare number only;
+// the label (ราว 30+ / ≤ 50 / ราว 60 / ราว 200 / เกือบครึ่ง) comes once it has stopped ----
 function chip(t){
-  const {x,y,w,h,v,m}=G; let big='', small='', tc=0, on=wins(t,[[W.n34,R4],[W.rule,R2],[W.n60,sh('r2_punch').a],[sh('r2_pass').a,R1],[W.n200,CTA.a]]);
-  const run=(a,from,to,lab)=>t<a+0.62?`${Math.max(from,Math.min(to,Math.round(v/5)*5))} มก.`:lab;
-  if(t>=W.n200){ tc=W.n200; big=run(W.n200,60,200,'ราว 200 มก.'); small='บางร้าน 3 ช็อต';
-    if(t>=W.half){ tc=W.half; big='แก้วเดียว<br>≈ เกือบครึ่ง'; small='ของ ~400 มก./วัน'; } }
-  else if(t>=W.n60){ tc=W.n60; big=run(W.n60,50,60,'ราว 60 มก.'); small='เอสเพรสโซ่ 1 ช็อต';
-    if(t>=W.pass){ tc=W.pass; small='แซงเกณฑ์ขวด (≤ 50)'; } }
+  const {x,y,w,h,v,m,r,fr}=G; let big='', small='', tc=0;
+  const on=wins(t,[[W.n34,R4],[W.rule,R2],[W.n60,sh('r2_punch').a],[sh('r2_pass').a,R1],[W.n200,W.usa],[W.half2+0.3,CTA.a]]);
+  const RUN=0.62, n=Math.round(v/5)*5;
+  const run=(a,from,to,lab,sm)=>{ if(t<a+RUN){ tc=a; big=String(Math.max(from,Math.min(to,n))); small=''; } else { tc=a+RUN; big=lab; small=sm; } };
+  if(t>=W.half2){ tc=W.half2+0.3; big='แก้วเดียว ≈ เกือบครึ่ง'; small='ของ ~400 มก./วัน (FDA)'; }
+  else if(t>=W.n200) run(W.n200,60,200,'ราว 200 มก.','บางร้าน 3 ช็อต');
+  else if(t>=W.n60){ run(W.n60,50,60,'ราว 60 มก.','เอสเพรสโซ่ 1 ช็อต'); if(t>=W.pass){ tc=W.pass; small='แซงเกณฑ์ขวด (≤ 50)'; } }
   else if(t>=W.rule){ tc=W.rule; big='≤ 50 มก./ขวด'; small='เกณฑ์ อย. · คำสั่ง 185/2534'; }
-  else { tc=W.n34; big=t<W.n34+0.62?`${Math.min(30,Math.round(v/5)*5)} มก.`:'ราว 30+ มก.'; small='โคล่า 1 กระป๋อง'; }
-  setH($('gc-big'),big); setT($('gc-small'),small);
-  const el=$('g-chip'), ch=el.offsetHeight||130, fy=y+h-h*clamp(v/m,0,1), hp=t>=W.half2?0.08*Math.exp(-4*(t-W.half2))*Math.sin((t-W.half2)*14):0;
-  const top=(tc===W.rule)?fy-ch-12:clamp(fy-ch/2,y-50,y+h-ch+40), p=pop(t,tc,20,0.55);
+  else run(W.n34,0,30,'ราว 30+ มก.','โคล่า 1 กระป๋อง');
+  setH($('gc-big'),big); setT($('gc-small'),small); $('gc-small').style.display=small?'block':'none';
+  const el=$('g-chip'), ch=el.offsetHeight||130, cw=el.offsetWidth||300, fy=y+h-h*fr;
+  const vtop=(tc===W.rule)?fy-ch-12:clamp(fy-ch/2,y-50,y+h-ch+40);
+  const hx=clamp(x+w*fr-cw/2,70,900-cw), hy=y-62-ch;
+  const p=pop(t,tc,20,0.55), hp=t>=W.half2+0.3?0.05*Math.exp(-3*(t-W.half2-0.3))*Math.sin((t-W.half2)*12):0;
   el.style.opacity=f2(on);
   el.style.filter=`blur(${f2(8*(1-clamp((t-tc)/0.15)))}px)`;
-  el.style.transform=`translate(${f2(x+w+34)}px,${f2(top)}px) scale(${((0.6+0.4*clamp(p,0,1.15))*(1+hp)).toFixed(4)})`;
+  el.style.transformOrigin=r>0.5?'50% 100%':'0 50%';
+  el.style.transform=`translate(${f2(lerp(x+w+34,hx,r))}px,${f2(lerp(vtop,hy,r))}px) scale(${((0.6+0.4*clamp(p,0,1.15))*(1+hp)).toFixed(4)})`;
+}
+// ---- setup: 4 glasses, short to tall, one by one on "น้อย ... มาก" ----
+function setgl(t){
+  const S0=sh('setup'), el=$('setgl'); if(t<S0.a-0.1||t>S0.b+0.3){ el.style.opacity='0'; return; }
+  el.style.opacity=f2(1-clamp((t-S0.b)/0.15));
+  [0,1,2,3].forEach(i=>{const a=W.noi+i*0.16, p=pop(t,a,17,0.5), g=$('sgl'+i);
+    g.style.opacity=f2(clamp((t-a)/0.06)); g.setAttribute('transform',`translate(${430+i*130} 1100) scale(${(0.2+0.8*clamp(p,0,1.2)).toFixed(3)}) rotate(${f2(2.5*Math.sin(t*2.4+i))})`);
+    $('sgw'+i).setAttribute('transform',`translate(0 ${f2(3*Math.sin(t*4+i*1.3))})`);});
+}
+// ---- r2_pass: the tiny espresso cup pops next to the bottle (size compare) ----
+function espc(t){
+  const a=W.pass+0.02, el=$('espc'), p=pop(t,a,18,0.5);
+  el.style.opacity=f2(clamp((t-a)/0.06)*(1-clamp((t-R1)/0.1)));
+  el.style.transform=`translateY(${f2(50*(1-clamp(p,0,1.1))-6*Math.sin((t-a)*2.5))}px) rotate(${f2(-4+2*Math.sin((t-a)*1.8))}deg) scale(${(0.4+0.6*clamp(p,0,1.15)).toFixed(4)})`;
+}
+// ---- r1_200: the real big cup slides in behind the gauge and keeps pushing in ----
+function bigcup(t){
+  const A=sh('r1_200'), el=$('r1ghost'); if(!el) return; const u=clamp((t-A.a)/(A.b-A.a)), p=pop(t,A.a,13,0.7);
+  el.style.transform=`translateX(${f2(220*(1-clamp(p,0,1.1))-30*u)}px) translateY(${f2(-14*u)}px) scale(${(1+0.1*eio(u)).toFixed(4)}) rotate(${f2(3-3*u)}deg)`;
+}
+// ---- share_half: a real big iced cup slides in and tips its coffee into the day bar ----
+function pour(t){
+  const el=$('pourcard'), st=$('pourst'); const a=W.half, out=W.half2+0.3;
+  if(t<a-0.1||t>CTA.a+0.1){ el.style.opacity='0'; st.style.opacity='0'; return; }
+  const p=pop(t,a,13,0.7), tilt=38*eio((t-(POUR-0.15))/0.25)*(1-eio((t-out)/0.25)), go=eio((t-out)/0.35);
+  const cx=lerp(1240,250,clamp(p,0,1.1))-420*go, cy=525-140*go;
+  el.style.opacity=f2(clamp((t-a)/0.05)*(1-go));
+  el.style.transform=`translate(${f2(cx-90)}px,${f2(cy-143)}px) rotate(${f2(tilt+4*Math.sin(t*2))}deg)`;
+  const th=tilt*Math.PI/180, lx=cx+90*Math.cos(th)+143*Math.sin(th), ly=cy+90*Math.sin(th)-143*Math.cos(th);
+  const son=t>=POUR&&t<out+0.1; st.style.opacity=son?'1':'0';
+  st.style.left=f2(lx-7)+'px'; st.style.top=f2(ly)+'px'; st.style.height=f2(Math.max(0,GH.y+20-ly))+'px';
+}
+// ---- camera on the graphics: zoom into the 50 line on "ชื่อดูแรง"; pan along the day bar on the share ----
+function cam(t){
+  const z=eio((t-(W.name+0.25))/0.5)*(t<R2?1:0);
+  const u=clamp((t-W.adult)/(CTA.a-W.adult)), on=t>=W.adult&&t<CTA.a+0.3?1:0;
+  const tx=on?lerp(26,-26,eio(u)):0, sc=1+0.18*z+(on?0.035*u:0);
+  $('cam').style.transformOrigin=on?'480px 820px':'300px 780px';
+  $('cam').style.transform=`translateX(${f2(tx)}px) scale(${sc.toFixed(4)})`;
 }
 // ---- top label: setup "4 -> 1" -> rank 4..1 -> FDA -> cta question ----
 const RK=[[W.set,'',`4 → 1`,140],[W.r4,'4','โคล่า',96],[W.r3,'3','ชูกำลังขวดเล็ก',84],[W.r2,'2','เอสเพรสโซ่ 1 ช็อต',80],
   [W.r1,'1','อเมริกาโน่เย็นแก้วใหญ่',66],[W.usa,'','อย. สหรัฐฯ (FDA)',76],[W.cta,'','วันนี้<em>กี่แก้ว</em>แล้ว?',96]];
-const RX=[[0,640],[W.r4,540]], RY=[[0,780],[W.r4,322],[W.cta,330]];
+const RX=[[0,640],[W.r4,540]], RY=[[0,660],[W.r4,322],[W.cta,330]];
 function rank(t){
   let cur=null; RK.forEach(r=>{if(t>=r[0]) cur=r;}); const el=$('rank');
   if(!cur){ el.style.opacity='0'; $('rk-sub').style.opacity='0'; return; }
@@ -393,7 +468,7 @@ function rank(t){
   el.style.transform=`translate(${f2(x)}px,${f2(y)}px) translate(-50%,-50%) scale(${((0.7+0.3*clamp(p,0,1.15))*big*br).toFixed(4)})`;
   $('rk-num').style.transform=`rotate(${f2(-100*(1-clamp(p,0,1)))}deg)`;
   const sb=$('rk-sub'), sp=pop(t,W.many,18,0.55);
-  sb.style.opacity=f2(clamp((t-W.many)/0.08)*(1-clamp((t-W.r4)/0.12)));
+  sb.style.opacity='0';
   sb.style.transform=`translate(100px,${f2(900+30*(1-clamp(sp,0,1.1)))}px)`;
 }
 // ---- amber bottle (no label): hook -> gone -> rank 3 (belief bolts) -> beside the gauge, shrinks on "ชื่อดูแรง" ----
@@ -413,14 +488,15 @@ function bottle(t){
   // bolts: crackle in hook_bottle and die on "ชูกำลัง"; belief bolts at rank 3; shrink away on "ชื่อดูแรง"
   let bi=0;
   if(t>=1.4&&t<3.2) bi=clamp((t-1.4)/0.1)*(1-clamp((t-W.xb)/0.3));
-  if(t>=W.bel-0.1&&t<23) bi=lerp(0,1,eo((t-W.bel)/0.2))+0.35*eo((t-W.bel2)/0.2)-0.45*eio((t-RR.a)/0.3)-0.9*eio((t-W.name)/0.35);
+  if(t>=W.bel-0.1&&t<23) bi=lerp(0,1,eo((t-W.bel)/0.2))+0.35*eo((t-W.bel2)/0.2)-0.45*eio((t-RR.a)/0.3);
   bi=clamp(bi,0,1.4);
-  BOLT.forEach(([bx,by,r],i)=>{const e=$('bo'+i), fl=Math.sin(t*41+i*2.3)>-0.35?1:0.25, sc=bi*(0.9+0.15*Math.sin(t*30+i*1.7));
-    e.setAttribute('transform',`translate(${bx} ${by}) rotate(${r+6*Math.sin(t*9+i)}) scale(${Math.max(0.001,sc).toFixed(3)})`);
-    e.style.opacity=f2(clamp(bi)*fl);});
+  // bolts drop off the bottle on "ชื่อดูแรง"
+  BOLT.forEach(([bx,by,r],i)=>{const e=$('bo'+i), fi=t>=W.name&&t<23?eio((t-W.name-0.05*i)/0.55):0, fl=fi>0?1:(Math.sin(t*41+i*2.3)>-0.35?1:0.25), sc=bi*(0.9+0.15*Math.sin(t*30+i*1.7))*(1-0.3*fi);
+    e.setAttribute('transform',`translate(${f2(bx+(i%2?30:-30)*fi)} ${f2(by+320*fi*fi)}) rotate(${f2(r+6*Math.sin(t*9+i)+(i%2?120:-120)*fi)}) scale(${Math.max(0.001,sc).toFixed(3)})`);
+    e.style.opacity=f2(clamp(bi)*fl*(1-fi));});
   [0,1].forEach(i=>{const e=$('rg'+i), p=((t*1.3)+i*0.5)%1;
     e.setAttribute('transform',`translate(100 200) scale(${(0.75+0.55*p).toFixed(3)}) translate(-100 -200)`);
-    e.style.opacity=f2((1-p)*0.6*clamp(bi));});
+    e.style.opacity=f2((1-p)*0.6*clamp(bi)*(t>=W.name&&t<23?1-clamp((t-W.name)/0.25):1));});
   // hand-drawn X: drawn at frame 0, redrawn on "ชูกำลัง", gone at rank 3, redrawn in the loop (last frame = frame 0)
   let d; if(t<1.4) d=1; else if(t<W.xb) d=0; else if(t<R3.a) d=eio((t-W.xb)/0.3); else if(t<L.a) d=0; else d=eio((t-L.a-0.1)/0.3);
   const d0=clamp(d*2), d1=clamp(d*2-1);
@@ -455,11 +531,7 @@ function cup3(t){
     st.style.opacity=son?'1':'0';
   });
 }
-// graphic hold: the whole graphics layer drifts in slowly on the long FDA/share stretch (no frozen frames)
-function drift(t){ const a=W.usa, b=CTA.a, u=clamp((t-a)/(b-a)), k=t<a||t>=b+0.3?0:1;
-  $('ep').style.transformOrigin='300px 800px';
-  $('ep').style.transform=k?`translate(${f2(14*Math.sin(u*Math.PI))}px,${f2(-26*u)}px) scale(${(1+0.06*eio(u)).toFixed(4)})`:'none'; }
-function episode(t){ cards(t); gauge(t); chip(t); rank(t); bottle(t); cup3(t); drift(t); }
+function episode(t){ cards(t); gauge(t); chip(t); rank(t); bottle(t); cup3(t); setgl(t); espc(t); bigcup(t); pour(t); cam(t); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
