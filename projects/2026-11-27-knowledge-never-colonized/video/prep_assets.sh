@@ -12,8 +12,9 @@ ENC="-an -c:v libx264 -preset medium -crf 17 -pix_fmt yuv420p -r 30 -g 6"
 vplate(){ # name src crop(w:h:x:y) [max seconds]
   ffmpeg -v error -y -t "${4:-12}" -i "$F/$2" -vf "fps=30,crop=$3,scale=1080:1920:flags=lanczos,$GR,vignette=PI/6" $ENC "assets/$1.mp4"; }
 vplate flag-th     pixabay-244977.mp4 810:1440:875:0 6
+# r1_thai: same flag clip, a later section (from 5 s) with a tighter crop so it does not repeat hook_one
+ffmpeg -v error -y -ss 5 -t 4 -i "$F/pixabay-244977.mp4" -filter_complex "[0:v]fps=30,split[a][b];[a]crop=810:1440:875:0,scale=1080:1920,gblur=sigma=30,curves=all='0/0.07 0.5/0.52 1/0.95',eq=contrast=0.97:saturation=0.8,colorbalance=rs=0.05:gs=0.01:bs=-0.06:rm=0.04:gm=0.0:bm=-0.04:rh=0.03:bh=-0.04,eq=brightness=-0.15[bg];[b]scale=1000:-2:flags=lanczos,curves=all='0/0.07 0.5/0.52 1/0.95',eq=contrast=0.97:saturation=0.8,colorbalance=rs=0.05:gs=0.01:bs=-0.06:rm=0.04:gm=0.0:bm=-0.04:rh=0.03:bh=-0.04[fg];[bg][fg]overlay=(W-w)/2:1010-h/2,vignette=PI/6" $ENC assets/flag-th2.mp4
 vplate magnifier   pixabay-104270.mp4 608:1080:456:0 6
-vplate bt-valley   pixabay-292862.mp4 405:720:420:0 9
 vplate np-himal    pixabay-10104.mp4 810:1440:200:0 7
 vplate ir-desert   pixabay-70872.mp4 810:1440:875:0 6
 vplate ir-flag     pixabay-141424.mp4 405:720:330:0 7
@@ -27,7 +28,6 @@ BG="scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=si
 still(){ # name src
   ffmpeg -v error -y -i "$F/$2" -vf "$GR" -q:v 2 "assets/$1.jpg"
   ffmpeg -v error -y -i "$F/$2" -vf "$BG" -q:v 3 "assets/$1-bg.jpg"; }
-still bt-taktsang  pixabay-2691190.jpg
 still np-durbar    pixabay-739723.jpg
 still ir-isfahan   pixabay-3362936.jpg
 still th-ananta    pixabay-7046511.jpg
@@ -41,7 +41,6 @@ g='min(255,g(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.
 b='min(255,b(X,Y+14*sin(2*PI*(X/460-T*0.8)))*(0.9+0.13*sin(2*PI*(X/460-T*0.8)+1.2)))':\
 a='alpha(X,Y+14*sin(2*PI*(X/460-T*0.8)))',$GR[f];\
    [0:v][f]overlay=x=(W-w)/2:y=1010-h/2:format=auto,format=yuv420p" $ENC "assets/$1.mp4"; }
-flag bt-flag pixabay-162244.png pixabay-292862.mp4 6 900 600
 flag np-flag pixabay-162370.png pixabay-10104.mp4 3 640 765
 ffmpeg -v error -y -i ../assets/audio/vo-th.mp3 -af "volume=0.4dB" -ac 2 -ar 48000 assets/vo-th-mix.wav
 ls -la assets
