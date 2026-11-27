@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "retro-cream",
+  "font": "kanit",
+  "caption": "stroke",
+  "opening": "midstory",
+  "cover": "card",
+  "transition": "whip",
+  "music_mood": "cinematic",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": null,
+  "why": "เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน | ผู้กำกับ: เพลง cinematic (ประวัติศาสตร์ ภูมิใจ ยิ่งใหญ่) แทน quirky ที่ไม่เข้ากับเรื่องอ่อนไหว; retro-cream เข้ากับแผนที่เก่า; midstory = เปิดด้วยแผนที่ SEA ที่ทุกประเทศถูกยึดยกเว้นไทย"
+}
