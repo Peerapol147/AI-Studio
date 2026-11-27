@@ -1,0 +1,235 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 37.044,
+ "inputs": {
+  "shots.json": "714e1bfd488b0b15585a4911c3e46c37e2025be5810f095c6b590e974dd2c136",
+  "footage.json": null,
+  "assets/audio/words.json": "0d853672ca799b5d76b7842a46df56284ff2c73262820146daa5576d52df89d9"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": null,
+   "cue": "เวลาเกา",
+   "word_at": 0.06,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 2.14,
+   "dur": 2.14,
+   "media_start": 2.0
+  },
+  {
+   "id": "hook_in",
+   "src": null,
+   "cue": "ตัวเองเจ็บ",
+   "word_at": 2.22,
+   "start": 2.14,
+   "beat": "hook",
+   "hit": "เจ็บ",
+   "hit_at": 2.48,
+   "end": 3.5,
+   "dur": 1.36
+  },
+  {
+   "id": "mosquito",
+   "src": null,
+   "cue": "ตอนโดน",
+   "word_at": 3.58,
+   "start": 3.5,
+   "beat": "setup",
+   "end": 4.66,
+   "dur": 1.16
+  },
+  {
+   "id": "mast",
+   "src": null,
+   "cue": "เซลล์ในผิว",
+   "word_at": 4.74,
+   "start": 4.66,
+   "beat": "setup",
+   "hit": "ฮิสตามีน",
+   "hit_at": 6.06,
+   "end": 7.34,
+   "dur": 2.68
+  },
+  {
+   "id": "nerve",
+   "src": null,
+   "cue": "สารนี้",
+   "word_at": 7.42,
+   "start": 7.34,
+   "beat": "explain",
+   "end": 9.58,
+   "dur": 2.24
+  },
+  {
+   "id": "signal",
+   "src": null,
+   "cue": "แล้วสัญญาณ",
+   "word_at": 9.66,
+   "start": 9.58,
+   "beat": "explain",
+   "end": 10.66,
+   "dur": 1.08
+  },
+  {
+   "id": "spine",
+   "src": null,
+   "cue": "ถึงสมอง",
+   "word_at": 10.74,
+   "start": 10.66,
+   "beat": "explain",
+   "hit": "สมอง",
+   "hit_at": 10.9,
+   "end": 11.54,
+   "dur": 0.88
+  },
+  {
+   "id": "brain_cmd",
+   "src": null,
+   "cue": "เราเลย",
+   "word_at": 11.62,
+   "start": 11.54,
+   "beat": "explain",
+   "end": 12.94,
+   "dur": 1.4
+  },
+  {
+   "id": "scratch2",
+   "src": null,
+   "cue": "พอเกา",
+   "word_at": 13.02,
+   "start": 12.94,
+   "beat": "explain",
+   "end": 14.9,
+   "dur": 1.96
+  },
+  {
+   "id": "pain_cover",
+   "src": null,
+   "cue": "แล้วความเจ็บ",
+   "word_at": 14.98,
+   "start": 14.9,
+   "beat": "explain",
+   "hit": "กลบ",
+   "hit_at": 16.4,
+   "end": 16.98,
+   "dur": 2.08
+  },
+  {
+   "id": "temp",
+   "src": null,
+   "cue": "ไว้ชั่วคราว",
+   "word_at": 17.06,
+   "start": 16.98,
+   "beat": "explain",
+   "end": 18.32,
+   "dur": 1.34
+  },
+  {
+   "id": "mouse",
+   "src": null,
+   "cue": "แต่งานวิจัย",
+   "word_at": 18.4,
+   "start": 18.32,
+   "beat": "explain",
+   "end": 20.44,
+   "dur": 2.12
+  },
+  {
+   "id": "serotonin",
+   "src": null,
+   "cue": "สมองจะหลั่ง",
+   "word_at": 20.52,
+   "start": 20.44,
+   "beat": "reveal",
+   "hit": "ระงับ",
+   "hit_at": 22.08,
+   "end": 23.18,
+   "dur": 2.74
+  },
+  {
+   "id": "serotonin2",
+   "src": null,
+   "cue": "แล้วเซโรโทนิน",
+   "word_at": 23.26,
+   "start": 23.18,
+   "beat": "reveal",
+   "end": 24.8,
+   "dur": 1.62
+  },
+  {
+   "id": "boost",
+   "src": null,
+   "cue": "ดันไปเร่ง",
+   "word_at": 24.88,
+   "start": 24.8,
+   "beat": "twist",
+   "hit": "แรงขึ้น",
+   "hit_at": 26.04,
+   "end": 27.1,
+   "dur": 2.3
+  },
+  {
+   "id": "cycle",
+   "src": null,
+   "cue": "ยิ่งเกา",
+   "word_at": 27.18,
+   "start": 27.1,
+   "beat": "twist",
+   "end": 29.14,
+   "dur": 2.04
+  },
+  {
+   "id": "contagious",
+   "src": null,
+   "cue": "แถมความคัน",
+   "word_at": 29.22,
+   "start": 29.14,
+   "beat": "share",
+   "end": 31.3,
+   "dur": 2.16
+  },
+  {
+   "id": "watch",
+   "src": null,
+   "cue": "แค่เห็น",
+   "word_at": 31.38,
+   "start": 31.3,
+   "beat": "share",
+   "end": 32.579,
+   "dur": 1.279
+  },
+  {
+   "id": "follow",
+   "src": null,
+   "cue": "หลายคน",
+   "word_at": 32.659,
+   "start": 32.579,
+   "beat": "share",
+   "end": 34.64,
+   "dur": 2.061
+  },
+  {
+   "id": "cta",
+   "src": null,
+   "cue": "ตอนนี้คัน",
+   "word_at": 34.72,
+   "start": 34.64,
+   "beat": "cta",
+   "end": 36.12,
+   "dur": 1.48
+  },
+  {
+   "id": "loop",
+   "src": null,
+   "cue": "เมนต์บอก",
+   "word_at": 36.2,
+   "start": 36.12,
+   "beat": "loop",
+   "end": 37.044,
+   "dur": 0.924
+  }
+ ]
+}
