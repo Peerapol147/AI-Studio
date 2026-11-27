@@ -266,15 +266,17 @@ function guessGfx(t){
     worldState('guess',t,G.a); worldState('guess_def',t,G.a);
     ['guess','guess_def'].forEach(sid=>{
       const p=$(sid+'-pth'); p.style.transform=`translateY(${f2(-8*Math.abs(Math.sin((t-G.a)*3.2)))}px)`;
-      for(let i=0;i<3;i++){ const ta=W.q3+i*0.14, el=$(sid+'-q'+i), a=pop(t,ta);
-        el.style.opacity=f2(clamp((t-ta)/0.06));
-        el.style.transform=`translateY(${f2(-60*(1-clamp(a,0,1.2))+8*Math.sin((t-ta)*4+i))}px) rotate(${f2(8*Math.sin((t-ta)*3+i*2))}deg) scale(${(0.5+0.5*clamp(a,0,1.2)).toFixed(3)})`; } });
+    });
     const d=$('g-guess_def').querySelector('.dim'); d.style.opacity=f2(clamp((t-W.def)/0.12));
     const c=pop(t,W.def); show($('defcard'),clamp((t-W.def)/0.06),`translateY(${f2(30*(1-c)-6*Math.sin(Math.max(0,t-W.def-0.2)*2.4))}px) scale(${(0.8+0.2*clamp(c,0,1.1)).toFixed(4)})`);
     $('def-hl').style.backgroundSize=`${(100*eo((t-W.defhl)/0.25)).toFixed(1)}% 100%`;
   }
   // guess_q: one big ? over the magnifier
   const Q=shotAt('guess_q'), qa=W.guessq, q=pop(t,qa,16,0.45);
+  const qr=win(t,W.q3,Q.b,0.05,0.1); $('q3row').style.opacity=f2(qr);
+  if(qr>0) for(let i=0;i<3;i++){ const ta=W.q3+i*0.12, el=$('q3-'+i), a=pop(t,ta);
+    el.style.opacity=f2(clamp((t-ta)/0.06));
+    el.style.transform=`translateY(${f2(-60*(1-clamp(a,0,1.2))+8*Math.sin((t-ta)*4+i))}px) rotate(${f2(8*Math.sin((t-ta)*3+i*2))}deg) scale(${(0.5+0.5*clamp(a,0,1.2)).toFixed(3)})`; }
   show($('bigq'),win(t,qa,Q.b,0.06,0.1),`rotate(${f2(10*Math.sin((t-qa)*5))}deg) scale(${((0.4+0.6*clamp(q,0,1.2))*(1+0.04*Math.sin((t-qa)*8))).toFixed(4)})`);
 }
 function ctaGfx(t){
@@ -289,7 +291,7 @@ function ctaGfx(t){
   show($('ctaq'),clamp((t-ca)/0.06),`translateY(${f2(-4*Math.sin((t-ca)*3))}px) scale(${(0.6+0.4*clamp(c,0,1.15)).toFixed(4)})`);
 }
 // ---- rank badge: ONE piece, the number flips 4 -> 1 on "อันดับ...", the name lands on the spoken name; #1 = big pop on "ไทยเรา" ----
-const R=[{n:4,name:'เนปาล',a:W.r4,na:W.r4n},{n:3,name:'อิหร่าน',a:W.r3,na:W.r3n},{n:2,name:'ญี่ปุ่น',a:W.r2,na:W.r2n},{n:1,name:'ไทย',a:W.r1,na:W.r1n,big:W.r1n}];
+const R=[{n:4,name:'เนปาล',a:shotAt('r4').a,na:W.r4n},{n:3,name:'อิหร่าน',a:shotAt('r3').a,na:W.r3n},{n:2,name:'ญี่ปุ่น',a:shotAt('r2').a,na:W.r2n},{n:1,name:'ไทย',a:shotAt('r1').a,na:W.r1n,big:W.r1n}];
 function rankGfx(t){
   const on=win(t,shotAt('r4').a,shotAt('r1c').a,0.1,0.12); show($('rshade'),on*0.9);
   let k=0; R.forEach((r,i)=>{if(t>=r.a) k=i;}); const r=R[k];
@@ -347,7 +349,7 @@ function zoomGfx(t){
   const tw=W.tw, sk=t>=tw?6*Math.exp(-(t-tw)*3)*Math.sin((t-tw)*40):0;
   $('zm-th').style.transform=`translate(${f2(sk)}px,0)`;
   const blink=t>=tw&&t<tw+1.2?0.5+0.5*Math.cos((t-tw)*Math.PI*2/0.4):0;
-  $('zm-thf').style.stroke=blink>0.5?'var(--panel)':''; $('zm-thf').style.strokeWidth=t>=tw&&t<tw+1.2?f2(4+6*blink):'';
+  $('zm-thf').style.stroke=blink>0.5?'var(--accent2)':''; $('zm-thf').style.strokeWidth=t>=tw&&t<tw+1.2?f2(4+2*blink):'';
   $('zm-glow').style.opacity=f2(t<tw?0.55+0.3*Math.sin((t-a)*4):0.35+0.3*blink);
   const piece=(id,ta,tgo,dx,dy)=>{ const ap=clamp((t-ta)/0.15), go=eio((t-tgo)/0.5);
     $(id).style.opacity=f2(ap*(1-0.55*go)); $(id).style.transform=`translate(${f2(dx*go)}px,${f2(dy*go)}px)`; };

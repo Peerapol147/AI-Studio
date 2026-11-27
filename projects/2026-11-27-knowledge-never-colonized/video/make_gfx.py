@@ -79,7 +79,7 @@ def world(sid, mode):
     if mode == 'cta':
         body += ('<div class="qpin" id="cta-q6" style="left:820px;top:470px"><span>?</span></div>')
     q = ''
-    if mode in ('guess', 'def'):
+    if False:
         q = '<div class="qrow">' + ''.join(f'<div class="qb" id="{sid}-q{i}"><span>?</span></div>' for i in range(3)) + '</div>'
     extra = ''
     if mode == 'def':
@@ -134,6 +134,7 @@ EP = ['<div id="ep">',
       '<div class="g" id="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-circle-check"/></svg><span id="stamp-t"></span></div>',
       '<div class="g" id="bigtop"><span id="bigtop-t">คานอำนาจ</span></div>',
       '<div class="g" id="bigq"><span>?</span></div>',
+      '<div class="g qrow" id="q3row">' + ''.join(f'<div class="qb" id="q3-{i}"><span>?</span></div>' for i in range(3)) + '</div>',
       '<div class="g" id="tai"><div id="tai1" class="out">ไท</div><div id="tai2" class="out">=</div><div id="tai3" class="out">อิสระ</div></div>',
       '</div>']
 out += EP
