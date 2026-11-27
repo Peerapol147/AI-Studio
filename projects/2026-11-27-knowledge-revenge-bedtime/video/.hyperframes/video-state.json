@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "1e45ed56-7c8a-40c3-9f76-8a3151630e71",
-  "currentRevision": "1c020d42-0479-4e5b-99bb-7ef65ffa1fea",
+  "currentRevision": "18a5cc49-3a78-43bd-a416-3d3ab67101a2",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -193,8 +193,8 @@
       "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/e0/e0423b1bb34380066fcea841819ea975ae26a1a53a29d719da24941fb23dd3da"
     },
     "prep_assets.sh": {
-      "hash": "b24ed633d2bac33a88ac4e3f8a5d1f44ce6ac80852ce0050959829f8679d9218",
-      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/b2/b24ed633d2bac33a88ac4e3f8a5d1f44ce6ac80852ce0050959829f8679d9218"
+      "hash": "5e978c47312bb1f808a74e5e6471e74b9272fd5b4b4f5799b0cff83fa75916c8",
+      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/5e/5e978c47312bb1f808a74e5e6471e74b9272fd5b4b4f5799b0cff83fa75916c8"
     },
     "vendor/LICENSES.md": {
       "hash": "87f19a9f4b4ca6b5df5c5938c45cdbd7efcf147bfdd756b04fea4e549544325c",
@@ -229,8 +229,8 @@
       "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/56/5625b289fbf5135505aa5a7721d154f9c7979150f188bee8931b9734e586096f"
     },
     "assets/revenge.mp4": {
-      "hash": "2a6c30f9a0cc7af13fbbfd99af74c8d685c798a6aba092811bfbd822af04a206",
-      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/2a/2a6c30f9a0cc7af13fbbfd99af74c8d685c798a6aba092811bfbd822af04a206"
+      "hash": "4945457c842311a41f3422bbc46249d61cb012302ce63765cf3408f1275587cd",
+      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/49/4945457c842311a41f3422bbc46249d61cb012302ce63765cf3408f1275587cd"
     },
     "assets/rush.mp4": {
       "hash": "43c67b4fa0dcaa672fa5c558bd6a91816ea792133588c353ef23ff2d33cb728d",
@@ -265,8 +265,8 @@
       "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/06/0697098b982e0bab72d9f709ecf7f22760df7c1b454c57c4beeb58cf517df28b"
     },
     "assets/work.mp4": {
-      "hash": "4959d021ce66390117ada94ca24202ec170f324c920f102682fea441af332200",
-      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/49/4959d021ce66390117ada94ca24202ec170f324c920f102682fea441af332200"
+      "hash": "176b7334dc44ba3aa2313266e11fa6e6960adb62c82928615b702192e34ea0c5",
+      "content": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/17/176b7334dc44ba3aa2313266e11fa6e6960adb62c82928615b702192e34ea0c5"
     },
     "sound/cues-th.json": {
       "hash": "7b994af200006e4500281fdc7c488c6cf913e490a82a174e7eb188fb85441de2",
@@ -402,6 +402,48 @@
         "prep_assets.sh": {
           "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/86/8674d12ad02d0412e1a4a293b8eb74186b700059f421ed5dea656c213216e556",
           "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/b2/b24ed633d2bac33a88ac4e3f8a5d1f44ce6ac80852ce0050959829f8679d9218"
+        }
+      }
+    },
+    "92c68e94-80fd-4bd9-a2f2-8e417fe28f10": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795810694512,
+      "endedAt": 1795810694521,
+      "files": {
+        "assets/revenge.mp4": {
+          "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/2a/2a6c30f9a0cc7af13fbbfd99af74c8d685c798a6aba092811bfbd822af04a206",
+          "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/49/4945457c842311a41f3422bbc46249d61cb012302ce63765cf3408f1275587cd"
+        },
+        "assets/work.mp4": {
+          "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/49/4959d021ce66390117ada94ca24202ec170f324c920f102682fea441af332200",
+          "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/5c/5c5f2eca7319b604ab94352a28d2db34b7d0302228405a9222143ffdf02381ac"
+        },
+        "prep_assets.sh": {
+          "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/b2/b24ed633d2bac33a88ac4e3f8a5d1f44ce6ac80852ce0050959829f8679d9218",
+          "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/ba/ba01dff7041fb0053d335f0f5d21b0a31c8f4180f4587f5882a264331469a21b"
+        }
+      }
+    },
+    "18a5cc49-3a78-43bd-a416-3d3ab67101a2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795810970901,
+      "endedAt": 1795810970906,
+      "files": {
+        "assets/work.mp4": {
+          "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/5c/5c5f2eca7319b604ab94352a28d2db34b7d0302228405a9222143ffdf02381ac",
+          "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/17/176b7334dc44ba3aa2313266e11fa6e6960adb62c82928615b702192e34ea0c5"
+        },
+        "prep_assets.sh": {
+          "before": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/ba/ba01dff7041fb0053d335f0f5d21b0a31c8f4180f4587f5882a264331469a21b",
+          "after": "/root/.cache/hyperframes/history/1e45ed56-7c8a-40c3-9f76-8a3151630e71/blobs/5e/5e978c47312bb1f808a74e5e6471e74b9272fd5b4b4f5799b0cff83fa75916c8"
         }
       }
     }
@@ -1014,15 +1056,15 @@
   },
   "renders": {
     "latest": {
-      "id": "dcf116f7-9eb0-455b-8dc3-bddce87088aa",
-      "completedAt": 1795810540955,
+      "id": "15129bd1-f8af-42d0-8baa-1398cc825409",
+      "completedAt": 1795811177599,
       "output": "/home/user/AI-Studio/projects/2026-11-27-knowledge-revenge-bedtime/renders/revenge-bedtime-th-silent.mp4",
       "status": "completed",
-      "revision": "1c020d42-0479-4e5b-99bb-7ef65ffa1fea"
+      "revision": "18a5cc49-3a78-43bd-a416-3d3ab67101a2"
     },
     "retainedRevisions": [
-      "1c020d42-0479-4e5b-99bb-7ef65ffa1fea",
-      "8e874c5d-c630-424a-9dd9-bafbd2242333"
+      "18a5cc49-3a78-43bd-a416-3d3ab67101a2",
+      "92c68e94-80fd-4bd9-a2f2-8e417fe28f10"
     ]
   },
   "pendingArtifactCleanup": []
