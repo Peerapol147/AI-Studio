@@ -8,6 +8,10 @@ every sheet made here, and nobody may tell the reviewer to skip the visual side.
   python3 tools/contact_sheet.py make   <video.mp4> <out dir> [--step 0.25] [--cols 8] [--rows 5]
       -> <out>/sheet-01.jpg ... (40 frames = 10 s per sheet, timestamp under each frame, a red frame around frames that
          did not change for > 0.5 s), <out>/INDEX.md (sheets + still spans), <out>/frames.json
+      also WARN "main picture held": spans > 3 s where the MAIN picture / layout stays the same (caffeine-ranking
+      2026-11-27: one gauge picture sat ~7 s and passed the 0.5 s still check because small bubbles moved in it).
+      Each frame is reduced to a 9x16 colour grid with the caption band (Y 55-73 %) cut out, so captions, small moving
+      elements and a camera push (<= ~17 %) do not count as a new picture; a cut / new layout does (grid diff >= 25).
   python3 tools/contact_sheet.py verify <project> [<out dir>]
       exit 1 unless review.md has a "## ตรวจภาพทุกเฟรม" section that names every sheet file of <out dir>
       (default: the newest renders/frames-*/ of the project) with a note per sheet.
@@ -18,6 +22,10 @@ import argparse, json, pathlib, re, subprocess, sys, tempfile
 STILL = 0.5           # s without change that counts as a still frame (style.md Motion: no still frame > 0.5 s)
 DIFF = 0.005          # share of pixels whose luma changed by > 8 (at 216 px wide) below which two frames are "the same"
                       # (measured: a slow 8 % push-in ~0.08, a small moving element ~0.025, a held frame 0.000)
+MAIN_HOLD = 3.0      # s: same main picture longer than this -> WARN (reviewer decides; long diagrams need a reason)
+MAIN_DIFF = 25.0     # mean |diff| of the 9x16 RGB grid vs the frame the picture started on (measured on real photos:
+                     # push 1.04 -> 1.21 = 5-24, cut between two photos = 41-54)
+CAP_BAND = (0.55, 0.73)
 TILE_W = 216
 HEAD = '## ตรวจภาพทุกเฟรม'
 
@@ -48,6 +56,7 @@ def make(video, out, step=0.25, cols=8, rows=5):
                 spans.append((times[run0], times[i - 1]))
                 still.update(range(run0, i))
             run0 = None
+    holds = main_holds(frames, times, step)
     th = frames[0].height
     per = cols * rows
     sheets = []
@@ -67,15 +76,39 @@ def make(video, out, step=0.25, cols=8, rows=5):
         sheet.save(out / name, quality=85)
         sheets.append({'file': name, 'from': times[chunk[0]], 'to': times[chunk[-1]]})
     (out / 'frames.json').write_text(json.dumps({'video': str(video), 'step': step, 'times': times,
-                                                 'diff': diffs, 'still_spans': spans, 'sheets': sheets}, indent=1))
+                                                 'diff': diffs, 'still_spans': spans, 'main_holds': holds,
+                                                 'sheets': sheets}, indent=1))
     lines = [f'# Contact sheets: {video} (every {step} s, {len(frames)} frames)', '',
              'ผู้กำกับและ reviewer ต้องเปิดดู**ทุกแผ่น**ก่อนส่งผู้ใช้ (feedback palmaris ข้อ 1) แล้วจดใน review.md หัวข้อ',
              f'`{HEAD}` ทีละแผ่น: `- sheet-01.jpg (0.00-9.75s): <สิ่งที่เห็น/ปัญหา หรือ "ผ่าน">`', '',
              '| แผ่น | ช่วงเวลา |', '|---|---|'] + [f'| {s["file"]} | {s["from"]:.2f}-{s["to"]:.2f}s |' for s in sheets]
     lines += ['', f'## ภาพนิ่งเกิน {STILL} วิ (กรอบแดงในแผ่น)'] + ([f'- {a:.2f}-{b:.2f}s' for a, b in spans] or ['- ไม่มี'])
+    lines += ['', f'## ภาพหลักไม่เปลี่ยนเกิน {MAIN_HOLD:.0f} วิ (WARN: ซับ/ของเล็กขยับหรือกล้อง push ไม่นับเป็นภาพใหม่)'] + (
+        [f'- WARN {a:.2f}-{b:.2f}s ({b - a:.1f} วิ) ภาพหลักเดิม: ตัดภาพใหม่/เปลี่ยนเลย์เอาต์ หรือจดเหตุผลใน review.md' for a, b in holds]
+        or ['- ไม่มี'])
     (out / 'INDEX.md').write_text('\n'.join(lines) + '\n')
     print('\n'.join(lines))
     return sheets, spans
+
+
+def main_holds(frames, times, step):
+    """Spans (start, end) longer than MAIN_HOLD where every frame stays within MAIN_DIFF of the frame the span began on."""
+    from PIL import Image
+    import numpy as np
+    sig = []
+    for f in frames:
+        a = np.asarray(f.convert('RGB'), dtype=np.float32)
+        h = a.shape[0]
+        a = np.vstack([a[:int(h * CAP_BAND[0])], a[int(h * CAP_BAND[1]):]])      # captions out
+        sig.append(np.asarray(Image.fromarray(a.astype('uint8')).resize((9, 16), Image.BOX), dtype=np.float32))
+    out, a0 = [], 0
+    for i in range(1, len(frames) + 1):
+        if i == len(frames) or float(np.abs(sig[i] - sig[a0]).mean()) >= MAIN_DIFF:
+            end = times[i - 1] + step
+            if end - times[a0] > MAIN_HOLD:
+                out.append((times[a0], round(end, 3)))
+            a0 = i
+    return out
 
 
 def verify(project, out=None):
@@ -85,7 +118,10 @@ def verify(project, out=None):
             print(f'ERROR no renders/frames-*/ in {project}: python3 tools/contact_sheet.py make <mp4> {project}/renders/frames-th')
             return 1
         out = cands[-1].parent
-    sheets = [s['file'] for s in json.loads((out / 'frames.json').read_text())['sheets']]
+    fj = json.loads((out / 'frames.json').read_text())
+    sheets = [s['file'] for s in fj['sheets']]
+    for a, b in fj.get('main_holds', []):
+        print(f'WARN main picture held {a:.2f}-{b:.2f}s ({b - a:.1f} s > {MAIN_HOLD:.0f} s): new picture/layout, or a reason in review.md')
     rv = project / 'review.md'
     text = rv.read_text() if rv.exists() else ''
     m = re.search(rf'^{re.escape(HEAD)}[^\n]*\n(.*?)(?=^## |\Z)', text, re.M | re.S)
