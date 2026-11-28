@@ -21,7 +21,6 @@ card(){ # name src len cropx exposure : 576x720 card -> 1000x1250 at (40,330) ov
 card feet    pixabay-3627.mp4   2.6  330  -0.02
 card traffic pixabay-1900.mp4   2.4  420  -0.06
 full air     pixabay-92768.mp4  2.9  810:1440:880:0  -0.04
-card storm   nasa-jsc2019m000806_Hurricane_Dorian_190902.mp4 4.2 640 0.04
 full nothing pixabay-285663.mp4 2.7  1440:2560:0:0  0.0
 card calm    pixabay-27230.mp4  3.3  360  -0.08
 card tide    pixabay-148100.mp4 3.2  80   0.0
@@ -30,6 +29,9 @@ still(){ # name src cardw cardh y
   ffmpeg -v error -y -i "$F/$2" -filter_complex "[0:v]split[a][b];[a]scale=-2:1920,crop=1080:1920,boxblur=30:2,eq=brightness=-0.22:saturation=0.6[bg];\
 [b]scale=$3:$4:flags=lanczos,pad=$(($3+12)):$(($4+12)):6:6:color=0x10080A[fg];[bg][fg]overlay=(W-w)/2:$5,$(grade 0)" -frames:v 1 -q:v 2 "assets/$1.jpg"; }
 still jet  nasa-airbos-shockwaves.jpg 900 810 760
+# storm: ISS photo of Hurricane Helene (NASA iss072e001650), crop 862x1078 round the eye (x 850), card 1000x1250 at y -40
+ffmpeg -v error -y -i "$F/nasa-iss072e001650-helene.jpg" -filter_complex "[0:v]split[a][b];[a]scale=-2:1920,crop=1080:1920,boxblur=30:2,eq=brightness=-0.22:saturation=0.6[bg];\
+[b]crop=862:1078:850:0,scale=1000:1250:flags=lanczos,pad=1012:1262:6:6:color=0x10080A[fg];[bg][fg]overlay=34:-46,$(grade 0)" -frames:v 1 -q:v 2 assets/storm.jpg
 ffmpeg -v error -y -i "$F/nasa-GSFC_20171208_Archive_e001386.jpg" -vf "scale=1040:1040:flags=lanczos,pad=1080:1920:20:560:black" -frames:v 1 -q:v 2 assets/calmearth.jpg
 ffmpeg -v error -y -i "$F/nasa-GSFC_20171208_Archive_e001982.jpg" -vf "crop=820:820:358:22,scale=960:960:flags=lanczos,pad=1080:1920:60:520:black" -frames:v 1 -q:v 2 assets/moon.jpg
 ffmpeg -v error -y -i "$F/tex/earth-blue-marble.jpg" -vf scale=2048:1024:flags=lanczos -q:v 3 assets/tex-day.jpg
@@ -41,6 +43,7 @@ r=random.Random(7); im=Image.new('RGB',(1080,1920),(0,0,0)); d=ImageDraw.Draw(im
 for _ in range(900):
     x,y=r.uniform(0,1080),r.uniform(0,1920); b=int(r.uniform(60,255)*r.random()**1.5)+40; s=r.choice([0.6,0.8,1,1.2,1.8])
     d.ellipse([x-s,y-s,x+s,y+s],fill=(b,b,min(255,b+25)))
-im=im.filter(ImageFilter.GaussianBlur(0.6)); im.save('assets/stars.png')
+im=im.filter(ImageFilter.GaussianBlur(0.6)).convert('L')
+rgba=Image.new('RGBA',im.size,(255,255,255,0)); rgba.putalpha(im.point(lambda v:min(255,int(v*1.2)))); rgba.save('assets/stars.png')  # transparent: the slot gradient shows through
 PY
 echo done

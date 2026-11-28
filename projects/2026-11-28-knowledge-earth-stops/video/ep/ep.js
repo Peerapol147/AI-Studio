@@ -81,7 +81,7 @@ function overlays(t){
     const p=done?1+0.14*(1-S(t-8.85,20,0.35)):1+0.015*Math.sin(t*40)*(t>7.3?1:0); $('spd').style.transform=`scale(${p.toFixed(4)})`; }
   // storm: 408 km/h then x4 on "สี่เท่า"
   const wa=win(t,SHOT.storm.a+0.06,SHOT.storm.b,0.15,0.1); const ws=grp('gp-storm',wa);
-  if(wa>0){ const u=S(t-SHOT.storm.a,16,0.7); ws.style.transform=`translateY(${f2(80*(1-u))}px)`;
+  if(wa>0){ const u=S(t-SHOT.storm.a,16,0.7); ws.style.transform=`translateY(${f2(60*(1-u))}px)`;
     const v=408*eo(clamp((t-15.95)/(16.9-15.95))); $('wind').innerHTML=fmt(t>=16.9?408:v)+'<span class="unit">กม./ชม.</span>';
     const x=t<17.42?0:S(t-17.42,17,0.45); $('x4').style.opacity=f2(clamp(x*3)); $('x4').style.transform=`rotate(${f2(lerp(-30,8,x))}deg) scale(${(0.2+0.8*x).toFixed(4)})`; }
   // east arrow
@@ -100,7 +100,7 @@ function overlays(t){
   if(ma>0){ const u=t-SHOT.ms.a; mg.style.transform=`scale(${(1+0.25*(1-S(u,18,0.9))).toFixed(4)})`; mg.style.transformOrigin='50% 40%';
     $('hs').setAttribute('transform',`rotate(${f2(u*140)} 250 250)`); $('hm').setAttribute('transform',`rotate(${f2(40+u*12)} 250 250)`);
     const full='ราว +0.002 วินาที', n=Math.floor(clamp((t-35.96)/(37.1-35.96))*full.length+(t>=35.96?1:0));
-    $('mstxt').textContent=full.slice(0,Math.min(full.length,n)); $('mssub').textContent=t>=37.58?'/ 100 ปี':'';
+    const shown=full.slice(0,Math.min(full.length,n)); $('mstxt').innerHTML=shown.replace('+','<svg class="plus" viewBox="0 0 10 10"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>'); $('mssub').textContent=t>=37.58?'/ 100 ปี':'';
     $('mssub').style.transform=`scale(${(t>=37.58?S(t-37.58,18,0.5):0).toFixed(4)})`; }
   // choose
   const ca=win(t,SHOT.choose.a+0.1,SHOT.loop.a,0.2,0.3); grp('gp-choose',ca);
@@ -111,4 +111,5 @@ function overlays(t){
     $('chd').style.opacity=f2(hn?0.55:1); $('chn').style.opacity=f2(hd?0.55:1); }
 }
 const TICKS=$('ticks'); if(TICKS&&!TICKS.childNodes.length){ let h=''; for(let i=0;i<12;i++){ const a=i*30*RAD; h+=`<line x1="${250+180*Math.sin(a)}" y1="${250-180*Math.cos(a)}" x2="${250+(i%3?196:204)*Math.sin(a)}" y2="${250-(i%3?196:204)*Math.cos(a)}" stroke="var(--text)" stroke-width="${i%3?6:12}" stroke-linecap="round"/>`; } TICKS.innerHTML=h; }
-function episode(t){ globe(t); shake(t); capsule(t); overlays(t); }
+const CAPHIDE=[...document.querySelectorAll('#caps .cap span')].filter(s=>/^(1,600|กม\.\/ชม\.)$/.test(s.textContent.trim()));
+function episode(t){ globe(t); shake(t); capsule(t); overlays(t); CAPHIDE.forEach(s=>{s.style.opacity='0';}); }

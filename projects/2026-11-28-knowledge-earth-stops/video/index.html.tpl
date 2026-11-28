@@ -81,7 +81,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .unit{font-size:.42em;color:var(--text);margin-left:.15em}
 .card{position:absolute;left:90px;width:900px;border-radius:40px;background:var(--panel);box-shadow:0 0 0 8px var(--ink),0 24px 60px rgba(0,0,0,.55)}
 .small{font-weight:700;color:var(--paneltext);text-align:center;white-space:nowrap;line-height:1.3}
-#x4{position:absolute;left:700px;top:800px;font-weight:900;font-size:150px;line-height:1;color:var(--ink);background:var(--accent2);padding:6px 34px 14px;border-radius:32px;box-shadow:0 0 0 8px var(--ink);transform-origin:50% 50%}
+#x4{position:absolute;left:730px;top:1318px;display:flex;align-items:center;gap:6px;font-weight:900;font-size:110px;line-height:1;color:var(--ink);background:var(--accent2);padding:6px 30px 14px;border-radius:30px;box-shadow:0 0 0 8px var(--ink);transform-origin:50% 50%}
+#x4 svg{width:.62em;height:.62em;margin-top:.12em}
+.plus{display:inline-block;width:.6em;height:.6em;vertical-align:-.02em;margin-right:.04em}
 #arrow{position:absolute;left:150px;top:700px;width:900px;height:240px;transform-origin:0 50%}
 #arrow svg{position:absolute;left:0;top:0;width:900px;height:240px;overflow:visible}
 #arrow .t{position:absolute;left:70px;top:0;height:240px;display:flex;align-items:center;font-weight:900;font-size:98px;color:var(--ink);white-space:nowrap}
@@ -114,10 +116,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
  <div class="grp" id="gp-jet"><div class="pill" id="jetlab">คลื่นกระแทกจริง เมื่อเครื่องบินเร็วกว่าเสียง (NASA)</div></div>
  <div class="grp" id="gp-speedo"><div class="big" id="spd" style="top:1292px;font-size:160px">~0<span class="unit">กม./ชม.</span></div></div>
  <div class="grp" id="gp-storm">
-  <div class="card" style="top:430px;height:430px"></div>
-  <div class="small" style="position:absolute;left:90px;width:900px;top:472px;font-size:50px">ลมแรงสุดที่เคยวัดได้</div>
-  <div class="big" id="wind" style="top:580px;font-size:190px">0<span class="unit">กม./ชม.</span></div>
-  <div id="x4">×4</div>
+  <div class="card" style="top:1280px;height:250px;left:70px;width:640px"></div>
+  <div class="small" style="position:absolute;left:70px;width:640px;top:1294px;font-size:44px">ลมแรงสุดที่เคยวัดได้</div>
+  <div class="big" id="wind" style="top:1360px;left:70px;width:640px;font-size:130px">0<span class="unit">กม./ชม.</span></div>
+  <div id="x4"><svg viewBox="0 0 10 10"><path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>4</div>
  </div>
  <div class="grp" id="gp-east"><div id="arrow"><svg viewBox="0 0 900 240"><path d="M0 62 H640 V0 L900 120 L640 240 V178 H0 Z" fill="var(--accent)" stroke="var(--ink)" stroke-width="12" stroke-linejoin="round"/></svg><div class="t">ตะวันออก</div></div></div>
  <div class="grp" id="gp-six">
@@ -358,7 +360,7 @@ function overlays(t){
     const p=done?1+0.14*(1-S(t-8.85,20,0.35)):1+0.015*Math.sin(t*40)*(t>7.3?1:0); $('spd').style.transform=`scale(${p.toFixed(4)})`; }
   // storm: 408 km/h then x4 on "สี่เท่า"
   const wa=win(t,SHOT.storm.a+0.06,SHOT.storm.b,0.15,0.1); const ws=grp('gp-storm',wa);
-  if(wa>0){ const u=S(t-SHOT.storm.a,16,0.7); ws.style.transform=`translateY(${f2(80*(1-u))}px)`;
+  if(wa>0){ const u=S(t-SHOT.storm.a,16,0.7); ws.style.transform=`translateY(${f2(60*(1-u))}px)`;
     const v=408*eo(clamp((t-15.95)/(16.9-15.95))); $('wind').innerHTML=fmt(t>=16.9?408:v)+'<span class="unit">กม./ชม.</span>';
     const x=t<17.42?0:S(t-17.42,17,0.45); $('x4').style.opacity=f2(clamp(x*3)); $('x4').style.transform=`rotate(${f2(lerp(-30,8,x))}deg) scale(${(0.2+0.8*x).toFixed(4)})`; }
   // east arrow
@@ -377,7 +379,7 @@ function overlays(t){
   if(ma>0){ const u=t-SHOT.ms.a; mg.style.transform=`scale(${(1+0.25*(1-S(u,18,0.9))).toFixed(4)})`; mg.style.transformOrigin='50% 40%';
     $('hs').setAttribute('transform',`rotate(${f2(u*140)} 250 250)`); $('hm').setAttribute('transform',`rotate(${f2(40+u*12)} 250 250)`);
     const full='ราว +0.002 วินาที', n=Math.floor(clamp((t-35.96)/(37.1-35.96))*full.length+(t>=35.96?1:0));
-    $('mstxt').textContent=full.slice(0,Math.min(full.length,n)); $('mssub').textContent=t>=37.58?'/ 100 ปี':'';
+    const shown=full.slice(0,Math.min(full.length,n)); $('mstxt').innerHTML=shown.replace('+','<svg class="plus" viewBox="0 0 10 10"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>'); $('mssub').textContent=t>=37.58?'/ 100 ปี':'';
     $('mssub').style.transform=`scale(${(t>=37.58?S(t-37.58,18,0.5):0).toFixed(4)})`; }
   // choose
   const ca=win(t,SHOT.choose.a+0.1,SHOT.loop.a,0.2,0.3); grp('gp-choose',ca);
@@ -388,7 +390,8 @@ function overlays(t){
     $('chd').style.opacity=f2(hn?0.55:1); $('chn').style.opacity=f2(hd?0.55:1); }
 }
 const TICKS=$('ticks'); if(TICKS&&!TICKS.childNodes.length){ let h=''; for(let i=0;i<12;i++){ const a=i*30*RAD; h+=`<line x1="${250+180*Math.sin(a)}" y1="${250-180*Math.cos(a)}" x2="${250+(i%3?196:204)*Math.sin(a)}" y2="${250-(i%3?196:204)*Math.cos(a)}" stroke="var(--text)" stroke-width="${i%3?6:12}" stroke-linecap="round"/>`; } TICKS.innerHTML=h; }
-function episode(t){ globe(t); shake(t); capsule(t); overlays(t); }
+const CAPHIDE=[...document.querySelectorAll('#caps .cap span')].filter(s=>/^(1,600|กม\.\/ชม\.)$/.test(s.textContent.trim()));
+function episode(t){ globe(t); shake(t); capsule(t); overlays(t); CAPHIDE.forEach(s=>{s.style.opacity='0';}); }
 
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
