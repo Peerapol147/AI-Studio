@@ -230,3 +230,30 @@ def test_dashboard_files_cli_writes_files(tmp_path):
     assert r.returncode == 0, r.stderr
     assert len(json.loads((tmp_path / 'o' / 'videos.json').read_text())) == 2
     assert len(json.loads((tmp_path / 'o' / 'history.json').read_text())) == 2
+
+
+# ---- hourly tracking of one video ----
+def run_track(srv, vid, hist=None, out=None):
+    import os
+    env = {**os.environ, 'YT_BASE': srv.url}; env.pop('YOUTUBE_API_KEY', None)
+    a = [sys.executable, str(TOOL), 'track', vid, '--out', str(out)]
+    if hist:
+        a += ['--history', str(hist)]
+    return subprocess.run(a, capture_output=True, text=True, env=env)
+
+
+def test_track_appends_row(srv, tmp_path):
+    out = tmp_path / 'h.json'
+    r = run_track(srv, 'v004', out=out)
+    assert r.returncode == 0, r.stderr
+    rows = json.loads(out.read_text())
+    assert len(rows) == 1 and rows[0]['video_id'] == 'v004' and rows[0]['views'] == 40 and rows[0]['ts'].endswith('Z')
+    r = run_track(srv, 'v004', hist=out, out=out)
+    assert len(json.loads(out.read_text())) == 2
+
+
+def test_track_unknown_video_exits_2_and_keeps_history(srv, tmp_path):
+    out = tmp_path / 'h.json'
+    out.write_text('[]')
+    r = run_track(srv, 'nope', hist=out, out=out)
+    assert r.returncode == 2 and 'ไม่พบคลิป' in r.stderr and json.loads(out.read_text()) == []

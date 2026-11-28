@@ -7,6 +7,8 @@
        "videos": [{id, title, published_at, duration_s, views, likes|null, comments|null}]}
   python3 tools/yt_stats.py eligibility < snapshot.json   (snapshot ต้องมี channel/format: ใช้ --projects ตอน collect)
       กลุ่ม "<channel>/<format>" -> {n, eligible, reason}; ต้องมี >=10 คลิปอายุ >=7 วันถึงสรุปได้
+  python3 tools/yt_stats.py track <video_id> --out FILE [--history FILE]
+      ยอดสะสมของคลิปเดียว ณ ตอนนี้ ต่อท้ายประวัติ (แถว {ts, video_id, views, likes, comments}); exit 2 = ไม่พบคลิป
   python3 tools/yt_stats.py dashboard-files --out DIR [--history old-history.json] < snapshot.json
       เขียน DIR/videos.json และ DIR/history.json (ประวัติเดิม + วันนี้ แทนที่วันเดียวกัน) สำหรับอัปโหลดเข้าแดชบอร์ด
       exit 2 = ไม่พบช่อง / ไม่มีคลิป, exit 3 = API ปฏิเสธ (key ผิด, โควตาหมด ฯลฯ; เหตุผลอยู่ stderr)
@@ -156,13 +158,36 @@ def dashboard_files(snap, history):
     return videos, kept + today
 
 
+def track_row(base, video_id):
+    """ยอดสะสม ณ ตอนนี้ของคลิปเดียว (1 request) -> {ts, video_id, views, likes, comments}; ไม่พบ = LookupError"""
+    r = _call(base, 'videos', {'part': 'statistics', 'id': video_id})
+    if not r.get('items'):
+        raise LookupError(f'ไม่พบคลิป {video_id}')
+    st = r['items'][0].get('statistics', {})
+    return {'ts': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'video_id': video_id,
+            'views': int(st.get('viewCount', 0)), 'likes': _int_or_none(st.get('likeCount')),
+            'comments': _int_or_none(st.get('commentCount'))}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest='cmd', required=True)
     c = sub.add_parser('collect'); c.add_argument('handle'); c.add_argument('--projects')
     sub.add_parser('eligibility')
+    t = sub.add_parser('track'); t.add_argument('video_id'); t.add_argument('--out', required=True); t.add_argument('--history')
     d = sub.add_parser('dashboard-files'); d.add_argument('--out', required=True); d.add_argument('--history')
     a = ap.parse_args(argv)
+    if a.cmd == 'track':
+        try:
+            row = track_row(os.environ.get('YT_BASE', DEFAULT_BASE), a.video_id)
+        except LookupError as e:
+            print(str(e), file=sys.stderr); return 2
+        except ApiError as e:
+            print(f'YouTube API ปฏิเสธ: {e}', file=sys.stderr); return 3
+        hist = json.loads(pathlib.Path(a.history).read_text(encoding='utf-8')) if a.history else []
+        pathlib.Path(a.out).write_text(json.dumps(hist + [row], ensure_ascii=False), encoding='utf-8')
+        print(json.dumps(row, ensure_ascii=False))
+        return 0
     if a.cmd == 'dashboard-files':
         snap = json.load(sys.stdin)
         hist = json.loads(pathlib.Path(a.history).read_text(encoding='utf-8')) if a.history else []
