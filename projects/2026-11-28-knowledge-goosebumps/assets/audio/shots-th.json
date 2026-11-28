@@ -1,0 +1,218 @@
+{
+ "lang": "th",
+ "lead": 0.08,
+ "duration": 37.644,
+ "inputs": {
+  "shots.json": "f3ec4209e23b7eb1cc0c4c492faedb08c62345312ed2d97943aa20f03daa5342",
+  "footage.json": "68011cc3b98e5e9fced8291736d79f4157115a17cc5922a6532e1273ceff7c3f",
+  "assets/audio/words.json": "f57da8b038ea2a2a24ded61c51e599e1d7cf6f8396a329a047a0d735ae37d389"
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "src": "assets/footage/pixabay-885563.jpg",
+   "cue": "ทุกครั้งที่ขนลุก",
+   "word_at": 0.08,
+   "start": 0.0,
+   "beat": "hook",
+   "end": 2.92,
+   "dur": 2.92
+  },
+  {
+   "id": "cat",
+   "src": "assets/footage/pixabay-5534007.jpg",
+   "cue": "พองขน",
+   "word_at": 3.0,
+   "start": 2.92,
+   "beat": "hook",
+   "hit": "ใหญ่",
+   "hit_at": 4.46,
+   "end": 5.9,
+   "dur": 2.98
+  },
+  {
+   "id": "dive",
+   "src": null,
+   "cue": "เพราะที่โคนขน",
+   "word_at": 5.98,
+   "start": 5.9,
+   "beat": "explain",
+   "end": 7.58,
+   "dur": 1.68
+  },
+  {
+   "id": "muscle",
+   "src": null,
+   "cue": "กล้ามเนื้อจิ๋ว",
+   "word_at": 7.66,
+   "start": 7.58,
+   "beat": "explain",
+   "end": 9.34,
+   "dur": 1.76
+  },
+  {
+   "id": "cold",
+   "src": "assets/footage/pixabay-253979.mp4",
+   "cue": "พอเราหนาว",
+   "word_at": 9.42,
+   "start": 9.34,
+   "beat": "explain",
+   "end": 10.74,
+   "dur": 1.4,
+   "media_start": 0.92
+  },
+  {
+   "id": "pop",
+   "src": null,
+   "cue": "มันก็หดตัว",
+   "word_at": 10.82,
+   "start": 10.74,
+   "beat": "explain",
+   "hit": "ตั้ง",
+   "hit_at": 12.52,
+   "end": 13.7,
+   "dur": 2.96
+  },
+  {
+   "id": "human",
+   "src": "assets/footage/pixabay-222664.jpg",
+   "cue": "แต่คนเราขนน้อย",
+   "word_at": 13.78,
+   "start": 13.7,
+   "beat": "reveal",
+   "end": 15.84,
+   "dur": 2.14
+  },
+  {
+   "id": "nope",
+   "src": null,
+   "cue": "แทบไม่ได้ผล",
+   "word_at": 15.92,
+   "start": 15.84,
+   "beat": "reveal",
+   "end": 17.36,
+   "dur": 1.52
+  },
+  {
+   "id": "ape",
+   "src": "assets/footage/pixabay-388020.mp4",
+   "cue": "นักวิทยาศาสตร์",
+   "word_at": 17.44,
+   "start": 17.36,
+   "beat": "reveal",
+   "end": 19.1,
+   "dur": 1.74,
+   "media_start": 0.92
+  },
+  {
+   "id": "ancestor",
+   "src": null,
+   "cue": "ร่องรอย",
+   "word_at": 19.18,
+   "start": 19.1,
+   "beat": "reveal",
+   "end": 20.64,
+   "dur": 1.54
+  },
+  {
+   "id": "twist",
+   "src": null,
+   "cue": "แต่มันอาจ",
+   "word_at": 20.72,
+   "start": 20.64,
+   "beat": "twist",
+   "end": 23.14,
+   "dur": 2.5
+  },
+  {
+   "id": "mouse",
+   "src": "assets/footage/pixabay-139660.mp4",
+   "cue": "ทีมฮาร์วาร์ด",
+   "word_at": 23.22,
+   "start": 23.14,
+   "beat": "twist",
+   "end": 25.02,
+   "dur": 1.88,
+   "media_start": 0.92
+  },
+  {
+   "id": "regrow",
+   "src": null,
+   "cue": "ระบบนี้ช่วยปลุก",
+   "word_at": 25.1,
+   "start": 25.02,
+   "beat": "twist",
+   "hit": "ปลุก",
+   "hit_at": 25.78,
+   "end": 26.58,
+   "dur": 1.56
+  },
+  {
+   "id": "newhair",
+   "src": null,
+   "cue": "ให้งอกขนใหม่",
+   "word_at": 26.66,
+   "start": 26.58,
+   "beat": "twist",
+   "hit": "ขนใหม่",
+   "hit_at": 27.14,
+   "end": 28.78,
+   "dur": 2.2
+  },
+  {
+   "id": "music",
+   "src": "assets/footage/pixabay-161062.mp4",
+   "cue": "ส่วนขนลุกตอนฟังเพลง",
+   "word_at": 28.86,
+   "start": 28.78,
+   "beat": "share",
+   "end": 31.96,
+   "dur": 3.18,
+   "media_start": 1.42
+  },
+  {
+   "id": "brain",
+   "src": null,
+   "cue": "สมองหลั่ง",
+   "word_at": 32.04,
+   "start": 31.96,
+   "beat": "share",
+   "hit": "โดพามีน",
+   "hit_at": 32.56,
+   "end": 34.1,
+   "dur": 2.14
+  },
+  {
+   "id": "concert",
+   "src": "assets/footage/pixabay-29322.mp4",
+   "cue": "ความรู้สึกดี",
+   "word_at": 34.18,
+   "start": 34.1,
+   "beat": "share",
+   "end": 35.68,
+   "dur": 1.58,
+   "media_start": 0.92
+  },
+  {
+   "id": "cta",
+   "src": "assets/footage/pixabay-65390.mp4",
+   "cue": "เพลงไหน",
+   "word_at": 35.76,
+   "start": 35.68,
+   "beat": "cta",
+   "end": 37.08,
+   "dur": 1.4,
+   "media_start": 0.92
+  },
+  {
+   "id": "loop",
+   "src": "assets/footage/pixabay-885563.jpg",
+   "cue": "พิมพ์มาหน่อย",
+   "word_at": 37.16,
+   "start": 37.08,
+   "beat": "loop",
+   "end": 37.644,
+   "dur": 0.564
+  }
+ ]
+}
