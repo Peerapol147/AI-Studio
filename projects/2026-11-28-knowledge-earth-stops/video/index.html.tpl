@@ -90,7 +90,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .side.night{background:var(--panel);color:var(--text)}
 #jetlab{position:absolute;left:96px;top:782px;font-size:34px;padding:12px 24px;background:rgba(16,8,10,.82);color:var(--text);border-radius:18px;font-weight:700}
 #clock{position:absolute;left:290px;top:470px;width:500px;height:500px}
-#mstxt{top:1280px;font-size:104px}
+#mstxt{top:1280px;font-size:104px;-webkit-text-stroke:.05em var(--ink);letter-spacing:.02em}
 #mssub{top:1410px;font-size:70px;color:var(--text)}
 #slowtag{left:540px;top:1300px;font-size:58px;padding:16px 34px 20px;background:var(--panel);color:var(--text);box-shadow:0 0 0 7px var(--ink)}
 
@@ -238,8 +238,8 @@ const GT={
   stop:()=>st(540,820,330,FRONT,0.22,0,0.5),
   east:()=>st(330,820,290,FRONT,0.22,0,0.5),
   daynight:t=>{const u=clamp((t-SHOT.daynight.a)/(SHOT.daynight.b-SHOT.daynight.a));
-    return st(540,840,390,nrm([-0.9,0.12,0.55-0.6*u]),0.1,0,1);},
-  sixmonth:()=>st(540,820,350,nrm([-1,0.1,0.02]),0.08,0,1),
+    return st(540,840,370+40*u,nrm([-0.9,0.12,0.55-1.0*u]),0.1,0,1);},   // slow push + the terminator sweeps across
+  sixmonth:t=>{const u=clamp((t-SHOT.sixmonth.a)/(SHOT.sixmonth.b-SHOT.sixmonth.a)); return st(540,820,350+20*u,nrm([-1,0.1,-0.12]),0.06,0,1);},
   orbit:t=>{const th=Math.PI*eio((t-SHOT.orbit.a)/(SHOT.orbit.b-SHOT.orbit.a)); const sn=Math.sin(th), cs=Math.cos(th);
     return st(540+330*cs,780+150*sn,100*(1+0.25*sn),nrm([-cs,0.06,-sn]),0.08,0,1);},
   slow:()=>st(540,830,370,FRONT,0.22,0,0.5),
