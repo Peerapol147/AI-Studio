@@ -92,3 +92,8 @@ hook 0.20 คำถาม+โลก ✅ | hook-hit 0.38 "หยุดหมุ�
 - WMO: Maximum Surface Wind Gust 113.2 m/s https://wmo.int/asu-map?map=Wind_028
 - BoM: Tropical Cyclone Olivia https://www.bom.gov.au/cyclone/history/olivia.shtml
 - The Weather Network: 408 km/h Barrow Island https://www.theweathernetwork.com/en/news/weather/severe/april-10-1996-408-km-h-barrow-island-australia-saw-the-worlds-strongest-wind-gust
+
+## หลังรีวิว (ผู้กำกับ)
+- 🔴 เครดิต upload.md Dorian → Helene: แก้แล้ว
+- 🟡 2+4 แก้แล้ว (รอบแก้ 2): การ์ด "ลมกระโชกแรงสุดที่เคยวัดได้" + "ไซโคลน Olivia, ออสเตรเลีย 1996" + ป้าย "ภาพ: เฮอริเคน Helene จาก ISS (NASA)"; ผู้กำกับดู sheet-02 แล้ว, verify frames OK, -16.2 LUFS / TP -4.8
+- 🟡 1, 7: ลบ Dorian mp4 + ALERT.md แล้ว; 🟡 3, 5, 6: ยอมรับ (จดใน DELIVERY.md)
