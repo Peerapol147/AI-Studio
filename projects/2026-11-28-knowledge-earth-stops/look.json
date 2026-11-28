@@ -1,0 +1,17 @@
+{
+  "template": "brainrot-v3",
+  "palette": "night-violet",
+  "font": "prompt",
+  "caption": "pop",
+  "opening": "question",
+  "cover": "tilt",
+  "transition": "zoom",
+  "music_mood": "cinematic",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": "ถ้าโลกหยุดหมุนกะทันหัน?",
+  "why": "เลือกอัตโนมัติด้วย tools/look.py pick (ต่างจาก 3 ตอนล่าสุด) แก้ได้: อารมณ์เพลงให้เลือกตามแนวเรื่อง; เสียงพากย์ล็อกตามช่อง (looks.json channel_lock) ห้ามเปลี่ยน | ผู้กำกับ: night-violet (อวกาศกลางคืน) แทน retro-cream; opening question (เฟรม 0 = โลกหมุน + คำถาม what-if ตาม brief); เพลง cinematic (อวกาศ ยิ่งใหญ่)"
+}
