@@ -122,3 +122,72 @@ def test_key_sent_in_header_not_url(srv):
 def test_no_key_env_sends_no_header(srv):
     run(srv)
     assert all(k is None for _, k in srv.log)
+
+
+# ---- Task 2: match + classify ----
+import yt_stats
+
+
+def mkproj(tmp_path, name, title, fmt='short'):
+    d = tmp_path / name; d.mkdir()
+    (d / 'upload.md').write_text(f'# อัปโหลด: x\n\n**ชื่อคลิป (เลือก 1)**\n1. {title}  ← แนะนำ\n2. ชื่ออื่น\n', encoding='utf-8')
+    (d / 'brief.md').write_text(f'# Brief\n- ช่อง: knowledge | รูปแบบ: {fmt} 9:16\n', encoding='utf-8')
+    return d
+
+
+def test_match_by_title_in_upload_md(tmp_path):
+    mkproj(tmp_path, '2026-11-17-knowledge-nature', 'สัตว์ที่ขี้ออกมาเป็นลูกเต๋า 🎲 รูก้นมันไม่ได้เหลี่ยมนะ!')
+    vids = [{'id': 'a', 'title': 'สัตว์ที่ขี้ออกมาเป็นลูกเต๋า รูก้นมันไม่ได้เหลี่ยมนะ #shorts'}]
+    assert yt_stats.match_projects(vids, tmp_path) == {'a': '2026-11-17-knowledge-nature'}
+
+
+def test_no_match_returns_none(tmp_path):
+    mkproj(tmp_path, '2026-11-17-knowledge-nature', 'วอมแบต')
+    assert yt_stats.match_projects([{'id': 'a', 'title': 'อะไรก็ไม่รู้'}], tmp_path) == {'a': None}
+
+
+def test_channel_from_folder_name():
+    assert yt_stats.classify({'duration_s': 600}, '2026-11-17-knowledge-nature', None)['channel'] == 'knowledge'
+    assert yt_stats.classify({'duration_s': 600}, '2026-11-17-football-x', None)['channel'] == 'football'
+    assert yt_stats.classify({'duration_s': 600}, None, None)['channel'] == 'unknown'
+
+
+def test_format_short_when_duration_le_60_and_no_project():
+    assert yt_stats.classify({'duration_s': 60}, None, None)['format'] == 'short'
+    assert yt_stats.classify({'duration_s': 61}, None, None)['format'] == 'long'
+
+
+def test_format_from_brief_when_project_matched(tmp_path):
+    d = mkproj(tmp_path, '2026-11-17-knowledge-x', 'ยาว', fmt='long')
+    assert yt_stats.classify({'duration_s': 30}, d.name, tmp_path)['format'] == 'long'
+
+
+# ---- Task 3: eligibility ----
+import datetime as dt
+
+NOW = dt.datetime(2026, 12, 1, tzinfo=dt.timezone.utc)
+
+
+def vids(n, age_days=30, channel='knowledge', fmt='short'):
+    p = (NOW - dt.timedelta(days=age_days)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    return [{'id': f'x{i}', 'published_at': p, 'channel': channel, 'format': fmt} for i in range(n)]
+
+
+def test_nine_videos_not_eligible():
+    g = yt_stats.eligible_groups(vids(9), NOW)['knowledge/short']
+    assert g['n'] == 9 and g['eligible'] is False and 'ยังสรุปไม่ได้' in g['reason']
+
+
+def test_ten_videos_eligible():
+    assert yt_stats.eligible_groups(vids(10), NOW)['knowledge/short']['eligible'] is True
+
+
+def test_young_videos_not_counted():
+    g = yt_stats.eligible_groups(vids(10) + vids(5, age_days=3), NOW)['knowledge/short']
+    assert g['n'] == 10 and g['eligible'] is True
+    assert yt_stats.eligible_groups(vids(9) + vids(5, age_days=3), NOW)['knowledge/short']['eligible'] is False
+
+
+def test_groups_are_separate():
+    g = yt_stats.eligible_groups(vids(10) + vids(4, fmt='long'), NOW)
+    assert g['knowledge/short']['eligible'] and not g['knowledge/long']['eligible']

@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """สถิติสาธารณะของทุกคลิปในช่อง YouTube (YouTube Data API v3) -> JSON ออก stdout. ไม่เขียน DB ไม่เก็บ key.
 
-  python3 tools/yt_stats.py collect @vision6498
+  python3 tools/yt_stats.py collect @vision6498 [--projects projects]
+      --projects เพิ่มฟิลด์ project (ชื่อโฟลเดอร์|null), channel (knowledge|football|unknown), format (short|long)
       {"channel": {id, handle, title, subscribers}, "taken_at": ISO8601 UTC,
        "videos": [{id, title, published_at, duration_s, views, likes|null, comments|null}]}
+  python3 tools/yt_stats.py eligibility < snapshot.json   (snapshot ต้องมี channel/format: ใช้ --projects ตอน collect)
+      กลุ่ม "<channel>/<format>" -> {n, eligible, reason}; ต้องมี >=10 คลิปอายุ >=7 วันถึงสรุปได้
       exit 2 = ไม่พบช่อง / ไม่มีคลิป, exit 3 = API ปฏิเสธ (key ผิด, โควตาหมด ฯลฯ; เหตุผลอยู่ stderr)
 
 Key: ถ้ามี env YOUTUBE_API_KEY จะส่งใน header x-goog-api-key (ไม่ใส่ใน URL); ถ้าไม่มี พึ่ง proxy ของ environment ที่แนบให้
 Base URL override ด้วย YT_BASE (ใช้ในเทสต์). ทุก request ผ่าน tools/get.sh (ล้มเร็ว ไม่รอ)
 """
-import argparse, datetime, json, os, pathlib, re, subprocess, sys, urllib.parse
+import argparse, datetime, json, os, pathlib, re, subprocess, sys, unicodedata, urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 GET = ROOT / 'tools' / 'get.sh'
@@ -74,17 +77,89 @@ def fetch_snapshot(handle, base, key=None):
             'videos': videos}
 
 
+def _norm(t):
+    t = re.sub(r'#\S+', '', unicodedata.normalize('NFC', t or ''))
+    return ''.join(ch for ch in t.lower() if unicodedata.category(ch)[0] in 'LMN')
+
+
+def _project_titles(d):
+    f = d / 'upload.md'
+    if not f.exists():
+        return set()
+    out = set()
+    for line in f.read_text(encoding='utf-8').splitlines():
+        m = re.match(r'\s*\d+\.\s+(.*?)(?:\s+←.*)?$', line)
+        if m:
+            out.add(_norm(m.group(1)))
+    out.discard('')
+    return out
+
+
+def match_projects(videos, projects_dir):
+    """video id -> ชื่อโฟลเดอร์ project (จับคู่ชื่อคลิปกับรายการชื่อใน upload.md) หรือ None"""
+    projects_dir = pathlib.Path(projects_dir)
+    titles = {d.name: _project_titles(d) for d in sorted(projects_dir.iterdir()) if d.is_dir()}
+    res = {}
+    for v in videos:
+        n = _norm(v['title'])
+        res[v['id']] = next((name for name, ts in titles.items() if n and n in ts), None)
+    return res
+
+
+def classify(video, project, projects_dir):
+    """channel จากชื่อโฟลเดอร์; format จาก brief.md ของ project ถ้าจับคู่ได้ ไม่งั้นดูความยาว (<=60 วิ = short)"""
+    m = re.match(r'\d{4}-\d{2}-\d{2}-(knowledge|football)-', project or '')
+    fmt = None
+    if project and projects_dir:
+        b = pathlib.Path(projects_dir) / project / 'brief.md'
+        if b.exists():
+            mm = re.search(r'รูปแบบ:\s*(short|long)', b.read_text(encoding='utf-8'))
+            fmt = mm.group(1) if mm else None
+    return {'channel': m.group(1) if m else 'unknown',
+            'format': fmt or ('short' if video['duration_s'] <= 60 else 'long')}
+
+
+def eligible_groups(videos, now, min_videos=10, min_age_days=7):
+    """กลุ่ม '<channel>/<format>' -> {n, eligible, reason}; นับเฉพาะคลิปอายุ >= min_age_days, ต้องมี >= min_videos ถึงสรุปได้"""
+    counts, total = {}, {}
+    for v in videos:
+        k = f"{v['channel']}/{v['format']}"
+        total[k] = total.get(k, 0) + 1
+        age = (now - datetime.datetime.fromisoformat(v['published_at'].replace('Z', '+00:00'))).days
+        if age >= min_age_days:
+            counts[k] = counts.get(k, 0) + 1
+    out = {}
+    for k in total:
+        n = counts.get(k, 0)
+        ok = n >= min_videos
+        out[k] = {'n': n, 'eligible': ok,
+                  'reason': 'ตัวอย่างพอสรุปได้' if ok else
+                  f'ยังสรุปไม่ได้: มี {n} คลิปที่อายุ ≥{min_age_days} วัน ต้องมีอย่างน้อย {min_videos}'}
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest='cmd', required=True)
-    c = sub.add_parser('collect'); c.add_argument('handle')
+    c = sub.add_parser('collect'); c.add_argument('handle'); c.add_argument('--projects')
+    sub.add_parser('eligibility')
     a = ap.parse_args(argv)
+    if a.cmd == 'eligibility':
+        snap = json.load(sys.stdin)
+        now = datetime.datetime.now(datetime.timezone.utc)
+        print(json.dumps(eligible_groups(snap['videos'], now), ensure_ascii=False))
+        return 0
     try:
         snap = fetch_snapshot(a.handle, os.environ.get('YT_BASE', DEFAULT_BASE))
     except LookupError as e:
         print(str(e), file=sys.stderr); return 2
     except ApiError as e:
         print(f'YouTube API ปฏิเสธ: {e}', file=sys.stderr); return 3
+    if a.projects:
+        m = match_projects(snap['videos'], a.projects)
+        for v in snap['videos']:
+            v['project'] = m[v['id']]
+            v.update(classify(v, v['project'], a.projects))
     print(json.dumps(snap, ensure_ascii=False))
     return 0
 
