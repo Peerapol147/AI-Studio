@@ -157,6 +157,7 @@ window.GB = (function () {
     const mus = el('path', { d: '', fill: 'url(#gMus)', stroke: 'var(--accent2)', 'stroke-width': 2.5 });
     const musGlow = el('path', { d: '', fill: 'var(--accent)', opacity: 0, filter: 'url(#glowL)' });
     const musLine = el('path', { d: '', fill: 'none', stroke: '#fff', 'stroke-width': 2, opacity: .35 });
+    if (f.dorm) { shaft.setAttribute('stroke', 'var(--accent)'); shaft.setAttribute('stroke-width', '15'); shaftGlow.setAttribute('stroke', 'var(--accent)'); shaftGlow.setAttribute('stroke-width', '40'); }
     if (f.back) { mus.setAttribute('filter', 'url(#blur3)'); mus.setAttribute('opacity', '.7'); musLine.setAttribute('opacity', '0'); }
     return { f, g, body, pap, papGlow, inHair, gl, stem, stemGlow, top, shaft, shaftGlow, shaftHi, mus, musGlow, musLine };
   }
@@ -184,7 +185,7 @@ window.GB = (function () {
       [T.muscleW, [540, 900, 1.75, -2], 6, .85], [T.cold, [540, 900, 1.75, -2], 6], [T.pop, [530, 900, 1.6, 1.5], 9, .85], [T.stand - .05, [540, 780, 1.3, 0], 7, .7],
       [T.popEnd, [540, 860, 1.2, 0], 4], [T.twist, [540, 860, 1.25, -16], 30], [T.twist + .05, [560, 860, 1.32, 0], 6, .45], [T.useless, [620, 860, 1.2, 0], 3],
       [T.mouse, [620, 860, 1.2, 0]], [T.regrow, [780, 940, 1.5, 0], 30], [T.regrow + .05, [800, 960, 1.7, 0], 3.5, .9],
-      [T.newhair, [820, 1000, 1.9, 0], 30], [T.newhair + .05, [830, 960, 1.8, 0], 4, .9], [T.newW, [850, 700, 1.3, 0], 4.5, .85]], t);
+      [T.newhair, [820, 1000, 1.9, 0], 30], [T.newhair + .05, [830, 960, 1.8, 0], 4, .9], [T.newW, [850, 600, 1.3, 0], 4.5, .85]], t);
     const [cx, cy, sc, rl] = cam;
     const dx = 10 * Math.sin(t * .9), dy = 7 * Math.cos(t * .7), rr = rl + .6 * Math.sin(t * .5);
     R.cam.setAttribute('transform', `translate(${f1(540 + dx)} ${f1(900 + dy)}) rotate(${f3(rr)}) scale(${f3(sc)}) translate(${f1(-cx)} ${f1(-cy)})`);
@@ -225,7 +226,7 @@ window.GB = (function () {
         F.shaft.setAttribute('d', dd); F.shaftGlow.setAttribute('d', dd); F.shaftHi.setAttribute('d', dd);
         F.tip = [hx, hy];
       } else { F.shaft.setAttribute('d', ''); F.shaftGlow.setAttribute('d', ''); F.shaftHi.setAttribute('d', ''); F.tip = [ox, oy]; }
-      F.shaftGlow.setAttribute('opacity', f3(.3 + .5 * pulse(t, T.stand, .6) * (f.dorm ? 0 : 1) + (f.dorm ? .6 * pulse(t, T.newW + .1, .9) : 0)));
+      F.shaftGlow.setAttribute('opacity', f3(.3 + .5 * pulse(t, T.stand, .6) * (f.dorm ? 0 : 1) + (f.dorm ? .35 * st.hairNew + .5 * pulse(t, T.newW + .1, .9) : 0)));
       F.inHair.setAttribute('opacity', f.dorm ? f3(.25 + .75 * st.grow) : '1');
       // stem cells / root
       const wake = f.dorm ? st.wake : (f.id === 'H' ? st.wake * .35 : 0);
@@ -263,8 +264,8 @@ window.GB = (function () {
     R.snow.forEach(s => { const tt = t - T.newW; const y = s.y0 + s.sp * tt + 260, x = s.x + 30 * Math.sin(tt * s.w + s.ph);
       s.g.setAttribute('transform', `translate(${f1(x)} ${f1(y)}) rotate(${f1(tt * 60 * s.w)})`); s.g.setAttribute('opacity', f3(sn * (y < 690 ? 0.9 : 0))); });
     const D = R.fol[2];
-    R.spark.setAttribute('transform', `translate(${f1(D.tip[0])} ${f1(D.tip[1])}) scale(${f3(.6 + 1.2 * (1 - pulse(t, T.newW + .1, .35)))})`);
-    R.spark.setAttribute('opacity', f3(t > T.newW ? pulse(t, T.newW + .1, .45) : 0));
+    R.spark.setAttribute('transform', `translate(${f1(D.tip[0])} ${f1(D.tip[1])}) scale(${f3(1.2 + 2.2 * (1 - pulse(t, T.newW + .1, .35)))})`);
+    R.spark.setAttribute('opacity', f3(t > T.newW ? pulse(t, T.newW + .1, .7) : 0));
     // dive: the real skin card zooms through the camera, cross-section behind
     const du = t - T.dive;
     if (du >= 0 && du < 1.0) {
