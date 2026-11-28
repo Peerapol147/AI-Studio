@@ -8,8 +8,7 @@
   "action_at": 1.0
  },
  "jet": {
-  "src": "assets/footage/nasa-airbos-shockwaves.jpg",
-  "action_at": 0
+  "src": "assets/footage/nasa-airbos-shockwaves.jpg"
  },
  "feet": {
   "src": "assets/footage/pixabay-3627.mp4",
@@ -36,16 +35,14 @@
   "action_at": 8.0
  },
  "calmearth": {
-  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001386.jpg",
-  "action_at": 0
+  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001386.jpg"
  },
  "nothing": {
   "src": "assets/footage/pixabay-285663.mp4",
   "action_at": 1.0
  },
  "moon": {
-  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001982.jpg",
-  "action_at": 0
+  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001982.jpg"
  },
  "tide": {
   "src": "assets/footage/pixabay-148100.mp4",
