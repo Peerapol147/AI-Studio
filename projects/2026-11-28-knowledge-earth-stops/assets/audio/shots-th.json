@@ -4,7 +4,7 @@
  "duration": 42.955,
  "inputs": {
   "shots.json": "6c39b4ad4f4c3abe52e40b480f99f83cb967c3b1896a1b55e3a553b81c7fee1f",
-  "footage.json": "73399c041c7e931ed350e761f114d690936e70e7a5e754b5e309f593b077a52c",
+  "footage.json": "b28219550983e31b0c5aac409c5b15a8baab60065f9bd7f10f887f75f9464304",
   "assets/audio/words.json": "5090110a73f26d75f0341b265d7b606316413710a95717856ea4311436966c6e"
  },
  "shots": [
@@ -96,14 +96,13 @@
   },
   {
    "id": "storm",
-   "src": "assets/footage/nasa-jsc2019m000806_Hurricane_Dorian_190902.mp4",
+   "src": "assets/footage/nasa-iss072e001650-helene.jpg",
    "cue": "ลม",
    "word_at": 15.9,
    "start": 15.82,
    "beat": "explain",
    "end": 18.72,
-   "dur": 2.9,
-   "media_start": 0.92
+   "dur": 2.9
   },
   {
    "id": "daynight",

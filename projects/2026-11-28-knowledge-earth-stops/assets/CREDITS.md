@@ -6,7 +6,7 @@
 - nasa-GSFC_20171208_Archive_e001386.jpg: GSFC/NASA (NASA public domain) https://images.nasa.gov/details/GSFC_20171208_Archive_e001386
 - nasa-GSFC_20171208_Archive_e001982.jpg: GSFC/NASA (NASA public domain) https://images.nasa.gov/details/GSFC_20171208_Archive_e001982
 - nasa-airbos-shockwaves.jpg: NASA Ames/Armstrong AirBOS4 — คลื่นกระแทกของ T-38 สองลำที่ Mach 1.01 (NASA public domain) https://images.nasa.gov/details/ACD21-0016-002_F4_P3_RGB_planedrop_cleaned
-- nasa-jsc2019m000806_Hurricane_Dorian_190902.mp4: JSC/NASA (NASA public domain) https://images.nasa.gov/details/jsc2019m000806_Hurricane_Dorian_190902
+- nasa-iss072e001650-helene.jpg: NASA/ISS Expedition 72 — Hurricane Helene pictured from the space station (NASA public domain) https://images.nasa.gov/details/iss072e001650
 - pixabay-148100.mp4: immikhan06 (Pixabay Content License) https://pixabay.com/videos/id-148100/
 - pixabay-18491.mp4: Christopher_OToole_Images (Pixabay Content License) https://pixabay.com/videos/id-18491/
 - pixabay-1900.mp4: VariousPhotography (Pixabay Content License) https://pixabay.com/videos/id-1900/
