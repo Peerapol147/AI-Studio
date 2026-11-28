@@ -95,6 +95,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #mstxt{top:1280px;font-size:104px;-webkit-text-stroke:.05em var(--ink);letter-spacing:.02em}
 #mssub{top:1410px;font-size:70px;color:var(--text)}
 #slowtag{left:540px;top:1300px;font-size:58px;padding:16px 34px 20px;background:var(--panel);color:var(--text);box-shadow:0 0 0 7px var(--ink)}
+#stormlab{right:56px;top:262px;font-size:32px;padding:12px 22px;background:rgba(16,8,10,.82);color:var(--text);border-radius:16px;font-weight:700}
 
 </style></head><body>
 <div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
@@ -116,9 +117,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
  <div class="grp" id="gp-jet"><div class="pill" id="jetlab">คลื่นกระแทกจริง เมื่อเครื่องบินเร็วกว่าเสียง (NASA)</div></div>
  <div class="grp" id="gp-speedo"><div class="big" id="spd" style="top:1292px;font-size:160px">~0<span class="unit">กม./ชม.</span></div></div>
  <div class="grp" id="gp-storm">
-  <div class="card" style="top:1280px;height:250px;left:70px;width:640px"></div>
-  <div class="small" style="position:absolute;left:70px;width:640px;top:1294px;font-size:44px">ลมแรงสุดที่เคยวัดได้</div>
-  <div class="big" id="wind" style="top:1360px;left:70px;width:640px;font-size:130px">0<span class="unit">กม./ชม.</span></div>
+  <div class="pill" id="stormlab">ภาพ: เฮอริเคน Helene จาก ISS (NASA)</div>
+  <div class="card" style="top:1272px;height:246px;left:70px;width:640px"></div>
+  <div class="small" style="position:absolute;left:70px;width:640px;top:1282px;font-size:38px">ลมกระโชกแรงสุดที่เคยวัดได้</div>
+  <div class="big" id="wind" style="top:1330px;left:70px;width:640px;font-size:118px">0<span class="unit">กม./ชม.</span></div>
+  <div class="small" style="position:absolute;left:70px;width:640px;top:1460px;font-size:32px;opacity:.85">ไซโคลน Olivia, ออสเตรเลีย 1996</div>
   <div id="x4"><svg viewBox="0 0 10 10"><path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>4</div>
  </div>
  <div class="grp" id="gp-east"><div id="arrow"><svg viewBox="0 0 900 240"><path d="M0 62 H640 V0 L900 120 L640 240 V178 H0 Z" fill="var(--accent)" stroke="var(--ink)" stroke-width="12" stroke-linejoin="round"/></svg><div class="t">ตะวันออก</div></div></div>

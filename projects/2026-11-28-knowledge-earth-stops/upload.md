@@ -21,7 +21,7 @@
 แหล่งข้อมูล: Stephenson et al. 2016 (Proc. R. Soc. A), de Winter et al. 2020 (Paleoceanography and Paleoclimatology), WMO/Bureau of Meteorology (สถิติลม), Space.com, Wikipedia "Earth's rotation"
 
 เครดิต
-ภาพ: NASA (Blue Marble, Black Marble, AirBOS, Hurricane Dorian จาก ISS, ดวงจันทร์) — สาธารณสมบัติ; ฟุตเทจจาก Pixabay (Pixabay Content License)
+ภาพ: NASA (Blue Marble, Black Marble, AirBOS, เฮอริเคน Helene จาก ISS, ดวงจันทร์) — สาธารณสมบัติ; ฟุตเทจจาก Pixabay (Pixabay Content License)
 เพลง: "Antigone et Créon" by Ehma (Jamendo) — CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
 เสียงพากย์: AI (ElevenLabs)
 

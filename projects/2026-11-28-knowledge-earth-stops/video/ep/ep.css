@@ -33,3 +33,4 @@
 #mstxt{top:1280px;font-size:104px;-webkit-text-stroke:.05em var(--ink);letter-spacing:.02em}
 #mssub{top:1410px;font-size:70px;color:var(--text)}
 #slowtag{left:540px;top:1300px;font-size:58px;padding:16px 34px 20px;background:var(--panel);color:var(--text);box-shadow:0 0 0 7px var(--ink)}
+#stormlab{right:56px;top:262px;font-size:32px;padding:12px 22px;background:rgba(16,8,10,.82);color:var(--text);border-radius:16px;font-weight:700}
