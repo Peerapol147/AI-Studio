@@ -196,3 +196,37 @@ def test_young_videos_not_counted():
 def test_groups_are_separate():
     g = yt_stats.eligible_groups(vids(10) + vids(4, fmt='long'), NOW)
     assert g['knowledge/short']['eligible'] and not g['knowledge/long']['eligible']
+
+
+# ---- Task 6: dashboard files (rows) ----
+def snap(day, views, ids=('a', 'b')):
+    return {'taken_at': f'{day}T01:00:00Z', 'channel': {}, 'videos': [
+        {'id': i, 'title': i, 'published_at': '2026-11-01T00:00:00Z', 'duration_s': 30, 'views': views, 'likes': 1,
+         'comments': None, 'project': None, 'channel': 'knowledge', 'format': 'short'} for i in ids]}
+
+
+def test_dashboard_files_adds_snapshot_date_and_history():
+    videos, history = yt_stats.dashboard_files(snap('2026-12-01', 10), [])
+    assert videos[0]['snapshot_date'] == '2026-12-01' and 'taken_at' not in videos[0]
+    assert history == [{'date': '2026-12-01', 'video_id': i, 'views': 10, 'likes': 1, 'comments': None} for i in ('a', 'b')]
+
+
+def test_dashboard_files_appends_new_day_and_keeps_old():
+    _, h1 = yt_stats.dashboard_files(snap('2026-12-01', 10), [])
+    _, h2 = yt_stats.dashboard_files(snap('2026-12-02', 15), h1)
+    assert [r['date'] for r in h2] == ['2026-12-01'] * 2 + ['2026-12-02'] * 2
+
+
+def test_dashboard_files_rerun_same_day_replaces_not_duplicates():
+    _, h1 = yt_stats.dashboard_files(snap('2026-12-01', 10), [])
+    _, h2 = yt_stats.dashboard_files(snap('2026-12-01', 12), h1)
+    assert len(h2) == 2 and all(r['views'] == 12 for r in h2)
+
+
+def test_dashboard_files_cli_writes_files(tmp_path):
+    (tmp_path / 's.json').write_text(json.dumps(snap('2026-12-01', 10)))
+    r = subprocess.run([sys.executable, str(TOOL), 'dashboard-files', '--out', str(tmp_path / 'o')],
+                       input=(tmp_path / 's.json').read_text(), capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert len(json.loads((tmp_path / 'o' / 'videos.json').read_text())) == 2
+    assert len(json.loads((tmp_path / 'o' / 'history.json').read_text())) == 2

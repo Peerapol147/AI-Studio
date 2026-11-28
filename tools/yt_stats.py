@@ -7,6 +7,8 @@
        "videos": [{id, title, published_at, duration_s, views, likes|null, comments|null}]}
   python3 tools/yt_stats.py eligibility < snapshot.json   (snapshot ต้องมี channel/format: ใช้ --projects ตอน collect)
       กลุ่ม "<channel>/<format>" -> {n, eligible, reason}; ต้องมี >=10 คลิปอายุ >=7 วันถึงสรุปได้
+  python3 tools/yt_stats.py dashboard-files --out DIR [--history old-history.json] < snapshot.json
+      เขียน DIR/videos.json และ DIR/history.json (ประวัติเดิม + วันนี้ แทนที่วันเดียวกัน) สำหรับอัปโหลดเข้าแดชบอร์ด
       exit 2 = ไม่พบช่อง / ไม่มีคลิป, exit 3 = API ปฏิเสธ (key ผิด, โควตาหมด ฯลฯ; เหตุผลอยู่ stderr)
 
 Key: ถ้ามี env YOUTUBE_API_KEY จะส่งใน header x-goog-api-key (ไม่ใส่ใน URL); ถ้าไม่มี พึ่ง proxy ของ environment ที่แนบให้
@@ -140,12 +142,36 @@ def eligible_groups(videos, now, min_videos=10, min_age_days=7):
     return out
 
 
+VIDEO_COLS = ('id', 'title', 'published_at', 'duration_s', 'views', 'likes', 'comments', 'project', 'channel', 'format')
+
+
+def dashboard_files(snap, history):
+    """snapshot (collect --projects) + ประวัติเดิม -> (videos rows, history rows) สำหรับไฟล์ของแดชบอร์ด
+    ประวัติของวันเดียวกันถูกแทนที่ (รันซ้ำวันเดียวกันไม่ซ้ำแถว) วันเก่าเก็บไว้"""
+    day = snap['taken_at'][:10]
+    videos = [{**{k: v.get(k) for k in VIDEO_COLS}, 'snapshot_date': day} for v in snap['videos']]
+    kept = [r for r in history if r['date'] != day]
+    today = [{'date': day, 'video_id': v['id'], 'views': v['views'], 'likes': v['likes'], 'comments': v['comments']}
+             for v in snap['videos']]
+    return videos, kept + today
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest='cmd', required=True)
     c = sub.add_parser('collect'); c.add_argument('handle'); c.add_argument('--projects')
     sub.add_parser('eligibility')
+    d = sub.add_parser('dashboard-files'); d.add_argument('--out', required=True); d.add_argument('--history')
     a = ap.parse_args(argv)
+    if a.cmd == 'dashboard-files':
+        snap = json.load(sys.stdin)
+        hist = json.loads(pathlib.Path(a.history).read_text(encoding='utf-8')) if a.history else []
+        videos, history = dashboard_files(snap, hist)
+        out = pathlib.Path(a.out); out.mkdir(parents=True, exist_ok=True)
+        (out / 'videos.json').write_text(json.dumps(videos, ensure_ascii=False), encoding='utf-8')
+        (out / 'history.json').write_text(json.dumps(history, ensure_ascii=False), encoding='utf-8')
+        print(f'videos.json {len(videos)} แถว, history.json {len(history)} แถว -> {out}')
+        return 0
     if a.cmd == 'eligibility':
         snap = json.load(sys.stdin)
         now = datetime.datetime.now(datetime.timezone.utc)
