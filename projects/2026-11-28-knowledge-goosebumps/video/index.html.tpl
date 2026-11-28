@@ -60,6 +60,21 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .cap-underline .cap span{-webkit-text-stroke:17px #000;paint-order:stroke fill}
 .cap-underline .cap em{display:inline-block;line-height:1.05;padding-bottom:8px;border-bottom:18px solid var(--accent);border-radius:4px}
 /* ---- EPISODE CSS (editor adds the episode's own graphics styles here) ---- */
+#root{--skin:color-mix(in oklab,var(--accent2) 55%,var(--bg2));--skinhi:color-mix(in oklab,var(--accent2) 62%,#fff);
+  --skinlo:color-mix(in oklab,var(--bg2) 45%,var(--bg));--muscle:color-mix(in oklab,var(--bg2) 70%,var(--bg));
+  --hair:color-mix(in oklab,var(--accent) 38%,var(--accent2))}
+.ovh{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;pointer-events:none}
+.ovi{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.gsvg{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0}
+#dive-img{position:absolute;left:540px;top:1160px;width:1000px;height:720px;border-radius:36px;z-index:2;opacity:0;transform:translate(-50%,-50%)}
+.chip{position:absolute;left:0;top:0;z-index:3;font-weight:700;font-size:84px;line-height:1.25;color:var(--ink);background:var(--accent);
+  padding:.04em .5em .16em;border-radius:.42em;box-shadow:0 0 0 8px var(--ink),0 18px 50px rgba(0,0,0,.55);opacity:0;white-space:nowrap}
+.gchip{z-index:30;font-size:78px}
+.qm{position:absolute;left:0;top:0;z-index:3;font-weight:700;font-size:420px;line-height:1;color:var(--accent);opacity:0;
+  -webkit-text-stroke:14px var(--ink);paint-order:stroke fill;text-shadow:0 0 50px var(--accent2)}
+.qm.q2{color:var(--accent2);z-index:2;text-shadow:none}
+#scan{position:absolute;left:0;top:-300px;width:160px;height:1500px;opacity:0;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0%,color-mix(in oklab,var(--accent) 70%,transparent) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:screen}
 </style></head><body>
 <div id="root" class="%%CAPSTYLE%% %%OPENING%%" data-composition-id="main" data-start="0" data-duration="%%DUR%%" data-width="1080" data-height="1920"
  data-motion-blur="on" data-motion-blur-events="on">
@@ -69,8 +84,19 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div id="stage" data-layout-allow-overflow data-layout-allow-overlap>
 <div id="scenes" data-layout-allow-overflow data-layout-allow-overlap style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;isolation:isolate">
 %%SCENES%%
+<div class="ovh" id="ov-skin" data-host="dive muscle pop twist regrow newhair"><div id="skin-in" class="ovi"><img id="dive-img" src="assets/hook-skin.jpg" alt=""/>
+ <div id="m-lab" class="chip">กล้ามเนื้อจิ๋ว</div><div id="q-mark" class="qm">?</div><div id="q-mark2" class="qm q2">?</div></div></div>
+<div class="ovh" id="ov-cat" data-host="cat" data-kb="1"><div id="cat-in" class="ovi"></div></div>
+<div class="ovh" id="ov-human" data-host="human" data-kb="1"><div class="ovi"><div style="position:absolute;left:40px;top:280px;width:1000px;height:853px;border-radius:36px;overflow:hidden"><div id="scan"></div></div></div></div>
+<div class="ovh" id="ov-nope" data-host="nope"><div id="nope-in" class="ovi"></div></div>
+<div class="ovh" id="ov-anc" data-host="ancestor"><div id="anc-in" class="ovi"></div></div>
+<div class="ovh" id="ov-music" data-host="music"><div id="music-in" class="ovi"></div></div>
+<div class="ovh" id="ov-brain" data-host="brain"><div id="brain-in" class="ovi"><div id="d-chip" class="chip" style="font-size:110px">โดพามีน</div></div></div>
+<div class="ovh" id="ov-cta" data-host="cta"><div class="ovi"><div id="c-chip" class="chip" style="font-size:104px">เพลงไหน?</div></div></div>
 </div>
 <!-- EPISODE GRAPHICS: editor adds the episode's own layers here (charts, icons, cards); fill #g-<shot id> slots -->
+<div id="s-chip" class="chip gchip">นักวิทยาศาสตร์มองว่า</div>
+<div id="h-chip" class="chip gchip">ในหนู · Harvard 2020</div>
 <div id="flash"></div>
 </div>
 <div id="tshade"></div>
@@ -84,6 +110,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 %%MUSIC%%
 </div>
 
+<script src="goosebumps.js"></script>
 <script>
 /* Brainrot v3: closed-form motion, everything a function of t (seek-safe). Look (palette/font/caption/opening/
    transition) comes from look.json via CSS variables + classes. Pacing: hook/twist shots = fast camera (punchier
@@ -146,7 +173,7 @@ function captions(t){
   capEls[i].style.transform=BOX?`translateX(-50%) ${tr}`:tr;
 }
 // EPISODE MOTION: editor adds functions of t for the episode graphics and calls them in render()
-function episode(t){}
+function episode(t){ GB.render(t,SC); }
 function render(t){ scenes(t); title(t); captions(t); episode(t); }
 const proxy={_t:0}; Object.defineProperty(proxy,'t',{get(){return this._t;},set(v){this._t=v;render(v);}});
 const tl=gsap.timeline({paused:true});
