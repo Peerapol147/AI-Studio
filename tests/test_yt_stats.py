@@ -149,7 +149,12 @@ def test_no_match_returns_none(tmp_path):
 def test_channel_from_folder_name():
     assert yt_stats.classify({'duration_s': 600}, '2026-11-17-knowledge-nature', None)['channel'] == 'knowledge'
     assert yt_stats.classify({'duration_s': 600}, '2026-11-17-football-x', None)['channel'] == 'football'
-    assert yt_stats.classify({'duration_s': 600}, None, None)['channel'] == 'unknown'
+    assert yt_stats.classify({'duration_s': 600}, None, None)['channel'] == 'knowledge'
+
+
+def test_unmatched_football_title_goes_to_football():
+    assert yt_stats.classify({'duration_s': 30, 'title': 'ฟุตบอลโลกเริ่มยังไง'}, None, None)['channel'] == 'football'
+    assert yt_stats.classify({'duration_s': 30, 'title': 'Premier League ทำไมแพง'}, None, None)['channel'] == 'football'
 
 
 def test_format_short_when_duration_le_60_and_no_project():

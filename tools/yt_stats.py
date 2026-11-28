@@ -2,7 +2,7 @@
 """สถิติสาธารณะของทุกคลิปในช่อง YouTube (YouTube Data API v3) -> JSON ออก stdout. ไม่เขียน DB ไม่เก็บ key.
 
   python3 tools/yt_stats.py collect @vision6498 [--projects projects]
-      --projects เพิ่มฟิลด์ project (ชื่อโฟลเดอร์|null), channel (knowledge|football|unknown), format (short|long)
+      --projects เพิ่มฟิลด์ project (ชื่อโฟลเดอร์|null), channel (knowledge|football; จับคู่ไม่ได้ = knowledge เว้นแต่ชื่อมีคำฟุตบอล), format (short|long)
       {"channel": {id, handle, title, subscribers}, "taken_at": ISO8601 UTC,
        "videos": [{id, title, published_at, duration_s, views, likes|null, comments|null}]}
   python3 tools/yt_stats.py eligibility < snapshot.json   (snapshot ต้องมี channel/format: ใช้ --projects ตอน collect)
@@ -115,7 +115,9 @@ def classify(video, project, projects_dir):
         if b.exists():
             mm = re.search(r'รูปแบบ:\s*(short|long)', b.read_text(encoding='utf-8'))
             fmt = mm.group(1) if mm else None
-    return {'channel': m.group(1) if m else 'unknown',
+    # ทุกคลิปในช่องเป็นของเรา (ผู้ใช้ยืนยัน 2026-11-28): จับคู่โฟลเดอร์ไม่ได้ = ความรู้ เว้นแต่ชื่อพูดถึงฟุตบอล
+    football = re.search(r'ฟุตบอล|football|premier league|พรีเมียร์ลีก|ลาลีกา|บุนเดสลีกา|แข้ง', video.get('title', ''), re.I)
+    return {'channel': m.group(1) if m else ('football' if football else 'knowledge'),
             'format': fmt or ('short' if video['duration_s'] <= 60 else 'long')}
 
 
