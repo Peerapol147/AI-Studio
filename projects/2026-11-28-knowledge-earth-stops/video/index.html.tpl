@@ -81,7 +81,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .unit{font-size:.42em;color:var(--text);margin-left:.15em}
 .card{position:absolute;left:90px;width:900px;border-radius:40px;background:var(--panel);box-shadow:0 0 0 8px var(--ink),0 24px 60px rgba(0,0,0,.55)}
 .small{font-weight:700;color:var(--paneltext);text-align:center;white-space:nowrap;line-height:1.3}
-#x4{position:absolute;left:690px;top:390px;font-weight:900;font-size:150px;line-height:1;color:var(--ink);background:var(--accent2);padding:6px 34px 14px;border-radius:32px;box-shadow:0 0 0 8px var(--ink);transform-origin:50% 50%}
+#x4{position:absolute;left:700px;top:800px;font-weight:900;font-size:150px;line-height:1;color:var(--ink);background:var(--accent2);padding:6px 34px 14px;border-radius:32px;box-shadow:0 0 0 8px var(--ink);transform-origin:50% 50%}
 #arrow{position:absolute;left:150px;top:700px;width:900px;height:240px;transform-origin:0 50%}
 #arrow svg{position:absolute;left:0;top:0;width:900px;height:240px;overflow:visible}
 #arrow .t{position:absolute;left:70px;top:0;height:240px;display:flex;align-items:center;font-weight:900;font-size:98px;color:var(--ink);white-space:nowrap}
@@ -227,7 +227,7 @@ function lonC(t){
   if(t<SHOT.storm.a) return 128-14*(STOP2-SHOT.speedo.a);     // east: stopped
   if(t<SHOT.slow.a) return 108;                               // daynight / six months / orbit: not spinning
   if(t<SHOT.choose.a){const u=t-SHOT.slow.a; return 128-(16*u-2.5*u*u);}  // real: spins, a little slower
-  if(t<SHOT.loop.a) return 133+6*(SHOT.loop.a-t);
+  if(t<SHOT.loop.a) return 100+12*(t-SHOT.choose.a);              // choose: night half over East Asia's city lights
   return 100+40*(DUR-t);                                      // loop: ends on the frame-0 globe
 }
 // per-shot target state of the globe
@@ -271,7 +271,7 @@ function sunInfo(t){ const sa=SHOT.orbit.a, ob=SHOT.orbit.b;
   const so=t<sa?0:eio((t-sa)/0.3)*(t>ob?Math.max(0,1-(t-ob)/0.12):1);
   const th=Math.PI*eio((t-sa)/(ob-sa));
   const on=t>=SHOT.daynight.a&&t<SHOT.calmearth.a+0.12;
-  return {so:on?so:0, behind:t>=sa&&t<ob+0.12&&Math.sin(th)<0, left:on&&t<sa+0.3?0.5*(1-so):0};
+  return {so:on?so:0, behind:t>=sa&&t<ob+0.12&&Math.sin(th)<0, left:on&&t<sa+0.3?0.32*(1-so):0};
 }
 
 
@@ -286,7 +286,6 @@ const rnd=(i,k)=>{const x=Math.sin(i*127.1+k*311.7)*43758.5453;return x-Math.flo
 function project(g,latD,lonD){ const la=latD*RAD, dl=(lonD-g.lon)*RAD;
   const X=Math.cos(la)*Math.sin(dl), Y=Math.sin(la), Z=Math.cos(la)*Math.cos(dl);
   const y=Y*CPH-Z*SPH, z=Y*SPH+Z*CPH; return {x:g.x+X*g.r, y:g.y-y*g.r, vis:z>0.05};}
-const ctxU=$('glu').getContext('2d'), ctxO=$('glo').getContext('2d'); let ctx=ctxO;
 // speed lines + debris flying east (to the right) after a stop
 function streaks(t,t0,g,n,a){ if(t<t0) return; const u=t-t0, fade=a*Math.min(1,u/0.06);
   for(let i=0;i<n;i++){ const sp=1500+rnd(i,1)*2200, len=90+rnd(i,2)*320, y=g.y+(rnd(i,3)*2-1)*g.r*1.15;
@@ -353,7 +352,7 @@ function grp(id,a){ const e=$(id); e.style.opacity=f2(clamp(a)); return e; }
 function overlays(t){
   grp('gp-jet',win(t,SHOT.jet.a+0.15,SHOT.jet.b,0.2,0.1));
   // speedo: count 0 -> 1,600 on "หนึ่งพันหกร้อย ... ชั่วโมง"
-  const sa=win(t,SHOT.speedo.a+0.1,SHOT.speedo.b,0.2,0.1); grp('gp-speedo',sa);
+  const sa=win(t,7.3,SHOT.speedo.b,0.12,0.1); grp('gp-speedo',sa);
   if(sa>0){ const v=1600*eo(clamp((t-7.3)/(8.85-7.3))); const done=t>=8.85;
     $('spd').innerHTML='~'+fmt(done?1600:Math.round(v/10)*10)+'<span class="unit">กม./ชม.</span>';
     const p=done?1+0.14*(1-S(t-8.85,20,0.35)):1+0.015*Math.sin(t*40)*(t>7.3?1:0); $('spd').style.transform=`scale(${p.toFixed(4)})`; }

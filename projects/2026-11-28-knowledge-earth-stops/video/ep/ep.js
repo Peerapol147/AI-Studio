@@ -9,7 +9,6 @@ const rnd=(i,k)=>{const x=Math.sin(i*127.1+k*311.7)*43758.5453;return x-Math.flo
 function project(g,latD,lonD){ const la=latD*RAD, dl=(lonD-g.lon)*RAD;
   const X=Math.cos(la)*Math.sin(dl), Y=Math.sin(la), Z=Math.cos(la)*Math.cos(dl);
   const y=Y*CPH-Z*SPH, z=Y*SPH+Z*CPH; return {x:g.x+X*g.r, y:g.y-y*g.r, vis:z>0.05};}
-const ctxU=$('glu').getContext('2d'), ctxO=$('glo').getContext('2d'); let ctx=ctxO;
 // speed lines + debris flying east (to the right) after a stop
 function streaks(t,t0,g,n,a){ if(t<t0) return; const u=t-t0, fade=a*Math.min(1,u/0.06);
   for(let i=0;i<n;i++){ const sp=1500+rnd(i,1)*2200, len=90+rnd(i,2)*320, y=g.y+(rnd(i,3)*2-1)*g.r*1.15;
@@ -76,7 +75,7 @@ function grp(id,a){ const e=$(id); e.style.opacity=f2(clamp(a)); return e; }
 function overlays(t){
   grp('gp-jet',win(t,SHOT.jet.a+0.15,SHOT.jet.b,0.2,0.1));
   // speedo: count 0 -> 1,600 on "หนึ่งพันหกร้อย ... ชั่วโมง"
-  const sa=win(t,SHOT.speedo.a+0.1,SHOT.speedo.b,0.2,0.1); grp('gp-speedo',sa);
+  const sa=win(t,7.3,SHOT.speedo.b,0.12,0.1); grp('gp-speedo',sa);
   if(sa>0){ const v=1600*eo(clamp((t-7.3)/(8.85-7.3))); const done=t>=8.85;
     $('spd').innerHTML='~'+fmt(done?1600:Math.round(v/10)*10)+'<span class="unit">กม./ชม.</span>';
     const p=done?1+0.14*(1-S(t-8.85,20,0.35)):1+0.015*Math.sin(t*40)*(t>7.3?1:0); $('spd').style.transform=`scale(${p.toFixed(4)})`; }

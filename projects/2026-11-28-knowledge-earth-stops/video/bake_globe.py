@@ -81,10 +81,11 @@ def sphere(s):
     lit = np.clip((ndl + soft) / (2 * soft), 0, 1); lit = lit * lit * (3 - 2 * lit)
     shade = (0.28 + 0.92 * np.maximum(ndl, 0)) * (1 - s['flat']) + 1.05 * s['flat']
     shade = shade * (0.8 + 0.2 * Z)
-    col = day * (lit * shade + (1 - lit) * 0.05)[:, None]
-    if s['night'] > 0:
-        nk = ((1 - lit) * s['night'] * 1.5)[:, None]
-        col += bilinear(NIGHT, u, V) * nk * np.array([1, 0.92, 0.7], np.float32)
+    col = day * (lit * shade + (1 - lit) * 0.04 * (1 - s['night']))[:, None]
+    if s['night'] > 0:   # Black Marble: moonlit blue base + city lights (boosted warm where the red channel is lit)
+        nt = bilinear(NIGHT, u, V); nk = ((1 - lit) * s['night'])[:, None]
+        lights = np.maximum(nt[:, :1] - 16, 0) * np.array([2.4, 1.7, 0.6], np.float32)
+        col += (nt * 1.2 + lights) * nk
     rim = ((1 - Z) ** 2.2 * 0.75 * lit)[:, None]
     col = col * (1 - rim) + np.array([140, 185, 255], np.float32) * rim
     out = np.zeros((SZ, SZ, 4), np.float32)
@@ -108,8 +109,7 @@ def radial(img, cx, cy, r0, r1, rgb, stops):
 def sun(img, t, so):
     radial(img, 540, 780, 20, 260, ACC, [(0, 0.85 * so), (0.35, 0.3 * so), (1, 0)])
     rr = 78 + 3 * math.sin(t * 5)
-    radial(img, 540, 780, rr - 1.5, rr + 1.5, np.array([255, 246, 208], np.float32), [(0, so), (1, 0)])
-    radial(img, 540, 780, 0, rr - 1.4, np.array([255, 246, 208], np.float32), [(0, so), (1, so)])
+    radial(img, 540, 780, 0, rr + 1.5, np.array([255, 246, 208], np.float32), [(0, so), (0.98, so), (1, 0)])
 
 
 def orbit_path(img, so):
@@ -123,12 +123,16 @@ def orbit_path(img, so):
     img[:] = img * (1 - al) + TXT * al
 
 
+import os
+ONLY = [int(x) for x in os.environ.get('ONLY', '').split(',') if x]   # ONLY=600,700 -> PNG test frames, no video
 out = HERE / 'assets/globe-v.mp4'
-ff = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),
+ff = None if ONLY else subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),
                        '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '15', '-pix_fmt', 'yuv420p', '-g', '15',
                        str(out)], stdin=subprocess.PIPE)
 cache = {}
 for n, s in enumerate(states):
+    if ONLY and n not in ONLY:
+        continue
     img = BGI.copy()
     if s['id']:
         t = s['t']; sn = s['sun']
@@ -157,8 +161,10 @@ for n, s in enumerate(states):
         img = np.asarray(base.convert('RGB'), np.float32)
         if sn['so'] > 0 and sn['behind']:
             sun(img, t, sn['so'])
+    if ONLY:
+        Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).save(f'/tmp/claude-0/-home-user-AI-Studio/c7192d37-438d-5c90-b6ae-9cf520a4ec73/scratchpad/g{n}.png'); continue
     ff.stdin.write(np.clip(img, 0, 255).astype(np.uint8).tobytes())
     if n % 100 == 0:
         print('frame', n, '/', len(states), file=sys.stderr)
-ff.stdin.close(); ff.wait()
+if ff: ff.stdin.close(); ff.wait()
 print('wrote', out, len(states), 'frames')

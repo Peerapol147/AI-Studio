@@ -12,7 +12,7 @@ function lonC(t){
   if(t<SHOT.storm.a) return 128-14*(STOP2-SHOT.speedo.a);     // east: stopped
   if(t<SHOT.slow.a) return 108;                               // daynight / six months / orbit: not spinning
   if(t<SHOT.choose.a){const u=t-SHOT.slow.a; return 128-(16*u-2.5*u*u);}  // real: spins, a little slower
-  if(t<SHOT.loop.a) return 133+6*(SHOT.loop.a-t);
+  if(t<SHOT.loop.a) return 100+12*(t-SHOT.choose.a);              // choose: night half over East Asia's city lights
   return 100+40*(DUR-t);                                      // loop: ends on the frame-0 globe
 }
 // per-shot target state of the globe
@@ -56,6 +56,6 @@ function sunInfo(t){ const sa=SHOT.orbit.a, ob=SHOT.orbit.b;
   const so=t<sa?0:eio((t-sa)/0.3)*(t>ob?Math.max(0,1-(t-ob)/0.12):1);
   const th=Math.PI*eio((t-sa)/(ob-sa));
   const on=t>=SHOT.daynight.a&&t<SHOT.calmearth.a+0.12;
-  return {so:on?so:0, behind:t>=sa&&t<ob+0.12&&Math.sin(th)<0, left:on&&t<sa+0.3?0.5*(1-so):0};
+  return {so:on?so:0, behind:t>=sa&&t<ob+0.12&&Math.sin(th)<0, left:on&&t<sa+0.3?0.32*(1-so):0};
 }
 
