@@ -17,7 +17,7 @@
 - ขนลุกตอนฟังเพลง: งานวิจัย (Salimpoor และคณะ, Nature Neuroscience 2011, กลุ่มตัวอย่างเล็ก) พบสมองหลั่งโดพามีนในช่วงที่ขนลุกกับเพลง
 
 แหล่งข้อมูล: ดู research.md (Harvard Gazette / Cell 2020; Nature Neuroscience 2011)
-เครดิตภาพ: (เติมจาก assets/CREDITS.md หลังได้ footage)
+เครดิตภาพ/วิดีโอ: Pixabay (Pixabay Content License) — physicsgirl, tarkan36, Fang_Y_M, iddea_photo, NickyPe, federicomaderno, u_ayuc6ef9vb, BestEdmontonMall, Matthias_Groeneveld (ลิงก์ทุกรายการใน assets/CREDITS.md)
 เพลง: "Metamorphosis" by zero-project (CC BY 3.0) https://www.jamendo.com/track/1195826
 เสียงพากย์สร้างด้วย AI (ElevenLabs)
 

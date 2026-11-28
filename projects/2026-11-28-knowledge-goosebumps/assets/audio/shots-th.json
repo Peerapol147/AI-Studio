@@ -4,7 +4,7 @@
  "duration": 37.644,
  "inputs": {
   "shots.json": "f3ec4209e23b7eb1cc0c4c492faedb08c62345312ed2d97943aa20f03daa5342",
-  "footage.json": "68011cc3b98e5e9fced8291736d79f4157115a17cc5922a6532e1273ceff7c3f",
+  "footage.json": "dd2960630f38fbd77c2b17ce3dfff3640b48879d9dab9792e8b6d7fa94abb3d6",
   "assets/audio/words.json": "f57da8b038ea2a2a24ded61c51e599e1d7cf6f8396a329a047a0d735ae37d389"
  },
  "shots": [
@@ -95,14 +95,14 @@
   },
   {
    "id": "ape",
-   "src": "assets/footage/pixabay-388020.mp4",
+   "src": "assets/footage/pixabay-85379.mp4",
    "cue": "นักวิทยาศาสตร์",
    "word_at": 17.44,
    "start": 17.36,
    "beat": "reveal",
    "end": 19.1,
    "dur": 1.74,
-   "media_start": 0.92
+   "media_start": 14.92
   },
   {
    "id": "ancestor",
