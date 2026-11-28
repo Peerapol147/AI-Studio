@@ -1,1 +1,38 @@
-{"hook":{"src":"assets/footage/pixabay-885563.jpg"},"loop":{"src":"assets/footage/pixabay-885563.jpg"}}
+{
+ "hook": {
+  "src": "assets/footage/pixabay-885563.jpg"
+ },
+ "loop": {
+  "src": "assets/footage/pixabay-885563.jpg"
+ },
+ "cat": {
+  "src": "assets/footage/pixabay-5534007.jpg"
+ },
+ "cold": {
+  "src": "assets/footage/pixabay-253979.mp4",
+  "action_at": 1.0
+ },
+ "human": {
+  "src": "assets/footage/pixabay-222664.jpg"
+ },
+ "ape": {
+  "src": "assets/footage/pixabay-388020.mp4",
+  "action_at": 1.0
+ },
+ "mouse": {
+  "src": "assets/footage/pixabay-139660.mp4",
+  "action_at": 1.0
+ },
+ "music": {
+  "src": "assets/footage/pixabay-161062.mp4",
+  "action_at": 1.5
+ },
+ "concert": {
+  "src": "assets/footage/pixabay-29322.mp4",
+  "action_at": 1.0
+ },
+ "cta": {
+  "src": "assets/footage/pixabay-65390.mp4",
+  "action_at": 1.0
+ }
+}
