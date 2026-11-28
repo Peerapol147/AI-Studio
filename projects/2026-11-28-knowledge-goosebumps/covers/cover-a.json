@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 40,
+   "y": 860,
+   "w": 1000,
+   "h": 780,
+   "font_px": 16,
+   "overflow": true
+  },
+  {
+   "kind": "text",
+   "text": "ขนลุกทีไร",
+   "x": 259.234375,
+   "y": 273,
+   "w": 561.53125,
+   "h": 206,
+   "font_px": 130,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ร่างกายพองขน",
+   "x": 95.265625,
+   "y": 515.6210327148438,
+   "w": 889.8359985351562,
+   "h": 201.7579345703125,
+   "font_px": 130,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "รู้ไหม?",
+   "x": 65.34217071533203,
+   "y": 97.4354476928711,
+   "w": 255.065673828125,
+   "h": 127.12909698486328,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-28-knowledge-goosebumps/look.json",
+  "lines": [
+   "ขนลุกทีไร",
+   "ร่างกาย*พองขน*"
+  ],
+  "palette": "sunrise-coral",
+  "font": "sarabun"
+ }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- Cover (thumbnail to upload) = a separate still, NOT frame 0 (palmaris feedback 8, 2026-11-26: "ปกชีพ ไม่น่ากด",
+     best CTR so far 11%). Frame 0 of the clip still has to be understood in 1 s with the sound off (Shorts feed shows
+     frame 0); this cover can be a curiosity line instead. Make 2 variants (A/B) every episode.
+     TEXT, COLOURS AND FONT COME FROM look.json, never typed here (review 2026-11-26: the image and the checked text
+     must be the same): tools/cover_shot.js reads <project>/look.json "covers" (lines <= 2, *word* = accent, optional
+     "badge") + the look's palette and font from templates/looks/looks.json, and injects them as window.__COVER.
+     1. look.json "covers": [{"id": "a", "lines": [..]}, {"id": "b", "lines": [..]}]  (facts only from research.md)
+     2. Draw the hero picture inside #art (hand rig: compositions/components/hand-rig/, footage still, graphic).
+     3. node ../../../tools/cover_shot.js cover.html ../covers a,b   (from video/)  -> covers/cover-a.jpg, cover-b.jpg
+     4. python3 tools/cover_check.py projects/<x>   (text = look.json, lines, repeats, overlap, edges, 200 px, old covers)
+     Opened without cover_shot.js it shows a placeholder ("แก้ข้อความ / ใน look.json"), so a forgotten cover cannot
+     pass as a real one. Variant b = light field in the look's accent colour, a = dark field in the look's bg colours.
+     Mark every text line data-cover="text", the series badge data-cover="badge", the hero picture data-cover="art". -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{--bg:#2A0F12;--bg2:#C2453A;--ink:#1A0A06;--text:#FFFFFF;--accent:#FFD23F;--accent2:#FF8A5B;--panel:#3D1714;--font:'Kanit'}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;
+  background:radial-gradient(ellipse 640px 800px at 540px 1060px,var(--bg2) 0%,var(--bg) 100%)}
+#art{position:absolute;left:90px;top:760px;width:900px;height:900px;z-index:2}
+#title{position:absolute;left:60px;right:60px;top:260px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px}
+.tl{font-weight:var(--tw,900);font-size:170px;line-height:1.3;white-space:nowrap;text-align:center;color:var(--text);
+  paint-order:stroke fill;-webkit-text-stroke:28px var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
+.tl b{color:var(--accent)}
+#badge{position:absolute;left:60px;top:140px;z-index:6;font-weight:700;font-size:42px;line-height:1;color:var(--ink);
+  background:var(--accent);padding:12px 24px 16px;border-radius:999px;box-shadow:0 0 0 5px var(--ink)}
+/* variant b: light field, dark type (A/B should differ in more than the words) */
+#root.vb{background:radial-gradient(ellipse 640px 820px at 540px 1040px,#fff3c4 0%,var(--accent) 60%,var(--accent2) 100%)}
+#root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
+#root.vb .tl b{color:var(--bg2)}
+
+/* goosebumps (feedback never-colonized: ภาพจริงจัง + คำเด่นในกล่องเอียง + ป้ายมุม + ลูกศร/วงวาดมือ; ห้ามคลิปอาร์ต) */
+#bgimg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.45) saturate(1.1);z-index:0}
+#root.vb #bgimg{filter:blur(40px) brightness(1.05) saturate(.9);opacity:.35}
+#art{left:40px;top:860px;width:1000px;height:780px}
+.card{position:absolute;left:10px;top:0;width:980px;height:735px;border-radius:26px;overflow:hidden;transform:rotate(-2deg);
+  box-shadow:0 0 0 12px var(--ink),0 30px 60px rgba(0,0,0,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+#root.vb .card{transform:rotate(2.5deg);top:40px;box-shadow:0 0 0 12px #fff,0 0 0 22px var(--ink),0 30px 60px rgba(0,0,0,.35)}
+#art svg.draw{position:absolute;left:-40px;top:-80px;width:1080px;height:900px;overflow:visible;z-index:3}
+.draw path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.draw .sh{stroke:var(--ink);stroke-width:26}
+.draw .fg{stroke:var(--accent);stroke-width:13}
+#root.vb .draw .fg{stroke:var(--bg2)}
+#root.vb .draw .sh{stroke:#fff}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 18px 10px;margin:0 4px;border-radius:22px;
+  transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.35);-webkit-text-stroke:0}
+#root.vb #title .tl b{background:var(--ink);color:var(--accent);box-shadow:0 0 0 10px #fff,0 18px 0 rgba(0,0,0,.25)}
+#badge{transform:rotate(-6deg);font-size:66px;padding:14px 34px 22px;left:70px;top:110px}
+#title{top:280px;gap:78px}
+.va,.vbo{display:none} #root:not(.vb) .va{display:block} #root.vb .vbo{display:block}
+</style></head><body>
+<div id="root">
+  <div id="bgimg"></div>
+  <div id="art" data-cover="art">
+    <div class="card va"><img src="assets/pixabay-885563.jpg" style="object-position:50% 30%"/></div>
+    <div class="card vbo"><img src="assets/pixabay-222664.jpg" style="object-position:55% 50%"/></div>
+    <svg class="draw va" viewBox="0 0 1080 900">
+      <g><path class="sh" d="M560,505 C640,430 820,440 860,520 C900,600 800,690 680,690 C560,690 480,620 520,540 C540,505 580,480 640,470"/>
+         <path class="fg" d="M560,505 C640,430 820,440 860,520 C900,600 800,690 680,690 C560,690 480,620 520,540 C540,505 580,480 640,470"/></g>
+      <g><path class="sh" d="M330,760 C380,700 450,660 520,640"/><path class="sh" d="M470,612 L524,640 L486,690"/>
+         <path class="fg" d="M330,760 C380,700 450,660 520,640"/><path class="fg" d="M470,612 L524,640 L486,690"/></g>
+    </svg>
+    <svg class="draw vbo" viewBox="0 0 1080 900">
+      <g><path class="sh" d="M600,430 C700,360 900,380 930,470 C960,560 860,640 740,640 C620,640 540,570 580,490 C600,455 640,430 700,420"/>
+         <path class="fg" d="M600,430 C700,360 900,380 930,470 C960,560 860,640 740,640 C620,640 540,570 580,490 C600,455 640,430 700,420"/></g>
+      <g><path class="sh" d="M250,820 C330,760 450,700 570,600"/><path class="sh" d="M512,590 L572,598 L560,656"/>
+         <path class="fg" d="M250,820 C330,760 450,700 570,600"/><path class="fg" d="M512,590 L572,598 L560,656"/></g>
+    </svg>
+  </div>
+  <div id="title"></div>
+  <div id="badge" data-cover="badge"></div>
+</div>
+<script>
+// injected by tools/cover_shot.js from look.json; the placeholder below is only for opening the file by hand
+const C = window.__COVER || { lines: ['แก้ข้อความ', 'ใน look.json'], badge: '', vars: {} };
+const v = new URLSearchParams(location.search).get('v') || 'a';
+const root = document.getElementById('root');
+for (const [k, val] of Object.entries(C.vars || {})) root.style.setProperty(k, val);
+if (v === 'b') root.classList.add('vb');
+document.getElementById('bgimg').style.backgroundImage = `url(assets/${v==='b'?'pixabay-222664':'pixabay-885563'}.jpg)`;
+const c = C;
+const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+document.getElementById('title').innerHTML =
+  c.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
+const bd = document.getElementById('badge');
+if (c.badge) bd.textContent = c.badge; else bd.remove();
+// draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
+{ const tls = [...document.querySelectorAll('#title .tl')];
+  const run = () => { let fs = 150; const ok = () => { tls.forEach(el => el.style.fontSize = fs + 'px');
+      return tls.every(el => el.scrollWidth <= 880); }; while (!ok() && fs > 60) fs -= 4; };
+  run(); document.fonts.ready.then(run); }
+</script>
+</body></html>

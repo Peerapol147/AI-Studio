@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 40,
+   "y": 860,
+   "w": 1000,
+   "h": 780,
+   "font_px": 16,
+   "overflow": true
+  },
+  {
+   "kind": "text",
+   "text": "ฟังเพลงขนลุก",
+   "x": 204.40625,
+   "y": 281,
+   "w": 671.171875,
+   "h": 169,
+   "font_px": 110,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "สมองหลั่งโดพามีน",
+   "x": 86.421875,
+   "y": 462.3480529785156,
+   "w": 906.8519287109375,
+   "h": 202.71389770507812,
+   "font_px": 110,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "รู้ไหม?",
+   "x": 65.34217071533203,
+   "y": 97.4354476928711,
+   "w": 255.065673828125,
+   "h": 127.12909698486328,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-28-knowledge-goosebumps/look.json",
+  "lines": [
+   "ฟังเพลงขนลุก",
+   "สมองหลั่ง*โดพามีน*"
+  ],
+  "palette": "sunrise-coral",
+  "font": "sarabun"
+ }
+}
