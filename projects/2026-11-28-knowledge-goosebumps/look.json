@@ -1,0 +1,35 @@
+{
+  "template": "brainrot-v3",
+  "palette": "sunrise-coral",
+  "font": "sarabun",
+  "caption": "underline",
+  "opening": "pov",
+  "cover": "card",
+  "transition": "whip",
+  "music_mood": "cinematic",
+  "voice": "george",
+  "tts_model": "eleven_v3",
+  "atempo": 1.1,
+  "vo_lufs": -18,
+  "music_file": null,
+  "cover_text": "ขนลุกทีไร ร่างกายพยายามทำตัวให้ใหญ่ขึ้น",
+  "why": "look.py pick แล้วแก้: palette sunrise-coral (พื้นเข้มโทนอุ่นใกล้สีผิว ทำกราฟิกรากขนเรืองแสงได้ ต่างจาก night-violet ของ itch/earth-stops), music cinematic (เพลงสร้างอารมณ์ขนลุก/frisson; ไฟล์ไม่ซ้ำ earth-stops); opening pov (kicker 'POV: ขนลุกซู่') ต่างจาก question 2 ใน 3 ตอนล่าสุด; เสียงล็อกช่อง",
+  "covers": [
+    {
+      "id": "a",
+      "lines": [
+        "ขนลุกทีไร",
+        "ร่างกาย*พองขน*"
+      ],
+      "badge": "รู้ไหม?"
+    },
+    {
+      "id": "b",
+      "lines": [
+        "ฟังเพลงแล้วขนลุก",
+        "สมองหลั่ง*โดพามีน*"
+      ],
+      "badge": "รู้ไหม?"
+    }
+  ]
+}
