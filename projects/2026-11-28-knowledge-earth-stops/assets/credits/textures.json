@@ -1,0 +1,4 @@
+{
+ "footage/tex/earth-blue-marble.jpg": "- earth-blue-marble.jpg (แผนที่โลกสำหรับลูกโลกหมุน): NASA Visible Earth Blue Marble (NASA public domain) ได้มาจากไฟล์ตัวอย่างในแพ็กเกจ npm three-globe (MIT) https://visibleearth.nasa.gov/collection/1484/blue-marble",
+ "footage/tex/earth-night.jpg": "- earth-night.jpg (แสงไฟเมืองกลางคืน): NASA Earth Observatory Black Marble / Earth at Night (NASA public domain) ได้มาจากแพ็กเกจ npm three-globe (MIT) https://earthobservatory.nasa.gov/features/NightLights"
+}

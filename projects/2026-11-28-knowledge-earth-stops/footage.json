@@ -1,0 +1,54 @@
+{
+ "hook": {
+  "src": "assets/footage/pixabay-18491.mp4",
+  "action_at": 1.0
+ },
+ "loop": {
+  "src": "assets/footage/pixabay-18491.mp4",
+  "action_at": 1.0
+ },
+ "jet": {
+  "src": "assets/footage/nasa-airbos-shockwaves.jpg",
+  "action_at": 0
+ },
+ "feet": {
+  "src": "assets/footage/pixabay-3627.mp4",
+  "action_at": 0.5
+ },
+ "calm": {
+  "src": "assets/footage/pixabay-27230.mp4",
+  "action_at": 1.0
+ },
+ "traffic": {
+  "src": "assets/footage/pixabay-1900.mp4",
+  "action_at": 1.0
+ },
+ "air": {
+  "src": "assets/footage/pixabay-92768.mp4",
+  "action_at": 1.0
+ },
+ "storm": {
+  "src": "assets/footage/nasa-jsc2019m000806_Hurricane_Dorian_190902.mp4",
+  "action_at": 1.0
+ },
+ "daynight": {
+  "src": "assets/footage/pixabay-27168.mp4",
+  "action_at": 8.0
+ },
+ "calmearth": {
+  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001386.jpg",
+  "action_at": 0
+ },
+ "nothing": {
+  "src": "assets/footage/pixabay-285663.mp4",
+  "action_at": 1.0
+ },
+ "moon": {
+  "src": "assets/footage/nasa-GSFC_20171208_Archive_e001982.jpg",
+  "action_at": 0
+ },
+ "tide": {
+  "src": "assets/footage/pixabay-148100.mp4",
+  "action_at": 1.0
+ }
+}
