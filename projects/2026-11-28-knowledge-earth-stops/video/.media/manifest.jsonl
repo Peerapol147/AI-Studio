@@ -1,0 +1,1 @@
+{"id":"grade_001","type":"grade","path":".media/luts/grade_001.cube","source":"generated","description":"cool blue purple night","grading":{"intensity":1,"lut":{"src":".media/luts/grade_001.cube","intensity":1}},"provenance":{"provider":"cube_lut.builder","prompt":"cool blue purple night","params":{"temperature":-0.16}}}

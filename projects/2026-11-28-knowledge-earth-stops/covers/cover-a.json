@@ -1,0 +1,56 @@
+{
+ "w": 1080,
+ "h": 1920,
+ "items": [
+  {
+   "kind": "art",
+   "text": "",
+   "x": 40,
+   "y": 700,
+   "w": 1000,
+   "h": 1000,
+   "font_px": 16,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "ถ้าโลกหยุดหมุน",
+   "x": 64.5,
+   "y": 285.53753662109375,
+   "w": 951.2341613769531,
+   "h": 205.9249267578125,
+   "font_px": 130,
+   "overflow": false
+  },
+  {
+   "kind": "text",
+   "text": "เราจะพุ่งไปไหน?",
+   "x": 73.765625,
+   "y": 531,
+   "w": 932.453125,
+   "h": 164,
+   "font_px": 130,
+   "overflow": false
+  },
+  {
+   "kind": "badge",
+   "text": "รู้ไหม?",
+   "x": 65.33870697021484,
+   "y": 97.50159454345703,
+   "w": 253.80694580078125,
+   "h": 126.9968032836914,
+   "font_px": 66,
+   "overflow": false
+  }
+ ],
+ "errors": [],
+ "look": {
+  "file": "/home/user/AI-Studio/projects/2026-11-28-knowledge-earth-stops/look.json",
+  "lines": [
+   "ถ้าโลก*หยุดหมุน*",
+   "เราจะพุ่งไปไหน?"
+  ],
+  "palette": "night-violet",
+  "font": "prompt"
+ }
+}

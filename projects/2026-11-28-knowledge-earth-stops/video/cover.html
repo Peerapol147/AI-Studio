@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- Cover A/B for earth-stops (separate from frame 0; style.md 9a). TEXT, COLOURS AND FONT COME FROM look.json via
+     tools/cover_shot.js (window.__COVER); never typed here. Art = the same NASA Blue Marble globe as the clip
+     (video/cover_art.py -> covers-art/*.png). Channel cover style (user liked nc-cover "สวยมากก"): serious real picture,
+     key word in a tilted box, tilted corner badge, hand-drawn arrow / ring (rough.js, vendor/).
+     A: whole globe on dark space + rough arrow curving to the right (east).  B: close crop on Southeast Asia + rough ring
+     round Thailand.  node ../../../tools/cover_shot.js cover.html ../covers a,b -->
+<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<script src="vendor/rough.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#root{--bg:#0B1026;--bg2:#3A2477;--ink:#10080A;--text:#FFFFFF;--accent:#FFE14D;--accent2:#FF6FAE;--panel:#1A1440;--font:'Prompt'}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--font),sans-serif;
+  background:url(assets/stars.png) center/cover,radial-gradient(ellipse 760px 900px at 540px 1180px,var(--bg2) 0%,var(--bg) 70%,#04050d 100%)}
+#art{position:absolute;z-index:2}
+#art img{display:block;width:100%;height:100%}
+#title{position:absolute;left:40px;right:40px;top:300px;z-index:5;display:flex;flex-direction:column;align-items:center;gap:40px}
+.tl{font-weight:var(--tw,900);font-size:150px;line-height:1.3;white-space:nowrap;text-align:center;color:var(--text);
+  paint-order:stroke fill;-webkit-text-stroke:24px var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.45)}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--text);padding:0 18px 8px;margin:0 4px;border-radius:22px;
+  transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.4);-webkit-text-stroke:22px var(--ink)}
+#badge{position:absolute;left:70px;top:110px;z-index:6;font-weight:700;font-size:66px;line-height:1;color:var(--ink);
+  background:var(--accent);padding:14px 34px 22px;border-radius:999px;box-shadow:0 0 0 6px var(--ink);transform:rotate(-6deg)}
+.draw{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:3;pointer-events:none}
+.streak{position:absolute;height:10px;border-radius:5px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.75));z-index:1}
+/* A */
+#root.va #art{left:40px;top:700px;width:1000px;height:1000px}
+/* B: close crop, keep the dark field; highlight box in accent2 */
+#root.vb{background:url(assets/stars.png) center/cover,linear-gradient(#04050d 0%,var(--bg) 40%,var(--bg) 100%)}
+#root.vb #art{left:0;top:420px;width:1080px;height:1500px}
+#root.vb #title .tl b{background:var(--accent2)}
+#root.vb #badge{background:var(--accent2);left:auto;right:70px;transform:rotate(5deg)}
+.vaonly,.vbonly{display:none}
+#root.va .vaonly,#root.vb .vbonly{display:block}
+#root.va .vbonly,#root.vb .vaonly{display:none !important}
+</style></head><body>
+<div id="root">
+  <div id="art" data-cover="art"><img class="vaonly" src="covers-art/globe-a.png" alt=""/><img class="vbonly" src="covers-art/globe-b.png" alt=""/></div>
+  <div class="vaonly">
+    <div class="streak" style="left:930px;top:1050px;width:130px"></div>
+    <div class="streak" style="left:900px;top:1250px;width:170px"></div>
+    <div class="streak" style="left:950px;top:1420px;width:110px"></div>
+  </div>
+  <svg class="draw" id="draw" viewBox="0 0 1080 1920"></svg>
+  <div id="title"></div>
+  <div id="badge" data-cover="badge"></div>
+</div>
+<script>
+const C = window.__COVER || { lines: ['แก้ข้อความ', 'ใน look.json'], badge: '', vars: {} };
+const v = new URLSearchParams(location.search).get('v') || 'a';
+const root = document.getElementById('root');
+for (const [k, val] of Object.entries(C.vars || {})) root.style.setProperty(k, val);
+root.classList.add(v === 'b' ? 'vb' : 'va');
+const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+document.getElementById('title').innerHTML =
+  C.lines.map(l => `<div class="tl" data-cover="text">${esc(l).replace(/\*([^*]+)\*/g, '<b>$1</b>')}</div>`).join('');
+{ const tls = [...document.querySelectorAll('#title .tl')]; let fs = 150;
+  const fit = () => { tls.forEach(el => el.style.fontSize = fs + 'px'); return tls.every(el => el.scrollWidth <= 960); };
+  while (!fit() && fs > 60) fs -= 4; }
+const bd = document.getElementById('badge');
+if (C.badge) bd.textContent = C.badge; else bd.remove();
+// hand-drawn marks (rough.js, fixed seed = same picture every time)
+const acc = getComputedStyle(root).getPropertyValue('--accent').trim() || '#FFE14D';
+const svg = document.getElementById('draw'), rc = rough.svg(svg);
+const opt = (o) => Object.assign({ stroke: acc, strokeWidth: 15, roughness: 1.6, bowing: 1.2, seed: 7 }, o);
+const shadow = (node) => { node.setAttribute('filter', 'drop-shadow(0 6px 0 rgba(0,0,0,.55))'); return node; };
+if (v === 'b') {
+  // ring round Thailand (cover_art.py: Thailand at x 540, y 701 of the 1500-high crop placed at y 420)
+  svg.appendChild(shadow(rc.ellipse(548, 1110, 250, 380, opt({ roughness: 1.4, seed: 3 }))));
+  svg.appendChild(shadow(rc.ellipse(552, 1106, 262, 392, opt({ strokeWidth: 8, roughness: 2.2, seed: 11 }))));
+} else {
+  // arrow from Thailand (globe centre) curving out to the right = east
+  svg.appendChild(shadow(rc.curve([[545, 1180], [690, 1050], [850, 990], [990, 1010]], opt({ seed: 5 }))));
+  svg.appendChild(shadow(rc.linearPath([[935, 950], [1000, 1012], [925, 1060]], opt({ seed: 9 }))));
+  svg.appendChild(shadow(rc.circle(545, 1182, 34, opt({ fill: acc, fillStyle: 'solid', strokeWidth: 6, seed: 2 }))));
+}
+</script>
+</body></html>
