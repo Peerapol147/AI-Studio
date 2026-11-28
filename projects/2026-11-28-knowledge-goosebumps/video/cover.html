@@ -32,43 +32,46 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 #root.vb .tl{color:var(--ink);-webkit-text-stroke-color:#fff;text-shadow:none}
 #root.vb .tl b{color:var(--bg2)}
 
-/* goosebumps (feedback never-colonized: ภาพจริงจัง + คำเด่นในกล่องเอียง + ป้ายมุม + ลูกศร/วงวาดมือ; ห้ามคลิปอาร์ต) */
-#bgimg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.45) saturate(1.1);z-index:0}
-#root.vb #bgimg{filter:blur(40px) brightness(1.05) saturate(.9);opacity:.35}
-#art{left:40px;top:860px;width:1000px;height:780px}
-.card{position:absolute;left:10px;top:0;width:980px;height:735px;border-radius:26px;overflow:hidden;transform:rotate(-2deg);
-  box-shadow:0 0 0 12px var(--ink),0 30px 60px rgba(0,0,0,.55)}
+/* goosebumps v2 (ผู้ใช้ 2026-11-28 "ปกยังไม่ดีพอ"): ตัวใหญ่ขึ้น, ภาพเปรียบเทียบ แขนขนลุก = แมวพองขน (A) / คนฟังเพลง + ผิวขนลุก (B)
+   สไตล์ปกช่อง: ภาพจริงจัง + คำเด่นในกล่องเอียง + ป้ายมุม + ลูกศร/วงวาดมือ; ห้ามคลิปอาร์ต */
+#bgimg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(40px) brightness(.4) saturate(1.1);z-index:0}
+#root.vb #bgimg{filter:blur(40px) brightness(.55) saturate(1)}
+#root.vb{background:var(--bg)}
+#root.vb .tl{color:var(--text);-webkit-text-stroke-color:var(--ink);text-shadow:0 16px 0 rgba(0,0,0,.4)}
+#art{left:0;top:700px;width:1080px;height:1220px}
+.card{position:absolute;border-radius:28px;overflow:hidden;box-shadow:0 0 0 12px var(--ink),0 30px 60px rgba(0,0,0,.6)}
 .card img{width:100%;height:100%;object-fit:cover;display:block}
-#root.vb .card{transform:rotate(2.5deg);top:40px;box-shadow:0 0 0 12px #fff,0 0 0 22px var(--ink),0 30px 60px rgba(0,0,0,.35)}
-#art svg.draw{position:absolute;left:-40px;top:-80px;width:1080px;height:900px;overflow:visible;z-index:3}
+.c-arm{left:40px;top:40px;width:620px;height:700px;transform:rotate(-5deg)}
+.c-cat{left:470px;top:430px;width:570px;height:640px;transform:rotate(6deg);box-shadow:0 0 0 12px var(--accent),0 0 0 22px var(--ink),0 30px 60px rgba(0,0,0,.6)}
+.c-mus{left:60px;top:20px;width:960px;height:1060px;transform:rotate(-2.5deg)}
+.c-skin{left:560px;top:620px;width:440px;height:440px;border-radius:50%;transform:rotate(4deg);box-shadow:0 0 0 12px var(--accent),0 0 0 22px var(--ink),0 30px 60px rgba(0,0,0,.6)}
+#art svg.draw{position:absolute;left:0;top:0;width:1080px;height:1220px;overflow:visible;z-index:3}
 .draw path{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.draw .sh{stroke:var(--ink);stroke-width:26}
-.draw .fg{stroke:var(--accent);stroke-width:13}
-#root.vb .draw .fg{stroke:var(--bg2)}
-#root.vb .draw .sh{stroke:#fff}
-#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 18px 10px;margin:0 4px;border-radius:22px;
+.draw .sh{stroke:var(--ink);stroke-width:28}
+.draw .fg{stroke:var(--accent);stroke-width:14}
+#title .tl b{display:inline-block;background:var(--accent);color:var(--ink);padding:0 20px 12px;margin:0 4px;border-radius:24px;
   transform:rotate(-3deg);box-shadow:0 0 0 10px var(--ink),0 18px 0 rgba(0,0,0,.35);-webkit-text-stroke:0}
-#root.vb #title .tl b{background:var(--ink);color:var(--accent);box-shadow:0 0 0 10px #fff,0 18px 0 rgba(0,0,0,.25)}
-#badge{transform:rotate(-6deg);font-size:66px;padding:14px 34px 22px;left:70px;top:110px}
-#title{top:280px;gap:78px}
+#badge{transform:rotate(-6deg);font-size:66px;padding:14px 34px 22px;left:70px;top:100px}
+#title{top:250px;gap:70px}
+#root.vb #title .tl b{color:var(--ink);background:var(--accent)}
 .va,.vbo{display:none} #root:not(.vb) .va{display:block} #root.vb .vbo{display:block}
 </style></head><body>
 <div id="root">
   <div id="bgimg"></div>
   <div id="art" data-cover="art">
-    <div class="card va"><img src="assets/pixabay-885563.jpg" style="object-position:50% 30%"/></div>
-    <div class="card vbo"><img src="assets/pixabay-222664.jpg" style="object-position:55% 50%"/></div>
-    <svg class="draw va" viewBox="0 0 1080 900">
-      <g><path class="sh" d="M560,505 C640,430 820,440 860,520 C900,600 800,690 680,690 C560,690 480,620 520,540 C540,505 580,480 640,470"/>
-         <path class="fg" d="M560,505 C640,430 820,440 860,520 C900,600 800,690 680,690 C560,690 480,620 520,540 C540,505 580,480 640,470"/></g>
-      <g><path class="sh" d="M330,760 C380,700 450,660 520,640"/><path class="sh" d="M470,612 L524,640 L486,690"/>
-         <path class="fg" d="M330,760 C380,700 450,660 520,640"/><path class="fg" d="M470,612 L524,640 L486,690"/></g>
+    <div class="card c-arm va"><img src="assets/pixabay-885563.jpg" style="object-position:58% 50%"/></div>
+    <div class="card c-cat va"><img src="assets/cover-cat.jpg" style="object-position:40% 30%"/></div>
+    <svg class="draw va" viewBox="0 0 1080 1220">
+      <g><path class="sh" d="M150,360 C230,300 400,310 430,390 C460,470 360,540 250,530 C140,520 90,450 130,390 C150,360 200,335 260,330"/>
+         <path class="fg" d="M150,360 C230,300 400,310 430,390 C460,470 360,540 250,530 C140,520 90,450 130,390 C150,360 200,335 260,330"/></g>
+      <g><path class="sh" d="M250,860 C300,980 380,1030 470,1010"/><path class="sh" d="M420,968 L478,1010 L428,1062"/>
+         <path class="fg" d="M250,860 C300,980 380,1030 470,1010"/><path class="fg" d="M420,968 L478,1010 L428,1062"/></g>
     </svg>
-    <svg class="draw vbo" viewBox="0 0 1080 900">
-      <g><path class="sh" d="M600,430 C700,360 900,380 930,470 C960,560 860,640 740,640 C620,640 540,570 580,490 C600,455 640,430 700,420"/>
-         <path class="fg" d="M600,430 C700,360 900,380 930,470 C960,560 860,640 740,640 C620,640 540,570 580,490 C600,455 640,430 700,420"/></g>
-      <g><path class="sh" d="M250,820 C330,760 450,700 570,600"/><path class="sh" d="M512,590 L572,598 L560,656"/>
-         <path class="fg" d="M250,820 C330,760 450,700 570,600"/><path class="fg" d="M512,590 L572,598 L560,656"/></g>
+    <div class="card c-mus vbo"><img src="assets/cover-music.jpg" style="object-position:50% 28%"/></div>
+    <div class="card c-skin vbo"><img src="assets/pixabay-222664.jpg" style="object-position:60% 55%"/></div>
+    <svg class="draw vbo" viewBox="0 0 1080 1220">
+      <g><path class="sh" d="M560,450 C640,470 700,540 720,610"/><path class="sh" d="M672,580 L722,618 L752,560"/>
+         <path class="fg" d="M560,450 C640,470 700,540 720,610"/><path class="fg" d="M672,580 L722,618 L752,560"/></g>
     </svg>
   </div>
   <div id="title"></div>
@@ -81,7 +84,7 @@ const v = new URLSearchParams(location.search).get('v') || 'a';
 const root = document.getElementById('root');
 for (const [k, val] of Object.entries(C.vars || {})) root.style.setProperty(k, val);
 if (v === 'b') root.classList.add('vb');
-document.getElementById('bgimg').style.backgroundImage = `url(assets/${v==='b'?'pixabay-222664':'pixabay-885563'}.jpg)`;
+document.getElementById('bgimg').style.backgroundImage = `url(assets/${v==='b'?'cover-music':'pixabay-885563'}.jpg)`;
 const c = C;
 const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
 document.getElementById('title').innerHTML =
@@ -90,8 +93,8 @@ const bd = document.getElementById('badge');
 if (c.badge) bd.textContent = c.badge; else bd.remove();
 // draw the hero picture into #art here (e.g. window.HandRig, see compositions/components/hand-rig/README.md)
 { const tls = [...document.querySelectorAll('#title .tl')];
-  const run = () => { let fs = 150; const ok = () => { tls.forEach(el => el.style.fontSize = fs + 'px');
-      return tls.every(el => el.scrollWidth <= 880); }; while (!ok() && fs > 60) fs -= 4; };
+  const run = () => { let fs = 170; const ok = () => { tls.forEach(el => el.style.fontSize = fs + 'px');
+      return tls.every(el => el.scrollWidth <= 900); }; while (!ok() && fs > 60) fs -= 4; };
   run(); document.fonts.ready.then(run); }
 </script>
 </body></html>
