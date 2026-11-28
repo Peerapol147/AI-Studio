@@ -3,7 +3,7 @@
    - #ov-skin: ONE glowing skin cross-section (3 layers, follicles, hairs, arrector pili, nerve) that keeps its state
      across the shots dive -> muscle -> pop -> twist -> regrow -> newhair (spring tracks keyed on words).
    - per-shot overlays (.ovh data-host="<shot ids>") follow their host scene's opacity / whip / z-order (and the
-     still's push when data-kb is set): cat aura, human scan, nope (cat vs human puff), ancestor (ape -> human),
+     still's push when data-kb is set): cat aura, human scan, nope (cat vs human puff), ancestor (one human: thick hair recedes to roots),
      brain (dopamine), music waves, cta chip.
    Colours: only the look's CSS variables (+ the episode mixes defined in EPISODE CSS). Times = shots-th.json
    start / hit_at and words.json word starts (see T). */
@@ -314,7 +314,6 @@ window.GB = (function () {
   }
   const mirror = (half, cx, s = 1, oy = 0) => { const r = half.map(([x, y]) => [cx + x * s, oy + y * s]); const l = half.slice(1, -1).reverse().map(([x, y]) => [cx - x * s, oy + y * s]); return r.concat(l); };
   const HUMAN = [[0, 600], [30, 606], [46, 630], [48, 665], [34, 698], [22, 712], [24, 730], [80, 748], [108, 775], [120, 900], [128, 990], [106, 994], [92, 900], [86, 830], [84, 960], [80, 1100], [36, 1100], [8, 960], [0, 960]];
-  const APE = [[0, 650], [44, 652], [64, 680], [62, 712], [48, 730], [60, 736], [150, 750], [205, 805], [222, 955], [236, 1090], [192, 1098], [162, 965], [142, 870], [134, 985], [124, 1140], [62, 1140], [22, 1030], [0, 1020]];
   const CAT = [[110, 820], [135, 790], [148, 748], [176, 782], [204, 756], [216, 800], [260, 770], [330, 735], [390, 732], [440, 745], [470, 790], [472, 830], [505, 800], [535, 750], [540, 700], [556, 696], [562, 712], [566, 770], [540, 830], [490, 870], [472, 1060], [446, 1060], [440, 905], [400, 918], [300, 920], [252, 902], [242, 1060], [216, 1060], [206, 880], [170, 868], [130, 850]];
 
   function silLayer(svg) {
@@ -348,17 +347,19 @@ window.GB = (function () {
     const svg = el('svg', { viewBox: '0 0 1080 1920', width: 1080, height: 1920, class: 'gsvg' }, root); defs(svg);
     const bg = el('g', { filter: 'url(#blur16)' }, svg); R.aBok = []; const r = rng(77);
     for (let i = 0; i < 12; i++) R.aBok.push({ e: el('circle', { r: 30 + r() * 60, fill: i % 2 ? 'url(#gBok)' : 'url(#gBokY)', opacity: .5 }, bg), x: r() * 1080, y: 300 + r() * 1300, ph: r() * 6 });
-    R.apeP = resample(mirror(APE, 540, 1.12, -90), 240); R.humAP = resample(mirror(HUMAN, 540, 1.12, -90), 240);
+    R.humAP = resample(mirror(HUMAN, 540, 1.25, -260), 240); R.humAN = normals(R.humAP);
     R.ancS = silLayer(svg);
-    R.roots = []; for (let i = 0; i < 240; i += 9) R.roots.push({ i, e: el('circle', { r: 7, fill: 'url(#gDot)', opacity: 0 }, svg) });
+    R.roots = []; for (let i = 0; i < 240; i += 6) R.roots.push({ i, e: el('circle', { r: 7, fill: 'url(#gDot)', opacity: 0 }, svg) });
   }
+  // ancestor (review 2026-11-28): ONE human silhouette, thick glowing body hair that recedes to tiny glowing roots
+  // (no ape -> human morph: that read as "people came from gorillas")
   function renderAnc(t) {
-    const u = eio((t - (T.trace + .1)) / 0.95);
-    const P = R.apeP.map((p, i) => [lerp(p[0], R.humAP[i][0], u), lerp(p[1], R.humAP[i][1], u)]);
-    const N = normals(P);
-    R.ancS.set(furPath(P, N, lerp(30, 2, u), t, 3));
-    R.roots.forEach(r => { const p = P[r.i], n = N[r.i]; r.e.setAttribute('cx', f1(p[0] + n[0] * 4)); r.e.setAttribute('cy', f1(p[1] + n[1] * 4));
-      r.e.setAttribute('opacity', f3(clamp((u - .6) / .3) * (.55 + .45 * Math.sin(t * 6 + r.i)))); });
+    const u = eio((t - (T.trace + .15)) / 0.9);
+    const P = R.humAP, N = R.humAN;
+    R.ancS.set(furPath(P, N, lerp(34, 1.5, u), t, 3, 1 + .04 * (1 - u), [540, 930]));
+    R.ancS.glow.setAttribute('opacity', f3(.45 + .25 * (1 - u)));
+    R.roots.forEach(r => { const p = P[r.i], n = N[r.i]; r.e.setAttribute('cx', f1(p[0] + n[0] * 5)); r.e.setAttribute('cy', f1(p[1] + n[1] * 5));
+      r.e.setAttribute('opacity', f3(clamp((u - .55) / .3) * (.6 + .4 * Math.sin(t * 6 + r.i)))); });
     R.aBok.forEach(b => { b.e.setAttribute('cx', f1(b.x + 30 * Math.sin(t * .5 + b.ph))); b.e.setAttribute('cy', f1(b.y + 24 * Math.cos(t * .4 + b.ph))); });
   }
 

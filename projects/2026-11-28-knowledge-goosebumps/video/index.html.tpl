@@ -87,7 +87,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 <div class="ovh" id="ov-skin" data-host="dive muscle pop twist regrow newhair"><div id="skin-in" class="ovi"><img id="dive-img" src="assets/hook-skin.jpg" alt=""/>
  <div id="m-lab" class="chip">กล้ามเนื้อจิ๋ว</div><div id="q-mark" class="qm">?</div><div id="q-mark2" class="qm q2">?</div></div></div>
 <div class="ovh" id="ov-cat" data-host="cat" data-kb="1"><div id="cat-in" class="ovi"></div></div>
-<div class="ovh" id="ov-human" data-host="human" data-kb="1"><div class="ovi"><div style="position:absolute;left:40px;top:280px;width:1000px;height:853px;border-radius:36px;overflow:hidden"><div id="scan"></div></div></div></div>
+<div class="ovh" id="ov-human" data-host="human" data-kb="1"><div class="ovi"><div style="position:absolute;left:40px;top:520px;width:1000px;height:853px;border-radius:36px;overflow:hidden"><div id="scan"></div></div></div></div>
 <div class="ovh" id="ov-nope" data-host="nope"><div id="nope-in" class="ovi"></div></div>
 <div class="ovh" id="ov-anc" data-host="ancestor"><div id="anc-in" class="ovi"></div></div>
 <div class="ovh" id="ov-music" data-host="music"><div id="music-in" class="ovi"></div></div>

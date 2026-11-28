@@ -17,7 +17,7 @@ mask(){ echo "format=yuva420p,geq=lum='lum(X,Y)':cb='cb(X,Y)':cr='cr(X,Y)':a='if
 card(){ local n=$1 s=$2 c=$3 w=$4 h=$5 y=$6 ex=$7 t=$8 out
   case $s in *.mp4) out="$ENC assets/$n.mp4";; *) out="-frames:v 1 -q:v 2 assets/$n.jpg";; esac
   ffmpeg -v error -y ${t:+-t $t} -i "$F/$s" -filter_complex "[0]fps=30,split=3[a][b][c];\
-[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=40,eq=brightness=-0.20:saturation=0.9[bg];\
+[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=40,eq=brightness=${BGB:--0.20}:saturation=0.9[bg];\
 [b]crop=$c,scale=$w:$h:flags=lanczos,$(mask)[fg];\
 [c]crop=$c,scale=$w:$h,format=gray,geq=lum=0,format=yuva420p,geq=lum=0:cb=128:cr=128:a=150,pad=$((w+120)):$((h+120)):60:60:color=black@0,gblur=sigma=26[sh];\
 [bg][sh]overlay=(W-w)/2:$((y-40))[b2];[b2][fg]overlay=(W-w)/2:$y,$GRADE,eq=brightness=$ex,vignette=PI/5" $out; }
@@ -26,15 +26,15 @@ full(){ # name src crop exposure dur
 # stills
 card hook  pixabay-885563.jpg  1000:720:200:170 1000 720 800  0.0
 card cat   pixabay-5534007.jpg 860:855:250:0    800 795 760  0.0
-card human pixabay-222664.jpg  1000:853:140:0   1000 853 280  0.0
+BGB=0.02 card human pixabay-222664.jpg  1000:853:140:0   1000 853 520  0.0
 # hook card alone (graded, no bg) for the dive-through-the-skin graphic
 ffmpeg -v error -y -i "$F/pixabay-885563.jpg" -vf "crop=1000:720:200:170,$GRADE" -q:v 2 assets/hook-skin.jpg
 # full-screen video plates (source >= 1440 px tall)
 full cold   pixabay-253979.mp4 1440:2560:0:0   0.0  3.0
-full ape    pixabay-388020.mp4 810:1440:875:0  0.0  3.2
+full ape    pixabay-85379.mp4  810:1440:820:0  0.0  17.0   # real zoo gorilla (NickyPe); 388020 was AI
 full music  pixabay-161062.mp4 1440:2560:0:0   0.0  5.2
 full cta    pixabay-65390.mp4  810:1440:875:0  0.0  3.0
 # 720p clips as cards
-card mouse   pixabay-139660.mp4 900:720:60:0  1000 800 300 0.0 3.4
+BGB=0.05 card mouse   pixabay-139660.mp4 900:720:60:0  1000 800 520 0.0 3.4
 card concert pixabay-29322.mp4  1280:720:0:0  1000 562 420 0.0 3.0
 ls -la assets
