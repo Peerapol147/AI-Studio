@@ -11,7 +11,7 @@
   "tts_model": "eleven_v3",
   "atempo": 1.1,
   "vo_lufs": -18,
-  "music_file": null,
+  "music_file": "music-jamendo-34466c22.mp3",
   "cover_text": "ขนลุกทีไร ร่างกายพยายามทำตัวให้ใหญ่ขึ้น",
   "why": "look.py pick แล้วแก้: palette sunrise-coral (พื้นเข้มโทนอุ่นใกล้สีผิว ทำกราฟิกรากขนเรืองแสงได้ ต่างจาก night-violet ของ itch/earth-stops), music cinematic (เพลงสร้างอารมณ์ขนลุก/frisson; ไฟล์ไม่ซ้ำ earth-stops); opening pov (kicker 'POV: ขนลุกซู่') ต่างจาก question 2 ใน 3 ตอนล่าสุด; เสียงล็อกช่อง",
   "covers": [
